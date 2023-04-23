@@ -1,7 +1,7 @@
 {
     "name": "zcl",
     "version": "0.0.1",
-    "description": "zcl",
+    "description": "杰格网",
     "main": "index.js",
     "scripts": {
         "build": "npm run hugo:build",
@@ -30,21 +30,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ZhangChengLin/z.git"
+        "url": "git+https://github.com/jzeg-net/jzeg-net.github.io.git"
     },
     "keywords": [
-        "login",
-        "signup",
-        "reset",
-        "find",
-        "logout"
+        "杰格网",
+        "JZEG"
     ],
     "author": "ZhangChengLin <469946668@qq.com> (https://张成林.中国/)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ZhangChengLin/z/issues"
+        "url": "https://github.com/jzeg-net/jzeg-net.github.io/issues"
     },
-    "homepage": "https://github.com/ZhangChengLin/z#readme",
+    "homepage": "https://github.com/jzeg-net/jzeg-net.github.io#readme",
     "hugo-bin": {
         "buildTags": "extended",
         "downloadRepo": ""

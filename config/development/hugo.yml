@@ -5,3 +5,16 @@ logFile: "hugo_log/hugo_log.development.log"
 publishDir: "public"
 
 minify: false
+
+languages:
+  zh-cn:
+    title: "杰格网"
+  en-us:
+    title: "JieGe"
+
+Params:
+  Subtitle: "杰格网"
+  Description: "默认description"
+
+  icp: "冀ICP备12018851号-7"
+  beian: "1111111111111111"

@@ -19,7 +19,6 @@ languages:
         title: "title-zh-cn"
         weight: 1
         params:
-            siteName: 站点名称
             icon: cn
     en-us:
         # baseURL: ""
@@ -28,9 +27,8 @@ languages:
         languageCode: "en-US"
         timeZone: "America/New_York"
         title: "title-en-us"
-        weight: 5
+        weight: 6
         params:
-            siteName: Site Name
             icon: us
 
 menu:
@@ -241,6 +239,9 @@ Params:
     Subtitle: "子标题"
     Description: "默认description"
 
+    icp: ""
+    beian: ""
+
     demo_version: "5.3"
     bootstrap_version: "5.3.0-alpha3"
 
@@ -253,7 +254,4 @@ Params:
     # 可选[blame,commit,blob,raw,edit]
     GitHubViewType: "edit"
     Repo:
-        git: "https://github.com/ZhangChengLin/z"
-
-    icp: "111111111111111111111111111"
-    beian: "2222222222222222222222222"
+        git: "https://github.com/jzeg-net/jzeg-net.github.io"
