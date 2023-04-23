@@ -1,0 +1,7 @@
+{{ with .OutputFormats.Get "rss" -}}
+    <div class="my-1 text-end">
+        <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="RSS">
+            <i class="fa-2x fa fa-fw fa-rss"></i>
+        </a>
+    </div>
+{{- end -}}

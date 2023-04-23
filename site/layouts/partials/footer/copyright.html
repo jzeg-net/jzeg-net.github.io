@@ -1,0 +1,7 @@
+<section>
+    {{ T "footer_copyright" }} &copy;
+    {{- if (and .Site.Params.since (lt .Site.Params.since now.Year)) -}}
+        {{- .Site.Params.since -}} -
+    {{- end -}}
+    {{- now.Year }} {{ .Site.BaseURL }} {{ T "footer_all_rights_reserved" }}
+</section>

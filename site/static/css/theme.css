@@ -1,0 +1,32 @@
+[-theme-] {
+    --first-color: var(--bd-violet-bg);
+    --first-bg: var(--bd-violet-bg);
+    --second-bg: var(--bd-violet);
+    --third-bg: var(--bd-sidebar-link-bg);
+}
+
+header .dropdown-menu {
+    background-color: var(--bd-violet-bg);
+}
+
+header .dropdown-menu .dropdown-item {
+    color: var(--bs-dropdown-link-color);
+}
+
+header .dropdown-item:focus,
+header .dropdown-item:hover {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+}
+
+header .dropdown-item.active,
+header .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: var(--bs-dropdown-link-active-bg);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: var(--bd-violet-bg);
+}

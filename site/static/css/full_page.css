@@ -1,0 +1,68 @@
+.fullPage::-webkit-scrollbar {
+    display: none;
+}
+
+.fullPage {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.fullPage section {
+    scroll-snap-align: start !important;
+    min-height: 100vh;
+}
+
+.slidesContainer {
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 100vw;
+}
+
+.slidesContainer > .slide {
+    scroll-snap-align: start;
+    min-width: 100vw;
+    height: 100vh;
+}
+
+.scroll-snapping-x-mandatory {
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-snapping-y-mandatory {
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-snapping-x-proximity {
+    scroll-snap-type: x proximity;
+}
+
+.scroll-snapping-y-proximity {
+    scroll-snap-type: y proximity;
+}
+
+.scroll-snapping-none {
+    scroll-snap-type: none;
+}
+
+.scroll-snap-align-s {
+    scroll-snap-align: start start;
+}
+
+.scroll-snap-align-c {
+    scroll-snap-align: center;
+}
+
+.scroll-snap-align-e {
+    scroll-snap-align: end;
+}
+
+.scroll-snap-align-n {
+    scroll-snap-align: none;
+}

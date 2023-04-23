@@ -1,0 +1,29 @@
+{
+    "home": [
+        "_index.md"
+    ],
+    "demo": [
+        "demo/_index.md",
+        "demo/logout/_index.md",
+        "demo/login/_index.md",
+        "demo/login/normal/_index.md",
+        "demo/login/sms/_index.md",
+        "demo/login/email/_index.md",
+        "demo/signup/_index.md",
+        "demo/signup/normal/_index.md",
+        "demo/signup/sms/_index.md",
+        "demo/signup/email/_index.md",
+        "demo/change/_index.md",
+        "demo/change/phone/_index.md",
+        "demo/change/email/_index.md",
+        "demo/change/password/_index.md",
+        "demo/reset/_index.md",
+        "demo/reset/sms/_index.md",
+        "demo/reset/email/_index.md",
+        "demo/find/_index.md",
+        "demo/find/sms/_index.md",
+        "demo/find/email/_index.md"
+    ],
+    "": "",
+    "": ""
+}

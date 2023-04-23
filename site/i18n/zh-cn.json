@@ -1,0 +1,70 @@
+{
+    "menu_home": "首页",
+    "menu_demo": "演示",
+    "menu_about": "关于",
+    "menu_about_me": "关于我",
+    "menu_switch_language": "切换语言",
+    "menu_": "",
+    "theme_toggle": "切换主题",
+    "theme_light": "明亮",
+    "theme_dark": "黑暗",
+    "theme_auto": "自动",
+    "footer_powered_by": "构建通过",
+    "footer_licensed_under": "许可依据",
+    "footer_last_updated": "最近更新时间：",
+    "footer_copyleft": "保留所有权利",
+    "footer_copyright": "版权",
+    "footer_all_rights_reserved": "保留所有权利",
+    "footer_github_view": "在 GitHub 上查看",
+    "footer_github_edit": "在 GitHub 上编辑",
+    "footer_view_this_file_on_github": "在 GitHub 上查看此文件",
+    "footer_edit_this_file_on_github": "在 GitHub 上编辑此文件",
+    "page_not_found": "找不到页面",
+    "page_does_not_exist": "抱歉，此页面不存在。",
+    "skip_to_page_content": "跳到页面内容",
+    "skip_to_site_navigation": "跳至网站导航",
+    "skip_to_page_table_of_contents": "跳至页面目录",
+    "jump_title": "",
+    "jump_hintInfo": "",
+    "jump_info": "",
+    "jump_back": "",
+    "jump_open": "",
+    "demo": "演示",
+    "demo_login": "登录",
+    "demo_login_normal": "普通登录",
+    "demo_login_email": "邮箱登录",
+    "demo_login_sms": "短信登录",
+    "demo_signup": "注册",
+    "demo_signup_normal": "普通注册",
+    "demo_signup_email": "邮箱注册",
+    "demo_signup_sms": "短信注册",
+    "demo_reset": "重置密码",
+    "demo_reset_email": "邮箱重置密码",
+    "demo_reset_sms": "短信重置密码",
+    "demo_change": "修改",
+    "demo_change_password": "修改密码",
+    "demo_change_email": "修改邮箱",
+    "demo_change_phone": "修改手机号",
+    "demo_find": "找回密码",
+    "demo_find_email": "邮箱找回密码",
+    "demo_find_sms": "短信找回密码",
+    "demo_logout": "退出",
+    "current_page": {
+        "other": "当前页"
+    },
+    "Sitemap": {
+        "other": "站点地图"
+    },
+    "current_version": {
+        "other": "当前版本："
+    },
+    "current": {
+        "other": "当前"
+    },
+    "version": {
+        "other": "版本："
+    },
+    "not_set": {
+        "other": "未设置"
+    }
+}

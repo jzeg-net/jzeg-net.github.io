@@ -1,0 +1,36 @@
+{{- $preUrl := relURL "/" -}}
+
+{{- if eq hugo.Environment "production" -}}
+    {{- if eq .Language.LanguageDirection "ltr" -}}
+        <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.min.css">
+    {{- else -}}
+        <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.rtl.min.css">
+    {{- end -}}
+{{- else -}}
+    {{- if eq .Language.LanguageDirection "ltr" -}}
+        <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.css">
+    {{- else -}}
+        <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.rtl.css">
+    {{- end }}
+{{- end }}
+
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/flag-icons/css/flag-icons.min.css">
+
+{{- if eq .Page.Layout "full_page" -}}
+    <link rel="stylesheet" href="{{ $preUrl }}static/css/full_page.css">
+{{- end }}
+
+<link rel="stylesheet" href="{{ $preUrl }}static/css/common.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/css/theme.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/css/docs.css">
+
+{{- if eq .Page.Layout "jump_link" -}}
+    <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
+{{- end -}}
+
+{{- if (eq .IsHome false) -}}
+    {{ if and (ne .Page.Params.breadcrumb "hide") (ne .Page.Params.onlyMain true) }}
+        <link rel="stylesheet" href="{{ $preUrl }}static/css/breadcrumbs.css">
+    {{- end -}}
+{{- end -}}

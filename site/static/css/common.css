@@ -1,0 +1,24 @@
+:root {
+    --monospace: "Roboto Mono", sfmono-regular, consolas, liberation mono, menlo, courier, monospace;
+}
+
+.copyright,
+.commit,
+.record,
+.license,
+.fs-min {
+    font-size: .6rem;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}

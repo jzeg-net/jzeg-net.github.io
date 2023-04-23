@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="Hugo {{ hugo.Version }}">
+    {{ block "robots" . }}{{- partial "head/robots" . -}}{{ end }}
+    {{ block "description" . }}{{- partial "head/description" . -}}{{ end }}
+    {{ block "keyword" . }}{{- partial "head/keyword" . -}}{{ end }}
+    {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
+    <link rel="canonical" href="{{ .RelPermalink }}">
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    {{ partial "favicons" . }}
+    {{ partial "stylesheet" . }}
+    {{- block "before_the_end_of_the_head" . -}}{{- end }}
+</head>
+{{ block "body_override" . }}<body>{{ end }}
+
+{{ partial "skippy" . }}
+
+{{ partial "svg_sprite_icons" . }}
+
+{{ partial "navbar" . }}
+
+{{ partial "breadcrumb/index" . }}
+
+{{ block "content" . }}_default/baseof.html{{ end }}
+
+{{ partial "footer" . }}
+
+{{ partial "scripts" . }}
+{{- block "before_the_end_of_the_body" . }}{{ end }}
+</body>
+</html>

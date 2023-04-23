@@ -1,0 +1,7 @@
+baseURL: "http://localhost:9001/"
+
+logFile: "hugo_log/hugo_log.development.log"
+
+publishDir: "public"
+
+minify: false

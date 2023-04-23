@@ -1,0 +1,45 @@
+<ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "" -}}" title="{{- T "menu_home" -}}">{{- T "menu_home" -}}</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="javascript:" target="_blank" title="{{- T "menu_demo" -}}">{{- T "menu_demo" -}}</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "chatgpt" -}}" target="_blank" title="ChatGPT">ChatGPT</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "sitemap.xml" -}}" target="_blank" title="{{- T "Sitemap" -}}">{{- T "Sitemap" -}}</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto dropdown">
+        <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            分类
+            <span class="visually-hidden"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-start">
+            {{ partial "navbar/demo-menu/login" . }}
+            <li><hr class="dropdown-divider"></li>
+            {{ partial "navbar/demo-menu/logout" . }}
+            <li><hr class="dropdown-divider"></li>
+            {{ partial "navbar/demo-menu/signup" . }}
+            <li><hr class="dropdown-divider"></li>
+            {{ partial "navbar/demo-menu/find" . }}
+            <li><hr class="dropdown-divider"></li>
+            {{ partial "navbar/demo-menu/reset" . }}
+            <li><hr class="dropdown-divider"></li>
+            {{ partial "navbar/demo-menu/change" . }}
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">所有</h6></li>
+            <li><a class="dropdown-item" href="/account/nav.php">nav</a></li>
+        </ul>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "about" -}}" target="_blank" title="{{- T "menu_about" -}}">{{- T "menu_about" -}}</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "/full_page/" -}}" target="_blank" title="HugoDoc">full_page</a>
+    </li>
+    <li class="nav-item col-6 col-lg-auto">
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absURL "/commands/hugo/" -}}" target="_blank" title="Hugo Doc">HugoDoc</a>
+    </li>
+</ul>

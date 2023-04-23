@@ -1,0 +1,9 @@
+{{ if and (ne .Page.Params.skippy "hide") (ne .Page.Params.onlyMain true) }}
+<div class="skippy visually-hidden-focusable">
+    <div class="container-xl">
+        <a class="d-inline-flex p-2 m-1" href="#content" title="{{ T "skip_to_page_content" }}">{{ T "skip_to_page_content" }}</a>
+        <a class="d-inline-flex p-2 m-1" href="#TableOfContents" title="{{ T "skip_to_page_table_of_contents" }}">{{ T "skip_to_page_table_of_contents" }}</a>
+        <a class="d-inline-flex p-2 m-1" href="#navigation" title="{{ T "skip_to_site_navigation" }}">{{ T "skip_to_site_navigation" }}</a>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,259 @@
+baseURL: "http://localhost/"
+
+metaDataFormat: "yaml"
+disableKinds: [ "taxonomy", "term" ]
+
+logFile: "hugo_log/hugo_log.default.log"
+
+publishDir: "public"
+
+defaultContentLanguage: "zh-cn"
+
+languages:
+    zh-cn:
+        # baseURL: ""
+        languageName: "中文（简体）"
+        languageDirection: "ltr"
+        languageCode: "zh-CN"
+        timeZone: "Asia/Shanghai"
+        title: "title-zh-cn"
+        weight: 1
+        params:
+            siteName: 站点名称
+            icon: cn
+    en-us:
+        # baseURL: ""
+        languageName: "English"
+        languageDirection: "ltr"
+        languageCode: "en-US"
+        timeZone: "America/New_York"
+        title: "title-en-us"
+        weight: 5
+        params:
+            siteName: Site Name
+            icon: us
+
+menu:
+    main:
+        -   identifier: menu_home
+            pageRef: /
+            weight: 1
+        -   identifier: menu_demo
+            pageRef: "javascript:"
+            weight: 4
+        -   identifier: menu_about
+            pageRef: /about
+            weight: 6
+        -   identifier: menu_about_me
+            parent: about
+            pageRef: /about/me
+            weight: 1
+    theme:
+        -   identifier: theme_light
+            pageRef: "light"
+            name: "sun-fill"
+            weight: 1
+        -   identifier: theme_dark
+            pageRef: "dark"
+            name: "moon-stars-fill"
+            weight: 2
+        -   identifier: theme_auto
+            pageRef: "auto"
+            name: "circle-half"
+            weight: 3
+    demo:
+        -   identifier: demo
+            pageRef:
+            weight: 1
+        -   identifier: demo_login
+            parent: demo
+            pageRef: demo/login
+            weight: 1
+        -   identifier: demo_signup
+            parent: demo
+            pageRef: demo/signup
+            weight: 2
+        -   identifier: demo_reset
+            parent: demo
+            pageRef: demo/reset
+            weight: 3
+        -   identifier: demo_change
+            parent: demo
+            pageRef: demo/change
+            weight: 4
+        -   identifier: demo_find
+            parent: demo
+            pageRef: demo/find
+            weight: 5
+        -   identifier: demo_logout
+            parent: demo
+            pageRef: demo/logout
+            weight: 6
+        -   identifier: demo_login_normal
+            parent: demo_login
+            pageRef: demo/login/normal
+            weight: 1
+        -   identifier: demo_login_email
+            parent: demo_login
+            pageRef: demo/login/email
+            weight: 2
+        -   identifier: demo_login_sms
+            parent: demo_login
+            pageRef: demo/login/sms
+            weight: 3
+        -   identifier: demo_signup_normal
+            parent: demo_signup
+            pageRef: demo/signup/normal
+            weight: 1
+        -   identifier: demo_signup_email
+            parent: demo_signup
+            pageRef: demo/signup/email
+            weight: 2
+        -   identifier: demo_signup_sms
+            parent: demo_signup
+            pageRef: demo/signup/sms
+            weight: 3
+        -   identifier: demo_change_password
+            parent: demo_change
+            pageRef: demo/change/password
+            weight: 1
+        -   identifier: demo_change_email
+            parent: demo_change
+            pageRef: demo/change/email
+            weight: 2
+        -   identifier: demo_change_phone
+            parent: demo_change
+            pageRef: demo/change/phone
+            weight: 3
+        -   identifier: demo_reset_email
+            parent: demo_reset
+            pageRef: demo/reset/email
+            weight: 1
+        -   identifier: demo_reset_sms
+            parent: demo_reset
+            pageRef: demo/reset/sms
+            weight: 2
+        -   identifier: demo_find_email
+            parent: demo_find
+            pageRef: demo/find/email
+            weight: 1
+        -   identifier: demo_find_sms
+            parent: demo_find
+            pageRef: demo/find/sms
+            weight: 2
+
+#watch: true
+#debug: true
+#minify: true
+#uglyURLs: true
+#multihost: false
+buildDrafts: true
+buildFuture: true
+enableEmoji: true
+buildExpired: false
+enableGitInfo: true
+hasCJKLanguage: true
+enableRobotsTXT: true
+printI18nWarnings: true
+cleanDestinationDir: true
+printUnusedTemplates: true
+enableInlineShortcodes: true
+#disableHugoGeneratorInject: true
+defaultContentLanguageInSubDir: true
+enableMissingTranslationPlaceholders: true
+
+FrontMatter:
+    date:
+        - date
+        - publishDate
+        - lastmod
+    expiryDate:
+        - expiryDate
+    lastMod:
+        - :git
+        - lastmod
+        - date
+        - publishDate
+    publishDate:
+        - publishDate
+        - date
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    tableOfContents:
+        startLevel: 2
+        endLevel: 4
+
+security:
+    enableInlineShortcodes: false
+    funcs:
+        getenv:
+            - ^HUGO_
+            - ^CI$
+
+#outputFormats:
+#    Sitemap:
+#        mediaType: application/xml
+
+sitemap:
+    ChangeFreq: monthly
+    filename: sitemap.xml
+    priority: 0.5
+
+module:
+    hugoVersion:
+        extended: true
+        max: "0.111.3"
+        min: "0.108.0"
+    mounts:
+        -   source: site/archetypes
+            target: archetypes
+
+        -   source: site/static
+            target: static/static
+            excludeFiles: "{CNAME}"
+        -   source: site/static/CNAME
+            target: static/CNAME
+        -   source: node_modules
+            target: static/static/vendor
+            includeFiles: "{bootstrap,js-cookie,localforage,lozad,b-components-js,headroom.js,fullpage.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
+
+        -   source: site/content
+            target: content
+            lang: zh-cn
+        -   source: site/content
+            target: content
+            lang: en-us
+
+        -   source: site/assets
+            target: static/assets
+
+        -   source: site/data
+            target: data
+        -   source: site/i18n
+            target: i18n
+        -   source: site/layouts
+            target: layouts
+
+Params:
+    Subtitle: "子标题"
+    Description: "默认description"
+
+    demo_version: "5.3"
+    bootstrap_version: "5.3.0-alpha3"
+
+    Since: "2022"
+    License: "d"
+
+    CopyleftText: "Company, Inc. All rights reserved."
+    CopyrightText: "Company, Inc. All rights reserved."
+
+    # 可选[blame,commit,blob,raw,edit]
+    GitHubViewType: "edit"
+    Repo:
+        git: "https://github.com/ZhangChengLin/z"
+
+    icp: "111111111111111111111111111"
+    beian: "2222222222222222222222222"

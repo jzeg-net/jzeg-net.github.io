@@ -1,0 +1,22 @@
+<li class="nav-item col-6 col-lg-auto dropdown">
+    <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            data-bs-display="static">
+        <svg class="bi my-1 theme-icon-active"><title>{{- T "theme_toggle" -}}</title><use href="#circle-half"></use></svg>
+        <span class="d-lg-none ms-2" id="bd-theme-text">{{- T "theme_toggle" -}}</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text" style="--bs-dropdown-min-width: 8rem;">
+        {{ range .Site.Menus.theme }}
+            <li>
+                <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="{{ .PageRef }}">
+                    <svg class="bi me-2 opacity-50 theme-icon"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Name }}"></use></svg>
+                    {{ or (T .Identifier) .Name | safeHTML }}
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                </button>
+            </li>
+        {{ end }}
+    </ul>
+</li>

@@ -1,0 +1,24 @@
+/.cache/
+/node_modules/
+/public/
+/docs/
+/site/content/commands/
+
+## Hugo
+/resources/
+/.hugo_build.lock
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
+
+# Linux
+.directory
+
+/.idea/

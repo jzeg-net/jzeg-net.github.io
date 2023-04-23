@@ -1,0 +1,31 @@
+{{ $preUrl := relURL "/" }}
+
+{{- if eq hugo.Environment "production" -}}
+    <script src="{{ $preUrl }}static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+{{- else -}}
+    <script src="{{ $preUrl }}static/vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
+{{- end }}
+
+<script src="{{ $preUrl }}static/vendor/js-cookie/dist/js.cookie.min.js"></script>
+<script src="{{ $preUrl }}static/vendor/localforage/dist/localforage.min.js"></script>
+<script src="{{ $preUrl }}static/vendor/lozad/dist/lozad.min.js"></script>
+<script src="{{ $preUrl }}static/vendor/headroom.js/dist/headroom.min.js"></script>
+<script src="{{ $preUrl }}static/vendor/html2canvas/dist/html2canvas.min.js"></script>
+<script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
+
+{{- if eq .Page.Layout "full_page" -}}
+    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
+    <script src="{{ $preUrl }}static/js/full_page.js"></script>
+{{- end -}}
+
+<script src="{{ $preUrl }}static/js/add_jump.js"></script>
+<script src="{{ $preUrl }}static/js/common.js"></script>
+
+{{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
+<script src="{{ $preUrl }}static/js/color-modes.js"></script>
+{{ end }}
+<script src="{{ $preUrl }}static/js/account.js"></script>
+
+{{- if eq .Page.Layout "jump_link" -}}
+    <script src="{{ $preUrl }}static/js/jump_link.js"></script>
+{{- end -}}

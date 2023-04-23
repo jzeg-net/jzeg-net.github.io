@@ -1,0 +1,49 @@
+<div class="mb-3 d-flex justify-content-between align-items-center">
+    <span class="fs-4">修改邮箱</span>
+    <a class="link-secondary text-decoration-none" href="/settings/reset_password.php" title="重置密码">重置密码</a>
+</div>
+<form id="change_email">
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="email" class="form-control" name="current" id="current_email" placeholder="当前邮箱" required>
+            <label for="current_email"><i class="me-1 fa-fw fa fa-mail-bulk text-muted"></i>当前邮箱</label>
+        </div>
+        <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="change" data-type="email">
+            <span class="text-reset">发送验证码</span>
+        </a>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="current_captcha" id="change_email_current_captcha" placeholder=" " minlength="5" maxlength="6" required>
+            <label for="change_email_current_captcha">当前邮箱验证码</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="email" class="form-control sendCaptchaTo" name="new" id="new_email" placeholder="新邮箱" required>
+            <label for="new_email"><i class="me-1 fa-fw fa fa-mail-bulk text-muted"></i>新邮箱</label>
+        </div>
+        <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="change" data-type="email">
+            <span class="text-reset">发送验证码</span>
+        </a>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="new_captcha" id="change_email_new_captcha" placeholder=" " minlength="5" maxlength="6" required>
+            <label for="change_email_new_captcha">新邮箱验证码</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <a class="p-0 input-group-text" href="javascript:" title="点击后刷新">
+            <img class="lazyCaptcha" width="134" height="56" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/api/captcha.php?a=change_email&v=" alt="验证码">
+        </a>
+        <div class="form-floating">
+            <input type="text" class="form-control" name="captcha" id="change_email_captcha" placeholder=" " minlength="4" maxlength="5" required>
+            <label for="change_email_captcha">验证码</label>
+        </div>
+    </div>
+    <input type="hidden" name="type" value="email">
+    <div class="d-grid gap-2 col-8 mx-auto">
+        <button class="btn btn-primary" type="submit">更新邮箱</button>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+{
+    "css": {},
+    "js": {},
+    "scss": {},
+    "mjs": {},
+    "vendor": {
+        "bootstrap": {
+            "normal": {
+                "css": "bootstrap/dist/css/bootstrap.css",
+                "rtl_css": "bootstrap/dist/css/bootstrap.rtl.css",
+                "esm": "bootstrap/dist/js/bootstrap.esm.js",
+                "js": "bootstrap/dist/js/bootstrap.bundle.js"
+            },
+            "min": {
+                "css": "bootstrap/dist/css/bootstrap.min.css",
+                "rtl_css": "bootstrap/dist/css/bootstrap.rtl.min.css",
+                "esm": "bootstrap/dist/js/bootstrap.esm.min.js",
+                "js": "bootstrap/dist/js/bootstrap.bundle.min.js"
+            }
+        },
+        "js-cookie": {
+            "normal": {
+                "css": "",
+                "mjs": "js-cookie/dist/js.cookie.mjs",
+                "js": "js-cookie/dist/js.cookie.js"
+            },
+            "min": {
+                "css": "",
+                "mjs": "js-cookie/dist/js.cookie.min.mjs",
+                "js": "js-cookie/dist/js.cookie.min.js"
+            }
+        }
+    }
+}
