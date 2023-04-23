@@ -1,6 +1,8 @@
 {
     "menu_home": "首页",
     "menu_demo": "演示",
+    "menu_hugo_cli_doc": "雨果命令行文档",
+    "menu_contact": "联系",
     "menu_about": "关于",
     "menu_about_me": "关于我",
     "menu_switch_language": "切换语言",

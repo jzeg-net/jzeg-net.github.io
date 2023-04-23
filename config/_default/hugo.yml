@@ -16,20 +16,26 @@ languages:
         languageDirection: "ltr"
         languageCode: "zh-CN"
         timeZone: "Asia/Shanghai"
-        title: "title-zh-cn"
+        title: "杰格网"
         weight: 1
         params:
             icon: cn
+            Subtitle: "子标题"
+            Description: "默认描述"
+
     en-us:
         # baseURL: ""
         languageName: "English"
         languageDirection: "ltr"
         languageCode: "en-US"
         timeZone: "America/New_York"
-        title: "title-en-us"
+        title: "JieGe"
         weight: 6
         params:
             icon: us
+            Subtitle: "Subtitle"
+            Description: "Default Description"
+
 
 menu:
     main:
@@ -39,6 +45,9 @@ menu:
         -   identifier: menu_demo
             pageRef: "javascript:"
             weight: 4
+        -   identifier: menu_hugo_cli_doc
+            pageRef: /commands/hugo
+            weight: 5
         -   identifier: menu_about
             pageRef: /about
             weight: 6
@@ -236,16 +245,13 @@ module:
             target: layouts
 
 Params:
-    Subtitle: "子标题"
-    Description: "默认description"
-
-    icp: ""
-    beian: ""
+    icp: "冀ICP备12018851号-7"
+    beian: "9999999999999999"
 
     demo_version: "5.3"
     bootstrap_version: "5.3.0-alpha3"
 
-    Since: "2022"
+    since: "2020"
     License: "d"
 
     CopyleftText: "Company, Inc. All rights reserved."

@@ -1,6 +1,8 @@
 {
     "menu_home": "Home",
     "menu_demo": "Demo",
+    "menu_hugo_cli_doc": "Hugo CLI Doc",
+    "menu_contact": "Contact",
     "menu_about": "About",
     "menu_about_me": "About Me",
     "menu_switch_language": "Switch Language",
