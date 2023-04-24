@@ -1,7 +1,22 @@
-{{ with .OutputFormats.Get "rss" -}}
-    <div class="my-1 text-end">
-        <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="RSS">
-            <i class="fa-2x fa fa-fw fa-rss"></i>
-        </a>
-    </div>
-{{- end -}}
+<div class="my-2 d-flex justify-content-end gap-2">
+    {{ with .OutputFormats.Get "rss" -}}
+    <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="RSS">
+        <i class="fa-2x fa fa-fw fa-rss"></i>
+        <span class="visually-hidden">RSS</span>
+    </a>
+    {{ end }}
+    <a class="text-body-secondary" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{- T "Sitemap" -}}">
+        <i class="fa-2x fa fa-fw fa-sitemap"></i>
+        <span class="visually-hidden">{{- T "Sitemap" -}}</span>
+    </a>
+    <a class="text-body-secondary" href="{{- .Site.Params.Repo.git -}}" target="_blank" rel="nofollow, noopener">
+        <i class="fa-2x fab fa-fw fa-github"></i>
+        <span class="visually-hidden">GitHub</span>
+    </a>
+    <a class="text-body-secondary" href="{{ absURL "/commands/hugo/" }}" target="_blank" title="{{- T "menu_hugo_cli_doc" -}}">
+        <span class="">{{- T "menu_hugo_cli_doc" -}}</span>
+    </a>
+    <a class="text-body-secondary" href="{{ absURL "/full_page/" }}" target="_blank" title="full_page">
+        <span class="">full_page</span>
+    </a>
+</div>
