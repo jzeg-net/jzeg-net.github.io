@@ -1,7 +1,7 @@
 {
-    "name": "zcl",
+    "name": "jzeg-net",
     "version": "0.0.1",
-    "description": "杰格网",
+    "description": "a small static website",
     "main": "index.js",
     "scripts": {
         "build": "npm run hugo:build",

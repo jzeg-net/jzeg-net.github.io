@@ -200,6 +200,16 @@ security:
             - ^HUGO_
             - ^CI$
 
+#server:
+#    -   redirects:
+#            from: /zh-cn/**
+#            to: /zh-cn/404.html
+#            status: 404
+#    -   redirects:
+#            from: /en-us/**
+#            to: /en-us/404.html
+#            status: 404
+
 #outputFormats:
 #    Sitemap:
 #        mediaType: application/xml

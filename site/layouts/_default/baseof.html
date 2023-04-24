@@ -9,7 +9,9 @@
     {{ block "description" . }}{{- partial "head/description" . -}}{{ end }}
     {{ block "keyword" . }}{{- partial "head/keyword" . -}}{{ end }}
     {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
+    {{- if ne .RelPermalink "/404.html" -}}
     <link rel="canonical" href="{{ .RelPermalink }}">
+    {{ end }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{ end -}}
