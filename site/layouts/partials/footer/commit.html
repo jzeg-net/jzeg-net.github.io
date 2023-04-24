@@ -1,9 +1,6 @@
 {{ if .GitInfo }}
     <section class="d-flex flex-column justify-content-end align-items-end">
         <span>{{- T "footer_last_updated" -}}{{- .Lastmod -}}</span>
-        <div>
-            <a class="btn btn-sm btn-bd-light rounded-2 fs-min" href="{{- .Site.Params.Repo.git -}}/blob/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}" title="{{ T "footer_view_file_on_github" }}" target="_blank" rel="nofollow,noopener">{{ T "footer_github_view" }}</a>
-            <a class="btn btn-sm btn-bd-light rounded-2 fs-min" href="{{- .Site.Params.Repo.git -}}/edit/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}" title="{{ T "footer_edit_file_on_github" }}" target="_blank" rel="nofollow,noopener">{{ T "footer_github_edit" }}</a>
-        </div>
+        <a class="btn btn-sm btn-bd-light rounded-2 fs-min" href="{{- .Site.Params.Repo.git -}}/{{ .Site.Params.Repo.AccessType }}/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}" title="{{ T "footer_edit_file_on_github" }}" target="_blank" rel="nofollow,noopener">{{ T "footer_github_edit" }}</a>
     </section>
 {{ end }}

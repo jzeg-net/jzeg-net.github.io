@@ -225,7 +225,7 @@ module:
             target: static/CNAME
         -   source: node_modules
             target: static/static/vendor
-            includeFiles: "{bootstrap,js-cookie,localforage,lozad,b-components-js,headroom.js,fullpage.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
+            includeFiles: "{bootstrap,js-cookie,localforage,lozad,@docsearch,b-components-js,headroom.js,fullpage.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
 
         -   source: site/content
             target: content
@@ -252,12 +252,11 @@ Params:
     bootstrap_version: "5.3.0-alpha3"
 
     since: "2020"
-    License: "d"
 
     CopyleftText: "Company, Inc. All rights reserved."
     CopyrightText: "Company, Inc. All rights reserved."
 
-    # 可选[blame,commit,blob,raw,edit]
-    GitHubViewType: "edit"
     Repo:
         git: "https://github.com/jzeg-net/jzeg-net.github.io"
+        # 可选[blame,blob,raw,edit]
+        AccessType: "edit"

@@ -4,6 +4,7 @@
         <div class="d-lg-none" style="width: 1.5rem;"></div>
         <a class="navbar-brand p-0 me-0 me-lg-2" href="{{- absURL "" -}}" aria-label="账号">账号</a>
         <div class="d-flex">
+            <div class="bd-search" id="docSearch"></div>
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
                 <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
             </button>
@@ -22,10 +23,7 @@
                     <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
                     <hr class="d-lg-none my-2 text-white-50">
                 </div>
-                <ul class="navbar-nav flex-row flex-wrap">
-                    {{ partial "navbar/theme" . }}
-                    {{ partial "navbar/language" . }}
-                </ul>
+                {{ partial "navbar/tool" . }}
             </div>
         </div>
     </nav>
