@@ -1,21 +1,24 @@
 <div class="container-fluid bg-body-tertiary">
     <nav aria-label="breadcrumb">
         <ol class="container-xxl breadcrumb breadcrumb-chevron p-3">
-            <li class="breadcrumb-item">
-                <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb">
-                    <svg class="bi" width="16" height="16"><use xlink:href="#house-door-fill"></use></svg>
-                    <span class="visually-hidden">home</span>
-                </a>
-            </li>
             {{- range .Ancestors.Reverse }}
-                <li class="breadcrumb-item">
-                    <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb">
-                        {{ .Title }}
-                    </a>
-                </li>
+                {{ if .IsHome }}
+                    <li class="breadcrumb-item">
+                        <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .Title }}">
+                            <svg class="bi" width="16" height="16"><use xlink:href="#house-door-fill"></use></svg>
+                            <span class="visually-hidden">home</span>
+                        </a>
+                    </li>
+                {{ else }}
+                    <li class="breadcrumb-item">
+                        <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .Title }}">
+                            {{ .Title }}
+                        </a>
+                    </li>
+                {{ end }}
             {{- end }}
             <li class="breadcrumb-item active" aria-current="page">
-                <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ .RelPermalink }}?from=breadcrumb">{{ .Title }}</a>
+                <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .Title }}">{{ .Title }}</a>
             </li>
         </ol>
     </nav>
