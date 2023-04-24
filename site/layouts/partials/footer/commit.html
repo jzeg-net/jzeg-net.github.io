@@ -1,6 +1,7 @@
 {{ if .GitInfo }}
     <section class="d-flex flex-column justify-content-end align-items-end">
-        <span>{{- T "footer_last_updated" -}}{{- .Lastmod -}}</span>
+        <span>{{- T "footer_content_last_updated_time" -}}{{- .Page.Params.Date | default "-" -}}</span>
+        <span>{{- T "footer_page_build_time" -}}{{- .Lastmod -}}</span>
         <a class="btn btn-sm btn-bd-light rounded-2 fs-min" href="{{- .Site.Params.Repo.git -}}/{{ .Site.Params.Repo.AccessType }}/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}" title="{{ T "footer_edit_file_on_github" }}" target="_blank" rel="nofollow,noopener">{{ T "footer_github_edit" }}</a>
     </section>
 {{ end }}

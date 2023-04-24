@@ -1,1 +1,6 @@
-content/_index.zh-cn.md
+---
+title: "首页"
+
+date: 2023-04-24T14:00:00+08:00
+---
+

@@ -1,6 +1,8 @@
 ---
-title: Will Visit
+title: About To Leave
 layout: jump_link
+
+onlyMain: true
 
 robots: noindex, nofollow
 sitemap_exclude: true

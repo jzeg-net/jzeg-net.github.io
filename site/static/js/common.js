@@ -62,10 +62,3 @@ const createSmallCenterText = (text, color = '') => {
 if (top.location.href !== self.location.href) {
     location.href = self.location.href
 }
-
-docsearch({
-    container: '#docSearch',
-    appId: '',
-    indexName: '',
-    apiKey: '',
-})

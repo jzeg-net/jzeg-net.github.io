@@ -1,4 +1,4 @@
 ---
-date : {{ .Date }}
 title: "{{ replace .Name "-" " " | title }}"
+date : {{ .Date }}
 ---

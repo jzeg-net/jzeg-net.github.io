@@ -1,5 +1,5 @@
 ---
-title: 将要访问
+title: 即将离开
 layout: jump_link
 
 onlyMain: true

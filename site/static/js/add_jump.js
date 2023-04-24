@@ -5,7 +5,7 @@ if (content) {
 
 function addJumpPre(range) {
     let baseURL = document.location.host
-    let gotoLink = `http://${baseURL}/zh-cn/jump_link/?target=`
+    let gotoLink = `http://${baseURL}/en-us/jump_link/?target=`
 
     range.querySelectorAll("a")
         .forEach(targetLink => {
