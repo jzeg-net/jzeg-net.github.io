@@ -1,41 +1,32 @@
 <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
-    <li class="nav-item col-6 col-lg-auto">
-        <a class="nav-link py-2 px-0 px-lg-2" href="{{- .Site.Home.RelPermalink -}}" title="{{- T "menu_home" -}}">{{- T "menu_home" -}}</a>
-    </li>
+    {{ range .Site.Menus.main }}
+    {{ if .HasChildren }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-            {{- T "menu_demo" -}}
+            {{ or (T .Identifier) .Name | safeHTML }}
             <span class="visually-hidden"></span>
         </button>
-        <ul class="dropdown-menu dropdown-menu-lg-start text-center">
-            {{ partial "navbar/demo-menu/login" . }}
-            <li><hr class="dropdown-divider"></li>
-            {{ partial "navbar/demo-menu/logout" . }}
-            <li><hr class="dropdown-divider"></li>
-            {{ partial "navbar/demo-menu/signup" . }}
-            <li><hr class="dropdown-divider"></li>
-            {{ partial "navbar/demo-menu/find" . }}
-            <li><hr class="dropdown-divider"></li>
-            {{ partial "navbar/demo-menu/reset" . }}
-            <li><hr class="dropdown-divider"></li>
-            {{ partial "navbar/demo-menu/change" . }}
-            <li><hr class="dropdown-divider"></li>
-            <li><h6 class="dropdown-header">所有</h6></li>
-            <li><a class="dropdown-item" href="/account/nav.php">nav</a></li>
+        <ul class="dropdown-menu dropdown-menu-lg-start">
+            <div class="d-flex flex-column">
+                {{ range .Children }}
+                <div class="d-flex">
+                {{ if .HasChildren }}
+                    <li class="col-4"><h6 class="dropdown-header">{{ or (T .Identifier) .Name | safeHTML }}</h6></li>
+                    {{ range .Children }}
+                    <li class="col-4"><a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
+                    {{ end }}
+                {{ else }}
+                    <li><a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
+                {{ end }}
+                </div>
+                {{ end }}
+            </div>
         </ul>
     </li>
+    {{ else }}
     <li class="nav-item col-6 col-lg-auto">
-        <a class="nav-link py-2 px-0 px-lg-2" href="{{- absLangURL "chatgpt" -}}" target="_blank" title="ChatGPT">ChatGPT</a>
+        <a class="nav-link py-2 px-0 px-lg-2" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a>
     </li>
-    <li class="nav-item col-6 col-lg-auto dropdown">
-        <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-            {{- T "menu_more" -}}
-            <span class="visually-hidden">{{- T "menu_more" -}}</span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-lg-start text-center">
-            <li><a class="dropdown-item" href="{{- absLangURL "contact" -}}" target="_blank" title="{{- T "menu_contact" -}}">{{- T "menu_contact" -}}</a></li>
-            <li><a class="dropdown-item" href="{{- absLangURL "about" -}}" target="_blank" title="{{- T "menu_about" -}}">{{- T "menu_about" -}}</a></li>
-            <li><a class="dropdown-item" href="{{- absLangURL "ad" -}}" target="_blank" title="{{- T "menu_ad" -}}">{{- T "menu_ad" -}}</a></li>
-        </ul>
-    </li>
+    {{ end }}
+    {{ end }}
 </ul>

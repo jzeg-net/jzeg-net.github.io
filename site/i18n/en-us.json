@@ -7,6 +7,7 @@
     "menu_about_me": "About Me",
     "menu_switch_language": "Switch Language",
     "menu_ad": "Ad",
+    "menu_chatgpt": "ChatGPT",
     "menu_more": "More",
     "menu_": "",
     "theme_toggle": "Switch Theme",
@@ -60,6 +61,7 @@
     "demo_find_email": "E-mail To Find Password",
     "demo_find_sms": "Find Password By SMS",
     "demo_logout": "Logout",
+    "demo_logout_normal": "Normal Logout",
     "current_page": {
         "other": "Current Page"
     },

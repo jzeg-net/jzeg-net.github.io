@@ -36,118 +36,129 @@ languages:
             Subtitle: "Subtitle"
             Description: "Default Description"
 
-
 menu:
     main:
         -   identifier: menu_home
             pageRef: /
             weight: 1
         -   identifier: menu_demo
-            pageRef: "javascript:"
+            pageRef: /demo
             weight: 4
-        -   identifier: menu_hugo_cli_doc
-            pageRef: /commands/hugo
+        -   identifier: demo_login
+            pageRef: /demo/login
+            parent: menu_demo
+            weight: 1
+        -   identifier: demo_signup
+            pageRef: /demo/signup
+            parent: menu_demo
+            weight: 2
+        -   identifier: demo_reset
+            pageRef: /demo/reset
+            parent: menu_demo
+            weight: 3
+        -   identifier: demo_change
+            pageRef: /demo/change
+            parent: menu_demo
+            weight: 4
+        -   identifier: demo_find
+            pageRef: /demo/find
+            parent: menu_demo
             weight: 5
+        -   identifier: demo_logout
+            pageRef: /demo/logout
+            parent: menu_demo
+            weight: 6
+        -   identifier: menu_more
+            pageRef:
+            weight: 7
+        -   identifier: menu_contact
+            pageRef: /contact
+            parent: menu_more
+            weight: 1
         -   identifier: menu_about
             pageRef: /about
-            weight: 6
-        -   identifier: menu_about_me
-            parent: about
-            pageRef: /about/me
+            parent: menu_more
+            weight: 2
+        -   identifier: menu_ad
+            pageRef: /ad
+            parent: menu_more
+            weight: 3
+        -   identifier: menu_chatgpt
+            pageRef: /chatgpt
+            parent: menu_more
+            weight: 4
+        -   identifier: demo_login_normal
+            pageRef: /demo/login/normal
+            parent: demo_login
+            weight: 1
+        -   identifier: demo_login_email
+            pageRef: /demo/login/email
+            parent: demo_login
+            weight: 2
+        -   identifier: demo_login_sms
+            pageRef: /demo/login/sms
+            parent: demo_login
+            weight: 3
+        -   identifier: demo_signup_normal
+            pageRef: /demo/signup/normal
+            parent: demo_signup
+            weight: 1
+        -   identifier: demo_signup_email
+            pageRef: /demo/signup/email
+            parent: demo_signup
+            weight: 2
+        -   identifier: demo_signup_sms
+            pageRef: /demo/signup/sms
+            parent: demo_signup
+            weight: 3
+        -   identifier: demo_reset_email
+            pageRef: /demo/reset/email
+            parent: demo_reset
+            weight: 1
+        -   identifier: demo_reset_sms
+            pageRef: /demo/reset/sms
+            parent: demo_reset
+            weight: 2
+        -   identifier: demo_change_password
+            pageRef: /demo/change/password
+            parent: demo_change
+            weight: 1
+        -   identifier: demo_change_email
+            pageRef: /demo/change/email
+            parent: demo_change
+            weight: 2
+        -   identifier: demo_change_phone
+            pageRef: /demo/change/phone
+            parent: demo_change
+            weight: 3
+        -   identifier: demo_find_email
+            pageRef: /demo/find/email
+            parent: demo_find
+            weight: 1
+        -   identifier: demo_find_sms
+            pageRef: /demo/find/sms
+            parent: demo_find
+            weight: 2
+        -   identifier: demo_logout_normal
+            pageRef: /demo/logout/normal
+            parent: demo_logout
             weight: 1
     theme:
         -   identifier: theme_light
-            pageRef: "light"
-            name: "sun-fill"
             weight: 1
+            params:
+                svg: "sun-fill"
+                theme_value: "light"
         -   identifier: theme_dark
-            pageRef: "dark"
-            name: "moon-stars-fill"
             weight: 2
+            params:
+                svg: "moon-stars-fill"
+                theme_value: "dark"
         -   identifier: theme_auto
-            pageRef: "auto"
-            name: "circle-half"
             weight: 3
-    demo:
-        -   identifier: demo
-            pageRef:
-            weight: 1
-        -   identifier: demo_login
-            parent: demo
-            pageRef: demo/login
-            weight: 1
-        -   identifier: demo_signup
-            parent: demo
-            pageRef: demo/signup
-            weight: 2
-        -   identifier: demo_reset
-            parent: demo
-            pageRef: demo/reset
-            weight: 3
-        -   identifier: demo_change
-            parent: demo
-            pageRef: demo/change
-            weight: 4
-        -   identifier: demo_find
-            parent: demo
-            pageRef: demo/find
-            weight: 5
-        -   identifier: demo_logout
-            parent: demo
-            pageRef: demo/logout
-            weight: 6
-        -   identifier: demo_login_normal
-            parent: demo_login
-            pageRef: demo/login/normal
-            weight: 1
-        -   identifier: demo_login_email
-            parent: demo_login
-            pageRef: demo/login/email
-            weight: 2
-        -   identifier: demo_login_sms
-            parent: demo_login
-            pageRef: demo/login/sms
-            weight: 3
-        -   identifier: demo_signup_normal
-            parent: demo_signup
-            pageRef: demo/signup/normal
-            weight: 1
-        -   identifier: demo_signup_email
-            parent: demo_signup
-            pageRef: demo/signup/email
-            weight: 2
-        -   identifier: demo_signup_sms
-            parent: demo_signup
-            pageRef: demo/signup/sms
-            weight: 3
-        -   identifier: demo_change_password
-            parent: demo_change
-            pageRef: demo/change/password
-            weight: 1
-        -   identifier: demo_change_email
-            parent: demo_change
-            pageRef: demo/change/email
-            weight: 2
-        -   identifier: demo_change_phone
-            parent: demo_change
-            pageRef: demo/change/phone
-            weight: 3
-        -   identifier: demo_reset_email
-            parent: demo_reset
-            pageRef: demo/reset/email
-            weight: 1
-        -   identifier: demo_reset_sms
-            parent: demo_reset
-            pageRef: demo/reset/sms
-            weight: 2
-        -   identifier: demo_find_email
-            parent: demo_find
-            pageRef: demo/find/email
-            weight: 1
-        -   identifier: demo_find_sms
-            parent: demo_find
-            pageRef: demo/find/sms
-            weight: 2
+            params:
+                svg: "circle-half"
+                theme_value: "auto"
 
 #watch: true
 #debug: true
