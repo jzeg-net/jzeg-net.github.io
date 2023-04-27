@@ -17,6 +17,7 @@
     {{ end -}}
     {{ partial "favicons" . }}
     {{ partial "stylesheet" . }}
+    {{ partial "head/no_script" }}
     {{- block "before_the_end_of_the_head" . -}}{{- end }}
 </head>
 {{ block "body_override" . }}<body>{{ end }}

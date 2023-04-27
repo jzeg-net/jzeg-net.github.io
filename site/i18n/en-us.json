@@ -67,6 +67,10 @@
     "demo_find_sms": "Find Password By SMS",
     "demo_logout": "Logout",
     "demo_logout_normal": "Normal Logout",
+    "noScript_tip": "Your current browser does not have JavaScript Enabled",
+    "noScript_work": "Will Affect Your Normal Access To This Website",
+    "noScript_need": "To Access This Site Normally, Please Enable The Javascript Function",
+    "noScript_link": "",
     "current_page": {
         "other": "Current Page"
     },

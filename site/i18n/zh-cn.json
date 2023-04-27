@@ -67,6 +67,10 @@
     "demo_find_sms": "短信找回密码",
     "demo_logout": "退出",
     "demo_logout_normal": "正常退出",
+    "noScript_tip": "您当前的浏览器没有开启 JavaScript 功能",
+    "noScript_work": "将会影响您正常访问本网站",
+    "noScript_need": "正常访问本站，请开启 JavaScript 功能",
+    "noScript_link": "",
     "current_page": {
         "other": "当前页"
     },
