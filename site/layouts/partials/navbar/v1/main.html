@@ -7,20 +7,19 @@
             <span class="visually-hidden"></span>
         </button>
         <ul class="dropdown-menu dropdown-menu-lg-start">
-            <div class="d-flex flex-column">
+            {{ range .Children }}
+            {{ if .HasChildren }}
+            <li><h6 class="dropdown-header"><a class="dropdown-item text-center text-lg-start" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></h6></li>
+            <div class="d-flex flex-column flex-lg-row row-gap-lg-2">
                 {{ range .Children }}
-                <div class="d-flex">
-                {{ if .HasChildren }}
-                    <li class="col-4"><h6 class="dropdown-header">{{ or (T .Identifier) .Name | safeHTML }}</h6></li>
-                    {{ range .Children }}
-                    <li class="col-4"><a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
-                    {{ end }}
-                {{ else }}
-                    <li><a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
-                {{ end }}
-                </div>
+                <li><a class="dropdown-item text-center text-lg-start" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
                 {{ end }}
             </div>
+            {{ else }}
+            <li><a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
+            {{ end }}
+            <li><hr class="dropdown-divider"></li>
+            {{ end }}
         </ul>
     </li>
     {{ else }}
