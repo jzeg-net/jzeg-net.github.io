@@ -1,0 +1,6 @@
+{{ define "body_override" }}<body class="d-flex flex-column min-vh-100">{{ end }}
+{{ define "content" }}
+    <main class="my-auto p-5" id="content">
+        {{ partial "internal/error_pages/400" . }}
+    </main>
+{{ end }}
