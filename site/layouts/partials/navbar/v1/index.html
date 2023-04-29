@@ -19,11 +19,10 @@
                 {{ partial "navbar/v1/main" . }}
                 <hr class="d-lg-none text-white-50">
                 {{ partial "navbar/v1/external_link" . }}
-                <div class="py-2 py-lg-1 col-12 col-lg-auto">
-                    <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-                    <hr class="d-lg-none my-2 text-white-50">
-                </div>
+                {{ partial "navbar/v1/delimiter" . }}
                 {{ partial "navbar/v1/tool" . }}
+                {{ partial "navbar/v1/delimiter" . }}
+                {{ partial "navbar/v1/account" . }}
             </div>
         </div>
     </nav>
