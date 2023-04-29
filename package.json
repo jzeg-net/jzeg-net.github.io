@@ -52,6 +52,7 @@
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.0-alpha3",
         "clipboard": "^2.0.11",
+        "danmu.js": "^1.1.9-1",
         "dayjs": "^1.11.7",
         "flag-icons": "^6.6.6",
         "fullpage.js": "^4.0.19",
@@ -69,6 +70,7 @@
         "simple-icons": "^8.11.0",
         "timeago.js": "^4.0.2",
         "world_countries_lists": "^2.8.1",
+        "xgplayer": "^3.0.1",
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
