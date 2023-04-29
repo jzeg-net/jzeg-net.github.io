@@ -4,8 +4,9 @@ if (content) {
 }
 
 function addJumpPre(range) {
-    let baseURL = document.location.host
-    let gotoLink = `http://${baseURL}/en-us/jump_link/?target=`
+    let origin = document.location.origin
+    let lang = document.querySelector('html').lang.toLowerCase()
+    let gotoLink = `${origin}/${lang}/jump_link/?target=`
 
     range.querySelectorAll("a")
         .forEach(targetLink => {

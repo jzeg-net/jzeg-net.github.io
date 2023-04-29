@@ -1,20 +1,20 @@
 {{ define "content" }}
     <main id="content">
         <div class="col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 position-absolute top-50 start-50 translate-middle">
-            <span class="mb-1 float-end fw-light text-secondary display-6">站点名称</span>
+            <span class="mb-1 float-end fw-light text-secondary display-6">{{ .Site.Title }}</span>
             <div class="card w-100">
                 <div class="card-body">
-                    <h1 class="card-title display-6">页面跳转提示</h1>
-                    <p class="card-text small" id="hintInfo">您刚刚点击的链接，是外部地址，即将离开本站，请注意保护您的帐号和财产安全。</p>
-                    <span class="w-50 lh-sm" id="link_text"></span>
+                    <h1 class="card-title display-6">{{ T "jump_title" }}</h1>
+                    <div class="card-text small" id="hintInfo">{{ T "jump_hintInfo" }}</div>
+                    <div class="my-4 p-2 rounded border border-dark-subtle lh-sm" id="link_text"></div>
                     <hr class="my-4">
                     <div class="d-flex justify-content-end gap-4 me-3">
                         <button class="btn btn-sm btn-outline-secondary" type="button"  onclick="history.go(-1)" id="to_back">
-                            返回上一页
+                            {{ T "jump_back" }}
                             <i class="fa-fw fa fa-rotate-back"></i>
                         </button>
                         <a class="btn btn-sm btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="新标签打开">
-                            点击访问
+                            {{ T "jump_open" }}
                             <i class="fa-fw fa fa-external-link"></i>
                         </a>
                     </div>
