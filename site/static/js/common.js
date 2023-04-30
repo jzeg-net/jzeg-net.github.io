@@ -53,11 +53,11 @@ const createSmallCenterText = (text, color = '') => {
 }
 
 // select your header or whatever element you wish
-// const header = document.querySelector("header")
-// if (header) {
-//     const headroom = new Headroom(header)
-//     headroom.init()
-// }
+let header = document.querySelector("header")
+if (header) {
+    const headroom = new Headroom(header)
+    headroom.init()
+}
 
 if (top.location.href !== self.location.href) {
     location.href = self.location.href
