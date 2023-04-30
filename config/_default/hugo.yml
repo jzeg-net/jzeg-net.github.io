@@ -193,8 +193,8 @@ FrontMatter:
         - date
         - publishDate
     publishDate:
-        - publishDate
         - date
+        - publishDate
 
 markup:
     goldmark:
