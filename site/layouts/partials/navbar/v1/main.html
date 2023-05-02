@@ -4,7 +4,7 @@
     <li class="nav-item col-6 col-lg-auto dropdown">
         <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
             {{ or (T .Identifier) .Name | safeHTML }}
-            <span class="visually-hidden"></span>
+            <span class="visually-hidden">{{ T "menu_btn_toggle" }}</span>
         </button>
         <ul class="dropdown-menu dropdown-menu-lg-start">
             {{ range .Children }}

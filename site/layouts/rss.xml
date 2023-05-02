@@ -27,24 +27,22 @@
     <description>
         Recent content
         {{ if ne .Title .Site.Title }}
-        {{ with .Title }}
-            in {{.}}
-        {{ end }}
+            {{ with .Title }}in {{ . }}{{ end }}
         {{ end }}
         on {{ .Site.Title }}
     </description>
     <generator>Hugo -- gohugo.io</generator>
       {{ with .Site.LanguageCode }}
-    <language>{{.}}</language>
+    <language>{{ . }}</language>
       {{end}}
       {{ with .Site.Author.email }}
-    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>
+    <managingEditor>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</managingEditor>
       {{end}}
       {{ with .Site.Author.email }}
-    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>
-      {{end}}
+    <webMaster>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</webMaster>
+      {{ end }}
       {{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}
+    <copyright>{{ . }}</copyright>{{ end }}
       {{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "2006-01-02 T 15:04:05 +08:00" | safeHTML }}</lastBuildDate>
       {{ end }}
@@ -59,7 +57,7 @@
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "2006-01-02 T 15:04:05 +08:00" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      {{ with .Site.Author.email }}<author>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
     </item>
