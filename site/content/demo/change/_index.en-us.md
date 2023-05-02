@@ -1,5 +1,5 @@
 ---
-title: "信息修改"
+title: "information modification"
 subtitle: ""
 
 type: demo/change

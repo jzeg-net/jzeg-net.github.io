@@ -1,5 +1,5 @@
 ---
-title: "重置密码"
+title: "reset password"
 subtitle: ""
 
 type: demo/reset

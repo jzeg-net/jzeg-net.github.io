@@ -1,5 +1,5 @@
 ---
-title: "修改邮箱"
+title: "modify email"
 subtitle: ""
 
 type: demo/change/email

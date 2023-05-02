@@ -1,5 +1,5 @@
 ---
-title: "通过邮箱重置密码"
+title: "reset password via email"
 subtitle: ""
 
 type: demo/reset/email

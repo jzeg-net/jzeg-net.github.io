@@ -1,5 +1,5 @@
 ---
-title: "注册"
+title: "register"
 subtitle: ""
 
 type: demo/signup

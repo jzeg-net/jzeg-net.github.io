@@ -1,5 +1,5 @@
 ---
-title: "修改密码"
+title: "change password"
 subtitle: ""
 
 type: demo/change/password

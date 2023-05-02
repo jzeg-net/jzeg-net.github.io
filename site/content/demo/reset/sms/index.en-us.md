@@ -1,8 +1,8 @@
 ---
-title: "通过短信找回密码"
+title: "reset password via sms"
 subtitle: ""
 
-type: demo/find/sms
+type: demo/reset/sms
 group:
 
 tags: []

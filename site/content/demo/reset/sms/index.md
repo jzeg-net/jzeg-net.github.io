@@ -1,6 +1,6 @@
 ---
-title: "Sms"
-subtitle:
+title: "通过短信重置密码"
+subtitle: ""
 
 type: demo/reset/sms
 group:

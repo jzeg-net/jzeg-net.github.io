@@ -1,5 +1,5 @@
 ---
-title: "通过邮箱登录"
+title: "login via email"
 subtitle: ""
 
 type: demo/login/email

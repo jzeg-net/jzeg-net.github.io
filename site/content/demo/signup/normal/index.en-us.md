@@ -1,8 +1,8 @@
 ---
-title: "通过邮箱登录"
+title: "normal registration"
 subtitle: ""
 
-type: demo/login/email
+type: demo/signup/normal
 group:
 
 tags: []

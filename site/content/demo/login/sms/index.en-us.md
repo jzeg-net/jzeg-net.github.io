@@ -1,5 +1,5 @@
 ---
-title: "通过手机号登录"
+title: "login via sms"
 subtitle: ""
 
 type: demo/login/sms

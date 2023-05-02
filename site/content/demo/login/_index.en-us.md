@@ -1,8 +1,8 @@
 ---
-title: "退出"
+title: "log in"
 subtitle: ""
 
-type: demo/logout
+type: demo/login
 group:
 
 tags: []
@@ -10,7 +10,7 @@ categories: []
 
 aliases:
 
-date: 2023-03-27T21:17:57+08:00
+date: 2023-03-27T21:17:59+08:00
 
 ---
 

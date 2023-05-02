@@ -1,6 +1,6 @@
 ---
 title: "Demo"
-subtitle:
+subtitle: ""
 
 type: demo
 group:

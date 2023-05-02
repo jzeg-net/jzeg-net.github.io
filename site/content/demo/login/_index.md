@@ -1,6 +1,6 @@
 ---
-title: "Login"
-subtitle:
+title: "登录"
+subtitle: ""
 
 type: demo/login
 group:

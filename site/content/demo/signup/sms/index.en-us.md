@@ -1,5 +1,5 @@
 ---
-title: "手机号注册"
+title: "register via sms"
 subtitle: ""
 
 type: demo/signup/sms

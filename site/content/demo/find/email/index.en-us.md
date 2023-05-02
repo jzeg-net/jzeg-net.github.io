@@ -1,5 +1,5 @@
 ---
-title: "通过短信找回密码"
+title: "retrieve password via sms"
 subtitle: ""
 
 type: demo/find/email

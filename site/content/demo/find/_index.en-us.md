@@ -1,5 +1,5 @@
 ---
-title: "找回密码"
+title: "retrieve password"
 subtitle: ""
 
 type: demo/find

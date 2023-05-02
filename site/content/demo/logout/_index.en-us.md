@@ -1,5 +1,5 @@
 ---
-title: "退出"
+title: "quit"
 subtitle: ""
 
 type: demo/logout

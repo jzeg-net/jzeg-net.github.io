@@ -1,5 +1,5 @@
 ---
-title: "修改手机号"
+title: "modify mobile number"
 subtitle: ""
 
 type: demo/change/phone

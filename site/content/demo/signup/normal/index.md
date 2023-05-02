@@ -1,6 +1,6 @@
 ---
-title: "Normal"
-subtitle:
+title: "普通注册"
+subtitle: ""
 
 type: demo/signup/normal
 group:
