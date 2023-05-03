@@ -15,6 +15,7 @@
     "theme_light": "Light",
     "theme_dark": "Dark",
     "theme_auto": "Auto",
+    "back_to_top": "TOP",
     "footer_powered_by": "Build by",
     "footer_licensed_under": "Licensed under ",
     "footer_content_updated_time": "Content Updated Time: ",

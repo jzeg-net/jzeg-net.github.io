@@ -22,3 +22,24 @@
 .headroom--unpinned {
     transform: translateY(-100%);
 }
+
+/*浮动工具*/
+#float-tools > a {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+#float-tools > a,
+#float-tools > a > span {
+    display: block;
+    line-height: 2;
+}
+
+#back-to-top > span,
+#back-to-top:hover > span {
+    transition: transform 200ms linear;
+}
+
+#back-to-top:hover > span {
+    transform: translateY(-100%);
+}

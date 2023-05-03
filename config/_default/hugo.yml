@@ -18,6 +18,7 @@ languages:
         timeZone: "Asia/Shanghai"
         title: "杰格网"
         weight: 1
+        hasCJKLanguage: true
         params:
             icon: cn
             Subtitle: "子标题"
@@ -31,6 +32,7 @@ languages:
         timeZone: "America/New_York"
         title: "JieGe"
         weight: 6
+        hasCJKLanguage: false
         params:
             icon: us
             Subtitle: "Subtitle"
@@ -170,7 +172,6 @@ buildFuture: true
 enableEmoji: true
 buildExpired: false
 enableGitInfo: true
-hasCJKLanguage: true
 enableRobotsTXT: true
 printI18nWarnings: true
 cleanDestinationDir: true
