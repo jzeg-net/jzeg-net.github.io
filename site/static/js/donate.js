@@ -6,7 +6,7 @@ const donateTab = () => {
     let navBtnOpt = {
         btnId: ['tab-donate-alipay', 'tab-donate-weixin'],
         btnClass: ['btn btn-outline-primary', 'btn btn-outline-success'],
-        svgClass: ['fa-lg fab fa-alipay', 'fa-lg fab fa-weixin'],
+        svgClass: ['fa-lg bi bi-alipay', 'fa-lg bi bi-wechat'],
         spanText: ['支付宝', '微信'],
         qrcode_dark: ['#0d6efd', '#198754'],
         qrcode_light: ['#ffffff', '#ffffff']

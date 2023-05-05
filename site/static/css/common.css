@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --monospace: "Roboto Mono", sfmono-regular, consolas, liberation mono, menlo, courier, monospace;
 }
@@ -24,6 +28,18 @@
 }
 
 /*浮动工具*/
+#float-tools {
+    transition: transform 200ms linear;
+    transform: translate(-100%, -400%);
+}
+
+#float-tools.show {
+    transform: translate(-30%, -400%);
+}
+#float-tools.hide {
+    transform: translate(-30%, -400%);
+}
+
 #float-tools > a {
     width: 32px !important;
     height: 32px !important;
