@@ -52,13 +52,7 @@ const createSmallCenterText = (text, color = '') => {
     return div
 }
 
-// select your header or whatever element you wish
-let header = document.querySelector("header")
-if (header) {
-    const headroom = new Headroom(header)
-    headroom.init()
-}
-
+// 简易防镜像
 if (top.location.href !== self.location.href) {
     location.href = self.location.href
 }
@@ -81,4 +75,38 @@ if (account) {
     account.addEventListener('click', () => {
         bModal('', createSmallCenterText('账号未开放', 'success'), '', 'sm', true)
     })
+}
+
+// 滚动监听
+let new_scroll_position = 0
+let last_scroll_position
+setTimeout(scrollListener, 500)
+
+function scrollListener() {
+    document.addEventListener('scroll', () => {
+        last_scroll_position = scrollY
+        scrollMainNavbar()
+        scrollFloatTools()
+        new_scroll_position = last_scroll_position
+    })
+}
+
+function scrollFloatTools() {
+    let floatTools = document.querySelector('#float-tools')
+
+    if (new_scroll_position > last_scroll_position) {
+        floatTools.classList.add('hide')
+    } else if (new_scroll_position < last_scroll_position) {
+        floatTools.classList.remove('hide')
+    }
+}
+
+function scrollMainNavbar() {
+    let navbar = document.querySelector('#mainNavbar')
+
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 64) {
+        navbar.classList.add('tY-n100')
+    } else if (new_scroll_position > last_scroll_position) {
+        navbar.classList.remove('tY-n100')
+    }
 }

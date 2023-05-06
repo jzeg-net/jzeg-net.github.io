@@ -247,7 +247,7 @@ module:
             target: static/CNAME
         -   source: node_modules
             target: static/static/vendor
-            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,localforage,lozad,@docsearch,b-components-js,qrcode,xgplayer,danmu.js,headroom.js,fullpage.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
+            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,localforage,lozad,@docsearch,b-components-js,qrcode,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
 
         -   source: site/content
             target: content
