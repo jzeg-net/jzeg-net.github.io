@@ -12,10 +12,6 @@ html::-webkit-scrollbar {
     transition: transform 150ms linear;
 }
 
-.copyright,
-.commit,
-.record,
-.license,
 .fs-min {
     font-size: .6rem;
 }

@@ -1,10 +1,8 @@
 {{ if and (ne .Page.Params.footer "hide") (ne .Page.Params.onlyMain true) }}
 <footer class="mt-3 mt-md-4 py-4 bg-dark-subtle">
     <div class="container py-4">
-        <div class="fs-min">
-            {{- partial "footer/commit" . }}
-            {{- partial "footer/icon" . }}
-        </div>
+        {{- partial "footer/commit" . }}
+        {{- partial "footer/icon" . }}
         <hr class="my-5 my-md-5 text-white-50">
         <div class="d-flex justify-content-between fs-min">
             <div>

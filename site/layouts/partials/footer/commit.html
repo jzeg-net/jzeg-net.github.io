@@ -1,4 +1,4 @@
-<section class="d-flex flex-column justify-content-end align-items-end">
+<section class="d-flex flex-column justify-content-end align-items-end fs-min">
     <span>{{- T "footer_content_updated_time" -}}{{- .Page.Params.Date.Format "2006-01-02 T 15:04:05 +08:00" | default "-" -}}</span>
     {{ if eq hugo.Environment "production" }}
     <span>{{- T "footer_commit_time" -}}{{- .Lastmod.Format "2006-01-02 T 15:04:05 +08:00" | safeHTML -}}</span>
