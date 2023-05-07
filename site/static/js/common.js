@@ -95,13 +95,10 @@ function scrollFloatTools() {
     let floatTools = document.querySelector('#float-tools')
     if (!floatTools) return
 
-    let toolsCollapse = document.querySelector('#tools-collapse')
-    let bsCollapse = bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
-
     if (new_scroll_position > last_scroll_position) {
         floatTools.classList.add('hide')
-        bsCollapse.hide()
-        // toolsCollapse.classList.remove('show')
+        // getToolsCollapse().hide()
+        getToolsCollapse(true).classList.remove('show')
     } else if (new_scroll_position < last_scroll_position) {
         floatTools.classList.remove('hide')
     }
@@ -124,5 +121,17 @@ if (floatTools) {
     let collapseToRight = document.querySelector('#collapse-to-right')
     collapseToRight.addEventListener('click', function () {
         floatTools.classList.add('hide')
+        getToolsCollapse().hide()
+        // getToolsCollapse(true).classList.remove('show')
     })
+}
+
+function getToolsCollapse(getEl = false) {
+    let toolsCollapse = document.querySelector('#tools-collapse')
+
+    if (getEl) {
+        return toolsCollapse
+    }
+
+    return bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
 }
