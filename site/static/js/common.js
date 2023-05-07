@@ -93,9 +93,15 @@ function scrollListener() {
 
 function scrollFloatTools() {
     let floatTools = document.querySelector('#float-tools')
+    if (!floatTools) return
+
+    let toolsCollapse = document.querySelector('#tools-collapse')
+    let bsCollapse = bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
 
     if (new_scroll_position > last_scroll_position) {
         floatTools.classList.add('hide')
+        bsCollapse.hide()
+        // toolsCollapse.classList.remove('show')
     } else if (new_scroll_position < last_scroll_position) {
         floatTools.classList.remove('hide')
     }
@@ -103,6 +109,7 @@ function scrollFloatTools() {
 
 function scrollMainNavbar() {
     let navbar = document.querySelector('#mainNavbar')
+    if (!navbar) return
 
     if (new_scroll_position < last_scroll_position && last_scroll_position > 64) {
         navbar.classList.add('tY-n100')
