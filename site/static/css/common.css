@@ -2,10 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --monospace: "Roboto Mono", sfmono-regular, consolas, liberation mono, menlo, courier, monospace;
-}
-
 html::-webkit-scrollbar {
     --bar-width: 0px;
     width: var(--bar-width);
