@@ -189,41 +189,14 @@ html::-webkit-scrollbar {
     }
 }
 
-@media (min-width: 1200px) {
-    #float-tools {
-        transform: translate(-50%, -90%);
-    }
-
-    #float-tools.hide {
-        transform: translate(100%, -90%);
-    }
+#float-tools a.list-group-item span {
+    transition: all 300ms linear;
 }
 
-
-#float-tools > a {
-    width: 32px !important;
-    height: 32px !important;
+#float-tools a.list-group-item:hover span {
+    color: var(--bd-violet);
 }
 
-#float-tools > a > span {
-    transition: color 300ms linear;
-}
-
-#float-tools > a:hover span {
-    color: var(--bd-violet) !important;
-}
-
-#float-tools > a,
-#float-tools > a > span {
-    display: block;
-    line-height: 2;
-}
-
-#back-to-top > span,
-#back-to-top:hover > span {
-    transition: transform 200ms linear;
-}
-
-#back-to-top:hover > span {
+#back-to-top:hover span {
     transform: translateY(-100%);
 }
