@@ -30,11 +30,11 @@
 
 {{ partial "breadcrumb/index" . }}
 
-{{ block "content" . }}_default/baseof.html{{ end }}
+{{ block "content" . }}{{ end }}
 
 {{ partial "footer" . }}
 
-{{ partial "fixed_float/index" . }}
+{{ partial "fixed_float/tools" . }}
 {{ partial "scripts" . }}
 {{- block "before_the_end_of_the_body" . }}{{ end }}
 </body>
