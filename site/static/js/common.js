@@ -97,8 +97,7 @@ function scrollFloatTools() {
 
     if (new_scroll_position > last_scroll_position) {
         floatTools.classList.add('hide')
-        // getToolsCollapse().hide()
-        getToolsCollapse(true).classList.remove('show')
+        getToolsCollapse().classList.remove('show')
     } else if (new_scroll_position < last_scroll_position) {
         floatTools.classList.remove('hide')
     }
@@ -121,12 +120,11 @@ if (floatTools) {
     let collapseToRight = document.querySelector('#collapse-to-right')
     collapseToRight.addEventListener('click', function () {
         floatTools.classList.add('hide')
-        getToolsCollapse().hide()
-        // getToolsCollapse(true).classList.remove('show')
+        getToolsCollapse().classList.remove('show')
     })
 }
 
-function getToolsCollapse(getEl = false) {
+function getToolsCollapse(getEl = true) {
     let toolsCollapse = document.querySelector('#tools-collapse')
 
     if (getEl) {
