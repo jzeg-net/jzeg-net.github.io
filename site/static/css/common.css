@@ -131,13 +131,74 @@ html::-webkit-scrollbar {
 
 /*浮动工具*/
 #float-tools {
-    transition: transform 200ms linear;
-    transform: translate(-100%, -400%);
+    transition: transform 300ms linear;
+    transform: translate(-50%, -20%);
 }
 
 #float-tools.hide {
-    transform: translate(150%, -400%);
+    transform: translate(100%, -20%);
 }
+
+@media (min-width: 576px) {
+    #float-tools {
+        transform: translate(-50%, -40%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -40%);
+    }
+}
+
+@media (min-width: 768px) {
+    #float-tools {
+        transform: translate(-50%, -50%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -50%);
+    }
+}
+
+@media (min-width: 992px) {
+    #float-tools {
+        transform: translate(-50%, -60%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -60%);
+    }
+}
+
+@media (min-width: 1200px) {
+    #float-tools {
+        transform: translate(-50%, -70%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -70%);
+    }
+}
+
+@media (min-width: 1400px) {
+    #float-tools {
+        transform: translate(-50%, -80%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -80%);
+    }
+}
+
+@media (min-width: 1200px) {
+    #float-tools {
+        transform: translate(-50%, -90%);
+    }
+
+    #float-tools.hide {
+        transform: translate(100%, -90%);
+    }
+}
+
 
 #float-tools > a {
     width: 32px !important;
