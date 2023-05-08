@@ -1,9 +1,12 @@
-<div class="nav nav-pills flex-row text-center" id="accountTab">
+<div class="nav nav-pills text-center" id="accountTab">
     <div class="col-4">
         <a class="nav-link active" href="javascript:" id="tab-login" data-bs-toggle="tab" data-bs-target="#accountPane-login">登录</a>
     </div>
     <div class="col-4">
         <a class="nav-link" href="javascript:" id="tab-signup" data-bs-toggle="tab" data-bs-target="#accountPane-signup">注册</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="javascript:" id="tab-logout" data-bs-toggle="tab" data-bs-target="#accountPane-logout">退出</a>
     </div>
     <div class="col-4">
         <a class="nav-link" href="javascript:" id="tab-find" data-bs-toggle="tab" data-bs-target="#accountPane-find">找回密码</a>
@@ -14,9 +17,6 @@
     <div class="col-4">
         <a class="nav-link" href="javascript:" id="tab-change" data-bs-toggle="tab" data-bs-target="#accountPane-change">修改信息</a>
     </div>
-    <div class="col-4">
-        <a class="nav-link" href="javascript:" id="tab-logout" data-bs-toggle="tab" data-bs-target="#accountPane-logout">退出</a>
-    </div>
 </div>
 <hr class="text-opacity-50">
 <div class="tab-content" id="accountTabContent">
@@ -26,6 +26,9 @@
     <div class="tab-pane fade" id="accountPane-signup" tabindex="0">
         {{ partial "demo/signup/index" . }}
     </div>
+    <div class="tab-pane fade" id="accountPane-logout" tabindex="0">
+        {{ partial "demo/logout/index" . }}
+    </div>
     <div class="tab-pane fade" id="accountPane-find" tabindex="0">
         {{ partial "demo/find/index" . }}
     </div>
@@ -34,8 +37,5 @@
     </div>
     <div class="tab-pane fade" id="accountPane-change" tabindex="0">
         {{ partial "demo/change/index" . }}
-    </div>
-    <div class="tab-pane fade" id="accountPane-logout" tabindex="0">
-        {{ partial "demo/logout/index" . }}
     </div>
 </div>
