@@ -1,11 +1,12 @@
-<div class="mb-3 d-flex justify-content-between align-items-center"><span class="fs-4">邮箱登录</span>
+<div class="mb-3 d-flex justify-content-between align-items-end">
+    <span class="fs-4">邮箱登录</span>
     <a class="link-secondary text-decoration-none small" href="{{ absLangURL "demo/signup/email/" }}" title="没有账号，马上加入">没有账号，马上加入</a>
 </div>
 <form id="login_email">
     <div class="input-group mb-3">
         <div class="form-floating">
             <input type="text" class="form-control sendCaptchaTo" name="account" id="login_email_account" placeholder=" " minlength="6" maxlength="64" required>
-            <label for="login_email_account"><i class="me-1 fa-fw fa fa-mail-bulk text-muted"></i>电子邮箱</label>
+            <label for="login_email_account"><i class="me-1 fa-fw fa fa-mail-bulk text-body-secondary"></i>电子邮箱</label>
         </div>
         <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="login" data-type="email">
             <span class="text-reset">发送验证码</span>
@@ -29,7 +30,7 @@
     <div class="mb-3 d-flex justify-content-between">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="remember" id="login_email_remember">
-            <label class="form-check-label text-muted" for="login_email_remember">7天内免登录</label>
+            <label class="form-check-label text-body-secondary" for="login_email_remember">7天内免登录</label>
         </div>
         <a class="link-secondary text-decoration-none small" href="{{ absLangURL "demo/find/email/" }}" title="忘记密码">忘记密码</a>
     </div>

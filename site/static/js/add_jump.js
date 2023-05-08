@@ -12,7 +12,8 @@ function addJumpPre(range) {
         .forEach(targetLink => {
             if (!targetLink.hasAttribute("href")) return
             if (checkTargetLink(targetLink.href)) return
-            if (excludeDomain(targetLink.host)) return
+            if (allowDomains(targetLink.host)) return
+            if (selfDomain(targetLink.host)) return
 
             targetLink.href = gotoLink + encodeURIComponent(targetLink.href)
         })
@@ -22,8 +23,21 @@ function checkTargetLink(str) {
     return hrefType(str) !== "absolute"
 }
 
-function excludeDomain(domain) {
-    return false
+function allowDomains(domain) {
+    console.log(domain)
+    let allowDomain = [
+        'localhost',
+        'www.github.com',
+        'github.com'
+    ]
+
+    return allowDomain.includes(domain)
+}
+
+function selfDomain(domain) {
+    let selfDomain = self.location.host
+
+    return domain === selfDomain
 }
 
 function hrefType(href) {

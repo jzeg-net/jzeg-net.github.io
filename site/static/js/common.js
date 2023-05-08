@@ -127,9 +127,7 @@ if (floatTools) {
 function getToolsCollapse(getEl = true) {
     let toolsCollapse = document.querySelector('#tools-collapse')
 
-    if (getEl) {
-        return toolsCollapse
-    }
-
-    return bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
+    return getEl
+        ? toolsCollapse
+        : bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
 }
