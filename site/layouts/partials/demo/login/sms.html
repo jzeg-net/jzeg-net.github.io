@@ -36,10 +36,10 @@
             <input class="form-check-input agreement" type="checkbox" name="agreement" id="login_sms_agreement" required>
             <label class="form-check-label text-muted" for="login_sms_agreement">
                 <span class="text-danger">未注册手机号，登录即代表同意</span>
-                <a class="text-decoration-none" href="/account/agreement.html" target="_blank">《会员协议》</a>
+                <a class="text-decoration-none" href="{{ absLangURL "demo/agreement/" }}" target="_blank">《会员协议》</a>
             </label>
         </div>
-        <a class="link-secondary text-decoration-none small" href="find_password.php" title="忘记密码">忘记密码</a>
+        <a class="link-secondary text-decoration-none small" href="{{ absLangURL "demo/find/sms/" }}" title="忘记密码">忘记密码</a>
     </div>
     <input type="hidden" name="type" value="sms">
     <div class="d-grid gap-2 col-8 mx-auto">
