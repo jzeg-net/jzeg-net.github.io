@@ -24,7 +24,6 @@ function checkTargetLink(str) {
 }
 
 function allowDomains(domain) {
-    console.log(domain)
     let allowDomain = [
         'localhost',
         'www.github.com',
