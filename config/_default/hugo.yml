@@ -173,6 +173,8 @@ enableEmoji: true
 buildExpired: false
 enableGitInfo: true
 enableRobotsTXT: true
+printMemoryUsage: true
+printPathWarnings: true
 printI18nWarnings: true
 cleanDestinationDir: true
 printUnusedTemplates: true
