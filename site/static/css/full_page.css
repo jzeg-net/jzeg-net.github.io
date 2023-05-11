@@ -32,7 +32,7 @@
 }
 
 .fullPage > section,
-.slidesContainer > .slide {
+.fullPage > section > .slidesContainer > .slide {
     display: flex;
     flex-flow: column;
     align-items: center;
