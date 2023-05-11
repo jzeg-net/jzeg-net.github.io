@@ -31,6 +31,14 @@
     height: 100vh;
 }
 
+.fullPage > section,
+.slidesContainer > .slide {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .scroll-snapping-x-mandatory {
     scroll-snap-type: x mandatory;
 }
