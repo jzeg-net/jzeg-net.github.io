@@ -4,30 +4,30 @@
 </div>
 <form id="login_sms">
     <div class="input-group mb-3">
-        <button class="input-group-text idd_code" type="button">
+        <button class="input-group-text border-0 border-bottom rounded-0 bg-transparent idd_code" type="button">
             <input type="hidden" name="idd_code" value="+86" required>
             <span>+86</span>
         </button>
         <div class="form-floating">
-            <input type="text" class="form-control sendCaptchaTo" name="account" id="login_sms_account" placeholder=" " minlength="11" maxlength="11" required>
+            <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none sendCaptchaTo" name="account" id="login_sms_account" placeholder=" " minlength="11" maxlength="11" required>
             <label for="login_sms_account"><i class="me-1 fa-fw fa fa-mobile-alt text-body-secondary"></i>手机号码</label>
         </div>
-        <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="login" data-type="sms">
+        <a class="input-group-text border-0 border-bottom rounded-0 bg-transparent text-decoration-none sendCaptcha" href="#" data-action="login" data-type="sms">
             <span class="text-reset">发送验证码</span>
         </a>
     </div>
     <div class="input-group mb-3">
         <div class="form-floating">
-            <input type="text" class="form-control" name="account_captcha" id="login_sms_captcha" placeholder=" " minlength="5" maxlength="6" required>
+            <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" name="account_captcha" id="login_sms_captcha" placeholder=" " minlength="5" maxlength="6" required>
             <label for="login_sms_captcha">短信验证码</label>
         </div>
     </div>
     <div class="input-group mb-3">
-        <a class="p-0 input-group-text" href="javascript:" title="点击后刷新">
+        <a class="p-0 input-group-text border-0 border-bottom rounded-0 bg-transparent" href="javascript:" title="点击后刷新">
             <img class="lazyCaptcha" width="134" height="56" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/api/captcha.php?a=login&v=" alt="验证码">
         </a>
         <div class="form-floating">
-            <input type="text" class="form-control" name="captcha" id="sms_login_captcha" placeholder=" " minlength="4" maxlength="5" required>
+            <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" name="captcha" id="sms_login_captcha" placeholder=" " minlength="4" maxlength="5" required>
             <label for="sms_login_captcha">验证码</label>
         </div>
     </div>
