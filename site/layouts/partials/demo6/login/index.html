@@ -1,0 +1,17 @@
+<div class="nav nav-pills text-center" id="loginTab">
+    <a class="col nav-link active" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-login-normal">用户名登录</a>
+    <a class="col nav-link" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-login-sms">手机号登录</a>
+    <a class="col nav-link" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-login-email">邮箱登录</a>
+</div>
+<hr class="text-opacity-50">
+<div class="tab-content" id="loginTabContent">
+    <div class="tab-pane fade show active" id="pane-login-normal" tabindex="0">
+        {{ partial "demo/login/normal" . }}
+    </div>
+    <div class="tab-pane fade" id="pane-login-sms" tabindex="0">
+        {{ partial "demo/login/sms" . }}
+    </div>
+    <div class="tab-pane fade" id="pane-login-email" tabindex="0">
+        {{ partial "demo/login/email" . }}
+    </div>
+</div>

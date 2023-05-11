@@ -1,0 +1,13 @@
+<div class="nav nav-pills text-center" id="changeTab">
+    <a class="col nav-link active" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-reset_password-sms">通过手机号</a>
+    <a class="col nav-link" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-reset_password-email">通过邮箱</a>
+</div>
+<hr class="text-opacity-50">
+<div class="tab-content" id="changeTabContent">
+    <div class="tab-pane fade show active" id="pane-reset_password-sms" tabindex="0">
+        {{ partial "demo/reset/sms" . }}
+    </div>
+    <div class="tab-pane fade" id="pane-reset_password-email" tabindex="0">
+        {{ partial "demo/reset/email" . }}
+    </div>
+</div>

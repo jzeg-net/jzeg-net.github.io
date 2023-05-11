@@ -1,0 +1,17 @@
+<div class="nav nav-pills text-center" id="changeTab">
+    <a class="col nav-link active" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-change_password">修改密码</a>
+    <a class="col nav-link" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-change_email">修改邮箱</a>
+    <a class="col nav-link" href="javascript:" data-bs-toggle="tab" data-bs-target="#pane-change_phone">修改手机号</a>
+</div>
+<hr class="text-opacity-50">
+<div class="tab-content" id="changeTabContent">
+    <div class="tab-pane fade show active" id="pane-change_password" tabindex="0">
+        {{ partial "demo/change/password" . }}
+    </div>
+    <div class="tab-pane fade" id="pane-change_email" tabindex="0">
+        {{ partial "demo/change/email" . }}
+    </div>
+    <div class="tab-pane fade" id="pane-change_phone" tabindex="0">
+        {{ partial "demo/change/phone" . }}
+    </div>
+</div>

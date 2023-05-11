@@ -1,0 +1,57 @@
+<div class="mb-3 d-flex justify-content-between align-items-end">
+    <span class="fs-4">修改手机号</span>
+    <a class="link-secondary text-decoration-none" href="{{ absLangURL "demo/login/email/" }}" title="重置密码">重置密码</a>
+</div>
+<form id="change_phone">
+    <div class="input-group mb-3">
+        <button class="input-group-text idd_code" type="button">
+            <input type="hidden" name="idd_code" value="+86" required>
+            <span>+86</span>
+        </button>
+        <div class="form-floating">
+            <input type="text" class="form-control sendCaptchaTo" name="current" id="current_phone" placeholder=" " minlength="11" maxlength="11" required>
+            <label for="current_phone"><i class="me-1 fa-fw fa fa-mobile-alt text-body-secondary"></i>当前手机号</label>
+        </div>
+        <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="change" data-type="sms">
+            <span class="text-reset">发送验证码</span>
+        </a>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="new_captcha" id="change_phone_sms_captcha1" placeholder=" " minlength="5" maxlength="6" required>
+            <label for="change_phone_sms_captcha1">当前手机号验证码</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <button class="input-group-text idd_code" type="button">
+            <input type="hidden" name="idd_code" value="+86" required>
+            <span>+86</span>
+        </button>
+        <div class="form-floating">
+            <input type="text" class="form-control sendCaptchaTo" name="new" id="new_phone" placeholder=" " minlength="11" maxlength="11" required>
+            <label for="new_phone"><i class="me-1 fa-fw fa fa-mobile-alt text-body-secondary"></i>新手机号</label>
+        </div>
+        <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="change" data-type="sms">
+            <span class="text-reset">发送验证码</span>
+        </a>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="new_captcha" id="change_phone_sms_captcha" placeholder=" " minlength="5" maxlength="6" required>
+            <label for="change_phone_sms_captcha">新手机号验证码</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <a class="p-0 input-group-text" href="javascript:" title="点击后刷新">
+            <img class="lazyCaptcha" width="134" height="56" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/api/captcha.php?a=change_phone&v=" alt="验证码">
+        </a>
+        <div class="form-floating">
+            <input type="text" class="form-control" name="captcha" id="change_phone_captcha" placeholder=" " minlength="4" maxlength="5" required>
+            <label for="change_phone_captcha">验证码</label>
+        </div>
+    </div>
+    <input type="hidden" name="type" value="sms">
+    <div class="d-grid gap-2 col-8 mx-auto">
+        <button class="btn btn-primary" type="submit">更新手机号</button>
+    </div>
+</form>
