@@ -1,10 +1,19 @@
-<div class="list-group text-center position-fixed end-0 bottom-0 hide" id="float-tools">
-    <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="javascript:" title="捐赠本站" id="tool-qrcode" data-donate="qrcode">
-        <span><i class="fa-lg bi-qr-code"></i></span>
-    </a>
-    <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" title="{{ T "collapse_tools" }}" id="tools" data-bs-toggle="collapse" href="#tools-collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <span><i class="fa-lg bi-sliders"></i></span>
-    </a>
+<div class="text-center position-fixed end-0 bottom-0 hide" id="float-tools">
+    <div class="list-group">
+        <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="javascript:" title="捐赠本站" id="tool-qrcode" data-donate="qrcode">
+            <span><i class="fa-lg bi-qr-code"></i></span>
+        </a>
+        <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" title="{{ T "collapse_tools" }}" id="tools" data-bs-toggle="collapse" href="#tools-collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <span><i class="fa-lg bi-sliders"></i></span>
+        </a>
+        <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="javascript:" title="{{ T "collapse_to_right" }}" id="collapse-to-right">
+            <span><i class="fa-lg bi-arrow-bar-right"></i></span>
+        </a>
+        <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="#top" title="{{ T "back_to_top" }}" id="back-to-top">
+            <span><i class="fa-lg bi-arrow-up"></i></span>
+            {{/*        <span class="small">{{ T "back_to_top" }}</span>*/}}
+        </a>
+    </div>
     <div class="position-fixed bottom-50 end-100 h-25 collapse collapse-horizontal" id="tools-collapse">
         <ul class="list-group list-group-horizontal align-items-center h-100">
             <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="javascript:">
@@ -27,11 +36,4 @@
             </a>
         </ul>
     </div>
-    <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="javascript:" title="{{ T "collapse_to_right" }}" id="collapse-to-right">
-        <span><i class="fa-lg bi-arrow-bar-right"></i></span>
-    </a>
-    <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="#top" title="{{ T "back_to_top" }}" id="back-to-top">
-        <span><i class="fa-lg bi-arrow-up"></i></span>
-{{/*        <span class="small">{{ T "back_to_top" }}</span>*/}}
-    </a>
 </div>
