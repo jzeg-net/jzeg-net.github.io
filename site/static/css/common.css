@@ -189,10 +189,12 @@ html::-webkit-scrollbar {
     }
 }
 
+#float-tools .list-group-item span,
 #float-tools a.list-group-item span {
     transition: all 300ms linear;
 }
 
+#float-tools .list-group-item:hover span,
 #float-tools a.list-group-item:hover span {
     color: var(--bd-violet);
 }

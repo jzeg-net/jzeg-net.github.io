@@ -57,7 +57,7 @@ if (top.location.href !== self.location.href) {
     location.href = self.location.href
 }
 
-let donates = document.querySelectorAll('a[data-donate]')
+let donates = document.querySelectorAll('[data-donate]')
 donates.forEach(target => {
     target.addEventListener('click', event => {
         event.preventDefault()
@@ -97,7 +97,7 @@ function scrollFloatTools() {
 
     if (new_scroll_position > last_scroll_position) {
         floatTools.classList.add('hide')
-        getToolsCollapse().classList.remove('show')
+        // getToolsCollapse().classList.remove('show')
     } else if (new_scroll_position < last_scroll_position) {
         floatTools.classList.remove('hide')
     }
@@ -120,7 +120,7 @@ if (floatTools) {
     let collapseToRight = document.querySelector('#collapse-to-right')
     collapseToRight.addEventListener('click', function () {
         floatTools.classList.add('hide')
-        getToolsCollapse().classList.remove('show')
+        // getToolsCollapse().classList.remove('show')
     })
 }
 
