@@ -1,10 +1,10 @@
 <ul class="navbar-nav flex-row flex-wrap">
     <li class="nav-item col-6 col-lg-auto dropdown">
-        {{ partial "navbar/common/theme" . }}
+        {{ partial "navbar/v1/theme" . }}
     </li>
     {{- if .Site.IsMultiLingual -}}
     <li class="nav-item col-6 col-lg-auto dropdown">
-        {{ partial "navbar/common/language" . }}
+        {{ partial "navbar/v1/language" . }}
     </li>
     {{ end }}
 </ul>
