@@ -14,12 +14,11 @@
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                         <ul class="list-group">
-                            <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="/zh-cn/" data-language-value="zh-cn">
-                                <i class="bi fi fi-cn"></i>
-                            </a>
-                            <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="/en-us/" data-language-value="en-us">
-                                <i class="bi fi fi-us"></i>
-                            </a>
+                            {{- range .AllTranslations -}}
+                                <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                    <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
+                                </a>
+                            {{ end }}
                         </ul>
                     </div>
                 </div>
@@ -29,15 +28,11 @@
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" type="button" data-bs-theme-value="light" aria-pressed="false">
-                                <span><svg class="bi"><title>明亮</title><use href="#sun-fill"></use></svg></span>
-                            </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" type="button" data-bs-theme-value="dark" aria-pressed="false">
-                                <span><svg class="bi"><title>黑暗</title><use href="#moon-stars-fill"></use></svg></span>
-                            </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" type="button" data-bs-theme-value="auto" aria-pressed="false">
-                                <span><svg class="bi"><title>自动</title><use href="#circle-half"></use></svg></span>
-                            </button>
+                            {{ range .Site.Menus.theme }}
+                                <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                    <span><svg class="bi"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg></span>
+                                </button>
+                            {{ end }}
                         </div>
                     </div>
                 </div>
