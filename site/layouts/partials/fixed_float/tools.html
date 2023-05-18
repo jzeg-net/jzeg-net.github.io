@@ -1,21 +1,21 @@
 <div class="position-fixed end-0 bottom-0 hide" id="float-tools">
     <div class="list-group dropstart">
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" data-donate="qrcode">
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-donate="qrcode">
             <i class="bi bi-qr-code"></i>
         </button>
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
             <i class="bi bi-sliders"></i>
         </button>
         <div class="p-0 dropdown-menu border-0" style="--bs-dropdown-min-width: 0;" id="tools-collapse">
             <div class="list-group list-group-horizontal gap-1">
                 <div>
-                    <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" data-bs-toggle="collapse" aria-expanded="false">
+                    <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false">
                         <span><svg class="bi"><title>翻译</title><use href="#translate"></use></svg></span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                         <ul class="list-group">
                             {{- range .AllTranslations -}}
-                                <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                <a class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
                                     <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
                                 </a>
                             {{ end }}
@@ -23,13 +23,13 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" data-bs-toggle="collapse" aria-expanded="false">
+                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false">
                         <span><svg class="bi"><title>主题</title><use href="#circle-half"></use></svg></span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
                             {{ range .Site.Menus.theme }}
-                                <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
                                     <span><svg class="bi"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg></span>
                                 </button>
                             {{ end }}
@@ -38,9 +38,9 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent" id="collapse-to-right">
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" id="collapse-to-right">
             <i class="bi bi-arrow-bar-right"></i>
         </button>
-        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action bg-transparent"><i class="bi bi-arrow-up"></i></a>
+        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action"><i class="bi bi-arrow-up"></i></a>
     </div>
 </div>
