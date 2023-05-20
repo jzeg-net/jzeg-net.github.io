@@ -186,6 +186,12 @@ enableInlineShortcodes: true
 defaultContentLanguageInSubDir: true
 enableMissingTranslationPlaceholders: true
 
+minify:
+    minifyOutput: true
+    tdewolff:
+        html:
+            keepQuotes: true
+
 FrontMatter:
     date:
         - date
