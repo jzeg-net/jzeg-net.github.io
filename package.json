@@ -63,7 +63,7 @@
     "bugs": {
         "url": "https://github.com/jzeg-net/jzeg-net.github.io/issues"
     },
-    "homepage": "https://github.com/jzeg-net/jzeg-net.github.io#readme",
+    "homepage": "https://jzeg-net.github.io/",
     "hugo-bin": {
         "buildTags": "extended",
         "downloadRepo": ""

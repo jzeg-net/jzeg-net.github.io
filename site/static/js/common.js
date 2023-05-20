@@ -131,3 +131,10 @@ function getToolsCollapse(getEl = true) {
         ? toolsCollapse
         : bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
 }
+
+document.querySelectorAll('time').forEach(currentEl => {
+    let locale = document.querySelector('html').lang.replaceAll('-','_')
+
+    let realTime = dayjs(currentEl.getAttribute('datetime')).format()
+    currentEl.innerHTML = timeago.format(realTime, locale)
+})

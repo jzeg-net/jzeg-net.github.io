@@ -43,8 +43,30 @@ menu:
         -   identifier: menu_home
             pageRef: /
             weight: 1
+        -   identifier: menu_posts
+            pageRef: /posts
+            weight: 2
         -   identifier: menu_demo
             pageRef: /demo
+            weight: 4
+        -   identifier: menu_more
+            pageRef:
+            weight: 7
+        -   identifier: menu_contact
+            pageRef: /contact
+            parent: menu_more
+            weight: 1
+        -   identifier: menu_about
+            pageRef: /about
+            parent: menu_more
+            weight: 2
+        -   identifier: menu_ad
+            pageRef: /ad
+            parent: menu_more
+            weight: 3
+        -   identifier: menu_chatgpt
+            pageRef: /chatgpt
+            parent: menu_more
             weight: 4
         -   identifier: demo_login
             pageRef: /demo/login
@@ -70,25 +92,6 @@ menu:
             pageRef: /demo/logout
             parent: menu_demo
             weight: 6
-        -   identifier: menu_more
-            pageRef:
-            weight: 7
-        -   identifier: menu_contact
-            pageRef: /contact
-            parent: menu_more
-            weight: 1
-        -   identifier: menu_about
-            pageRef: /about
-            parent: menu_more
-            weight: 2
-        -   identifier: menu_ad
-            pageRef: /ad
-            parent: menu_more
-            weight: 3
-        -   identifier: menu_chatgpt
-            pageRef: /chatgpt
-            parent: menu_more
-            weight: 4
         -   identifier: demo_login_normal
             pageRef: /demo/login/normal
             parent: demo_login
@@ -249,7 +252,7 @@ module:
             target: static/CNAME
         -   source: node_modules
             target: static/static/vendor
-            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,localforage,lozad,@docsearch,b-components-js,qrcode,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
+            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,qrcode,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
 
         -   source: site/content
             target: content

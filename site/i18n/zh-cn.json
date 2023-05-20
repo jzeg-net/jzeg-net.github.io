@@ -1,5 +1,6 @@
 {
     "menu_home": "首页",
+    "menu_posts": "文章",
     "menu_demo": "演示",
     "menu_hugo_cli_doc": "雨果命令行文档",
     "menu_contact": "联系",
@@ -11,6 +12,10 @@
     "menu_more": "更多",
     "menu_btn_toggle": "切换下拉",
     "menu_": "",
+    "pagination_start": "起始页",
+    "pagination_end": "最后一页",
+    "pagination_previous": "上一页",
+    "pagination_next": "下一页",
     "theme_toggle": "主题",
     "theme_light": "明亮",
     "theme_dark": "黑暗",

@@ -10,7 +10,5 @@ categories: []
 
 aliases:
 
-date: {{ .Date }}
-
+date: "{{ .Date }}"
 ---
-

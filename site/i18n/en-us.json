@@ -1,5 +1,6 @@
 {
     "menu_home": "Home",
+    "menu_posts": "Posts",
     "menu_demo": "Demo",
     "menu_hugo_cli_doc": "Hugo CLI Doc",
     "menu_contact": "Contact",
@@ -11,6 +12,10 @@
     "menu_more": "More",
     "menu_btn_toggle": "Toggle Dropdown",
     "menu_": "",
+    "pagination_start": "Start Page",
+    "pagination_end": "Last Page",
+    "pagination_previous": "Previous",
+    "pagination_next": "Next",
     "theme_toggle": "Theme",
     "theme_light": "Light",
     "theme_dark": "Dark",
