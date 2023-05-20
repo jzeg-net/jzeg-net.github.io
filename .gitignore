@@ -1,24 +1,25 @@
-/.cache/
-/node_modules/
-/public/
-/docs/
-/site/content/commands/
-
-## Hugo
-/resources/
-/.hugo_build.lock
-
-## OS Files
-# Windows
+# OS Files
+## Windows
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
-# OSX
+## OSX
 .DS_Store
 
-# Linux
+## Linux
 .directory
 
+# JetBrains IDE
 /.idea/
+
+# Hugo
+/resources/
+/.hugo_build.lock
+
+# Generate
+/node_modules/
+/public/
+/docs/
+/site/content/commands/

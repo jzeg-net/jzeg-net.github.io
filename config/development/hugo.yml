@@ -1,6 +1,6 @@
 baseURL: "http://jzeg-net.test.com/"
 
-logFile: "log/hugo_log.development.log"
+logFile: ".log/hugo_log.development.log"
 
 publishDir: "public"
 

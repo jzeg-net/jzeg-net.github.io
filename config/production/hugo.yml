@@ -1,6 +1,6 @@
 baseURL: "https://jzeg-net.github.io/"
 
-logFile: "log/hugo_log.production.log"
+logFile: ".log/hugo_log.production.log"
 
 publishDir: "docs"
 
