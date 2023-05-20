@@ -3,7 +3,7 @@ baseURL: "http://localhost/"
 metaDataFormat: "yaml"
 disableKinds: [ "taxonomy", "term" ]
 
-logFile: "hugo_log/hugo_log.default.log"
+logFile: "log/hugo_log.default.log"
 
 publishDir: "public"
 
