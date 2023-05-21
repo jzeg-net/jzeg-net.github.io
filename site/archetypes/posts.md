@@ -1,8 +1,11 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
+
 date : "{{ .Date }}"
+publishDate : "{{ .Date }}"
 lastmod : "{{ .Date }}"
+expiryDate : ""
 
 description : ""
 images: []

@@ -1,7 +1,7 @@
 {{ define "content" }}
 <main class="container-xxl overflow-hidden" id="content">
     <div class="d-flex flex-column flex-md-row column-gap-3">
-        <div class="col-12 col-md-7 flex-md-grow-1" id="posts-container">{{ partial "posts/post-items" . }}</div>
+        <div class="col-12 col-md-7 flex-md-grow-1" id="posts-list">{{ partial "posts/posts-list" . }}</div>
         <div class="col-12 col-md-4" id="sidebar">{{ partial "posts/sidebar/index" . }}</div>
     </div>
 </main>
