@@ -1,17 +1,27 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-draft : false
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
+subtitle: ""
 date : "{{ .Date }}"
+lastmod : "{{ .Date }}"
 
-summary: ""
 description : ""
-slug : ""
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+featuredImageAlt: ""
 
 authors : []
+authorLink: ""
+
+comment:
+    enable: true
 
 tags : []
 categories : []
 
+draft : false
+slug : ""
 externalLink : ""
 series : []
 ---

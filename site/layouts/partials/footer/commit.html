@@ -1,9 +1,9 @@
 <section class="d-flex flex-column justify-content-end align-items-end fs-min">
-    <span>{{- T "footer_content_updated_time" -}}{{- .Page.Params.Date.Format "2006-01-02 T 15:04:05 +08:00" | default "-" -}}</span>
+    <span>{{- T "footer_content_updated_time" -}}{{- .Page.Params.Date.Format "2006-01-02T15:04:05+08:00" | default "-" -}}</span>
     {{ if eq hugo.Environment "production" }}
-    <span>{{- T "footer_commit_time" -}}{{- .Lastmod.Format "2006-01-02 T 15:04:05 +08:00" | safeHTML -}}</span>
+    <span>{{- T "footer_commit_time" -}}{{- .Lastmod.Format "2006-01-02T15:04:05+08:00" | safeHTML -}}</span>
     {{ else if eq hugo.Environment "development" }}
-    <span>{{- T "footer_page_build_time" -}}{{- .Lastmod.Format "2006-01-02 T 15:04:05 +08:00" | safeHTML -}}</span>
+    <span>{{- T "footer_page_build_time" -}}{{- .Lastmod.Format "2006-01-02T15:04:05+08:00" | safeHTML -}}</span>
     {{ end }}
     <a class="btn btn-sm btn-bd-light rounded-2 fs-min"
        href="{{- .Site.Params.Repo.git -}}/{{ .Site.Params.Repo.AccessType }}/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
