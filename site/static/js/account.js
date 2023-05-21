@@ -792,8 +792,4 @@ function btnDisabledStatus(btnElement) {
 }
 
 // 懒加载验证码
-const lazyLoad = (selector = '') => {
-    const observer = lozad(selector)
-    observer.observe()
-}
 lazyLoad('.lazyCaptcha')

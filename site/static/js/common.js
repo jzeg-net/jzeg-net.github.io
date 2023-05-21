@@ -52,6 +52,14 @@ const createSmallCenterText = (text, color = '') => {
     return div
 }
 
+// 懒加载
+const lazyLoad = (selector = '') => {
+    const observer = lozad(selector)
+    observer.observe()
+}
+// 懒加载文章特色图片
+lazyLoad('.lazy_featuredImagePreview')
+
 // 简易防镜像
 if (top.location.href !== self.location.href) {
     location.href = self.location.href
