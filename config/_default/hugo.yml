@@ -186,6 +186,9 @@ enableInlineShortcodes: true
 defaultContentLanguageInSubDir: true
 enableMissingTranslationPlaceholders: true
 
+paginate: 10
+paginatepath: page
+
 #minify:
 #    minifyOutput: true
 #    tdewolff:
