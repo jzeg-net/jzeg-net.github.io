@@ -1,6 +1,6 @@
 <button class="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center dropdown-toggle" type="button"
         aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" id="languageSwitcher">
-    <svg class="bi my-1"><title>{{ T "menu_switch_language" }}</title><use href="#translate"></use></svg>
+    <svg class="bi my-1"><title>{{ T "menu_switch_language" }}</title><use href="#bi-translate"></use></svg>
     <span class="d-lg-none ms-2" id="languageSwitcher-text">{{ T "menu_switch_language" }}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageSwitcher-text">
@@ -9,7 +9,7 @@
             <a class="dropdown-item d-flex align-items-center" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
                 <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.icon }}"></i>
                 {{- .Language.LanguageName -}}
-                <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                <svg class="bi ms-auto d-none"><use href="#bi-check2"></use></svg>
             </a>
         </li>
     {{ end }}

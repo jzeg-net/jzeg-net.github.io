@@ -152,17 +152,17 @@ menu:
         -   identifier: theme_light
             weight: 1
             params:
-                svg: "sun-fill"
+                svg: "bi-sun-fill"
                 theme_value: "light"
         -   identifier: theme_dark
             weight: 2
             params:
-                svg: "moon-stars-fill"
+                svg: "bi-moon-stars-fill"
                 theme_value: "dark"
         -   identifier: theme_auto
             weight: 3
             params:
-                svg: "circle-half"
+                svg: "bi-circle-half"
                 theme_value: "auto"
 
 #watch: true

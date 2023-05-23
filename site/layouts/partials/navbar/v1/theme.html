@@ -1,6 +1,6 @@
 <button class="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center dropdown-toggle" type="button"
         aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" id="themeSwitcher">
-    <svg class="bi my-1 theme-icon-active"><title>{{- T "theme_toggle" -}}</title><use href="#circle-half"></use></svg>
+    <svg class="bi my-1 theme-icon-active"><title>{{- T "theme_toggle" -}}</title><use href="#bi-circle-half"></use></svg>
     <span class="d-lg-none ms-2" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeSwitcher-text">
@@ -9,7 +9,7 @@
             <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="{{ .Params.theme_value }}">
                 <svg class="bi me-2 opacity-50"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg>
                 {{ or (T .Identifier) .Name | safeHTML }}
-                <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                <svg class="bi ms-auto d-none"><use href="#bi-check2"></use></svg>
             </button>
         </li>
     {{ end }}
