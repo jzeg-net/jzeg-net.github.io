@@ -3,7 +3,3 @@
 # Allow crawling of all content
 User-agent: *
 Disallow: /
-
-{{ with .Site -}}
-Sitemap: {{ strings.Replace .SitemapAbsURL "zh-cn/" "" }}
-{{ end -}}
