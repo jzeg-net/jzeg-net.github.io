@@ -69,7 +69,7 @@
     "homepage": "https://jzeg-net.github.io/",
     "hugo-bin": {
         "buildTags": "extended",
-        "downloadRepo": "https://hub.gitmirror.com/https://github.com/"
+        "downloadRepo": ""
     },
     "dependencies": {
         "@docsearch/js": "^3.3.5",
