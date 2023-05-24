@@ -144,5 +144,6 @@ document.querySelectorAll('time').forEach(currentEl => {
     let locale = document.querySelector('html').lang.replaceAll('-','_')
 
     let realTime = dayjs(currentEl.getAttribute('datetime')).format()
+    currentEl.title = realTime
     currentEl.innerHTML = timeago.format(realTime, locale)
 })
