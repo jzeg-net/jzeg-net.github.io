@@ -26,6 +26,8 @@
     "icon_text_views": "Views",
     "icon_text_pin": "Pin",
     "icon_text_pin_angle": "Unpin",
+    "icon_text_clipboard": "Copy The Header Information To The Clipboard",
+    "icon_text_link": "Copy The Link Address To The Clipboard",
     "back_to_top": "TOP",
     "collapse_to_right": "Collapse",
     "collapse_tools": "Tools",

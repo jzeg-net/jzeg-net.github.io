@@ -14,6 +14,10 @@ featuredImage: ""
 featuredImagePreview: ""
 featuredImageAlt: ""
 
+featuredSvg: ""
+featuredSvgPreview: ""
+featuredSvgTitle: ""
+
 authors : []
 authorLink: ""
 

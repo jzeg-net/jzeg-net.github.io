@@ -26,6 +26,8 @@
     "icon_text_views": "浏览",
     "icon_text_pin": "固定",
     "icon_text_pin_angle": "取消固定",
+    "icon_text_clipboard": "复制标题信息到剪贴板",
+    "icon_text_link": "复制链接地址到剪贴板",
     "back_to_top": "顶部",
     "collapse_to_right": "收起",
     "collapse_tools": "工具",
