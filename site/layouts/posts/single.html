@@ -1,47 +1,61 @@
 {{ define "content" }}
-    <main class="container-xxl overflow-hidden" id="content">
-        <div class="d-flex flex-column flex-md-row column-gap-3">
-            <div class="col-12 col-md-7 flex-md-grow-1" id="posts-container">
-                <section id="main">
-                    <h1 id="title">{{ .Title }}</h1>
-                    <div>
-                        <article id="content">
-                            {{ .Content }}
-                        </article>
+<main class="container-xxl overflow-hidden" id="main">
+    <div class="d-flex flex-column flex-md-row column-gap-3">
+        <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
+            <div class="container py-2 border rounded shadow-sm" id="tableOfContents-container">
+                <div class="d-flex justify-content-between">
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">TableOfContents</button>
+                        <div class="dropdown-menu">{{ .TableOfContents }}</div>
                     </div>
-                </section>
-                <aside id="meta">
-                    <div>
-                        <section>
-                            <h4 id="date"> {{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }} </h4>
-                            <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-                        </section>
-                        {{ with .GetTerms "topics" }}
-                            <ul id="topics">
-                                {{ range . }}
-                                    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                                {{ end }}
-                            </ul>
-                        {{ end }}
-                        {{ with .GetTerms "tags" }}
-                            <ul id="tags">
-                                {{ range . }}
-                                    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                                {{ end }}
-                            </ul>
-                        {{ end }}
-                    </div>
-                    <div>
-                        {{ with .PrevInSection }}
-                            <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
-                        {{ end }}
-                        {{ with .NextInSection }}
-                            <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
-                        {{ end }}
-                    </div>
-                </aside>
+                    <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
+                        <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
+                        <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
+                    </button>
+                </div>
             </div>
-            <div class="col-12 col-md-4" id="sidebar">{{ partial "posts/sidebar/index" . }}</div>
+            <section>
+                <h1 id="title">{{ .Title }}</h1>
+                <div>
+                    <article id="content">
+                        {{ .Content }}
+                    </article>
+                </div>
+            </section>
+            <aside id="meta">
+                <div>
+                    <section>
+                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }}" id="date"></time>
+                        <h5 id="wordcount"> {{ .WordCount }} Words </h5>
+                    </section>
+                    {{ with .GetTerms "topics" }}
+                        <ul id="topics">
+                            {{ range . }}
+                                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                    {{ with .GetTerms "tags" }}
+                        <ul id="tags">
+                            {{ range . }}
+                                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </div>
+                <div>
+                    {{ with .PrevInSection }}
+                        <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
+                    {{ end }}
+                    {{ with .NextInSection }}
+                        <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
+                    {{ end }}
+                </div>
+            </aside>
         </div>
-    </main>
+        <div class="col-12 col-md-4 col-lg-3" id="sidebar">
+            {{ partial "posts/sidebar/index" . }}
+        </div>
+    </div>
+</main>
 {{ end }}

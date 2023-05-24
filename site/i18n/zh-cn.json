@@ -24,6 +24,8 @@
     "icon_text_collections": "收藏",
     "icon_text_comments": "评论",
     "icon_text_views": "浏览",
+    "icon_text_pin": "固定",
+    "icon_text_pin_angle": "取消固定",
     "back_to_top": "顶部",
     "collapse_to_right": "收起",
     "collapse_tools": "工具",

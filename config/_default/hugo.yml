@@ -217,7 +217,7 @@ markup:
             unsafe: true
     tableOfContents:
         startLevel: 2
-        endLevel: 4
+        endLevel: 5
 
 security:
     enableInlineShortcodes: false
@@ -248,8 +248,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.112.1"
-        min: "0.112.1"
+        max: "0.112.3"
+        min: "0.112.3"
     mounts:
         -   source: site/archetypes
             target: archetypes
