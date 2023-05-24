@@ -19,9 +19,11 @@
 
 {{- if in $validFormats $format }}
   {{- if gt $page.Paginator.TotalPages 1 }}
-    <ul class="pagination pagination-{{ $format }}">
+    <nav class="mt-3 mt-md-4 mt-lg-5" aria-label="Page Navigation">
+    <ul class="pagination justify-content-center pagination-{{ $format }}">
       {{- partial (printf "partials/inline/pagination/%s" $format) $page }}
     </ul>
+    </nav>
   {{- end }}
 {{- else }}
   {{- errorf $msg2 (delimit $validFormats ", ") }}

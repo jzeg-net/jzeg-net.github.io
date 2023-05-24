@@ -186,7 +186,7 @@ enableInlineShortcodes: true
 defaultContentLanguageInSubDir: true
 enableMissingTranslationPlaceholders: true
 
-paginate: 10
+paginate: 2
 paginatepath: page
 
 #minify:
@@ -248,8 +248,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.112.0"
-        min: "0.112.0"
+        max: "0.112.1"
+        min: "0.112.1"
     mounts:
         -   source: site/archetypes
             target: archetypes
