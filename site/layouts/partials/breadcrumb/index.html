@@ -1,5 +1,3 @@
 {{ if (eq .IsHome false) }}
-    {{ if and (ne .Page.Params.breadcrumb "hide") (ne .Page.Params.onlyMain true) }}
-        {{ partial "breadcrumb/breadcrumb" . }}
-    {{ end }}
+    {{ partial "breadcrumb/breadcrumb" . }}
 {{ end }}

@@ -2,31 +2,33 @@
 <main class="container-xxl overflow-hidden" id="main">
     <div class="d-flex flex-column flex-md-row column-gap-3">
         <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
-            <div class="container py-2 border rounded shadow-sm" id="tableOfContents-container">
-                <div class="d-flex justify-content-between">
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">TableOfContents</button>
-                        <div class="dropdown-menu">{{ .TableOfContents }}</div>
+            <div class="card container">
+                <div class="py-2" id="tableOfContents-container">
+                    <div class="d-flex justify-content-between">
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">TableOfContents</button>
+                            <div class="dropdown-menu">{{ .TableOfContents }}</div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
+                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
+                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
+                        </button>
                     </div>
-                    <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
-                        <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
-                        <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
-                    </button>
                 </div>
-            </div>
-            <section>
-                <h1 id="title">{{ .Title }}</h1>
-                <span>
+                <section>
+                    <h1 id="title">{{ .Title }}</h1>
+                    <span>
                     <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text_clipboard" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text_clipboard" }}</title><use href="#bi-clipboard"></use></svg></a>
                     <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text_link" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text_link" }}</title><use href="#bi-link-45deg"></use></svg></a>
                 </span>
-                <div>作者信息</div>
-                <div>
-                    <article id="content">
-                        {{ .Content }}
-                    </article>
-                </div>
-            </section>
+                    <div>作者信息</div>
+                    <div>
+                        <article id="content">
+                            {{ .Content }}
+                        </article>
+                    </div>
+                </section>
+            </div>
             <aside id="meta">
                 <div>
                     <section>
@@ -49,21 +51,25 @@
                     {{ end }}
                 </div>
                 <div class="d-flex flex-row justify-content-between card card-body">
-                    {{ with .PrevInSection }}
                         <div class="col-5 d-flex flex-column gap-1 gap-md-2 gap-lg-3 text-start">
                             <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>Prev</span>
+                            {{ with .PrevInSection }}
                             <a class="link-body-emphasis link-underline-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover prev" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                            {{ else }}
+                            到头了
+                            {{ end }}
                         </div>
-                    {{ end }}
                     <div class="d-flex">
                         <span class="vr"></span>
                     </div>
-                    {{ with .NextInSection }}
                         <div class="col-5 d-flex flex-column gap-1 gap-md-2 gap-lg-3 text-end">
                             <span class="fs-5">Next<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
+                            {{ with .NextInSection }}
                             <a class="link-body-emphasis link-underline-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover next" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                            {{ else }}
+                            到底了
+                            {{ end }}
                         </div>
-                    {{ end }}
                 </div>
             </aside>
         </div>

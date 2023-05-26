@@ -26,15 +26,15 @@
 
 {{ partial "svg_sprite_icons" . }}
 
-{{ partial "navbar" . }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar" . }}{{ end }}
 
-{{ partial "breadcrumb/index" . }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
 
 {{ partial "posts/svg_sprite_icons" . }}
 
 {{ block "content" . }}{{ end }}
 
-{{ partial "footer" . }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 
 {{ partial "fixed_float/tools" . }}
 {{ partial "scripts" . }}
