@@ -30,7 +30,7 @@
     setTheme(getPreferredTheme())
 
     const showActiveTheme = (theme, focus = false) => {
-        const themeSwitcher = document.querySelector('#themeSwitcher')
+        const themeSwitcher = document.querySelector('[data-bs-theme="switcher"]')
 
         if (!themeSwitcher) {
             return

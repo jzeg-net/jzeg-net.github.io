@@ -23,8 +23,9 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false">
-                        <span><svg class="bi" width="16" height="16"><title>主题</title><use href="#bi-circle-half"></use></svg></span>
+                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" data-bs-theme="switcher">
+                        <span><svg class="bi theme-icon-active" width="16" height="16"><title>主题</title><use href="#bi-circle-half"></use></svg></span>
+                        <span class="visually-hidden" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
