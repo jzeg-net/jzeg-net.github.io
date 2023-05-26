@@ -152,12 +152,12 @@ menu:
         -   identifier: theme_light
             weight: 1
             params:
-                svg: "bi-sun-fill"
+                svg: "bi-sun"
                 theme_value: "light"
         -   identifier: theme_dark
             weight: 2
             params:
-                svg: "bi-moon-stars-fill"
+                svg: "bi-moon-stars"
                 theme_value: "dark"
         -   identifier: theme_auto
             weight: 3

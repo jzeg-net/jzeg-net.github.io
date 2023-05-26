@@ -1,0 +1,4 @@
+# editorconfig.org
+
+[/**/**/svg_sprite_icons.html]
+indent_size = 2
