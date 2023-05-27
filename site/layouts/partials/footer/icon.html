@@ -1,30 +1,30 @@
-<div class="my-2 d-flex justify-content-end align-items-center gap-2 fs-min">
+<div class="my-2 d-flex justify-content-end align-items-center gap-2">
     {{ with .OutputFormats.Get "rss" -}}
-    <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="RSS">
-        <i class="fa-2x fa-fw bi bi-rss"></i>
-        <span class="visually-hidden">RSS</span>
+    <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="{{ T "footer_icon_text_rss" }}">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_rss" }}</title><use href="#bi-rss"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text_rss" -}}</span>
     </a>
     {{ end }}
-    <a class="text-body-secondary" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{- T "Sitemap" -}}">
-        <i class="fa-2x fa-fw bi bi-diagram-3-fill"></i>
-        <span class="visually-hidden">{{- T "Sitemap" -}}</span>
+    <a class="text-body-secondary" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "footer_icon_text_sitemap" }}">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_sitemap" }}</title><use href="#bi-diagram-3-fill"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text_sitemap" -}}</span>
     </a>
-    <a class="text-primary-emphasis" href="javascript:" data-donate="weixin" title="通过微信捐赠">
-        <i class="fa-2x fa-fw bi bi-wechat"></i>
-        <span class="visually-hidden">微信</span>
+    <a class="text-primary-emphasis" href="javascript:" data-donate="weixin" title="{{ T "footer_icon_text_wechat" }}" role="button">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_wechat" }}</title><use href="#bi-wechat"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text_wechat" -}}</span>
     </a>
-    <a class="text-success-emphasis" href="javascript:" data-donate="alipay" title="通过支付宝捐赠">
-        <i class="fa-2x fa-fw bi bi-alipay"></i>
-        <span class="visually-hidden">支付宝</span>
+    <a class="text-success-emphasis" href="javascript:" data-donate="alipay" title="{{ T "footer_icon_text_alipay" }}" role="button">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_alipay" }}</title><use href="#bi-alipay"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text_alipay" -}}</span>
     </a>
-    <a class="text-body-secondary" href="{{- .Site.Params.Repo.git -}}" target="_blank" rel="nofollow, noopener">
-        <i class="fa-2x fa-fw bi bi-github"></i>
-        <span class="visually-hidden">GitHub</span>
+    <a class="text-body-secondary" href="{{- .Site.Params.Repo.git -}}" target="_blank" title="{{ T "footer_icon_text_github" }}" rel="nofollow, noopener">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_github" }}</title><use href="#bi-github"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text_github" -}}</span>
     </a>
-    <a class="text-body-secondary" href="{{ absURL "/commands/hugo/" }}" target="_blank" title="{{- T "menu_hugo_cli_doc" -}}">
-        <span class="">{{- T "menu_hugo_cli_doc" -}}</span>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ absURL "/commands/hugo/" }}" target="_blank" title="雨果 CLI 文档">
+        <span>雨果 CLI 文档</span>
     </a>
-    <a class="text-body-secondary" href="{{ absLangURL "/full_page/" }}" target="_blank" title="full_page">
-        <span class="">full_page</span>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ absLangURL "/full_page/" }}" target="_blank" title="full_page">
+        <span>full_page</span>
     </a>
 </div>
