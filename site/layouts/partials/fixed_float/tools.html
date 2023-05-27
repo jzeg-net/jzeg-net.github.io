@@ -6,7 +6,7 @@
         <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text_collapse_tools" }}" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
             <svg class="bi" width="16" height="16"><title>{{- T "float_text_collapse_tools" -}}</title><use href="#bi-sliders"></use></svg>
         </button>
-        <div class="p-0 dropdown-menu border-0" style="--bs-dropdown-min-width: 0;" id="tools-collapse">
+        <div class="p-0 dropdown-menu border-0" id="tools-collapse">
             <div class="list-group list-group-horizontal gap-2">
                 <div>
                     <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "icon_text_translate" }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
@@ -44,20 +44,20 @@
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-palette">
                         <div class="list-group">
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi text-primary-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_blue" }}" data-bs-palette-value="blue" aria-pressed="false">
+                                <svg class="bi text-primary-emphasis" width="16" height="16"><title>{{ T "palette_blue" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi text-success-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_green" }}" data-bs-palette-value="green" aria-pressed="false">
+                                <svg class="bi text-success-emphasis" width="16" height="16"><title>{{ T "palette_green" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi text-warning-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_yellow" }}" data-bs-palette-value="yellow" aria-pressed="false">
+                                <svg class="bi text-warning-emphasis" width="16" height="16"><title>{{ T "palette_yellow" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi text-danger-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_red" }}" data-bs-palette-value="red" aria-pressed="false">
+                                <svg class="bi text-danger-emphasis" width="16" height="16"><title>{{ T "palette_red" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
-                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi text-info-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_cyan" }}" data-bs-palette-value="cyan" aria-pressed="false">
+                                <svg class="bi text-info-emphasis" width="16" height="16"><title>{{ T "palette_cyan" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
                         </div>
                     </div>
