@@ -7,7 +7,11 @@
                     <div class="d-flex justify-content-between">
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">TableOfContents</button>
-                            <div class="dropdown-menu">{{ .TableOfContents }}</div>
+                            <div class="dropdown-menu">
+                                <div data-bs-spy="scroll" data-bs-target="#content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                                {{ .TableOfContents }}
+                                </div>
+                            </div>
                         </div>
                         <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
                             <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
