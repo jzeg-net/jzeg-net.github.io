@@ -1,16 +1,16 @@
 <div class="position-fixed end-0 bottom-0 opacity-75 hide" id="float-tools">
     <div class="list-group dropstart">
         <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-donate="qrcode">
-            <i class="bi bi-qr-code"></i>
+            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-qr-code"></use></svg>
         </button>
         <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-            <i class="bi bi-sliders"></i>
+            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-sliders"></use></svg>
         </button>
         <div class="p-0 dropdown-menu border-0" style="--bs-dropdown-min-width: 0;" id="tools-collapse">
             <div class="list-group list-group-horizontal gap-1">
                 <div>
                     <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false">
-                        <span><svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-translate"></use></svg></span>
+                        <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-translate"></use></svg>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                         <ul class="list-group">
@@ -24,14 +24,14 @@
                 </div>
                 <div>
                     <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" data-bs-theme="switcher">
-                        <span><svg class="bi theme-icon-active" width="16" height="16"><title>主题</title><use href="#bi-circle-half"></use></svg></span>
+                        <svg class="bi theme-icon-active" width="16" height="16"><title>主题</title><use href="#bi-circle-half"></use></svg>
                         <span class="visually-hidden" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
                             {{ range .Site.Menus.theme }}
                                 <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                    <span><svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg></span>
+                                    <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg>
                                 </button>
                             {{ end }}
                         </div>
@@ -40,8 +40,10 @@
             </div>
         </div>
         <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" id="collapse-to-right">
-            <i class="bi bi-arrow-bar-right"></i>
+            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-arrow-bar-right"></use></svg>
         </button>
-        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action"><i class="bi bi-arrow-up"></i></a>
+        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action">
+            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-arrow-up"></use></svg>
+        </a>
     </div>
 </div>
