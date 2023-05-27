@@ -1,7 +1,9 @@
 <footer class="mt-3 mt-md-4 py-4 bg-dark-subtle">
     <div class="container py-4">
-        {{- partial "footer/commit" . }}
-        {{- partial "footer/icon" . }}
+        <div class="vstack justify-content-end gap-3">
+            {{- partial "footer/commit" . }}
+            {{- partial "footer/icon" . }}
+        </div>
         <hr class="my-5 my-md-5 text-opacity-25">
         <div class="d-flex justify-content-between fs-min">
             <div>

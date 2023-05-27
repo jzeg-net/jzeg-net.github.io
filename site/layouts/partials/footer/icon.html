@@ -1,4 +1,4 @@
-<div class="my-2 d-flex justify-content-end align-items-center gap-2">
+<div class="d-flex justify-content-end align-items-center gap-2">
     {{ with .OutputFormats.Get "rss" -}}
     <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="{{ T "footer_icon_text_rss" }}">
         <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_rss" }}</title><use href="#bi-rss"></use></svg>
@@ -21,6 +21,8 @@
         <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text_github" }}</title><use href="#bi-github"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text_github" -}}</span>
     </a>
+</div>
+<div class="hstack justify-content-end gap-2">
     <a class="btn btn-sm btn-outline-secondary" href="{{ absURL "/commands/hugo/" }}" target="_blank" title="雨果 CLI 文档">
         <span>雨果 CLI 文档</span>
     </a>

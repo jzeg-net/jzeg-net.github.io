@@ -295,7 +295,6 @@ Params:
     Repo:
         git: "https://github.com/jzeg-net/jzeg-net.github.io"
         # 可选[blame,blob,raw,edit]
-        AccessType: "edit"
 
     qrcode:
         alipay:
