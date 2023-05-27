@@ -1,16 +1,16 @@
 <div class="position-fixed end-0 bottom-0 opacity-75 hide" id="float-tools">
     <div class="list-group dropstart">
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-donate="qrcode">
-            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-qr-code"></use></svg>
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text_qr_code" }}" data-donate="qrcode">
+            <svg class="bi" width="16" height="16"><title>{{- T "float_text_qr_code" -}}</title><use href="#bi-qr-code"></use></svg>
         </button>
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-sliders"></use></svg>
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text_collapse_tools" }}" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+            <svg class="bi" width="16" height="16"><title>{{- T "float_text_collapse_tools" -}}</title><use href="#bi-sliders"></use></svg>
         </button>
         <div class="p-0 dropdown-menu border-0" style="--bs-dropdown-min-width: 0;" id="tools-collapse">
             <div class="list-group list-group-horizontal gap-2">
                 <div>
-                    <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false">
-                        <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-translate"></use></svg>
+                    <a href="#collapse-translation" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "icon_text_translate" }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
+                        <svg class="bi" width="16" height="16"><title>{{- T "icon_text_translate" -}}</title><use href="#bi-translate"></use></svg>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                         <ul class="list-group">
@@ -23,8 +23,8 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" data-bs-theme="switcher">
-                        <svg class="bi theme-icon-active" width="16" height="16"><title>主题</title><use href="#bi-circle-half"></use></svg>
+                    <a href="#collapse-topic" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "theme_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-theme="switcher">
+                        <svg class="bi theme-icon-active" width="16" height="16"><title>{{- T "theme_toggle" -}}</title><use href="#bi-circle-half"></use></svg>
                         <span class="visually-hidden" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
@@ -37,13 +37,38 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <a href="#collapse-palette" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "palette" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
+                        <svg class="bi theme-icon-active" width="16" height="16"><title>{{- T "palette" -}}</title><use href="#bi-palette"></use></svg>
+                        <span class="visually-hidden" id="themeSwitcher-text">{{- T "palette" -}}</span>
+                    </a>
+                    <div class="position-absolute bottom-100 collapse" id="collapse-palette">
+                        <div class="list-group">
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi text-primary-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi text-success-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi text-warning-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi text-danger-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
+                            <button class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi text-info-emphasis" width="16" height="16"><title>{{ T "palette" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" id="collapse-to-right">
-            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-arrow-bar-right"></use></svg>
+        <button type="button" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text_collapse_to_right" }}" id="collapse-to-right">
+            <svg class="bi" width="16" height="16"><title>{{- T "float_text_collapse_to_right" -}}</title><use href="#bi-arrow-bar-right"></use></svg>
         </button>
-        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action">
-            <svg class="bi" width="16" height="16"><title>翻译</title><use href="#bi-arrow-up"></use></svg>
+        <a href="#top" class="p-2 p-md-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{- T "float_text_back_to_top" -}}" role="button">
+            <svg class="bi" width="16" height="16"><title>{{- T "float_text_back_to_top" -}}</title><use href="#bi-rocket"></use></svg>
         </a>
     </div>
 </div>

@@ -189,6 +189,10 @@ html::-webkit-scrollbar {
     }
 }
 
+#float-tools:hover {
+    opacity: 1 !important;
+}
+
 #float-tools .list-group-item span,
 #float-tools a.list-group-item span {
     transition: all 300ms linear;
@@ -197,8 +201,4 @@ html::-webkit-scrollbar {
 #float-tools .list-group-item:hover span,
 #float-tools a.list-group-item:hover span {
     color: var(--bd-violet);
-}
-
-#back-to-top:hover span {
-    transform: translateY(-100%);
 }
