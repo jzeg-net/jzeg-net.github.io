@@ -285,7 +285,7 @@ Params:
     beian: "9999999999999999"
 
     demo_version: "5.3"
-    bootstrap_version: "5.3.0-alpha3"
+    bootstrap_version: "5.3.0"
 
     since: "2020"
 
