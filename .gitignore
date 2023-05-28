@@ -20,6 +20,8 @@ $RECYCLE.BIN/
 
 # Generate
 /node_modules/
-/public/
+/dist/
 /docs/
+/public/
 /site/content/commands/
+
