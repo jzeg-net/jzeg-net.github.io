@@ -8,6 +8,7 @@
         "server": "npm run hugo-server:production",
         "server-only:docs": "npx sirv-cli docs --port 9001",
         "server-only:public": "npx sirv-cli public --port 9001",
+        "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css scss/:dist/css/",
         "css-lint-vars": "npx fusv site/assets/scss/",
         "hugo--build": "hugo --gc",
         "hugo--build:watch": "hugo -e production --gc --watch --log",
@@ -114,6 +115,7 @@
         "postcss": "^8.4.24",
         "postcss-cli": "^10.1.0",
         "prettier": "^2.8.8",
+        "sass": "^1.62.1",
         "stylelint": "^15.6.2",
         "svg-sprite": "^3.0.0-beta2",
         "terser": "^5.17.6"
