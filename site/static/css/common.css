@@ -1,3 +1,7 @@
+:root {
+    --theme-color: #fff;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -190,7 +194,7 @@ html::-webkit-scrollbar {
 }
 
 #float-tools:hover {
-    opacity: 1 !important;
+    opacity: .95 !important;
 }
 
 #float-tools .list-group-item span,
@@ -201,4 +205,11 @@ html::-webkit-scrollbar {
 #float-tools .list-group-item:hover span,
 #float-tools a.list-group-item:hover span {
     color: var(--bd-violet);
+}
+
+#post-nav .prev:hover,
+#post-nav .next:hover,
+#post-nav > div:hover {
+    color: var(--theme-color);
+    border-color: var(--theme-color);
 }

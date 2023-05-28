@@ -54,26 +54,23 @@
                         </ul>
                     {{ end }}
                 </div>
-                <div class="d-flex flex-row justify-content-between card card-body">
-                        <div class="col-5 d-flex flex-column gap-1 gap-md-2 gap-lg-3 text-start">
-                            <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>Prev</span>
-                            {{ with .PrevInSection }}
-                            <a class="link-body-emphasis link-underline-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover prev" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                            {{ else }}
-                            到头了
-                            {{ end }}
-                        </div>
-                    <div class="d-flex">
-                        <span class="vr"></span>
+                <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
+                    <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-start prev">
+                        <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>Prev</span>
+                        {{ with .PrevInSection }}
+                        <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                        {{ else }}
+                        {{ T "post_nav_text_prev" }}
+                        {{ end }}
                     </div>
-                        <div class="col-5 d-flex flex-column gap-1 gap-md-2 gap-lg-3 text-end">
-                            <span class="fs-5">Next<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
-                            {{ with .NextInSection }}
-                            <a class="link-body-emphasis link-underline-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover next" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                            {{ else }}
-                            到底了
-                            {{ end }}
-                        </div>
+                    <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-end next">
+                        <span class="fs-5">Next<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
+                        {{ with .NextInSection }}
+                        <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                        {{ else }}
+                        {{ T "post_nav_text_next" }}
+                        {{ end }}
+                    </div>
                 </div>
             </aside>
         </div>

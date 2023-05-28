@@ -15,6 +15,8 @@
     "pagination_last": "Last Page",
     "pagination_prev": "Prev Page",
     "pagination_next": "Next Page",
+    "post_nav_text_prev": "it s over",
+    "post_nav_text_next": "in the end",
     "theme_toggle": "Theme",
     "theme_light": "Light",
     "theme_dark": "Dark",
