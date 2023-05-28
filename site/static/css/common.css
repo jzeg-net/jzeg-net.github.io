@@ -1,5 +1,19 @@
-:root {
-    --theme-color: #fff;
+:root, [data-bs-theme=light] {
+    --theme-color: #4c0bce;
+    --text-color: #000;
+    --link-color: #000;
+    --button-color: #000;
+    --button-border-color: #000;
+    --border-color: #000;
+}
+
+[data-bs-theme=dark] {
+    --theme-color: #4c0bce;
+    --text-color: #fff;
+    --link-color: #fff;
+    --button-color: #fff;
+    --button-border-color: #fff;
+    --border-color: #fff;
 }
 
 html {
@@ -210,6 +224,6 @@ html::-webkit-scrollbar {
 #post-nav .prev:hover,
 #post-nav .next:hover,
 #post-nav > div:hover {
-    color: var(--theme-color);
-    border-color: var(--theme-color);
+    color: var(--border-color);
+    border-color: var(--border-color);
 }
