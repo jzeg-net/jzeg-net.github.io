@@ -39,11 +39,14 @@
                 </div>
                 <div>
                     <a href="#collapse-palette" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "palette" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
-                        <svg class="bi theme-icon-active" width="16" height="16"><title>{{- T "palette" -}}</title><use href="#bi-palette"></use></svg>
-                        <span class="visually-hidden" id="themeSwitcher-text">{{- T "palette" -}}</span>
+                        <svg class="bi palette-icon-active" width="16" height="16"><title>{{- T "palette" -}}</title><use href="#bi-palette"></use></svg>
+                        <span class="visually-hidden" id="paletteSwitcher-text">{{- T "palette" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-palette">
                         <div class="list-group">
+                            <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_blue" }}" data-bs-palette-value="none" aria-pressed="false">
+                                <svg class="bi text-primary-emphasis" width="16" height="16"><title>{{ T "palette_blue" }}</title><use href="#bi-droplet-half"></use></svg>
+                            </button>
                             <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ T "palette_blue" }}" data-bs-palette-value="blue" aria-pressed="false">
                                 <svg class="bi text-primary-emphasis" width="16" height="16"><title>{{ T "palette_blue" }}</title><use href="#bi-droplet-half"></use></svg>
                             </button>
