@@ -51,6 +51,8 @@ function hrefType(href) {
     if (href.startsWith("http://")) return "absolute"
     if (href.startsWith("file://")) return "file"
     if (href.startsWith("javascript:")) return "javascript"
+    if (href.startsWith("vbscript:")) return "vbscript"
+    if (href.startsWith("data:")) return "data"
     if (href.contains("://")) return "protocol"
     if (href.startsWith("//")) return "protocolRelative"
     if (href.startsWith("/")) return "rooted"
