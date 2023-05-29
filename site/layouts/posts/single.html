@@ -5,17 +5,26 @@
             <div class="card container vh-100 overflow-hidden overflow-y-scroll">
                 <div class="py-2 d-flex justify-content-between sticky-top" id="tableOfContents-container">
                     <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">TableOfContents</button>
+                        <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
+                            <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
+                            TableOfContents
+                        </button>
                         <div class="dropdown-menu">
                             <div data-bs-spy="scroll" data-bs-target="#content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
                                 {{ .TableOfContents }}
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
-                        <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
-                        <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
-                    </button>
+                    <div>
+                        <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
+                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-pin"></use></svg>
+                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
+                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text_pin" }}</title><use href="#bi-text-indent-left"></use></svg>
+                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text_pin_angle" }}</title><use href="#bi-text-indent-right"></use></svg>
+                        </button>
+                    </div>
                 </div>
                 <section class="d-flex flex-column gap-4">
                     <div>
