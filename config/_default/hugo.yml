@@ -271,7 +271,7 @@ module:
             lang: en-us
 
         -   source: site/assets
-            target: static/assets
+            target: assets
 
         -   source: site/data
             target: data
