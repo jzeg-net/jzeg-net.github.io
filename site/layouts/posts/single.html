@@ -1,9 +1,9 @@
 {{ define "content" }}
-<main class="container-xxl overflow-hidden" id="main">
-    <div class="d-flex flex-column flex-md-row column-gap-3">
+<main class="container-xxl" id="main">
+    <div class="pb-5 d-flex flex-column flex-md-row column-gap-3 row-gap-5">
         <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
-            <div class="card container vh-100 overflow-hidden overflow-y-scroll">
-                <div class="py-2 d-flex justify-content-between sticky-top" id="tableOfContents-container">
+            <div class="card">
+                <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019" id="tableOfContents-container">
                     <div class="btn-group btn-group-sm">
                         <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
                             <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
@@ -26,7 +26,7 @@
                         </button>
                     </div>
                 </div>
-                <section class="d-flex flex-column gap-4">
+                <section class="container d-flex flex-column gap-4">
                     <div>
                         <h1 class="text-break" id="post-title">{{ .Title }}</h1>
                         <span>
