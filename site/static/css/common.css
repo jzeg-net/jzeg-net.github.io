@@ -227,3 +227,11 @@ html::-webkit-scrollbar {
     color: var(--border-color);
     border-color: var(--border-color);
 }
+
+footer-gradient:before {
+    background: #b4e900;
+    background: linear-gradient(90deg, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.4));
+    content: "";
+    display: block;
+    height: .05rem;
+}
