@@ -1,0 +1,5 @@
+{{- $palette := .Site.Params.palette | default "none" }}
+{{- if not (in .Site.Params.paletteOptions $palette) }}
+    {{- $palette = "none" }}
+{{- end }}
+{{- return $palette -}}

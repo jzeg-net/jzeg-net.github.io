@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="auto" data-bs-palette="none">
+{{- $theme := partial "functions/theme" . }}
+{{- $size := partial "functions/font-size" . }}
+{{- $palette := partial "functions/palette" . }}
+<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="{{ $theme }}" data-bs-size="{{ $size }}" data-bs-palette="{{ $palette }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6, user-scalable=yes, interactive-widget=resizes-visual">

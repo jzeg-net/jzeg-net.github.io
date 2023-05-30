@@ -281,6 +281,19 @@ module:
             target: layouts
 
 Params:
+    # default theme mode
+    theme: "light"
+    themeOptions: [ 'light',"dark","auto" ]
+
+    # default font size
+    fontSize: "base"
+    fontSizeOptions: [ "2xs","xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
+
+    # default palette color
+    palette: "none"
+    paletteOptions: [ "none","blue","blue gray","brown","cyan","green","indigo","orange","pink","purple","red","teal","yellow" ]
+
+
     icp: "冀ICP备12018851号-7"
     beian: "9999999999999999"
 
