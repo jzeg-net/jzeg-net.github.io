@@ -10,3 +10,16 @@ if (tableOfContentsPin) {
         }
     })
 }
+
+let sidebarIndent = document.querySelector('#sidebar-indent')
+if (sidebarIndent) {
+    sidebarIndent.addEventListener('click', () => {
+        if (sidebarIndent.classList.contains('active')) {
+            sidebarIndent.firstElementChild.classList.toggle('d-none')
+            sidebarIndent.lastElementChild.classList.toggle('d-none')
+        } else {
+            sidebarIndent.firstElementChild.classList.toggle('d-none')
+            sidebarIndent.lastElementChild.classList.toggle('d-none')
+        }
+    })
+}
