@@ -49,7 +49,7 @@
         btnToActive.classList.add('active')
         btnToActive.setAttribute('aria-pressed', 'true')
         activePaletteIcon.setAttribute('href', svgOfActiveBtn)
-        const paletteSwitcherLabel = `${paletteSwitcherText.textContent} (${btnToActive.dataset.bsPaletteValue})`
+        const paletteSwitcherLabel = `${paletteSwitcherText.textContent} (${btnToActive.title})`
         paletteSwitcher.setAttribute('aria-label', paletteSwitcherLabel)
 
         if (focus) {

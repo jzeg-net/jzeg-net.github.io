@@ -1,11 +1,10 @@
-<button class="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center dropdown-toggle" type="button"
-        aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" id="languageSwitcher">
-    <svg class="bi my-1" width="16" height="16"><title>{{ T "menu_switch_language" }}</title><use href="#bi-translate"></use></svg>
-    <span class="d-lg-none ms-2" id="languageSwitcher-text">{{ T "menu_switch_language" }}</span>
+<button class="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center dropdown-toggle" type="button" title="{{- T "language_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" id="languageSwitcher">
+    <svg class="bi my-1" width="16" height="16"><title>{{ T "language_toggle" }}</title><use href="#bi-translate"></use></svg>
+    <span class="d-lg-none ms-2" id="languageSwitcher-text">{{ T "language" }}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageSwitcher-text">
     <li>
-        <a class="dropdown-item d-flex align-items-center" href="javascript:" data-language-value="{{ .Site.LanguageCode | lower }}">
+        <a class="dropdown-item d-flex align-items-center" href="javascript:" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
             <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.icon }}"></i>
             {{- .Language.LanguageName -}}
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
@@ -13,7 +12,7 @@
     </li>
     {{- range .Translations -}}
     <li>
-        <a class="dropdown-item d-flex align-items-center" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+        <a class="dropdown-item d-flex align-items-center" href="{{- .RelPermalink  -}}" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
             <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.icon }}"></i>
             {{- .Language.LanguageName -}}
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>

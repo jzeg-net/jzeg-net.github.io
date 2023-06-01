@@ -164,6 +164,43 @@ menu:
             params:
                 svg: "bi-circle-half"
                 theme_value: "auto"
+    palette:
+        -   identifier: palette_none
+            weight: 1
+            params:
+                palette_value: "none"
+                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
+                svg:
+                    class: "bi text-primary-emphasis"
+                    useHref: "bi-droplet-half"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: palette_red
+            weight: 1000
+            params:
+                palette_value: "red"
+                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
+                svg:
+                    class: "bi text-danger-emphasis"
+                    useHref: "bi-droplet-half"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: palette_green
+            weight: 2000
+            params:
+                palette_value: "green"
+                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
+                svg:
+                    class: "bi text-success-emphasis"
+                    useHref: "bi-droplet-half"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: palette_blue
+            weight: 3000
+            params:
+                palette_value: "blue"
+                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
+                svg:
+                    class: "bi text-primary-emphasis"
+                    useHref: "bi-droplet-half"
+                    size: [ width: 16, height: 16 ]
 
 #watch: true
 #debug: true
@@ -291,7 +328,7 @@ Params:
 
     # default palette color
     palette: "none"
-    paletteOptions: [ "none","blue","blue gray","brown","cyan","green","indigo","orange","pink","purple","red","teal","yellow" ]
+    paletteOptions: [ "none","blue","green","orange","red","yellow" ]
 
 
     icp: "冀ICP备12018851号-7"
