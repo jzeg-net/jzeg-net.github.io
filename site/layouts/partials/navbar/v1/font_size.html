@@ -1,0 +1,15 @@
+<button class="btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center dropdown-toggle" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" data-bs-font-size="switcher">
+    <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
+    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="fontSizeSwitcher-text">
+    {{ range .Site.Menus.font_size }}
+        <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}">
+                <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#bi-fonts"></use></svg>
+                {{ or (T .Identifier) .Name | safeHTML }}
+                <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
+            </button>
+        </li>
+    {{ end }}
+</ul>

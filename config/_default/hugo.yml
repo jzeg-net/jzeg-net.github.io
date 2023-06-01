@@ -197,6 +197,39 @@ menu:
                 svg:
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
+    font_size:
+        -   identifier: fontSize_2xs
+            weight: -5
+            params:
+                size_value: "2xs"
+        -   identifier: fontSize_xs
+            weight: -4
+            params:
+                size_value: "xs"
+        -   identifier: fontSize_sm
+            weight: -3
+            params:
+                size_value: "sm"
+        -   identifier: fontSize_md
+            weight: -2
+            params:
+                size_value: "md"
+        -   identifier: fontSize_base
+            weight: -1
+            params:
+                size_value: "base"
+        -   identifier: fontSize_lg
+            weight: 1
+            params:
+                size_value: "lg"
+        -   identifier: fontSize_xl
+            weight: 2
+            params:
+                size_value: "xl"
+        -   identifier: fontSize_2xl
+            weight: 3
+            params:
+                size_value: "2xl"
 
 #watch: true
 #debug: true
