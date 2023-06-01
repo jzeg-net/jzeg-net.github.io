@@ -23,3 +23,5 @@ if (sidebarIndent) {
         }
     })
 }
+
+lazyLoad('.lazyImg')

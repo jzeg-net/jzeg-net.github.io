@@ -169,32 +169,32 @@ menu:
             weight: 1
             params:
                 palette_value: "none"
+                class: "text-secondary-emphasis"
                 svg:
-                    class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_red
             weight: 1000
             params:
                 palette_value: "red"
+                class: "text-danger-emphasis"
                 svg:
-                    class: "text-danger-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_green
             weight: 2000
             params:
                 palette_value: "green"
+                class: "text-success-emphasis"
                 svg:
-                    class: "text-success-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_blue
             weight: 3000
             params:
                 palette_value: "blue"
+                class: "text-primary-emphasis"
                 svg:
-                    class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
 

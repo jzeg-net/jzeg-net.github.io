@@ -4,7 +4,7 @@
             <div class="row g-0">
                 <div class="col-3 col-md-4 col-lg-3">
                     {{ if .Params.FeaturedImagePreview }}
-                        <img class="mw-100 w-100 h-100 rounded-start" {{ printf "src=%q" .Params.FeaturedImagePreview | safeHTMLAttr }} alt="{{ .Title }}">
+                        <img class="mw-100 w-100 h-100 rounded-start lazyImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" {{ printf "data-src=%q" .Params.FeaturedImagePreview | safeHTMLAttr }} alt="{{ .Title }}">
                     {{ else }}
                         <img class="mw-100 w-100 h-100 rounded-start" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{{ .Title }}">
                     {{ end }}

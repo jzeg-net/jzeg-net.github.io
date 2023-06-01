@@ -5,8 +5,8 @@
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="paletteSwitcher-text">
     {{ range .Site.Menus.palette }}
         <li>
-            <button class="dropdown-item d-flex align-items-center" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}">
-                <svg class="bi {{ .Params.svg.class }} me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+            <button class="dropdown-item {{ .Params.class }} d-flex align-items-center" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}">
+                <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                 {{ or (T .Identifier) .Name | safeHTML }}
                 <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
             </button>
