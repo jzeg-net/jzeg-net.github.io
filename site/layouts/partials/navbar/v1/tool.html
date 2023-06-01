@@ -1,15 +1,15 @@
-<ul class="navbar-nav flex-row flex-wrap">
-    <li class="nav-item col-3 col-lg-auto dropdown">
+<ul class="navbar-nav flex-row flex-wrap row-gap-1">
+    <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/theme" . }}
     </li>
-    <li class="nav-item col-3 col-lg-auto dropdown">
+    <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/palette" . }}
     </li>
-    <li class="nav-item col-3 col-lg-auto dropdown">
+    <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/font_size" . }}
     </li>
     {{- if .Site.IsMultiLingual -}}
-    <li class="nav-item col-3 col-lg-auto dropdown">
+    <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/language" . }}
     </li>
     {{ end }}
