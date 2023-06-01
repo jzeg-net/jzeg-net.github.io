@@ -1,99 +1,95 @@
 {{ define "content" }}
-<main class="container-xxl" id="main">
-    <div class="pb-5 d-flex flex-column flex-md-row column-gap-3 row-gap-5">
-        <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
-            <div class="card">
-                <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019" id="tableOfContents-container">
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
-                            <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
-                            TableOfContents
-                        </button>
-                        <div class="dropdown-menu">
-                            <div data-bs-spy="scroll" data-bs-target="#content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                                {{ .TableOfContents }}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
-                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text-pin" }}</title><use href="#bi-pin"></use></svg>
-                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
-                        </button>
-                        <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
-                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
-                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
-                        </button>
+<div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
+    <div class="card">
+        <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019" id="tableOfContents-container">
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
+                    <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
+                    TableOfContents
+                </button>
+                <div class="dropdown-menu">
+                    <div data-bs-spy="scroll" data-bs-target="#content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                        {{ .TableOfContents }}
                     </div>
                 </div>
-                <section class="container d-flex flex-column gap-4">
-                    <div>
-                        <h1 class="text-break" id="post-title">{{ .Title }}</h1>
-                        <span>
-                            <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text-clipboard" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text-clipboard" }}</title><use href="#bi-clipboard"></use></svg></a>
-                            <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text-link" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text-link" }}</title><use href="#bi-link-45deg"></use></svg></a>
-                        </span>
-                    </div>
-                    <div>作者信息</div>
-                    <div>
-                        <article id="content">
-                            {{ .Content }}
-                        </article>
-                        <div class="expand-btn">
-                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text-arrows_expand" }}</title><use href="#bi-arrows-expand"></use></svg>
-                            <span>{{ T "icon_text-arrows_expand" }}</span>
-                        </div>
-                        <div class="collapse-button">
-                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text-arrows_collapse" }}</title><use href="#bi-arrows-collapse"></use></svg>
-                            <span>{{ T "icon_text-arrows_collapse" }}</span>
-                        </div>
-                    </div>
-                </section>
             </div>
-            <aside id="meta">
-                <div>
-                    <section>
-                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }}" id="date"></time>
-                        <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-                    </section>
-                    {{ with .GetTerms "topics" }}
-                        <ul id="topics">
-                            {{ range . }}
-                                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                    {{ with .GetTerms "tags" }}
-                        <ul id="tags">
-                            {{ range . }}
-                                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </div>
-                <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
-                    <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-start prev">
-                        <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>Prev</span>
-                        {{ with .PrevInSection }}
-                        <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                        {{ else }}
-                        {{ T "post_nav_text_prev" }}
-                        {{ end }}
-                    </div>
-                    <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-end next">
-                        <span class="fs-5">Next<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
-                        {{ with .NextInSection }}
-                        <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                        {{ else }}
-                        {{ T "post_nav_text_next" }}
-                        {{ end }}
-                    </div>
-                </div>
-            </aside>
+            <div>
+                <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
+                    <svg class="bi" width="16" height="16"><title>{{ T "icon_text-pin" }}</title><use href="#bi-pin"></use></svg>
+                    <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
+                </button>
+                <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
+                    <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
+                    <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
+                </button>
+            </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-3" id="sidebar">
-            {{ partial "posts/sidebar/index" . }}
-        </div>
+        <section class="container d-flex flex-column gap-4">
+            <div>
+                <h1 class="text-break" id="post-title">{{ .Title }}</h1>
+                <span>
+                    <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text-clipboard" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text-clipboard" }}</title><use href="#bi-clipboard"></use></svg></a>
+                    <a class="link-primary link-opacity-100 link-opacity-100-hover" href="javascript:" title="{{ T "icon_text-link" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "icon_text-link" }}</title><use href="#bi-link-45deg"></use></svg></a>
+                </span>
+            </div>
+            <div>作者信息</div>
+            <div>
+                <article id="content">
+                    {{ .Content }}
+                </article>
+                <div class="expand-btn">
+                    <svg class="bi" width="16" height="16"><title>{{ T "icon_text-arrows_expand" }}</title><use href="#bi-arrows-expand"></use></svg>
+                    <span>{{ T "icon_text-arrows_expand" }}</span>
+                </div>
+                <div class="collapse-button">
+                    <svg class="bi" width="16" height="16"><title>{{ T "icon_text-arrows_collapse" }}</title><use href="#bi-arrows-collapse"></use></svg>
+                    <span>{{ T "icon_text-arrows_collapse" }}</span>
+                </div>
+            </div>
+        </section>
     </div>
-</main>
+    <aside id="meta">
+        <div>
+            <section>
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }}" id="date"></time>
+                <h5 id="wordcount"> {{ .WordCount }} Words </h5>
+            </section>
+            {{ with .GetTerms "topics" }}
+                <ul id="topics">
+                    {{ range . }}
+                        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+            {{ with .GetTerms "tags" }}
+                <ul id="tags">
+                    {{ range . }}
+                        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </div>
+        <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
+            <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-start prev">
+                <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>Prev</span>
+                {{ with .PrevInSection }}
+                <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                {{ else }}
+                {{ T "post_nav_text_prev" }}
+                {{ end }}
+            </div>
+            <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-end next">
+                <span class="fs-5">Next<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
+                {{ with .NextInSection }}
+                <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                {{ else }}
+                {{ T "post_nav_text_next" }}
+                {{ end }}
+            </div>
+        </div>
+    </aside>
+</div>
+<div class="col-12 col-md-4 col-lg-3" id="sidebar">
+    {{ partial "posts/sidebar/index" . }}
+</div>
 {{ end }}

@@ -35,7 +35,11 @@
 
 {{ partial "posts/svg_sprite_icons" . }}
 
-{{ block "content" . }}{{ end }}
+<main class="pb-5 container-xxl" id="main">
+    <div class="d-flex flex-column flex-md-row column-gap-3 row-gap-5">
+        {{ block "content" . }}{{ end }}
+    </div>
+</main>
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 
