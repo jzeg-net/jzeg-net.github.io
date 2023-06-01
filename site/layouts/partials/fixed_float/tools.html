@@ -18,10 +18,10 @@
                                 <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
                             </a>
                             {{- range .Translations -}}
-                                <a class="p-3 fs-4 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
-                                    <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
-                                </a>
-                            {{ end }}
+                            <a class="p-3 fs-4 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
+                            </a>
+                            {{- end -}}
                         </ul>
                     </div>
                 </div>
