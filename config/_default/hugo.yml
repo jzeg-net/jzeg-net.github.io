@@ -314,8 +314,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.112.5"
-        min: "0.112.5"
+        max: "0.112.6"
+        min: "0.112.6"
     mounts:
         -   source: site/archetypes
             target: archetypes
