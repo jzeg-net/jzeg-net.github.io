@@ -1,19 +1,17 @@
 <footer-gradient></footer-gradient>
 <footer class="py-5 bg-dark-subtle">
-    <div class="container py-5">
-        <div class="vstack justify-content-end gap-3">
+    <div class="container vstack row-gap-4 py-5">
+        <div class="vstack align-items-end row-gap-3">
             {{- partial "footer/commit" . }}
             {{- partial "footer/icon" . }}
         </div>
-        <hr class="my-5">
-        <div class="d-flex justify-content-between fs-min">
-            <div>
-                {{- partial "footer/copyright" . }}
-                {{- partial "footer/powered" . }}
-            </div>
-            <div class="d-flex flex-column">
-                {{- partial "footer/icp" . }}
-            </div>
+        <hr class="my-3">
+        <div class="vstack row-gap-1 align-items-end fs-min">
+            {{- partial "footer/icp" . }}
+        </div>
+        <div class="vstack row-gap-1 fs-min">
+            {{- partial "footer/copyright" . }}
+            {{- partial "footer/powered" . }}
         </div>
     </div>
 </footer>
