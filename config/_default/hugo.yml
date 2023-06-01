@@ -149,16 +149,16 @@ menu:
             parent: demo_logout
             weight: 1
     theme:
-        -   identifier: theme_light
-            weight: 1
-            params:
-                svg: "bi-sun"
-                theme_value: "light"
         -   identifier: theme_dark
-            weight: 2
+            weight: 1
             params:
                 svg: "bi-moon-stars"
                 theme_value: "dark"
+        -   identifier: theme_light
+            weight: 2
+            params:
+                svg: "bi-sun"
+                theme_value: "light"
         -   identifier: theme_auto
             weight: 3
             params:
@@ -169,7 +169,6 @@ menu:
             weight: 1
             params:
                 palette_value: "none"
-                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
                     class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
@@ -178,7 +177,6 @@ menu:
             weight: 1000
             params:
                 palette_value: "red"
-                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
                     class: "text-danger-emphasis"
                     useHref: "bi-droplet-half"
@@ -187,7 +185,6 @@ menu:
             weight: 2000
             params:
                 palette_value: "green"
-                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
                     class: "text-success-emphasis"
                     useHref: "bi-droplet-half"
@@ -196,7 +193,6 @@ menu:
             weight: 3000
             params:
                 palette_value: "blue"
-                color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
                     class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
