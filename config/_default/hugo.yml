@@ -171,7 +171,7 @@ menu:
                 palette_value: "none"
                 color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
-                    class: "bi text-primary-emphasis"
+                    class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_red
@@ -180,7 +180,7 @@ menu:
                 palette_value: "red"
                 color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
-                    class: "bi text-danger-emphasis"
+                    class: "text-danger-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_green
@@ -189,7 +189,7 @@ menu:
                 palette_value: "green"
                 color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
-                    class: "bi text-success-emphasis"
+                    class: "text-success-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_blue
@@ -198,7 +198,7 @@ menu:
                 palette_value: "blue"
                 color: [ xxx: "", rgb: "", rgba: "", hsl: "" ]
                 svg:
-                    class: "bi text-primary-emphasis"
+                    class: "text-primary-emphasis"
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
 
