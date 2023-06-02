@@ -171,7 +171,7 @@ menu:
                 palette_value: "none"
                 class: "text-secondary-emphasis"
                 svg:
-                    useHref: "bi-droplet-half"
+                    useHref: "bi-palette"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_red
             weight: 1000
