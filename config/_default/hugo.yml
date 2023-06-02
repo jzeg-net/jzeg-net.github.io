@@ -233,7 +233,7 @@ menu:
 
 #watch: true
 #debug: true
-#minify: true
+minify: true
 #uglyURLs: true
 #multihost: false
 buildDrafts: true
