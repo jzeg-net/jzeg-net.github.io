@@ -31,15 +31,8 @@
 
 <link rel="stylesheet" href="{{ $preUrl }}static/css/common.css">
 
-{{- $targetPath_DocsCss := "static/css/docs.css" -}}
-{{- $sassOptions := dict "targetPath" $targetPath_DocsCss "outputStyle" "expanded" "precision" 6 -}}
-{{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
-{{ if eq hugo.Environment "production" -}}
-    {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
-{{- end -}}
-{{- with resources.Get "scss/bootstrap-doc-css/docs.scss" | toCSS $sassOptions | postCSS $postcssOptions }}
-<link rel="stylesheet" href="{{ .Permalink | relURL }}">
-{{- end -}}
+{{- $docs_css := partial "functions/stylesheet/docs" . }}
+<link rel="stylesheet" href="{{ $docs_css }}">
 
 {{- if eq .Page.Layout "jump_link" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
