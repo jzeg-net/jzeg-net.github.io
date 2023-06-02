@@ -1,0 +1,6 @@
+#post-nav .prev:hover,
+#post-nav .next:hover,
+#post-nav > div:hover {
+    color: var(--border-color);
+    border-color: var(--border-color);
+}
