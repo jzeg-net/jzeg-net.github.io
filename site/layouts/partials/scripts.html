@@ -35,9 +35,9 @@
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
 {{- end -}}
 
-<script src="{{ $preUrl }}static/js/add_jump.js"></script>
-<script src="{{ $preUrl }}static/js/donate.js"></script>
-<script src="{{ $preUrl }}static/js/common.js"></script>
+{{- $bundleJs := partial "functions/script/concat" . }}
+<script src="{{ $bundleJs }}"></script>
+
 <script src="{{ $preUrl }}static/js/account.js"></script>
 <script src="{{ $preUrl }}static/js/posts.js"></script>
 

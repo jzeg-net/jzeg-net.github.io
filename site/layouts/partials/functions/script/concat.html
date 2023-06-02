@@ -1,0 +1,10 @@
+{{- $add_jump := resources.Match "js/*.js" -}}
+
+{{- $targetPath := "static/js/common.bundle.js" -}}
+{{- $bundleJs := $add_jump | resources.Concat $targetPath -}}
+
+{{- if eq hugo.Environment "production" -}}
+    {{- $bundleJs = $bundleJs | resources.Minify -}}
+{{- end }}
+
+{{- return ($bundleJs.Permalink | relURL) }}

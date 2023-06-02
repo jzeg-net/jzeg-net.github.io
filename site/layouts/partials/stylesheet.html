@@ -29,10 +29,8 @@
     <link rel="stylesheet" href="{{ $preUrl }}static/css/full_page.css">
 {{- end }}
 
-<link rel="stylesheet" href="{{ $preUrl }}static/css/common.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/css/translate.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/css/float-tools.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/css/post.css">
+{{- $bundleCSS := partial "functions/stylesheet/concat" . }}
+<link rel="stylesheet" href="{{ $bundleCSS }}">
 
 {{- $docs_css := partial "functions/stylesheet/docs" . }}
 <link rel="stylesheet" href="{{ $docs_css }}">
