@@ -12,8 +12,13 @@
     {{ block "description" . }}{{- partial "head/description" . -}}{{ end }}
     {{ block "keyword" . }}{{- partial "head/keyword" . -}}{{ end }}
     {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
-    {{- if ne .RelPermalink "/404.html" -}}
-    <link rel="canonical" href="{{ .RelPermalink }}">
+    {{ if eq .Kind "404" -}}
+        <link rel="canonical" href="{{ .RelPermalink }}">
+        {{ if .Site.IsMultiLingual }}
+            {{ range .Translations }}
+                <link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .RelPermalink }}">
+            {{ end }}
+        {{ end }}
     {{ end }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
