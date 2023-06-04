@@ -463,9 +463,14 @@ Params:
     CopyleftText: "Company, Inc. All rights reserved."
     CopyrightText: "Company, Inc. All rights reserved."
 
+    Github:
+        root: "https://github.com/"
+        organizations: ""
+        username: ""
+        repository: ""
+
     Repo:
         git: "https://github.com/jzeg-net/jzeg-net.github.io"
-        # 可选[blame,blob,raw,edit]
 
     qrcode:
         alipay:
