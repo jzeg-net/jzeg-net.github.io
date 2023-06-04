@@ -14,6 +14,9 @@
     {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
     {{- if ne .RelPermalink "/404.html" -}}
     <link rel="canonical" href="{{ .RelPermalink }}">
+    {{- range .Translations -}}
+    <link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .RelPermalink }}" />
+    {{ end }}
     {{ end }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}

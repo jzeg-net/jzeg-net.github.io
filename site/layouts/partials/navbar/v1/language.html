@@ -12,7 +12,7 @@
     </li>
     {{- range .Translations -}}
     <li>
-        <a class="dropdown-item d-flex align-items-center" href="{{- .RelPermalink  -}}" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+        <a class="dropdown-item d-flex align-items-center" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
             <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.icon }}"></i>
             {{- .Language.LanguageName -}}
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
