@@ -43,31 +43,79 @@ menu:
         -   identifier: menu_home
             pageRef: /
             weight: 1
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_posts
             pageRef: /posts
             weight: 2
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_demo
             pageRef: /demo
             weight: 4
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_more
             pageRef:
             weight: 7
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_contact
             pageRef: /contact
             parent: menu_more
             weight: 1
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_about
             pageRef: /about
             parent: menu_more
             weight: 2
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_ad
             pageRef: /ad
             parent: menu_more
             weight: 3
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_chatgpt
             pageRef: /chatgpt
             parent: menu_more
             weight: 4
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: demo_login
             pageRef: /demo/login
             parent: menu_demo
@@ -152,24 +200,36 @@ menu:
         -   identifier: theme_dark
             weight: 1
             params:
-                svg: "bi-moon-stars"
                 theme_value: "dark"
+                class:
+                svg:
+                    useHref: "bi-moon-stars"
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: theme_light
             weight: 2
             params:
-                svg: "bi-sun"
                 theme_value: "light"
+                class:
+                svg:
+                    useHref: "bi-sun"
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: theme_auto
             weight: 3
             params:
-                svg: "bi-circle-half"
                 theme_value: "auto"
+                class:
+                svg:
+                    useHref: "bi-circle-half"
+                    class:
+                    size: [ width: 16, height: 16 ]
     palette:
         -   identifier: palette_none
             weight: 1
             params:
                 palette_value: "none"
-                class: "text-secondary-emphasis"
+                class: "text-secondary"
                 svg:
                     useHref: "bi-palette"
                     size: [ width: 16, height: 16 ]
@@ -177,7 +237,7 @@ menu:
             weight: 1000
             params:
                 palette_value: "red"
-                class: "text-danger-emphasis"
+                class: "text-danger"
                 svg:
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
@@ -185,7 +245,7 @@ menu:
             weight: 2000
             params:
                 palette_value: "green"
-                class: "text-success-emphasis"
+                class: "text-success"
                 svg:
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
@@ -193,7 +253,7 @@ menu:
             weight: 3000
             params:
                 palette_value: "blue"
-                class: "text-primary-emphasis"
+                class: "text-primary"
                 svg:
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]

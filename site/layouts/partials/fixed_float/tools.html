@@ -34,7 +34,7 @@
                         <div class="list-group">
                             {{ range .Site.Menus.theme }}
                             <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg>
+                                <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                             </button>
                             {{ end }}
                         </div>

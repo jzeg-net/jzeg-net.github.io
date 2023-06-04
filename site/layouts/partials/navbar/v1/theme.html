@@ -6,7 +6,7 @@
     {{ range .Site.Menus.theme }}
     <li>
         <button class="dropdown-item d-flex align-items-center" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}">
-            <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg }}"></use></svg>
+            <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
             {{ or (T .Identifier) .Name | safeHTML }}
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
         </button>
