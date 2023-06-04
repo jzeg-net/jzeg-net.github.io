@@ -262,34 +262,66 @@ menu:
             weight: -5
             params:
                 size_value: "2xs"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_xs
             weight: -4
             params:
                 size_value: "xs"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_sm
             weight: -3
             params:
                 size_value: "sm"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_md
             weight: -2
             params:
                 size_value: "md"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_base
             weight: -1
             params:
                 size_value: "base"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_lg
             weight: 1
             params:
                 size_value: "lg"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_xl
             weight: 2
             params:
                 size_value: "xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_2xl
             weight: 3
             params:
                 size_value: "2xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    size: [ width: 16, height: 16 ]
 
 #watch: true
 #debug: true
