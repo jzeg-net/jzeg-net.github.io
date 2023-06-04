@@ -32,7 +32,7 @@
 {{- $bundleCSS := partial "functions/stylesheet/concat" . }}
 <link rel="stylesheet" href="{{ $bundleCSS }}">
 
-{{- $docs_css := partial "functions/stylesheet/docs" . }}
+{{- $docs_css := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/bootstrap-doc-css/docs.scss" "targetPath" "static/css/docs.css") }}
 <link rel="stylesheet" href="{{ $docs_css }}">
 
 {{- if eq .Page.Layout "jump_link" -}}
