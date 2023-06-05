@@ -8,7 +8,7 @@
                     TableOfContents
                 </button>
                 <div class="dropdown-menu">
-                    <div data-bs-spy="scroll" data-bs-target="#post-content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <div class="scrollspy-example" tabindex="0">
                         {{ .TableOfContents }}
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             </div>
             <div>作者信息</div>
             <div>
-                <article id="post-content">
+                <article data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-smooth-scroll="true" id="post-content">
                     {{ .Content }}
                 </article>
                 <div class="expand-btn">
