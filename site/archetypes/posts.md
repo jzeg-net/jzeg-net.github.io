@@ -7,6 +7,7 @@ publishDate : "{{ .Date }}"
 lastmod : "{{ .Date }}"
 expiryDate : ""
 
+summary : ""
 description : ""
 images: []
 
@@ -32,3 +33,5 @@ slug : ""
 externalLink : ""
 series : []
 ---
+
+<!--more-->
