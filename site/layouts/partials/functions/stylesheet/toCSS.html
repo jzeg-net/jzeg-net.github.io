@@ -1,6 +1,15 @@
 {{ $targetPath := .targetPath }}
 {{ $resourcesGet := .resourcesGet }}
 
+{{ with $targetPath }}
+    {{ else }}{{ errorf "Missing Required parameter name [ targetPath ]: %s" .Position }}
+{{ end }}
+
+{{ with $resourcesGet }}
+    {{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
+{{ end }}
+
+
 {{- $sassOptions := dict "targetPath" $targetPath "outputStyle" "expanded" "precision" 6 -}}
 
 {{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
