@@ -23,7 +23,6 @@
 }
 
 #post-content-more.hide-post-content {
-    position: relative;
     background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0) 10%, rgba(var(--bs-body-bg-rgb), .75) 50%, rgba(var(--bs-body-bg-rgb), .95) 95%);
     margin-top: -15rem;
     padding-top: 10rem;
