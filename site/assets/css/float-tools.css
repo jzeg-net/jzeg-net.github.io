@@ -1,59 +1,59 @@
 #float-tools {
     transition: transform 300ms linear;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -15%);
 }
 
 #float-tools.hide {
-    transform: translate(100%, -20%);
+    transform: translate(100%, -15%);
 }
 
 @media (min-width: 576px) {
     #float-tools {
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, -18%);
     }
 
     #float-tools.hide {
-        transform: translate(100%, -40%);
+        transform: translate(100%, -18%);
     }
 }
 
 @media (min-width: 768px) {
     #float-tools {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -21%);
     }
 
     #float-tools.hide {
-        transform: translate(100%, -50%);
+        transform: translate(100%, -21%);
     }
 }
 
 @media (min-width: 992px) {
     #float-tools {
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -24%);
     }
 
     #float-tools.hide {
-        transform: translate(100%, -60%);
+        transform: translate(100%, -24%);
     }
 }
 
 @media (min-width: 1200px) {
     #float-tools {
-        transform: translate(-50%, -70%);
+        transform: translate(-50%, -27%);
     }
 
     #float-tools.hide {
-        transform: translate(100%, -70%);
+        transform: translate(100%, -27%);
     }
 }
 
 @media (min-width: 1400px) {
     #float-tools {
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -30%);
     }
 
     #float-tools.hide {
-        transform: translate(100%, -80%);
+        transform: translate(100%, -30%);
     }
 }
 

@@ -116,9 +116,9 @@ function scrollMainNavbar() {
     if (!navbar) return
 
     if (new_scroll_position < last_scroll_position && last_scroll_position > 64) {
-        navbar.classList.add('tY-n100')
+        navbar.classList.add('tY-n150')
     } else if (new_scroll_position > last_scroll_position) {
-        navbar.classList.remove('tY-n100')
+        navbar.classList.remove('tY-n150')
     }
 }
 
