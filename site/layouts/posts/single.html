@@ -2,23 +2,23 @@
 <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
     <div class="card pb-1">
         <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019">
-            <div class="btn-group btn-group-sm" id="tableOfContents-container">
-                <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
+            <div class="d-flex align-items-baseline column-gap-2" id="tableOfContents-container">
+                <button class="btn btn-outline-secondary border-secondary-subtle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
                     <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
-                    TableOfContents
                 </button>
+                <span>TableOfContents</span>
                 <div class="dropdown-menu">
                     <div class="scrollspy-example" tabindex="0">
                         {{ .TableOfContents }}
                     </div>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
+            <div class="d-flex flex-row column-gap-2">
+                <button class="btn btn-outline-secondary border-secondary-subtle" data-bs-toggle="button" aria-pressed="true" id="tableOfContents-pin">
                     <svg class="bi" width="16" height="16"><title>{{ T "icon_text-pin" }}</title><use href="#bi-pin"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
                 </button>
-                <button class="btn btn-sm btn-outline-secondary border-secondary-subtle rounded-circle active" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
+                <button class="d-none d-md-block btn btn-outline-secondary border-secondary-subtle" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
                     <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
                 </button>
