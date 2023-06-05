@@ -1,14 +1,14 @@
 {{ define "content" }}
 <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
     <div class="card">
-        <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019" id="tableOfContents-container">
-            <div class="btn-group btn-group-sm">
+        <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019">
+            <div class="btn-group btn-group-sm" id="tableOfContents-container">
                 <button class="btn btn-outline-secondary border-secondary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
                     <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
                     TableOfContents
                 </button>
                 <div class="dropdown-menu">
-                    <div data-bs-spy="scroll" data-bs-target="#content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <div data-bs-spy="scroll" data-bs-target="#post-content" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
                         {{ .TableOfContents }}
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             </div>
             <div>作者信息</div>
             <div>
-                <article id="content">
+                <article id="post-content">
                     {{ .Content }}
                 </article>
                 <div class="expand-btn">
