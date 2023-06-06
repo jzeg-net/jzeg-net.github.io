@@ -7,6 +7,10 @@
     --jg-post-more-bg-rgb: 0, 0, 0;
 }
 
+#tableOfContents-container .dropdown-menu {
+    --bs-dropdown-min-width: 16.5rem;
+}
+
 #post-nav .prev:hover,
 #post-nav .next:hover,
 #post-nav > div:hover {
