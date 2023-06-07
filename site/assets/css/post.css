@@ -19,12 +19,28 @@
 }
 
 #post-content {
+}
+
+.article_shrink {
     max-height: 60rem;
 }
 
-#post-content-more.hide-post-content {
+.article_shrink_none {
+    max-height: none;
+}
+
+
+/* 文章篇幅展开 */
+#post-content-more {
+    z-index: 1018;
+}
+
+#post-content-more.shrink-post-content {
     background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0) 10%, rgba(var(--bs-body-bg-rgb), .75) 50%, rgba(var(--bs-body-bg-rgb), .95) 95%);
     margin-top: -15rem;
     padding-top: 10rem;
     padding-bottom: 5rem;
+}
+
+#post-content-more.grow-post-content {
 }

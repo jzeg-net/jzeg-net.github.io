@@ -25,3 +25,18 @@ if (sidebarIndent) {
 }
 
 lazyLoad('.lazyImg')
+
+let postContentMore = document.querySelector('#post-content-more')
+postContentMore.addEventListener('click', function (event) {
+    let postContent = document.querySelector('#post-content')
+    postContent.classList.toggle('article_shrink')
+
+    postContentMore.classList.toggle('shrink-post-content')
+    postContentMore.classList.toggle('sticky-bottom')
+
+    postContentMore.childNodes.forEach(function (currentChildEl) {
+        if ('BUTTON' === currentChildEl.tagName) {
+            currentChildEl.classList.toggle('d-none')
+        }
+    })
+})
