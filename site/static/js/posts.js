@@ -39,8 +39,10 @@ postContentMore.addEventListener('click', () => {
             currentChildEl.classList.toggle('d-none')
 
             if (!currentChildEl.classList.contains('d-none')) {
-                currentChildEl.focus({ preventScroll: false })
-                currentChildEl.scrollIntoView(true)
+                setTimeout(function () {
+                    // currentChildEl.focus({ preventScroll: false })
+                    currentChildEl.scrollIntoView(false)
+                }, 400)
             }
 
         }
