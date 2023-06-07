@@ -19,16 +19,14 @@
 }
 
 #post-content {
+    overflow: hidden;
+    max-height: 300rem;
+    transition: max-height 2.35s ease-in-out;
 }
 
 .article_shrink {
-    max-height: 60rem;
+    max-height: 60rem !important;
 }
-
-.article_shrink_none {
-    max-height: none;
-}
-
 
 /* 文章篇幅展开 */
 #post-content-more {
