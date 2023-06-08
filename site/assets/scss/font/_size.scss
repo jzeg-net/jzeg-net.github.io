@@ -1,0 +1,33 @@
+:root {
+    --#{$prefix}-text-xs:   #{$text-xs};
+    --#{$prefix}-text-sm:   #{$text-sm};
+    --#{$prefix}-text-base: #{$text-base};
+    --#{$prefix}-text-lg:   #{$text-lg};
+    --#{$prefix}-text-xl:   #{$text-xl};
+    --#{$prefix}-text-2xl:  #{$text-2xl};
+    --#{$prefix}-text-3xl:  #{$text-3xl};
+    --#{$prefix}-text-4xl:  #{$text-4xl};
+    --#{$prefix}-text-5xl:  #{$text-5xl};
+    --#{$prefix}-text-6xl:  #{$text-6xl};
+    --#{$prefix}-text-7xl:  #{$text-7xl};
+    --#{$prefix}-text-8xl:  #{$text-8xl};
+    --#{$prefix}-text-9xl:  #{$text-9xl};
+}
+
+.text-xs    {font-size:var(--#{$prefix}-text-xs)}
+.text-sm    {font-size:var(--#{$prefix}-text-sm)}
+.text-base  {font-size:var(--#{$prefix}-text-base)}
+.text-lg    {font-size:var(--#{$prefix}-text-lg)}
+.text-xl    {font-size:var(--#{$prefix}-text-xl)}
+.text-2xl   {font-size:var(--#{$prefix}-text-2xl)}
+.text-3xl   {font-size:var(--#{$prefix}-text-3xl)}
+.text-4xl   {font-size:var(--#{$prefix}-text-4xl)}
+.text-5xl   {font-size:var(--#{$prefix}-text-5xl)}
+.text-6xl   {font-size:var(--#{$prefix}-text-6xl)}
+.text-7xl   {font-size:var(--#{$prefix}-text-7xl)}
+.text-8xl   {font-size:var(--#{$prefix}-text-8xl)}
+.text-9xl   {font-size:var(--#{$prefix}-text-9xl)}
+
+@mixin text-font-size($size) {
+    font-size: --#{$prefix}--$size;
+}
