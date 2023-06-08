@@ -27,24 +27,26 @@ if (sidebarIndent) {
 lazyLoad('.lazyImg')
 
 let postContentMore = document.querySelector('#post-content-more')
-postContentMore.addEventListener('click', () => {
-    let postContent = document.querySelector('#post-content')
-    postContent.classList.toggle('article_shrink')
+if (postContentMore) {
+    postContentMore.addEventListener('click', () => {
+        let postContent = document.querySelector('#post-content')
+        postContent.classList.toggle('article_shrink')
 
-    postContentMore.classList.toggle('shrink-post-content')
-    postContentMore.classList.toggle('sticky-bottom')
+        postContentMore.classList.toggle('shrink-post-content')
+        postContentMore.classList.toggle('sticky-bottom')
 
-    postContentMore.childNodes.forEach(currentChildEl => {
-        if ('BUTTON' === currentChildEl.tagName) {
-            currentChildEl.classList.toggle('d-none')
+        postContentMore.childNodes.forEach(currentChildEl => {
+            if ('BUTTON' === currentChildEl.tagName) {
+                currentChildEl.classList.toggle('d-none')
 
-            if (!currentChildEl.classList.contains('d-none')) {
-                setTimeout(function () {
-                    // currentChildEl.focus({ preventScroll: false })
-                    currentChildEl.scrollIntoView(false)
-                }, 400)
+                if (!currentChildEl.classList.contains('d-none')) {
+                    setTimeout(function () {
+                        // currentChildEl.focus({ preventScroll: false })
+                        currentChildEl.scrollIntoView(false)
+                    }, 400)
+                }
+
             }
-
-        }
+        })
     })
-})
+}
