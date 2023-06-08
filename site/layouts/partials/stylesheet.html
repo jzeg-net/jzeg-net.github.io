@@ -34,6 +34,9 @@
 {{- $docs_css := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/bootstrap-doc-css/docs.scss" "targetPath" "static/css/docs.css") }}
 <link rel="stylesheet" href="{{ $docs_css }}">
 
+{{- $font := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
+<link rel="stylesheet" href="{{ $font }}">
+
 {{- if eq .Page.Layout "jump_link" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
 {{- end -}}
