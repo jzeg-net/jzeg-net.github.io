@@ -3,3 +3,7 @@ baseURL: "https://jzeg-net.github.io/"
 logFile: ".log/hugo_log.production.log"
 
 publishDir: "docs"
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
