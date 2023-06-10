@@ -1,26 +1,26 @@
 {{ define "content" }}
     <main id="content">
         <div class="col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 position-absolute top-50 start-50 translate-middle">
-            <span class="mb-1 float-end fw-light text-secondary display-6">{{ .Site.Title }}</span>
+            <span class="mb-1 float-end fw-light text-secondary display-6">{{- .Site.Title -}}</span>
             <div class="card w-100">
                 <div class="card-body">
-                    <h1 class="card-title display-6">{{ T "jump_title" }}</h1>
-                    <div class="card-text small" id="hintInfo">{{ T "jump_hintInfo" }}</div>
+                    <h1 class="card-title display-6">{{- T "jump_title" -}}</h1>
+                    <div class="card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
                     <div class="my-4 p-2 rounded border border-dark-subtle lh-sm" id="link_text"></div>
                     <hr class="my-4">
                     <div class="d-flex justify-content-end gap-4 me-3">
                         <button class="btn btn-sm btn-outline-secondary" type="button"  onclick="history.go(-1)" id="to_back">
-                            {{ T "jump_back" }}
+                            {{- T "jump_back" -}}
                             <i class="fa-fw fa fa-rotate-back"></i>
                         </button>
-                        <a class="btn btn-sm btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="新标签打开">
-                            {{ T "jump_open" }}
+                        <a class="btn btn-sm btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_open" -}}">
+                            {{- T "jump_open" -}}
                             <i class="fa-fw fa fa-external-link"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        {{ .Content }}
+        {{- .Content -}}
     </main>
 {{ end }}
