@@ -1,4 +1,4 @@
-{{- $common := resources.Match "css/*.css" -}}
+{{- $common := resources.Match "css/concat/*.css" -}}
 
 {{- $targetPath := "static/css/common.bundle.css" -}}
 {{- $bundleCSS := $common | resources.Concat $targetPath -}}
