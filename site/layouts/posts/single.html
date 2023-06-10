@@ -1,7 +1,7 @@
 {{ define "content" }}
 <div class="col-12 col-md-7 col-lg-8 flex-md-grow-1" id="posts-container">
     <div class="card pb-1">
-        <div class="card-header bg-body d-flex justify-content-between sticky-top" style="z-index: 1019">
+        <div class="card-header bg-body d-flex justify-content-between sticky-top">
             <div class="d-flex align-items-baseline column-gap-2" id="tableOfContents-container">
                 <button class="btn btn-outline-secondary border-secondary-subtle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="tableOfContents-btn">
                     <svg class="bi" width="16" height="16"><title>TableOfContents</title><use href="#bi-list-stars"></use></svg>
@@ -93,12 +93,11 @@
     </aside>
 </div>
 <div class="col-12 col-md-4 col-lg-3 offcanvas-md offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
-    <div class="offcanvas-header px-4 pb-0">
+    <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
     </div>
-    <div class="offcanvas-body p-4 pt-0 p-lg-0">
-        <hr class="d-lg-none text-opacity-50">
+    <div class="offcanvas-body">
         {{ partial "posts/sidebar/index" . }}
     </div>
 </div>

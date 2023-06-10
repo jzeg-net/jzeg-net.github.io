@@ -7,6 +7,10 @@
     --jg-post-more-bg-rgb: 0, 0, 0;
 }
 
+#posts-container .card .card-header.sticky-top {
+    z-index: 1019;
+}
+
 #tableOfContents-container .dropdown-menu {
     --bs-dropdown-min-width: 16.5rem;
 }
