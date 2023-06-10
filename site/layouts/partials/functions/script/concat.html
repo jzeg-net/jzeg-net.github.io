@@ -1,4 +1,4 @@
-{{- $add_jump := resources.Match "js/*.js" -}}
+{{- $add_jump := resources.Match "js/concat/*.js" -}}
 
 {{- $targetPath := "static/js/common.bundle.js" -}}
 {{- $bundleJs := $add_jump | resources.Concat $targetPath -}}
