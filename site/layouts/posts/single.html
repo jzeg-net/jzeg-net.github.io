@@ -18,9 +18,12 @@
                     <svg class="bi" width="16" height="16"><title>{{ T "icon_text-pin" }}</title><use href="#bi-pin"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
                 </button>
-                <button class="d-none d-md-block btn" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
+                <button class="btn d-none d-md-block" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
                     <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
+                </button>
+                <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="{{- T "post_sidebar-toggle" -}}">
+                    <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
                 </button>
             </div>
         </div>
@@ -89,7 +92,14 @@
         </div>
     </aside>
 </div>
-<div class="col-12 col-md-4 col-lg-3" id="sidebar">
-    {{ partial "posts/sidebar/index" . }}
+<div class="col-12 col-md-4 col-lg-3 offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+    <div class="offcanvas-header px-4 pb-0">
+        <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-4 pt-0 p-lg-0">
+        <hr class="d-lg-none text-opacity-50">
+        {{ partial "posts/sidebar/index" . }}
+    </div>
 </div>
 {{ end }}

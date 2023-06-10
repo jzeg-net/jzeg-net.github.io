@@ -21,6 +21,8 @@
     "post_text-content_collapse": "收起内容",
     "post_nav_text_prev": "到头了",
     "post_nav_text_next": "到底了",
+    "post_sidebar": "侧边栏",
+    "post_sidebar-toggle": "切换侧边栏",
     "language": "语言",
     "language_toggle": "语言切换",
     "fontSize": "字体尺寸",
