@@ -28,7 +28,9 @@ lazyLoad('.lazyImg')
 
 let postContentMore = document.querySelector('#post-content-more')
 if (postContentMore) {
-    postContentMore.addEventListener('click', () => {
+    postContentMore.addEventListener('click', (event) => {
+        if ('DIV' === event.target.tagName) return
+
         let postContent = document.querySelector('#post-content')
         postContent.classList.toggle('article_shrink')
 
