@@ -37,6 +37,8 @@
 {{- $font := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
 <link rel="stylesheet" href="{{ $font }}">
 
+<link rel="stylesheet" href="{{ $preUrl }}static/css/post.css">
+
 {{- if eq .Page.Layout "jump_link" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
 {{- end -}}
