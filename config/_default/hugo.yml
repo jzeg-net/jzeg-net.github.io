@@ -268,14 +268,6 @@ menu:
                     useHref: "bi-droplet-half"
                     size: [ width: 16, height: 16 ]
     font_size:
-        -   identifier: fontSize_2xs
-            weight: -5
-            params:
-                size_value: "2xs"
-                class:
-                svg:
-                    useHref: "bi-fonts"
-                    size: [ width: 16, height: 16 ]
         -   identifier: fontSize_xs
             weight: -4
             params:
@@ -455,7 +447,7 @@ Params:
 
     # default font size
     fontSize: "base"
-    fontSizeOptions: [ "2xs","xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
+    fontSizeOptions: [ "xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
 
     # default palette color
     palette: "none"
