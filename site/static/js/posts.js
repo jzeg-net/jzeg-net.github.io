@@ -1,30 +1,22 @@
+lazyLoad('.lazyImg')
+
 let tableOfContentsPin = document.querySelector('#tableOfContents-pin')
 if (tableOfContentsPin) {
     tableOfContentsPin.addEventListener('click', () => {
-        if (tableOfContentsPin.classList.contains('active')) {
-            tableOfContentsPin.firstElementChild.classList.toggle('d-none')
-            tableOfContentsPin.lastElementChild.classList.toggle('d-none')
-        } else {
-            tableOfContentsPin.firstElementChild.classList.toggle('d-none')
-            tableOfContentsPin.lastElementChild.classList.toggle('d-none')
-        }
+        tableOfContentsPin.childNodes.forEach(currentChild => {
+            currentChild.classList.toggle('d-none')
+        })
     })
 }
 
 let sidebarCollapse = document.querySelector('#sidebar-collapse')
 if (sidebarCollapse) {
     sidebarCollapse.addEventListener('click', () => {
-        if (sidebarCollapse.classList.contains('active')) {
-            sidebarCollapse.firstElementChild.classList.toggle('d-none')
-            sidebarCollapse.lastElementChild.classList.toggle('d-none')
-        } else {
-            sidebarCollapse.firstElementChild.classList.toggle('d-none')
-            sidebarCollapse.lastElementChild.classList.toggle('d-none')
-        }
+        sidebarCollapse.childNodes.forEach(currentChild => {
+            currentChild.classList.toggle('d-none')
+        })
     })
 }
-
-lazyLoad('.lazyImg')
 
 let postContentMore = document.querySelector('#post-content-more')
 if (postContentMore) {
@@ -37,14 +29,14 @@ if (postContentMore) {
         postContentMore.classList.toggle('shrink-post-content')
         postContentMore.classList.toggle('sticky-bottom')
 
-        postContentMore.childNodes.forEach(currentChildEl => {
-            if ('BUTTON' === currentChildEl.tagName) {
-                currentChildEl.classList.toggle('d-none')
+        postContentMore.childNodes.forEach(currentChild => {
+            if ('BUTTON' === currentChild.tagName) {
+                currentChild.classList.toggle('d-none')
 
-                if (!currentChildEl.classList.contains('d-none')) {
+                if (!currentChild.classList.contains('d-none')) {
                     setTimeout(function () {
                         // currentChildEl.focus({ preventScroll: false })
-                        currentChildEl.scrollIntoView(false)
+                        currentChild.scrollIntoView(false)
                     }, 400)
                 }
 
