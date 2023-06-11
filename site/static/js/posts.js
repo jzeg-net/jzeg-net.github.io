@@ -2,10 +2,13 @@ lazyLoad('.lazyImg')
 
 let tableOfContentsPin = document.querySelector('#tableOfContents-pin')
 if (tableOfContentsPin) {
+    let postNavbar = document.querySelector('#postNavbar')
+
     tableOfContentsPin.addEventListener('click', () => {
         tableOfContentsPin.childNodes.forEach(currentChild => {
             currentChild.classList.toggle('d-none')
         })
+        postNavbar.classList.toggle('sticky-top')
     })
 }
 
