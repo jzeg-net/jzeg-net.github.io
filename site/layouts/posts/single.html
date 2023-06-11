@@ -18,13 +18,20 @@
                     <svg class="bi" width="16" height="16"><title>{{ T "icon_text-pin" }}</title><use href="#bi-pin"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-pin_angle" }}</title><use href="#bi-pin-angle"></use></svg>
                 </button>
-                <button class="btn d-none d-md-block" data-bs-toggle="button" aria-pressed="true" id="sidebar-indent">
-                    <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
-                    <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
-                </button>
-                <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="{{- T "post_sidebar-toggle" -}}">
-                    <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
-                </button>
+                {{ if eq .Site.Params.post.sidebar.enable true }}
+                    {{ if eq .Site.Params.post.sidebar.type "collapse" }}
+                        <button class="btn d-none d-md-block" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" id="sidebar-collapse" aria-expanded="false" aria-controls="sidebarCollapse">
+                            <svg class="bi" width="16" height="16"><title>{{ T "icon_text-window_split" }}</title><use href="#bi-window-split"></use></svg>
+                            <svg class="bi d-none" width="16" height="16"><title>{{ T "icon_text-window" }}</title><use href="#bi-window"></use></svg>
+                        </button>
+                    {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
+                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="{{- T "post_sidebar-toggle" -}}">
+                            <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
+                        </button>
+                    {{ else }}
+                        {{ errorf "侧边栏参数值不匹配，可选的值有 [ collapse / offcanvas ]" }}
+                    {{ end }}
+                {{ end }}
             </div>
         </div>
         <section class="card-body d-flex flex-column gap-4 pb-5">
@@ -92,13 +99,23 @@
         </div>
     </aside>
 </div>
-<div class="col-12 col-md-4 col-lg-3 offcanvas-md offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
-    <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-        {{ partial "posts/sidebar/index" . }}
-    </div>
-</div>
+{{ if eq .Site.Params.post.sidebar.enable true }}
+    {{ if eq .Site.Params.post.sidebar.type "collapse" }}
+        <div class="col-12 col-md-4 col-lg-3 collapse collapse-horizontal flex-grow-1" tabindex="-1" id="sidebarCollapse">
+            {{ partial "posts/sidebar/index" . }}
+        </div>
+    {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
+        <div class="col-12 col-md-4 col-lg-3 offcanvas offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                {{ partial "posts/sidebar/index" . }}
+            </div>
+        </div>
+    {{ else }}
+        {{ errorf "侧边栏参数值不匹配，可选的值有 [ collapse / offcanvas ]" }}
+    {{ end }}
+{{ end }}
 {{ end }}

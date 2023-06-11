@@ -11,15 +11,15 @@ if (tableOfContentsPin) {
     })
 }
 
-let sidebarIndent = document.querySelector('#sidebar-indent')
-if (sidebarIndent) {
-    sidebarIndent.addEventListener('click', () => {
-        if (sidebarIndent.classList.contains('active')) {
-            sidebarIndent.firstElementChild.classList.toggle('d-none')
-            sidebarIndent.lastElementChild.classList.toggle('d-none')
+let sidebarCollapse = document.querySelector('#sidebar-collapse')
+if (sidebarCollapse) {
+    sidebarCollapse.addEventListener('click', () => {
+        if (sidebarCollapse.classList.contains('active')) {
+            sidebarCollapse.firstElementChild.classList.toggle('d-none')
+            sidebarCollapse.lastElementChild.classList.toggle('d-none')
         } else {
-            sidebarIndent.firstElementChild.classList.toggle('d-none')
-            sidebarIndent.lastElementChild.classList.toggle('d-none')
+            sidebarCollapse.firstElementChild.classList.toggle('d-none')
+            sidebarCollapse.lastElementChild.classList.toggle('d-none')
         }
     })
 }

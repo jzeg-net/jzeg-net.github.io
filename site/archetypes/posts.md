@@ -25,6 +25,11 @@ authorLink: ""
 comment:
     enable: true
 
+sidebar:
+    enable: true
+    # Sidebar Type [ collapse | offcanvas ]
+    type: collapse
+
 tags : []
 categories : []
 

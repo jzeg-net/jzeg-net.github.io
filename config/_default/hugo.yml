@@ -461,6 +461,11 @@ Params:
     palette: "none"
     paletteOptions: [ "none","blue","green","orange","red","yellow" ]
 
+    post:
+        sidebar:
+            enable: true
+            # Sidebar Type [ collapse | offcanvas ]
+            type: collapse
 
     icp: "冀ICP备12018851号-7"
     beian: "9999999999999999"
