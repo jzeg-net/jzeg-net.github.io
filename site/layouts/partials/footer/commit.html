@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="card-body vstack gap-3">
-                <a class="btn btn-sm btn-outline-secondary fs-min"
+                <a class="btn btn-sm btn-outline-secondary text-xs"
                    href="{{- .Site.Params.Repo.git -}}/raw/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_raw_file_on_github" }}"
                    target="_blank"
@@ -29,7 +29,7 @@
                     <span class="mx-4">{{ T "footer_github_raw" }}</span>
                     <svg class="bi" aria-hidden="true"><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary fs-min"
+                <a class="btn btn-sm btn-outline-secondary text-xs"
                    href="{{- .Site.Params.Repo.git -}}/blob/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_view_file_on_github" }}"
                    target="_blank"
@@ -37,7 +37,7 @@
                     <span class="mx-4">{{ T "footer_github_view" }}</span>
                     <svg class="bi" aria-hidden="true"><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary fs-min"
+                <a class="btn btn-sm btn-outline-secondary text-xs"
                    href="{{- .Site.Params.Repo.git -}}/edit/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_edit_file_on_github" }}"
                    target="_blank"

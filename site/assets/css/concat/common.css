@@ -38,10 +38,6 @@ html {
     transition: transform 150ms linear;
 }
 
-.fs-min {
-    font-size: .6rem;
-}
-
 footer-gradient:before {
     background: #b4e900;
     background: linear-gradient(90deg, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.4));
