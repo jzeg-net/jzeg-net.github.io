@@ -21,6 +21,7 @@ if (sidebarCollapse) {
     })
 }
 
+// 长内容伸缩按钮
 let postContentMore = document.querySelector('#post-content-more')
 if (postContentMore) {
     postContentMore.addEventListener('click', (event) => {

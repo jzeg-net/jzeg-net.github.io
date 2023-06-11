@@ -1,0 +1,22 @@
+{{/* https://gohugo.io/hugo-pipes/js/ */}}
+
+{{ $targetPath := .targetPath }}
+{{ $resourcesGet := .resourcesGet }}
+
+{{ with $targetPath }}
+{{ else }}{{ errorf "Missing Required parameter name [ targetPath ]: %s" .Position }}
+{{ end }}
+
+{{ with $resourcesGet }}
+{{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
+{{ end }}
+
+{{ $jsBuildOptions := dict "targetPath" $targetPath "target" "esnext" "minify" false "format" "iife" "sourceMap" "" }}
+
+{{ if eq hugo.Environment "production" }}
+    {{ $jsBuildOptions = merge $jsBuildOptions (dict "minify" true) }}
+{{ end }}
+
+{{ $js := resources.Get $resourcesGet | js.Build $jsBuildOptions }}
+
+{{ return ($js.Permalink | relURL) }}

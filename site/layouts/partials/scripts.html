@@ -45,18 +45,8 @@
 
 <script src="{{ $preUrl }}static/js/account.js"></script>
 
-{{/* https://gohugo.io/hugo-pipes/js/ */}}
-{{ $jsBuildOptions := dict "targetPath" "static/js/posts.js" "target" "esnext" "format" "iife" "sourceMap" "" }}
-{{ $jsBuildParams := dict "params" (dict "" "") }}
-
-{{ $js := resources.Get "js/posts.js" }}
-
-{{- $post := $js | js.Build $jsBuildOptions -}}
-
-{{- if eq hugo.Environment "production" -}}
-    {{- $post := $post | resources.Minify -}}
-{{- end }}
-<script src="{{ $post.Permalink | relURL }}"></script>
+{{- $postJs := partial "functions/script/babel" (dict "resourcesGet" "static/js/post.js") }}
+<script src="{{ $postJs }}"></script>
 
 {{- if eq .Page.Layout "jump_link" -}}
     <script src="{{ $preUrl }}static/js/jump_link.js"></script>

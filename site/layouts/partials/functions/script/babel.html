@@ -1,0 +1,17 @@
+{{/* https://gohugo.io/hugo-pipes/babel/ */}}
+
+{{ $resourcesGet := .resourcesGet }}
+
+{{ with $resourcesGet }}
+{{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
+{{ end }}
+
+{{ $babelOptions := dict "minified" false "noComments" false "compact" false "sourceMap" "" }}
+
+{{ if eq hugo.Environment "production" }}
+    {{ $babelOptions = merge $babelOptions (dict "minified" true "noComments" true "compact" true) }}
+{{ end }}
+
+{{ $js := resources.Get $resourcesGet | babel $babelOptions }}
+
+{{ return ($js.Permalink | relURL) }}
