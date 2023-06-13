@@ -22,15 +22,15 @@
     color: rgba(95, 226, 43, 0.65);
 }
 
-ol.bulletin-inner > :nth-child(1)::before {
-    color: rgba(138, 43, 226, 0.65);
+.list-group-numbered.bulletin-inner > :nth-child(1)::before {
+    color: rgb(138, 43, 226);
 }
 
-ol.bulletin-inner > :nth-child(2)::before {
+.list-group-numbered.bulletin-inner > :nth-child(2)::before {
     color: #ff0000;
 }
 
-ol.bulletin-inner > :nth-child(3)::before {
+.list-group-numbered.bulletin-inner > :nth-child(3)::before {
     color: #c00a5c;
 }
 
@@ -38,10 +38,6 @@ ol.bulletin-inner > :nth-child(3)::before {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-}
-
-ul.bulletin-animation {
-    /*list-style: none;*/
 }
 
 .bulletin-animation > *::marker {
