@@ -1,0 +1,103 @@
+.bulletin {
+    /*width: 100%;*/
+    height: 20vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.bulletin:hover .bulletin-animation,
+.bulletin-animation:hover {
+    animation-play-state: paused;
+}
+
+.bulletin-inner:first-child {
+    padding-top: 100%;
+}
+
+.bulletin-inner:last-child {
+    /*padding-bottom: 10vh;*/
+}
+
+.list-group-numbered.bulletin-inner > :nth-child(n)::before {
+    color: rgba(95, 226, 43, 0.65);
+}
+
+ol.bulletin-inner > :nth-child(1)::before {
+    color: rgba(138, 43, 226, 0.65);
+}
+
+ol.bulletin-inner > :nth-child(2)::before {
+    color: #ff0000;
+}
+
+ol.bulletin-inner > :nth-child(3)::before {
+    color: #c00a5c;
+}
+
+.bulletin-animation {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+ul.bulletin-animation {
+    /*list-style: none;*/
+}
+
+.bulletin-animation > *::marker {
+    padding-left: 29px;
+}
+
+.delay-1s {
+    animation-delay: 1s;
+}
+
+.delay-3s {
+    animation-delay: 3s;
+}
+
+.delay-5s {
+    animation-delay: 5s;
+}
+
+.duration-5s {
+    animation-duration: 5s;
+}
+
+.duration-10s {
+    animation-duration: 10s;
+}
+
+.duration-20s {
+    animation-duration: 20s;
+}
+
+.duration-30s {
+    animation-duration: 20s;
+}
+
+.animationName-marquee {
+    animation-name: marquee;
+}
+
+.animationName-marquee-top {
+    animation-name: marquee-top;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee-top {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}

@@ -21,7 +21,8 @@
     --border-color: #fff;
 }
 
-html {
+html,
+body {
     scroll-behavior: smooth;
 }
 
