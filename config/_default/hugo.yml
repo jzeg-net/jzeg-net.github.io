@@ -442,16 +442,25 @@ module:
 
 Params:
     # default theme mode
-    theme: "light"
-    themeOptions: [ 'light',"dark","auto" ]
-
-    # default font size
-    fontSize: "base"
-    fontSizeOptions: [ "xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
+    theme:
+        enable: true
+        default: light
+        option: [ 'light',"dark","auto" ]
 
     # default palette color
-    palette: "none"
-    paletteOptions: [ "none","blue","green","orange","red","yellow" ]
+    palette:
+        enable: true
+        default: none
+        option: [ "none","blue","green","orange","red","yellow" ]
+
+    # default font size
+    font:
+        enable: true
+        # default size
+        size:
+            enable: true
+            default: base
+            option: [ "xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
 
     post:
         sidebar:

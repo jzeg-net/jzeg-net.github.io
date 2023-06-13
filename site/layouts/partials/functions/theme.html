@@ -1,5 +1,5 @@
-{{- $theme := .Site.Params.theme | default "auto" }}
-{{- if not (in (slice .Site.Params.themeOptions) $theme) }}
+{{- $theme := .Site.Params.theme.default | default "auto" }}
+{{- if not (in (slice .Site.Params.theme.option) $theme) }}
     {{- $theme = "auto" }}
 {{- end }}
 {{- return $theme -}}
