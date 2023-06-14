@@ -8,4 +8,7 @@
     {{- .Title -}}
     {{- .Site.Params.header_separator -}}
     {{- .Site.Title -}}
+    {{- with .Params.subtitle -}}
+        {{- .Site.Params.header_separator -}}{{- . -}}
+    {{- end -}}
 {{- end -}}
