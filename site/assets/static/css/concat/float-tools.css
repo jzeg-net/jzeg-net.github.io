@@ -4,6 +4,11 @@
     z-index: 1018;
 }
 
+#float-tools:hover {
+    opacity: .95 !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
 #float-tools.hide {
     transform: translate(100%, -15%);
 }
@@ -56,10 +61,6 @@
     #float-tools.hide {
         transform: translate(100%, -30%);
     }
-}
-
-#float-tools:hover {
-    opacity: .95 !important;
 }
 
 #float-tools .list-group-item span,
