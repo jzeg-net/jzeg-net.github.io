@@ -1,5 +1,11 @@
 {{- if .IsHome -}}
-    {{- .Title }} · {{ .Site.Title }} · {{ .Site.Params.subtitle -}}
+    {{- .Title -}}
+    {{- .Site.Params.header_separator -}}
+    {{- .Site.Title -}}
+    {{- .Site.Params.header_separator -}}
+    {{- .Site.Params.subtitle -}}
 {{- else -}}
-    {{- .Title }} · {{ .Site.Title -}}
+    {{- .Title -}}
+    {{- .Site.Params.header_separator -}}
+    {{- .Site.Title -}}
 {{- end -}}

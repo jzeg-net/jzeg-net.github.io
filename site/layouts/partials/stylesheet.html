@@ -20,8 +20,10 @@
 
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
+{{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/@docsearch/css/dist/style.css">
+{{ end }}
 {{ end }}
 
 {{- if eq .Page.Layout "full_page" -}}
@@ -44,7 +46,7 @@
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
 {{- end -}}
 
-{{- if (eq .IsHome false) -}}
+{{- if eq .IsHome false -}}
     {{ if and (ne .Page.Params.breadcrumb "hide") (ne .Page.Params.onlyMain true) }}
         <link rel="stylesheet" href="{{ $preUrl }}static/css/breadcrumbs.css">
     {{- end -}}

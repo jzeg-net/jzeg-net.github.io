@@ -23,6 +23,7 @@ languages:
             icon: cn
             Subtitle: "子标题"
             Description: "默认描述"
+            header_separator: " · "
 
     en-us:
         # baseURL: ""
@@ -37,6 +38,7 @@ languages:
             icon: us
             Subtitle: "Subtitle"
             Description: "Default Description"
+            header_separator: " · "
 
 menu:
     main:

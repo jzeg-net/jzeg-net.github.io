@@ -7,10 +7,14 @@
 {{- end }}
 
 <script src="{{ $preUrl }}static/vendor/js-cookie/dist/js.cookie.min.js"></script>
+
+{{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
     <script src="{{ $preUrl }}static/vendor/@docsearch/js/dist/umd/index.js"></script>
     <script src="{{ $preUrl }}static/js/doc-search.js"></script>
 {{ end }}
+{{ end }}
+
 <script src="{{ $preUrl }}static/vendor/localforage/dist/localforage.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/workbox-sw/build/workbox-sw.js"></script>
 <script src="{{ $preUrl }}static/vendor/lozad/dist/lozad.min.js"></script>
