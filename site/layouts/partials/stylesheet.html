@@ -39,8 +39,10 @@
 {{- $font := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
 <link rel="stylesheet" href="{{ $font }}">
 
-<link rel="stylesheet" href="{{ $preUrl }}static/css/post.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/css/bulletin.css">
+{{- $postCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post.css" "targetPath" "static/css/post.css") }}
+<link rel="stylesheet" href="{{ $postCSS }}">
+{{- $bulletinCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/bulletin.css" "targetPath" "static/css/bulletin.css") }}
+<link rel="stylesheet" href="{{ $bulletinCSS }}">
 
 {{- if eq .Page.Layout "jump_link" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
