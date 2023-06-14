@@ -1,0 +1,16 @@
+{{/* https://gohugo.io/hugo-pipes/postcss/ */}}
+{{ $resourcesGet := .resourcesGet }}
+
+{{ with $resourcesGet }}
+{{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
+{{ end }}
+
+{{ $postcssOptions := dict "use" "autoprefixer" "noMap" true }}
+
+{{ $style := resources.Get $resourcesGet | postCSS $postcssOptions }}
+
+{{ if eq hugo.Environment "production" }}
+    {{- $style = $style | resources.Minify -}}
+{{ end }}
+
+{{ return ($style.Permalink | relURL) }}

@@ -10,14 +10,14 @@
 {{ end }}
 
 
-{{- $sassOptions := dict "targetPath" $targetPath "outputStyle" "expanded" "precision" 6 -}}
+{{ $sassOptions := dict "targetPath" $targetPath "outputStyle" "expanded" "precision" 6 }}
 
-{{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
+{{ $postcssOptions := dict "use" "autoprefixer" "noMap" true }}
 
-{{ if eq hugo.Environment "production" -}}
-    {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
-{{- end -}}
+{{ if eq hugo.Environment "production" }}
+    {{ $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") }}
+{{ end }}
 
-{{- $style := resources.Get $resourcesGet | toCSS $sassOptions | postCSS $postcssOptions }}
+{{ $style := resources.Get $resourcesGet | toCSS $sassOptions | postCSS $postcssOptions }}
 
-{{- return ($style.Permalink | relURL) }}
+{{ return ($style.Permalink | relURL) }}

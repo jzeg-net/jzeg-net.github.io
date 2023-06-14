@@ -1,10 +1,10 @@
-{{- $concat := resources.Match "static/css/concat/*.css" -}}
-{{- $targetPath := "static/css/common.bundle.css" -}}
+{{ $concat := resources.Match "static/css/concat/*.css" }}
+{{ $targetPath := "static/css/common.bundle.css" }}
 
-{{- $bundle := $concat | resources.Concat $targetPath -}}
+{{ $bundle := $concat | resources.Concat $targetPath }}
 
-{{- if eq hugo.Environment "production" -}}
-    {{- $bundle = $bundle | resources.Minify -}}
-{{- end }}
+{{ if eq hugo.Environment "production" }}
+    {{ $bundle = $bundle | resources.Minify }}
+{{ end }}
 
-{{- return ($bundle.Permalink | relURL) }}
+{{ return ($bundle.Permalink | relURL) }}

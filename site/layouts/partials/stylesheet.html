@@ -46,8 +46,10 @@
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
 {{- end -}}
 
+{{- $breadcrumbsCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/breadcrumbs.css" "targetPath" "static/css/breadcrumbs.css") }}
+
 {{- if eq .IsHome false -}}
     {{ if and (ne .Page.Params.breadcrumb "hide") (ne .Page.Params.onlyMain true) }}
-        <link rel="stylesheet" href="{{ $preUrl }}static/css/breadcrumbs.css">
+        <link rel="stylesheet" href="{{ $breadcrumbsCSS }}">
     {{- end -}}
 {{- end -}}
