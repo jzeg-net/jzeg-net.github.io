@@ -501,3 +501,9 @@ Params:
             donate: https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=CAEQguvBjgUYz9KShwY%3D_xxx_sign&u=1372616066&n=%E8%A7%A3%E6%9E%90%E7%9F%AD%E8%A7%86%E9%A2%91
             account:
             group:
+
+    analytics:
+        enable: false
+        googleTagManager:
+            enable: true
+            id:
