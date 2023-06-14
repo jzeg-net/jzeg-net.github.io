@@ -33,14 +33,15 @@
 {{- $bundleCSS := partial "functions/stylesheet/concat" . }}
 <link rel="stylesheet" href="{{ $bundleCSS }}">
 
-{{- $docs_css := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/bootstrap-doc-css/docs.scss" "targetPath" "static/css/docs.css") }}
-<link rel="stylesheet" href="{{ $docs_css }}">
+{{- $docsCSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/bootstrap-doc-css/docs.scss" "targetPath" "static/css/docs.css") }}
+<link rel="stylesheet" href="{{ $docsCSS }}">
 
-{{- $font := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
-<link rel="stylesheet" href="{{ $font }}">
+{{- $fontCSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
+<link rel="stylesheet" href="{{ $fontCSS }}">
 
-{{- $postCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post.css" "targetPath" "static/css/post.css") }}
-<link rel="stylesheet" href="{{ $postCSS }}">
+{{- $post_css := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post.css" "targetPath" "static/css/post.css") }}
+<link rel="stylesheet" href="{{ $post_css }}">
+
 {{- $bulletinCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/bulletin.css" "targetPath" "static/css/bulletin.css") }}
 <link rel="stylesheet" href="{{ $bulletinCSS }}">
 
