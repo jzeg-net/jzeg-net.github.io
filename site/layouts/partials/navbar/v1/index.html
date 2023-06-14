@@ -1,15 +1,17 @@
 <header class="navbar navbar-expand-lg bd-navbar sticky-top" id="mainNavbar">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
-        <div class="d-lg-none" style="width: 4.5rem;"></div>
-        <a class="navbar-brand p-0 me-0 me-lg-2" href="{{ absURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
-        {{ if (eq .IsHome false) }}
-        <div class="d-flex">
-        <div class="bd-search" id="docSearch"></div>
-            <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
-            <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
-            </button>
-        </div>
+        {{ if .IsHome }}
+        <div class="d-lg-none" style="width: 4.25rem;"></div>
         {{ end }}
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="{{ absURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+        <div class="d-flex">
+        {{ if (eq .IsHome false) }}
+        <div class="bd-search" id="docSearch"></div>
+        {{ end }}
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
+            <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
+        </button>
+        </div>
         <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
             <div class="offcanvas-header px-4 pb-0">
                 <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">{{ .Site.Title }}</h5>
