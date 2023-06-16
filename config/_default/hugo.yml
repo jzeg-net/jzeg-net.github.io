@@ -7,7 +7,7 @@ logFile: ".log/hugo_log.default.log"
 
 publishDir: "public"
 
-timeout: 30s
+timeout: 35s
 defaultContentLanguage: "zh-cn"
 
 languages:
@@ -458,7 +458,7 @@ Params:
 
     # default font size
     font:
-        enable: true
+        enable: false
         # default size
         size:
             enable: true
