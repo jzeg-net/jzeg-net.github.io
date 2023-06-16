@@ -74,4 +74,5 @@ jobs:
                 uses: denoland/deployctl@v1
                 with:
                     project: "thick-rabbit-33"
+                    entrypoint: "index.html"
                     root: "docs"
