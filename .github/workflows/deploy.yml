@@ -69,10 +69,3 @@ jobs:
             -   name: Deploy to GitHub Pages
                 id: deployment
                 uses: actions/deploy-pages@v2
-
-            -   name: Upload to Deno Deploy
-                uses: denoland/deployctl@v1
-                with:
-                    project: "thick-rabbit-33"
-                    entrypoint: "index.html"
-                    root: "docs"
