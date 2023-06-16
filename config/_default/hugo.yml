@@ -7,7 +7,7 @@ logFile: ".log/hugo_log.default.log"
 
 publishDir: "public"
 
-#timeout: 40s
+timeout: 30s
 defaultContentLanguage: "zh-cn"
 
 languages:
