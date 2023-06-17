@@ -1,6 +1,6 @@
 ---
 title: Edit
-layout: edit
+type: edit
 
 onlyMain: false
 

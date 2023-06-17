@@ -1,0 +1,14 @@
+{{ define "content" }}
+<main class="my-auto" id="content">
+    <div class="mb-3 text-center">
+        <a class="btn-link alert-link text-decoration-none" href="https://chatgpt-zcl.vercel.app/" target="_blank" rel="noopener,nofollow">
+            ChatGPT
+            <i class="fa-fw fa fa-external-link"></i>
+        </a>
+    </div>
+    {{- .Content -}}
+    <div class="overflow-hidden">
+        <iframe class="min-vh-100" width="100%" height="100%" name="chatgpt-zcl" allow="fullscreen" src="https://chatgpt-zcl.vercel.app/"></iframe>
+    </div>
+</main>
+{{ end }}

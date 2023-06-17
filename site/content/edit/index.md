@@ -1,6 +1,6 @@
 ---
 title: 编辑
-layout: edit
+type: edit
 
 onlyMain: false
 
