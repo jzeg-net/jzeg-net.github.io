@@ -42,13 +42,14 @@
 
 <main class="pb-5 container-xxl" id="main">
     <div class="d-flex flex-column flex-md-row column-gap-3 row-gap-5" id="content">
-        {{ block "content" . }}{{ end }}
+        {{ block "content" . }}{{ .Content }}{{ end }}
     </div>
 </main>
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 
-{{ partial "fixed_float/tools" . }}
+{{ if eq .Site.Params.float_tools.enable true }}{{ partial "fixed_float/tools" . }}{{ end }}
+
 {{ partial "scripts" . }}
 {{- block "before_the_end_of_the_body" . }}{{ end }}
 </body>

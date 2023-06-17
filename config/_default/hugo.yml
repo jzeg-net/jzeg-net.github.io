@@ -471,6 +471,9 @@ Params:
             # Sidebar Type [ collapse | offcanvas ]
             type: collapse
 
+    float_tools:
+        enable: true
+
     icp: "冀ICP备12018851号-7"
     beian: "9999999999999999"
 
