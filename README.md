@@ -2,7 +2,7 @@
 
 [jzeg-net.github.io](https://jzeg-net.github.io)
 
-[![build & deploy](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/pages.yml)
+[![Deploy](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/deploy.yml)
 
 [![CodeQL](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/jzeg-net/jzeg-net.github.io/actions/workflows/github-code-scanning/codeql)
 
