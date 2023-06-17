@@ -474,6 +474,29 @@ Params:
     float_tools:
         enable: true
 
+    breadcrumb:
+        enable: true
+
+    search:
+        enable: true
+        # type of search engine ["lunr", "algolia", "fuse"]
+        type: "lunr"
+        algolia:
+            index:
+            appID:
+            searchKey:
+        fuse:
+            # https://fusejs.io/api/options.html
+            isCaseSensitive: false
+            minMatchCharLength: 2
+            findAllMatches: false
+            location: 0
+            threshold: 0.3
+            distance: 100
+            ignoreLocation: false
+            useExtendedSearch: false
+            ignoreFieldNorm: false
+
     icp: "冀ICP备12018851号-7"
     beian: "9999999999999999"
 

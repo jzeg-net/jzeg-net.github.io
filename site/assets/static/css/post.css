@@ -40,6 +40,7 @@
 
 #post-content {
     overflow: hidden;
+    min-height: 60vh;
     max-height: 300rem;
     transition: max-height .35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
