@@ -11,7 +11,7 @@
 }
 
 .bulletin-inner:first-child {
-    padding-top: 100%;
+    padding-top: 50%;
 }
 
 .bulletin-inner:last-child {
@@ -42,7 +42,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    animation-play-state: paused;
+    animation-play-state: running;
 }
 
 .bulletin-animation > *::marker {
