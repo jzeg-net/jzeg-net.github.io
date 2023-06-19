@@ -12,20 +12,22 @@ function simpleControlOfAnimationState (selector) {
   const { play, pause } = Object.assign({}, defaultConfig)
 
   const animationCallback = (element) => (entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (document.visibilityState === 'visible' && (entry.intersectionRatio > 0 || entry.isIntersecting)) {
-        play(element)
+        play(entry.target)
       } else {
-        pause(element)
+        pause(entry.target)
       }
     })
   }
 
   const observer = new IntersectionObserver(animationCallback(selector))
 
-  observer.observe(selector)
+  for (let i = 0; i < selector.length; i++) {
+    observer.observe(selector[i])
+  }
 
 }
 
-let bulletin = document.querySelector('.bulletin-animation')
+let bulletin = document.querySelectorAll('.bulletin-animation')
 simpleControlOfAnimationState(bulletin)
