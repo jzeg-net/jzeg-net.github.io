@@ -42,6 +42,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 .bulletin-animation > *::marker {

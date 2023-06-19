@@ -13,7 +13,7 @@ function simpleControlOfAnimationState (selector) {
 
   const animationCallback = (element) => (entries) => {
     entries.forEach(entry => {
-      if (entry.intersectionRatio > 0 || entry.isIntersecting) {
+      if (document.visibilityState === 'visible' && (entry.intersectionRatio > 0 || entry.isIntersecting)) {
         play(element)
       } else {
         pause(element)
