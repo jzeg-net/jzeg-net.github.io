@@ -5,8 +5,8 @@
     overflow-y: scroll;
 }
 
-.bulletin:hover .bulletin-animation,
-.bulletin-animation:hover {
+.bulletin-animation:hover,
+.bulletin:hover .bulletin-animation {
     animation-play-state: paused;
 }
 
@@ -16,6 +16,10 @@
 
 .bulletin-inner:last-child {
     /*padding-bottom: 10vh;*/
+}
+
+.animation-paused {
+    animation-play-state: paused;
 }
 
 .list-group-numbered.bulletin-inner > :nth-child(n)::before {
