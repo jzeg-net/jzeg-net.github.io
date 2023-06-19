@@ -7,7 +7,7 @@
 
 .bulletin-animation:hover,
 .bulletin:hover .bulletin-animation {
-    animation-play-state: paused;
+    animation-play-state: paused !important;
 }
 
 .bulletin-inner:first-child {
@@ -23,6 +23,7 @@
 }
 
 .list-group-numbered.bulletin-inner > :nth-child(n)::before {
+    margin-right: .2rem;
     color: rgba(95, 226, 43, 0.65);
 }
 
