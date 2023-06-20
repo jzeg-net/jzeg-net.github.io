@@ -45,6 +45,9 @@
 {{- $bulletinCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/bulletin.css" "targetPath" "static/css/bulletin.css") }}
 <link rel="stylesheet" href="{{ $bulletinCSS }}">
 
+{{- $printCSS := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/print.css" "targetPath" "static/css/print.css") }}
+<link rel="stylesheet" href="{{ $printCSS }}" media="print">
+
 {{- if eq .Page.Layout "jump_link" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/css/jump_link.css">
 {{- end -}}
