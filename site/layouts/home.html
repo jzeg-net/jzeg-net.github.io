@@ -1,8 +1,5 @@
 {{ define "content" }}
-<main class="pb-5 min-vh-100" id="content">
-    <div class="container">
-        {{ .Content }}
-    </div>
+<main class="pt-4 pb-5 min-vh-100" id="content">
     <div class="container-xxl">
         <div class="d-flex flex-wrap flex-column flex-md-row gap-3">
             <div class="col-12 col-lg-5 col-xl-4 flex-lg-grow-1 border p-3">carousel</div>
@@ -18,6 +15,9 @@
                 <div class="col-3 flex-fill border p-3" style="min-height: 15vh;">image</div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        {{ .Content }}
     </div>
 </main>
 {{ end }}

@@ -10,14 +10,6 @@
     animation-play-state: paused !important;
 }
 
-.bulletin-inner:first-child {
-    padding-top: 50%;
-}
-
-.bulletin-inner:last-child {
-    /*padding-bottom: 10vh;*/
-}
-
 .animation-paused {
     animation-play-state: paused;
 }
@@ -85,12 +77,48 @@
     animation-duration: 20s;
 }
 
+.duration-s {
+    animation-duration: 15s;
+}
+
+@media (min-width: 576px) {
+    .duration-s {
+        animation-duration: 20s;
+    }
+}
+
+@media (min-width: 768px) {
+    .duration-s {
+        animation-duration: 25s;
+    }
+}
+
+@media (min-width: 992px) {
+    .duration-s {
+        animation-duration: 30s;
+    }
+}
+
+@media (min-width: 1200px) {
+    .duration-s {
+        animation-duration: 35s;
+    }
+}
+
+@media (min-width: 1400px) {
+    .duration-s {
+        animation-duration: 40s;
+    }
+}
+
 .animationName-marquee {
     animation-name: marquee;
+    padding-left: 100%;
 }
 
 .animationName-marquee-top {
     animation-name: marquee-top;
+    padding-top: 50%;
 }
 
 @keyframes marquee {
