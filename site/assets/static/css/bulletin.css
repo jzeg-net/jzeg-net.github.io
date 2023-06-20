@@ -24,19 +24,26 @@
 
 .list-group-numbered.bulletin-inner > :nth-child(n)::before {
     margin-right: .2rem;
-    color: rgba(95, 226, 43, 0.65);
 }
 
+.list-group-numbered.bulletin-inner > :nth-child(n) > a,
+.list-group-numbered.bulletin-inner > :nth-child(n)::before {
+    color: #35ce0b !important;
+}
+
+.list-group-numbered.bulletin-inner > :nth-child(1) > a,
 .list-group-numbered.bulletin-inner > :nth-child(1)::before {
-    color: rgb(138, 43, 226);
+    color: #8a2be2 !important;
 }
 
+.list-group-numbered.bulletin-inner > :nth-child(2) > a,
 .list-group-numbered.bulletin-inner > :nth-child(2)::before {
-    color: #ff0000;
+    color: #ff0000 !important;
 }
 
+.list-group-numbered.bulletin-inner > :nth-child(3) > a,
 .list-group-numbered.bulletin-inner > :nth-child(3)::before {
-    color: #c00a5c;
+    color: #c00a5c !important;
 }
 
 .bulletin-animation {
