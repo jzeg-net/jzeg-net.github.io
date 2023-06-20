@@ -1,5 +1,6 @@
 baseURL: "http://jzeg-net.test.com/"
 
-logFile: ".log/hugo_log.development.log"
+# log level (debug|info|warn|error)
+logLevel: "debug"
 
 publishDir: "public"

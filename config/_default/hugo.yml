@@ -3,7 +3,8 @@ baseURL: "http://localhost/"
 metaDataFormat: "yaml"
 disableKinds: [ "taxonomy", "term" ]
 
-logFile: ".log/hugo_log.default.log"
+# log level (debug|info|warn|error)
+logLevel: "error"
 
 publishDir: "public"
 
@@ -411,8 +412,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.113.0"
-        min: "0.113.0"
+        max: "0.114.0"
+        min: "0.114.0"
     mounts:
         -   source: site/archetypes
             target: archetypes

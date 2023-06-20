@@ -1,6 +1,7 @@
 baseURL: "https://jzeg-net.github.io/"
 
-logFile: ".log/hugo_log.production.log"
+# log level (debug|info|warn|error)
+logLevel: "error"
 
 publishDir: "docs"
 
