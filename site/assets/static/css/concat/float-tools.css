@@ -1,7 +1,7 @@
 #float-tools {
     transition: transform 300ms linear;
     transform: translate(-50%, -15%);
-    z-index: 1018;
+    z-index: 1017;
 }
 
 #float-tools:hover {

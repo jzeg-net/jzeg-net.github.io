@@ -36,6 +36,8 @@
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar" . }}{{ end }}
 
+{{ partial "top-bulletin" . }}
+
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
 
 {{ block "content" . }}{{ .Content }}{{ end }}

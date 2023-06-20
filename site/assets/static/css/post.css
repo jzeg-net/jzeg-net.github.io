@@ -10,7 +10,7 @@
 }
 
 #posts-container .card .card-header.sticky-top {
-    z-index: 1019;
+    z-index: 1018;
 }
 
 #tableOfContents-container .dropdown-menu {
@@ -74,7 +74,7 @@
 
 /* 文章篇幅展开 */
 #post-content-more {
-    z-index: 1018;
+    z-index: 1017;
 }
 
 #post-content-more.shrink-post-content {
