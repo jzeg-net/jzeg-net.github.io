@@ -30,7 +30,7 @@ let glideOpts = {
 
 if (document.querySelector('#home-carousel')) {
   [
-    document.querySelectorAll('.glide__slides'),
+    // document.querySelectorAll('.glide__slides'),
     document.querySelectorAll('.glide__slide__item'),
     document.querySelectorAll('[class*=border]')
   ].forEach((x) => {
