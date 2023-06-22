@@ -50,14 +50,16 @@
             </article>
         </section>
         <div class="vstack align-items-center sticky-bottom bottom-0 shrink-post-content" id="post-content-more">
-            <button class="mb-1 position-absolute bottom-0 col-5 btn btn-outline-secondary border-secondary-subtle" title="{{ T "post_text-content_expand" }}" type="button" id="content-expand">
-                <span class="me-3">{{ T "post_text-content_expand" }}</span>
-                <svg class="bi" width="16" height="16"><title>{{ T "post_text-content_expand" }}</title><use href="#bi-chevron-double-down"></use></svg>
-            </button>
-            <button class="mb-1 position-absolute bottom-0 col-5 btn btn-outline-secondary border-secondary-subtle d-none" title="{{ T "post_text-content_collapse" }}" type="button" id="content-collapse">
-                <span class="me-3">{{ T "post_text-content_collapse" }}</span>
-                <svg class="bi" width="16" height="16"><title>{{ T "post_text-content_collapse" }}</title><use href="#bi-chevron-double-up"></use></svg>
-            </button>
+            <div class="position-absolute bottom-0">
+                <button class="mb-1 btn btn-outline-secondary border-secondary-subtle" title="{{ T "post_text-content_expand" }}" type="button" id="content-expand">
+                    <span class="me-3">{{ T "post_text-content_expand" }}</span>
+                    <svg class="bi" width="16" height="16"><title>{{ T "post_text-content_expand" }}</title><use href="#bi-chevron-double-down"></use></svg>
+                </button>
+                <button class="mb-1 btn btn-outline-secondary border-secondary-subtle d-none" title="{{ T "post_text-content_collapse" }}" type="button" id="content-collapse">
+                    <span class="me-3">{{ T "post_text-content_collapse" }}</span>
+                    <svg class="bi" width="16" height="16"><title>{{ T "post_text-content_collapse" }}</title><use href="#bi-chevron-double-up"></use></svg>
+                </button>
+            </div>
         </div>
     </div>
     <aside id="meta">

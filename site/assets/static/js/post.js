@@ -33,7 +33,7 @@ if (postContentMore) {
     postContentMore.classList.toggle('shrink-post-content')
     postContentMore.classList.toggle('sticky-bottom')
 
-    postContentMore.childNodes.forEach(currentChild => {
+    postContentMore.firstElementChild.childNodes.forEach(currentChild => {
       if ('BUTTON' === currentChild.tagName) {
         currentChild.classList.toggle('d-none')
 

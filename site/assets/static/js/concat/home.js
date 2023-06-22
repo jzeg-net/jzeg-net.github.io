@@ -28,10 +28,10 @@ let glideOpts = {
   keyboard: true,
 }
 
-let main_glide = new Glide('.main_glide', glideOpts)
+if(document.querySelector('#home-carousel')){
+  let main_glide = new Glide('.main_glide', glideOpts)
+  main_glide.mount()
 
-main_glide.mount()
-
-let grid_glide = new Glide('.grid_glide', glideOpts)
-
-grid_glide.mount()
+  let grid_glide = new Glide('.grid_glide', glideOpts)
+  grid_glide.mount()
+}
