@@ -1,12 +1,12 @@
-{{ $targetPath := .targetPath }}
 {{ $resourcesGet := .resourcesGet }}
+{{ $targetPath := .targetPath }}
+
+{{ with $resourcesGet }}
+{{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
+{{ end }}
 
 {{ with $targetPath }}
     {{ else }}{{ errorf "Missing Required parameter name [ targetPath ]: %s" .Position }}
-{{ end }}
-
-{{ with $resourcesGet }}
-    {{ else }}{{ errorf "Missing Required parameter name [ resourcesGet ]: %s" .Position }}
 {{ end }}
 
 
