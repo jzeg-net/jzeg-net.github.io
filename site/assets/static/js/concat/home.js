@@ -1,0 +1,31 @@
+let animationTimingFuncOpts = {
+  default:   'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
+  bounce:    'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
+  linear:    'linear',
+  ease:      'ease',
+  easeIn:    'ease-in',
+  easeOut:   'ease-out',
+  easeInOut: 'ease-in-out',
+}
+
+let htmlDir = document.querySelector('html').getAttribute('dir')
+
+let glideOpts = {
+  // https://glidejs.com/docs/options/
+  type: 'carousel', // slider | carousel
+  startAt: 0,
+  peek: 0,
+  perView: 1,
+  animationTimingFunc: animationTimingFuncOpts['default'],
+  animationDuration: 2000,
+  throttle: 25, // Throttle costly events at most once per every wait milliseconds
+  direction: htmlDir || 'ltr',
+  rewindDuration: 800,
+  autoplay: 6000, // Number | false
+  hoverpause: true,
+  keyboard: true,
+}
+
+let main_glide = new Glide('.main_glide', glideOpts)
+
+main_glide.mount()
