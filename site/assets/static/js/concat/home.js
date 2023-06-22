@@ -28,7 +28,31 @@ let glideOpts = {
   keyboard: true,
 }
 
-if(document.querySelector('#home-carousel')){
+if (document.querySelector('#home-carousel')) {
+  [
+    document.querySelectorAll('.glide__slides'),
+    document.querySelectorAll('.glide__slide__item'),
+    document.querySelectorAll('[class*=border]')
+  ].forEach((x) => {
+    x.forEach((el) => {
+      el.style.background = randomColor(
+        {
+          luminosity: 'random',
+          hue: 'random'
+        }
+      )
+      el.style.color = randomColor(
+        {
+          luminosity: 'random',
+          hue: 'random'
+        }
+      )
+    })
+  })
+
+}
+
+if (document.querySelector('#home-carousel')) {
   let main_glide = new Glide('.main_glide', glideOpts)
   main_glide.mount()
 

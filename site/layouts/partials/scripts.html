@@ -25,6 +25,10 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{ if .IsHome }}
+    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
+{{ end }}
+
 {{ if eq .Page.Layout "edit" -}}
 <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
 {{ end -}}
