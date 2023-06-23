@@ -1,10 +1,38 @@
 @import "variables";
+@import "variables_custom";
+
+:root {
+  --#{$glide-class}--bullet--bg--rgba:          #{$glide__bullet__bg};
+  --#{$glide-class}--bullet--active--bg--rgba:  #{$glide__bullet__active__bg};
+  --#{$glide-class}--bullet--width:             #{$glide__bullet__width};
+  --#{$glide-class}--bullet--height:            #{$glide__bullet__height};
+}
 
 .#{$glide-class} {
   $this: &;
 
   $se: $glide-element-separator;
   $sm: $glide-modifier-separator;
+
+  &#{$se}arrows {
+    opacity: 0;
+    transition: opacity .5s ease;
+
+    #{$this}:focus &,
+    #{$this}:hover & {
+      opacity: 1;
+    }
+  }
+
+  &#{$se}bullets {
+    opacity: .1;
+    transition: opacity .5s ease;
+
+    #{$this}:focus &,
+    #{$this}:hover & {
+      opacity: .8;
+    }
+  }
 
   &#{$se}slide {
     &#{$se}items {

@@ -1,3 +1,4 @@
+// glide
 let animationTimingFuncOpts = {
   default:   'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
   bounce:    'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
@@ -33,8 +34,8 @@ if (document.querySelector('#home-carousel')) {
     // document.querySelectorAll('.glide__slides'),
     document.querySelectorAll('.glide__slide__item'),
     document.querySelectorAll('[class*=border]')
-  ].forEach((x) => {
-    x.forEach((el) => {
+  ].forEach(x => {
+    x.forEach(el => {
       el.style.background = randomColor(
         {
           luminosity: 'random',
