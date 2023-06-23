@@ -39,11 +39,8 @@
 {{- $fontCSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/font/font.scss" "targetPath" "static/css/font.css") }}
 <link rel="stylesheet" href="{{ $fontCSS }}">
 
-{{- $glide_core_CSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/glide/glide.core.scss" "targetPath" "static/css/glide.core.css") }}
-<link rel="stylesheet" href="{{ $glide_core_CSS }}">
-
-{{- $glide_theme_CSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/glide/glide.theme.scss" "targetPath" "static/css/glide.theme.css") }}
-<link rel="stylesheet" href="{{ $glide_theme_CSS }}">
+{{- $glide_all_CSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/glide/glide.all.scss" "targetPath" "static/css/glide.all.css") }}
+<link rel="stylesheet" href="{{ $glide_all_CSS }}">
 
 {{- $post_css := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post.css" "targetPath" "static/css/post.css") }}
 <link rel="stylesheet" href="{{ $post_css }}">

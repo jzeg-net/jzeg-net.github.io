@@ -1,0 +1,17 @@
+@import "variables";
+
+.#{$glide-class} {
+  $this: &;
+
+  $se: $glide-element-separator;
+  $sm: $glide-modifier-separator;
+
+  &#{$se}slide {
+    &#{$se}items {
+    }
+
+    &#{$se}item {
+    }
+  }
+
+}

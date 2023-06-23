@@ -18,7 +18,7 @@ let glideOpts = {
   perView: 1,
   gap: 10, // A size of the gap added between slides
   animationTimingFunc: animationTimingFuncOpts['ease'],
-  animationDuration: 2000,
+  animationDuration: 1500,
   throttle: 25, // Throttle costly events at most once per every wait milliseconds
   direction: htmlDir || 'ltr',
   rewindDuration: 800,
