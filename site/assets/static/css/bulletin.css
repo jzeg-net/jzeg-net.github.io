@@ -1,8 +1,57 @@
 .bulletin {
-    /*width: 100%;*/
-    height: 20vh;
     overflow: hidden;
+}
+
+.bulletin_inline {
+    position: relative;
+    width: 100%;
+}
+
+.bulletin_inline:before,
+.bulletin_inline:after {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 2rem;
+    color: transparent;
+    content: "#";
+    z-index: 1;
+}
+
+.bulletin_inline:before {
+    left: 0;
+    background-image: linear-gradient(270deg, rgba(var(--bs-success-rgb), 0) 0%, rgba(var(--bs-success-rgb), 1) 98%);
+}
+
+.bulletin_inline:after {
+    right: 0;
+    background-image: linear-gradient(90deg, rgba(var(--bs-success-rgb), 0) 0%, rgba(var(--bs-success-rgb), 1) 98%);
+}
+
+.bulletin_block {
+    position: relative;
+    height: 25vh;
     overflow-y: scroll;
+}
+
+.bulletin_block:before,
+.bulletin_block:after {
+    position: absolute;
+    width: 100%;
+    height: 3rem;
+    color: transparent;
+    content: "#";
+    z-index: 1;
+}
+
+.bulletin_block:before {
+    top: 0;
+    background-image: linear-gradient(0deg, rgba(var(--bs-body-bg-rgb), 0) 0%, rgba(var(--bs-body-bg-rgb), 1) 98%);
+}
+
+.bulletin_block:after {
+    bottom: 0;
+    background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0) 0%, rgba(var(--bs-body-bg-rgb), 1) 98%);
 }
 
 .bulletin-animation:hover,
@@ -118,7 +167,7 @@
 
 .animationName-marquee-top {
     animation-name: marquee-top;
-    padding-top: 50%;
+    padding-top: 25vh;
 }
 
 @keyframes marquee {
