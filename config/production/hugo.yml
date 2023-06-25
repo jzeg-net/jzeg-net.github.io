@@ -1,7 +1,7 @@
 baseURL: "https://jzeg-net.github.io/"
 
 # log level (debug|info|warn|error)
-logLevel: "error"
+#logLevel: ""
 
 publishDir: "docs"
 
