@@ -5,6 +5,6 @@ date: "{{ .Date }}"
 
 onlyMain: false
 robots: noindex, nofollow
-sitemap_exclude: true
-rss_exclude: true
+sitemap_exclude: false
+rss_exclude: false
 ---
