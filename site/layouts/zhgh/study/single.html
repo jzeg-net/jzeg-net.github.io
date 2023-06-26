@@ -1,0 +1,164 @@
+{{ define "content" }}
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+    </svg>
+    <main class="pb-5 container-xxl" id="main">
+        <div class="mb-3 d-flex flex-column row-gap-5" id="refreshing">
+            <div class="alert alert-danger" role="alert">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                将在 <b id="countdown">20</b> 秒后自动重新抓取。
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="col-3 btn btn-outline-info" id="refreshNow">
+                    <span>立即抓取</span>
+                </button>
+            </div>
+            <div class="d-flex justify-content-center column-gap-3" id="controlCountdown">
+                <button type="button" class="col-2 btn btn-outline-secondary controlCountdown pause">
+                    <span>暂停</span>
+                </button>
+                <button type="button" class="col-2 btn btn-outline-success controlCountdown continue">
+                    <span>继续</span>
+                </button>
+                <button type="button" class="col-2 btn btn-outline-danger controlCountdown reset">
+                    <span>重置</span>
+                </button>
+            </div>
+        </div>
+        <div class="mb-4">
+            <a class="btn btn-link border link-underline link-underline-opacity-0" href="javascript:" id="newTabOpensPage" target="_blank">
+                <span>新选项卡/新窗口&nbsp;&nbsp;&nbsp;打开这个页面</span>
+            </a>
+        </div>
+        <div>
+            <div class="card">
+                <div class="card-header">抓取结果</div>
+                <div class="card-body" id="studyResult" style="min-height: 30vh;"></div>
+            </div>
+        </div>
+        <script>
+            let countdown = document.querySelector('#countdown')
+            let countdownNumber // 倒计时时间
+            let autoGetIntervalID // 倒计时定时器ID
+            let initCountdownNumber = countdown.textContent // 倒计时初始值
+
+            autoGet()
+
+            // 倒计时刷新提醒
+            function autoGet () {
+                if (autoGetIntervalID) clearInterval(autoGetIntervalID)
+
+                autoGetIntervalID = setInterval(() => {
+                    countdownNumber = countdown.textContent
+                    countdownNumber--
+
+                    if (countdownNumber > 0) {
+                        countdown.textContent = countdownNumber
+                    } else if (countdownNumber === 0) {
+                        refreshing()
+                    }
+                }, 1000)
+            }
+
+            // 立即刷新按钮
+            document.querySelector('#refreshNow').addEventListener('click', refreshing)
+
+            // 按下 Escape 键停止倒计时刷新，按下 Space Bar 键继续倒计时。模拟实现暂停 setInterval 循环重复
+            document.addEventListener('keydown', (event) => {
+                if (countdownNumber > 0) {
+                    controlInterval(event)
+                }
+            })
+
+            document.querySelector('#newTabOpensPage').href = location.origin + location.pathname
+
+            document.querySelector('#controlCountdown').addEventListener('click', (event) => {
+                let target = event.target
+
+                if (target.tagName !== 'BUTTON' || !target.classList.contains('controlCountdown')) return
+
+                if (target.classList.contains('pause')) {
+                    clearInterval(autoGetIntervalID)
+                }
+                if (target.classList.contains('continue')) {
+                    autoGet()
+                }
+                if (target.classList.contains('reset')) {
+                    countdown.textContent = initCountdownNumber
+                }
+            })
+
+            function controlCountdown (event, IntervalID) {
+            }
+
+            /**
+             * 键盘控制 （ Esc 停止倒计时 | 空格、回车 继续倒计时 ）
+             * 长按继续键临时暂停倒计时，松开后继续倒计时（ 会造成 Interval ID 不断新建，但没有造成阻塞 ）
+             */
+            function controlInterval (event, IntervalID) {
+                if (event.key === 'Escape') {
+                    clearInterval(autoGetIntervalID)
+                } else if (event.key === ' ' || event.key === 'Enter') {
+                    autoGet()
+                }
+            }
+
+            /**
+             * 刷新页面时候的相关操作
+             */
+            function refreshing () {
+                clearInterval(autoGetIntervalID)
+                document.querySelector('#refreshing').innerHTML = '正在抓取'
+                window.location.reload()
+            }
+
+            function loadStudy () {
+
+            }
+        </script>
+        <script>
+            let wakeLock = null
+
+            /**
+             * 禁止 设备系统休眠
+             */
+            const acquireLock = async () => {
+                try {
+                    wakeLock = await navigator.wakeLock.request('screen')
+                    console.log(new Date().toLocaleString(), ' 获取锁')
+                } catch (err) {
+                    console.log(new Date().toLocaleString(), ' 获取锁失败')
+                    console.log(`${err.name}, ${err.message}`)
+                }
+            }
+            /**
+             * 允许 设备系统休眠
+             */
+            const releaseLock = () => {
+                if (wakeLock) {
+                    wakeLock.release()
+                        .then(() => wakeLock = null)
+                    console.log(new Date().toLocaleString(), ' 释放锁')
+                }
+            }
+            /**
+             * 根据页面可见性，控制设备系统休眠锁
+             */
+            const handleVisibilityChange = () => (
+                document.visibilityState === 'hidden'
+                    ? releaseLock()
+                    : acquireLock()
+            )
+
+            document.addEventListener('visibilitychange', handleVisibilityChange)
+        </script>
+    </main>
+{{ end }}
