@@ -124,6 +124,6 @@
         "sass": "^1.63.6",
         "stylelint": "^15.9.0",
         "svg-sprite": "^3.0.0-beta2",
-        "terser": "^5.18.1"
+        "terser": "^5.18.2"
     }
 }
