@@ -412,7 +412,7 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.115.0"
+        max: "0.115.1"
         min: "0.115.0"
     mounts:
         -   source: site/archetypes
