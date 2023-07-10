@@ -20,6 +20,10 @@
 
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
+{{ if eq .Page.Params.type "zhgh/passwork" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/css/style.css">
+{{ end }}
+
 {{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/@docsearch/css/dist/style.css">

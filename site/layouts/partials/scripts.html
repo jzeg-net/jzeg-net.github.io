@@ -33,6 +33,11 @@
 <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
 {{ end -}}
 
+{{ if eq .Page.Params.type "zhgh/passwork" }}
+<script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+<script src="{{ $preUrl }}static/js/passwork.js"></script>
+{{ end }}
+
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/zh-cn.js"></script>*/}}
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/en.js"></script>*/}}
