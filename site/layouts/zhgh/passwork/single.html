@@ -1,5 +1,46 @@
 {{ define "content" }}
     <main class="pb-5 container-xxl" id="main">
-        passWork
+        <div class="container col-6">
+            <form id="passwork_login">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="account" value="15226883955" id="account" placeholder=" " minlength="11" maxlength="11" required>
+                        <label for="account">手机号</label>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="password" value="15226883955Abc!" id="password" placeholder=" " minlength="8" maxlength="20" required>
+                        <label for="password">密码</label>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <select class="form-select" name="throughNum" id="throughSelect" aria-label="Floating label select example" required>
+                            <option value="" selected>选择闯关题型</option>
+                        </select>
+                        <label for="throughSelect">闯关类别</label>
+                    </div>
+                </div>
+                <div class="input-group mb-3 flex-nowrap">
+                    <label for="level" class="input-group-text">关数</label>
+                    <input type="number" name="level" class="input-group-text" min="1" max="30" step="1" value="1" id="level">
+                    <span class="input-group-text w-100">
+                <input type="range" class="form-range" min="1" max="30" step="1" value="1" id="levels_range">
+            </span>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit">提交</button>
+                    <p class="text-center">计时：<span id="submit_timer">0</span>秒</p>
+                </div>
+            </form>
+        </div>
+        <div class="container clearfix">
+            <a class="float-end link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="newTabPage" target="_blank">新选项卡打开页面</a>
+        </div>
+        <div class="container">
+            <div class="fw-bolder fs-4 mb-3">答题结果</div>
+            <div class="my-3 rounded border" id="resultTable"></div>
+        </div>
     </main>
 {{ end }}
