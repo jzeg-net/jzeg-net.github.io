@@ -92,7 +92,7 @@
         "lozad": "^1.16.0",
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
-        "simple-datatables": "^7.2.0",
+        "simple-datatables": "^7.3.0",
         "simple-icons": "^9.5.0",
         "timeago.js": "^4.0.2",
         "workbox-sw": "^7.0.0",
@@ -124,6 +124,6 @@
         "sass": "^1.63.6",
         "stylelint": "^15.10.1",
         "svg-sprite": "^3.0.0-beta2",
-        "terser": "^5.18.2"
+        "terser": "^5.19.0"
     }
 }
