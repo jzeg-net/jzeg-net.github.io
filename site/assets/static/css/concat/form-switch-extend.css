@@ -1,0 +1,24 @@
+.form-switch .switchDisableText,
+.form-switch .switchEnableText {
+    display: none;
+}
+
+.form-switch input:checked + label > .switchDefaultText,
+.form-switch .form-check-input:checked + .form-check-label > .switchDefaultText {
+    color: green;
+}
+
+.form-switch input:not(:checked) + label > .switchDefaultText,
+.form-switch .form-check-input:not(:checked) + .form-check-label > .switchDefaultText {
+    color: red;
+}
+
+.form-switch input:checked + label > .switchEnableText,
+.form-switch .form-check-input:checked + .form-check-label > .switchEnableText {
+    display: block;
+}
+
+.form-switch input:not(:checked) + label > .switchDisableText,
+.form-switch .form-check-input:not(:checked) + .form-check-label > .switchDisableText {
+    display: block;
+}
