@@ -123,6 +123,6 @@
         "sass": "^1.63.6",
         "stylelint": "^15.10.1",
         "svg-sprite": "^3.0.0-beta2",
-        "terser": "^5.19.0"
+        "terser": "^5.19.1"
     }
 }
