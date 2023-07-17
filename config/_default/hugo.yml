@@ -425,7 +425,7 @@ module:
             target: static/CNAME
         -   source: node_modules
             target: static/static/vendor
-            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,github-api,workbox-sw,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,qrcode,simple-datatables,@glidejs,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,@fortawesome,flag-icons,randomColor}/**"
+            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,github-api,workbox-sw,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,qrcode,simple-datatables,@glidejs,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,flag-icons,randomColor}/**"
 
         -   source: site/content
             target: content
