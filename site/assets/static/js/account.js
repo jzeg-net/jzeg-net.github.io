@@ -638,18 +638,18 @@ function listenerPasswordInputTye(formEl) {
 }
 
 function changePasswordInputType(PasswordInput) {
-    let icon = PasswordInput.querySelector('i')
+    let svgUse = PasswordInput.querySelector('svg').querySelector('use')
     let input = PasswordInput.parentElement.querySelector('input')
 
     switch (input.type) {
         case 'text':
             input.type = 'password'
-            icon.classList.replace('fa-eye', 'fa-eye-low-vision')
+            svgUse.setAttribute('href','#bi-eye-slash-fill')
             PasswordInput.title = '点击后显示密码'
             break
         case 'password':
             input.type = 'text'
-            icon.classList.replace('fa-eye-low-vision', 'fa-eye')
+            svgUse.setAttribute('href','#bi-eye-fill')
             PasswordInput.title = '点击后隐藏密码'
             break
         default:
