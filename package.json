@@ -96,7 +96,7 @@
         "timeago.js": "^4.0.2",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.1",
-        "xgplayer": "^3.0.5",
+        "xgplayer": "^3.0.6",
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
@@ -115,13 +115,13 @@
         "eslint-plugin-markdown": "^3.0.0",
         "eslint-plugin-unicorn": "^48.0.0",
         "find-unused-sass-variables": "^5.0.0",
-        "hugo-bin": "^0.111.3",
+        "hugo-bin": "^0.111.4",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.26",
         "postcss-cli": "^10.1.0",
         "prettier": "^3.0.0",
-        "sass": "^1.63.6",
-        "stylelint": "^15.10.1",
+        "sass": "^1.64.0",
+        "stylelint": "^15.10.2",
         "svg-sprite": "^3.0.0-beta2",
         "terser": "^5.19.1"
     }
