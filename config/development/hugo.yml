@@ -1,6 +1,10 @@
-baseURL: "http://jzeg-net.test.com/"
+baseURL: "http://jzeg-net.github.io/"
 
 # log level (debug|info|warn|error)
 logLevel: "debug"
 
 publishDir: "public"
+
+buildDrafts: true
+buildFuture: true
+buildExpired: true
