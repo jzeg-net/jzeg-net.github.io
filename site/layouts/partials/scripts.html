@@ -35,7 +35,19 @@
 
 {{ if eq .Page.Params.type "zhgh/passwork" }}
 <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
-<script src="{{ $preUrl }}static/js/passwork.js"></script>
+<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+<script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/study" }}
+<script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+<script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/member" }}
+<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+<script src="{{ $preUrl }}static/js/zhgh/member.js"></script>
 {{ end }}
 
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}

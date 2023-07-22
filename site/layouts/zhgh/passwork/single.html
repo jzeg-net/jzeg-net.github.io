@@ -1,23 +1,33 @@
 {{ define "content" }}
+    {{ partial "zhgh/svg_sprite_icons" }}
     <main class="pb-5 container-xxl" id="main">
-        <div class="container col-6">
-            <form id="passwork_login">
+        <div class="container col-12 col-lg-8 col-xxl-6">
+            <form class="py-4" id="passwork_login">
                 <div class="input-group mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="account" id="account" placeholder=" " minlength="11" maxlength="11" required>
-                        <label for="account">手机号</label>
+                        <input type="tel" class="form-control" name="account" id="account" placeholder=" " minlength="11" maxlength="11" autocomplete="off" required>
+                        <label for="account">
+                            <svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-phone"></use></svg>
+                            手机号
+                        </label>
                     </div>
                 </div>
                 <div class="input-group mb-3">
                     <div class="form-floating">
-                        <input type="password" class="form-control" name="password" id="password" placeholder=" " minlength="8" maxlength="20" required>
-                        <label for="password">密码</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder=" " minlength="6" maxlength="20" autocomplete="off" required>
+                        <label for="password">
+                            <svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-key-fill"></use></svg>
+                            密码
+                        </label>
                     </div>
+                    <a class="input-group-text text-reset text-decoration-none toggleDisplay" href="javascript:" title="点击后显示密码">
+                        <svg class="text-body-secondary bi fs-5"><use href="#bi-eye-slash-fill"></use></svg>
+                    </a>
                 </div>
                 <div class="input-group mb-3">
                     <div class="form-floating">
                         <select class="form-select" name="throughNum" id="throughSelect" aria-label="Floating label select example" required>
-                            <option value="" selected>选择闯关题型</option>
+                            <option value="" selected disabled>选择工种题型</option>
                         </select>
                         <label for="throughSelect">闯关类别</label>
                     </div>
@@ -29,18 +39,55 @@
                 <input type="range" class="form-range" min="1" max="30" step="1" value="1" id="levels_range">
             </span>
                 </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="automaticNextLevel" checked>
+                    <label class="form-check-label" for="automaticNextLevel">
+                        <span class="switchEnableText">自动下一关</span>
+                        <span class="switchDisableText">禁用自动闯关</span>
+                    </label>
+                </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="submit">提交</button>
+                    <button class="btn btn-primary" type="submit">开始答题</button>
                     <p class="text-center">计时：<span id="submit_timer">0</span>秒</p>
+                </div>
+                <div class="card" id="auto">
+                    <div class="card-body d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center row-gap-2 column-gap-3">
+                        <div class="col-12 col-sm-5 d-flex justify-content-center">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="autoSubmit" checked data-bs-toggle="collapse" data-bs-target="#autoSubmitConfig">
+                                <label class="form-check-label" for="autoSubmit">
+                                    <!--<span class="switchDefaultText">默认</span>-->
+                                    <span class="switchEnableText">自动</span>
+                                    <span class="switchDisableText">手动</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm collapse show" id="autoSubmitConfig">
+                            <div class="d-flex flex-column row-gap-2">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="autoSubmitTotalTimes">总次数</label>
+                                    <input class="form-control" type="number" value="1" id="autoSubmitTotalTimes" min="1" max="30" step="1" maxlength="2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
-        <div class="container clearfix">
-            <a class="float-end link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="newTabPage" target="_blank">新选项卡打开页面</a>
+        <div class="container-fluid col-12 col-md-10 col-lg-8 col-xxl-6">
+            <div class="card">
+                <div class="card-header fw-medium fs-5">结果</div>
+                <div class="card-body px-0" id="resultTable"></div>
+            </div>
         </div>
-        <div class="container">
-            <div class="fw-bolder fs-4 mb-3">答题结果</div>
-            <div class="my-3 rounded border" id="resultTable"></div>
+        <div class="py-5 container-fluid col-12 col-md-10 col-lg-8 col-xxl-6">
+            <div class="card">
+                <div class="card-header">页面工具</div>
+                <div class="card-body d-flex justify-content-center column-gap-3">
+                    <a class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="refreshPage">刷新页面</a>
+                    <a class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="newTabPage" target="_blank">新选项卡打开页面</a>
+                </div>
+            </div>
         </div>
     </main>
 {{ end }}

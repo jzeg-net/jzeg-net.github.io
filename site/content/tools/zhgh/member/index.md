@@ -1,6 +1,6 @@
 ---
-title: "闯关答题"
-type: "zhgh/passwork"
+title: "会员信息"
+type: "zhgh/member"
 
 date: "2023-06-26T19:00:00+08:00"
 

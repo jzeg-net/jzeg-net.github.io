@@ -20,7 +20,11 @@
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
 {{ if eq .Page.Params.type "zhgh/passwork" }}
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/css/style.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/study" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
 {{ end }}
 
 {{ if eq .IsHome false }}
