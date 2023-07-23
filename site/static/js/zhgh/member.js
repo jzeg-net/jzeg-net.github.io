@@ -10,7 +10,6 @@ function submitForm (event) {
   submitStatus(userInfo)
 
   let formData = getFormData(userInfo)
-
   let fetchData = {
     account: formData['account'],
     password: formData['password'],

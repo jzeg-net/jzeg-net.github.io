@@ -1,4 +1,3 @@
-
 let wakeLock = null
 
 /**
@@ -31,5 +30,3 @@ const handleVisibilityChange = () => (
     ? releaseLock()
     : acquireLock()
 )
-
-document.addEventListener('visibilitychange', handleVisibilityChange)

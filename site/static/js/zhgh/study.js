@@ -9,11 +9,12 @@ let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 
 function submitForm (event) {
   event.preventDefault()
+  acquireLock()
+  document.addEventListener('visibilitychange', handleVisibilityChange)
   submitStatus(study_login)
   submitTimerInterval(study_login)
 
   let formData = getFormData(study_login)
-
   let fetchData = {
     account: formData['account'],
     password: formData['password'],
@@ -26,6 +27,8 @@ function submitForm (event) {
   fetch('https://api.zhgh.jzeg.net/study/index.php', fetchOptions)
     .then(response => response.json())
     .then(response => {
+      releaseLock()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {

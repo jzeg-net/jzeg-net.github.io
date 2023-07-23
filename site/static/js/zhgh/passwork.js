@@ -10,10 +10,12 @@ let automaticNextLevel = document.querySelector('#automaticNextLevel')
 
 function submitForm (event) {
   event.preventDefault()
+  acquireLock()
+  document.addEventListener('visibilitychange', handleVisibilityChange)
   submitStatus(passwork_login)
   submitTimerInterval(passwork_login)
-  let formData = getFormData(passwork_login)
 
+  let formData = getFormData(passwork_login)
   let fetchData = {
     account: formData['account'],
     password: formData['password'],
@@ -27,6 +29,8 @@ function submitForm (event) {
   fetch('https://api.zhgh.jzeg.net/passwork/index.php', fetchOptions)
     .then(response => response.json())
     .then(response => {
+      releaseLock()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
