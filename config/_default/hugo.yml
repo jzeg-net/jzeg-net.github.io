@@ -8,7 +8,7 @@ logLevel: "error"
 
 publishDir: "public"
 
-timeout: 60s
+timeout: 70s
 defaultContentLanguage: "zh-cn"
 
 languages:
