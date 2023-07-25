@@ -62,15 +62,6 @@ menu:
                     useHref:
                     class:
                     size: [ width: 16, height: 16 ]
-        -   identifier: menu_demo
-            pageRef: /demo
-            weight: 4
-            params:
-                class:
-                svg:
-                    useHref:
-                    class:
-                    size: [ width: 16, height: 16 ]
         -   identifier: menu_more
             pageRef:
             weight: 7
@@ -120,10 +111,30 @@ menu:
                     useHref:
                     class:
                     size: [ width: 16, height: 16 ]
+        -   identifier: menu_tools
+            pageRef: /tools
+            parent: menu_more
+            weight: 5
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_edit
             pageRef: /edit
             parent: menu_more
-            weight: 5
+            weight: 8
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
+    demo:
+        -   identifier: menu_demo
+            pageRef: /demo
+            weight: 1
             params:
                 class:
                 svg:
@@ -210,6 +221,22 @@ menu:
             pageRef: /demo/logout/normal
             parent: demo_logout
             weight: 1
+    knowledge_labor_union:
+        -   identifier: zhgh_page
+            pageRef: /tools/zhgh
+            weight: 1
+        -   identifier: zhgh_study
+            pageRef: /tools/zhgh/study
+            parent: zhgh_page
+            weight: 1
+        -   identifier: zhgh_passwork
+            pageRef: /tools/zhgh/passwork
+            parent: zhgh_page
+            weight: 2
+        -   identifier: zhgh_member
+            pageRef: /tools/zhgh/member
+            parent: zhgh_page
+            weight: 3
     theme:
         -   identifier: theme_dark
             weight: 1

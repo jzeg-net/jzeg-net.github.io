@@ -1,6 +1,6 @@
 ---
-title: "智慧联盟"
-type: "zhgh"
+title: "工具箱"
+type: "tools"
 
 date: "2023-06-26T19:00:00+08:00"
 
