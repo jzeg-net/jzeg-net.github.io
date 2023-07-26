@@ -16,7 +16,6 @@ if (refreshPage) {
 let screenStatus = document.querySelector('#screenStatus')
 if (screenStatus) {
   screenStatus.addEventListener('input', () => {
-    console.log(screenStatus.checked)
     if (screenStatus.checked) {
       acquireLock()
       if (wakeLock) {
