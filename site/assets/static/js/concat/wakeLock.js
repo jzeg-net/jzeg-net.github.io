@@ -6,7 +6,7 @@ let wakeLock = null
 const acquireLock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen')
-    console.log(new Date().toLocaleString(), ' 获取锁')
+    console.log(new Date().toLocaleString(), ' 获取锁成功')
   } catch (err) {
     console.log(new Date().toLocaleString(), ' 获取锁失败')
     console.log(`${err.name}, ${err.message}`)

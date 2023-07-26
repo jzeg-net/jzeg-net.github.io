@@ -1,5 +1,5 @@
 // 页面工具
-let zhghApiUrl = 'https://api.zhgh.jzeg.net'
+let zhghApiUrl = 'http://api.zhgh.jzeg.net'
 // 页面工具
 let newTabPage = document.querySelector('#newTabPage')
 let refreshPage = document.querySelector('#refreshPage')
@@ -10,6 +10,23 @@ if (refreshPage) {
   refreshPage.addEventListener('click', (event) => {
     event.preventDefault()
     location.reload()
+  })
+}
+
+let screenStatus = document.querySelector('#screenStatus')
+if (screenStatus) {
+  screenStatus.addEventListener('input', () => {
+    console.log(screenStatus.checked)
+    if (screenStatus.checked) {
+      acquireLock()
+      if (wakeLock) {
+        wakeLock.addEventListener('release', () => {
+          screenStatus.checked = false
+        })
+      }
+    } else {
+      releaseLock()
+    }
   })
 }
 

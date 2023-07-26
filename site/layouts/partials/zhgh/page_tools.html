@@ -1,9 +1,19 @@
 <div class="mx-auto py-5 col-12 col-md-10 col-lg-8 col-xxl-6">
     <div class="card">
         <div class="card-header">页面工具</div>
-        <div class="card-body d-flex justify-content-center column-gap-3">
+        <div class="card-body d-flex flex-wrap justify-content-center column-gap-3 row-gap-2">
             <a class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="refreshPage">刷新页面</a>
             <a class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="javascript:" id="newTabPage" target="_blank">新选项卡打开页面</a>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="screenStatus">
+                    <label class="form-check-label" for="screenStatus">
+                        <!--<span class="switchDefaultText">默认</span>-->
+                        <span class="switchEnableText text-success">屏幕常亮</span>
+                        <span class="switchDisableText text-secondary">禁用屏幕常亮</span>
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
 </div>
