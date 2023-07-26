@@ -26,7 +26,7 @@ function submitForm (event) {
   }
   let fetchOptions = getFetchOptions(fetchData)
 
-  fetch('https://api.zhgh.jzeg.net/passwork/index.php', fetchOptions)
+  fetch(`${zhghApiUrl}/passwork/index.php`, fetchOptions)
     .then(response => response.json())
     .then(response => {
       releaseLock()
