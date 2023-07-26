@@ -17,6 +17,7 @@ let screenStatus = document.querySelector('#screenStatus')
 if (screenStatus) {
   screenStatus.addEventListener('input', () => {
     if (screenStatus.checked) {
+      document.addEventListener('visibilitychange', handleVisibilityChange)
       acquireLock()
       if (wakeLock) {
         wakeLock.addEventListener('release', () => {
@@ -24,6 +25,7 @@ if (screenStatus) {
         })
       }
     } else {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       releaseLock()
     }
   })
