@@ -1,5 +1,5 @@
 // 页面工具
-let zhghApiUrl = 'http://api.zhgh.jzeg.net'
+let zhghApiUrl = 'https://api.zhgh.jzeg.net'
 // 页面工具
 let newTabPage = document.querySelector('#newTabPage')
 let refreshPage = document.querySelector('#refreshPage')
