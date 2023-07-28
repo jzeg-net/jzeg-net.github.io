@@ -102,10 +102,11 @@ function create_member_result (memberInfo) {
 
     let li = document.createElement('li')
     let span = document.createElement('span')
+    let spanClone = document.createElement('span')
 
     li.className = 'list-group-item list-group-item-action'
-    span.className = 'd-inline-block w-50'
-    let spanClone = span.cloneNode()
+    span.className = 'd-inline-block pe-3 text-end'
+    span.style.minWidth = '7rem'
 
     span.textContent = InfoName
     spanClone.textContent = InfoValue

@@ -2,15 +2,16 @@
 let study_login = document.querySelector('#study_login')
 if (study_login) {
   listenerPasswordInputTye(study_login)
-  study_login.addEventListener('submit', submitForm)
+  study_login.addEventListener('submit', () => {
+    submitForm()
+    requestWakelock()
+  })
 }
 let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 
 function submitForm (event) {
   event.preventDefault()
-  acquireLock()
-  document.addEventListener('visibilitychange', handleVisibilityChange)
   submitStatus(study_login)
   submitTimerInterval(study_login)
 
@@ -27,8 +28,7 @@ function submitForm (event) {
   fetch(`${zhghApiUrl}/study/index.php`, fetchOptions)
     .then(response => response.json())
     .then(response => {
-      releaseLock()
-      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      releaseWakelock()
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {

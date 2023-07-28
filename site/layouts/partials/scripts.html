@@ -29,27 +29,6 @@
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
 
-{{ if eq .Page.Layout "edit" -}}
-<script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
-{{ end -}}
-
-{{ if eq .Page.Params.type "zhgh/passwork" }}
-<script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
-<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
-<script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/study" }}
-<script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
-<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
-<script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/member" }}
-<script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
-<script src="{{ $preUrl }}static/js/zhgh/member.js"></script>
-{{ end }}
-
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/zh-cn.js"></script>*/}}
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/en.js"></script>*/}}
@@ -65,11 +44,6 @@
 
 {{- $font_sizeJs := partial "functions/script/build" (dict "resourcesGet" "static/js/font-size.js" "targetPath" "static/js/font-size.js") }}
 <script src="{{ $font_sizeJs }}"></script>
-
-{{- if eq .Page.Layout "full_page" -}}
-    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
-    <script src="{{ $preUrl }}static/js/full_page.js"></script>
-{{- end -}}
 
 {{- $bundleJs := partial "functions/script/concat" . }}
 <script src="{{ $bundleJs }}"></script>
@@ -87,3 +61,30 @@
 {{- $jump_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/jump_link.js" "targetPath" "static/js/jump_link.js") }}
 <script src="{{ $jump_linkJs }}"></script>
 {{- end -}}
+
+
+{{ if eq .Page.Layout "edit" -}}
+    <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
+{{ end -}}
+
+{{- if eq .Page.Layout "full_page" -}}
+    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
+    <script src="{{ $preUrl }}static/js/full_page.js"></script>
+{{- end -}}
+
+{{ if eq .Page.Params.type "zhgh/passwork" }}
+    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/study" }}
+    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/member" }}
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/member.js"></script>
+{{ end }}

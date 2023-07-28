@@ -16,12 +16,22 @@ if (refreshPage) {
 let screenStatus = document.querySelector('#screenStatus')
 if (screenStatus) {
   screenStatus.addEventListener('input', () => {
-    if (screenStatus.checked) {
-      acquireLock()
-    } else {
-      releaseLock()
+    if (!isSupportedWakeLock) {
+      bModal('', createSmallCenterText('当前浏览器环境不支持本操作'), '', 'sm', true)
+      screenStatus.checked = false
+      return
     }
+
+    screenStatus.checked
+      ? requestWakelock()
+      : releaseWakelock()
   })
+
+  if (isSupportedWakeLock) {
+    wakeLock.addEventListener('release', () => {
+      screenStatus.checked = false
+    })
+  }
 }
 
 // 选择工种
