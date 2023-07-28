@@ -26,12 +26,6 @@ if (screenStatus) {
       ? requestWakelock()
       : releaseWakelock()
   })
-
-  if (isSupportedWakeLock) {
-    wakeLock.addEventListener('release', () => {
-      screenStatus.checked = false
-    })
-  }
 }
 
 // 选择工种
