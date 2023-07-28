@@ -2,7 +2,8 @@
 let study_login = document.querySelector('#study_login')
 if (study_login) {
   listenerPasswordInputTye(study_login)
-  study_login.addEventListener('submit', () => {
+  study_login.addEventListener('submit', (event) => {
+    event.preventDefault()
     submitForm()
     requestWakelock()
   })
@@ -10,8 +11,7 @@ if (study_login) {
 let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 
-function submitForm (event) {
-  event.preventDefault()
+function submitForm () {
   submitStatus(study_login)
   submitTimerInterval(study_login)
 

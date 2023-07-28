@@ -2,17 +2,20 @@
 let passwork_login = document.querySelector('#passwork_login')
 if (passwork_login) {
   listenerPasswordInputTye(passwork_login)
-  passwork_login.addEventListener('submit', () => {
+  passwork_login.addEventListener('submit', (event) => {
+    event.preventDefault()
     submitForm()
     requestWakelock()
+      .then(() => {
+        screenStatus.checked = true
+      })
   })
 }
 let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 let automaticNextLevel = document.querySelector('#automaticNextLevel')
 
-function submitForm (event) {
-  event.preventDefault()
+function submitForm () {
   submitStatus(passwork_login)
   submitTimerInterval(passwork_login)
 

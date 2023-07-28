@@ -2,11 +2,13 @@ let userInfo = document.querySelector('#userInfo')
 let result = document.querySelector('#result')
 if (userInfo) {
   listenerPasswordInputTye(userInfo)
-  userInfo.addEventListener('submit', submitForm)
+  userInfo.addEventListener('submit', (event) => {
+    event.preventDefault()
+    submitForm()
+  })
 }
 
-function submitForm (event) {
-  event.preventDefault()
+function submitForm () {
   submitStatus(userInfo)
 
   let formData = getFormData(userInfo)
