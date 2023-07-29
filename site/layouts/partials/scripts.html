@@ -84,6 +84,11 @@
     <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
 {{ end }}
 
+{{ if eq .Page.Params.type "zhgh/login" }}
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/login.js"></script>
+{{ end }}
+
 {{ if eq .Page.Params.type "zhgh/member" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/member.js"></script>

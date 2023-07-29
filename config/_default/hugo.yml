@@ -237,6 +237,10 @@ menu:
             pageRef: /tools/zhgh/member
             parent: zhgh_page
             weight: 3
+        -   identifier: zhgh_login
+            pageRef: /tools/zhgh/login
+            parent: zhgh_page
+            weight: 4
     theme:
         -   identifier: theme_dark
             weight: 1
