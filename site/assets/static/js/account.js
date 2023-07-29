@@ -1,3 +1,5 @@
+let accountApiUrl = 'https://api.account.jzeg.net'
+
 let logout = document.querySelectorAll('.logout')
 logout.forEach(function (triggerBtn) {
     triggerBtn.addEventListener('click', event => {
@@ -10,7 +12,7 @@ logout.forEach(function (triggerBtn) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/logout.php', fetchOptions)
+        fetch(accountApiUrl + '/logout.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 bModal('', createSmallCenterText(response['msg'], 'success'), '', 'sm', true)
@@ -39,7 +41,7 @@ if (login_normal) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/login.php', fetchOptions)
+        fetch(accountApiUrl + '/login.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -76,7 +78,7 @@ if (login_email) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/login.php', fetchOptions)
+        fetch(accountApiUrl + '/login.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -89,7 +91,6 @@ if (login_email) {
                 }
             })
             .catch(error => console.error('login_error:', error))
-
     })
 }
 
@@ -116,7 +117,7 @@ if (login_sms) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/login.php', fetchOptions)
+        fetch(accountApiUrl + '/login.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -155,7 +156,7 @@ if (signup_email) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/signup.php', fetchOptions)
+        fetch(accountApiUrl + '/signup.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -191,7 +192,7 @@ if (signup_normal) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/signup.php', fetchOptions)
+        fetch(accountApiUrl + '/signup.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -231,7 +232,7 @@ if (signup_sms) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/signup.php', fetchOptions)
+        fetch(accountApiUrl + '/signup.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -268,7 +269,7 @@ if (find_password_email) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/find.php', fetchOptions)
+        fetch(accountApiUrl + '/find.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -306,7 +307,7 @@ if (find_password_sms) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/find.php', fetchOptions)
+        fetch(accountApiUrl + '/find.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -343,7 +344,7 @@ if (change_phone) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/change.php', fetchOptions)
+        fetch(accountApiUrl + '/change.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -380,7 +381,7 @@ if (change_email) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/change.php', fetchOptions)
+        fetch(accountApiUrl + '/change.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -417,7 +418,7 @@ if (change_password) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/change.php', fetchOptions)
+        fetch(accountApiUrl + '/change.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -453,7 +454,7 @@ if (change_profile) {
         }
         let fetchOptions = getFetchOptions(fetchData)
 
-        fetch('/api/change.php', fetchOptions)
+        fetch(accountApiUrl + '/change.php', fetchOptions)
             .then(response => response.json())
             .then(response => {
                 if (response['code']) {
@@ -683,7 +684,7 @@ function sendBtnFetch(sendBtn) {
 
     let fetchOptions = getFetchOptions(fetchData)
 
-    fetch('/api/captcha_send.php', fetchOptions)
+    fetch(accountApiUrl + '/captcha_send.php', fetchOptions)
         .then(response => response.json())
         .then(response => {
             if (response['code']) {
