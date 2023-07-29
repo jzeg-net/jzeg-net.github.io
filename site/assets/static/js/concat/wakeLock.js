@@ -8,6 +8,11 @@ const requestWakelock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen')
     console.log(new Date().toLocaleString(), ' 请求锁成功')
+
+    wakeLock.addEventListener('release', () => {
+      console.log(new Date().toLocaleString(), ' 发生释放')
+    })
+
     return true
   } catch (err) {
     console.log(new Date().toLocaleString(), ' 请求锁出错 ' + err.message)
