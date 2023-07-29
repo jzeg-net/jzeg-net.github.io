@@ -6,8 +6,8 @@ if (passwork_login) {
     event.preventDefault()
     submitForm()
     requestWakelock()
-      .then(() => {
-        screenStatus.checked = true
+      .then((result) => {
+        screenStatus.checked = result
       })
   })
 }

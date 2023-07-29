@@ -6,6 +6,9 @@ if (study_login) {
     event.preventDefault()
     submitForm()
     requestWakelock()
+      .then((result) => {
+        screenStatus.checked = result
+      })
   })
 }
 let autoSubmit = document.querySelector('#autoSubmit')

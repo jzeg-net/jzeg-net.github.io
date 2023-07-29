@@ -8,9 +8,12 @@ const requestWakelock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen')
     console.log(new Date().toLocaleString(), ' 获取锁成功')
+    return true
   } catch (err) {
     console.log(new Date().toLocaleString(), ' 获取锁失败 ' + err.message)
   }
+
+  return false
 }
 
 /**
