@@ -10,6 +10,7 @@ let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 function submitForm (event) {
   event.preventDefault()
   requestWakelock().then((result) => { screenStatus.checked = result })
+  document.addEventListener('visibilitychange', handleVisibilityChangeWakelock)
   submitStatus(study_login)
   submitTimerInterval(study_login)
 
@@ -27,6 +28,7 @@ function submitForm (event) {
     .then(response => response.json())
     .then(response => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
+      document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
