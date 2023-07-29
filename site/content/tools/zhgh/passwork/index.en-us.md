@@ -1,6 +1,6 @@
 ---
-title: "学习"
-type: "zhgh/study"
+title: "Quiz"
+type: "zhgh/passwork"
 
 date: "2023-06-26T19:00:00+08:00"
 

@@ -1,5 +1,5 @@
 ---
-title: "学习"
+title: "Study"
 type: "zhgh/study"
 
 date: "2023-06-26T19:00:00+08:00"
