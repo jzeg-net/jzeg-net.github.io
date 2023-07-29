@@ -6,11 +6,11 @@ let wakeLock = null
  */
 const requestWakelock = async () => {
   try {
-    wakeLock = await navigator.wakeLock.request('screen')
-    console.log(new Date().toLocaleString(), ' 获取锁成功')
+    await navigator.wakeLock.request('screen')
+    console.log(new Date().toLocaleString(), ' 请求锁成功')
     return true
   } catch (err) {
-    console.log(new Date().toLocaleString(), ' 获取锁失败 ' + err.message)
+    console.log(new Date().toLocaleString(), ' 请求锁出错 ' + err.message)
   }
 
   return false
@@ -19,16 +19,16 @@ const requestWakelock = async () => {
 /**
  * 允许 设备系统休眠
  */
-const releaseWakelock = () => {
-  if (wakeLock) {
-    wakeLock.release()
-      .then(() => {
-        wakeLock = null
-        console.log(new Date().toLocaleString(), ' 释放锁成功')
-      })
-  } else {
-    console.log(new Date().toLocaleString(), ' 释放锁失败,wakeLock不存在')
+const releaseWakelock = async () => {
+  try {
+    await navigator.wakeLock.release()
+    console.log(new Date().toLocaleString(), ' 释放锁成功')
+    return true
+  } catch (err) {
+    console.log(new Date().toLocaleString(), ' ', err.name, err.message)
   }
+
+  return false
 }
 
 /**

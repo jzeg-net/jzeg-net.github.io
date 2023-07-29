@@ -5,10 +5,7 @@ if (passwork_login) {
   passwork_login.addEventListener('submit', (event) => {
     event.preventDefault()
     submitForm()
-    requestWakelock()
-      .then((result) => {
-        screenStatus.checked = result
-      })
+    requestWakelock().then((result) => { screenStatus.checked = result })
   })
 }
 let autoSubmit = document.querySelector('#autoSubmit')
@@ -33,7 +30,7 @@ function submitForm () {
   fetch(`${zhghApiUrl}/passwork/index.php`, fetchOptions)
     .then(response => response.json())
     .then(response => {
-      releaseWakelock()
+      releaseWakelock().then((result) => { screenStatus.checked = !result })
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
