@@ -6,7 +6,7 @@ let wakeLock = null
  */
 const requestWakelock = async () => {
   try {
-    await navigator.wakeLock.request('screen')
+    wakeLock = await navigator.wakeLock.request('screen')
     console.log(new Date().toLocaleString(), ' 请求锁成功')
     return true
   } catch (err) {
@@ -21,11 +21,13 @@ const requestWakelock = async () => {
  */
 const releaseWakelock = async () => {
   try {
-    await navigator.wakeLock.release()
-    console.log(new Date().toLocaleString(), ' 释放锁成功')
-    return true
+    wakeLock = await wakeLock.release().then(() => {
+      wakeLock = null
+      console.log(new Date().toLocaleString(), ' 释放锁成功')
+      return true
+    })
   } catch (err) {
-    console.log(new Date().toLocaleString(), ' ', err.name, err.message)
+    console.log(new Date().toLocaleString(), err.name, err.message)
   }
 
   return false
