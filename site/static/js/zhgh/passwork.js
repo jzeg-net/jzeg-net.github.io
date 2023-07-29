@@ -2,17 +2,15 @@
 let passwork_login = document.querySelector('#passwork_login')
 if (passwork_login) {
   listenerPasswordInputTye(passwork_login)
-  passwork_login.addEventListener('submit', (event) => {
-    event.preventDefault()
-    submitForm()
-    requestWakelock().then((result) => { screenStatus.checked = result })
-  })
+  passwork_login.addEventListener('submit', submitForm)
 }
 let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 let automaticNextLevel = document.querySelector('#automaticNextLevel')
 
-function submitForm () {
+function submitForm (event) {
+  event.preventDefault()
+  requestWakelock().then((result) => { screenStatus.checked = result })
   submitStatus(passwork_login)
   submitTimerInterval(passwork_login)
 
@@ -25,7 +23,7 @@ function submitForm () {
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
-  let fetchOptions = getFetchOptions(fetchData)
+  let fetchOptions = fetchPostOptions(fetchData)
 
   fetch(`${zhghApiUrl}/passwork/index.php`, fetchOptions)
     .then(response => response.json())

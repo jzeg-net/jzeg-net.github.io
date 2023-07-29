@@ -9,9 +9,20 @@ function getFormData(formEl) {
   return formData
 }
 
-function getFetchOptions(fetchData) {
+function fetchPostOptions(fetchData) {
   return {
     method: "POST",
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
+    body: JSON.stringify(fetchData),
+  }
+}
+
+function fetchGetOptions(fetchData) {
+  return {
+    method: "GET",
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json;charset=UTF-8',

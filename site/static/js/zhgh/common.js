@@ -32,7 +32,7 @@ if (screenStatus) {
 let throughSelect = document.querySelector('#throughSelect')
 if (throughSelect) {
   throughSelect.addEventListener('click', () => {
-    let fetchOptions = getFetchOptions([])
+    let fetchOptions = fetchPostOptions([])
 
     fetch(`${zhghApiUrl}/type_of_work/index.php`, fetchOptions)
       .then(response => response.json())

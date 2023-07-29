@@ -2,13 +2,11 @@ let userInfo = document.querySelector('#userInfo')
 let result = document.querySelector('#result')
 if (userInfo) {
   listenerPasswordInputTye(userInfo)
-  userInfo.addEventListener('submit', (event) => {
-    event.preventDefault()
-    submitForm()
-  })
+  userInfo.addEventListener('submit', submitForm)
 }
 
-function submitForm () {
+function submitForm (event) {
+  event.preventDefault()
   submitStatus(userInfo)
 
   let formData = getFormData(userInfo)
@@ -18,7 +16,7 @@ function submitForm () {
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
-  let fetchOptions = getFetchOptions(fetchData)
+  let fetchOptions = fetchPostOptions(fetchData)
 
   fetch(`${zhghApiUrl}/member/index.php`, fetchOptions)
     .then(response => response.json())

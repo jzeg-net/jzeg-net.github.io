@@ -2,16 +2,14 @@
 let study_login = document.querySelector('#study_login')
 if (study_login) {
   listenerPasswordInputTye(study_login)
-  study_login.addEventListener('submit', (event) => {
-    event.preventDefault()
-    submitForm()
-    requestWakelock().then((result) => { screenStatus.checked = result })
-  })
+  study_login.addEventListener('submit', submitForm)
 }
 let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 
-function submitForm () {
+function submitForm (event) {
+  event.preventDefault()
+  requestWakelock().then((result) => { screenStatus.checked = result })
   submitStatus(study_login)
   submitTimerInterval(study_login)
 
@@ -23,7 +21,7 @@ function submitForm () {
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
-  let fetchOptions = getFetchOptions(fetchData)
+  let fetchOptions = fetchPostOptions(fetchData)
 
   fetch(`${zhghApiUrl}/study/index.php`, fetchOptions)
     .then(response => response.json())
