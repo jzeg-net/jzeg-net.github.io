@@ -35,12 +35,12 @@
 
     {{ range .Site.Menus.knowledge_labor_union }}
         {{ if .HasChildren }}
-            <li class="nav-item col-6 col-lg-auto dropdown d-inline-flex">
+            <li class="nav-item col-6 col-lg-auto btn-group">
                 <a class="nav-link text-nowrap" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">
                     {{ or (T .Identifier) .Name | safeHTML }}
                 </a>
                 <div>
-                    <button type="button" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                    <button type="button" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">{{ T "menu_btn_toggle" }}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
@@ -73,12 +73,12 @@
 
     {{ range .Site.Menus.demo }}
         {{ if .HasChildren }}
-            <li class="nav-item col-6 col-lg-auto dropdown d-inline-flex">
+            <li class="nav-item col-6 col-lg-auto btn-group">
                 <a class="nav-link text-nowrap" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">
                     {{ or (T .Identifier) .Name | safeHTML }}
                 </a>
                 <div>
-                    <button type="button" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                    <button type="button" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">{{ T "menu_btn_toggle" }}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
