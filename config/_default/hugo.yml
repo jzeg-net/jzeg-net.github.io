@@ -443,8 +443,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.116.0"
-        min: "0.116.0"
+        max: "0.116.1"
+        min: "0.116.1"
     mounts:
         -   source: site/archetypes
             target: archetypes
