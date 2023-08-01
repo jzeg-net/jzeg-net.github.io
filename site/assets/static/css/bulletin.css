@@ -9,12 +9,11 @@
 
 .bulletin_inline:before,
 .bulletin_inline:after {
+    display: block;
     position: absolute;
     top: 0;
-    display: block;
     width: 2rem;
-    color: transparent;
-    content: "#";
+    content: "";
     z-index: 1;
 }
 
@@ -36,11 +35,11 @@
 
 .bulletin_block:before,
 .bulletin_block:after {
-    position: absolute;
+    display: block;
+    position: sticky;
     width: 100%;
     height: 3rem;
-    color: transparent;
-    content: "#";
+    content: "";
     z-index: 1;
 }
 
