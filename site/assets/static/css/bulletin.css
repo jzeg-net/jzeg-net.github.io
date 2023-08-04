@@ -5,6 +5,7 @@
 .bulletin_inline {
     position: relative;
     width: 100%;
+    margin-inline: .25rem;
 }
 
 .bulletin_inline:before,
@@ -13,6 +14,7 @@
     position: absolute;
     top: 0;
     width: 2rem;
+    height: 100%;
     content: "";
     z-index: 1;
 }
