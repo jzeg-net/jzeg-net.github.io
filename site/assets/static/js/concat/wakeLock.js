@@ -26,7 +26,7 @@ const requestWakelock = async () => {
 
     return true
   } catch (err) {
-    console.log(new Date().toLocaleString(), ' 请求锁出错 ' + err.message)
+    console.log(new Date().toLocaleString(), ' 请求锁出错 ', err.message)
   }
 
   return false
@@ -34,17 +34,17 @@ const requestWakelock = async () => {
 
 /**
  * 允许 设备系统休眠
- * 注意：成功释放将会返回 false，释放不成功将会返回 true
+ * 成功释放将会返回 true，释放不成功将会返回 false
  */
 const releaseWakelock = async () => {
   try {
-    wakeLock = await wakeLock.release().then(() => {
-      wakeLock = null
-      console.log(new Date().toLocaleString(), ' 释放锁成功')
-      return true
-    })
+    wakeLock = await wakeLock.release()
+    wakeLock = null
+    console.log(new Date().toLocaleString(), ' 释放锁成功')
+
+    return true
   } catch (err) {
-    console.log(new Date().toLocaleString(), err.name, err.message)
+    console.log(new Date().toLocaleString(), ' 释放锁出错 ', err.message)
   }
 
   return false
