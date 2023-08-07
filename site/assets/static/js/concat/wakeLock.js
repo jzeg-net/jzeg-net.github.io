@@ -2,7 +2,23 @@ let isSupportedWakeLock = 'wakeLock' in navigator
 let wakeLock = null
 
 /**
+ * 获取本地存储中休眠锁状态的布尔值
+ *
+ * @return boolean
+ */
+const getStored_wakeLock = () => JSON.parse(localStorage.getItem('wakeLock'))
+
+/**
+ * 设置本地存储中休眠状态的布尔值
+ *
+ * @return void 无返回值
+ */
+const setStored_wakeLock = (wakeLockStatus) => localStorage.setItem('wakeLock', JSON.stringify(wakeLockStatus))
+
+/**
  * 禁止 设备系统休眠
+ *
+ * @return boolean 成功禁止休眠，将会返回 true，没有成功禁止休眠，将会返回 false
  */
 const requestWakelock = async () => {
   try {
@@ -23,6 +39,8 @@ const requestWakelock = async () => {
 
 /**
  * 允许 设备系统休眠
+ *
+ * @return boolean 注意：成功释放将会返回 false，释放不成功将会返回 true
  */
 const releaseWakelock = async () => {
   try {
@@ -46,3 +64,12 @@ const handleVisibilityChangeWakelock = () => (
     ? releaseWakelock()
     : requestWakelock()
 )
+
+/**
+ * 根据本地存储的状态，控制设备系统休眠锁
+ */
+const handleStoryChangeWakelock = () => {
+  getStored_wakeLock()
+    ? releaseWakelock()
+    : requestWakelock()
+}
