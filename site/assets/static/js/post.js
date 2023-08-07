@@ -28,27 +28,26 @@ if (postContentMore) {
     if ('DIV' === event.target.tagName) return
 
     let postContent = document.querySelector('#post-content')
+    let contentExpand = document.querySelector('#content-expand')
+    let contentCollapse = document.querySelector('#content-collapse')
     postContent.classList.toggle('article_shrink')
 
     postContentMore.classList.toggle('shrink-post-content')
     postContentMore.classList.toggle('sticky-bottom')
 
     postContentMore.firstElementChild.childNodes.forEach(currentChild => {
-      if ('BUTTON' === currentChild.tagName) {
-        currentChild.classList.toggle('d-none')
-
-        if (!currentChild.classList.contains('d-none')) {
-          setTimeout(function () {
-            // currentChildEl.focus({ preventScroll: false })
-            currentChild.scrollIntoView({
-              behavior: 'smooth',
-              block: 'end',
-              inline: 'center',
-            })
-          }, 400)
-        }
-
-      }
+      if ('BUTTON' === currentChild.tagName) currentChild.classList.toggle('d-none')
     })
+
+    if (contentCollapse.classList.contains('d-none')) {
+      setTimeout(() => {
+        // currentChildEl.focus({ preventScroll: false })
+        contentExpand.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'center',
+        })
+      }, 400)
+    }
   })
 }
