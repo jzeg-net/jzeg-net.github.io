@@ -15,7 +15,7 @@ if (refreshPage) {
 
 let screenStatus = document.querySelector('#screenStatus')
 if (screenStatus) {
-  setStored_wakeLock(screenStatus.checked)
+  // setStored_wakeLock(screenStatus.checked)
 
   window.addEventListener('storage', () => {
     screenStatus.checked = getStored_wakeLock()
