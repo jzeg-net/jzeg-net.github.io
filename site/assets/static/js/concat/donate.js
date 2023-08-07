@@ -13,7 +13,7 @@ const donateTab = () => {
     }
     let paneOpt = {
         paneId: ['tab-pane-donate-alipay', 'tab-pane-donate-weixin'],
-        donateImg: ['HTTPS://QR.ALIPAY.COM/TSX14540STYNOULL9FSI607', 'wxp://f2f0J5D4PIpy1JQWkQ9cdHgv-bEyfLPCZS9QMPALq0Stt9A']
+        donateImg: ['https://qr.alipay.com/tsx16078baveyad9duuls03', 'wxp://f2f0J5D4PIpy1JQWkQ9cdHgv-bEyfLPCZS9QMPALq0Stt9A']
     }
     let {btnId, btnClass, svgClass, spanText, qrcode_dark, qrcode_light} = navBtnOpt
     let {paneId, donateImg} = paneOpt
