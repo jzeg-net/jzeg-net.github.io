@@ -1,4 +1,4 @@
-baseURL: "http://localhost/"
+baseURL: "https://localhost/"
 
 metaDataFormat: "yaml"
 disableKinds: [ "taxonomy", "term" ]

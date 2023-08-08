@@ -1,4 +1,4 @@
-baseURL: "http://jzeg-net.github.io/"
+baseURL: "https://jzeg-net.github.io/"
 
 # log level (debug|info|warn|error)
 logLevel: "debug"
