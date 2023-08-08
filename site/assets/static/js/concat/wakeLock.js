@@ -63,7 +63,33 @@ const handleVisibilityChangeWakelock = () => (
  * 根据本地存储的状态，控制设备系统休眠锁
  */
 const handleStoryChangeWakelock = () => {
-  true === getStored_wakeLock
+  getStored_wakeLock() === true
     ? releaseWakelock()
     : requestWakelock()
+}
+
+const notSupportedWakeLock = () => {
+  bModal('', createSmallCenterText('当前浏览器环境不支持本操作'), '', 'sm', true)
+}
+
+let screenStatus = document.querySelector('#screenStatus')
+if (screenStatus) {
+  window.addEventListener('storage', () => {
+    if (isSupportedWakeLock) {
+      screenStatus.checked = getStored_wakeLock()
+    }
+  })
+
+  screenStatus.addEventListener('change', (event) => {
+    event.preventDefault()
+    if (!isSupportedWakeLock) {
+      screenStatus.checked = false
+      notSupportedWakeLock()
+      return
+    }
+
+    screenStatus.checked
+      ? requestWakelock().then((result) => {screenStatus.checked = result})
+      : releaseWakelock().then((result) => {screenStatus.checked = !result})
+  })
 }

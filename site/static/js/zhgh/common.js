@@ -13,27 +13,6 @@ if (refreshPage) {
   })
 }
 
-let screenStatus = document.querySelector('#screenStatus')
-if (screenStatus) {
-  // setStored_wakeLock(screenStatus.checked)
-
-  window.addEventListener('storage', () => {
-    screenStatus.checked = getStored_wakeLock()
-  })
-
-  screenStatus.addEventListener('input', () => {
-    if (!isSupportedWakeLock) {
-      bModal('', createSmallCenterText('当前浏览器环境不支持本操作'), '', 'sm', true)
-      screenStatus.checked = false
-      return
-    }
-
-    screenStatus.checked
-      ? requestWakelock()
-      : releaseWakelock()
-  })
-}
-
 // 选择工种
 let throughSelect = document.querySelector('#throughSelect')
 if (throughSelect) {
