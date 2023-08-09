@@ -241,6 +241,23 @@ menu:
             pageRef: /tools/zhgh/login
             parent: zhgh_page
             weight: 4
+    donate:
+        -   identifier: donate_alipay
+            weight: 1
+            params:
+                donate_value: "alipay"
+                class:
+                svg:
+                    useHref: "bi-alipay"
+                    class: "bi fs-5 text-primary"
+        -   identifier: donate_wechat
+            weight: 2
+            params:
+                donate_value: "wechat"
+                class:
+                svg:
+                    useHref: "bi-wechat"
+                    class: "bi fs-5 text-success"
     theme:
         -   identifier: theme_dark
             weight: 1

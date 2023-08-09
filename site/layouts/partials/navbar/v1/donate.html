@@ -1,0 +1,14 @@
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "donate" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+    <svg class="bi fs-5 my-1 text-danger" width="16" height="16"><title>{{- T "donate" -}}</title><use href="#bi-heart-fill"></use></svg>
+    <span class="d-lg-none ms-2" id="donateSwitcher-text">{{- T "donate" -}}</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="donateSwitcher-text">
+    {{ range .Site.Menus.donate }}
+    <li>
+        <button class="dropdown-item d-flex align-items-center justify-content-between" type="button" data-donate="{{ .Params.donate_value }}" title="{{ or (T .Identifier) .Name | safeHTML }}">
+            <svg class="{{ .Params.svg.class }}" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+            <span class="ms-2">{{ or (T .Identifier) .Name | safeHTML }}</span>
+        </button>
+    </li>
+    {{ end }}
+</ul>

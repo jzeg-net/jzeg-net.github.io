@@ -1,20 +1,5 @@
 <ul class="navbar-nav flex-row flex-wrap row-gap-1">
-    <li class="nav-item col-6 col-lg-auto">
-        <a class="nav-link" href="{{- .Site.Params.Repo.git -}}" target="_blank" rel="nofollow, noopener">
-            <svg class="bi fs-5" width="16" height="16"><title>GitHub</title><use href="#bi-github"></use></svg>
-            <span class="d-lg-none ms-2">GitHub</span>
-        </a>
-    </li>
-    <li class="nav-item col-6 col-lg-auto">
-        <button class="nav-link link-body-emphasis text-success-emphasis" href="javascript:" data-donate="weixin" title="{{ T "footer_icon_text-wechat" }}" type="button">
-            <svg class="bi fs-5" width="16" height="16"><title>{{ T "footer_icon_text-wechat" }}</title><use href="#bi-wechat"></use></svg>
-            <span class="d-lg-none ms-2">{{- T "footer_icon_text-wechat" -}}</span>
-        </button>
-    </li>
-    <li class="nav-item col-6 col-lg-auto">
-        <button class="nav-link link-body-emphasis text-primary-emphasis" href="javascript:" data-donate="alipay" title="{{ T "footer_icon_text-alipay" }}" type="button">
-            <svg class="bi fs-5" width="16" height="16"><title>{{ T "footer_icon_text-alipay" }}</title><use href="#bi-alipay"></use></svg>
-            <span class="d-lg-none ms-2">{{- T "footer_icon_text-alipay" -}}</span>
-        </button>
+    <li class="nav-item col-6 col-lg-auto dropdown">
+        {{ partial "navbar/v1/donate" . }}
     </li>
 </ul>
