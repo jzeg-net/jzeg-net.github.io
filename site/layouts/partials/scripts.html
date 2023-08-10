@@ -54,8 +54,8 @@
 {{- $postJs := partial "functions/script/build" (dict "resourcesGet" "static/js/post.js" "targetPath" "static/js/post.js") }}
 <script src="{{ $postJs }}"></script>
 
-{{- $pausedJs := partial "functions/script/build" (dict "resourcesGet" "static/js/paused.js" "targetPath" "static/js/paused.js") }}
-<script src="{{ $pausedJs }}"></script>
+{{- $bulletinJs := partial "functions/script/build" (dict "resourcesGet" "static/js/bulletin.js" "targetPath" "static/js/bulletin.js") }}
+<script src="{{ $bulletinJs }}"></script>
 
 {{- if eq .Page.Layout "jump_link" -}}
 {{- $jump_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/jump_link.js" "targetPath" "static/js/jump_link.js") }}
