@@ -89,7 +89,7 @@
 
 .bulletin-animation:hover,
 .bulletin:hover .bulletin-animation {
-    animation-play-state: paused;
+    animation-play-state: paused !important;
 }
 
 .bulletin-animation > *::marker {
