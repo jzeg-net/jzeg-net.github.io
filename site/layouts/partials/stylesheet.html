@@ -15,7 +15,6 @@
 {{- end }}
 
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/flag-icons/css/flag-icons.min.css">
 
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
@@ -69,3 +68,8 @@
         <link rel="stylesheet" href="{{ $breadcrumbsCSS }}">
     {{- end -}}
 {{- end -}}
+
+{{ if eq .Page.Params.type "edit" -}}
+    <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vditor/dist/index.css">
+    <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vditor/dist/css/content-theme/dark.css">
+{{ end }}

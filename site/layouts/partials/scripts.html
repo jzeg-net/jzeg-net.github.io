@@ -63,8 +63,10 @@
 {{- end -}}
 
 
-{{ if eq .Page.Layout "edit" -}}
+{{ if eq .Page.Params.type "edit" -}}
     <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/vditor/dist/index.min.js"></script>
+    <script src="{{ $preUrl }}static/js/edit.js"></script>
 {{ end -}}
 
 {{- if eq .Page.Layout "full_page" -}}
