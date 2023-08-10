@@ -266,7 +266,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-moon-stars"
-                    class:
+                    class: "bi fs-5 me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: theme_light
             weight: 2
@@ -275,7 +275,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-sun"
-                    class:
+                    class: "bi fs-5 me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: theme_auto
             weight: 3
@@ -284,7 +284,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-circle-half"
-                    class:
+                    class: "bi fs-5 me-2"
                     size: [ width: 16, height: 16 ]
     palette:
         -   identifier: palette_none
