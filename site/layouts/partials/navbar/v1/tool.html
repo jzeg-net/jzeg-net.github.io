@@ -1,25 +1,23 @@
-<ul class="navbar-nav flex-row flex-wrap row-gap-1">
-    {{ if eq .Site.Params.theme.enable true }}
+{{ if eq .Site.Params.theme.enable true }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/theme" . }}
     </li>
-    {{ end }}
+{{ end }}
 
-    {{ if eq .Site.Params.palette.enable true }}
+{{ if eq .Site.Params.palette.enable true }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/palette" . }}
     </li>
-    {{ end }}
+{{ end }}
 
-    {{ if eq .Site.Params.font.enable true }}{{ if eq .Site.Params.font.size.enable true }}
+{{ if eq .Site.Params.font.enable true }}{{ if eq .Site.Params.font.size.enable true }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/font_size" . }}
     </li>
-    {{ end }}{{ end }}
+{{ end }}{{ end }}
 
-    {{ if .Site.IsMultiLingual }}
+{{ if .Site.IsMultiLingual }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/language" . }}
     </li>
-    {{ end }}
-</ul>
+{{ end }}
