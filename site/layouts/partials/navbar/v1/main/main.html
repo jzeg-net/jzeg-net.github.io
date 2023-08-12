@@ -1,0 +1,33 @@
+{{ range .Site.Menus.main }}
+    {{ if .HasChildren }}
+        <li class="nav-item col-6 col-lg-auto dropdown">
+            <button type="button" class="btn btn-link nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                {{ or (T .Identifier) .Name | safeHTML }}
+                <span class="visually-hidden">{{ T "menu_btn_toggle" }}</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-start">
+                {{ range .Children }}
+                    {{ if .HasChildren }}
+                        <li>
+                            <h6 class="dropdown-header"><a class="dropdown-item text-center text-lg-start" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></h6>
+                        </li>
+                        <div class="d-flex flex-column flex-lg-row row-gap-lg-2">
+                            {{ range .Children }}
+                                <li><a class="dropdown-item text-center text-lg-start" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a></li>
+                            {{ end }}
+                        </div>
+                    {{ else }}
+                        <li>
+                            <a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a>
+                        </li>
+                    {{ end }}
+                    <li><hr class="dropdown-divider"></li>
+                {{ end }}
+            </ul>
+        </li>
+    {{ else }}
+        <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link" href="{{- .PageRef | relLangURL -}}" title="{{ or (T .Identifier) .Name | safeHTML }}">{{ or (T .Identifier) .Name | safeHTML }}</a>
+        </li>
+    {{ end }}
+{{ end }}
