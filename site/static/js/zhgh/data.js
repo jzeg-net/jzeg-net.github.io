@@ -64,7 +64,7 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   classes: simpleDatatables_classes_bootstrap,
   labels: simpleDatatables_labels_zh_CN,
   fixedHeight: true,
-  searchable: false,
+  searchable: true,
   data: {
     'headings': ['用户名', '密码', '状态', '时间']
   }
