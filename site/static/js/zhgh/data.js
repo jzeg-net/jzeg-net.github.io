@@ -66,6 +66,6 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   fixedHeight: true,
   searchable: true,
   data: {
-    'headings': ['用户名', '密码', '状态', '时间']
+    'headings': ['用户名', '密码', '时间']
   }
 })
