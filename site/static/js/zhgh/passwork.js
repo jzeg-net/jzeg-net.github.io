@@ -21,7 +21,7 @@ function submitForm (event) {
     password: formData['password'],
     throughNum: formData['throughNum'],
     level: formData['level'],
-    rate: formData['rate'],
+    speed: formData['speed'],
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
