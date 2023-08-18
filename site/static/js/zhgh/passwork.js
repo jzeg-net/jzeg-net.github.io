@@ -21,6 +21,7 @@ function submitForm (event) {
     password: formData['password'],
     throughNum: formData['throughNum'],
     level: formData['level'],
+    rate: formData['rate'],
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
@@ -34,7 +35,7 @@ function submitForm (event) {
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
-        bModal('', response['errorMsg'], '', 'sm', true)
+        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else {
         resultTable.rows.add([
           response['name'],

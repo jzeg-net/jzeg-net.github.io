@@ -46,6 +46,21 @@
                         <span class="switchDisableText">禁用自动闯关</span>
                     </label>
                 </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text">答题速度</span>
+                    <span class="input-group-text">
+                        <input type="radio" class="btn-check" name="rate" value="2xs" id="rate_2xs">
+                        <label class="btn btn-sm" for="rate_2xs">最快</label>
+                        <input type="radio" class="btn-check" name="rate" value="xs" id="rate_xs">
+                        <label class="btn btn-sm" for="rate_xs">较快</label>
+                        <input type="radio" class="btn-check" name="rate" value="base" id="rate_base" required checked>
+                        <label class="btn btn-sm" for="rate_base">默认</label>
+                        <input type="radio" class="btn-check" name="rate" value="xl" id="rate_xl">
+                        <label class="btn btn-sm" for="rate_xl">较慢</label>
+                        <input type="radio" class="btn-check" name="rate" value="2xl" id="rate_2xl">
+                        <label class="btn btn-sm" for="rate_2xl">最慢</label>
+                    </span>
+                </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary" type="submit">开始答题</button>
                     <p class="text-center">计时：<span id="submit_timer">0</span>秒</p>
