@@ -75,7 +75,7 @@
         "downloadRepo": "https://hub.gitmirror.com/https://github.com/"
     },
     "dependencies": {
-        "@docsearch/js": "^3.5.1",
+        "@docsearch/js": "^3.5.2",
         "@glidejs/glide": "^3.6.0",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.1",
@@ -83,7 +83,7 @@
         "clipboard": "^2.0.11",
         "danmu.js": "^1.1.11",
         "dayjs": "^1.11.9",
-        "flag-icons": "^6.10.0",
+        "flag-icons": "^6.11.0",
         "github-api": "^3.4.0",
         "html2canvas": "^1.4.1",
         "js-cookie": "^3.0.5",
