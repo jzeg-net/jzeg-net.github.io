@@ -77,3 +77,7 @@
 {{ if eq .Page.Params.type "edit" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vditor/dist/index.css">
 {{ end }}
+
+{{ if eq .Page.Params.type "zhgh/passwork" }}
+    <link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
+{{ end }}
