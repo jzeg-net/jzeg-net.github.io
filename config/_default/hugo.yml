@@ -245,6 +245,10 @@ menu:
             pageRef: /tools/zhgh/data
             parent: zhgh_page
             weight: 9
+        -   identifier: zhgh_log
+            pageRef: /tools/zhgh/log
+            parent: zhgh_page
+            weight: 10
     donate:
         -   identifier: donate_alipay
             weight: 1
