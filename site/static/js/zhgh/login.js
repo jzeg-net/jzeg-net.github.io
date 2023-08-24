@@ -21,7 +21,7 @@ function submitForm (event) {
     .then(response => response.json())
     .then(response => {
       if (response['errorMsg']) {
-        bModal('', response['errorMsg'], '', 'sm', true)
+        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       }
 
       bModal('', response['message'], '', 'sm', true)

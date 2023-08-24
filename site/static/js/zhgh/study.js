@@ -33,7 +33,7 @@ function submitForm (event) {
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
         if (response['errorMsg'] !== '空集合') {
-          bModal('', response['errorMsg'], '', 'sm', true)
+          bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
         }
       } else {
         resultTable.rows.add([

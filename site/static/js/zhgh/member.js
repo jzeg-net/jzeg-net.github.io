@@ -23,7 +23,7 @@ function submitForm (event) {
     .then(response => response.json())
     .then(response => {
       if (response['errorMsg']) {
-        bModal('', response['errorMsg'], '', 'sm', true)
+        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else {
         result.appendChild(create_member_result(response))
       }

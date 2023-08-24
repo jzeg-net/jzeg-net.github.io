@@ -24,7 +24,7 @@ function submitForm (event) {
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
-        bModal('', response['errorMsg'], '', 'sm', true)
+        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else {
         const convertedData = new simpleDatatables.convertJSON({
           data: JSON.stringify(response)
