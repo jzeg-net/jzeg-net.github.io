@@ -1,3 +1,4 @@
+// 表单
 let logInfo = document.querySelector('#logInfo')
 let result = document.querySelector('#result')
 if (logInfo) {
@@ -21,12 +22,15 @@ function submitForm (event) {
   fetch(`${zhghApiUrl}/log/index.php`, fetchOptions)
     .then(response => response.json())
     .then(response => {
+      console.log(response)
+      response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
         bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else {
-        resultTable.rows.add([
-          response['@timestamp'],
-        ])
+        const convertedData = new simpleDatatables.convertJSON({
+          data: JSON.stringify(response)
+        })
+        resultTable.insert(convertedData)
       }
       clearFormSpinner(logInfo)
     })
@@ -39,16 +43,38 @@ function submitForm (event) {
 // 结果表格
 let simpleDatatables_classes_bootstrap = {
   active: 'active',
+  ascending: 'datatable-ascending',
+  bottom: 'datatable-bottom',
+  container: 'container',
+  cursor: 'datatable-cursor',
+  descending: 'datatable-descending',
   disabled: 'disabled',
-  selector: 'form-select',
+  dropdown: 'datatable-dropdown',
+  ellipsis: 'datatable-ellipsis',
+  filter: 'datatable-filter',
+  filterActive: 'datatable-filter-active',
+  empty: 'datatable-empty',
+  headercontainer: 'datatable-headercontainer',
+  hidden: 'datatable-hidden',
+  info: 'datatable-info',
+  input: 'form-control',
+  loading: 'datatable-loading',
+  pagination: 'pagination',
   paginationList: 'pagination',
   paginationListItem: 'page-item',
-  paginationListItemLink: 'page-link'
+  paginationListItemLink: 'page-link',
+  search: 'datatable-search',
+  selector: 'form-selector',
+  sorter: 'datatable-sorter',
+  table: 'table',
+  top: 'datatable-top',
+  wrapper: 'datatable-wrapper'
 }
 let simpleDatatables_labels_zh_CN = {
   placeholder: '搜索...',
   searchTitle: '表内搜索',
   perPage: '每页条目数',
+  pageTitle: '页 {page}',
   noRows: '没有找到条目',
   info: '显示 {start} 到 {end}（共 {rows} 条）',
   noResults: '没有结果与您的搜索查询匹配',
@@ -63,6 +89,6 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   fixedHeight: true,
   searchable: false,
   data: {
-    'headings': ['@timestamp', '关卡', '正确', '错误', '用时', '得分']
+    'headings': ['第三方', '关卡', '正确', '错误', '用时', '得分']
   }
 })
