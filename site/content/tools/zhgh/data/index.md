@@ -1,5 +1,5 @@
 ---
-title: "数据管理"
+title: "数据"
 type: "zhgh/data"
 
 date: "2023-06-26T19:00:00+08:00"
