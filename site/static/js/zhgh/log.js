@@ -1,8 +1,7 @@
 // 表单
 let logInfo = document.querySelector('#logInfo')
-let result = document.querySelector('#result')
 if (logInfo) {
-  listenerPasswordInputTye(logInfo)
+  listenerPasswordInputType(logInfo)
   logInfo.addEventListener('submit', submitForm)
 }
 
@@ -45,7 +44,7 @@ let simpleDatatables_classes_bootstrap = {
   active: 'active',
   ascending: 'datatable-ascending',
   bottom: 'datatable-bottom',
-  container: 'container',
+  container: 'table-responsive',
   cursor: 'datatable-cursor',
   descending: 'datatable-descending',
   disabled: 'disabled',
@@ -89,6 +88,6 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   fixedHeight: true,
   searchable: false,
   data: {
-    'headings': ['第三方', '关卡', '正确', '错误', '用时', '得分']
+    'headings': ['@timestamp','upstream_time']
   }
 })

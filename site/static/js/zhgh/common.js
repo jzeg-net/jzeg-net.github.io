@@ -54,7 +54,7 @@ function submitTimerInterval (formEL) {
   }, 1000)
 }
 
-function listenerPasswordInputTye (formEl) {
+function listenerPasswordInputType (formEl) {
   let allPasswordInput = formEl.querySelectorAll('.toggleDisplay')
 
   allPasswordInput.forEach(function (currentPasswordInput) {
