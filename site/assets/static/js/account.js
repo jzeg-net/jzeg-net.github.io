@@ -24,7 +24,7 @@ logout.forEach(function (triggerBtn) {
 let login_normal = document.querySelector('#login_normal')
 if (login_normal) {
     listenCaptcha(login_normal)
-    listenerPasswordInputTye(login_normal)
+    listenerPasswordInputType(login_normal)
 
     login_normal.addEventListener('submit', event => {
         event.preventDefault()
@@ -138,7 +138,7 @@ let signup_email = document.querySelector('#signup_email')
 if (signup_email) {
     listenCaptcha(signup_email)
     listenSendBtn(signup_email)
-    listenerPasswordInputTye(signup_email)
+    listenerPasswordInputType(signup_email)
 
     signup_email.addEventListener('submit', event => {
         event.preventDefault()
@@ -175,7 +175,7 @@ if (signup_email) {
 let signup_normal = document.querySelector('#signup_normal')
 if (signup_normal) {
     listenCaptcha(signup_normal)
-    listenerPasswordInputTye(signup_normal)
+    listenerPasswordInputType(signup_normal)
 
     signup_normal.addEventListener('submit', event => {
         event.preventDefault()
@@ -213,7 +213,7 @@ if (signup_sms) {
     listenCaptcha(signup_sms)
     listenIdd_code(signup_sms)
     listenSendBtn(signup_sms)
-    listenerPasswordInputTye(signup_sms)
+    listenerPasswordInputType(signup_sms)
 
     signup_sms.addEventListener('submit', event => {
         event.preventDefault()
@@ -252,7 +252,7 @@ let find_password_email = document.querySelector('#find_password_email')
 if (find_password_email) {
     listenCaptcha(find_password_email)
     listenSendBtn(find_password_email)
-    listenerPasswordInputTye(find_password_email)
+    listenerPasswordInputType(find_password_email)
 
     find_password_email.addEventListener('submit', event => {
         event.preventDefault()
@@ -290,7 +290,7 @@ if (find_password_sms) {
     listenCaptcha(find_password_sms)
     listenIdd_code(find_password_sms)
     listenSendBtn(find_password_sms)
-    listenerPasswordInputTye(find_password_sms)
+    listenerPasswordInputType(find_password_sms)
 
     find_password_sms.addEventListener('submit', event => {
         event.preventDefault()
@@ -401,7 +401,7 @@ if (change_email) {
 let change_password = document.querySelector('#change_password')
 if (change_password) {
     listenCaptcha(change_password)
-    listenerPasswordInputTye(change_password)
+    listenerPasswordInputType(change_password)
 
     change_password.addEventListener('submit', event => {
         event.preventDefault()
@@ -628,7 +628,7 @@ function resetCaptchaInputValue(captchaEl) {
     captchaEl.parentElement.nextElementSibling.querySelector('input').value = ''
 }
 
-function listenerPasswordInputTye(formEl) {
+function listenerPasswordInputType(formEl) {
     let allPasswordInput = formEl.querySelectorAll('.toggleDisplay')
 
     allPasswordInput.forEach(function (currentPasswordInput) {

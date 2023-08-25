@@ -1,7 +1,7 @@
 // 表单
 let data_login = document.querySelector('#data_login')
 if (data_login) {
-  listenerPasswordInputTye(data_login)
+  listenerPasswordInputType(data_login)
   data_login.addEventListener('submit', submitForm)
 }
 

@@ -1,7 +1,7 @@
 // 表单
 let study_login = document.querySelector('#study_login')
 if (study_login) {
-  listenerPasswordInputTye(study_login)
+  listenerPasswordInputType(study_login)
   study_login.addEventListener('submit', submitForm)
 }
 let autoSubmit = document.querySelector('#autoSubmit')

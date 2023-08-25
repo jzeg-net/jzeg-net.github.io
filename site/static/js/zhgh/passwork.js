@@ -1,7 +1,7 @@
 // 表单
 let passwork_login = document.querySelector('#passwork_login')
 if (passwork_login) {
-  listenerPasswordInputTye(passwork_login)
+  listenerPasswordInputType(passwork_login)
   passwork_login.addEventListener('submit', submitForm)
 }
 let autoSubmit = document.querySelector('#autoSubmit')

@@ -1,7 +1,7 @@
 let userInfo = document.querySelector('#userInfo')
 let result = document.querySelector('#result')
 if (userInfo) {
-  listenerPasswordInputTye(userInfo)
+  listenerPasswordInputType(userInfo)
   userInfo.addEventListener('submit', submitForm)
 }
 

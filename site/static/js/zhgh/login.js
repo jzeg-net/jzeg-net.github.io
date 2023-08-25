@@ -1,6 +1,6 @@
 let userLogin = document.querySelector('#userLogin')
 if (userLogin) {
-  listenerPasswordInputTye(userLogin)
+  listenerPasswordInputType(userLogin)
   userLogin.addEventListener('submit', submitForm)
 }
 
