@@ -86,8 +86,8 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   classes: simpleDatatables_classes_bootstrap,
   labels: simpleDatatables_labels_zh_CN,
   fixedHeight: true,
-  searchable: false,
+  searchable: true,
   data: {
-    'headings': ['@timestamp','upstream_time']
+    'headings': ['时间', 'IP', '时长', 'UA']
   }
 })
