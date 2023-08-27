@@ -44,7 +44,7 @@ let simpleDatatables_classes_bootstrap = {
   active: 'active',
   ascending: 'datatable-ascending',
   bottom: 'datatable-bottom',
-  container: 'table-responsive',
+  container: 'container',
   cursor: 'datatable-cursor',
   descending: 'datatable-descending',
   disabled: 'disabled',
@@ -64,7 +64,7 @@ let simpleDatatables_classes_bootstrap = {
   paginationListItemLink: 'page-link',
   search: 'datatable-search',
   selector: 'form-selector',
-  sorter: 'datatable-sorter',
+  sorter: 'btn btn-sm datatable-sorter',
   table: 'table',
   top: 'datatable-top',
   wrapper: 'datatable-wrapper'

@@ -66,11 +66,32 @@ function submitForm (event) {
 // 结果表格
 let simpleDatatables_classes_bootstrap = {
   active: 'active',
+  ascending: 'datatable-ascending',
+  bottom: 'datatable-bottom',
+  container: 'container',
+  cursor: 'datatable-cursor',
+  descending: 'datatable-descending',
   disabled: 'disabled',
-  selector: 'form-select',
+  dropdown: 'datatable-dropdown',
+  ellipsis: 'datatable-ellipsis',
+  filter: 'datatable-filter',
+  filterActive: 'datatable-filter-active',
+  empty: 'datatable-empty',
+  headercontainer: 'datatable-headercontainer',
+  hidden: 'datatable-hidden',
+  info: 'datatable-info',
+  input: 'form-control',
+  loading: 'datatable-loading',
+  pagination: 'pagination',
   paginationList: 'pagination',
   paginationListItem: 'page-item',
-  paginationListItemLink: 'page-link'
+  paginationListItemLink: 'page-link',
+  search: 'datatable-search',
+  selector: 'form-selector',
+  sorter: 'btn btn-sm datatable-sorter',
+  table: 'table',
+  top: 'datatable-top',
+  wrapper: 'datatable-wrapper'
 }
 let simpleDatatables_labels_zh_CN = {
   placeholder: '搜索...',

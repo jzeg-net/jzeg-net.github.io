@@ -19,16 +19,9 @@
 
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
-{{ if eq .Page.Params.type "zhgh/data" }}
+{{ if eq .Page.Params.components "datatables" }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/passwork" }}
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/study" }}
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
 {{ end }}
 
 {{ if eq .IsHome false }}
@@ -76,12 +69,4 @@
 
 {{ if eq .Page.Params.type "edit" -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vditor/dist/index.css">
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/passwork" }}
-    <link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
-{{ end }}
-
-{{ if eq .Page.Params.type "zhgh/log" }}
-    <link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
 {{ end }}

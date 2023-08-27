@@ -74,26 +74,26 @@
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
 {{- end -}}
 
-{{ if eq .Page.Params.type "zhgh/log" }}
+{{ if eq .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+{{ end }}
+
+{{ if eq .Page.Params.type "zhgh/log" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/log.js"></script>
 {{ end }}
 
 {{ if eq .Page.Params.type "zhgh/data" }}
-    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/data.js"></script>
 {{ end }}
 
 {{ if eq .Page.Params.type "zhgh/passwork" }}
-    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
 {{ end }}
 
 {{ if eq .Page.Params.type "zhgh/study" }}
-    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
 {{ end }}
