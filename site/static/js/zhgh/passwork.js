@@ -49,7 +49,7 @@ function submitForm (event) {
       clearFormSpinner(passwork_login)
       clearInterval(submitTimerIntervalID)
 
-      if (response['errorMsg']==='每日学习限时1小时，请明天再来，谢谢') return
+      if (response['errorMsg'] === '每日学习限时1小时，请明天再来，谢谢') return
 
       if (automaticNextLevel.checked && level.value < 30) {
         level.value++
@@ -80,6 +80,7 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   labels: simpleDatatables_labels_zh_CN,
   fixedHeight: true,
   searchable: false,
+  perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
   data: {
     'headings': ['分类', '关卡', '正确', '错误', '用时', '得分']
   }
