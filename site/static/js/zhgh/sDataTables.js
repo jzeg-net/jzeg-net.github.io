@@ -23,7 +23,7 @@ let simpleDatatables_classes_bootstrap = {
   search: 'datatable-search',
   selector: 'form-selector',
   sorter: 'btn btn-sm btn-outline-secondary datatable-sorter',
-  table: 'table',
+  table: 'datatable-table',
   top: 'datatable-top',
   wrapper: 'datatable-wrapper'
 }
