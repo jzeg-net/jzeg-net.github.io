@@ -72,6 +72,7 @@ let resultTable = new simpleDatatables.DataTable('#resultTable', {
   labels: simpleDatatables_labels_zh_CN,
   fixedHeight: true,
   searchable: false,
+  perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
   data: {
     'headings': ['类别', '获得', '用时', '时间']
   }
