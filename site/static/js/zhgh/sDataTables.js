@@ -22,7 +22,7 @@ let simpleDatatables_classes_bootstrap = {
   paginationListItemLink: 'page-link',
   search: 'datatable-search',
   selector: 'form-selector',
-  sorter: 'btn btn-sm btn-outline-secondary datatable-sorter',
+  sorter: 'datatable-sorter',
   table: 'table',
   top: 'datatable-top',
   wrapper: 'datatable-wrapper'
