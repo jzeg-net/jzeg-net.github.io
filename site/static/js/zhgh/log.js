@@ -13,6 +13,7 @@ function submitForm (event) {
   let fetchData = {
     account: formData['account'],
     password: formData['password'],
+    date: formData['date'],
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
