@@ -94,16 +94,16 @@
         "simple-datatables": "^8.0.0",
         "simple-icons": "^9.12.0",
         "timeago.js": "^4.0.2",
-        "vditor": "^3.9.4",
+        "vditor": "^3.9.5",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",
-        "xgplayer": "^3.0.8",
+        "xgplayer": "^3.0.9",
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.22.10",
         "@babel/core": "^7.22.11",
-        "@babel/preset-env": "^7.22.10",
+        "@babel/preset-env": "^7.22.14",
         "@html-eslint/cli": "^0.19.1",
         "@html-eslint/eslint-plugin": "^0.19.1",
         "@html-eslint/parser": "^0.19.1",
@@ -116,14 +116,14 @@
         "eslint-plugin-markdown": "^3.0.1",
         "eslint-plugin-unicorn": "^48.0.1",
         "find-unused-sass-variables": "^5.0.0",
-        "hugo-bin": "^0.113.0",
+        "hugo-bin": "^0.114.2",
         "npm-run-all": "^4.1.5",
-        "postcss": "^8.4.28",
+        "postcss": "^8.4.29",
         "postcss-cli": "^10.1.0",
-        "prettier": "^3.0.2",
+        "prettier": "^3.0.3",
         "sass": "^1.66.1",
         "stylelint": "^15.10.3",
         "svg-sprite": "^3.0.0-beta2",
-        "terser": "^5.19.2"
+        "terser": "^5.19.3"
     }
 }
