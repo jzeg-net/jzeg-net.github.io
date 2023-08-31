@@ -24,6 +24,17 @@
                         <svg class="text-body-secondary bi fs-5"><use href="#bi-eye-slash-fill"></use></svg>
                     </a>
                 </div>
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" name="date" id="date" placeholder=" " minlength="10" maxlength="10" required>
+                        <label for="date">
+                            <svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-calendar-day"></use></svg>
+                            日期
+                        </label>
+                    </div>
+                    <a class="input-group-text text-reset text-decoration-none yesterday" href="javascript:" data-bs-date="yesterday" data-bs-date-value="yesterday" title="昨天">昨天</a>
+                    <a class="input-group-text text-reset text-decoration-none today" href="javascript:" data-bs-date="today" data-bs-date-value="today" title="今天">今天</a>
+                </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary" type="submit">查看日志</button>
                 </div>
