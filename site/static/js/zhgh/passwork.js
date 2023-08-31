@@ -49,6 +49,7 @@ function submitForm (event) {
       clearFormSpinner(passwork_login)
       clearInterval(submitTimerIntervalID)
 
+      if (response['errorMsg'] === '登录失败') return
       if (response['errorMsg'] === '每日学习限时1小时，请明天再来，谢谢') return
 
       if (automaticNextLevel.checked && level.value < 30) {

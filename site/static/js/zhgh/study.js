@@ -45,6 +45,9 @@ function submitForm (event) {
       }
       clearFormSpinner(study_login)
       clearInterval(submitTimerIntervalID)
+
+      if (response['errorMsg'] === '登录失败') return
+
       if (autoSubmit.checked && autoSubmitTotalTimes.value > 1) {
         --autoSubmitTotalTimes.value
         submitForm(event)
