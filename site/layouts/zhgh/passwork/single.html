@@ -46,9 +46,11 @@
                         <span class="switchDisableText">禁用自动闯关</span>
                     </label>
                 </div>
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-sm mb-3 flex-nowrap overflow-x-scroll">
                     <span class="input-group-text">速度</span>
                     <span class="input-group-text">
+                        <input type="radio" class="btn-check" name="speed" value="3s" id="speed_3s">
+                        <label class="btn btn-sm" for="speed_3s">SSS</label>
                         <input type="radio" class="btn-check" name="speed" value="2s" id="speed_2s">
                         <label class="btn btn-sm" for="speed_2s">SS</label>
                         <input type="radio" class="btn-check" name="speed" value="s" id="speed_s">
@@ -61,6 +63,8 @@
                         <label class="btn btn-sm" for="speed_base">默认</label>
                         <input type="radio" class="btn-check" name="speed" value="xl" id="speed_xl">
                         <label class="btn btn-sm" for="speed_xl">较慢</label>
+                        <input type="radio" class="btn-check" name="speed" value="2xl" id="speed_2xl">
+                        <label class="btn btn-sm" for="speed_2xl">最慢</label>
                     </span>
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
