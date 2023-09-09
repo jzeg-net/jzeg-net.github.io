@@ -25,9 +25,11 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{ if .IsHome }}
+{{ if eq .Page.Title "Gallery" "画廊" }}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
+
+{{ if .IsHome }}{{ end }}
 
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/zh-cn.js"></script>*/}}
