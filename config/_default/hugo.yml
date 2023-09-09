@@ -62,6 +62,24 @@ menu:
                     useHref:
                     class:
                     size: [ width: 16, height: 16 ]
+        -   identifier: menu_gallery
+            pageRef: /gallery
+            weight: 3
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
+        -   identifier: menu_video
+            pageRef: /video
+            weight: 3
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
         -   identifier: menu_more
             pageRef:
             weight: 7

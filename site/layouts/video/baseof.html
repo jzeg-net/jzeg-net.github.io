@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{{- $theme := partial "functions/theme" . }}
+{{- $size := partial "functions/font-size" . }}
+{{- $palette := partial "functions/palette" . }}
+<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="{{ $theme }}" data-bs-size="{{ $size }}" data-bs-palette="{{ $palette }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6, user-scalable=yes, interactive-widget=resizes-visual">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="Hugo {{ hugo.Version }}">
+    {{ block "robots" . }}{{- partial "head/robots" . -}}{{ end }}
+    {{ block "description" . }}{{- partial "head/description" . -}}{{ end }}
+    {{ block "keyword" . }}{{- partial "head/keyword" . -}}{{ end }}
+    {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
+    {{ if eq .Kind "404" -}}
+        <link rel="canonical" href="{{ .RelPermalink }}">
+        {{ if .Site.IsMultiLingual }}
+            {{ range .Translations }}
+                <link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .RelPermalink }}">
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    {{ partial "favicons" . }}
+    {{ partial "stylesheet" . }}
+    {{ partial "head/no_script" }}
+    {{- block "before_the_end_of_the_head" . -}}{{- end }}
+</head>
+{{ block "body_override" . }}<body class="bg-body">{{ end }}
+
+{{ partial "skippy" . }}
+
+{{ partial "svg_sprite_icons" . }}
+
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar" . }}{{ end }}
+
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.bulletin "hide") }}{{ partial "top-bulletin" . }}{{ end }}
+
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
+
+{{ partial "posts/svg_sprite_icons" . }}
+
+<main class="pb-5 container-xxl" id="main">
+    <div class="d-flex flex-column flex-md-row column-gap-3 row-gap-5" id="content">
+        {{ block "content" . }}{{ .Content }}{{ end }}
+    </div>
+</main>
+
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
+
+{{ if eq .Site.Params.float_tools.enable true }}{{ partial "fixed_float/tools" . }}{{ end }}
+
+{{ partial "scripts" . }}
+{{- block "before_the_end_of_the_body" . }}{{ end }}
+</body>
+</html>
