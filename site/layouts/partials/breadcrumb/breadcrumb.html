@@ -1,21 +1,23 @@
-<nav class="container-fluid bg-body-tertiary" aria-label="breadcrumb">
-    <ol class="container-xxl flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3">
-    {{- range .Ancestors.Reverse }}
-    {{ if .IsHome }}
-        <li class="breadcrumb-item">
-            <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .LinkTitle }}">
-                <svg class="bi" width="16" height="16"><use href="#bi-house-door"></use></svg>
-                <span class="visually-hidden">home</span>
-            </a>
-        </li>
-    {{ else }}
-        <li class="breadcrumb-item">
-            <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-        </li>
-    {{ end }}
-    {{- end }}
-        <li class="breadcrumb-item active" aria-current="page">
-            <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-        </li>
-    </ol>
-</nav>
+<div class="bg-body-tertiary">
+    <nav class="container-xxl" aria-label="breadcrumb">
+        <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3">
+            {{- range .Ancestors.Reverse }}
+                {{ if .IsHome }}
+                    <li class="breadcrumb-item">
+                        <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .LinkTitle }}">
+                            <svg class="bi fs-5" width="16" height="16"><use href="#bi-house-door"></use></svg>
+                            <span class="visually-hidden">home</span>
+                        </a>
+                    </li>
+                {{ else }}
+                    <li class="breadcrumb-item">
+                        <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                    </li>
+                {{ end }}
+            {{- end }}
+            <li class="breadcrumb-item active" aria-current="page">
+                <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+            </li>
+        </ol>
+    </nav>
+</div>
