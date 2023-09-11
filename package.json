@@ -92,7 +92,7 @@
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
         "simple-datatables": "^8.0.0",
-        "simple-icons": "^9.13.0",
+        "simple-icons": "^9.14.0",
         "timeago.js": "^4.0.2",
         "vditor": "^3.9.5",
         "workbox-sw": "^7.0.0",
