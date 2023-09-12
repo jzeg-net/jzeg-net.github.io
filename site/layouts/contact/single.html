@@ -20,7 +20,7 @@
                 <div class="col-2 text-nowrap text-end">
                     <label for="title" class="form-label colon required">标题</label>
                 </div>
-                <div class="col mb-1">
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
                     <input type="text" class="form-control" name="title" id="title" placeholder="简要概述核心内容" minlength="4" maxlength="20" required>
                 </div>
                 <div class="col-12 offset-2 helpBlock">
@@ -31,7 +31,7 @@
                 <div class="col-2 text-nowrap text-end">
                     <label for="content" class="form-label colon required">内容</label>
                 </div>
-                <div class="col mb-1">
+                <div class="col col-md-8 col-lg-6 mb-1">
                     <textarea class="form-control" name="content" id="content" rows="5" minlength="20" maxlength="1000" required></textarea>
                 </div>
                 <div class="col-12 offset-2 helpBlock">
@@ -42,14 +42,14 @@
                 <div class="col-2 text-nowrap text-end">
                     <label for="attachment" class="form-label">上传附件</label>
                 </div>
-                <div class="col mb-1">
+                <div class="col col-md-4 mb-1">
                     <input class="form-control" type="file" name="attachment" id="attachment" accept=".png,.jpg,.jpeg,.gif,.ico,.bmp,.txt,.log,.md,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar, .tar,.gz,.tar">
                 </div>
                 <div class="col-12 offset-2 helpBlock">
                     <span class="small text-secondary">提示</span>
                 </div>
             </div>
-            <div class="d-grid col-4 mx-auto">
+            <div class="d-grid col-8 col-sm-4 col-md-3 mx-auto">
                 <button class="btn btn-primary" type="submit">提交</button>
             </div>
         </form>
