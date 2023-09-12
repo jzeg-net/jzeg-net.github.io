@@ -1,10 +1,58 @@
 {{ define "content" }}
 <main class="pb-5 container-xxl" id="content">
-    <div class="mb-3 text-center">
-        <a class="btn-link alert-link text-decoration-none" href="javascript:" target="_blank" rel="nofollow">
-            <i class="fa-fw fa fa-book-open"></i>
-            Contact Me
-        </a>
+    <div>
+        <form id="contact">
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="type" class="form-label colon required">分类</label>
+                </div>
+                <div class="col">
+                    <input type="radio" class="btn-check" name="type" value="recommend" id="type_recommend" required>
+                    <label for="type_recommend" class="btn btn-outline-secondary">建议</label>
+                    <input type="radio" class="btn-check" name="type" value="idea" id="type_idea">
+                    <label for="type_idea" class="btn btn-outline-secondary">意见</label>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">提示</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="title" class="form-label colon required">标题</label>
+                </div>
+                <div class="col mb-1">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="简要概述核心内容" minlength="4" maxlength="20" required>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">提示</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="content" class="form-label colon required">内容</label>
+                </div>
+                <div class="col mb-1">
+                    <textarea class="form-control" name="content" id="content" rows="5" minlength="20" maxlength="1000" required></textarea>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">提示</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="attachment" class="form-label">上传附件</label>
+                </div>
+                <div class="col mb-1">
+                    <input class="form-control" type="file" name="attachment" id="attachment" accept=".png,.jpg,.jpeg,.gif,.ico,.bmp,.txt,.log,.md,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar, .tar,.gz,.tar">
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">提示</span>
+                </div>
+            </div>
+            <div class="d-grid col-4 mx-auto">
+                <button class="btn btn-primary" type="submit">提交</button>
+            </div>
+        </form>
     </div>
     {{- .Content }}
 </main>

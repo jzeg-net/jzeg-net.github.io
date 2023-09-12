@@ -1,0 +1,11 @@
+form .required:before {
+    content: "*";
+    margin-right: 3px;
+    color: var(--bs-danger);
+    vertical-align: middle;
+}
+
+form .colon:after {
+    content: ":";
+    margin-inline: 3px;
+}
