@@ -1,5 +1,4 @@
-
-function getFormData(formEl) {
+function getFormData (formEl) {
   let form = new FormData(formEl)
   let formData = {}
   form.forEach(($value, $key) => {
@@ -9,20 +8,20 @@ function getFormData(formEl) {
   return formData
 }
 
-function fetchPostOptions(fetchData) {
+function fetchPostOptions (fetchData) {
   return {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(fetchData),
     headers: {
-      Accept: 'application/json',
+      'Accept': 'application/json',
       'Content-Type': 'application/json;charset=UTF-8',
     },
   }
 }
 
-function fetchGetOptions(fetchData) {
+function fetchGetOptions (fetchData) {
   return {
-    method: "GET",
+    method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json;charset=UTF-8',
@@ -31,18 +30,18 @@ function fetchGetOptions(fetchData) {
   }
 }
 
-function submitStatus(formEl) {
+function submitStatus (formEl) {
   let submit = formEl.querySelector('[type=submit]')
 
   insertNewElement(submit, newSpinner())
   btnDisabledStatus(submit)
 }
 
-function insertNewElement(calledElement, newElement, where = 'afterbegin') {
+function insertNewElement (calledElement, newElement, where = 'afterbegin') {
   calledElement.insertAdjacentElement(where, newElement)
 }
 
-function newSpinner() {
+function newSpinner () {
   let spinner = document.createElement('span')
   let spinnerVisuallyHidden = document.createElement('span')
 
@@ -57,18 +56,18 @@ function newSpinner() {
   return spinner
 }
 
-function btnDisabledStatus(btnElement) {
+function btnDisabledStatus (btnElement) {
   btnElement.classList.toggle('disabled')
   btnElement.toggleAttribute('disabled')
 }
 
-function clearFormSpinner(formEl) {
+function clearFormSpinner (formEl) {
   let submit = formEl.querySelector('[type=submit]')
 
   btnDisabledStatus(submit)
   clearSpinner(submit)
 }
 
-function clearSpinner(submit) {
+function clearSpinner (submit) {
   submit.querySelector('.spinner-border').remove()
 }
