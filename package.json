@@ -78,7 +78,7 @@
         "@docsearch/js": "^3.5.2",
         "@glidejs/glide": "^3.6.0",
         "b-components-js": "^0.0.2",
-        "bootstrap": "^5.3.1",
+        "bootstrap": "^5.3.2",
         "bootstrap-icons": "^1.11.0",
         "clipboard": "^2.0.11",
         "danmu.js": "^1.1.13",
@@ -102,7 +102,7 @@
     },
     "devDependencies": {
         "@babel/cli": "^7.22.15",
-        "@babel/core": "^7.22.17",
+        "@babel/core": "^7.22.19",
         "@babel/preset-env": "^7.22.15",
         "@html-eslint/cli": "^0.19.1",
         "@html-eslint/eslint-plugin": "^0.19.1",

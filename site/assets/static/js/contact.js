@@ -1,3 +1,4 @@
+let xxxApiURL = 'https://api.xxxxxx.jzeg.net'
 let contact = document.querySelector('#contact')
 if (contact) {
 
@@ -16,7 +17,7 @@ if (contact) {
     }
     let fetchOptions = fetchPostOptions(fetchData)
 
-    fetch(`https://api.zhgh.jzeg.net/contact/index.php`, fetchOptions)
+    fetch(`${xxxApiURL}/contact/index.php`, fetchOptions)
       .then(response => response.json())
       .then(response => {
         console.log(response)
