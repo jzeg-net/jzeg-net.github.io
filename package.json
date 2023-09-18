@@ -98,6 +98,7 @@
         "vditor": "^3.9.5",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",
+        "wretch": "^2.7.0",
         "xgplayer": "^3.0.9",
         "zxcvbn": "^4.4.2"
     },
