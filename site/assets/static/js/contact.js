@@ -15,16 +15,28 @@ if (contact) {
       captcha: formData['captcha'],
       userAgent: navigator.userAgent,
     }
-    let fetchOptions = fetchPostOptions(fetchData)
 
-    fetch(`${xxxApiURL}/contact/index.php`, fetchOptions)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response)
+    wretch()
+      // .errorType('json')
+      .catcher(404, () => {
+        bModal('', createSmallCenterText('服务器404错误', 'danger'), '', 'sm', true)
         clearFormSpinner(contact)
       })
-      .catch(error => {
-        console.error('contact_error:', error)
+      .catcher(502, () => {
+        bModal('', createSmallCenterText('服务器502错误', 'danger'), '', 'sm', true)
+        clearFormSpinner(contact)
+      })
+      .catcherFallback(() => {
+        bModal('', createSmallCenterText('服务器未知错误', 'danger'), '', 'sm', true)
+        clearFormSpinner(contact)
+      })
+      .post(fetchData, `${xxxApiURL}/contact/index.php`)
+      .json((response) => {
+        console.log(response.result)
+        clearFormSpinner(contact)
+      })
+      .catch((error) => {
+        console.error('contact_error', error)
         clearFormSpinner(contact)
       })
   })
