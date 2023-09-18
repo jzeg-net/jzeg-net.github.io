@@ -32,11 +32,13 @@ if (contact) {
       })
       .post(fetchData, `${xxxApiURL}/contact/index.php`)
       .json((response) => {
-        console.log(response.result)
+        response.result === 1
+          ? bModal('', createSmallCenterText('提交成功', 'success'), '', 'sm', true)
+          : bModal('', createSmallCenterText('提交失败', 'success'), '', 'sm', true)
         clearFormSpinner(contact)
       })
       .catch((error) => {
-        console.error('contact_error', error)
+        console.log('contact_error', error)
         clearFormSpinner(contact)
       })
   })
