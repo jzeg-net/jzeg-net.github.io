@@ -84,6 +84,7 @@
         "cropperjs": "^2.0.0-beta.4",
         "danmu.js": "^1.1.13",
         "dayjs": "^1.11.10",
+        "fabric": "^6.0.0-beta13",
         "flag-icons": "^6.11.1",
         "github-api": "^3.4.0",
         "html2canvas": "^1.4.1",
