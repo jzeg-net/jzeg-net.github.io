@@ -7,10 +7,20 @@ if (contact) {
     let formData = getFormData(contact)
 
     let fetchData = {
+      area: formData['area'],
+      name: formData['name'],
+      niceName: formData['niceName'],
       type: formData['type'],
-      title: formData['title'],
-      content: formData['content'],
-      attachment: formData['attachment'],
+      address: formData['address'],
+      phone: formData['phone'],
+      openingHours: {
+        x: formData['openingHours[x]'],
+        y: formData['openingHours[y]'],
+        z: formData['openingHours[z]'],
+      },
+      introduction: formData['introduction'],
+      photo: formData['photo'],
+      duration: formData['duration'],
       captcha: formData['captcha'],
       userAgent: navigator.userAgent,
     }
@@ -29,7 +39,7 @@ if (contact) {
         bModal('', createSmallCenterText('服务器未知错误', 'danger'), '', 'sm', true)
         clearFormSpinner(contact)
       })
-      .post(fetchData, `${xxxApiURL}/contact/index.php`)
+      .post(fetchData, `${xxxApiURL}/shop/add.php`)
       .json((response) => {
         response.result === 1
           ? bModal('', createSmallCenterText('提交成功', 'success'), '', 'sm', true)

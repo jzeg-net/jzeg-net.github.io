@@ -149,6 +149,16 @@ menu:
                     useHref:
                     class:
                     size: [ width: 16, height: 16 ]
+        -   identifier: menu_shop
+            pageRef: /shop
+            parent: menu_more
+            weight: 7
+            params:
+                class:
+                svg:
+                    useHref:
+                    class:
+                    size: [ width: 16, height: 16 ]
     demo:
         -   identifier: menu_demo
             pageRef: /demo

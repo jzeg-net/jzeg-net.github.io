@@ -77,6 +77,11 @@
     <script src="{{ $contactJs }}"></script>
 {{ end -}}
 
+{{ if eq .Page.Params.type "shop" -}}
+    {{- $shopJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop.js" "targetPath" "static/js/shop.js") }}
+    <script src="{{ $shopJs }}"></script>
+{{ end -}}
+
 {{- if eq .Page.Layout "full_page" -}}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
     <script src="{{ $preUrl }}static/js/full_page.js"></script>

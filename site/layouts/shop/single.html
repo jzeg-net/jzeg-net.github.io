@@ -1,0 +1,121 @@
+{{ define "content" }}
+<main class="pb-5 container-xxl" id="content">
+    <div>
+        <form id="contact">
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <span class="form-label colon required">区域</span>
+                </div>
+                <div class="col">
+                    <input type="radio" class="btn-check" name="area" value="dongpang" id="area_dongpang" required>
+                    <label for="area_dongpang" class="btn btn-outline-secondary">东庞</label>
+                    <input type="radio" class="btn-check" name="area" value="xingmei" id="area_xingmei" checked>
+                    <label for="area_xingmei" class="btn btn-outline-secondary">邢煤</label>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="name" class="form-label colon required">名称</label>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="店铺名称" minlength="2" maxlength="20" required>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">店铺正式名称</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="niceName" class="form-label colon">通俗称呼</label>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <input type="text" class="form-control" name="niceName" id="niceName" placeholder="店铺别名" minlength="2" maxlength="10">
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">外部称号，耳熟能详的叫法，非必填</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="species" class="form-label colon required">经营种类</label>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <input type="text" class="form-control" name="species" id="species" placeholder="经营种类" minlength="2" maxlength="100" required>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">店内所售具体物品，可以包含概况物品，使用一个空格分隔</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="address" class="form-label colon required">店铺地址</label>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <input type="text" class="form-control" name="address" id="address" placeholder="摊位位置" minlength="2" maxlength="10" required>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">去哪里能找到店铺，本地人能看懂就行</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="phone" class="form-label colon required">店铺电话</label>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="店铺电话" minlength="11" maxlength="11" required>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">公开的手机号码</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <span class="form-label colon required">营业时间</span>
+                </div>
+                <div class="col col-md-6 col-lg-4 col-xl-3 mb-1">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="openingHours_x" class="form-label">开始</label>
+                            <input type="time" class="form-control" name="openingHours[x]" id="openingHours_x">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="openingHours_y" class="form-label">结束</label>
+                            <input type="time" class="form-control" name="openingHours[y]" id="openingHours_y">
+                        </div>
+                        <label for="openingHours_z" class="col-3 col-form-label colon">早晨</label>
+                        <div class="col">
+                            <input type="time" class="form-control" name="openingHours[z]" id="openingHours_z" placeholder="营业时间" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">贩卖时间段，例如：06:00-15:00</span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="introduction" class="form-label colon required">店铺简介</label>
+                </div>
+                <div class="col col-md-8 col-lg-6 mb-1">
+                    <textarea class="form-control" name="introduction" id="introduction" rows="5" minlength="20" maxlength="150" required></textarea>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 text-nowrap text-end">
+                    <label for="attachment" class="form-label colon">店铺照片</label>
+                </div>
+                <div class="col col-md-4 mb-1">
+                    <input class="form-control" type="file" name="attachment" id="attachment" multiple accept=".webp,.png,.jpg,.jpeg,.gif">
+                </div>
+                <div class="col-12 offset-2 helpBlock">
+                    <span class="small text-secondary">图片格式：.webp .png .jpg .jpeg .gif</span>
+                </div>
+            </div>
+            <div class="d-grid col-8 col-sm-4 col-md-3 mx-auto">
+                <button class="btn btn-primary" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+    {{- .Content }}
+</main>
+{{ end }}

@@ -40,6 +40,7 @@
             })
     })
 })()
+let xxxApiURL = 'https://api.xxxxxx.jzeg.net'
 
 const createSmallCenterText = (text, color = '') => {
     const div = document.createElement('div')
