@@ -1,0 +1,12 @@
+{{ define "content" }}
+<main class="pb-5 container-xxl" id="content">
+    <div class="text-end">
+        <a class="link-success link-underline-opacity-25" href="add" target="_blank">添加店铺</a>
+        <a class="link-success link-underline-opacity-25" href="admin/list/" target="_blank">店铺列表</a>
+    </div>
+    <div class="text-end">
+        <a class="link-success link-underline-opacity-25" href="info/?id=xxxxxxxxxxxxxxx" target="_blank">店铺信息</a>
+    </div>
+    {{- .Content }}
+</main>
+{{ end }}

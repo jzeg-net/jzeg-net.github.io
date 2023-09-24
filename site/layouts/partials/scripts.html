@@ -26,6 +26,11 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{ if eq .Page.Params.components "datatables" }}
+    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+    <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
+{{ end }}
+
 {{ if eq .Page.Title "Gallery" "画廊" }}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
@@ -61,8 +66,8 @@
 <script src="{{ $bulletinJs }}"></script>
 
 {{- if eq .Page.Layout "jump_link" -}}
-{{- $jump_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/jump_link.js" "targetPath" "static/js/jump_link.js") }}
-<script src="{{ $jump_linkJs }}"></script>
+    {{- $jump_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/jump_link.js" "targetPath" "static/js/jump_link.js") }}
+    <script src="{{ $jump_linkJs }}"></script>
 {{- end -}}
 
 
@@ -78,19 +83,30 @@
 {{ end -}}
 
 {{ if eq .Page.Params.type "shop" -}}
-    {{- $shopJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop.js" "targetPath" "static/js/shop.js") }}
+    {{- $shopJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/index.js" "targetPath" "static/js/shop/index.js") }}
     <script src="{{ $shopJs }}"></script>
+{{ end -}}
+
+
+{{ if eq .Page.Params.type "shop/list" -}}
+    {{- $shop_listJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/list.js" "targetPath" "static/js/shop/list.js") }}
+    <script src="{{ $shop_listJs }}"></script>
+{{ end -}}
+
+{{ if eq .Page.Params.type "shop/add" -}}
+    {{- $shop_addJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/add.js" "targetPath" "static/js/shop/add.js") }}
+    <script src="{{ $shop_addJs }}"></script>
+{{ end -}}
+
+{{ if eq .Page.Params.type "shop/info" -}}
+    {{- $shop_infoJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/info.js" "targetPath" "static/js/shop/info.js") }}
+    <script src="{{ $shop_infoJs }}"></script>
 {{ end -}}
 
 {{- if eq .Page.Layout "full_page" -}}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
 {{- end -}}
-
-{{ if eq .Page.Params.components "datatables" }}
-    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
-    <script src="{{ $preUrl }}static/js/zhgh/sDataTables.js"></script>
-{{ end }}
 
 {{ if eq .Page.Params.type "zhgh/log" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>

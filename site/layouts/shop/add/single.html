@@ -1,0 +1,111 @@
+{{ define "content" }}
+<main class="pb-5 container-xxl" id="content">
+    <form class="" id="shop_add">
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <span class="form-label colon required">区域</span>
+            <div>
+                <div class="col">
+                    <input type="radio" class="btn-check" name="area" value="dongpang" id="area_dongpang" required>
+                    <label for="area_dongpang" class="btn btn-outline-secondary">东庞</label>
+                    <input type="radio" class="btn-check" name="area" value="xingmei" id="area_xingmei" checked>
+                    <label for="area_xingmei" class="btn btn-outline-secondary">邢煤</label>
+                </div>
+                <div class="helpBlock">
+                    <span class="small text-secondary">在哪个矿</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="name" class="form-label colon required">名称</label>
+            <div>
+                <input type="text" class="form-control" name="name" id="name" placeholder="店铺名称" minlength="2" maxlength="20" required>
+                <div class="helpBlock">
+                    <span class="small text-secondary">店铺正式名称</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="niceName" class="form-label colon">通俗称呼</label>
+            <div>
+                <input type="text" class="form-control" name="niceName" id="niceName" placeholder="店铺别名" minlength="2" maxlength="10">
+                <div class="helpBlock">
+                    <span class="small text-secondary">外部称号，耳熟能详的叫法，非必填</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="species" class="form-label colon required">经营种类</label>
+            <div>
+                <input type="text" class="form-control" name="species" id="species" placeholder="经营种类" minlength="2" maxlength="100" required>
+                <div class="helpBlock">
+                    <span class="small text-secondary">所售具体物品，使用一个空格分隔</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="address" class="form-label colon required">店铺地址</label>
+            <div>
+                <input type="text" class="form-control" name="address" id="address" placeholder="摊位位置" minlength="2" maxlength="10" required>
+                <div class="helpBlock">
+                    <span class="small text-secondary">去哪里能找到店铺，本地人能看懂就行</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="phone" class="form-label colon required">店铺电话</label>
+            <div>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="店铺电话" minlength="11" maxlength="11" required>
+                <div class="helpBlock">
+                    <span class="small text-secondary">公开的手机号码</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <span class="form-label colon required">营业时间</span>
+            <div>
+                <div class="d-flex flex-row align-items-md-baseline gap-2">
+                    <div class="col">
+                        <label for="openingHours_open" class="form-label">开始</label>
+                        <input type="time" class="form-control" name="openingHours[open]" id="openingHours_open" required>
+                        <div class="helpBlock">
+                            <span class="small text-secondary">每天几点开始售卖</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="openingHours_closed" class="form-label">结束</label>
+                        <input type="time" class="form-control" name="openingHours[closed]" id="openingHours_closed" required>
+                        <div class="helpBlock">
+                            <span class="small text-secondary">每天几点停止售卖</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="helpBlock">
+                    <span class="small text-secondary">使用 24 小时制</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="introduction" class="form-label colon required">店铺简介</label>
+            <div>
+                <textarea class="form-control" name="introduction" id="introduction" rows="5" minlength="20" maxlength="150" required></textarea>
+                <div class="helpBlock">
+                    <span class="small text-secondary">店铺介绍</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="photo" class="form-label colon">店铺照片</label>
+            <div>
+                <input class="form-control" type="file" name="photo" id="photo" multiple accept=".webp,.png,.jpg,.jpeg,.gif">
+                <div class="helpBlock">
+                    <span class="small text-secondary">图片格式：.webp .png .jpg .jpeg .gif</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid col-8 col-sm-4 col-md-3 mx-auto">
+            <button class="btn btn-primary" type="submit">提交</button>
+        </div>
+    </form>
+    {{- .Content }}
+</main>
+{{ end }}

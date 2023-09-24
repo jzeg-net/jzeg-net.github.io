@@ -148,3 +148,11 @@ document.querySelectorAll('time').forEach(currentEl => {
     currentEl.title = realTime
     currentEl.innerHTML = timeago.format(realTime, locale)
 })
+
+const modalSuccessMsg = (message, title = '') => {
+  bModal(title, createSmallCenterText(message, 'success'), '', 'sm', true)
+}
+
+const modalFailMsg = (message, title = '') => {
+  bModal(title, createSmallCenterText(message, 'danger'), '', 'sm', true)
+}
