@@ -31,6 +31,12 @@
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
 {{ end }}
 
+{{ if eq .Page.Params.components "filepond" }}
+    <script src="{{ $preUrl }}static/vendor/filepond/dist/filepond.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/filepond/locale/zh-cn.js"></script>
+    <script src="{{ $preUrl }}static/js/filepond.js"></script>
+{{ end }}
+
 {{ if eq .Page.Title "Gallery" "画廊" }}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}

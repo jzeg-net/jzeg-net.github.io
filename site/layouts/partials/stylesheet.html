@@ -24,6 +24,10 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
 {{ end }}
 
+{{ if eq .Page.Params.components "filepond" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/filepond/dist/filepond.min.css">
+{{ end }}
+
 {{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/@docsearch/css/dist/style.css">
