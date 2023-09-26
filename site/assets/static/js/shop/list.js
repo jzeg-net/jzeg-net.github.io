@@ -9,7 +9,7 @@ wretch()
     console.log(error)
     modalFailMsg('服务器未知错误')
   })
-  .get(`${xxxApiURL}/shop/index.php`)
+  .get(`${xxxApiURL}/shop/list.php`)
   .timeout((error) => modalFailMsg('超时 ' + error))
   .json((response) => {
     response['list'].forEach((currentData) => {
