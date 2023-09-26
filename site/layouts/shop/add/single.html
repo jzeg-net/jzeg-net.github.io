@@ -9,9 +9,33 @@
                     <label for="area_dongpang" class="btn btn-outline-secondary">东庞</label>
                     <input type="radio" class="btn-check" name="area" value="xingmei" id="area_xingmei" checked>
                     <label for="area_xingmei" class="btn btn-outline-secondary">邢煤</label>
+                    <input type="radio" class="btn-check" name="area" value="gequan" id="area_gequan">
+                    <label for="area_gequan" class="btn btn-outline-secondary">葛泉</label>
+                    <input type="radio" class="btn-check" name="area" value="xiandewang" id="area_xiandewang">
+                    <label for="area_xiandewang" class="btn btn-outline-secondary">显德旺</label>
                 </div>
                 <div class="helpBlock">
                     <span class="small text-secondary">在哪个矿</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row align-items-md-baseline mb-3">
+            <label for="duration_number" class="form-label colon required">有效期</label>
+            <div>
+                <div class="input-group">
+                    <input type="number" class="form-control" name="duration_number" id="duration_number" placeholder="有效期数值" aria-label="有效期数值" maxlength="2" required>
+                    <select class="form-select" name="duration_unit" id="duration_unit" aria-label="有效期单位" required>
+                        <option value="" selected>请选择单位...</option>
+                        <option value="day">天</option>
+                        <option value="week">周</option>
+                        <option value="month">月</option>
+                        <option value="quarter">季度</option>
+                        <option value="year">年</option>
+                    </select>
+                </div>
+                <div class="helpBlock">
+                    <span class="small text-secondary colon">信息有效期</span>
+                    <span id="duration_auto"></span>
                 </div>
             </div>
         </div>
