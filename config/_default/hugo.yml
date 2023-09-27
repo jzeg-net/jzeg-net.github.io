@@ -508,7 +508,7 @@ module:
     hugoVersion:
         extended: true
         max: "0.119.0"
-        min: "0.118.2"
+        min: "0.119.0"
     mounts:
         -   source: site/archetypes
             target: archetypes
