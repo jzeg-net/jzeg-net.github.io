@@ -39,11 +39,12 @@ let filePond_local_zh_CN = {
 }
 
 let filePondOptions = {
-  maxFiles: 10,
+  maxFiles: 1,
+  maxFileSize: '3MB',
+  allowReorder: true,
   server: {
-    url: '',
+    url: `https://api.xxxxxx.jzeg.net/shop/upload.php`,
     process: {
-      url: './process',
       method: 'POST',
       withCredentials: false,
       headers: {},
@@ -54,5 +55,19 @@ let filePondOptions = {
     },
   }
 }
+
+FilePond.registerPlugin(
+  FilePondPluginFileValidateSize,
+  FilePondPluginFileValidateType,
+  FilePondPluginImageValidateSize
+)
+
 let filePond = FilePond.create(document.querySelector('form input[type=file]'), filePondOptions)
 filePond.setOptions(filePond_local_zh_CN)
+
+document.addEventListener('FilePond:warning', (e) => {
+  let error_detail = e.detail.error
+  if (error_detail.body === 'Max files') {
+    modalFailMsg(`文件数量不可以超过 ${filePondOptions.maxFiles} 个，请重新选择`)
+  }
+})

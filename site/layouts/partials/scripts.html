@@ -32,6 +32,9 @@
 {{ end }}
 
 {{ if eq .Page.Params.components "filepond" }}
+    <script src="{{ $preUrl }}static/vendor/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/filepond-plugin-image-validate-size/dist/filepond-plugin-image-validate-size.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/filepond/dist/filepond.min.js"></script>
     <script src="{{ $preUrl }}static/js/filepond.js"></script>
 {{ end }}
