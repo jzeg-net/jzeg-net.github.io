@@ -26,17 +26,19 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{ if eq .Page.Params.components "datatables" }}
+{{ if in .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.components "filepond" }}
-    <script src="{{ $preUrl }}static/vendor/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js"></script>
-    <script src="{{ $preUrl }}static/vendor/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="{{ $preUrl }}static/vendor/filepond-plugin-image-validate-size/dist/filepond-plugin-image-validate-size.min.js"></script>
-    <script src="{{ $preUrl }}static/vendor/filepond/dist/filepond.min.js"></script>
-    <script src="{{ $preUrl }}static/js/filepond.js"></script>
+{{ if in .Page.Params.components "uppy" }}
+    <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>
+    <script src="{{ $preUrl }}static/js/uppy.js"></script>
+{{ end }}
+
+{{ if .Site.Params.DisableDevtool.enable }}
+    <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
 
 {{ if eq .Page.Title "Gallery" "画廊" }}

@@ -17,15 +17,15 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/flag-icons/css/flag-icons.min.css">
 
-{{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
-
-{{ if eq .Page.Params.components "datatables" }}
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
-<link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
+{{ if in .Page.Params.components "uppy" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.css">
 {{ end }}
 
-{{ if eq .Page.Params.components "filepond" }}
-<link rel="stylesheet" href="{{ $preUrl }}static/vendor/filepond/dist/filepond.min.css">
+{{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
+
+{{ if in .Page.Params.components "datatables" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/simple-datatables/dist/style.css">
+<link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
 {{ end }}
 
 {{ if eq .IsHome false }}
