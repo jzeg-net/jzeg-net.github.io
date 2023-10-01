@@ -7,7 +7,8 @@ let DashboardOpts = {
   inline: true,
   target: '#uppy',
   theme: 'dark',
-  disableLocalFiles: true
+  disableLocalFiles: true,
+  proudlyDisplayPoweredByUppy: false
 }
 
 let uppy = new Uppy.Uppy({
