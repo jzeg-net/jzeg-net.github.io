@@ -3,6 +3,8 @@ let UppyLocale = {
   'en_US': Uppy.locales.en_US,
 }
 
+let uppyTheme = document.querySelector('html').getAttribute('data-bs-theme')
+
 // let TUS_ENDPOINT = 'https://master.tus.io/files/'
 let TUS_ENDPOINT = 'https://tusd.tusdemo.net/files/'
 let XHR_ENDPOINT = 'https://api.xxxxxx.jzeg.net/shop/upload.php'
@@ -11,7 +13,7 @@ let DashboardOpts = {
   inline: true,
   autoProceed: true,
   target: '#uppy',
-  theme: 'dark',
+  theme: uppyTheme,
   disableLocalFiles: false,
   proudlyDisplayPoweredByUppy: false
 }
