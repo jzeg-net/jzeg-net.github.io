@@ -636,3 +636,7 @@ Params:
         googleTagManager:
             enable: true
             id:
+
+    # 下拉刷新开关
+    topPullDownToRefresh:
+        enable: false
