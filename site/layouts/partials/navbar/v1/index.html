@@ -3,7 +3,7 @@
         {{ if .IsHome }}
         <div class="d-lg-none" style="width: 4.25rem;"></div>
         {{ end }}
-        <a class="navbar-brand p-0 me-0 me-lg-2" href="{{ relURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="/" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
         <div class="d-flex">
         {{ if (eq .IsHome false) }}
         <div class="bd-search" id="docSearch"></div>
@@ -12,7 +12,7 @@
             <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
         </button>
         </div>
-        <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
+        <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="false">
             <div class="offcanvas-header px-4 pb-0">
                 <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">{{ .Site.Title }}</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>

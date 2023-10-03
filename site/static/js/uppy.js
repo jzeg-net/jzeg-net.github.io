@@ -46,12 +46,12 @@ let ImageEditorOpts = {
 let uppy = new Uppy.Uppy({
   locale: UppyLocale.zh_CN,
   restrictions: {
-    maxFileSize: 111111,
-    minFileSize: 111111,
-    maxTotalFileSize: 111111,
-    maxNumberOfFiles: 111111,
-    minNumberOfFiles: 111111,
-    allowedFileTypes: ['image/*', '.webp', '.jpg', '.jpeg', '.png', '.gif'],
+    maxFileSize: 0,
+    minFileSize: 111,
+    maxTotalFileSize: 83886080,
+    maxNumberOfFiles: 3,
+    minNumberOfFiles: 1,
+    allowedFileTypes: ['image/*', 'video/*'],
     requiredMetaFields: [],
   },
 })
