@@ -109,7 +109,7 @@
             {{ partial "posts/sidebar/index" . }}
         </div>
     {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
-        <div class="col-12 col-md-4 col-lg-3 offcanvas offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="col-12 col-md-4 col-lg-3 offcanvas offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" data-bs-scroll="false" aria-labelledby="sidebarOffcanvasLabel">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title text-body" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
