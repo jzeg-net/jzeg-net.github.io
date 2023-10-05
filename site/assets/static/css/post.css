@@ -21,11 +21,11 @@
 }
 
 #post-title-action {
-    display: none;
     opacity: 0;
-    transition: all 1.3s ease;
+    transition: opacity 1.3s ease;
 }
 
+#posts-container:hover #post-title-action,
 #post-title:hover #post-title-action {
     display: flex;
     opacity: 1;
