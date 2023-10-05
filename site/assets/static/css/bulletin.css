@@ -1,6 +1,3 @@
-.bulletin-container {
-}
-
 .bulletin_inline,
 .bulletin_block {
     overflow: hidden;
@@ -91,8 +88,6 @@
     animation-timeline: auto;
 }
 
-.bulletin_inline:hover .bulletin-animation,
-.bulletin_block:hover .bulletin-animation,
 .bulletin-container:hover .bulletin-animation {
     animation-play-state: paused !important;
 }
