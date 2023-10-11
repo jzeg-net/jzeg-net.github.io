@@ -47,7 +47,7 @@
         "hugo-config:-f:yaml": "hugo config --format yaml",
         "hugo-config:mounts": "hugo config mounts",
         "hugo-version": "hugo version",
-        "update-deps": "ncu -u",
+        "update-deps": "ncu -u -x \"qrcode chalk\" && echo \"Upgrade all, exclude some\"",
         "npm:list:-g--depth_0": "npm list -g --depth=0",
         "eslint:html": "npm-run-all --parallel --aggregate-output eslint:site:html",
         "eslint:site:html": "eslint site/layouts",
@@ -131,7 +131,7 @@
         "postcss": "^8.4.31",
         "postcss-cli": "^10.1.0",
         "prettier": "^3.0.3",
-        "sass": "^1.69.0",
+        "sass": "^1.69.2",
         "stylelint": "^15.10.3",
         "svg-sprite": "^3.0.0-beta2",
         "terser": "^5.21.0"
