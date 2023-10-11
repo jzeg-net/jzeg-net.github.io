@@ -66,19 +66,6 @@ if (top.location.href !== self.location.href) {
     location.href = self.location.href
 }
 
-let donates = document.querySelectorAll('[data-donate]')
-donates.forEach(target => {
-    target.addEventListener('click', event => {
-        event.preventDefault()
-        let type = target.dataset.donate
-        donate()
-    })
-})
-
-function donate() {
-    bModal('', donateTab, createSmallCenterText('保存二维码图片，识别后可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), 'sm', true)
-}
-
 let account = document.querySelector('#account')
 if (account) {
     account.addEventListener('click', () => {

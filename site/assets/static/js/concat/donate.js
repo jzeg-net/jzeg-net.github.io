@@ -4,7 +4,7 @@ const donateTab = () => {
     let tabContent = document.createElement('div')
 
     let navBtnOpt = {
-        btnId: ['tab-donate-alipay', 'tab-donate-weixin'],
+        btnId: ['tab-donate-alipay', 'tab-donate-wechat'],
         btnClass: ['btn btn-outline-primary', 'btn btn-outline-success'],
         svgClass: ['fa-lg bi bi-alipay', 'fa-lg bi bi-wechat'],
         spanText: ['支付宝', '微信'],
@@ -87,4 +87,21 @@ const qrcodeImg = (imgContent, imgAlt, dark, light) => {
     img.title = img.alt
 
     return img
+}
+
+let donates = document.querySelectorAll('[data-donate]')
+donates.forEach(target => {
+  target.addEventListener('click', event => {
+    event.preventDefault()
+    donate()
+
+    let type = target.dataset.donate
+    console.log('当前点击的是 ' + type)
+    let xx = document.querySelector('#tab-donate-' + type)
+    bootstrap.Tab.getOrCreateInstance(xx).show()
+  })
+})
+
+function donate () {
+  bModal('', donateTab(), createSmallCenterText('保存二维码图片，识别后可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), 'sm', true)
 }
