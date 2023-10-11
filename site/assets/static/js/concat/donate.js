@@ -93,15 +93,7 @@ let donates = document.querySelectorAll('[data-donate]')
 donates.forEach(target => {
   target.addEventListener('click', event => {
     event.preventDefault()
-    donate()
-
-    let type = target.dataset.donate
-    console.log('当前点击的是 ' + type)
-    let xx = document.querySelector('#tab-donate-' + type)
-    bootstrap.Tab.getOrCreateInstance(xx).show()
+    bModal('', donateTab, createSmallCenterText('截屏识别二维码，可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), 'sm', true)
+    new bootstrap.Tab('#tab-donate-' + target.dataset.donate).show()
   })
 })
-
-function donate () {
-  bModal('', donateTab(), createSmallCenterText('保存二维码图片，识别后可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), 'sm', true)
-}
