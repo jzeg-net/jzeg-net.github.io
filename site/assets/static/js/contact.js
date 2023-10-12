@@ -4,16 +4,8 @@ if (contact) {
   contact.addEventListener('submit', event => {
     event.preventDefault()
     submitStatus(contact)
-    let formData = getFormData(contact)
 
-    let fetchData = {
-      type: formData['type'],
-      title: formData['title'],
-      content: formData['content'],
-      attachment: formData['attachment'],
-      captcha: formData['captcha'],
-      userAgent: navigator.userAgent,
-    }
+    let formData = getFormData(contact)
 
     wretch()
       // .errorType('json')
@@ -29,7 +21,7 @@ if (contact) {
         bModal('', createSmallCenterText('服务器未知错误', 'danger'), '', 'sm', true)
         clearFormSpinner(contact)
       })
-      .post(fetchData, `${xxxApiURL}/contact/index.php`)
+      .post(formData, `${xxxApiURL}/contact/index.php`)
       .json((response) => {
         response.result === 1
           ? bModal('', createSmallCenterText('提交成功', 'success'), '', 'sm', true)

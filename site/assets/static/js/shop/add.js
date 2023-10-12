@@ -5,7 +5,7 @@ if (shop_add) {
     event.preventDefault()
     submitStatus(shop_add)
 
-    let fetchData = getFormData(shop_add)
+    let formData = getFormData(shop_add)
 
     wretch()
       // .errorType('json')
@@ -21,7 +21,7 @@ if (shop_add) {
         modalFailMsg('服务器未知错误')
         clearFormSpinner(shop_add)
       })
-      .post(fetchData, `${xxxApiURL}/shop/add.php`)
+      .post(formData, `${xxxApiURL}/shop/add.php`)
       .json((response) => {
         response.result === 1
           ? modalSuccessMsg('提交成功')
