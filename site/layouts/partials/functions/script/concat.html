@@ -1,7 +1,9 @@
-{{ $concat := resources.Match "static/js/concat/*.js" }}
-{{ $targetPath := "static/js/common.bundle.js" }}
+{{/* https://gohugo.io/hugo-pipes/bundling/ */}}
 
-{{ $bundle := $concat | resources.Concat $targetPath }}
+{{ $concatPath := .concatPath }}
+{{ $targetPath := .targetPath }}
+
+{{ $bundle := resources.Match $concatPath | resources.Concat $targetPath }}
 
 {{ if eq hugo.Environment "production" }}
     {{ $bundle = $bundle | resources.Minify }}
