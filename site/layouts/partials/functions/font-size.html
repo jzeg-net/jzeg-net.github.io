@@ -1,5 +1,0 @@
-{{ $size := .Site.Params.font.size.default | default "base" }}
-{{ if not (in .Site.Params.font.size.option $size) }}
-    {{ $size = "base" }}
-{{ end }}
-{{ return $size }}

@@ -10,11 +10,11 @@
     </li>
 {{ end }}
 
-{{ if eq .Site.Params.font.enable true }}{{ if eq .Site.Params.font.size.enable true }}
+{{ if eq .Site.Params.fontSize.enable true }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/secondary/tool/font_size" . }}
     </li>
-{{ end }}{{ end }}
+{{ end }}
 
 {{ if .Site.IsMultiLingual }}
     <li class="nav-item col-6 col-lg-auto dropdown">
