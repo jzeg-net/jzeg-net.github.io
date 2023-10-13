@@ -1,4 +1,4 @@
-<section class="d-flex flex-column-reverse gap-3">
+<section class="d-flex flex-column gap-3">
     <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
         <svg class="bi mx-4" aria-hidden="true"><use href="#bi-github"></use></svg>
         <svg class="bi" aria-hidden="true"><use href="#bi-chevron-expand"></use></svg>
@@ -6,7 +6,7 @@
     </button>
     <div class="collapse" id="tocContents">
         <div class="d-flex flex-column justify-content-end card">
-            <div class="card-body">
+            <div class="card-body text-center size-xs">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span>{{- T "footer_content_updated_time" -}}</span><time datetime="{{- .Page.Params.Date.Format "2006-01-02T15:04:05+08:00" | default "-" -}}"></time>
@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="card-body vstack gap-3">
-                <a class="btn btn-sm btn-outline-secondary text-xs"
+                <a class="btn btn-sm btn-outline-secondary size-xs"
                    href="{{- .Site.Params.Repo.git -}}/raw/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_raw_file_on_github" }}"
                    target="_blank"
@@ -29,7 +29,7 @@
                     <span class="mx-4">{{ T "footer_github_raw" }}</span>
                     <svg class="bi" aria-hidden="true"><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary text-xs"
+                <a class="btn btn-sm btn-outline-secondary size-xs"
                    href="{{- .Site.Params.Repo.git -}}/blob/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_view_file_on_github" }}"
                    target="_blank"
@@ -37,7 +37,7 @@
                     <span class="mx-4">{{ T "footer_github_view" }}</span>
                     <svg class="bi" aria-hidden="true"><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary text-xs"
+                <a class="btn btn-sm btn-outline-secondary size-xs"
                    href="{{- .Site.Params.Repo.git -}}/edit/main/site/content/{{- .Page.File.Path | replaceRE `\\` "/" -}}"
                    title="{{ T "footer_edit_file_on_github" }}"
                    target="_blank"
