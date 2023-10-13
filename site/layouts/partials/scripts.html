@@ -52,10 +52,10 @@
 {{- $font_sizeJs := partial "functions/script/build" (dict "resourcesGet" "static/js/font-size.js" "targetPath" "static/js/font-size.js") }}
 <script src="{{ $font_sizeJs }}"></script>
 
-{{- $commonJs := partial "functions/script/concat" (dict "concatPath" "static/js/common/**.js" "targetPath" "static/js/common.bundle.js") }}
+{{- $commonJs := partial "functions/concat" (dict "concatPath" "static/js/common/**.js" "targetPath" "static/js/common.bundle.js") }}
 <script src="{{ $commonJs }}"></script>
 
-{{- $accountJs := partial "functions/script/concat" (dict "concatPath" "static/js/account/**.js" "targetPath" "static/js/account.bundle.js") }}
+{{- $accountJs := partial "functions/concat" (dict "concatPath" "static/js/account/**.js" "targetPath" "static/js/account.bundle.js") }}
 <script src="{{ $accountJs }}"></script>
 
 {{- $postJs := partial "functions/script/build" (dict "resourcesGet" "static/js/post.js" "targetPath" "static/js/post.js") }}
