@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="{{ $preUrl }}static/css/full_page.css">
 {{- end }}
 
-{{- $bundleCSS := partial "functions/stylesheet/concat" . }}
-<link rel="stylesheet" href="{{ $bundleCSS }}">
+{{- $commonCSS := partial "functions/stylesheet/concat" (dict "concatPath" "static/css/common/**.css" "targetPath" "static/css/common.bundle.css") }}
+<link rel="stylesheet" href="{{ $commonCSS }}">
 
 {{- $docsCSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/bootstrap-doc-css/docs.scss" "targetPath" "static/css/docs.css") }}
 <link rel="stylesheet" href="{{ $docsCSS }}">
