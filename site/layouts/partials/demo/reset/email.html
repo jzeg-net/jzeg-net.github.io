@@ -1,18 +1,18 @@
 <div class="mb-3 d-flex justify-content-between align-items-end">
-    <span class="fs-4">通过邮箱重置密码</span>
+    <span>通过邮箱重置密码</span>
     <a class="link-secondary text-decoration-none small" href="{{ absLangURL "demo/reset/sms/" }}" title="通过短信重置密码">通过短信重置密码</a>
 </div>
 <form id="reset_password_email">
     <div class="input-group mb-3">
         <div class="form-floating">
             <input type="text" class="form-control" name="user" id="reset_password_email_user" placeholder=" " required>
-            <label class="hstack" for="reset_password_email_user"><svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-person-fill"></use></svg>用户名</label>
+            <label class="hstack" for="reset_password_email_user"><svg class="me-1 text-body-secondary bi"><use href="#bi-person-fill"></use></svg>用户名</label>
         </div>
     </div>
     <div class="input-group mb-3">
         <div class="form-floating">
             <input type="email" class="form-control sendCaptchaTo" name="account" id="reset_password_email_address" placeholder=" " minlength="6" maxlength="64" required>
-            <label class="hstack" for="reset_password_email_address"><svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-envelope-at-fill"></use></svg>电子邮箱</label>
+            <label class="hstack" for="reset_password_email_address"><svg class="me-1 text-body-secondary bi"><use href="#bi-envelope-at-fill"></use></svg>电子邮箱</label>
         </div>
         <a class="input-group-text text-decoration-none sendCaptcha" href="#" data-action="reset" data-type="email">
             <span class="text-reset">发送验证码</span>
@@ -36,10 +36,10 @@
     <div class="input-group mb-3">
         <div class="form-floating">
             <input type="password" class="form-control" name="password" id="reset_password_email_password" placeholder=" " minlength="8" maxlength="30" autocomplete required>
-            <label class="hstack" for="reset_password_email_password"><svg class="me-1 fs-5 text-body-secondary bi"><use href="#bi-key-fill"></use></svg>设置新的密码</label>
+            <label class="hstack" for="reset_password_email_password"><svg class="me-1 text-body-secondary bi"><use href="#bi-key-fill"></use></svg>设置新的密码</label>
         </div>
         <a class="input-group-text text-reset text-decoration-none toggleDisplay" href="javascript:" title="点击后显示密码">
-            <svg class="text-body-secondary bi fs-5"><use href="#bi-eye-slash-fill"></use></svg>
+            <svg class="text-body-secondary bi"><use href="#bi-eye-slash-fill"></use></svg>
         </a>
     </div>
     <input type="hidden" name="type" value="email">

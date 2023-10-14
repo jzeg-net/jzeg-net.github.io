@@ -1,20 +1,20 @@
 <div class="position-fixed end-0 bottom-0 opacity-75 hide" id="float-tools">
     <div class="list-group dropstart">
-        <button type="button" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text-collapse_tools" }}" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+        <button type="button" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "float_text-collapse_tools" }}" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
             <svg class="bi" width="16" height="16"><title>{{- T "float_text-collapse_tools" -}}</title><use href="#bi-tools"></use></svg>
         </button>
         <div class="p-0 dropdown-menu bg-transparent border-0" id="tools-collapse">
             <div class="list-group list-group-horizontal gap-2">
                 {{ if eq .Site.Params.theme.enable true }}
                 <div>
-                    <a href="#collapse-topic" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "theme_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-theme="switcher">
+                    <a href="#collapse-topic" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "theme_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-theme="switcher">
                         <svg class="bi theme-icon-active" width="16" height="16"><title>{{- T "theme_toggle" -}}</title><use href="#bi-circle-half"></use></svg>
                         <span class="visually-hidden" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
                             {{ range .Site.Menus.theme }}
-                            <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                            <button class="p-3 lh-1 list-group-item list-group-item-action" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
                                 <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                             </button>
                             {{ end }}
@@ -25,14 +25,14 @@
 
                 {{ if eq .Site.Params.palette.enable true }}
                 <div>
-                    <a href="#collapse-palette" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "palette_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
+                    <a href="#collapse-palette" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "palette_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
                         <svg class="bi palette-icon-active" width="16" height="16"><title>{{- T "palette_toggle" -}}</title><use href="#bi-palette"></use></svg>
                         <span class="visually-hidden" id="paletteSwitcher-text">{{- T "palette_toggle" -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-palette">
                         <div class="list-group">
                             {{ range .Site.Menus.palette }}
-                            <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}" aria-pressed="false">
+                            <button class="p-3 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}" aria-pressed="false">
                                 <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                             </button>
                             {{ end }}
@@ -43,14 +43,14 @@
 
                 {{ if eq .Site.Params.font.enable true }}{{ if eq .Site.Params.font.size.enable true }}
                     <div>
-                        <a href="#collapse-font_size" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "fontSize_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
+                        <a href="#collapse-font_size" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "fontSize_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
                             <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
                             <span class="visually-hidden" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
                         </a>
                         <div class="position-absolute bottom-100 collapse" id="collapse-font_size">
                             <div class="list-group">
                                 {{ range .Site.Menus.font_size }}
-                                    <button class="p-3 fs-4 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}" aria-pressed="false">
+                                    <button class="p-3 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}" aria-pressed="false">
                                         <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                                     </button>
                                 {{ end }}
@@ -61,16 +61,16 @@
 
                 {{ if .Site.IsMultiLingual }}
                     <div>
-                        <a href="#collapse-translation" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "icon_text-translate" }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
+                        <a href="#collapse-translation" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "icon_text-translate" }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
                             <svg class="bi" width="16" height="16"><title>{{- T "icon_text-translate" -}}</title><use href="#bi-translate"></use></svg>
                         </a>
                         <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                             <ul class="list-group">
-                                <a class="p-3 fs-4 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                <a class="p-3 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
                                     <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
                                 </a>
                                 {{- range .Translations -}}
-                                    <a class="p-3 fs-4 lh-1 list-group-item list-group-item-action" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                    <a class="p-3 lh-1 list-group-item list-group-item-action" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
                                         <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
                                     </a>
                                 {{- end -}}
@@ -80,10 +80,10 @@
                 {{ end }}
             </div>
         </div>
-        <button type="button" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{ T "float_text-collapse_to_right" }}" id="collapse-to-right">
+        <button type="button" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "float_text-collapse_to_right" }}" id="collapse-to-right">
             <svg class="bi" width="16" height="16"><title>{{- T "float_text-collapse_to_right" -}}</title><use href="#bi-arrow-bar-right"></use></svg>
         </button>
-        <a href="#top" class="p-3 fs-4 lh-1 list-group-item list-group-item-action" title="{{- T "float_text-back_to_top" -}}" role="button">
+        <a href="#top" class="p-3 lh-1 list-group-item list-group-item-action" title="{{- T "float_text-back_to_top" -}}" role="button">
             <svg class="bi" width="16" height="16"><title>{{- T "float_text-back_to_top" -}}</title><use href="#bi-rocket"></use></svg>
         </a>
     </div>

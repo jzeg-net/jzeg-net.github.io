@@ -1,15 +1,15 @@
 <div class="d-flex justify-content-end align-items-center column-gap-3">
     <a class="text-body-secondary" href="{{- .Site.Params.Repo.git -}}" target="_blank" title="{{ T "footer_icon_text-github" }}" rel="nofollow, noopener">
-        <svg class="bi fs-4" width="16" height="16"><title>{{ T "footer_icon_text-github" }}</title><use href="#bi-github"></use></svg>
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-github" }}</title><use href="#bi-github"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text-github" -}}</span>
     </a>
     <a class="text-body-secondary" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "footer_icon_text-sitemap" }}">
-        <svg class="bi fs-4" width="16" height="16"><title>{{ T "footer_icon_text-sitemap" }}</title><use href="#bi-diagram-3-fill"></use></svg>
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-sitemap" }}</title><use href="#bi-diagram-3-fill"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text-sitemap" -}}</span>
     </a>
     {{ with .OutputFormats.Get "rss" -}}
         <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="{{ T "footer_icon_text-rss" }}">
-            <svg class="bi fs-4" width="16" height="16"><title>{{ T "footer_icon_text-rss" }}</title><use href="#bi-rss"></use></svg>
+            <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-rss" }}</title><use href="#bi-rss"></use></svg>
             <span class="visually-hidden">{{- T "footer_icon_text-rss" -}}</span>
         </a>
     {{ end }}

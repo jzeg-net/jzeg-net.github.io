@@ -36,12 +36,12 @@
         </div>
         <section class="card-body d-flex flex-column gap-4 pb-5">
             <div id="post-title">
-                <h1 class="fs-2 text-break" id="post-title-inner">
+                <h1 class="text-break" id="post-title-inner">
                     <a class="link-secondary link-underline-opacity-0" href="{{ .RelPermalink }}?from=post-title" id="h1-title" title="{{ .Title }}">{{ .Title }}</a>
                 </h1>
                 <div class="hstack column-gap-2" id="post-title-action">
-                    <button class="btn btn-outline-primary" type="button" title="{{ T "post_text-copy_title_text" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "post_text-copy_title_text" }}</title><use href="#bi-clipboard"></use></svg></button>
-                    <button class="btn btn-outline-primary" type="button" title="{{ T "post_text-copy_title_link" }}"><svg class="bi fs-4" width="16" height="16"><title>{{ T "post_text-copy_title_link" }}</title><use href="#bi-link-45deg"></use></svg></button>
+                    <button class="btn btn-outline-primary" type="button" title="{{ T "post_text-copy_title_text" }}"><svg class="bi" width="16" height="16"><title>{{ T "post_text-copy_title_text" }}</title><use href="#bi-clipboard"></use></svg></button>
+                    <button class="btn btn-outline-primary" type="button" title="{{ T "post_text-copy_title_link" }}"><svg class="bi" width="16" height="16"><title>{{ T "post_text-copy_title_link" }}</title><use href="#bi-link-45deg"></use></svg></button>
                 </div>
             </div>
             <div>作者信息</div>
@@ -85,7 +85,7 @@
         </div>
         <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
             <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-start prev">
-                <span class="fs-5"><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>{{ T "post_prev" }}</span>
+                <span><svg class="bi" width="16" height="16"><title>{{ T "pagination_prev" }}</title><use href="#bi-chevron-double-left"></use></svg>{{ T "post_prev" }}</span>
                 {{ with .PrevInSection }}
                 <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="prev" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
                 {{ else }}
@@ -93,7 +93,7 @@
                 {{ end }}
             </div>
             <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-end next">
-                <span class="fs-5">{{ T "post_next" }}<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
+                <span>{{ T "post_next" }}<svg class="bi" width="16" height="16"><title>{{ T "pagination_next" }}</title><use href="#bi-chevron-double-right"></use></svg></span>
                 {{ with .NextInSection }}
                 <a class="link-body-emphasis link-opacity-75 link-opacity-100-hover link-underline-opacity-0 stretched-link" href="{{ .Permalink }}" rel="next" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
                 {{ else }}
