@@ -285,7 +285,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-alipay"
-                    class: "bi fs-5 text-primary"
+                    class: "text-primary"
         -   identifier: donate_wechat
             weight: 2
             params:
@@ -293,7 +293,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-wechat"
-                    class: "bi fs-5 text-success"
+                    class: "text-success"
     theme:
         -   identifier: theme_dark
             weight: 1
@@ -302,7 +302,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-moon-stars"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: theme_light
             weight: 2
@@ -311,7 +311,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-sun"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: theme_auto
             weight: 3
@@ -320,7 +320,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-circle-half"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
     palette:
         -   identifier: palette_none
@@ -330,7 +330,7 @@ menu:
                 class: "text-secondary"
                 svg:
                     useHref: "bi-palette"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_red
             weight: 10
@@ -339,7 +339,7 @@ menu:
                 class: "text-danger"
                 svg:
                     useHref: "bi-droplet-half"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_green
             weight: 20
@@ -348,7 +348,7 @@ menu:
                 class: "text-success"
                 svg:
                     useHref: "bi-droplet-half"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: palette_blue
             weight: 30
@@ -357,7 +357,7 @@ menu:
                 class: "text-primary"
                 svg:
                     useHref: "bi-droplet-half"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
     font_size:
         -   identifier: fontSize_xs
@@ -367,7 +367,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_sm
             weight: -3
@@ -376,7 +376,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_md
             weight: -2
@@ -385,7 +385,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_base
             weight: -1
@@ -394,7 +394,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_lg
             weight: 1
@@ -403,7 +403,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_xl
             weight: 2
@@ -412,7 +412,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_2xl
             weight: 3
@@ -421,7 +421,7 @@ menu:
                 class:
                 svg:
                     useHref: "bi-fonts"
-                    class: "bi fs-5 me-2"
+                    class: "bi me-2"
                     size: [ width: 16, height: 16 ]
 
 #watch: true

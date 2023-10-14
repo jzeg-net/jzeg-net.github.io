@@ -1,14 +1,14 @@
 <button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "palette_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" data-bs-palette="switcher">
-    <svg class="bi fs-5 my-1 palette-icon-active" width="16" height="16"><title>{{- T "palette_toggle" -}}</title><use href="#bi-palette"></use></svg>
+    <svg class="bi my-1 palette-icon-active" width="16" height="16"><title>{{- T "palette_toggle" -}}</title><use href="#bi-palette"></use></svg>
     <span class="d-lg-none ms-2" id="paletteSwitcher-text">{{- T "palette" -}}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="paletteSwitcher-text">
     {{ range .Site.Menus.palette }}
     <li>
         <button class="dropdown-item d-flex align-items-center {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}">
-            <svg class="bi fs-5 me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+            <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
             <span>{{ or (T .Identifier) .Name | safeHTML }}</span>
-            <svg class="bi fs-5 ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
+            <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
         </button>
     </li>
     {{ end }}
