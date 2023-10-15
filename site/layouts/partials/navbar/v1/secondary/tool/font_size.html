@@ -1,4 +1,4 @@
-<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" data-bs-font-size="switcher">
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" data-bs-font_size="switcher">
     <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
     <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
 </button>
@@ -6,7 +6,7 @@
     {{ range .Site.Menus.font_size }}
     {{ $fs := printf "size-%s" .Params.size_value | safeHTML }}
     <li>
-        <button class="dropdown-item d-flex align-items-center {{ $fs }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}">
+        <button class="dropdown-item d-flex align-items-center {{ $fs }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-font_size-value="{{ .Params.size_value }}">
             <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
             <span>{{ or (T .Identifier) .Name | safeHTML }}</span>
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>

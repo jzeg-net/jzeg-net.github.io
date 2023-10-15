@@ -2,7 +2,7 @@
 {{- $theme := partial "functions/theme" . }}
 {{- $fontSize := partial "functions/font_size" . }}
 {{- $palette := partial "functions/palette" . }}
-<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="{{ $theme }}" data-bs-size="{{ $fontSize }}" data-bs-palette="{{ $palette }}">
+<html lang="{{ .Site.LanguageCode }}" dir="{{- .Language.LanguageDirection -}}" data-bs-theme="{{ $theme }}" data-bs-font_size="{{ $fontSize }}" data-bs-palette="{{ $palette }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6, user-scalable=yes, interactive-widget=resizes-visual">
