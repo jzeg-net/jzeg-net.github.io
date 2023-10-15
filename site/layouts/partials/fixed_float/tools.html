@@ -41,7 +41,7 @@
                 </div>
                 {{ end }}
 
-                {{ if eq .Site.Params.font.enable true }}{{ if eq .Site.Params.font.size.enable true }}
+                {{ if eq .Site.Params.fontSize.enable true }}
                     <div>
                         <a href="#collapse-font_size" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "fontSize_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
                             <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
@@ -50,14 +50,15 @@
                         <div class="position-absolute bottom-100 collapse" id="collapse-font_size">
                             <div class="list-group">
                                 {{ range .Site.Menus.font_size }}
-                                    <button class="p-3 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}" aria-pressed="false">
+                                    {{ $fs := printf "size-%s" .Params.size_value | safeHTML }}
+                                    <button class="p-3 lh-1 list-group-item list-group-item-action {{ $fs }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-size-value="{{ .Params.size_value }}" aria-pressed="false">
                                         <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                                     </button>
                                 {{ end }}
                             </div>
                         </div>
                     </div>
-                {{ end }}{{ end }}
+                {{ end }}
 
                 {{ if .Site.IsMultiLingual }}
                     <div>
