@@ -1,24 +1,28 @@
 @import "variables";
 
 :root {
-    --#{$prefix}-fs-xs:   #{$fs-xs};
-    --#{$prefix}-fs-sm:   #{$fs-sm};
-    --#{$prefix}-fs-base: #{$fs-base};
-    --#{$prefix}-fs-lg:   #{$fs-lg};
-    --#{$prefix}-fs-xl:   #{$fs-xl};
-    --#{$prefix}-fs-2xl:  #{$fs-2xl};
-    --#{$prefix}-fs-3xl:  #{$fs-3xl};
-    --#{$prefix}-fs-4xl:  #{$fs-4xl};
-    --#{$prefix}-fs-5xl:  #{$fs-5xl};
-    --#{$prefix}-fs-6xl:  #{$fs-6xl};
-    --#{$prefix}-fs-7xl:  #{$fs-7xl};
-    --#{$prefix}-fs-8xl:  #{$fs-8xl};
-    --#{$prefix}-fs-9xl:  #{$fs-9xl};
+    --#{$prefix}-fs-3xs:  #{$fs-8};
+    --#{$prefix}-fs-2xs:  #{$fs-10};
+    --#{$prefix}-fs-xs:   #{$fs-12};
+    --#{$prefix}-fs-sm:   #{$fs-14};
+    --#{$prefix}-fs-md:   #{$fs-16};
+    --#{$prefix}-fs-lg:   #{$fs-18};
+    --#{$prefix}-fs-xl:   #{$fs-20};
+    --#{$prefix}-fs-2xl:  #{$fs-22};
+    --#{$prefix}-fs-3xl:  #{$fs-24};
+    --#{$prefix}-fs-4xl:  #{$fs-26};
+    --#{$prefix}-fs-5xl:  #{$fs-28};
+    --#{$prefix}-fs-6xl:  #{$fs-30};
+    --#{$prefix}-fs-7xl:  #{$fs-36};
+    --#{$prefix}-fs-8xl:  #{$fs-72};
+    --#{$prefix}-fs-9xl:  #{$fs-144};
 }
 
+.size-3xs   {font-size:var(--#{$prefix}-fs-3xs)}
+.size-2xs   {font-size:var(--#{$prefix}-fs-2xs)}
 .size-xs    {font-size:var(--#{$prefix}-fs-xs)}
 .size-sm    {font-size:var(--#{$prefix}-fs-sm)}
-.size-base  {font-size:var(--#{$prefix}-fs-base)}
+.size-md    {font-size:var(--#{$prefix}-fs-md)}
 .size-lg    {font-size:var(--#{$prefix}-fs-lg)}
 .size-xl    {font-size:var(--#{$prefix}-fs-xl)}
 .size-2xl   {font-size:var(--#{$prefix}-fs-2xl)}

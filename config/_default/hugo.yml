@@ -360,8 +360,26 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
     font_size:
-        -   identifier: fontSize_xs
+        -   identifier: fontSize_3xs
             weight: -4
+            params:
+                size_value: "3xs"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_2xs
+            weight: -3
+            params:
+                size_value: "2xs"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_xs
+            weight: -2
             params:
                 size_value: "xs"
                 class:
@@ -370,7 +388,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_sm
-            weight: -3
+            weight: -1
             params:
                 size_value: "sm"
                 class:
@@ -378,19 +396,10 @@ menu:
                     useHref: "bi-fonts"
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
-        -   identifier: fontSize_md
-            weight: -2
+        -   identifier: fontSize_base
+            weight: 1
             params:
                 size_value: "md"
-                class:
-                svg:
-                    useHref: "bi-fonts"
-                    class: "bi me-2"
-                    size: [ width: 16, height: 16 ]
-        -   identifier: fontSize_base
-            weight: -1
-            params:
-                size_value: "base"
                 class:
                 svg:
                     useHref: "bi-fonts"
@@ -418,6 +427,69 @@ menu:
             weight: 3
             params:
                 size_value: "2xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_3xl
+            weight: 4
+            params:
+                size_value: "3xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_4xl
+            weight: 5
+            params:
+                size_value: "4xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_5xl
+            weight: 6
+            params:
+                size_value: "5xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_6xl
+            weight: 7
+            params:
+                size_value: "6xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_7xl
+            weight: 8
+            params:
+                size_value: "7xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_8xl
+            weight: 9
+            params:
+                size_value: "8xl"
+                class:
+                svg:
+                    useHref: "bi-fonts"
+                    class: "bi me-2"
+                    size: [ width: 16, height: 16 ]
+        -   identifier: fontSize_9xl
+            weight: 10
+            params:
+                size_value: "9xl"
                 class:
                 svg:
                     useHref: "bi-fonts"
@@ -556,7 +628,7 @@ Params:
     fontSize:
         enable: true
         default: base
-        option: [ "xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
+        option: [ "3xs","2xs","xs","sm","md","base","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
 
     post:
         sidebar:
