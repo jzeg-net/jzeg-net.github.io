@@ -47,7 +47,7 @@
         "hugo-config:-f:yaml": "hugo config --format yaml",
         "hugo-config:mounts": "hugo config mounts",
         "hugo-version": "hugo version",
-        "update-deps": "ncu -u -x \"qrcode chalk\" && echo \"Upgrade all, exclude some\"",
+        "update-deps": "ncu -u -x \"qrcode chalk\" && npm install && echo \"Upgrade all, exclude some\"",
         "npm:list:-g--depth_0": "npm list -g --depth=0",
         "eslint:html": "npm-run-all --parallel --aggregate-output eslint:site:html",
         "eslint:site:html": "eslint site/layouts",
@@ -100,7 +100,7 @@
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
         "simple-datatables": "^8.0.0",
-        "simple-icons": "^9.17.0",
+        "simple-icons": "^9.18.0",
         "timeago.js": "^4.0.2",
         "uppy": "^3.17.0",
         "vditor": "^3.9.6",
@@ -131,9 +131,9 @@
         "postcss": "^8.4.31",
         "postcss-cli": "^10.1.0",
         "prettier": "^3.0.3",
-        "sass": "^1.69.3",
-        "stylelint": "^15.10.3",
+        "sass": "^1.69.4",
+        "stylelint": "^15.11.0",
         "svg-sprite": "^3.0.0-beta2",
-        "terser": "^5.21.0"
+        "terser": "^5.22.0"
     }
 }
