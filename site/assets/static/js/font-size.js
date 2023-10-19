@@ -17,7 +17,7 @@
       return storedFontSize
     }
 
-    return 'base'
+    return 'md'
   }
 
   const setFontSize = font_size => {
