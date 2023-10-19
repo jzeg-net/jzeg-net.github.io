@@ -21,8 +21,9 @@
 
   const showCurrentValue = () => {
     const currentFontSizeValue = window.getComputedStyle(body).getPropertyValue('font-size')
+    const msg = '字体尺寸调整为：' + currentFontSizeValue
 
-    bModal('', '字体尺寸修改成功，<br>当前字体尺寸为：' + currentFontSizeValue, '', 'sm', true)
+    bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
   }
 
   setFontSize(getPreferredFontSize())
