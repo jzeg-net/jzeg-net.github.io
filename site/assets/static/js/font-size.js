@@ -11,14 +11,7 @@
   const setStoredFontSize = font_size => localStorage.setItem('font_size', font_size)
   const body = document.body
 
-  const getPreferredFontSize = () => {
-    const storedFontSize = getStoredFontSize()
-    if (storedFontSize) {
-      return storedFontSize
-    }
-
-    return 'md'
-  }
+  const getPreferredFontSize = () => getStoredFontSize() || 'md'
 
   const setFontSize = font_size => {
     const size = window.getComputedStyle(body).getPropertyValue('--jg--fs-' + font_size)

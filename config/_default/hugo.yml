@@ -396,7 +396,7 @@ menu:
                     useHref: "bi-fonts"
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
-        -   identifier: fontSize_base
+        -   identifier: fontSize_md
             weight: 1
             params:
                 size_value: "md"
@@ -406,7 +406,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_lg
-            weight: 1
+            weight: 2
             params:
                 size_value: "lg"
                 class:
@@ -415,7 +415,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_xl
-            weight: 2
+            weight: 3
             params:
                 size_value: "xl"
                 class:
@@ -424,7 +424,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_2xl
-            weight: 3
+            weight: 4
             params:
                 size_value: "2xl"
                 class:
@@ -433,7 +433,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_3xl
-            weight: 4
+            weight: 5
             params:
                 size_value: "3xl"
                 class:
@@ -442,7 +442,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_4xl
-            weight: 5
+            weight: 6
             params:
                 size_value: "4xl"
                 class:
@@ -451,7 +451,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_5xl
-            weight: 6
+            weight: 7
             params:
                 size_value: "5xl"
                 class:
@@ -460,7 +460,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_6xl
-            weight: 7
+            weight: 8
             params:
                 size_value: "6xl"
                 class:
@@ -469,7 +469,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_7xl
-            weight: 8
+            weight: 9
             params:
                 size_value: "7xl"
                 class:
@@ -478,7 +478,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_8xl
-            weight: 9
+            weight: 10
             params:
                 size_value: "8xl"
                 class:
@@ -487,7 +487,7 @@ menu:
                     class: "bi me-2"
                     size: [ width: 16, height: 16 ]
         -   identifier: fontSize_9xl
-            weight: 10
+            weight: 11
             params:
                 size_value: "9xl"
                 class:
@@ -627,7 +627,7 @@ Params:
     # default font size
     fontSize:
         enable: true
-        default: base
+        default: md
         option: [ "3xs","2xs","xs","sm","md","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
 
     post:

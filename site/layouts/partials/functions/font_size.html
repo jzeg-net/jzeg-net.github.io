@@ -1,5 +1,5 @@
-{{ $fontSize := .Site.Params.fontSize.default | default "base" }}
+{{ $fontSize := .Site.Params.fontSize.default | default "md" }}
 {{ if not (in .Site.Params.fontSize.option $fontSize) }}
-    {{ $fontSize = "base" }}
+    {{ $fontSize = "md" }}
 {{ end }}
 {{ return $fontSize }}
