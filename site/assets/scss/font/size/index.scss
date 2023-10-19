@@ -1,39 +1,39 @@
 @import "variables";
 
 :root {
-    --#{$prefix}-fs-3xs:  #{$fs-8};
-    --#{$prefix}-fs-2xs:  #{$fs-10};
-    --#{$prefix}-fs-xs:   #{$fs-12};
-    --#{$prefix}-fs-sm:   #{$fs-14};
-    --#{$prefix}-fs-md:   #{$fs-16};
-    --#{$prefix}-fs-lg:   #{$fs-18};
-    --#{$prefix}-fs-xl:   #{$fs-20};
-    --#{$prefix}-fs-2xl:  #{$fs-22};
-    --#{$prefix}-fs-3xl:  #{$fs-24};
-    --#{$prefix}-fs-4xl:  #{$fs-26};
-    --#{$prefix}-fs-5xl:  #{$fs-28};
-    --#{$prefix}-fs-6xl:  #{$fs-30};
-    --#{$prefix}-fs-7xl:  #{$fs-36};
-    --#{$prefix}-fs-8xl:  #{$fs-72};
-    --#{$prefix}-fs-9xl:  #{$fs-144};
+  --#{$prefix}-fs-3xs:  #{$fs-8};
+  --#{$prefix}-fs-2xs:  #{$fs-10};
+  --#{$prefix}-fs-xs:   #{$fs-12};
+  --#{$prefix}-fs-sm:   #{$fs-14};
+  --#{$prefix}-fs-md:   #{$fs-16};
+  --#{$prefix}-fs-lg:   #{$fs-18};
+  --#{$prefix}-fs-xl:   #{$fs-20};
+  --#{$prefix}-fs-2xl:  #{$fs-22};
+  --#{$prefix}-fs-3xl:  #{$fs-24};
+  --#{$prefix}-fs-4xl:  #{$fs-26};
+  --#{$prefix}-fs-5xl:  #{$fs-28};
+  --#{$prefix}-fs-6xl:  #{$fs-30};
+  --#{$prefix}-fs-7xl:  #{$fs-36};
+  --#{$prefix}-fs-8xl:  #{$fs-72};
+  --#{$prefix}-fs-9xl:  #{$fs-144};
 }
 
-.size-3xs   {font-size:var(--#{$prefix}-fs-3xs)}
-.size-2xs   {font-size:var(--#{$prefix}-fs-2xs)}
-.size-xs    {font-size:var(--#{$prefix}-fs-xs)}
-.size-sm    {font-size:var(--#{$prefix}-fs-sm)}
-.size-md    {font-size:var(--#{$prefix}-fs-md)}
-.size-lg    {font-size:var(--#{$prefix}-fs-lg)}
-.size-xl    {font-size:var(--#{$prefix}-fs-xl)}
-.size-2xl   {font-size:var(--#{$prefix}-fs-2xl)}
-.size-3xl   {font-size:var(--#{$prefix}-fs-3xl)}
-.size-4xl   {font-size:var(--#{$prefix}-fs-4xl)}
-.size-5xl   {font-size:var(--#{$prefix}-fs-5xl)}
-.size-6xl   {font-size:var(--#{$prefix}-fs-6xl)}
-.size-7xl   {font-size:var(--#{$prefix}-fs-7xl)}
-.size-8xl   {font-size:var(--#{$prefix}-fs-8xl)}
-.size-9xl   {font-size:var(--#{$prefix}-fs-9xl)}
+.size-3xs  {font-size:var(--#{$prefix}-fs-3xs)}
+.size-2xs  {font-size:var(--#{$prefix}-fs-2xs)}
+.size-xs   {font-size:var(--#{$prefix}-fs-xs)}
+.size-sm   {font-size:var(--#{$prefix}-fs-sm)}
+.size-md   {font-size:var(--#{$prefix}-fs-md)}
+.size-lg   {font-size:var(--#{$prefix}-fs-lg)}
+.size-xl   {font-size:var(--#{$prefix}-fs-xl)}
+.size-2xl  {font-size:var(--#{$prefix}-fs-2xl)}
+.size-3xl  {font-size:var(--#{$prefix}-fs-3xl)}
+.size-4xl  {font-size:var(--#{$prefix}-fs-4xl)}
+.size-5xl  {font-size:var(--#{$prefix}-fs-5xl)}
+.size-6xl  {font-size:var(--#{$prefix}-fs-6xl)}
+.size-7xl  {font-size:var(--#{$prefix}-fs-7xl)}
+.size-8xl  {font-size:var(--#{$prefix}-fs-8xl)}
+.size-9xl  {font-size:var(--#{$prefix}-fs-9xl)}
 
 @mixin text-font-size($size) {
-    font-size: --#{$prefix}--$size;
+  font-size: --#{$prefix}-- $size;
 }
