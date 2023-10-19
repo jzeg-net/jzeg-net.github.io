@@ -26,9 +26,9 @@ if (headerNotice) {
     setTimeout(() => {
       parent.parentNode.removeChild(parent)
     }, 1e3)
-  })
 
-  headerNotice.addEventListener('closed.bs.alert', () => {
+    bModal('', createSmallCenterText('公告信息已经关闭，将会在24小时后重新显示', 'success'), '', 'sm', true)
+
     setLocalStorage(storageKey, Date.now())
   })
 }
