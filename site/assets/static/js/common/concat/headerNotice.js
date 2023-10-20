@@ -27,7 +27,7 @@ if (headerNotice) {
       parent.parentNode.removeChild(parent)
     }, 1e3)
 
-    bModal('', createSmallCenterText('公告信息已经关闭，将会在24小时后重新显示', 'success'), '', 'sm', true)
+    bModal('', createSmallCenterText('当前信息栏将会在 24 小时后恢复显示', 'success'), '', 'sm', true)
 
     setLocalStorage(storageKey, Date.now())
   })
