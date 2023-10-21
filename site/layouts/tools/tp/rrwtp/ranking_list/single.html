@@ -1,0 +1,11 @@
+{{ define "content" }}
+    <main class="pb-5" id="main">
+        <div class="container">
+            <button class="btn btn-outline-secondary" type="button" id="getData">获取</button>
+        </div>
+        <div class="container-fluid">
+            <div class="d-flex flex-row column-gap-1 justify-content-center" id="table"></div>
+        </div>
+        {{ .Content }}
+    </main>
+{{ end }}

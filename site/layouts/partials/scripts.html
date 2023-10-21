@@ -119,6 +119,11 @@
     <script src="{{ $shop_infoJs }}"></script>
 {{ end -}}
 
+{{ if eq .Page.Params.type "tools/tp/rrwtp/ranking_list" -}}
+    {{- $ranking_listJs := partial "functions/script/build" (dict "resourcesGet" "static/js/tp/rrwtp/ranking_list.js" "targetPath" "static/js/tp/rrwtp/ranking_list.js") }}
+    <script src="{{ $ranking_listJs }}"></script>
+{{ end -}}
+
 {{- if eq .Page.Layout "full_page" -}}
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
