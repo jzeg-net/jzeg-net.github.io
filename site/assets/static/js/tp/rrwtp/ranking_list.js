@@ -38,7 +38,7 @@ function getAll_rankingData () {
     perPage: 0,
     perPageSelect: [10, 20, 30, 40, 50, ['全部', 0]],
     data: {
-      'headings': ['编号', '参赛者姓名', '票数'],
+      'headings': ['编号', '明星', '姓名', '票数'],
     }
   })
 
@@ -47,10 +47,20 @@ function getAll_rankingData () {
     .json(response => response['playerData'])
     .then(playerData => {
       playerData.forEach((player) => {
-        tableData.refresh()
+        player['playername'] = player['playername'].replace(/(“|”| )/g, '')
+        player['xx'] = player['playername'].split('明星')
+        player['type'] = player['xx'][0]
+        player['name'] = player['xx'][1]
+      })
+      return playerData
+    })
+    .then(playerData => {
+      playerData.forEach((player) => {
         tableData.rows.add([
           player['rond'],
-          player['playername'],
+          // player['playername'],
+          player['type'],
+          player['name'],
           player['votenum'],
         ])
       })
