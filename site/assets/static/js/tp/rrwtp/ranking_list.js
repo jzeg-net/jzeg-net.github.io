@@ -1,24 +1,11 @@
 let dialog = document.querySelector('#verifyDialog')
-listenerPasswordInputType(dialog)
-let verifyDialogForm = document.querySelector('#verifyDialogForm')
 let verifyDialogPassword = document.querySelector('#verifyDialogPassword')
 
-const getDialogReturnValue = dialog => dialog.returnValue
-
-const checkDialogOpen = dialog => {
-  if (dialog.open) {
-    console.log('密码框打开')
-  } else {
-    console.log('密码框关闭')
-  }
-  console.log(dialog.returnValue)
-}
+listenerPasswordInputType(dialog)
 
 let getData = document.querySelector('#getData')
 if (getData) {
-  getData.addEventListener('click', () => {
-    dialog.showModal()
-  })
+  getData.addEventListener('click', () => dialog.showModal())
 }
 
 dialog.addEventListener('close', () => {
@@ -30,9 +17,9 @@ dialog.addEventListener('close', () => {
   let confirm = false
 
   if (dialog.returnValue === 'confirm') {
-    if (verifyDialogPassword.value === '12345') confirm = true
+    if (verifyDialogPassword.value === 'JZEG-NET') confirm = true
     if (verifyDialogPassword.value === '') bModal('', createSmallCenterText('请输入密码'), '', 'sm', true)
-    if (verifyDialogPassword.value && verifyDialogPassword.value !== '12345') bModal('', createSmallCenterText('密码错误，重新输入'), '', 'sm', true)
+    if (verifyDialogPassword.value && verifyDialogPassword.value !== 'JZEG-NET') bModal('', createSmallCenterText('密码错误，重新输入'), '', 'sm', true)
   }
 
   if (!confirm) {
