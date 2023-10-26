@@ -73,61 +73,6 @@ if (account) {
   })
 }
 
-// 滚动监听
-let new_scroll_position = 0
-let last_scroll_position
-setTimeout(scrollListener, 500)
-
-function scrollListener () {
-  document.addEventListener('scroll', () => {
-    last_scroll_position = scrollY
-    scrollMainNavbar()
-    scrollFloatTools()
-    new_scroll_position = last_scroll_position
-  })
-}
-
-function scrollFloatTools () {
-  let floatTools = document.querySelector('#float-tools')
-  if (!floatTools) return
-
-  if (new_scroll_position > last_scroll_position) {
-    floatTools.classList.add('hide')
-    getToolsCollapse().classList.remove('show')
-  } else if (new_scroll_position < last_scroll_position) {
-    floatTools.classList.remove('hide')
-  }
-}
-
-function scrollMainNavbar () {
-  let navbar = document.querySelector('#mainNavbar')
-  if (!navbar) return
-
-  if (new_scroll_position < last_scroll_position && last_scroll_position > 64) {
-    navbar.classList.add('tY-n150')
-  } else if (new_scroll_position > last_scroll_position) {
-    navbar.classList.remove('tY-n150')
-  }
-}
-
-// 浮动工具栏
-let floatTools = document.querySelector('#float-tools')
-if (floatTools) {
-  let collapseToRight = document.querySelector('#collapse-to-right')
-  collapseToRight.addEventListener('click', function () {
-    floatTools.classList.add('hide')
-    getToolsCollapse().classList.remove('show')
-  })
-}
-
-function getToolsCollapse (getEl = true) {
-  let toolsCollapse = document.querySelector('#tools-collapse')
-
-  return getEl
-    ? toolsCollapse
-    : bootstrap.Collapse.getOrCreateInstance(toolsCollapse)
-}
-
 document.querySelectorAll('time').forEach(currentEl => {
   let locale = document.querySelector('html').lang.replaceAll('-', '_')
 
