@@ -47,6 +47,7 @@
         {{ block "content" . }}{{ .Content }}{{ end }}
     </div>
 </main>
+{{ partial "verify" . }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 

@@ -1,11 +1,9 @@
-let dialog = document.querySelector('#verifyDialog')
-let verifyDialogPassword = document.querySelector('#verifyDialogPassword')
-
-listenerPasswordInputType(dialog)
-
-let getData = document.querySelector('#getData')
-if (getData) {
-  getData.addEventListener('click', () => dialog.showModal())
+let voteParseForm = document.querySelector('#voteParseForm')
+if (voteParseForm) {
+  voteParseForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    dialog.showModal()
+  })
 }
 
 dialog.addEventListener('close', () => {

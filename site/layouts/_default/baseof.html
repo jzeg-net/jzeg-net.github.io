@@ -41,6 +41,7 @@
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
 
 {{ block "content" . }}{{ .Content }}{{ end }}
+{{ partial "verify" . }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 

@@ -1,0 +1,26 @@
+<dialog class="rounded border-1 border-secondary z-1" id="verifyDialog">
+    {{ partial "dialog_verify/svg_sprite_icons" . }}
+    <form method="dialog" id="verifyDialogForm">
+        <div class="vstack mb-3 small">
+            <span>输入密码【JZEG-NET】继续获取数据</span>
+            <div class="vstack small text-secondary">
+                <span>节约服务器资源，限制无意义的过高频率</span>
+                <span>后期的新密码可以通过微信群获取</span>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="verifyDialogPassword" placeholder="密码" autocomplete="off" autofocus>
+                <label for="verifyDialogPassword">密码 JZEG-NET</label>
+            </div>
+            <a class="input-group-text text-reset text-decoration-none toggleDisplay" href="javascript:" title="点击后显示密码">
+                <svg class="text-body-secondary bi"><use href="#bi-eye-slash-fill"></use></svg>
+            </a>
+        </div>
+        <div class="d-flex column-gap-4">
+            <button class="btn btn-outline-danger" value="reset" formmethod="dialog" type="reset">重置</button>
+            <button class="btn btn-outline-success" value="confirm" formmethod="dialog">确认</button>
+            <button class="btn btn-outline-secondary" value="cancel" formmethod="dialog">取消</button>
+        </div>
+    </form>
+</dialog>
