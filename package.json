@@ -91,7 +91,7 @@
         "dayjs": "^1.11.10",
         "disable-devtool": "^0.3.6",
         "fabric": "^6.0.0-beta13",
-        "flag-icons": "^6.11.1",
+        "flag-icons": "^6.11.2",
         "github-api": "^3.4.0",
         "html2canvas": "^1.4.1",
         "js-cookie": "^3.0.5",
