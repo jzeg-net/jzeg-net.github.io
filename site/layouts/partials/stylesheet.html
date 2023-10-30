@@ -38,6 +38,9 @@
     <link rel="stylesheet" href="{{ $preUrl }}static/css/full_page.css">
 {{- end }}
 
+{{- $commonSCSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/common/index.scss" "targetPath" "static/css/common.css") }}
+<link rel="stylesheet" href="{{ $commonSCSS }}">
+
 {{- $commonCSS := partial "functions/concat" (dict "concatPath" "static/css/common/**.css" "targetPath" "static/css/common.bundle.css") }}
 <link rel="stylesheet" href="{{ $commonCSS }}">
 

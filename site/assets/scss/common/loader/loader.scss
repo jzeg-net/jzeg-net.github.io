@@ -1,0 +1,14 @@
+.loader {
+  color: #8a2be2;
+  width: 6px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translateX(-38px);
+  animation: .5s linear 0s infinite alternate-reverse both running loader_3dot;
+}
+
+@keyframes loader_3dot {
+  0%   {box-shadow: 19px 0 0 6px #0c5eda, 38px 0 0 5px #8a2be2, 57px 0 0 2px #0c5eda}
+  50%  {box-shadow: 19px 0 0 4px #8a2be2, 38px 0 0 3px #38ff03, 57px 0 0 4px #8a2be2}
+  100% {box-shadow: 19px 0 0 2px #0c5eda, 38px 0 0 5px #8a2be2, 57px 0 0 6px #0c5eda}
+}

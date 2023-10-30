@@ -1,0 +1,19 @@
+$base: 1rem;
+
+$base_size: 2px;
+$size_1x: $base_size*1;
+$size_2x: $base_size*2;
+$size_3x: $base_size*3;
+$size_4x: $base_size*4;
+
+$base_color: blueviolet;
+$color_1x: $base_color+0;
+$color_2x: $base_color+300;
+$color_3x: $base_color+500;
+$color_4x: $base_color+800;
+
+$base_distance: 19px;
+$distance_1x: $base_distance*1;
+$distance_2x: $base_distance*2;
+$distance_3x: $base_distance*3;
+$distance_4x: $base_distance*4;
