@@ -14,4 +14,7 @@ categories: [ ]
 
 externalLink: ""
 series: []
+
+components:
+    - "randomColor"
 ---

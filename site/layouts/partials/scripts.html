@@ -30,10 +30,6 @@
 <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
 
-{{ if eq .Page.Title "Gallery" "画廊" }}
-    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
-{{ end }}
-
 {{ if .IsHome }}{{ end }}
 
 {{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}
@@ -84,6 +80,10 @@
     <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>
     <script src="{{ $preUrl }}static/js/uppy.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "randomColor" }}
+    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
 
 
