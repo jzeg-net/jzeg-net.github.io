@@ -1,4 +1,4 @@
-if (DisableDevtool) {
+if (typeof DisableDevtool !== 'undefined') {
   let md5 = DisableDevtool.md5('xxx')
 
   DisableDevtool({
