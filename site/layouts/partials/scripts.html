@@ -26,8 +26,8 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{ if .Site.Params.DisableDevtool.enable }}
-    <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
+{{ if and (eq hugo.Environment "production") (.Site.Params.DisableDevtool.enable) }}
+<script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
 
 {{ if eq .Page.Title "Gallery" "画廊" }}

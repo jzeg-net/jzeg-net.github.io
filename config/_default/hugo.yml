@@ -664,7 +664,7 @@ Params:
 
     # disable-devtool 禁用开发工具
     DisableDevtool:
-        enable: false
+        enable: true
 
     icp: "冀ICP备12018851号-7"
     beian: "9999999999999999"
