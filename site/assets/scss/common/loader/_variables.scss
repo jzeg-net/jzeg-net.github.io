@@ -6,11 +6,11 @@ $size_2x: $base_size*2;
 $size_3x: $base_size*3;
 $size_4x: $base_size*4;
 
-$base_color: blueviolet;
-$color_1x: $base_color+0;
-$color_2x: $base_color+300;
-$color_3x: $base_color+500;
-$color_4x: $base_color+800;
+$base_color: rgb(138, 43, 226);
+$color_1x: $base_color;
+$color_2x: $base_color;
+$color_3x: $base_color;
+$color_4x: $base_color;
 
 $base_distance: 19px;
 $distance_1x: $base_distance*1;
