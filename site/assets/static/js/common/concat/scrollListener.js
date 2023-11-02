@@ -29,7 +29,7 @@
     let navbar = document.querySelector('#mainNavbar')
     if (!navbar) return
 
-    if (new_scroll_position < last_scroll_position && last_scroll_position > 67) {
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 50) {
       navbar.classList.add('tY-n150')
     } else if (new_scroll_position > last_scroll_position) {
       navbar.classList.remove('tY-n150')

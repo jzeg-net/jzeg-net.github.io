@@ -1,6 +1,7 @@
 {{ define "content" }}
     <main class="pb-5 container-xxl" id="main">
-        <div class="text-center">工具箱页面设计中，欢迎参与，敬请期待！</div>
+        <div class="text-center" style="min-height: 150vh;">工具箱页面设计中，欢迎参与，敬请期待！</div>
         {{ .Content }}
+        {{ partial "loader" . }}
     </main>
 {{ end }}
