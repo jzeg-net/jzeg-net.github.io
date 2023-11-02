@@ -17,3 +17,9 @@ $distance_1x: $base_distance*1;
 $distance_2x: $base_distance*2;
 $distance_3x: $base_distance*3;
 $distance_4x: $base_distance*4;
+
+$zindex-loader-backdrop:  1100 !default;
+$zindex-loader:           1105 !default;
+
+$loader-backdrop-bg:      $black !default;
+$loader-backdrop-opacity: .5 !default;
