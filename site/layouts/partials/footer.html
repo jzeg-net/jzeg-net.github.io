@@ -7,8 +7,10 @@
         </div>
         <hr class="my-3">
         <div class="vstack row-gap-1 align-items-end size-xs">
-            {{- partial "footer/terms_of_service" . }}
-            {{- partial "footer/privacy_policy" . }}
+            <section class="hstack column-gap-3 justify-content-end">
+                {{- partial "footer/terms_of_service" . }}
+                {{- partial "footer/privacy_policy" . }}
+            </section>
             {{- partial "footer/icp" . }}
         </div>
         <div class="vstack row-gap-1 size-xs">
