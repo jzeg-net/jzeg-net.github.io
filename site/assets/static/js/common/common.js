@@ -42,6 +42,9 @@
 })()
 let xxxApiURL = 'https://api.xxxxxx.jzeg.net'
 
+let htmlLanguage = document.querySelector('html').getAttribute('lang')
+let htmlLanguage_ = htmlLanguage.replace('-', '_')
+
 const createSmallCenterText = (text, color = '') => {
   const div = document.createElement('div')
 

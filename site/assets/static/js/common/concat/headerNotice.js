@@ -11,12 +11,10 @@ if (headerNotice) {
 
   let storageKey = 'headerNotice'
   let storageValue = getLocalStorage(storageKey)
+  let oneDay = 60 * 60 * 24 * 1e3
 
   if (storageValue) {
-    let oneDay = 60 * 60 * 24 * 1e3
-    let intervals = Date.now() - storageValue
-
-    if (intervals <= oneDay) {
+    if (storageValue >= Date.now()) {
       bootstrap.Alert.getOrCreateInstance(headerNotice).close()
     }
   }
@@ -27,8 +25,20 @@ if (headerNotice) {
       parent.parentNode.removeChild(parent)
     }, 1e3)
 
-    bModal('', createSmallCenterText('当前信息栏将会在 24 小时后恢复显示', 'success'), '', 'sm', true)
+    let displayTime = Date.now() + oneDay
+    let date = timeago.format(displayTime, htmlLanguage_)
+    let datetime = dayjs(displayTime).format('YYYY-MM-DD HH:mm:ss')
 
-    setLocalStorage(storageKey, Date.now())
+    let tooltip = `<a data-bs-toggle="tooltip" title="${datetime}">${date}</a>`
+
+
+
+    let text = `信息栏将会在 ${tooltip} 恢复显示`
+    let msg = createSmallCenterText(text, 'success')
+    // new bootstrap.Tooltip(tooltip)
+
+    bModal('', msg, '', '', true)
+
+    setLocalStorage(storageKey, Date.now() + oneDay)
   })
 }
