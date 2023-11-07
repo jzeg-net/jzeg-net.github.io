@@ -30,12 +30,9 @@ if (headerNotice) {
     let datetime = dayjs(displayTime).format('YYYY-MM-DD HH:mm:ss')
 
     let tooltip = `<a data-bs-toggle="tooltip" title="${datetime}">${date}</a>`
-
-
-
     let text = `信息栏将会在 ${tooltip} 恢复显示`
     let msg = createSmallCenterText(text, 'success')
-    // new bootstrap.Tooltip(tooltip)
+    bootstrap.Tooltip.getOrCreateInstance(msg.querySelector('a[data-bs-toggle="tooltip"]'))
 
     bModal('', msg, '', '', true)
 
