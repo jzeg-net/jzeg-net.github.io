@@ -13,7 +13,7 @@ trim_trailing_whitespace = true
 [**/*.{svg,json,md}]
 insert_final_newline = false
 
-[*.{js,scss}]
+[*.{js,mjs,scss,css}]
 indent_size = 2
 
 [site/**/*.html]
