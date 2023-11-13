@@ -1,22 +1,26 @@
 lazyLoad('.lazyImg')
 
+// 顶部跟随切换
 let tableOfContentsPin = document.querySelector('#tableOfContents-pin')
 if (tableOfContentsPin) {
   let postNavbar = document.querySelector('#postNavbar')
 
   tableOfContentsPin.addEventListener('click', () => {
-    tableOfContentsPin.childNodes.forEach(currentChild => {
-      currentChild.classList.toggle('d-none')
+    tableOfContentsPin.childNodes.forEach(child => {
+      if (child.nodeName !== 'svg') return
+      child.classList.toggle('d-none')
     })
     postNavbar.classList.toggle('sticky-top')
   })
 }
 
+// 侧边栏切换
 let sidebarCollapse = document.querySelector('#sidebar-collapse')
 if (sidebarCollapse) {
   sidebarCollapse.addEventListener('click', () => {
-    sidebarCollapse.childNodes.forEach(currentChild => {
-      currentChild.classList.toggle('d-none')
+    sidebarCollapse.childNodes.forEach(child => {
+      if (child.nodeName !== 'svg') return
+      child.classList.toggle('d-none')
     })
   })
 }
@@ -35,8 +39,9 @@ if (postContentMore) {
     postContentMore.classList.toggle('shrink-post-content')
     postContentMore.classList.toggle('sticky-bottom')
 
-    postContentMore.firstElementChild.childNodes.forEach(currentChild => {
-      if ('BUTTON' === currentChild.tagName) currentChild.classList.toggle('d-none')
+    postContentMore.firstElementChild.childNodes.forEach(child => {
+      if (child.nodeName !== 'BUTTON') return
+      child.classList.toggle('d-none')
     })
 
     if (contentCollapse.classList.contains('d-none')) {

@@ -21,8 +21,8 @@
                 {{ if eq .Site.Params.post.sidebar.enable true }}
                     {{ if eq .Site.Params.post.sidebar.type "collapse" }}
                         <button class="btn" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" id="sidebar-collapse" aria-expanded="true" aria-controls="sidebarCollapse">
-                            <svg class="bi d-none" width="16" height="16"><title>{{ T "post_sidebar-expand" }}</title><use href="#bi-window-split"></use></svg>
                             <svg class="bi" width="16" height="16"><title>{{ T "post_sidebar-collapse" }}</title><use href="#bi-window"></use></svg>
+                            <svg class="bi d-none" width="16" height="16"><title>{{ T "post_sidebar-expand" }}</title><use href="#bi-window-split"></use></svg>
                         </button>
                     {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
                         <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="{{- T "post_sidebar-toggle" -}}">
