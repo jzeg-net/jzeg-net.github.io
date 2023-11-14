@@ -26,6 +26,22 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{ if in .Page.Params.components "datatables" }}
+    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
+    <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "uppy" }}
+    <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>
+    <script src="{{ $preUrl }}static/js/uppy.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "randomColor" }}
+    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
+{{ end }}
+
+
 {{ if and (eq hugo.Environment "production") (.Site.Params.DisableDevtool.enable) }}
 <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
@@ -70,21 +86,6 @@
     {{- $jump_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/jump_link.js" "targetPath" "static/js/jump_link.js") }}
     <script src="{{ $jump_linkJs }}"></script>
 {{- end -}}
-
-{{ if in .Page.Params.components "datatables" }}
-    <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
-    <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
-{{ end }}
-
-{{ if in .Page.Params.components "uppy" }}
-    <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
-    <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>
-    <script src="{{ $preUrl }}static/js/uppy.js"></script>
-{{ end }}
-
-{{ if in .Page.Params.components "randomColor" }}
-    <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
-{{ end }}
 
 
 {{ if eq .Page.Params.type "edit" -}}
