@@ -592,7 +592,7 @@ module:
             target: static/CNAME
         -   source: node_modules
             target: static/static/vendor
-            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,github-api,workbox-sw,wretch,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,medium-zoom,qrcode,dragula,@uppy,uppy,disable-devtool,vditor,github-markdown-css,simple-datatables,@glidejs,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,flag-icons,randomColor}/**"
+            includeFiles: "{bootstrap,bootstrap-icons,js-cookie,github-api,workbox-sw,wretch,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,photoswipe,medium-zoom,qrcode,dragula,@uppy,uppy,disable-devtool,vditor,github-markdown-css,simple-datatables,@glidejs,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,flag-icons,randomColor}/**"
 
         -   source: site/content
             target: content

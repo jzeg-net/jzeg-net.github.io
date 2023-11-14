@@ -99,6 +99,7 @@
         "localforage": "^1.10.0",
         "lozad": "^1.16.0",
         "medium-zoom": "^1.0.8",
+        "photoswipe": "^5.4.2",
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
         "simple-datatables": "^8.0.0",

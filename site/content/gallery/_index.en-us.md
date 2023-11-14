@@ -17,4 +17,5 @@ series: []
 
 components:
     - "randomColor"
+    - "photoswipe"
 ---

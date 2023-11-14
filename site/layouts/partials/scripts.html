@@ -31,6 +31,11 @@
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "photoswipe" }}
+    <script src="{{ $preUrl }}static/vendor/photoswipe/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+    <script src="{{ $preUrl }}static/js/photoswipe.js"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "uppy" }}
     <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>

@@ -28,6 +28,10 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/css/zhgh/common.css">
 {{ end }}
 
+{{ if in .Page.Params.components "photoswipe" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/photoswipe/dist/photoswipe.css">
+{{ end }}
+
 {{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/@docsearch/css/dist/style.css">
