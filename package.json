@@ -98,7 +98,6 @@
         "js-cookie": "^3.0.5",
         "localforage": "^1.10.0",
         "lozad": "^1.16.0",
-        "medium-zoom": "^1.0.8",
         "photoswipe": "^5.4.2",
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
@@ -110,7 +109,6 @@
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",
         "wretch": "^2.7.0",
-        "xgplayer": "^3.0.9",
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
