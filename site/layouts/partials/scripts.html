@@ -32,8 +32,7 @@
 {{ end }}
 
 {{ if in .Page.Params.components "photoswipe" }}
-    <script src="{{ $preUrl }}static/vendor/photoswipe/dist/umd/photoswipe-lightbox.umd.min.js"></script>
-    <script src="{{ $preUrl }}static/js/photoswipe.js"></script>
+    <script type="module" src="{{ $preUrl }}static/js/photoswipe.js"></script>
 {{ end }}
 
 {{ if in .Page.Params.components "uppy" }}
