@@ -73,8 +73,8 @@
   --content-text: "THE END";
   --content-space: "\00A0\00A0\00A0";
   --content-hyphen: "——————";
-  position: absolute;
-  bottom: 0;
+  padding: 4rem 0;
+  margin: 1rem 0;
   width: 100%;
   content: var(--content-hyphen) var(--content-space) var(--content-text) var(--content-space) var(--content-hyphen);
   color: var(--bs-secondary-bg);
