@@ -1,0 +1,33 @@
+<div class="d-flex flex-column gap-5" id="content">
+    {{ range .Pages.ByDate.Reverse }}
+        <div class="card shadow-sm">
+            <div class="row g-0">
+                <div class="col-3 col-md-4 col-lg-3">
+                    {{ if .Params.FeaturedImagePreview }}
+                        <img class="mw-100 w-100 h-100 rounded-start lazyImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" {{ printf "data-src=%q" .Params.FeaturedImagePreview | safeHTMLAttr }} alt="{{ .Title }}">
+                    {{ else }}
+                        <img class="mw-100 w-100 h-100 rounded-start" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{{ .Title }}">
+                    {{ end }}
+                </div>
+                <div class="col-9 col-md-8 col-lg-9">
+                    <div class="card-body">
+                        <h3><a class="card-title link-secondary link-underline-opacity-0 link-underline-opacity-25-hover stretched-link" href="{{ .Permalink }}" target="_blank" title="{{ .Title }}">{{ .Title }}</a></h3>
+                        <p class="card-text small text-secondary-emphasis text-opacity-25 text-break text-opacity-25 overflow-hidden" style="max-height: 4rem;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <hr class="text-opacity-25">
+                        <div class="card-text d-flex flex-column-reverse flex-sm-row align-items-end small text-body-tertiary text-opacity-25">
+                            <div class="d-flex w-100">
+                                <time datetime="{{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }}"></time>
+                            </div>
+                            <div class="row flex-shrink-1 flex-nowrap justify-content-center text-center">
+                                <span class="col-4 flex-fill"><svg class="bi me-1" width="16" height="16"><title>{{ T "icon_text-comments" }}</title><use href="#bi-chat-dots"></use></svg>11</span>
+                                <span class="col-4 flex-fill"><svg class="bi me-1" width="16" height="16"><title>{{ T "icon_text-collections" }}</title><use href="#bi-star"></use></svg>22</span>
+                                <span class="col-4 flex-fill"><svg class="bi me-1" width="16" height="16"><title>{{ T "icon_text-likes" }}</title><use href="#bi-hand-thumbs-up"></use></svg>33</span>
+                                <span class="col-4 flex-fill"><svg class="bi me-1" width="16" height="16"><title>{{ T "icon_text-views" }}</title><use href="#bi-eye"></use></svg>44</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+</div>
