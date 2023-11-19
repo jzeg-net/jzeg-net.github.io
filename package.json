@@ -108,7 +108,7 @@
         "vditor": "^3.9.6",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",
-        "wretch": "^2.7.0",
+        "wretch": "^2.7.1",
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
