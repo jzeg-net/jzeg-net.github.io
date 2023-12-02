@@ -93,7 +93,7 @@ let donates = document.querySelectorAll('[data-donate]')
 donates.forEach(target => {
   target.addEventListener('click', event => {
     event.preventDefault()
-    bModal('', donateTab, createSmallCenterText('截屏识别二维码，可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), 'sm', true)
+    bModal('', donateTab, createSmallCenterText('截屏识别二维码，可进行任意金额的捐赠。您捐赠的资金将会用于本站的发展。', 'success'), '', true)
     new bootstrap.Tab('#tab-donate-' + target.dataset.donate).show()
   })
 })

@@ -16,7 +16,7 @@
     let imgAlt = '支付宝赚钱红包'
 
     let qrcodeOpt = {
-      qrcode_dark: '#c80000',
+      qrcode_dark: '#ff1818',
       qrcode_light: '#ffffff'
     }
 
