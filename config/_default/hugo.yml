@@ -579,8 +579,8 @@ sitemap:
 module:
     hugoVersion:
         extended: true
-        max: "0.121.0"
-        min: "0.121.0"
+        max: "0.121.1"
+        min: "0.121.1"
     mounts:
         -   source: site/archetypes
             target: archetypes
