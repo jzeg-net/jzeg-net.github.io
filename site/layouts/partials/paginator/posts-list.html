@@ -16,7 +16,7 @@
     {{- $format = lower . }}
   {{- end }}
 {{- end }}
-{{ partial "paginator/svg_sprite_icons" . }}
+{{ partial "svg_sprite_icons/paginator" . }}
 {{- if in $validFormats $format }}
   {{- if gt $page.Paginator.TotalPages 1 }}
     <nav class="mt-3 mt-md-4 mt-lg-5" aria-label="Page Navigation">

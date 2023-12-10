@@ -32,7 +32,7 @@
 
 {{ partial "skippy" . }}
 
-{{ partial "svg_sprite_icons" . }}
+{{ partial "svg_sprite_icons/main" . }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar" . }}{{ end }}
 
@@ -40,9 +40,12 @@
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
 
-{{ partial "posts/svg_sprite_icons" . }}
+{{ partial "svg_sprite_icons/posts" . }}
 
 <main class="pb-5 container-xxl" id="main">
+    {{ if .IsSection }}
+        {{ partial "posts/aggregation/index" }}
+    {{ end }}
     <div class="d-flex flex-column flex-md-row column-gap-3 row-gap-5" id="content">
         {{ block "content" . }}{{ .Content }}{{ end }}
     </div>

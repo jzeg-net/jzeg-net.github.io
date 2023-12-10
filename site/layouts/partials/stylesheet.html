@@ -57,6 +57,9 @@
 {{- $glide_all_CSS := partial "functions/stylesheet/toCSS" (dict "resourcesGet" "scss/glide/glide.all.scss" "targetPath" "static/css/glide.all.css") }}
 <link rel="stylesheet" href="{{ $glide_all_CSS }}">
 
+{{- $msg_css := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post/msg.css" "targetPath" "static/css/post/msg.css") }}
+<link rel="stylesheet" href="{{ $msg_css }}">
+
 {{- $post_css := partial "functions/stylesheet/postCSS" (dict "resourcesGet" "static/css/post.css" "targetPath" "static/css/post.css") }}
 <link rel="stylesheet" href="{{ $post_css }}">
 
