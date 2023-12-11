@@ -1,0 +1,8 @@
+<span>{{ T "post_meta_topics" }}</span>
+{{ with .GetTerms "topics" }}
+<span class="hstack column-gap-1" id="topics">
+{{ range . }}
+    <a class="link-underline link-underline-opacity-0" href="{{ .RelPermalink }}" target="_blank">{{ .LinkTitle }}</a>
+{{ end }}
+</span>
+{{ end }}

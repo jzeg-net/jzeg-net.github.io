@@ -105,6 +105,7 @@
         "simple-icons": "^10.2.0",
         "timeago.js": "^4.0.2",
         "uppy": "^3.20.0",
+        "vanilla-cookieconsent": "^3.0.0-rc.17",
         "vditor": "^3.9.6",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",

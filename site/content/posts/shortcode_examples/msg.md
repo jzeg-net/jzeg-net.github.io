@@ -1,5 +1,5 @@
 ---
-title: "短代码示例"
+title: "信息"
 draft: false
 date: "2023-03-28T00:00:28+08:00"
 
@@ -9,16 +9,14 @@ slug: ""
 
 authors: [ ]
 
-tags: [ ]
-categories: [ ]
+tags: [ "信息" ]
+topics: [ "短代码" ]
+categories: [ "示例" ]
 
 externalLink: ""
 series: [ ]
-
-components:
-- "randomColor"
-- "photoswipe"
 ---
+
 
 
 <style></style>

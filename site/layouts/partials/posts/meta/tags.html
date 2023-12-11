@@ -1,0 +1,8 @@
+<span>{{ T "post_meta_tags" }}</span>
+{{ with .GetTerms "tags" }}
+<span class="hstack column-gap-1" id="tags">
+{{ range . }}
+    <a class="link-underline link-underline-opacity-0" href="{{ .RelPermalink }}" target="_blank">{{ .LinkTitle }}</a>
+{{ end }}
+</span>
+{{ end }}

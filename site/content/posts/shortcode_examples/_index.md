@@ -1,5 +1,5 @@
 ---
-title: "shortcode examples"
+title: "短代码示例"
 draft: false
 date: "2023-03-28T00:00:28+08:00"
 
@@ -14,8 +14,4 @@ categories: [ ]
 
 externalLink: ""
 series: [ ]
-
-components:
-    - "randomColor"
-    - "photoswipe"
 ---
