@@ -6,12 +6,20 @@
             {{- partial "footer/commit" . }}
         </div>
         <hr class="my-3">
-        <div class="vstack row-gap-1 align-items-end size-xs">
-            <section class="hstack column-gap-3 justify-content-end">
-                {{- partial "footer/terms_of_service" . }}
-                {{- partial "footer/privacy_policy" . }}
+        <div class="vstack row-gap-1 size-xs">
+            <section class="vstack align-items-end row-gap-1">
+                <div class="hstack justify-content-end column-gap-3">
+                    <div>{{ T "busuanzi_value_site_pv" }}&nbsp;<span id="busuanzi_value_site_pv"></span></div>
+                    <div>{{ T "busuanzi_value_site_uv" }}&nbsp;<span id="busuanzi_value_site_uv"></span></div>
+                </div>
+                <div class="hstack justify-content-end column-gap-3">
+                    {{- partial "footer/terms_of_service" . }}
+                    {{- partial "footer/privacy_policy" . }}
+                </div>
+                <div class="vstack align-items-end row-gap-1">
+                    {{- partial "footer/icp" . }}
+                </div>
             </section>
-            {{- partial "footer/icp" . }}
         </div>
         <div class="vstack row-gap-1 size-xs">
             {{- partial "footer/copyright" . }}
