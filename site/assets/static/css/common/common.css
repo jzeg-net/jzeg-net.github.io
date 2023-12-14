@@ -31,11 +31,6 @@ body {
     width: var(--scrollbar-width);
 }
 
-::selection {
-    background-color: var(--bd-violet);
-    color: var(--base02);
-}
-
 #mainNavbar {
     transition: transform 150ms linear;
 }

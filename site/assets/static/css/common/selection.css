@@ -1,0 +1,6 @@
+::selection {
+    --selection-bg-color: var(--bd-violet);
+    --selection-color: var(--base02);
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}

@@ -1,4 +1,3 @@
-
 .msg-container {
   --bs-msg-border-width: var(--bs-border-width);
   --bs-msg-border-style: var(--bs-border-style);
@@ -12,6 +11,51 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
+}
+
+.msg-container ::selection {
+  --selection-bg-color: var(--bs-body-color);
+  --selection-color: var(--bs-body-bg);
+}
+
+.msg-container.msg-primary ::selection {
+  --selection-bg-color: var(--bs-primary-bg-subtle);
+  --selection-color: var(--bs-primary-border-subtle);
+}
+
+.msg-container.msg-secondary ::selection {
+  --selection-bg-color: var(--bs-secondary-bg-subtle);
+  --selection-color: var(--bs-secondary-border-subtle);
+}
+
+.msg-container.msg-success ::selection {
+  --selection-bg-color: var(--bs-success-bg-subtle);
+  --selection-color: var(--bs-success-border-subtle);
+}
+
+.msg-container.msg-danger ::selection {
+  --selection-bg-color: var(--bs-danger-bg-subtle);
+  --selection-color: var(--bs-danger-border-subtle);
+}
+
+.msg-container.msg-warning ::selection {
+  --selection-bg-color: var(--bs-warning-bg-subtle);
+  --selection-color: var(--bs-warning-border-subtle);
+}
+
+.msg-container.msg-info ::selection {
+  --selection-bg-color: var(--bs-info-bg-subtle);
+  --selection-color: var(--bs-info-border-subtle);
+}
+
+.msg-container.msg-light ::selection {
+  --selection-bg-color: var(--bs-light-bg-subtle);
+  --selection-color: var(--bs-light-border-subtle);
+}
+
+.msg-container.msg-dark ::selection {
+  --selection-bg-color: var(--bs-dark-bg-subtle);
+  --selection-color: var(--bs-dark-border-subtle);
 }
 
 .msg-container.msg-primary {
