@@ -1,7 +1,7 @@
 (() => {
   'use strict'
 
-  if (dayjs().isAfter('2023-12-15')) return
+  if (dayjs().isAfter('2023-12-13')) return
 
   const redEnvelopes = () => {
     let div = document.createElement('div')
