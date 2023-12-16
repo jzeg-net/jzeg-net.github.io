@@ -213,7 +213,7 @@
 .msg-container > .msg-dismiss {
   display: flex;
   align-items: baseline;
-  padding-block-start: 0.75rem;
+  padding-block-start: 0.5rem;
   padding-inline-end: calc(0.25rem + 4px);
   border: var(--bs-msg-border);
   border-inline-start: 0;
