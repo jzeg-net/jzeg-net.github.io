@@ -1,9 +1,6 @@
 (() => {
   'use strict'
 
-  if (dayjs().isAfter('2023-12-13')) return
-  if (dayjs().isBefore('2023-11-30')) return
-
   const redEnvelopes = () => {
     let div = document.createElement('div')
     let tip = document.createElement('div')
@@ -27,7 +24,6 @@
 
     return div
   }
-
   const qrcodeImg = (imgContent, imgAlt, dark, light) => {
     let qrcodeOption = {
       errorCorrectionLevel: 'H',
@@ -53,5 +49,26 @@
     return img
   }
 
-  bModal('支付宝双12无门槛消费红包开启', redEnvelopes, createSmallCenterText('长按二维码可以保存成图片，可以反复使用。', 'danger'), '', true)
+  let currentYear = dayjs().year() + '-'
+  let nextYear = dayjs().year() + 1 + '-'
+  let active = false
+
+  let dateBetween = {
+    x01: { start: '01-01', end: '01-01' },
+    m05: { start: '05-01', end: '05-03' },
+    m10: { start: '10-01', end: '10-07' },
+    m12: { start: '12-01', end: '12-12' },
+  }
+
+  for (let dKey in dateBetween) {
+    let start = currentYear + dateBetween[dKey]['start']
+    let end = currentYear + dateBetween[dKey]['end']
+
+    active = !dayjs().isBefore(start) && !dayjs().isAfter(end, 'date')
+
+    if (active) {
+      bModal('支付宝双12无门槛消费红包开启', redEnvelopes, createSmallCenterText('长按二维码可以保存成图片，可以反复使用。', 'danger'), '', true)
+      return
+    }
+  }
 })()
