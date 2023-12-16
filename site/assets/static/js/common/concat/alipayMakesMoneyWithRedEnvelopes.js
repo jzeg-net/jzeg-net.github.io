@@ -67,7 +67,7 @@
     active = !dayjs().isBefore(start) && !dayjs().isAfter(end, 'date')
 
     if (active) {
-      bModal('支付宝双12无门槛消费红包开启', redEnvelopes, createSmallCenterText('长按二维码可以保存成图片，可以反复使用。', 'danger'), '', true)
+      bModal('支付宝无门槛消费红包开启', redEnvelopes, createSmallCenterText('长按二维码可以保存成图片，可以反复使用。', 'danger'), '', true)
       return
     }
   }
