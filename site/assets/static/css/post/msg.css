@@ -4,9 +4,10 @@
   --bs-msg-border-color: var(--bs-border-color);
   --bs-msg-border: var(--bs-msg-border-width) var(--bs-msg-border-style) var(--bs-msg-border-color);
   --bs-msg-border-radius: var(--bs-border-radius);
-  --bs-msg-bg-color: var(--bs-heading-color);
-  --bs-msg-icon-bg-color: var(--bs-heading-color);
-  --bs-msg-text-color: var(--bs-body-color);
+  --bs-msg-icon-bg: var(--bs-heading-color);
+  --bs-msg-content-bg: var(--bs-heading-color);
+  --bs-msg-dismiss-bg: var(--bs-heading-color);
+  --bs-msg-color: var(--bs-body-color);
   --bs-msg-link-color: var(--bs-body-color);
   display: flex;
   flex-direction: row;
@@ -60,57 +61,73 @@
 
 .msg-container.msg-primary {
   --bs-msg-border-color: var(--bs-primary-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-primary-bg-subtle);
-  --bs-msg-text-color: var(--bs-primary-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-primary-bg-subtle);
+  --bs-msg-content-bg: var(--bs-primary-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-primary-bg-subtle);
+  --bs-msg-color: var(--bs-primary-text-emphasis);
   --bs-msg-link-color: var(--bs-primary-text-emphasis);
 }
 
 .msg-container.msg-secondary {
   --bs-msg-border-color: var(--bs-secondary-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-secondary-bg-subtle);
-  --bs-msg-text-color: var(--bs-secondary-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-secondary-bg-subtle);
+  --bs-msg-content-bg: var(--bs-secondary-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-secondary-bg-subtle);
+  --bs-msg-color: var(--bs-secondary-text-emphasis);
   --bs-msg-link-color: var(--bs-secondary-text-emphasis);
 }
 
 .msg-container.msg-success {
   --bs-msg-border-color: var(--bs-success-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-success-bg-subtle);
-  --bs-msg-text-color: var(--bs-success-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-success-bg-subtle);
+  --bs-msg-content-bg: var(--bs-success-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-success-bg-subtle);
+  --bs-msg-color: var(--bs-success-text-emphasis);
   --bs-msg-link-color: var(--bs-success-text-emphasis);
 }
 
 .msg-container.msg-danger {
   --bs-msg-border-color: var(--bs-danger-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-danger-bg-subtle);
-  --bs-msg-text-color: var(--bs-danger-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-danger-bg-subtle);
+  --bs-msg-content-bg: var(--bs-danger-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-danger-bg-subtle);
+  --bs-msg-color: var(--bs-danger-text-emphasis);
   --bs-msg-link-color: var(--bs-danger-text-emphasis);
 }
 
 .msg-container.msg-warning {
   --bs-msg-border-color: var(--bs-warning-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-warning-bg-subtle);
-  --bs-msg-text-color: var(--bs-warning-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-warning-bg-subtle);
+  --bs-msg-content-bg: var(--bs-warning-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-warning-bg-subtle);
+  --bs-msg-color: var(--bs-warning-text-emphasis);
   --bs-msg-link-color: var(--bs-warning-text-emphasis);
 }
 
 .msg-container.msg-info {
   --bs-msg-border-color: var(--bs-info-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-info-bg-subtle);
-  --bs-msg-text-color: var(--bs-info-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-info-bg-subtle);
+  --bs-msg-content-bg: var(--bs-info-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-info-bg-subtle);
+  --bs-msg-color: var(--bs-info-text-emphasis);
   --bs-msg-link-color: var(--bs-info-text-emphasis);
 }
 
 .msg-container.msg-light {
   --bs-msg-border-color: var(--bs-light-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-light-bg-subtle);
-  --bs-msg-text-color: var(--bs-light-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-light-bg-subtle);
+  --bs-msg-content-bg: var(--bs-light-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-light-bg-subtle);
+  --bs-msg-color: var(--bs-light-text-emphasis);
   --bs-msg-link-color: var(--bs-light-text-emphasis);
 }
 
 .msg-container.msg-dark {
   --bs-msg-border-color: var(--bs-dark-border-subtle);
-  --bs-msg-icon-bg-color: var(--bs-dark-bg-subtle);
-  --bs-msg-text-color: var(--bs-dark-text-emphasis);
+  --bs-msg-icon-bg: var(--bs-dark-bg-subtle);
+  --bs-msg-content-bg: var(--bs-dark-bg-subtle);
+  --bs-msg-dismiss-bg: var(--bs-dark-bg-subtle);
+  --bs-msg-color: var(--bs-dark-text-emphasis);
   --bs-msg-link-color: var(--bs-dark-text-emphasis);
 }
 
@@ -122,8 +139,8 @@
   border-inline-end: 0;
   border-start-start-radius: var(--bs-msg-border-radius);
   border-end-start-radius: var(--bs-msg-border-radius);
-  background-color: var(--bs-msg-icon-bg-color);
-  color: var(--bs-msg-text-color);
+  background-color: var(--bs-msg-icon-bg);
+  color: var(--bs-msg-color);
 }
 
 .msg-container > .msg-icon:not(:has(*)) {
@@ -134,15 +151,14 @@
 }
 
 .msg-container > .msg-content {
-  --bs-msg-content-bg-color: var(--bs-msg-bg-color);
   display: flex;
   align-items: center;
-  padding-block: 5px;
-  padding-inline: 15px;
+  padding-block: 0.5rem;
+  padding-inline: 0.25rem;
   border: var(--bs-msg-border);
   border-inline: 0;
-  background-color: var(--bs-msg-content-bg-color);
-  color: var(--bs-msg-text-color);
+  background-color: var(--bs-msg-content-bg);
+  color: var(--bs-msg-color);
 }
 
 .msg-container:not(:has(.msg-icon)) > .msg-content {
@@ -195,14 +211,15 @@
 }
 
 .msg-container > .msg-dismiss {
-  --bs-msg-dismiss-bg-color: var(--bs-msg-bg-color);
   display: flex;
-  align-items: center;
-  padding-inline: calc(0.25rem + 4px);
+  align-items: baseline;
+  padding-block-start: 0.75rem;
+  padding-inline-end: calc(0.25rem + 4px);
   border: var(--bs-msg-border);
   border-inline-start: 0;
   border-start-end-radius: var(--bs-msg-border-radius);
   border-end-end-radius: var(--bs-msg-border-radius);
-  background-color: var(--bs-msg-dismiss-bg-color);
-  color: var(--bs-msg-text-color);
+  background-color: var(--bs-msg-dismiss-bg);
+  color: var(--bs-msg-color);
 }
+
