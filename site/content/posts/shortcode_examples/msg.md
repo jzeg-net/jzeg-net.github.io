@@ -18,7 +18,6 @@ series: [ ]
 ---
 
 
-
 <style></style>
 
 <div class="vstack row-gap-4">
@@ -28,9 +27,23 @@ series: [ ]
         </span>
         <span class="msg-content">
             <span>顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
+            <button type="button" class="msg-dismiss-btn">
+                <svg class="bi" width="16" height="16"><title>关闭</title><use href="#bi-msg-dismiss-btn"></use></svg>
+            </button>
+        </span>
+    </div>
+    <div class="msg-container">
+        <span class="msg-icon">
+            <svg class="bi fs-4" role="img" aria-label="Info:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
+        </span>
+        <span class="msg-content">
+            <span>顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
         </span>
         <span class="msg-dismiss"><button type="button" class="btn-close"></button></span>
     </div>
+</div>
+<hr>
+<div class="vstack row-gap-4">
     <div class="msg-container">
         <span class="msg-content">
             <span>顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
@@ -88,11 +101,13 @@ series: [ ]
     </div>
 </div>
 
-<br><hr><br>
+<br>
+<hr><br>
 
 {{% msg %}}
 
-<br><hr><br>
+<br>
+<hr><br>
 
 
 <div class="d-flex flex-column row-gap-2 gallery">

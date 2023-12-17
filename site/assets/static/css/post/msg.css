@@ -4,6 +4,7 @@
   --bs-msg-border-color: var(--bs-border-color);
   --bs-msg-border: var(--bs-msg-border-width) var(--bs-msg-border-style) var(--bs-msg-border-color);
   --bs-msg-border-radius: var(--bs-border-radius);
+  --bs-msg-bg: var(--bs-body-bg);
   --bs-msg-icon-bg: var(--bs-heading-color);
   --bs-msg-content-bg: var(--bs-heading-color);
   --bs-msg-dismiss-bg: var(--bs-heading-color);
@@ -12,51 +13,53 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
+  border-radius: var(--bs-msg-border-radius);
+  background-color: var(--bs-msg-bg);
 }
 
 .msg-container ::selection {
-  --selection-bg-color: var(--bs-body-color);
-  --selection-color: var(--bs-body-bg);
+  --selection-bg-color: var(--bs-border-color);
+  --selection-color: rgba(var(--bs-body-color-rgb), .3);
 }
 
 .msg-container.msg-primary ::selection {
-  --selection-bg-color: var(--bs-primary-bg-subtle);
-  --selection-color: var(--bs-primary-border-subtle);
+  --selection-bg-color: var(--bs-primary-border-subtle);
+  --selection-color: var(--bs-primary-bg-subtle);
 }
 
 .msg-container.msg-secondary ::selection {
-  --selection-bg-color: var(--bs-secondary-bg-subtle);
-  --selection-color: var(--bs-secondary-border-subtle);
+  --selection-bg-color: var(--bs-secondary-border-subtle);
+  --selection-color: var(--bs-secondary-bg-subtle);
 }
 
 .msg-container.msg-success ::selection {
-  --selection-bg-color: var(--bs-success-bg-subtle);
-  --selection-color: var(--bs-success-border-subtle);
+  --selection-bg-color: var(--bs-success-border-subtle);
+  --selection-color: var(--bs-success-bg-subtle);
 }
 
 .msg-container.msg-danger ::selection {
-  --selection-bg-color: var(--bs-danger-bg-subtle);
-  --selection-color: var(--bs-danger-border-subtle);
+  --selection-bg-color: var(--bs-danger-border-subtle);
+  --selection-color: var(--bs-danger-bg-subtle);
 }
 
 .msg-container.msg-warning ::selection {
-  --selection-bg-color: var(--bs-warning-bg-subtle);
-  --selection-color: var(--bs-warning-border-subtle);
+  --selection-bg-color: var(--bs-warning-border-subtle);
+  --selection-color: var(--bs-warning-bg-subtle);
 }
 
 .msg-container.msg-info ::selection {
-  --selection-bg-color: var(--bs-info-bg-subtle);
-  --selection-color: var(--bs-info-border-subtle);
+  --selection-bg-color: var(--bs-info-border-subtle);
+  --selection-color: var(--bs-info-bg-subtle);
 }
 
 .msg-container.msg-light ::selection {
-  --selection-bg-color: var(--bs-light-bg-subtle);
-  --selection-color: var(--bs-light-border-subtle);
+  --selection-bg-color: var(--bs-light-border-subtle);
+  --selection-color: var(--bs-light-bg-subtle);
 }
 
 .msg-container.msg-dark ::selection {
-  --selection-bg-color: var(--bs-dark-bg-subtle);
-  --selection-color: var(--bs-dark-border-subtle);
+  --selection-bg-color: var(--bs-dark-border-subtle);
+  --selection-color: var(--bs-dark-bg-subtle);
 }
 
 .msg-container.msg-primary {
@@ -134,7 +137,8 @@
 .msg-container > .msg-icon {
   display: flex;
   align-items: center;
-  padding-inline: .5rem;
+  padding-block: .5rem;
+  padding-inline: .25rem;
   border: var(--bs-msg-border);
   border-inline-end: 0;
   border-start-start-radius: var(--bs-msg-border-radius);
@@ -152,7 +156,7 @@
 
 .msg-container > .msg-content {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding-block: 0.5rem;
   padding-inline: 0.25rem;
   border: var(--bs-msg-border);
@@ -212,8 +216,8 @@
 
 .msg-container > .msg-dismiss {
   display: flex;
-  align-items: baseline;
-  padding-block-start: 0.5rem;
+  align-items: start;
+  padding-block: 0.5rem;
   padding-inline-end: calc(0.25rem + 4px);
   border: var(--bs-msg-border);
   border-inline-start: 0;
@@ -223,3 +227,23 @@
   color: var(--bs-msg-color);
 }
 
+.msg-container > .msg-dismiss > .msg-dismiss-btn,
+.msg-container > .msg-content > .msg-dismiss-btn {
+  --bs-msg-dismiss-btn-bg: var(--bs-btn-bg);
+  --bs-msg-dismiss-btn-color: var(--bs-btn-close-color);
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: content-box;
+  border: 0;
+  background-color: var(--bs-msg-dismiss-btn-bg);
+  font-size: 1.2rem;
+  padding-inline-start: 0.25rem;
+  color: var(--bs-msg-dismiss-btn-color);
+  opacity: .65;
+  transition: opacity .1s ease;
+}
+
+.msg-container .msg-dismiss .msg-dismiss-btn:hover,
+.msg-container .msg-content .msg-dismiss-btn:hover {
+  opacity: 1;
+}
