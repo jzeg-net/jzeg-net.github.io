@@ -1,20 +1,30 @@
-<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" data-bs-font_size="switcher">
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="bi-dash-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+    </symbol>
+    <symbol id="bi-plus-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+    </symbol>
+</svg>
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="false" data-bs-display="static" data-bs-font_size="switcher">
     <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
     <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
 </button>
-<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="fontSizeSwitcher-text">
-    {{ range .Site.Menus.font_size }}
-    {{ $fs := printf "size-%s" .Params.size_value | safeHTML }}
-    <li>
-        <button class="dropdown-item d-flex align-items-center {{ $fs }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-font_size-value="{{ .Params.size_value }}">
-            <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
-            {{ if eq $.Site.Params.fontSize.default .Params.size_value }}
-            <span>{{ or (T "fontSize_base") | safeHTML }}</span>
-            {{ else }}
-            <span>{{ or (T .Identifier) .Name | safeHTML }}</span>
-            {{ end }}
-            <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
-        </button>
-    </li>
-    {{ end }}
-</ul>
+<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:20rem;">
+    <ul class="list-group list-group-flush" aria-labelledby="fontSizeSwitcher-text">
+        <li class="list-group-item list-group-item-action fontSizeSlider">
+            <div class="text-center mb-2">
+                <span>当前字体尺寸：</span><span class="currentFontSize"></span>
+            </div>
+            <div class="hstack justify-content-between">
+                <a class="fontSizeSliderController controllerDown link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
+                    <svg class="bi fs-4" width="16" height="16"><title>减少</title><use href="#bi-dash-lg"></use></svg>
+                </a>
+                <input type="range" class="form-range fontSizeRangeInput" min="0" max="14" step="1" style="width: 13rem" aria-label="滑动调节字体大小">
+                <a class="fontSizeSliderController controllerUp link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
+                    <svg class="bi fs-4" width="16" height="16"><title>增加</title><use href="#bi-plus-lg"></use></svg>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
