@@ -9,13 +9,13 @@
   let linkColorPickerInput = document.querySelectorAll('.linkColorPickerInput')
 
   const getRealColor = () => {
-    return window.getComputedStyle(body).getPropertyValue('--bs-link-color-rgb')
+    return window.getComputedStyle(body).getPropertyValue('--bs-link-color')
   }
 
   const getPreferredColorLink = () => getStoredColorLink() || getRealColor()
 
   const setColor = (color) => {
-    body.style.setProperty('--bs-link-color-rgb', color)
+    body.style.setProperty('--bs-link-color', color)
   }
 
   const showColorLink = () => {

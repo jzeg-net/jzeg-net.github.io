@@ -42,3 +42,11 @@ footer-gradient:before {
     display: block;
     height: .05rem;
 }
+
+a {
+  color: var(--bs-link-color, rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1))) !important;
+}
+
+a:hover {
+  color: var(--bs-link-hover-color) !important;
+}
