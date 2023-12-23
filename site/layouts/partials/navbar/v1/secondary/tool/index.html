@@ -12,7 +12,13 @@
 
 {{ if eq .Site.Params.fontSize.enable true }}
     <li class="nav-item col-6 col-lg-auto dropdown">
-        {{ partial "navbar/v1/secondary/tool/font_size" . }}
+        {{ partial "navbar/v1/secondary/tool/font" . }}
+    </li>
+{{ end }}
+
+{{ if eq .Site.Params.fontSize.enable true }}
+    <li class="nav-item col-6 col-lg-auto dropdown">
+        {{ partial "navbar/v1/secondary/tool/color" . }}
     </li>
 {{ end }}
 

@@ -10,7 +10,7 @@
     <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
     <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
 </button>
-<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:20rem;">
+<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:20rem;--bs-dropdown-padding-x:0;">
     <ul class="list-group list-group-flush" aria-labelledby="fontSizeSwitcher-text">
         <li class="list-group-item list-group-item-action fontSizeSlider">
             <div class="text-center mb-2">
@@ -20,7 +20,7 @@
                 <a class="fontSizeSliderController controllerDown link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
                     <svg class="bi fs-4" width="16" height="16"><title>减少</title><use href="#bi-dash-lg"></use></svg>
                 </a>
-                <input type="range" class="form-range fontSizeRangeInput" min="0" max="14" step="1" style="width: 13rem" aria-label="滑动调节字体大小">
+                <input type="range" class="form-range fontSizeRangeInput" min="0" max="14" step="1" style="width: 13rem" aria-label="滑动调节字体尺寸">
                 <a class="fontSizeSliderController controllerUp link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
                     <svg class="bi fs-4" width="16" height="16"><title>增加</title><use href="#bi-plus-lg"></use></svg>
                 </a>

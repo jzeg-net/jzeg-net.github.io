@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="bi-eyedropper" viewBox="0 0 16 16">
+        <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2z"/>
+    </symbol>
+</svg>
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "color_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-font_size="switcher">
+    <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "color_toggle" -}}</title><use href="#bi-eyedropper"></use></svg>
+    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "color" -}}</span>
+</button>
+<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:10rem;--bs-dropdown-padding-x:0;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-action">
+            <div class="hstack justify-content-between textColorPicker">
+                <label class="fontColorPickerLabel">{{- T "color_text" -}}</label>
+                <input type="color" class="form-control form-control-color fontColorPickerInput" title="{{- T "color_choose" -}}">
+            </div>
+            <div class="hstack justify-content-between linkColorPicker">
+                <label class="linkColorPickerLabel">{{- T "color_link" -}}</label>
+                <input type="color" class="form-control form-control-color linkColorPickerInput" title="{{- T "color_choose" -}}">
+            </div>
+        </li>
+    </ul>
+</div>
