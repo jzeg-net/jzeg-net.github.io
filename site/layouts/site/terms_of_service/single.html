@@ -5,7 +5,8 @@
             <i class="fa-fw fa fa-book-open"></i>
             {{ .Title }}
         </a>
-        <div>{{ .Lastmod }}</div>
+        <div><span>PublishDate</span>{{ .PublishDate }}</div>
+        <div><span>Lastmod</span>{{ .Lastmod }}</div>
     </div>
     {{- .Content }}
 </main>
