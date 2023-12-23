@@ -50,7 +50,7 @@
                         <div class="position-absolute bottom-100 end-0 collapse" id="collapse-font_size">
                             <li class="list-group-item list-group-item-action fontSizeSlider">
                                 <div class="text-center mb-2">
-                                    <span>当前字体尺寸：</span><span class="currentFontSize"></span>
+                                    <span class="text-secondary">当前字体尺寸：</span><span class="currentFontSize text-secondary"></span>
                                 </div>
                                 <div class="hstack justify-content-between">
                                     <a class="fontSizeSliderController controllerDown link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
@@ -60,6 +60,27 @@
                                     <a class="fontSizeSliderController controllerUp link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
                                         <svg class="bi fs-4" width="16" height="16"><title>增加</title><use href="#bi-plus-lg"></use></svg>
                                     </a>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                {{ end }}
+
+                {{ if eq .Site.Params.fontSize.enable true }}
+                    <div>
+                        <a href="#collapse-color" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "color_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
+                            <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{- T "color_toggle" -}}</title><use href="#bi-eyedropper"></use></svg>
+                            <span class="visually-hidden" id="fontSizeSwitcher-text">{{- T "color" -}}</span>
+                        </a>
+                        <div class="position-absolute bottom-100 end-0 collapse" id="collapse-color">
+                            <li class="list-group-item list-group-item-action text-secondary">
+                                <div class="hstack justify-content-between textColorPicker">
+                                    <label class="fontColorPickerLabel">{{- T "color_text" -}}</label>
+                                    <input type="color" class="form-control form-control-color textColorPickerInput" title="{{- T "color_choose" -}}">
+                                </div>
+                                <div class="hstack justify-content-between linkColorPicker">
+                                    <label class="linkColorPickerLabel">{{- T "color_link" -}}</label>
+                                    <input type="color" class="form-control form-control-color linkColorPickerInput" title="{{- T "color_choose" -}}">
                                 </div>
                             </li>
                         </div>
