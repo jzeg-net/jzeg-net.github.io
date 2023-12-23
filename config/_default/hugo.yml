@@ -539,13 +539,13 @@ FrontMatter:
     expiryDate:
         - expiryDate
     lastMod:
-        - :git
         - lastmod
+        - :git
         - date
         - publishDate
     publishDate:
-        - date
         - publishDate
+        - date
 
 markup:
     goldmark:

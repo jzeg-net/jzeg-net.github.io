@@ -5,8 +5,14 @@
             <i class="fa-fw fa fa-book-open"></i>
             {{ .Title }}
         </a>
-        <div><span>PublishDate</span>{{ .PublishDate }}</div>
-        <div><span>Lastmod</span>{{ .Lastmod }}</div>
+        <div class="hstack column-gap-2 justify-content-center">
+            <span>PublishDate</span>
+            <span>{{ .PublishDate }}</span>
+        </div>
+        <div class="hstack column-gap-2 justify-content-center">
+            <span>Lastmod</span>
+            <span>{{ .Lastmod }}</span>
+        </div>
     </div>
     {{- .Content }}
 </main>
