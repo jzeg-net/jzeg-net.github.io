@@ -1,1 +1,3 @@
-<a class="text-secondary-emphasis link-body-emphasis link-underline-opacity-0 link-underline-opacity-25-hover link-offset-3-hover" href="#" target="_blank" title="服务条款">服务条款</a>
+{{ with .GetPage "terms_of_service" }}
+<a class="text-secondary-emphasis link-body-emphasis link-underline-opacity-0 link-underline-opacity-25-hover link-offset-3-hover" href="{{ .RelPermalink -}}" target="_blank" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+{{ end }}

@@ -3,8 +3,9 @@
     <div class="mb-3 text-center">
         <a class="btn-link alert-link text-decoration-none" href="javascript:" target="_blank" rel="nofollow">
             <i class="fa-fw fa fa-book-open"></i>
-            隐私政策
+            {{ .Title }}
         </a>
+        <div>{{ .Lastmod }}</div>
     </div>
     {{- .Content }}
 </main>
