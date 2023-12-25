@@ -42,6 +42,7 @@ languages:
             Description: "Default Description"
             header_separator: " - "
 
+SectionPagesMenu: sectionMenus
 menu:
     main:
         -   identifier: menu_home
@@ -520,7 +521,7 @@ printUnusedTemplates: true
 enableInlineShortcodes: true
 #disableHugoGeneratorInject: true
 defaultContentLanguageInSubDir: true
-enableMissingTranslationPlaceholders: true
+enableMissingTranslationPlaceholders: false
 
 paginate: 2
 paginatepath: page
