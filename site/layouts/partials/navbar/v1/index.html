@@ -3,7 +3,11 @@
         {{ if .IsHome }}
         <div class="d-lg-none" style="width: 4.25rem;"></div>
         {{ end }}
+        {{ if .IsHome }}
         <a class="navbar-brand p-0 me-0 me-lg-2" href="/" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+        {{ else }}
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="{{ relLangURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+        {{ end }}
         <div class="d-flex">
         {{ if (eq .IsHome false) }}
         <div class="bd-search" id="docSearch"></div>
