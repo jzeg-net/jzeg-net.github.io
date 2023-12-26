@@ -1,0 +1,10 @@
+bgColor: '#ffffff'
+hint: photo
+quality: 75
+resampleFilter: box
+
+exif:
+    disableDate: false
+    disableLatLong: false
+    excludeFields: ""
+    includeFields: ""
