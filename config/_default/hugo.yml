@@ -512,11 +512,13 @@ buildFuture: true
 enableEmoji: true
 buildExpired: false
 enableGitInfo: true
+titleCaseStyle: none
 enableRobotsTXT: true
 printMemoryUsage: true
 printPathWarnings: true
 printI18nWarnings: true
 cleanDestinationDir: true
+pluralizeListTitles: false
 printUnusedTemplates: true
 enableInlineShortcodes: true
 #disableHugoGeneratorInject: true
