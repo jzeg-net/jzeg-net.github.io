@@ -106,7 +106,7 @@
         "timeago.js": "^4.0.2",
         "uppy": "^3.21.0",
         "vanilla-cookieconsent": "^3.0.0-rc.17",
-        "vditor": "^3.9.7",
+        "vditor": "^3.9.8",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.8.2",
         "wretch": "^2.7.1",
@@ -133,7 +133,7 @@
         "postcss": "^8.4.32",
         "postcss-cli": "^11.0.0",
         "sass": "^1.69.5",
-        "stylelint": "^16.0.2",
+        "stylelint": "^16.1.0",
         "svg-sprite": "^3.0.0-beta3",
         "terser": "^5.26.0"
     }
