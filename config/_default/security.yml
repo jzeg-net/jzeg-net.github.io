@@ -1,0 +1,5 @@
+enableInlineShortcodes: false
+funcs:
+    getenv: [ '^HUGO_', '^CI$' ]
+exec:
+    allow: [ '^npx$', '^babel$' ]

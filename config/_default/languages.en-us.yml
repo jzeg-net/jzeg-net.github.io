@@ -1,0 +1,13 @@
+# baseURL: ""
+languageName: "English"
+languageDirection: "ltr"
+languageCode: "en-US"
+timeZone: "America/New_York"
+title: "JieGe"
+weight: 6
+hasCJKLanguage: false
+params:
+    icon: us
+    Subtitle: "Subtitle"
+    Description: "Default Description"
+    header_separator: " - "

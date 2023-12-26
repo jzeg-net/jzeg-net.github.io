@@ -1,0 +1,14 @@
+date:
+    - date
+    - publishDate
+    - lastmod
+expiryDate:
+    - expiryDate
+lastMod:
+    - lastmod
+    - :git
+    - date
+    - publishDate
+publishDate:
+    - publishDate
+    - date

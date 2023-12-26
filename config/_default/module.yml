@@ -1,0 +1,33 @@
+hugoVersion:
+    extended: true
+    max: "0.121.1"
+    min: "0.121.1"
+mounts:
+    -   source: site/archetypes
+        target: archetypes
+
+    -   source: site/static
+        target: static/static
+        excludeFiles: "{CNAME}"
+    -   source: site/static/CNAME
+        target: static/CNAME
+    -   source: node_modules
+        target: static/static/vendor
+        includeFiles: "{bootstrap,bootstrap-icons,js-cookie,vanilla-cookieconsent,github-api,workbox-sw,wretch,localforage,dayjs,timeago.js,lozad,@docsearch,b-components-js,photoswipe,medium-zoom,qrcode,dragula,@uppy,uppy,disable-devtool,vditor,github-markdown-css,simple-datatables,@glidejs,xgplayer,danmu.js,lax.js,parallax-controller,clipboard,html2canvas,flag-icons,randomColor}/**"
+
+    -   source: site/content
+        target: content
+        lang: zh-cn
+    -   source: site/content
+        target: content
+        lang: en-us
+
+    -   source: site/assets
+        target: assets
+
+    -   source: site/data
+        target: data
+    -   source: site/i18n
+        target: i18n
+    -   source: site/layouts
+        target: layouts
