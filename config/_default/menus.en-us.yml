@@ -1,5 +1,5 @@
 main:
-    -   identifier: menu_home
+    -   name: "Home"
         pageRef: /
         weight: 1
         params:
@@ -8,7 +8,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_posts
+    -   name: "Posts"
         pageRef: /posts
         weight: 2
         params:
@@ -17,7 +17,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_gallery
+    -   name: "Gallery"
         pageRef: /gallery
         weight: 3
         params:
@@ -26,7 +26,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_video
+    -   name: "Video"
         pageRef: /video
         weight: 3
         params:
@@ -35,7 +35,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_more
+    -   name: "More"
         pageRef:
         weight: 7
         params:
@@ -44,7 +44,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_contact
+    -   name: "Contact"
         pageRef: /contact
         parent: menu_more
         weight: 1
@@ -54,7 +54,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_about
+    -   name: "About"
         pageRef: /about
         parent: menu_more
         weight: 2
@@ -64,7 +64,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_ad
+    -   name: "AD"
         pageRef: /ad
         parent: menu_more
         weight: 3
@@ -74,7 +74,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_chatgpt
+    -   name: "Chat GPT"
         pageRef: /chatgpt
         parent: menu_more
         weight: 4
@@ -84,7 +84,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_tools
+    -   name: "Toolbox"
         pageRef: /tools
         parent: menu_more
         weight: 5
@@ -94,7 +94,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_edit
+    -   name: "Edit"
         pageRef: /edit
         parent: menu_more
         weight: 8
@@ -104,7 +104,7 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_shop
+    -   name: "Shop"
         pageRef: /shop
         parent: menu_more
         weight: 7
@@ -115,7 +115,7 @@ main:
                 class:
                 size: [ width: 16, height: 16 ]
 demo:
-    -   identifier: menu_demo
+    -   name: "Demo"
         pageRef: /demo
         weight: 1
         params:
@@ -124,116 +124,116 @@ demo:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: demo_login
+    -   name: "LogIn"
         pageRef: /demo/login
         parent: menu_demo
         weight: 1
-    -   identifier: demo_signup
+    -   name: "SignUp"
         pageRef: /demo/signup
         parent: menu_demo
         weight: 2
-    -   identifier: demo_reset
+    -   name: "Reset"
         pageRef: /demo/reset
         parent: menu_demo
         weight: 3
-    -   identifier: demo_change
+    -   name: "Change"
         pageRef: /demo/change
         parent: menu_demo
         weight: 4
-    -   identifier: demo_find
+    -   name: "Find"
         pageRef: /demo/find
         parent: menu_demo
         weight: 5
-    -   identifier: demo_logout
+    -   name: "Quit"
         pageRef: /demo/logout
         parent: menu_demo
         weight: 6
-    -   identifier: demo_login_normal
+    -   name: "Normal LogIn"
         pageRef: /demo/login/normal
         parent: demo_login
         weight: 1
-    -   identifier: demo_login_email
+    -   name: "Email LogIn"
         pageRef: /demo/login/email
         parent: demo_login
         weight: 2
-    -   identifier: demo_login_sms
+    -   name: "SMS Login"
         pageRef: /demo/login/sms
         parent: demo_login
         weight: 3
-    -   identifier: demo_signup_normal
+    -   name: "Normal SignUp"
         pageRef: /demo/signup/normal
         parent: demo_signup
         weight: 1
-    -   identifier: demo_signup_email
+    -   name: "Email SignUp"
         pageRef: /demo/signup/email
         parent: demo_signup
         weight: 2
-    -   identifier: demo_signup_sms
+    -   name: "SMS SignUp"
         pageRef: /demo/signup/sms
         parent: demo_signup
         weight: 3
-    -   identifier: demo_reset_email
+    -   name: "Reset Via Email"
         pageRef: /demo/reset/email
         parent: demo_reset
         weight: 1
-    -   identifier: demo_reset_sms
+    -   name: "Reset Via SMS"
         pageRef: /demo/reset/sms
         parent: demo_reset
         weight: 2
-    -   identifier: demo_change_password
+    -   name: "Change Password"
         pageRef: /demo/change/password
         parent: demo_change
         weight: 1
-    -   identifier: demo_change_email
+    -   name: "Change Email"
         pageRef: /demo/change/email
         parent: demo_change
         weight: 2
-    -   identifier: demo_change_phone
+    -   name: "Change Phone Number"
         pageRef: /demo/change/phone
         parent: demo_change
         weight: 3
-    -   identifier: demo_find_email
+    -   name: "Find Via Email"
         pageRef: /demo/find/email
         parent: demo_find
         weight: 1
-    -   identifier: demo_find_sms
+    -   name: "Find Via SMS"
         pageRef: /demo/find/sms
         parent: demo_find
         weight: 2
-    -   identifier: demo_logout_normal
+    -   name: "Normal Exit"
         pageRef: /demo/logout/normal
         parent: demo_logout
         weight: 1
 knowledge_labor_union:
-    -   identifier: zhgh_page
+    -   name: "智慧"
         pageRef: /tools/zhgh
         weight: 1
-    -   identifier: zhgh_study
+    -   name: "学习"
         pageRef: /tools/zhgh/study
         parent: zhgh_page
         weight: 1
-    -   identifier: zhgh_passwork
+    -   name: "闯关"
         pageRef: /tools/zhgh/passwork
         parent: zhgh_page
         weight: 2
-    -   identifier: zhgh_member
+    -   name: "会员"
         pageRef: /tools/zhgh/member
         parent: zhgh_page
         weight: 3
-    -   identifier: zhgh_login
+    -   name: "登录"
         pageRef: /tools/zhgh/login
         parent: zhgh_page
         weight: 4
-    -   identifier: zhgh_data
+    -   name: "数据"
         pageRef: /tools/zhgh/data
         parent: zhgh_page
         weight: 9
-    -   identifier: zhgh_log
+    -   name: "日志"
         pageRef: /tools/zhgh/log
         parent: zhgh_page
         weight: 10
 donate:
-    -   identifier: donate_alipay
+    -   name: "Alipay"
         weight: 1
         params:
             donate_value: "alipay"
@@ -241,7 +241,7 @@ donate:
             svg:
                 useHref: "bi-alipay"
                 class: "text-primary"
-    -   identifier: donate_wechat
+    -   name: "WeChat"
         weight: 2
         params:
             donate_value: "wechat"
@@ -250,7 +250,7 @@ donate:
                 useHref: "bi-wechat"
                 class: "text-success"
 theme:
-    -   identifier: theme_dark
+    -   name: "Dark"
         weight: 1
         params:
             theme_value: "dark"
@@ -259,7 +259,7 @@ theme:
                 useHref: "bi-moon-stars"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: theme_light
+    -   name: "Light"
         weight: 2
         params:
             theme_value: "light"
@@ -268,7 +268,7 @@ theme:
                 useHref: "bi-sun"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: theme_auto
+    -   name: "Auto"
         weight: 3
         params:
             theme_value: "auto"
@@ -278,7 +278,7 @@ theme:
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
 palette:
-    -   identifier: palette_none
+    -   name: "Default"
         weight: 1
         params:
             palette_value: "none"
@@ -287,7 +287,7 @@ palette:
                 useHref: "bi-palette"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: palette_red
+    -   name: "Red"
         weight: 10
         params:
             palette_value: "red"
@@ -296,7 +296,7 @@ palette:
                 useHref: "bi-droplet-half"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: palette_green
+    -   name: "Green"
         weight: 20
         params:
             palette_value: "green"
@@ -305,7 +305,7 @@ palette:
                 useHref: "bi-droplet-half"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: palette_blue
+    -   name: "Blue"
         weight: 30
         params:
             palette_value: "blue"
@@ -315,7 +315,7 @@ palette:
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
 font_size:
-    -   identifier: fontSize_3xs
+    -   name: "3xs"
         weight: -4
         params:
             size_value: "3xs"
@@ -324,7 +324,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_2xs
+    -   name: "2xs"
         weight: -3
         params:
             size_value: "2xs"
@@ -333,7 +333,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_xs
+    -   name: "xs"
         weight: -2
         params:
             size_value: "xs"
@@ -342,7 +342,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_sm
+    -   name: "sm"
         weight: -1
         params:
             size_value: "sm"
@@ -351,7 +351,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_md
+    -   name: "md"
         weight: 1
         params:
             size_value: "md"
@@ -360,7 +360,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_lg
+    -   name: "lg"
         weight: 2
         params:
             size_value: "lg"
@@ -369,7 +369,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_xl
+    -   name: "xl"
         weight: 3
         params:
             size_value: "xl"
@@ -378,7 +378,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_2xl
+    -   name: "2xl"
         weight: 4
         params:
             size_value: "2xl"
@@ -387,7 +387,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_3xl
+    -   name: "3xl"
         weight: 5
         params:
             size_value: "3xl"
@@ -396,7 +396,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_4xl
+    -   name: "4xl"
         weight: 6
         params:
             size_value: "4xl"
@@ -405,7 +405,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_5xl
+    -   name: "5xl"
         weight: 7
         params:
             size_value: "5xl"
@@ -414,7 +414,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_6xl
+    -   name: "6xl"
         weight: 8
         params:
             size_value: "6xl"
@@ -423,7 +423,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_7xl
+    -   name: "7xl"
         weight: 9
         params:
             size_value: "7xl"
@@ -432,7 +432,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_8xl
+    -   name: "8xl"
         weight: 10
         params:
             size_value: "8xl"
@@ -441,7 +441,7 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   identifier: fontSize_9xl
+    -   name: "9xl"
         weight: 11
         params:
             size_value: "9xl"

@@ -1,4 +1,4 @@
-{{ range .Site.Menus.main }}
+{{ range .Site.Menus.main.Limit 6 }}
     {{ if .HasChildren }}
         <li class="nav-item col-6 col-lg-auto dropdown">
             <button type="button" class="btn btn-link nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
