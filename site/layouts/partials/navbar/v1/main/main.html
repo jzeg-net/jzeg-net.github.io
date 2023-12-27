@@ -2,7 +2,7 @@
     {{ if .HasChildren }}
         <li class="nav-item col-6 col-lg-auto dropdown">
             <button type="button" class="btn btn-link nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                {{ or (T .Identifier) .Name | safeHTML }}
+                {{- or (T .Identifier) .Name | safeHTML -}}
                 <span class="visually-hidden">{{ T "menu_btn_toggle" }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-lg-start">

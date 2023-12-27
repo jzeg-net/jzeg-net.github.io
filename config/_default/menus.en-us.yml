@@ -514,3 +514,247 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
+tools:
+    -   theme:
+            -   identifier: theme
+                name: Theme
+            -   identifier: theme_dark
+                name: "Dark"
+                parent: theme
+                weight: 1
+                params:
+                    theme_value: "dark"
+                    class:
+                    svg:
+                        useHref: "bi-moon-stars"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: theme_light
+                name: "Light"
+                parent: theme
+                weight: 2
+                params:
+                    theme_value: "light"
+                    class:
+                    svg:
+                        useHref: "bi-sun"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: theme_auto
+                name: "Auto"
+                parent: theme
+                weight: 3
+                params:
+                    theme_value: "auto"
+                    class:
+                    svg:
+                        useHref: "bi-circle-half"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+    -   palette:
+            -   identifier: palette
+                name: "Palette"
+            -   identifier: palette_none
+                name: "Default"
+                parent: palette
+                weight: 1
+                params:
+                    palette_value: "none"
+                    class: "text-secondary"
+                    svg:
+                        useHref: "bi-palette"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: palette_red
+                name: "Red"
+                parent: palette
+                weight: 10
+                params:
+                    palette_value: "red"
+                    class: "text-danger"
+                    svg:
+                        useHref: "bi-droplet-half"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: palette_green
+                name: "Green"
+                parent: palette
+                weight: 20
+                params:
+                    palette_value: "green"
+                    class: "text-success"
+                    svg:
+                        useHref: "bi-droplet-half"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: palette_blue
+                name: "Blue"
+                parent: palette
+                weight: 30
+                params:
+                    palette_value: "blue"
+                    class: "text-primary"
+                    svg:
+                        useHref: "bi-droplet-half"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+    -   font:
+            -   identifier: font
+                name: "Font"
+            -   identifier: fontSize_3xs
+                name: "3xs"
+                parent: font
+                weight: -4
+                params:
+                    size_value: "3xs"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_2xs
+                name: "2xs"
+                parent: font
+                weight: -3
+                params:
+                    size_value: "2xs"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_xs
+                name: "xs"
+                parent: font
+                weight: -2
+                params:
+                    size_value: "xs"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_sm
+                name: "sm"
+                parent: font
+                weight: -1
+                params:
+                    size_value: "sm"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_md
+                name: "md"
+                parent: font
+                weight: 1
+                params:
+                    size_value: "md"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_lg
+                name: "lg"
+                parent: font
+                weight: 2
+                params:
+                    size_value: "lg"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_xl
+                name: "xl"
+                parent: font
+                weight: 3
+                params:
+                    size_value: "xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_2xl
+                name: "2xl"
+                parent: font
+                weight: 4
+                params:
+                    size_value: "2xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_3xl
+                name: "3xl"
+                parent: font
+                weight: 5
+                params:
+                    size_value: "3xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_4xl
+                name: "4xl"
+                parent: font
+                weight: 6
+                params:
+                    size_value: "4xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_5xl
+                name: "5xl"
+                parent: font
+                weight: 7
+                params:
+                    size_value: "5xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_6xl
+                name: "6xl"
+                parent: font
+                weight: 8
+                params:
+                    size_value: "6xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_7xl
+                name: "7xl"
+                parent: font
+                weight: 9
+                params:
+                    size_value: "7xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+            -   identifier: fontSize_8xl
+                name: "8xl"
+                parent: font
+                weight: 10
+                params:
+                    size_value: "8xl"
+                    class:
+                    svg:
+                        useHref: "bi-fonts"
+                        class: "bi me-2"
+                        size: [ width: 16, height: 16 ]
+    -   color:
+            -   identifier: color
+                name: "颜色"
