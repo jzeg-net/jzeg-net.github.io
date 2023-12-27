@@ -42,4 +42,4 @@ printUnusedTemplates: true
 enableInlineShortcodes: true
 disableHugoGeneratorInject: false
 defaultContentLanguageInSubDir: true
-enableMissingTranslationPlaceholders: true
+enableMissingTranslationPlaceholders: false
