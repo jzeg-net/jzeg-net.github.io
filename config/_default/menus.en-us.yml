@@ -239,42 +239,42 @@ demo:
         weight: 1
 knowledge_labor_union:
     -   identifier: zhgh_page
-        name: "智慧"
+        name: "Wisdom"
         pageRef: /tools/zhgh
         weight: 1
     -   identifier: zhgh_study
-        name: "学习"
+        name: "Study"
         pageRef: /tools/zhgh/study
         parent: zhgh_page
         weight: 1
     -   identifier: zhgh_passwork
-        name: "闯关"
+        name: "Passwork"
         pageRef: /tools/zhgh/passwork
         parent: zhgh_page
         weight: 2
     -   identifier: zhgh_member
-        name: "会员"
+        name: "Member"
         pageRef: /tools/zhgh/member
         parent: zhgh_page
         weight: 3
     -   identifier: zhgh_login
-        name: "登录"
+        name: "Login"
         pageRef: /tools/zhgh/login
         parent: zhgh_page
         weight: 4
     -   identifier: zhgh_data
-        name: "数据"
+        name: "Data"
         pageRef: /tools/zhgh/data
         parent: zhgh_page
         weight: 9
     -   identifier: zhgh_log
-        name: "日志"
+        name: "Log"
         pageRef: /tools/zhgh/log
         parent: zhgh_page
         weight: 10
 donate:
     -   identifier: donate_alipay
-        name: "支付宝"
+        name: "Alipay"
         weight: 1
         params:
             donate_value: "alipay"
@@ -283,7 +283,7 @@ donate:
                 useHref: "bi-alipay"
                 class: "text-primary"
     -   identifier: donate_wechat
-        name: "微信"
+        name: "WeChat"
         weight: 2
         params:
             donate_value: "wechat"
