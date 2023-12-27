@@ -1,5 +1,6 @@
 main:
-    -   name: "首页"
+    -   identifier: menu_home
+        name: "首页"
         pageRef: /
         weight: 1
         params:
@@ -8,7 +9,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "文章"
+    -   identifier: menu_posts
+        name: "文章"
         pageRef: /posts
         weight: 2
         params:
@@ -17,7 +19,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "画廊"
+    -   identifier: menu_gallery
+        name: "画廊"
         pageRef: /gallery
         weight: 3
         params:
@@ -26,7 +29,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "视频"
+    -   identifier: menu_video
+        name: "视频"
         pageRef: /video
         weight: 3
         params:
@@ -35,7 +39,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "更多"
+    -   identifier: menu_more
+        name: "更多"
         pageRef:
         weight: 7
         params:
@@ -44,7 +49,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "联系"
+    -   identifier: menu_contact
+        name: "联系"
         pageRef: /contact
         parent: menu_more
         weight: 1
@@ -54,7 +60,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "关于"
+    -   identifier: menu_about
+        name: "关于"
         pageRef: /about
         parent: menu_more
         weight: 2
@@ -64,7 +71,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "广告"
+    -   identifier: menu_ad
+        name: "广告"
         pageRef: /ad
         parent: menu_more
         weight: 3
@@ -74,7 +82,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "Chat GPT"
+    -   identifier: menu_chatgpt
+        name: "Chat GPT"
         pageRef: /chatgpt
         parent: menu_more
         weight: 4
@@ -84,7 +93,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "工具箱"
+    -   identifier: menu_tools
+        name: "工具箱"
         pageRef: /tools
         parent: menu_more
         weight: 5
@@ -94,7 +104,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "编辑"
+    -   identifier: menu_edit
+        name: "编辑"
         pageRef: /edit
         parent: menu_more
         weight: 8
@@ -104,7 +115,8 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "铺子"
+    -   identifier: menu_shop
+        name: "铺子"
         pageRef: /shop
         parent: menu_more
         weight: 7
@@ -115,7 +127,8 @@ main:
                 class:
                 size: [ width: 16, height: 16 ]
 demo:
-    -   name: "演示"
+    -   identifier: menu_demo
+        name: "演示"
         pageRef: /demo
         weight: 1
         params:
@@ -124,116 +137,144 @@ demo:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   name: "登录"
+    -   identifier: demo_login
+        name: "登录"
         pageRef: /demo/login
         parent: menu_demo
         weight: 1
-    -   name: "注册"
+    -   identifier: demo_signup
+        name: "注册"
         pageRef: /demo/signup
         parent: menu_demo
         weight: 2
-    -   name: "重置"
+    -   identifier: demo_reset
+        name: "重置"
         pageRef: /demo/reset
         parent: menu_demo
         weight: 3
-    -   name: "修改"
+    -   identifier: demo_change
+        name: "修改"
         pageRef: /demo/change
         parent: menu_demo
         weight: 4
-    -   name: "找回"
+    -   identifier: demo_find
+        name: "找回"
         pageRef: /demo/find
         parent: menu_demo
         weight: 5
-    -   name: "退出"
+    -   identifier: demo_logout
+        name: "退出"
         pageRef: /demo/logout
         parent: menu_demo
         weight: 6
-    -   name: "正常登录"
+    -   identifier: demo_login_normal
+        name: "正常登录"
         pageRef: /demo/login/normal
         parent: demo_login
         weight: 1
-    -   name: "邮箱登录"
+    -   identifier: demo_login_email
+        name: "邮箱登录"
         pageRef: /demo/login/email
         parent: demo_login
         weight: 2
-    -   name: "短信登录"
+    -   identifier: demo_login_sms
+        name: "短信登录"
         pageRef: /demo/login/sms
         parent: demo_login
         weight: 3
-    -   name: "正常注册"
+    -   identifier: demo_signup_normal
+        name: "正常注册"
         pageRef: /demo/signup/normal
         parent: demo_signup
         weight: 1
-    -   name: "邮箱注册"
+    -   identifier: demo_signup_email
+        name: "邮箱注册"
         pageRef: /demo/signup/email
         parent: demo_signup
         weight: 2
-    -   name: "短信注册"
+    -   identifier: demo_signup_sms
+        name: "短信注册"
         pageRef: /demo/signup/sms
         parent: demo_signup
         weight: 3
-    -   name: "通过邮箱重置"
+    -   identifier: demo_reset_email
+        name: "通过邮箱重置"
         pageRef: /demo/reset/email
         parent: demo_reset
         weight: 1
-    -   name: "通过短信重置"
+    -   identifier: demo_reset_sms
+        name: "通过短信重置"
         pageRef: /demo/reset/sms
         parent: demo_reset
         weight: 2
-    -   name: "修改密码"
+    -   identifier: demo_change_password
+        name: "修改密码"
         pageRef: /demo/change/password
         parent: demo_change
         weight: 1
-    -   name: "修改邮箱"
+    -   identifier: demo_change_email
+        name: "修改邮箱"
         pageRef: /demo/change/email
         parent: demo_change
         weight: 2
-    -   name: "修改手机号"
+    -   identifier: demo_change_phone
+        name: "修改手机号"
         pageRef: /demo/change/phone
         parent: demo_change
         weight: 3
-    -   name: "通过邮箱找回"
+    -   identifier: demo_find_email
+        name: "通过邮箱找回"
         pageRef: /demo/find/email
         parent: demo_find
         weight: 1
-    -   name: "通过短信找回"
+    -   identifier: demo_find_sms
+        name: "通过短信找回"
         pageRef: /demo/find/sms
         parent: demo_find
         weight: 2
-    -   name: "正常退出"
+    -   identifier: demo_logout_normal
+        name: "注册退出"
         pageRef: /demo/logout/normal
         parent: demo_logout
         weight: 1
 knowledge_labor_union:
-    -   name: "智慧"
+    -   identifier: zhgh_page
+        name: "智慧"
         pageRef: /tools/zhgh
         weight: 1
-    -   name: "学习"
+    -   identifier: zhgh_study
+        name: "学习"
         pageRef: /tools/zhgh/study
         parent: zhgh_page
         weight: 1
-    -   name: "闯关"
+    -   identifier: zhgh_passwork
+        name: "闯关"
         pageRef: /tools/zhgh/passwork
         parent: zhgh_page
         weight: 2
-    -   name: "会员"
+    -   identifier: zhgh_member
+        name: "会员"
         pageRef: /tools/zhgh/member
         parent: zhgh_page
         weight: 3
-    -   name: "登录"
+    -   identifier: zhgh_login
+        name: "登录"
         pageRef: /tools/zhgh/login
         parent: zhgh_page
         weight: 4
-    -   name: "数据"
+    -   identifier: zhgh_data
+        name: "数据"
         pageRef: /tools/zhgh/data
         parent: zhgh_page
         weight: 9
-    -   name: "日志"
+    -   identifier: zhgh_log
+        name: "日志"
         pageRef: /tools/zhgh/log
         parent: zhgh_page
         weight: 10
 donate:
-    -   name: "支付宝"
+    -   identifier: donate_alipay
+        name: "支付宝"
         weight: 1
         params:
             donate_value: "alipay"
@@ -241,7 +282,8 @@ donate:
             svg:
                 useHref: "bi-alipay"
                 class: "text-primary"
-    -   name: "微信"
+    -   identifier: donate_wechat
+        name: "微信"
         weight: 2
         params:
             donate_value: "wechat"
@@ -250,7 +292,8 @@ donate:
                 useHref: "bi-wechat"
                 class: "text-success"
 theme:
-    -   name: "黑暗"
+    -   identifier: theme_dark
+        name: "黑暗"
         weight: 1
         params:
             theme_value: "dark"
@@ -259,7 +302,8 @@ theme:
                 useHref: "bi-moon-stars"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "明亮"
+    -   identifier: theme_light
+        name: "明亮"
         weight: 2
         params:
             theme_value: "light"
@@ -268,7 +312,8 @@ theme:
                 useHref: "bi-sun"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "自动"
+    -   identifier: theme_auto
+        name: "自动"
         weight: 3
         params:
             theme_value: "auto"
@@ -278,7 +323,8 @@ theme:
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
 palette:
-    -   name: "默认"
+    -   identifier: palette_none
+        name: "默认"
         weight: 1
         params:
             palette_value: "none"
@@ -287,7 +333,8 @@ palette:
                 useHref: "bi-palette"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "红"
+    -   identifier: palette_red
+        name: "红"
         weight: 10
         params:
             palette_value: "red"
@@ -296,7 +343,8 @@ palette:
                 useHref: "bi-droplet-half"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "绿"
+    -   identifier: palette_green
+        name: "绿"
         weight: 20
         params:
             palette_value: "green"
@@ -305,7 +353,8 @@ palette:
                 useHref: "bi-droplet-half"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "蓝"
+    -   identifier: palette_blue
+        name: "蓝"
         weight: 30
         params:
             palette_value: "blue"
@@ -315,7 +364,8 @@ palette:
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
 font_size:
-    -   name: "3xs"
+    -   identifier: fontSize_3xs
+        name: "3xs"
         weight: -4
         params:
             size_value: "3xs"
@@ -324,7 +374,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "2xs"
+    -   identifier: fontSize_2xs
+        name: "2xs"
         weight: -3
         params:
             size_value: "2xs"
@@ -333,7 +384,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "xs"
+    -   identifier: fontSize_xs
+        name: "xs"
         weight: -2
         params:
             size_value: "xs"
@@ -342,7 +394,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "sm"
+    -   identifier: fontSize_sm
+        name: "sm"
         weight: -1
         params:
             size_value: "sm"
@@ -351,7 +404,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "md"
+    -   identifier: fontSize_md
+        name: "md"
         weight: 1
         params:
             size_value: "md"
@@ -360,7 +414,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "lg"
+    -   identifier: fontSize_lg
+        name: "lg"
         weight: 2
         params:
             size_value: "lg"
@@ -369,7 +424,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "xl"
+    -   identifier: fontSize_xl
+        name: "xl"
         weight: 3
         params:
             size_value: "xl"
@@ -378,7 +434,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "2xl"
+    -   identifier: fontSize_2xl
+        name: "2xl"
         weight: 4
         params:
             size_value: "2xl"
@@ -387,7 +444,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "3xl"
+    -   identifier: fontSize_3xl
+        name: "3xl"
         weight: 5
         params:
             size_value: "3xl"
@@ -396,7 +454,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "4xl"
+    -   identifier: fontSize_4xl
+        name: "4xl"
         weight: 6
         params:
             size_value: "4xl"
@@ -405,7 +464,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "5xl"
+    -   identifier: fontSize_5xl
+        name: "5xl"
         weight: 7
         params:
             size_value: "5xl"
@@ -414,7 +474,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "6xl"
+    -   identifier: fontSize_6xl
+        name: "6xl"
         weight: 8
         params:
             size_value: "6xl"
@@ -423,7 +484,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "7xl"
+    -   identifier: fontSize_7xl
+        name: "7xl"
         weight: 9
         params:
             size_value: "7xl"
@@ -432,7 +494,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "8xl"
+    -   identifier: fontSize_8xl
+        name: "8xl"
         weight: 10
         params:
             size_value: "8xl"
@@ -441,7 +504,8 @@ font_size:
                 useHref: "bi-fonts"
                 class: "bi me-2"
                 size: [ width: 16, height: 16 ]
-    -   name: "9xl"
+    -   identifier: fontSize_9xl
+        name: "9xl"
         weight: 11
         params:
             size_value: "9xl"
