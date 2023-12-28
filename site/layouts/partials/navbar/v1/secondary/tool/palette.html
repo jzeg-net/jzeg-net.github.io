@@ -1,9 +1,11 @@
+{{ range .Site.Menus.palette }}
+{{ if .HasChildren }}
 <button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "palette_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-palette="switcher">
     <svg class="bi my-1 palette-icon-active" width="16" height="16"><title>{{- T "palette_toggle" -}}</title><use href="#bi-palette"></use></svg>
-    <span class="d-lg-none ms-2" id="paletteSwitcher-text">{{- T "palette" -}}</span>
+    <span class="d-lg-none ms-2" id="paletteSwitcher-text">{{- or (T .Identifier) .Name | safeHTML -}}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="paletteSwitcher-text">
-    {{ range .Site.Menus.palette }}
+    {{ range .Children }}
     <li>
         <button class="dropdown-item d-flex align-items-center {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}">
             <svg class="bi me-2" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
@@ -13,3 +15,7 @@
     </li>
     {{ end }}
 </ul>
+{{ else }}
+<span>{{- or (T .Identifier) .Name | safeHTML -}}</span>
+{{ end }}
+{{ end }}
