@@ -58,7 +58,7 @@
 
     fontSizeSliderController.forEach((contrEL) => {
       contrEL.addEventListener('click', () => {
-        if (contrEL.tagName !== 'A') return
+        if (contrEL.tagName !== 'BUTTON') return
 
         let fontSizeIndex = fontSizeSliderValues.indexOf(getPreferredFontSize())
 
