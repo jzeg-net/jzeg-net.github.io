@@ -6,10 +6,14 @@
         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
     </symbol>
 </svg>
-<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "fontSize_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-font_size="switcher">
-    <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
-    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
+{{ range .Site.Menus.font_size }}
+{{ if .HasChildren }}
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{ .Params.toggle_text }}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-font_size="switcher">
+    <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-fonts"></use></svg>
+    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- or (T .Identifier) .Name | safeHTML -}}</span>
 </button>
+{{ end }}
+{{ end }}
 <div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:20rem;--bs-dropdown-padding-x:0;">
     <ul class="list-group list-group-flush" aria-labelledby="fontSizeSwitcher-text">
         <li class="list-group-item list-group-item-action fontSizeSlider">

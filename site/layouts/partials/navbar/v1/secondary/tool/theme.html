@@ -1,7 +1,7 @@
 {{ range .Site.Menus.theme }}
 {{ if .HasChildren }}
-<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{- T "theme_toggle" -}}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-theme="switcher">
-    <svg class="bi my-1 theme-icon-active" width="16" height="16"><title>{{- T "theme_toggle" -}}</title><use href="#bi-circle-half"></use></svg>
+<button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{ .Params.toggle_text }}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-theme="switcher">
+    <svg class="bi my-1 theme-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-circle-half"></use></svg>
     <span class="d-lg-none ms-2" id="themeSwitcher-text">{{- or (T .Identifier) .Name | safeHTML -}}</span>
 </button>
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeSwitcher-text">

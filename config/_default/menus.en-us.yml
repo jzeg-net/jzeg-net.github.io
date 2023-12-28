@@ -294,6 +294,8 @@ donate:
 theme:
     -   identifier: theme
         name: Theme
+        params:
+            toggle_text: "Theme Switch"
     -   identifier: theme_dark
         name: "Dark"
         parent: theme
@@ -330,6 +332,8 @@ theme:
 palette:
     -   identifier: palette
         name: "Palette"
+        params:
+            toggle_text: "Hue Switch"
     -   identifier: palette_none
         name: "Default"
         parent: palette
@@ -377,6 +381,8 @@ palette:
 font_size:
     -   identifier: font
         name: "Font"
+        params:
+            toggle_text: "Font Size Switch"
     -   identifier: fontSize_3xs
         name: "3xs"
         parent: font

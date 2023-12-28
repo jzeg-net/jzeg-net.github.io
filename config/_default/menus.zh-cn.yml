@@ -294,6 +294,8 @@ donate:
 theme:
     -   identifier: theme
         name: 主题
+        params:
+            toggle_text: "主题切换"
     -   identifier: theme_dark
         name: "黑暗"
         parent: theme
@@ -330,6 +332,8 @@ theme:
 palette:
     -   identifier: palette
         name: "调色板"
+        params:
+            toggle_text: "色调切换"
     -   identifier: palette_none
         name: "默认"
         parent: palette
@@ -377,6 +381,8 @@ palette:
 font_size:
     -   identifier: font
         name: "字体"
+        params:
+            toggle_text: "字体大小切换"
     -   identifier: fontSize_3xs
         name: "3xs"
         parent: font
