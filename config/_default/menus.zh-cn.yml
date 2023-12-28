@@ -291,6 +291,16 @@ donate:
             svg:
                 useHref: "bi-wechat"
                 class: "text-success"
+language:
+    -   identifier: language
+        name: 语言
+        params:
+            toggle_text: "语言切换"
+color:
+    -   identifier: color
+        name: 字符颜色
+        params:
+            toggle_text: "字符颜色切换"
 theme:
     -   identifier: theme
         name: 主题
