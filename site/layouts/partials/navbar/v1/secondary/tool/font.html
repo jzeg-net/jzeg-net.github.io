@@ -10,7 +10,7 @@
 {{ if .HasChildren }}
 <button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{ .Params.toggle_text }}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" data-bs-font_size="switcher">
     <svg class="bi my-1 fontSize-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-fonts"></use></svg>
-    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- or (T .Identifier) .Name | safeHTML -}}</span>
+    <span class="d-lg-none ms-2" id="fontSizeSwitcher-text">{{- .Name | safeHTML -}}</span>
 </button>
 {{ end }}
 {{ end }}

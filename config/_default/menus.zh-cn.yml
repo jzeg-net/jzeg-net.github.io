@@ -273,8 +273,13 @@ knowledge_labor_union:
         parent: zhgh_page
         weight: 10
 donate:
+    -   identifier: donate
+        name: "捐赠"
+        params:
+            toggle_text: "捐赠切换"
     -   identifier: donate_alipay
-        name: "支付宝"
+        name: "通过支付宝捐赠"
+        parent: donate
         weight: 1
         params:
             donate_value: "alipay"
@@ -283,7 +288,8 @@ donate:
                 useHref: "bi-alipay"
                 class: "text-primary"
     -   identifier: donate_wechat
-        name: "微信"
+        name: "通过微信捐赠"
+        parent: donate
         weight: 2
         params:
             donate_value: "wechat"
