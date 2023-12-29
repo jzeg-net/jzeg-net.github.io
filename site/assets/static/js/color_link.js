@@ -1,8 +1,10 @@
 (() => {
   'use strict'
 
-  const getStoredColorLink = () => localStorage.getItem('color_link')
-  const setStoredColorLink = color_link => localStorage.setItem('color_link', color_link)
+  const key = 'color_link'
+  const getStoredColorLink = () => localStorage.getItem(key)
+  const setStoredColorLink = color_text => localStorage.setItem(key, color_text)
+  const removeStoredColorLink = color_text => localStorage.removeItem(key)
   const body = document.body
   let linkColorPicker = document.querySelectorAll('.linkColorPicker')
 
