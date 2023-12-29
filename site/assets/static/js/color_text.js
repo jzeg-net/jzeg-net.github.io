@@ -4,7 +4,7 @@
   const key = 'color_text'
   const getStoredColorText = () => localStorage.getItem(key)
   const setStoredColorText = color_text => localStorage.setItem(key, color_text)
-  const removeStoredColorText = color_text => localStorage.removeItem(key)
+  const removeStored = () => localStorage.removeItem(key)
   const body = document.body
   let textColorPicker = document.querySelectorAll('.textColorPicker')
 
@@ -26,7 +26,14 @@
     })
   }
 
+  const removeColorStored = () => {
+    textColorPicker.forEach((pickerEL) => {
+      pickerEL.querySelector('.remove_color').addEventListener('click', removeStored)
+    })
+  }
+
   setColor(getPreferredColorText())
+  removeColorStored()
 
   textColorPickerInput.forEach((inputEL) => {
     inputEL.addEventListener('input', (e) => {

@@ -4,7 +4,7 @@
   const key = 'color_link'
   const getStoredColorLink = () => localStorage.getItem(key)
   const setStoredColorLink = color_text => localStorage.setItem(key, color_text)
-  const removeStoredColorLink = color_text => localStorage.removeItem(key)
+  const removeStored = () => localStorage.removeItem(key)
   const body = document.body
   let linkColorPicker = document.querySelectorAll('.linkColorPicker')
 
@@ -26,7 +26,14 @@
     })
   }
 
+  const removeColorStored = () => {
+    linkColorPicker.forEach((pickerEL) => {
+      pickerEL.querySelector('.remove_color').addEventListener('click', removeStored)
+    })
+  }
+
   setColor(getPreferredColorLink())
+  removeColorStored()
 
   linkColorPickerInput.forEach((inputEL) => {
     inputEL.addEventListener('input', (e) => {
