@@ -7,59 +7,71 @@
             <div class="list-group list-group-horizontal gap-2">
                 {{ if eq .Site.Params.theme.enable true }}
                 <div>
-                    <a href="#collapse-topic" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "theme_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-theme="switcher">
-                        <svg class="bi theme-icon-active" width="16" height="16"><title>{{- T "theme_toggle" -}}</title><use href="#bi-circle-half"></use></svg>
-                        <span class="visually-hidden" id="themeSwitcher-text">{{- T "theme_toggle" -}}</span>
+                    {{ range .Site.Menus.theme }}
+                    {{ if .HasChildren }}
+                    <a href="#collapse-topic" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-theme="switcher">
+                        <svg class="bi theme-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-circle-half"></use></svg>
+                        <span class="visually-hidden">{{- .Name | safeHTML -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-topic">
                         <div class="list-group">
-                            {{ range .Site.Menus.theme }}
-                            <button class="p-3 lh-1 list-group-item list-group-item-action" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
-                                <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+                            {{ range .Children }}
+                            <button class="p-3 lh-1 list-group-item list-group-item-action" type="button" title="{{ .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}" aria-pressed="false">
+                                <svg class="bi" width="16" height="16"><title>{{ .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                             </button>
                             {{ end }}
                         </div>
                     </div>
+                    {{ end }}
+                    {{ end }}
                 </div>
                 {{ end }}
 
                 {{ if eq .Site.Params.palette.enable true }}
                 <div>
-                    <a href="#collapse-palette" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "palette_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
-                        <svg class="bi palette-icon-active" width="16" height="16"><title>{{- T "palette_toggle" -}}</title><use href="#bi-palette"></use></svg>
-                        <span class="visually-hidden" id="paletteSwitcher-text">{{- T "palette_toggle" -}}</span>
+                    {{ range .Site.Menus.palette }}
+                    {{ if .HasChildren }}
+                    <a href="#collapse-palette" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-palette="switcher">
+                        <svg class="bi palette-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-palette"></use></svg>
+                        <span class="visually-hidden">{{- .Name | safeHTML -}}</span>
                     </a>
                     <div class="position-absolute bottom-100 collapse" id="collapse-palette">
                         <div class="list-group">
-                            {{ range .Site.Menus.palette }}
-                            <button class="p-3 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ or (T .Identifier) .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}" aria-pressed="false">
-                                <svg class="bi" width="16" height="16"><title>{{ or (T .Identifier) .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+                            {{ range .Children }}
+                            <button class="p-3 lh-1 list-group-item list-group-item-action {{ .Params.class }}" type="button" title="{{ .Name | safeHTML }}" data-bs-palette-value="{{ .Params.palette_value }}" aria-pressed="false">
+                                <svg class="bi" width="16" height="16"><title>{{ .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
                             </button>
                             {{ end }}
                         </div>
                     </div>
+                    {{ end }}
+                    {{ end }}
                 </div>
                 {{ end }}
 
                 {{ if eq .Site.Params.fontSize.enable true }}
                     <div>
-                        <a href="#collapse-font_size" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "fontSize_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
-                            <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{- T "fontSize_toggle" -}}</title><use href="#bi-fonts"></use></svg>
-                            <span class="visually-hidden" id="fontSizeSwitcher-text">{{- T "fontSize" -}}</span>
+                        {{ range .Site.Menus.font_size }}
+                        {{ if .HasChildren }}
+                        <a href="#collapse-font_size" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
+                            <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-fonts"></use></svg>
+                            <span class="visually-hidden">{{- .Name | safeHTML -}}</span>
                         </a>
+                        {{ end }}
+                        {{ end }}
                         <div class="position-absolute bottom-100 end-0 collapse" id="collapse-font_size">
                             <li class="list-group-item list-group-item-action fontSizeSlider">
                                 <div class="text-center mb-2">
                                     <span class="text-secondary">当前字体尺寸：</span><span class="currentFontSize text-secondary"></span>
                                 </div>
                                 <div class="hstack justify-content-between">
-                                    <a class="fontSizeSliderController controllerDown link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary fontSizeSliderController controllerDown">
                                         <svg class="bi fs-4" width="16" height="16"><title>减少</title><use href="#bi-dash-lg"></use></svg>
-                                    </a>
-                                    <input type="range" class="form-range fontSizeRangeInput" min="0" max="14" step="1" style="width: 13rem" aria-label="滑动调节字体大小">
-                                    <a class="fontSizeSliderController controllerUp link-success link-opacity-75 link-opacity-100-hover link-underline link-underline-opacity-0" href="javascript:">
+                                    </button>
+                                    <input type="range" class="form-range fontSizeRangeInput" min="0" max="14" step="1" style="width: 13rem" aria-label="滑动调节字体尺寸">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary fontSizeSliderController controllerUp">
                                         <svg class="bi fs-4" width="16" height="16"><title>增加</title><use href="#bi-plus-lg"></use></svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
                         </div>
@@ -68,19 +80,33 @@
 
                 {{ if eq .Site.Params.fontSize.enable true }}
                     <div>
-                        <a href="#collapse-color" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "color_toggle" }}" data-bs-toggle="collapse" aria-expanded="false" role="button" data-bs-font-size="switcher">
-                            <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{- T "color_toggle" -}}</title><use href="#bi-eyedropper"></use></svg>
-                            <span class="visually-hidden" id="fontSizeSwitcher-text">{{- T "color" -}}</span>
+                        {{ range .Site.Menus.color }}
+                        <a href="#collapse-color" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
+                            <svg class="bi fontSize-icon-active" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-eyedropper"></use></svg>
+                            <span class="visually-hidden">{{- .Name | safeHTML -}}</span>
                         </a>
+                        {{ end }}
                         <div class="position-absolute bottom-100 end-0 collapse" id="collapse-color">
-                            <li class="list-group-item list-group-item-action text-secondary">
+                            <li class="list-group-item list-group-item-action text-secondary" style="--bs-list-group-item-padding-x:.5rem;">
                                 <div class="hstack justify-content-between textColorPicker">
                                     <label class="fontColorPickerLabel">{{- T "color_text" -}}</label>
-                                    <input type="color" class="form-control form-control-color textColorPickerInput" title="{{- T "color_choose" -}}">
+                                    <div class="hstack">
+                                        <input type="color" class="form-control form-control-color textColorPickerInput" title="{{- T "color_choose" -}}">
+                                        <button type="button" class="btn btn-sm remove_color">
+                                            <svg class="bi" width="16" height="16"><title>{{- T "clear" -}}</title><use href="#bi-trash3-fill"></use></svg>
+                                        </button>
+                                    </div>
                                 </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action text-secondary" style="--bs-list-group-item-padding-x:.5rem;">
                                 <div class="hstack justify-content-between linkColorPicker">
                                     <label class="linkColorPickerLabel">{{- T "color_link" -}}</label>
-                                    <input type="color" class="form-control form-control-color linkColorPickerInput" title="{{- T "color_choose" -}}">
+                                    <div class="hstack">
+                                        <input type="color" class="form-control form-control-color linkColorPickerInput" title="{{- T "color_choose" -}}">
+                                        <button type="button" class="btn btn-sm remove_color">
+                                            <svg class="bi" width="16" height="16"><title>{{- T "clear" -}}</title><use href="#bi-trash3-fill"></use></svg>
+                                        </button>
+                                    </div>
                                 </div>
                             </li>
                         </div>
@@ -89,17 +115,19 @@
 
                 {{ if .Site.IsMultiLingual }}
                     <div>
-                        <a href="#collapse-translation" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ T "icon_text-translate" }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
-                            <svg class="bi" width="16" height="16"><title>{{- T "icon_text-translate" -}}</title><use href="#bi-translate"></use></svg>
+                        {{ range .Site.Menus.language }}
+                        <a href="#collapse-translation" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
+                            <svg class="bi" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-translate"></use></svg>
                         </a>
+                        {{ end }}
                         <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                             <ul class="list-group">
                                 <a class="p-3 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
-                                    <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
+                                    <i class="bi fi fi-{{ .Site.Params.LanguageIcon }}"></i>
                                 </a>
                                 {{- range .Translations -}}
                                     <a class="p-3 lh-1 list-group-item list-group-item-action" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
-                                        <i class="bi fi fi-{{ .Site.Params.icon }}"></i>
+                                        <i class="bi fi fi-{{ .Site.Params.LanguageIcon }}"></i>
                                     </a>
                                 {{- end -}}
                             </ul>

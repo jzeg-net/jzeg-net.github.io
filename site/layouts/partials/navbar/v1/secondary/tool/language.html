@@ -1,9 +1,9 @@
-{{ range .Site.Menus.language }}{{ if eq .HasChildren false }}
+{{ range .Site.Menus.language }}
 <button class="btn btn-link nav-link d-flex align-items-center" type="button" title="{{ .Params.toggle_text }}" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" id="languageSwitcher">
     <svg class="bi my-1" width="16" height="16"><title>{{ .Params.toggle_text }}</title><use href="#bi-translate"></use></svg>
     <span class="d-lg-none ms-2" id="languageSwitcher-text">{{- .Name | safeHTML -}}</span>
 </button>
-{{ end }}{{ end }}
+{{ end }}
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageSwitcher-text">
     <li>
         <a class="dropdown-item d-flex align-items-center" href="javascript:" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
