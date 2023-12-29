@@ -69,48 +69,14 @@
     "jump_hintInfo": "您刚刚点击的链接，是外部地址，即将离开本站，请注意保护您的账号和财产安全。",
     "jump_back": "返回上一页",
     "jump_open": "访问外部地址",
-    "demo": "演示",
-    "demo_all": "全部",
-    "demo_login": "登录",
-    "demo_login_normal": "普通登录",
-    "demo_login_email": "邮箱登录",
-    "demo_login_sms": "短信登录",
-    "demo_signup": "注册",
-    "demo_signup_normal": "普通注册",
-    "demo_signup_email": "邮箱注册",
-    "demo_signup_sms": "短信注册",
-    "demo_reset": "重置密码",
-    "demo_reset_email": "邮箱重置密码",
-    "demo_reset_sms": "短信重置密码",
-    "demo_change": "信息修改",
-    "demo_change_password": "密码修改",
-    "demo_change_email": "邮箱修改",
-    "demo_change_phone": "手机号修改",
-    "demo_find": "找回密码",
-    "demo_find_email": "邮箱找回密码",
-    "demo_find_sms": "短信找回密码",
-    "demo_logout": "退出",
-    "demo_logout_normal": "正常退出",
     "noScript_tip": "您当前的浏览器没有开启 JavaScript 功能",
     "noScript_work": "将会影响您正常访问本网站",
     "noScript_need": "正常访问本站，请开启 JavaScript 功能",
     "noScript_link": "",
-    "current_page": {
-        "other": "当前页"
-    },
-    "Sitemap": {
-        "other": "站点地图"
-    },
-    "current_version": {
-        "other": "当前版本："
-    },
-    "current": {
-        "other": "当前"
-    },
-    "version": {
-        "other": "版本："
-    },
-    "not_set": {
-        "other": "未设置"
-    }
+    "current_page": "当前页",
+    "Sitemap": "站点地图",
+    "current_version": "当前版本：",
+    "current": "当前",
+    "version": "版本：",
+    "not_set": "未设置"
 }

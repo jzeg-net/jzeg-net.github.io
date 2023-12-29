@@ -69,48 +69,14 @@
     "jump_hintInfo": "The link you just clicked is an external address and is about to leave this site. Please pay attention to protecting your account and property safety.",
     "jump_back": "GO BACK",
     "jump_open": "Visit The External Page",
-    "demo": "Demo",
-    "demo_all": "All",
-    "demo_login": "LogIn",
-    "demo_login_normal": "Normal Login",
-    "demo_login_email": "E-mail Login",
-    "demo_login_sms": "SMS LOGIN",
-    "demo_signup": "SignUp",
-    "demo_signup_normal": "Normal SignUp",
-    "demo_signup_email": "E-mail SignUp",
-    "demo_signup_sms": "SMS SignUp",
-    "demo_reset": "Reset Password",
-    "demo_reset_email": "E-mail Reset Password",
-    "demo_reset_sms": "SMS Reset Password",
-    "demo_change": "Info Change",
-    "demo_change_password": "Change Password",
-    "demo_change_email": "Change E-mail",
-    "demo_change_phone": "Change Phone Number",
-    "demo_find": "Find Password",
-    "demo_find_email": "E-mail To Find Password",
-    "demo_find_sms": "Find Password By SMS",
-    "demo_logout": "Logout",
-    "demo_logout_normal": "Normal Logout",
     "noScript_tip": "Your current browser does not have JavaScript Enabled",
     "noScript_work": "Will Affect Your Normal Access To This Website",
     "noScript_need": "To Access This Site Normally, Please Enable The Javascript Function",
     "noScript_link": "",
-    "current_page": {
-        "other": "Current Page"
-    },
-    "Sitemap": {
-        "other": "Sitemap"
-    },
-    "current_version": {
-        "other": "Current Version: "
-    },
-    "current": {
-        "other": "Current"
-    },
-    "version": {
-        "other": "Version: "
-    },
-    "not_set": {
-        "other": "NOT SET"
-    }
+    "current_page": "Current Page",
+    "Sitemap": "Sitemap",
+    "current_version": "Current Version: ",
+    "current": "Current",
+    "version": "Version: ",
+    "not_set": "NOT SET"
 }
