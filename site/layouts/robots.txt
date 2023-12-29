@@ -2,6 +2,6 @@
 
 # Allow crawling of all content
 User-agent: *
-Allow: /
+Disallow:
 
 Sitemap: {{ "/sitemap.xml" | absURL }}
