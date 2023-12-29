@@ -7,7 +7,7 @@ title: "杰格网"
 weight: 1
 hasCJKLanguage: true
 params:
-    icon: cn
+    LanguageIcon: cn
     Subtitle: "子标题"
     Description: "默认描述"
     header_separator: " - "
