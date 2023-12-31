@@ -2,6 +2,7 @@
     "menu": "Menu",
     "menu_btn_toggle": "Toggle Dropdown",
     "toggle_navigation": "Toggle Navigation",
+    "currentDateTime": "Current Date Time",
     "pagination_first": "First Page",
     "pagination_last": "Last Page",
     "pagination_prev": "Prev Page",

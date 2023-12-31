@@ -42,3 +42,16 @@ footer-gradient:before {
     display: block;
     height: .05rem;
 }
+
+footer .currentDateTime {
+  --bs-gradient--color-1: var(--bs-indigo);
+  --bs-gradient--color-2: var(--bs-pink);
+  --bs-gradient--color-3: var(--bs-yellow);
+  --bs-gradient--color-4: var(--bs-green);
+  --bs-gradient--color-5: var(--bs-blue);
+  --bs-gradient--color-6: var(--bs-cyan);
+  background: linear-gradient(to right, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
+  width: max-content;
+  background-clip: text;
+  color: transparent;
+}
