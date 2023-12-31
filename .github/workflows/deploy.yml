@@ -13,6 +13,7 @@ env:
     FORCE_COLOR: 2
     NODE: 18
     HUGO_BIN_DOWNLOAD_REPO: https://github.com/
+    TZ: Asia/Shanghai
 
 permissions:
     contents: read
