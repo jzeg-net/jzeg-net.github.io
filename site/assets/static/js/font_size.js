@@ -90,8 +90,7 @@
     showCurrentValue()
   })
 
-  window.addEventListener('storage', (e) => {
-    console.log(e)
+  window.addEventListener('storage', () => {
     let fontSize = getPreferredFontSize()
     setFontSize(fontSize)
     setFontSizeInputValue(fontSize)

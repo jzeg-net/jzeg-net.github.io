@@ -15,7 +15,7 @@
     })
   })
 
-  window.addEventListener('beforeunload', function (event) {
+  window.addEventListener('beforeunload', function () {
     localStorage.setItem('last_visited', dayjs(now).unix())
   })
 
