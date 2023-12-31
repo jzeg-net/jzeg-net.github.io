@@ -12,8 +12,8 @@
         {{ if (eq .IsHome false) }}
         <div class="bd-search" id="docSearch"></div>
         {{ end }}
-        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
-            <svg class="bi" aria-hidden="true" width="16" height="16"><use href="#bi-three-dots"></use></svg>
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="{{ T "toggle_navigation" }}">
+            <svg class="bi" aria-hidden="true" width="16" height="16"><title>{{ T "toggle_navigation" }}</title><use href="#bi-list"></use></svg>
         </button>
         </div>
         <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="false">
