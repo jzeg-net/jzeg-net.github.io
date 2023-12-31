@@ -1,4 +1,12 @@
 :root {
+  --bs-gradient--color-1: var(--bs-indigo);
+  --bs-gradient--color-2: var(--bs-pink);
+  --bs-gradient--color-3: var(--bs-yellow);
+  --bs-gradient--color-4: var(--bs-green);
+  --bs-gradient--color-5: var(--bs-blue);
+  --bs-gradient--color-6: var(--bs-cyan);
+  --bs-linear-gradient-start: linear-gradient(to left, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
+  --bs-linear-gradient-end: linear-gradient(to right, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
     --scrollbar-width: 0;
     --scrollbar-height: 0px !important;
 }
@@ -36,21 +44,14 @@ body {
 }
 
 footer-gradient:before {
-    background: #b4e900;
-    background: linear-gradient(90deg, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.4));
-    content: "";
-    display: block;
-    height: .05rem;
+  background: var(--bs-linear-gradient-end);
+  content: "";
+  display: block;
+  height: .055rem;
 }
 
 footer .currentDateTime {
-  --bs-gradient--color-1: var(--bs-indigo);
-  --bs-gradient--color-2: var(--bs-pink);
-  --bs-gradient--color-3: var(--bs-yellow);
-  --bs-gradient--color-4: var(--bs-green);
-  --bs-gradient--color-5: var(--bs-blue);
-  --bs-gradient--color-6: var(--bs-cyan);
-  background: linear-gradient(to right, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
+  background: var(--bs-linear-gradient-start);
   width: max-content;
   background-clip: text;
   color: transparent;
