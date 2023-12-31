@@ -53,6 +53,7 @@ footer-gradient:before {
 footer .currentDateTime {
   background: var(--bs-linear-gradient-start);
   width: max-content;
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
