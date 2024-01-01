@@ -1,1 +1,5 @@
-<time datetime="{{ .Date.Format "2006-01-02T15:04:05+08:00" | safeHTML }}" id="date"></time>
+{{- $date := .Date -}}
+{{- $datetime := .Date.Format "2006-01-02T15:04:05+08:00" -}}
+{{- $weekday := .Date.Weekday.String -}}
+<time datetime="{{ $datetime | safeHTML }}" id="date">{{ $datetime }}</time>
+<weekday id="weekday">{{ $weekday }}</weekday>
