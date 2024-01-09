@@ -90,7 +90,7 @@
         "dayjs": "^1.11.10",
         "disable-devtool": "^0.3.7",
         "dragula": "^3.7.3",
-        "fabric": "^6.0.0-beta16",
+        "fabric": "^6.0.0-beta17",
         "flag-icons": "^7.1.0",
         "github-api": "^3.4.0",
         "github-markdown-css": "^5.5.0",
