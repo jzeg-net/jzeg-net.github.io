@@ -7,40 +7,41 @@
   --bs-gradient--color-6: var(--bs-cyan);
   --bs-linear-gradient-start: linear-gradient(to left, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
   --bs-linear-gradient-end: linear-gradient(to right, var(--bs-gradient--color-1), var(--bs-gradient--color-2), var(--bs-gradient--color-3), var(--bs-gradient--color-4), var(--bs-gradient--color-5), var(--bs-gradient--color-6));
-    --scrollbar-width: 0;
-    --scrollbar-height: 0px !important;
+  --scrollbar-width: 0;
+  --scrollbar-height: 0px !important;
+  --animation--hue: hue 3s linear infinite alternate;
 }
 
 :root, [data-bs-theme=light] {
-    --theme-color: #4c0bce;
-    --text-color: #000;
-    --link-color: #000;
-    --button-color: #000;
-    --button-border-color: #000;
-    --border-color: #000;
+  --theme-color: #4c0bce;
+  --text-color: #000;
+  --link-color: #000;
+  --button-color: #000;
+  --button-border-color: #000;
+  --border-color: #000;
 }
 
 [data-bs-theme=dark] {
-    --theme-color: #4c0bce;
-    --text-color: #fff;
-    --link-color: #fff;
-    --button-color: #fff;
-    --button-border-color: #fff;
-    --border-color: #fff;
+  --theme-color: #4c0bce;
+  --text-color: #fff;
+  --link-color: #fff;
+  --button-color: #fff;
+  --button-border-color: #fff;
+  --border-color: #fff;
 }
 
 html,
 body {
-    scroll-behavior: smooth;
-    overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 ::-webkit-scrollbar {
-    width: var(--scrollbar-width);
+  width: var(--scrollbar-width);
 }
 
 #mainNavbar {
-    transition: transform 150ms linear;
+  transition: transform 150ms linear;
 }
 
 footer-gradient:before {
@@ -48,6 +49,7 @@ footer-gradient:before {
   content: "";
   display: block;
   height: .055rem;
+  animation: var(--animation--hue);
 }
 
 footer .currentDateTime {
@@ -56,4 +58,17 @@ footer .currentDateTime {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+footer .currentDateTime:hover {
+  animation: var(--animation--hue);
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
