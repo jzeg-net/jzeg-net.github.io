@@ -25,11 +25,12 @@ color:
     code:
         enable: true
 
-post:
-    sidebar:
+# Sidebar Type [ collapse | offcanvas ]
+sidebar:
+    enable: true
+    post:
         enable: true
-        # Sidebar Type [ collapse | offcanvas ]
-        type: collapse
+        type: offcanvas
 
 float_tools:
     enable: true

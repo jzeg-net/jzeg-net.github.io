@@ -18,13 +18,13 @@
                     <svg class="bi" width="16" height="16"><title>{{ T "post_navbar-unfollow" }}</title><use href="#bi-pin"></use></svg>
                     <svg class="bi d-none" width="16" height="16"><title>{{ T "post_navbar-follow" }}</title><use href="#bi-pin-angle"></use></svg>
                 </button>
-                {{ if eq .Site.Params.post.sidebar.enable true }}
-                    {{ if eq .Site.Params.post.sidebar.type "collapse" }}
+                {{ if eq .Site.Params.sidebar.post.enable true }}
+                    {{ if eq .Site.Params.sidebar.post.type "collapse" }}
                         <button class="btn" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" id="sidebar-collapse" aria-expanded="true" aria-controls="sidebarCollapse">
                             <svg class="bi" width="16" height="16"><title>{{ T "post_sidebar-collapse" }}</title><use href="#bi-window"></use></svg>
                             <svg class="bi d-none" width="16" height="16"><title>{{ T "post_sidebar-expand" }}</title><use href="#bi-window-split"></use></svg>
                         </button>
-                    {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
+                    {{ else if eq .Site.Params.sidebar.post.type "offcanvas" }}
                         <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="{{- T "post_sidebar-toggle" -}}">
                             <svg class="bi" aria-hidden="true" width="16" height="16"><title>{{- T "post_sidebar-toggle" -}}</title><use href="#bi-three-dots"></use></svg>
                         </button>
@@ -98,12 +98,12 @@
         </div>
     </aside>
 </div>
-{{ if eq .Site.Params.post.sidebar.enable true }}
-    {{ if eq .Site.Params.post.sidebar.type "collapse" }}
+{{ if eq .Site.Params.sidebar.post.enable true }}
+    {{ if eq .Site.Params.sidebar.post.type "collapse" }}
         <div class="col-12 col-md-4 col-lg-3 collapse show collapse-horizontal flex-grow-1" tabindex="-1" id="sidebarCollapse">
             {{ partial "posts/sidebar/index" . }}
         </div>
-    {{ else if eq .Site.Params.post.sidebar.type "offcanvas" }}
+    {{ else if eq .Site.Params.sidebar.post.type "offcanvas" }}
         <div class="col-12 col-md-4 col-lg-3 offcanvas offcanvas-end flex-grow-1" tabindex="-1" id="sidebarOffcanvas" data-bs-scroll="false" aria-labelledby="sidebarOffcanvasLabel">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title text-body" id="sidebarOffcanvasLabel">{{- T "post_sidebar" -}}</h5>
