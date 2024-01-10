@@ -21,6 +21,7 @@
     "post_meta_tags": "TAGS",
     "post_meta_categories": "CATEGORIES",
     "post_meta_word_count": "Words",
+    "post_meta_reading_time": "Minute",
     "post_prev": "PREV",
     "post_next": "NEXT",
     "post_navbar-follow": "Follow",
@@ -80,5 +81,8 @@
     "current_version": "Current Version: ",
     "current": "Current",
     "version": "Version: ",
+    "translations": "This Article Is Available In Other Languages",
+    "no_translations": "This Article Is Not Available In Other Languages",
+    "need_translations": "need other language versions of this article",
     "not_set": "NOT SET"
 }

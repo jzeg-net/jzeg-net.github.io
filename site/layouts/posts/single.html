@@ -48,10 +48,29 @@
             </div>
             <div>作者信息</div>
             <div class="hstack column-gap-2">{{ partial "posts/meta/page_pv" }}</div>
+            {{ if .IsTranslated }}
+            {{ with .Translations }}
+            <details>
+                <summary>{{ T "translations" }}</summary>
+                <ul class="list-unstyled">
+                {{ range . }}
+                {{ $lang_name := .Language.LanguageName}}
+                {{ $lang_code := .Language.LanguageCode}}
+                    <li><a href="{{ .RelPermalink }}" target="_blank" lang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a></li>
+                {{ end }}
+                </ul>
+            </details>
+            {{ end }}
+            {{ else }}
+            <details>
+                <summary>{{ T "no_translations" }}</summary>
+                <p>{{ T "need_translations" }}</p>
+            </details>
+            {{ end }}
             <div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/topics" . }}</div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/tags" . }}</div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/categories" . }}</div>
+                <div>{{ partial "posts/meta/date" . }}</div>
+                <div>{{ partial "posts/meta/word_count" . }}</div>
+                <div>{{ partial "posts/meta/reading_time" . }}</div>
             </div>
             <article class="article_shrink" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-smooth-scroll="true" id="post-content">
                 {{ .Content }}
@@ -72,13 +91,9 @@
     </div>
     <aside id="meta">
         <div>
-            <div>{{ partial "posts/meta/date" . }}</div>
-            <div>{{ partial "posts/meta/word_count" . }}</div>
-            <div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/topics" . }}</div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/tags" . }}</div>
-                <div class="hstack column-gap-2">{{ partial "posts/meta/categories" . }}</div>
-            </div>
+            <div class="hstack column-gap-2">{{ partial "posts/meta/topics" . }}</div>
+            <div class="hstack column-gap-2">{{ partial "posts/meta/tags" . }}</div>
+            <div class="hstack column-gap-2">{{ partial "posts/meta/categories" . }}</div>
         </div>
         <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
             <div class="col-5 d-flex flex-column card card-body gap-1 gap-md-2 gap-lg-3 text-start prev">
