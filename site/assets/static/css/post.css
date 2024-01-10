@@ -69,14 +69,25 @@
   opacity: 1;
 }
 
+[lang=zh-CN] {
+  --content-end-text: "结 束";
+}
+
+[lang=en-US] {
+  --content-end-text: "THE END";
+}
+
+:root {
+  --content-end-space: "\00A0\00A0\00A0";
+  --content-end-hyphen: "——————";
+  --content-end-content: var(--content-end-hyphen) var(--content-end-space) var(--content-end-text) var(--content-end-space) var(--content-end-hyphen);
+}
+
 #post-content::after {
-  --content-text: "THE END";
-  --content-space: "\00A0\00A0\00A0";
-  --content-hyphen: "——————";
   padding: 4rem 0;
   margin: 1rem 0;
   width: 100%;
-  content: var(--content-hyphen) var(--content-space) var(--content-text) var(--content-space) var(--content-hyphen);
+  content: var(--content-end-content);
   color: var(--bs-secondary-bg);
   display: flex;
   justify-content: center;
