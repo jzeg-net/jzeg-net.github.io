@@ -56,7 +56,7 @@
                 {{ range . }}
                 {{ $lang_name := .Language.LanguageName}}
                 {{ $lang_code := .Language.LanguageCode}}
-                    <li><a href="{{ .RelPermalink }}" target="_blank" lang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a></li>
+                    <li><a href="{{ .RelPermalink }}" target="_blank" hreflang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a></li>
                 {{ end }}
                 </ul>
             </details>
