@@ -1,3 +1,4 @@
+{{ $currentPage := . }}
 {{ range .Site.Menus.knowledge_labor_union }}
     {{ if .HasChildren }}
         <li class="nav-item col-6 col-lg-auto dropdown">
@@ -13,12 +14,12 @@
                         </li>
                         <div class="d-flex flex-column flex-lg-row row-gap-lg-2">
                             {{ range .Children }}
-                                <li><a class="dropdown-item text-center text-lg-start" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a></li>
+                                <li><a class="dropdown-item text-center text-lg-start{{ if $currentPage.IsMenuCurrent .Menu . }} active{{ end }}" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a></li>
                             {{ end }}
                         </div>
                     {{ else }}
                         <li>
-                            <a class="dropdown-item" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
+                            <a class="dropdown-item{{ if $currentPage.IsMenuCurrent .Menu . }} active{{ end }}" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
                         </li>
                     {{ end }}
                     <li><hr class="dropdown-divider"></li>
@@ -27,7 +28,7 @@
         </li>
     {{ else }}
         <li class="nav-item col-6 col-lg-auto">
-            <a class="nav-link" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
+            <a class="nav-link{{ if $currentPage.IsMenuCurrent .Menu . }} active{{ end }}" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
         </li>
     {{ end }}
 {{ end }}

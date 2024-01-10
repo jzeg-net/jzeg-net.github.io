@@ -50,19 +50,19 @@
             <div class="hstack column-gap-2">{{ partial "posts/meta/page_pv" }}</div>
             {{ if .IsTranslated }}
             {{ with .Translations }}
-            <details>
+            <details style="width: max-content;">
                 <summary>{{ T "translations" }}</summary>
-                <ul class="list-unstyled">
+                <div class="list-group list-group-horizontal">
                 {{ range . }}
                 {{ $lang_name := .Language.LanguageName}}
                 {{ $lang_code := .Language.LanguageCode}}
-                    <li><a href="{{ .RelPermalink }}" target="_blank" hreflang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a></li>
+                    <a class="list-group-item list-group-item-action" href="{{ .RelPermalink }}" target="_blank" hreflang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a>
                 {{ end }}
-                </ul>
+                </div>
             </details>
             {{ end }}
             {{ else }}
-            <details>
+            <details style="width: max-content;">
                 <summary>{{ T "no_translations" }}</summary>
                 <p>{{ T "need_translations" }}</p>
             </details>
