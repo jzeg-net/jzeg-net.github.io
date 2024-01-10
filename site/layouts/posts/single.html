@@ -54,8 +54,8 @@
                 <summary>{{ T "translations" }}</summary>
                 <div class="list-group list-group-horizontal">
                 {{ range . }}
-                {{ $lang_name := .Language.LanguageName}}
-                {{ $lang_code := .Language.LanguageCode}}
+                {{ $lang_name := or .Language.LanguageName .Language.Lang }}
+                {{ $lang_code := or .Language.LanguageCode .Language.Lang }}
                     <a class="list-group-item list-group-item-action" href="{{ .RelPermalink }}" target="_blank" hreflang="{{ $lang_code }}" title="{{ .LinkTitle }} ({{ $lang_name }})">{{ .LinkTitle }} ({{ $lang_name }})</a>
                 {{ end }}
                 </div>
