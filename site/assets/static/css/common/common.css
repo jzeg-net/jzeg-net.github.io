@@ -48,7 +48,7 @@ footer-gradient:before {
   background: var(--bs-linear-gradient-end);
   content: "";
   display: block;
-  height: .055rem;
+  height: 1px;
   animation: var(--animation--hue);
 }
 
