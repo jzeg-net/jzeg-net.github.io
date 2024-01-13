@@ -48,6 +48,7 @@
         "hugo-config:mounts": "hugo config mounts",
         "hugo-version": "hugo version",
         "update-deps": "ncu -u -x \"qrcode chalk\" && npm install && echo \"Upgrade all, exclude some\"",
+        "install-ncu": "npm i -g npm-check-updates",
         "npm:list:-g--depth_0": "npm list -g --depth=0",
         "eslint:html": "npm-run-all --parallel --aggregate-output eslint:site:html",
         "eslint:site:html": "eslint site/layouts",

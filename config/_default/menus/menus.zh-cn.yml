@@ -1,0 +1,566 @@
+main:
+    -   identifier: menu_home
+        name: "首页"
+        pageRef: /
+        weight: 1
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_posts
+        name: "文章"
+        pageRef: /posts
+        weight: 2
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_gallery
+        name: "画廊"
+        pageRef: /gallery
+        weight: 3
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_video
+        name: "视频"
+        pageRef: /video
+        weight: 3
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_more
+        name: "更多"
+        pageRef:
+        weight: 7
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_contact
+        name: "联系"
+        pageRef: /contact
+        parent: menu_more
+        weight: 1
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_about
+        name: "关于"
+        pageRef: /about
+        parent: menu_more
+        weight: 2
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_ad
+        name: "广告"
+        pageRef: /ad
+        parent: menu_more
+        weight: 3
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_chatgpt
+        name: "Chat GPT"
+        pageRef: /chatgpt
+        parent: menu_more
+        weight: 4
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_tools
+        name: "工具箱"
+        pageRef: /tools
+        parent: menu_more
+        weight: 5
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_edit
+        name: "编辑"
+        pageRef: /edit
+        parent: menu_more
+        weight: 8
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_shop
+        name: "铺子"
+        pageRef: /shop
+        parent: menu_more
+        weight: 7
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+demo:
+    -   identifier: menu_demo
+        name: "演示"
+        pageRef: /demo
+        weight: 1
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: demo_login
+        name: "登录"
+        pageRef: /demo/login
+        parent: menu_demo
+        weight: 1
+    -   identifier: demo_signup
+        name: "注册"
+        pageRef: /demo/signup
+        parent: menu_demo
+        weight: 2
+    -   identifier: demo_reset
+        name: "重置"
+        pageRef: /demo/reset
+        parent: menu_demo
+        weight: 3
+    -   identifier: demo_change
+        name: "修改"
+        pageRef: /demo/change
+        parent: menu_demo
+        weight: 4
+    -   identifier: demo_find
+        name: "找回"
+        pageRef: /demo/find
+        parent: menu_demo
+        weight: 5
+    -   identifier: demo_logout
+        name: "退出"
+        pageRef: /demo/logout
+        parent: menu_demo
+        weight: 6
+    -   identifier: demo_login_normal
+        name: "正常登录"
+        pageRef: /demo/login/normal
+        parent: demo_login
+        weight: 1
+    -   identifier: demo_login_email
+        name: "邮箱登录"
+        pageRef: /demo/login/email
+        parent: demo_login
+        weight: 2
+    -   identifier: demo_login_sms
+        name: "短信登录"
+        pageRef: /demo/login/sms
+        parent: demo_login
+        weight: 3
+    -   identifier: demo_signup_normal
+        name: "正常注册"
+        pageRef: /demo/signup/normal
+        parent: demo_signup
+        weight: 1
+    -   identifier: demo_signup_email
+        name: "邮箱注册"
+        pageRef: /demo/signup/email
+        parent: demo_signup
+        weight: 2
+    -   identifier: demo_signup_sms
+        name: "短信注册"
+        pageRef: /demo/signup/sms
+        parent: demo_signup
+        weight: 3
+    -   identifier: demo_reset_email
+        name: "通过邮箱重置"
+        pageRef: /demo/reset/email
+        parent: demo_reset
+        weight: 1
+    -   identifier: demo_reset_sms
+        name: "通过短信重置"
+        pageRef: /demo/reset/sms
+        parent: demo_reset
+        weight: 2
+    -   identifier: demo_change_password
+        name: "修改密码"
+        pageRef: /demo/change/password
+        parent: demo_change
+        weight: 1
+    -   identifier: demo_change_email
+        name: "修改邮箱"
+        pageRef: /demo/change/email
+        parent: demo_change
+        weight: 2
+    -   identifier: demo_change_phone
+        name: "修改手机号"
+        pageRef: /demo/change/phone
+        parent: demo_change
+        weight: 3
+    -   identifier: demo_find_email
+        name: "通过邮箱找回"
+        pageRef: /demo/find/email
+        parent: demo_find
+        weight: 1
+    -   identifier: demo_find_sms
+        name: "通过短信找回"
+        pageRef: /demo/find/sms
+        parent: demo_find
+        weight: 2
+    -   identifier: demo_logout_normal
+        name: "注册退出"
+        pageRef: /demo/logout/normal
+        parent: demo_logout
+        weight: 1
+knowledge_labor_union:
+    -   identifier: zhgh_page
+        name: "智慧"
+        pageRef: /tools/zhgh
+        weight: 1
+    -   identifier: zhgh_study
+        name: "学习"
+        pageRef: /tools/zhgh/study
+        parent: zhgh_page
+        weight: 1
+    -   identifier: zhgh_passwork
+        name: "闯关"
+        pageRef: /tools/zhgh/passwork
+        parent: zhgh_page
+        weight: 2
+    -   identifier: zhgh_member
+        name: "会员"
+        pageRef: /tools/zhgh/member
+        parent: zhgh_page
+        weight: 3
+    -   identifier: zhgh_login
+        name: "登录"
+        pageRef: /tools/zhgh/login
+        parent: zhgh_page
+        weight: 4
+    -   identifier: zhgh_data
+        name: "数据"
+        pageRef: /tools/zhgh/data
+        parent: zhgh_page
+        weight: 9
+    -   identifier: zhgh_log
+        name: "日志"
+        pageRef: /tools/zhgh/log
+        parent: zhgh_page
+        weight: 10
+donate:
+    -   identifier: donate
+        name: "捐赠"
+        params:
+            toggle_text: "捐赠切换"
+    -   identifier: donate_alipay
+        name: "通过支付宝捐赠"
+        parent: donate
+        weight: 1
+        params:
+            donate_value: "alipay"
+            class:
+            svg:
+                useHref: "bi-alipay"
+                class: "text-primary"
+    -   identifier: donate_wechat
+        name: "通过微信捐赠"
+        parent: donate
+        weight: 2
+        params:
+            donate_value: "wechat"
+            class:
+            svg:
+                useHref: "bi-wechat"
+                class: "text-success"
+language:
+    -   identifier: language
+        name: 语言
+        params:
+            toggle_text: "语言切换"
+color:
+    -   identifier: color
+        name: 字符颜色
+        params:
+            toggle_text: "字符颜色切换"
+theme:
+    -   identifier: theme
+        name: 主题
+        params:
+            toggle_text: "主题切换"
+    -   identifier: theme_dark
+        name: "黑暗"
+        parent: theme
+        weight: 1
+        params:
+            theme_value: "dark"
+            class:
+            svg:
+                useHref: "bi-moon-stars"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: theme_light
+        name: "明亮"
+        parent: theme
+        weight: 2
+        params:
+            theme_value: "light"
+            class:
+            svg:
+                useHref: "bi-sun"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: theme_auto
+        name: "自动"
+        parent: theme
+        weight: 3
+        params:
+            theme_value: "auto"
+            class:
+            svg:
+                useHref: "bi-circle-half"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+palette:
+    -   identifier: palette
+        name: "调色板"
+        params:
+            toggle_text: "色调切换"
+    -   identifier: palette_none
+        name: "默认"
+        parent: palette
+        weight: 1
+        params:
+            palette_value: "none"
+            class: "text-secondary"
+            svg:
+                useHref: "bi-palette"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: palette_red
+        name: "红"
+        parent: palette
+        weight: 10
+        params:
+            palette_value: "red"
+            class: "text-danger"
+            svg:
+                useHref: "bi-droplet-half"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: palette_green
+        name: "绿"
+        parent: palette
+        weight: 20
+        params:
+            palette_value: "green"
+            class: "text-success"
+            svg:
+                useHref: "bi-droplet-half"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: palette_blue
+        name: "蓝"
+        parent: palette
+        weight: 30
+        params:
+            palette_value: "blue"
+            class: "text-primary"
+            svg:
+                useHref: "bi-droplet-half"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+font_size:
+    -   identifier: font
+        name: "字体"
+        params:
+            toggle_text: "字体大小切换"
+    -   identifier: fontSize_3xs
+        name: "3xs"
+        parent: font
+        weight: -4
+        params:
+            size_value: "3xs"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_2xs
+        name: "2xs"
+        parent: font
+        weight: -3
+        params:
+            size_value: "2xs"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_xs
+        name: "xs"
+        parent: font
+        weight: -2
+        params:
+            size_value: "xs"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_sm
+        name: "sm"
+        parent: font
+        weight: -1
+        params:
+            size_value: "sm"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_md
+        name: "md"
+        parent: font
+        weight: 1
+        params:
+            size_value: "md"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_lg
+        name: "lg"
+        parent: font
+        weight: 2
+        params:
+            size_value: "lg"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_xl
+        name: "xl"
+        parent: font
+        weight: 3
+        params:
+            size_value: "xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_2xl
+        name: "2xl"
+        parent: font
+        weight: 4
+        params:
+            size_value: "2xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_3xl
+        name: "3xl"
+        parent: font
+        weight: 5
+        params:
+            size_value: "3xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_4xl
+        name: "4xl"
+        parent: font
+        weight: 6
+        params:
+            size_value: "4xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_5xl
+        name: "5xl"
+        parent: font
+        weight: 7
+        params:
+            size_value: "5xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_6xl
+        name: "6xl"
+        parent: font
+        weight: 8
+        params:
+            size_value: "6xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_7xl
+        name: "7xl"
+        parent: font
+        weight: 9
+        params:
+            size_value: "7xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_8xl
+        name: "8xl"
+        parent: font
+        weight: 10
+        params:
+            size_value: "8xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
+    -   identifier: fontSize_9xl
+        name: "9xl"
+        parent: font
+        weight: 11
+        params:
+            size_value: "9xl"
+            class:
+            svg:
+                useHref: "bi-fonts"
+                class: "bi me-2"
+                size: [ width: 16, height: 16 ]
