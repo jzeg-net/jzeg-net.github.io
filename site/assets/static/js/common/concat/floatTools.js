@@ -6,6 +6,15 @@ if (floatTools) {
     floatTools.classList.add('hide')
     getToolsCollapse().classList.remove('show')
   })
+
+  floatTools.querySelector('div').childNodes.forEach(child => {
+    if (child.tagName === 'BUTTON' || child.tagName === 'A') {
+      new bootstrap.Tooltip(child, {
+        placement: 'left',
+        trigger: 'hover'
+      })
+    }
+  })
 }
 
 function getToolsCollapse (getEl = true) {
