@@ -10,7 +10,7 @@ disableKinds: []
 # log level (debug|info|warn|error)
 logLevel: "error"
 
-paginate: 2
+paginate: 3
 paginatepath: page
 
 # https://gohugo.io/getting-started/configuration/#configure-title-case
