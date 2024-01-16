@@ -8,9 +8,9 @@
         <span class="visually-hidden">{{- T "footer_icon_text-sitemap" -}}</span>
     </a>
     {{ with .OutputFormats.Get "rss" -}}
-        <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="{{ T "footer_icon_text-rss" }}">
-            <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-rss" }}</title><use href="#bi-rss"></use></svg>
-            <span class="visually-hidden">{{- T "footer_icon_text-rss" -}}</span>
-        </a>
+    <a class="text-body-secondary" href="{{ .Permalink }}" target="_blank" title="{{ T "footer_icon_text-rss" }}">
+        <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-rss" }}</title><use href="#bi-rss"></use></svg>
+        <span class="visually-hidden">{{- T "footer_icon_text-rss" -}}</span>
+    </a>
     {{ end }}
 </div>

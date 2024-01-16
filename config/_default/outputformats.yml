@@ -1,2 +1,74 @@
-RSS:
-    baseName: rss
+# https://gohugo.io/templates/output-formats/#configure-output-formats
+amp:
+    basename: index
+    ishtml: true
+    mediatype: text/html
+    name: amp
+    path: amp
+    permalinkable: true
+    rel: amphtml
+calendar:
+    basename: index
+    isplaintext: true
+    mediatype: text/calendar
+    name: calendar
+    protocol: webcal://
+    rel: alternate
+css:
+    basename: styles
+    isplaintext: true
+    mediatype: text/css
+    name: css
+    notalternative: true
+    rel: stylesheet
+csv:
+    basename: index
+    isplaintext: true
+    mediatype: text/csv
+    name: csv
+    rel: alternate
+html:
+    basename: index
+    ishtml: true
+    mediatype: text/html
+    name: html
+    permalinkable: true
+    rel: canonical
+    weight: 10
+json:
+    basename: index
+    isplaintext: true
+    mediatype: application/json
+    name: json
+    rel: alternate
+markdown:
+    basename: index
+    isplaintext: true
+    mediatype: text/markdown
+    name: markdown
+    rel: alternate
+robots:
+    basename: robots
+    isplaintext: true
+    mediatype: text/plain
+    name: robots
+    rel: alternate
+rss:
+    basename: rss
+    mediatype: application/rss+xml
+    name: rss
+    nougly: true
+    rel: alternate
+sitemap:
+    basename: sitemap
+    mediatype: application/xml
+    name: sitemap
+    nougly: true
+    rel: sitemap
+webappmanifest:
+    basename: manifest
+    isplaintext: true
+    mediatype: application/manifest+json
+    name: webappmanifest
+    notalternative: true
+    rel: manifest
