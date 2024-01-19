@@ -104,6 +104,17 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
+    -   identifier: menu_record
+        name: "DAILY CHECK IN"
+        pageRef: /sign_record
+        parent: menu_more
+        weight: 6
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
     -   identifier: menu_edit
         name: "Edit"
         pageRef: /edit
