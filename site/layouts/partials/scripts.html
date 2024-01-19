@@ -49,6 +49,15 @@
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "@fullcalendar" }}
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/index.global.min.js'></script>
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/locales-all.global.min.js'></script>
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/interaction/index.global.min.js'></script>
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/daygrid/index.global.min.js'></script>
+    {{- $fullcalendarJS := partial "functions/script/build" (dict "resourcesGet" "static/js/@fullcalendar.js" "targetPath" "static/js/@fullcalendar.js") }}
+    <script src="{{ $fullcalendarJS }}"></script>
+{{ end }}
+
 
 {{ if and (eq hugo.Environment "production") (.Site.Params.DisableDevtool.enable) }}
 <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
