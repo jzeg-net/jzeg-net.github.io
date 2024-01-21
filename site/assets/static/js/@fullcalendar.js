@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         y = bModal('', createSmallCenterText(sign_finish, 'success'), '', 'sm', true)
+        info.dayEl.style.backgroundColor = 'green'
       }, 3000)
 
       setTimeout(() => {
-        info.dayEl.style.backgroundColor = 'green'
         bootstrap.Modal.getInstance(document.querySelector('#' + y)).hide()
       }, 4500)
     }

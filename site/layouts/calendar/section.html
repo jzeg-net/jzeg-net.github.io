@@ -1,0 +1,20 @@
+{{ define "content" }}
+<main class="pb-5 container-xxl" id="content">
+    {{- .Content }}
+    <div class="vstack row-gap-3">
+        <div>阳历</div>
+        <div id="solarDate"></div>
+        <div id="holidaysList"></div>
+        <div id="solarFestivalsList"></div>
+        <div id="solarOtherFestivalsList"></div>
+        <div>农历</div>
+        <div id="lunarDate"></div>
+        <div id="lunarJieQi"></div>
+        <div id="lunarHou"></div>
+        <div id="lunarFu"></div>
+        <div id="lunarShuJiu"></div>
+        <div id="lunarFestivalsList"></div>
+        <div id="lunarOtherFestivalsList"></div>
+    </div>
+</main>
+{{ end }}

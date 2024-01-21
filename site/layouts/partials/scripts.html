@@ -49,6 +49,12 @@
     <script src="{{ $preUrl }}static/vendor/randomcolor/randomColor.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "lunar" }}
+    <script src="{{ $preUrl }}static/vendor/lunar-javascript/lunar.js"></script>
+    {{- $lunarJS := partial "functions/script/build" (dict "resourcesGet" "static/js/lunar.js" "targetPath" "static/js/lunar.js") }}
+    <script src="{{ $lunarJS }}"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "@fullcalendar" }}
     <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/index.global.min.js'></script>
     <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/locales-all.global.min.js'></script>
