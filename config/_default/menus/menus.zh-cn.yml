@@ -126,6 +126,28 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
+    -   identifier: menu_cookies
+        name: "Cookies 管理"
+        pageRef: /cookies
+        parent: menu_more
+        weight: 6
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: menu_links
+        name: "友情链接"
+        pageRef: /links
+        parent: menu_more
+        weight: 6
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
     -   identifier: menu_edit
         name: "编辑"
         pageRef: /edit

@@ -60,8 +60,19 @@
     <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/locales-all.global.min.js'></script>
     <script src='{{ $preUrl }}static/vendor/@fullcalendar/interaction/index.global.min.js'></script>
     <script src='{{ $preUrl }}static/vendor/@fullcalendar/daygrid/index.global.min.js'></script>
-    {{- $fullcalendarJS := partial "functions/script/build" (dict "resourcesGet" "static/js/@fullcalendar.js" "targetPath" "static/js/@fullcalendar.js") }}
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/timegrid/index.global.min.js'></script>
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/list/index.global.min.js'></script>
+    <script src='{{ $preUrl }}static/vendor/@fullcalendar/multimonth/index.global.min.js'></script>
+{{ end }}
+
+{{ if in .Page.Params.components "sign_record" }}
+    {{- $fullcalendarJS := partial "functions/script/build" (dict "resourcesGet" "static/js/sign_record.js" "targetPath" "static/js/sign_record.js") }}
     <script src="{{ $fullcalendarJS }}"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "calendar" }}
+    {{- $calendarJS := partial "functions/script/build" (dict "resourcesGet" "static/js/calendar.js" "targetPath" "static/js/calendar.js") }}
+    <script src="{{ $calendarJS }}"></script>
 {{ end }}
 
 

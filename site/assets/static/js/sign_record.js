@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   let localeLang = document.querySelector('html').lang.toLowerCase()
 
-  let sign_record = document.querySelector('#sign_record')
-  let calendar = new FullCalendar.Calendar(sign_record, {
+  let calendar = new FullCalendar.Calendar(document.querySelector('#sign_record'), {
     themeSystem: 'bootstrap5',
+    aspectRatio: 2,
     locale: localeLang,
     timeZone: 'local', // the default (unnecessary to specify)
     initialView: 'dayGridMonth',
     editable: true, // important for activating event interactions!
     selectable: true, // important for activating date selectability!
     headerToolbar: {
-      start: 'dayGridMonth dayGridDay',
+      start: '',
       center: 'title',
       end: 'today prev,next',
     },

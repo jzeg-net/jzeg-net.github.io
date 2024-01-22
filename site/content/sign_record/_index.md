@@ -10,4 +10,5 @@ rss_exclude: true
 
 components:
     - "@fullcalendar"
+    - "sign_record"
 ---
