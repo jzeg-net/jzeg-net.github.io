@@ -1,5 +1,4 @@
 let solarDate = document.querySelector('#solarDate')
-let holidaysList = document.querySelector('#holidaysList')
 let solarFestivalsList = document.querySelector('#solarFestivalsList')
 let solarOtherFestivalsList = document.querySelector('#solarOtherFestivalsList')
 let lunarDate = document.querySelector('#lunarDate')
@@ -40,7 +39,6 @@ if (lunarDate) {
   let lunarMonthDayInChinese = lunarMonthInChinese + '月' + lunarDayInChinese
 
   solarDate.textContent = solar + ' 星期' + lunarWeekInChinese + '（' + lunarMonthDayInChinese + '）'
-  holidaysList.textContent = holidays
   lunarDate.textContent = lunar
   solarFestivalsList.textContent = [...solarFestivals]
   solarOtherFestivalsList.textContent = [...solarOtherFestivals]

@@ -10,17 +10,40 @@ document.addEventListener('DOMContentLoaded', () => {
     editable: true, // important for activating event interactions!
     selectable: true, // important for activating date selectability!
     headerToolbar: {
-      start: 'multiMonthYear multiMonths multiMonth dayGridYear dayGridMonth dayGridWeek dayGridDay dayGrid listYear listMonth listWeek listDay list timeGridWeek timeGridDay timeGrid',
+      start: 'multiMonthYear,multiMonths,multiMonth dayGridYear,dayGridMonth,dayGridWeek,dayGridDay,dayGrid listYear,listMonth,listWeek,listDay,list timeGridWeek,timeGridDay,timeGrid',
       center: 'title',
-      end: 'today prev,next',
+      end: 'myToday myPrev,myNext',
     },
     customButtons: {
       multiMonths: {
         text: '多月',
-        click: () => {
-          prompt('xxx')
-        },
-      }
+        click: () => prompt('xxx'),
+      },
+      myToday: {
+        text: '今天',
+        icon: '',
+        click: () => todayCustomClick(),
+      },
+      myPrev: {
+        text: '上月',
+        icon: 'chevron-left',
+        click: () => prevMonthCustomClick(),
+      },
+      myNext: {
+        text: '下月',
+        icon: 'chevron-right',
+        click: () => nextMonthCustomClick(),
+      },
+      myPrevYear: {
+        text: '去年',
+        icon: 'chevrons-left',
+        click: () => prevYearCustomClick(),
+      },
+      myNextYear: {
+        text: '明年',
+        icon: 'chevrons-right',
+        click: () => nextYearCustomClick(),
+      },
     },
     buttonText: {
       listYear: '年日程',
@@ -78,5 +101,89 @@ document.addEventListener('DOMContentLoaded', () => {
   calendar.setOption('events', events)
 
   calendar.render()
+
+  let weekTableTbody = document.querySelector('#calendar table thead table thead')
+  let dateTableTbody = document.querySelector('#calendar table tbody table tbody')
+  if (dateTableTbody) {
+    let dateTableTrs = dateTableTbody.querySelectorAll('tr')
+    // console.log(dateTableTrs)
+    let dateTableTrTds
+
+    for (let i = 0; i < dateTableTrs.length; i++) {
+      dateTableTrTds = dateTableTrs[i].querySelectorAll('td')
+      for (let j = 0; j < dateTableTrTds.length; j++) {
+        let date = dateTableTrTds[j].dataset['date']
+        let dateArray = date.split('-')
+        let dateEL = dateTableTrTds[j].querySelector('.fc-daygrid-day-top')
+
+        let lunarSpan = document.createElement('span')
+        let lunarDayChinese = Solar.fromYmd(dateArray[0], dateArray[1], dateArray[2]).getLunar().getDayInChinese()
+        let lunarMonthChinese = Solar.fromYmd(dateArray[0], dateArray[1], dateArray[2]).getLunar().getMonthInChinese()
+        if (lunarDayChinese === '初一') {
+          lunarSpan.textContent = lunarMonthChinese + '月'
+          lunarSpan.style.color = 'GreenYellow'
+        } else {
+          lunarSpan.textContent = lunarDayChinese
+          lunarSpan.style.color = 'YellowGreen'
+        }
+
+        let holiday = HolidayUtil.getHoliday(date)
+        let holidaySpan = document.createElement('span')
+        let holidaySpan2 = document.createElement('span')
+        if (holiday) {
+          holidaySpan.textContent = holiday.isWork() ? '班' : '休'
+          holidaySpan2.textContent = holiday.isWork() ? '' : holiday.getName()
+          holidaySpan.style.color='Lime'
+          holidaySpan2.style.color='LimeGreen'
+        }
+
+        dateEL.append(lunarSpan, holidaySpan, holidaySpan2)
+
+      }
+    }
+
+    // 日期点击事件
+    function dateClick (info) {
+      console.log(info)
+    }
+
+    // 上一年点击
+    function prevYearCustomClick () {
+      calendar.prevYear()
+      renderCalendar()
+    }
+
+    // 上月点击
+    function prevMonthCustomClick () {
+      calendar.prev()
+      renderCalendar()
+    }
+
+    // 下月点击
+    function nextMonthCustomClick () {
+      calendar.next()
+      renderCalendar()
+    }
+
+    // 下一年点击
+    function nextYearCustomClick () {
+      calendar.nextYear()
+      renderCalendar()
+    }
+
+    // 今日点击
+    function todayCustomClick () {
+      calendar.today()
+      renderCalendar()
+    }
+
+    // 刷新Calendar的数据
+    function renderCalendar () {
+      // TODO：调用接口获取数据,这里定义为空数组
+      let events = []
+      calendar.setOption('events', events)
+    }
+
+  }
 
 })
