@@ -11,10 +11,14 @@ let lunarFestivalsList = document.querySelector('#lunarFestivalsList')
 let lunarOtherFestivalsList = document.querySelector('#lunarOtherFestivalsList')
 
 if (lunarDate) {
+  let fixHolidayNames = HolidayUtil.NAMES
+  fixHolidayNames[0] = '元旦'// 将元旦节改为元旦
+  HolidayUtil.fix(fixHolidayNames, null)
+
   let date = new Date()
   let solar = Solar.fromDate(date)
   let lunar = Lunar.fromDate(date)
-  let holidays = HolidayUtil.getHolidays(2024,2)
+  let holidays = HolidayUtil.getHolidays(2024)
   let solarFestivals = solar.getFestivals()
   let solarOtherFestivals = solar.getOtherFestivals()
   let lunarFestivals = lunar.getFestivals()
