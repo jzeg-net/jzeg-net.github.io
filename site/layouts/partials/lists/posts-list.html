@@ -14,10 +14,10 @@
                         <h3><a class="card-title link-secondary link-underline-opacity-0 link-underline-opacity-25-hover" href="{{ .Permalink }}" target="_blank" title="{{ .Title }}">{{ .Title }}</a></h3>
                         <p class="card-text small text-secondary-emphasis text-opacity-25 text-break text-opacity-25 overflow-hidden" style="max-height: 4rem;">
                             {{- .Summary -}}
-                            {{- if .Truncated -}}
-                                <a href="{{ .RelPermalink }}">{{ T "read_more" }}</a>
-                            {{- end -}}
                         </p>
+                        {{- if .Truncated -}}
+                            <a class="link-underline link-underline-opacity-0" href="{{ .RelPermalink }}">{{ T "read_more" }}</a>
+                        {{- end -}}
                         <hr class="text-opacity-25">
                         <div class="card-text d-flex flex-column-reverse flex-sm-row align-items-end small text-body-tertiary text-opacity-25">
                             <div class="d-flex w-100">
