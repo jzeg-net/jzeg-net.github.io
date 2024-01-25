@@ -121,20 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
         let lunarMonthChinese = Solar.fromYmd(dateArray[0], dateArray[1], dateArray[2]).getLunar().getMonthInChinese()
         if (lunarDayChinese === '初一') {
           lunarSpan.textContent = lunarMonthChinese + '月'
-          lunarSpan.style.color = 'GreenYellow'
+          lunarSpan.className = 'text-success-emphasis fw-bolder'
         } else {
           lunarSpan.textContent = lunarDayChinese
-          lunarSpan.style.color = 'YellowGreen'
+          lunarSpan.className = 'text-success fw-lighter'
         }
 
         let holiday = HolidayUtil.getHoliday(date)
         let holidaySpan = document.createElement('span')
         let holidaySpan2 = document.createElement('span')
         if (holiday) {
+          let holidaySpanBadge = holiday.isWork() ? 'text-bg-danger' : 'text-bg-success'
+          holidaySpan.className = 'position-absolute top-0 start-0 badge'
+          holidaySpan.classList.add(holidaySpanBadge)
           holidaySpan.textContent = holiday.isWork() ? '班' : '休'
+
           holidaySpan2.textContent = holiday.isWork() ? '' : holiday.getName()
-          holidaySpan.style.color='Lime'
-          holidaySpan2.style.color='LimeGreen'
+          holidaySpan2.style.color = 'LimeGreen'
         }
 
         dateEL.append(lunarSpan, holidaySpan, holidaySpan2)
