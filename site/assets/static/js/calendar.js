@@ -1,192 +1,252 @@
+__TRANSLATION_OPTIONS = {
+  "dayHeaderNames": [
+    "星期一",
+    "星期二",
+    "星期三",
+    "星期四",
+    "星期五",
+    "星期六",
+    "星期日"
+  ],
+  "dayNames": [
+    "周一",
+    "周二",
+    "周三",
+    "周四",
+    "周五",
+    "周六",
+    "周日"
+  ],
+  "dayNamesAbbreviated": [
+    "一",
+    "二",
+    "三",
+    "四",
+    "五",
+    "六",
+    "日"
+  ],
+  "monthNames": [
+    "一月",
+    "二月",
+    "三月",
+    "四月",
+    "五月",
+    "六月",
+    "七月",
+    "八月",
+    "九月",
+    "十月",
+    "十一月",
+    "十二月"
+  ],
+  "monthNamesAbbreviated": [
+    "一月",
+    "二月",
+    "三月",
+    "四月",
+    "五月",
+    "六月",
+    "七月",
+    "八月",
+    "九月",
+    "十月",
+    "十一月",
+    "十二月"
+  ],
+  "previousMonthTooltipText": "上个月",
+  "nextMonthTooltipText": "下个月",
+  "previousDayTooltipText": "前一天",
+  "nextDayTooltipText": "后一天",
+  "previousWeekTooltipText": "上个礼拜",
+  "nextWeekTooltipText": "下个礼拜",
+  "addEventTooltipText": "添加事件",
+  "closeTooltipText": "关闭",
+  "exportEventsTooltipText": "导出事件",
+  "todayTooltipText": "今天",
+  "refreshTooltipText": "刷新",
+  "searchTooltipText": "搜索",
+  "expandDayTooltipText": "展开日",
+  "viewAllEventsTooltipText": "查看所有活动",
+  "viewFullWeekTooltipText": "查看整周",
+  "fromText": "从：",
+  "toText": "到：",
+  "isAllDayText": "是否全天",
+  "titleText": "标题：",
+  "descriptionText": "描述：",
+  "locationText": "地点：",
+  "addText": "添加",
+  "updateText": "更新",
+  "cancelText": "取消",
+  "removeEventText": "消除",
+  "addEventTitle": "添加事件",
+  "editEventTitle": "编辑事件",
+  "exportStartFilename": "导出的事件_",
+  "fromTimeErrorMessage": "请选择有效的“开始”时间。",
+  "toTimeErrorMessage": "请选择有效的“结束”时间。",
+  "toSmallerThanFromErrorMessage": "请选择大于“开始”日期的“结束”日期。",
+  "titleErrorMessage": "请在“标题”字段中输入一个值（无空格）。",
+  "stText": "",
+  "ndText": "",
+  "rdText": "",
+  "thText": "",
+  "yesText": "是的",
+  "noText": "不",
+  "allDayText": "全天",
+  "allEventsText": "所有活动",
+  "toTimeText": "到",
+  "confirmEventRemoveTitle": "确认事件删除",
+  "confirmEventRemoveMessage": "删除此事件无法撤消。",
+  "okText": "好的",
+  "exportEventsTitle": "导出事件",
+  "selectColorsText": "选择颜色",
+  "backgroundColorText": "背景颜色：",
+  "textColorText": "文字颜色：",
+  "borderColorText": "边框颜色：",
+  "searchEventsTitle": "搜索活动",
+  "previousText": "以前",
+  "nextText": "以后",
+  "matchCaseText": "相符",
+  "repeatsText": "重复：",
+  "repeatDaysToExcludeText": "重复要排除的天数：",
+  "daysToExcludeText": "排除天数：",
+  "seriesIgnoreDatesText": "系列忽略日期：",
+  "repeatsNever": "绝不",
+  "repeatsEveryDayText": "每天",
+  "repeatsEveryWeekText": "每周",
+  "repeatsEvery2WeeksText": "每两周一次",
+  "repeatsEveryMonthText": "每个月",
+  "repeatsEveryYearText": "每年",
+  "repeatsCustomText": "自定：",
+  "repeatOptionsTitle": "重复选项",
+  "moreText": "更多",
+  "includeText": "包括：",
+  "minimizedTooltipText": "最小化",
+  "restoreTooltipText": "恢复",
+  "removeAllEventsInSeriesText": "删除系列中的所有事件",
+  "createdText": "创建：",
+  "organizerNameText": "组织者：",
+  "organizerEmailAddressText": "主办单位邮箱：",
+  "enableFullScreenTooltipText": "打开全屏模式",
+  "disableFullScreenTooltipText": "关闭全屏模式",
+  "idText": "ID：",
+  "expandMonthTooltipText": "展开月份",
+  "repeatEndsText": "重复结束：",
+  "noEventsAvailableText": "没有可用的活动。",
+  "viewFullWeekText": "查看整周",
+  "noEventsAvailableFullText": "没有可供查看的活动。",
+  "clickText": "点击",
+  "hereText": "这里",
+  "toAddANewEventText": "添加新事件。",
+  "weekText": "星期",
+  "groupText": "团体：",
+  "configurationTooltipText": "配置",
+  "configurationTitleText": "配置",
+  "groupsText": "团体",
+  "eventNotificationTitle": "Calendar.js",
+  "eventNotificationBody": "活动“{0}”已开始。",
+  "optionsText": "选项：",
+  "startsWithText": "以。。开始",
+  "endsWithText": "以。。结束",
+  "containsText": "包含",
+  "displayTabText": "展示",
+  "enableAutoRefreshForEventsText": "启用事件自动刷新",
+  "enableBrowserNotificationsText": "启用浏览器通知",
+  "enableTooltipsText": "启用工具提示",
+  "dayText": "天",
+  "daysText": "天",
+  "hourText": "小时",
+  "hoursText": "小时",
+  "minuteText": "分钟",
+  "minutesText": "分钟",
+  "enableDragAndDropForEventText": "启用拖动",
+  "organizerTabText": "组织者",
+  "removeEventsTooltipText": "删除事件",
+  "confirmEventsRemoveTitle": "确认事件删除",
+  "confirmEventsRemoveMessage": "删除这些非重复事件的操作无法撤消。",
+  "eventText": "事件",
+  "optionalText": "选修的",
+  "urlText": "网址：",
+  "openUrlText": "打开网址",
+  "thisWeekTooltipText": "本星期",
+  "dailyText": "日常的",
+  "weeklyText": "每周",
+  "monthlyText": "每月",
+  "yearlyText": "每年",
+  "repeatsByCustomSettingsText": "通过自定义设置",
+  "lastUpdatedText": "最近更新时间：",
+  "advancedText": "先进的",
+  "copyText": "复制",
+  "pasteText": "粘贴",
+  "duplicateText": "复制",
+  "showAlertsText": "显示提醒",
+  "selectDatePlaceholderText": "选择日期...",
+  "hideDayText": "隐藏日",
+  "notSearchText": "不是（相反）",
+  "showHolidaysInTheDisplaysText": "在主显示屏和标题栏中显示假期",
+  "newEventDefaultTitle": "* 新事件",
+  "urlErrorMessage": "请在“网址”字段中输入有效的网址（或留空）。",
+  "searchTextBoxPlaceholder": "搜索标题、描述等...",
+  "currentMonthTooltipText": "这个月",
+  "cutText": "切",
+  "showMenuTooltipText": "显示菜单",
+  "eventTypesText": "事件类型",
+  "lockedText": "锁定：",
+  "typeText": "类型：",
+  "sideMenuHeaderText": "Calendar.js",
+  "sideMenuDaysText": "天",
+  "visibleDaysText": "可见天数",
+  "previousYearTooltipText": "上一年",
+  "nextYearTooltipText": "明年",
+  "showOnlyWorkingDaysText": "仅显示工作日",
+  "exportFilenamePlaceholderText": "姓名（可选）",
+  "errorText": "错误",
+  "exportText": "出口",
+  "configurationUpdatedText": "配置已更新。",
+  "eventAddedText": "添加了 {0} 个事件。",
+  "eventUpdatedText": "{0} 活动已更新。",
+  "eventRemovedText": "{0} 事件已删除。",
+  "eventsRemovedText": "已删除 {0} 个事件。",
+  "eventsExportedToText": "事件导出到 {0}。",
+  "eventsPastedText": "已粘贴 {0} 个事件。",
+  "eventsExportedText": "事件已导出。",
+  "copyToClipboardOnlyText": "仅复制到剪贴板",
+  "workingDaysText": "工作日",
+  "weekendDaysText": "周末",
+  "showAsBusyText": "显示为忙碌",
+  "selectAllText": "全选",
+  "selectNoneText": "选择无",
+  "importEventsTooltipText": "导入事件",
+  "eventsImportedText": "已导入 {0} 个事件。",
+  "viewFullYearTooltipText": "查看全年",
+  "currentYearTooltipText": "今年",
+  "alertOffsetText": "警报偏移（分钟）：",
+  "viewFullDayTooltipText": "查看全天",
+  "confirmEventUpdateTitle": "确认活动更新",
+  "confirmEventUpdateMessage": "您想更新从现在开始的活动，还是整个系列？",
+  "forwardText": "向前",
+  "seriesText": "系列",
+  "viewTimelineTooltipText": "查看时间轴",
+  "nextPropertyTooltipText": "下一个房产",
+  "noneText": "（没有任何）",
+  "shareText": "分享",
+  "shareStartFilename": "共享事件_",
+  "previousPropertyTooltipText": "以前的财产",
+  "jumpToDateTitle": "跳转至日期",
+  "goText": "去"
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   let localeLang = document.querySelector('html').lang.toLowerCase()
 
-  let calendar = new FullCalendar.Calendar(document.querySelector('#calendar'), {
-    themeSystem: 'bootstrap5',
-    aspectRatio: 2,
-    locale: localeLang,
-    timeZone: 'local', // the default (unnecessary to specify)
-    initialView: 'dayGridMonth',
-    editable: true, // important for activating event interactions!
-    selectable: true, // important for activating date selectability!
-    headerToolbar: {
-      start: 'multiMonthYear,multiMonths,multiMonth dayGridYear,dayGridMonth,dayGridWeek,dayGridDay,dayGrid listYear,listMonth,listWeek,listDay,list timeGridWeek,timeGridDay,timeGrid',
-      center: 'title',
-      end: 'myToday myPrev,myNext',
-    },
-    customButtons: {
-      multiMonths: {
-        text: '多月',
-        click: () => prompt('xxx'),
-      },
-      myToday: {
-        text: '今天',
-        icon: '',
-        click: () => todayCustomClick(),
-      },
-      myPrev: {
-        text: '上月',
-        icon: 'chevron-left',
-        click: () => prevMonthCustomClick(),
-      },
-      myNext: {
-        text: '下月',
-        icon: 'chevron-right',
-        click: () => nextMonthCustomClick(),
-      },
-      myPrevYear: {
-        text: '去年',
-        icon: 'chevrons-left',
-        click: () => prevYearCustomClick(),
-      },
-      myNextYear: {
-        text: '明年',
-        icon: 'chevrons-right',
-        click: () => nextYearCustomClick(),
-      },
-    },
-    buttonText: {
-      listYear: '年日程',
-      listMonth: '月日程',
-      listWeek: '周日程',
-      listDay: '天日程',
-      timeGridWeek: '周时间线',
-      timeGridDay: '日时间线',
-    },
-    views: {
-      multiMonthYear: {},
-      multiMonth: {},
-      dayGridYear: {},
-      dayGridMonth: {},
-      dayGridWeek: {},
-      dayGridDay: {},
-      dayGrid: {},
-      listYear: {},
-      listMonth: {},
-      listWeek: {},
-      listDay: {},
-      list: {},
-      timeGridWeek: {},
-      timeGridDay: {},
-      timeGrid: {},
-    },
-    eventMouseLeave: info => {
-      info.el.style.cursor = 'default'
-    },
-    eventMouseEnter: info => {
-      info.el.style.cursor = 'pointer'
-    },
-    eventClick: info => {
-      prompt('aa')
-      console.log(info)
-    },
-    dateClick: info => {}
-  })
-
-  calendar.setOption('locale', localeLang)
-
-  let events = [
+  let calendar = new calendarJs('calendar',
     {
-      title: 'date',
-      start: '2024-01-26',
-      allDay: true,
+      ...__TRANSLATION_OPTIONS,
+      manualEditingEnabled: true,
     },
     {
-      title: 'date',
-      start: '2024-01-16',
-      allDay: true,
-    },
-  ]
-
-  calendar.setOption('events', events)
-
-  calendar.render()
-
-  let weekTableTbody = document.querySelector('#calendar table thead table thead')
-  let dateTableTbody = document.querySelector('#calendar table tbody table tbody')
-  if (dateTableTbody) {
-    let dateTableTrs = dateTableTbody.querySelectorAll('tr')
-    // console.log(dateTableTrs)
-    let dateTableTrTds
-
-    for (let i = 0; i < dateTableTrs.length; i++) {
-      dateTableTrTds = dateTableTrs[i].querySelectorAll('td')
-      for (let j = 0; j < dateTableTrTds.length; j++) {
-        let date = dateTableTrTds[j].dataset['date']
-        let dateArray = date.split('-')
-        let dateEL = dateTableTrTds[j].querySelector('.fc-daygrid-day-top')
-
-        let lunarSpan = document.createElement('span')
-        let lunarDayChinese = Solar.fromYmd(dateArray[0], dateArray[1], dateArray[2]).getLunar().getDayInChinese()
-        let lunarMonthChinese = Solar.fromYmd(dateArray[0], dateArray[1], dateArray[2]).getLunar().getMonthInChinese()
-        if (lunarDayChinese === '初一') {
-          lunarSpan.textContent = lunarMonthChinese + '月'
-          lunarSpan.className = 'text-success-emphasis fw-bolder'
-        } else {
-          lunarSpan.textContent = lunarDayChinese
-          lunarSpan.className = 'text-success fw-lighter'
-        }
-
-        let holiday = HolidayUtil.getHoliday(date)
-        let holidaySpan = document.createElement('span')
-        let holidaySpan2 = document.createElement('span')
-        if (holiday) {
-          let holidaySpanBadge = holiday.isWork() ? 'text-bg-danger' : 'text-bg-success'
-          holidaySpan.className = 'position-absolute top-0 start-0 badge'
-          holidaySpan.classList.add(holidaySpanBadge)
-          holidaySpan.textContent = holiday.isWork() ? '班' : '休'
-
-          holidaySpan2.textContent = holiday.isWork() ? '' : holiday.getName()
-          holidaySpan2.style.color = 'LimeGreen'
-        }
-
-        dateEL.append(lunarSpan, holidaySpan, holidaySpan2)
-
-      }
+      enabled: false,
     }
-
-    // 日期点击事件
-    function dateClick (info) {
-      console.log(info)
-    }
-
-    // 上一年点击
-    function prevYearCustomClick () {
-      calendar.prevYear()
-      renderCalendar()
-    }
-
-    // 上月点击
-    function prevMonthCustomClick () {
-      calendar.prev()
-      renderCalendar()
-    }
-
-    // 下月点击
-    function nextMonthCustomClick () {
-      calendar.next()
-      renderCalendar()
-    }
-
-    // 下一年点击
-    function nextYearCustomClick () {
-      calendar.nextYear()
-      renderCalendar()
-    }
-
-    // 今日点击
-    function todayCustomClick () {
-      calendar.today()
-      renderCalendar()
-    }
-
-    // 刷新Calendar的数据
-    function renderCalendar () {
-      // TODO：调用接口获取数据,这里定义为空数组
-      let events = []
-      calendar.setOption('events', events)
-    }
-
-  }
+  )
 
 })

@@ -9,7 +9,6 @@ sitemap_exclude: true
 rss_exclude: true
 
 components:
-    - "@fullcalendar"
     - "calendar"
     - "lunar"
 ---

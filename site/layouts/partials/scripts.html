@@ -55,14 +55,9 @@
     <script src="{{ $lunarJS }}"></script>
 {{ end }}
 
-{{ if in .Page.Params.components "@fullcalendar" }}
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/index.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/core/locales-all.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/interaction/index.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/daygrid/index.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/timegrid/index.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/list/index.global.min.js'></script>
-    <script src='{{ $preUrl }}static/vendor/@fullcalendar/multimonth/index.global.min.js'></script>
+{{ if in .Page.Params.components "calendar" }}
+    <script src="{{ $preUrl }}static/vendor/jcalendar.js/dist/calendar.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/jcalendar.js/dist/translations/calendar.translations.zh.js"></script>
 {{ end }}
 
 {{ if in .Page.Params.components "sign_record" }}

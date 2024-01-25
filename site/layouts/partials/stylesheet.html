@@ -21,6 +21,10 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.css">
 {{ end }}
 
+{{ if in .Page.Params.components "calendar" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/jcalendar.js/dist/calendar.js.min.css">
+{{ end }}
+
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
 {{ if in .Page.Params.components "datatables" }}
