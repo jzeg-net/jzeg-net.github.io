@@ -37,6 +37,7 @@ float_tools:
 
 breadcrumb:
     enable: true
+    # Breadcrumb position [ top | bottom ]
     position: "top"
 
 search:

@@ -1,23 +1,31 @@
-<div class="bg-body-tertiary">
+<div class="d-flex justify-content-between align-items-center bg-body-tertiary">
     <nav class="container-xxl" aria-label="breadcrumb">
         <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3" style="--bs-breadcrumb-margin-bottom:0;">
-            {{- range .Ancestors.Reverse }}
-                {{ if .IsHome }}
-                    <li class="breadcrumb-item">
-                        <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .LinkTitle }}">
-                            <svg class="bi" width="16" height="16"><use href="#bi-house-door"></use></svg>
-                            <span class="visually-hidden">home</span>
-                        </a>
-                    </li>
-                {{ else }}
-                    <li class="breadcrumb-item">
-                        <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                    </li>
-                {{ end }}
-            {{- end }}
+        {{- range .Ancestors.Reverse }}
+            {{ if .IsHome }}
+            <li class="breadcrumb-item">
+                <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .LinkTitle }}">
+                    <svg class="bi" width="16" height="16"><use href="#bi-house-door"></use></svg>
+                    <span class="visually-hidden">home</span>
+                </a>
+            </li>
+            {{ else }}
+            <li class="breadcrumb-item">
+                <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+            </li>
+            {{ end }}
+        {{- end }}
             <li class="breadcrumb-item active" aria-current="page">
                 <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ .RelPermalink }}?from=breadcrumb" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
             </li>
         </ol>
     </nav>
+    <div class="dropdown">
+        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">{{ T "sitemap" }}</button>
+        <div class="dropdown-menu">
+            <p>111111111111111</p>
+            <p>222222222222222</p>
+            <p>333333333333333</p>
+        </div>
+    </div>
 </div>
