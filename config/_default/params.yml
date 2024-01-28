@@ -37,6 +37,7 @@ float_tools:
 
 breadcrumb:
     enable: true
+    position: "top"
 
 search:
     enable: true

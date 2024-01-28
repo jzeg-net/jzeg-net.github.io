@@ -38,7 +38,9 @@
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.bulletin "hide") }}{{ partial "top-bulletin" . }}{{ end }}
 
-{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
+{{ if and (eq .Site.Params.breadcrumb.enable true) (or (eq .Site.Params.breadcrumb.position "top") (eq .Page.Params.breadcrumb.position "top")) }}
+    {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb.display "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
+{{ end }}
 
 {{ partial "svg_sprite_icons/posts" . }}
 
@@ -48,6 +50,10 @@
     </div>
 </main>
 {{ partial "verify" . }}
+
+{{ if and (eq .Site.Params.breadcrumb.enable true) (or (eq .Site.Params.breadcrumb.position "bottom") (eq .Page.Params.breadcrumb.position "bottom")) }}
+    {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.breadcrumb.display "hide") }}{{ partial "breadcrumb/index" . }}{{ end }}
+{{ end }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 

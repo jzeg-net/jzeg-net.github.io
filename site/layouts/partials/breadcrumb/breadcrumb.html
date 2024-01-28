@@ -1,6 +1,6 @@
 <div class="bg-body-tertiary">
     <nav class="container-xxl" aria-label="breadcrumb">
-        <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3">
+        <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3" style="--bs-breadcrumb-margin-bottom:0;">
             {{- range .Ancestors.Reverse }}
                 {{ if .IsHome }}
                     <li class="breadcrumb-item">
