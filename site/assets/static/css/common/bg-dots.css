@@ -12,6 +12,11 @@
   --bg-dots-mask-gradient-color: #ff0000;
 }
 
+.bg-dots-container {
+  display: flex;
+  justify-content: center;
+}
+
 .bg-dots {
   background-image: radial-gradient(var(--bg-dots-bg-gradient-color) 15%, transparent 15%);
   background-position: 0 0;
