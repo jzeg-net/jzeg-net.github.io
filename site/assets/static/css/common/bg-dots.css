@@ -1,0 +1,24 @@
+:root,
+[data-bs-theme="light"] {
+  --bg-dots-size: .6rem;
+  --bg-dots-height: 30vh;
+  --bg-dots-margin: calc(-1 * var(--bg-dots-height));
+  --bg-dots-bg-gradient-color: var(--bs-gradient--color-1);
+  --bg-dots-mask-gradient-color: #34ff00;
+}
+
+[data-bs-theme="dark"] {
+  --bg-dots-bg-gradient-color: var(--bs-gradient--color-2);
+  --bg-dots-mask-gradient-color: #ff0000;
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--bg-dots-bg-gradient-color) 15%, transparent 15%);
+  background-position: 0 0;
+  background-size: var(--bg-dots-size) var(--bg-dots-size);
+  mask: linear-gradient(to top, var(--bg-dots-mask-gradient-color), transparent);
+  width: 100%;
+  height: var(--bg-dots-height);
+  margin-top: var(--bg-dots-margin);
+  z-index: -1;
+}
