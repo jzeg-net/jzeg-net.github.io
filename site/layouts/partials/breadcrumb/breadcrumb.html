@@ -1,13 +1,20 @@
-<div class="d-flex justify-content-between align-items-center bg-body-tertiary">
+<div class="bg-body-tertiary">
     <nav class="container-xxl" aria-label="breadcrumb">
-        <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-3" style="--bs-breadcrumb-margin-bottom:0;">
+        <ol class="flex-nowrap overflow-y-hidden overflow-x-auto breadcrumb breadcrumb-chevron py-1" style="--bs-breadcrumb-margin-bottom:0;">
         {{- range .Ancestors.Reverse }}
             {{ if .IsHome }}
             <li class="breadcrumb-item">
-                <a class="text-nowrap link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- relLangURL "" -}}?from=breadcrumb" title="{{ .LinkTitle }}">
-                    <svg class="bi" width="16" height="16"><use href="#bi-house-door"></use></svg>
-                    <span class="visually-hidden">home</span>
-                </a>
+                <button class="btn text-secondary" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                    <svg class="bi" width="16" height="16"><use href="#bi-house-door"></use><title>{{ T "sitemap" }}</title></svg>
+                </button>
+                <div class="dropdown-menu p-3 dropdown-menu-start" style="--bs-dropdown-min-width: calc(100vw - var(--bs-gutter-x))">
+                    <div class="row row-cols-2 row-cols-md-4 gx-1 gy-4 text-center">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                    </div>
+                </div>
             </li>
             {{ else }}
             <li class="breadcrumb-item">
@@ -20,12 +27,4 @@
             </li>
         </ol>
     </nav>
-    <div class="dropdown">
-        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">{{ T "sitemap" }}</button>
-        <div class="dropdown-menu">
-            <p>111111111111111</p>
-            <p>222222222222222</p>
-            <p>333333333333333</p>
-        </div>
-    </div>
 </div>
