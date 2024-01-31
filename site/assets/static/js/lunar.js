@@ -49,9 +49,9 @@ if (lunarDate) {
   solarFestivalsList.textContent = [...solarFestivals]
   solarOtherFestivalsList.textContent = [...solarOtherFestivals]
 
-  lunarYearInGanZhi.textContent = lunarGetYearInGanZhi
-  lunarYearInGanZhiByLiChun.textContent = lunarGetYearInGanZhiByLiChun
-  lunarYearInGanZhiExact.textContent = lunarGetYearInGanZhiExact
+  lunarYearInGanZhi.textContent = lunarGetYearInGanZhi + ' ' + lunarMonthDayInChinese
+  lunarYearInGanZhiByLiChun.textContent = lunarGetYearInGanZhiByLiChun + ' ' + lunarMonthDayInChinese
+  lunarYearInGanZhiExact.textContent = lunarGetYearInGanZhiExact + ' ' + lunarMonthDayInChinese
   lunarJieQi.textContent = jieQi
   lunarHou.textContent = hou
   lunarFu.textContent = fu ? fu.toFullString() : ''
