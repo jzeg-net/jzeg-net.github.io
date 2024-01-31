@@ -215,7 +215,7 @@ __TRANSLATION_OPTIONS = {
   'weekendDaysText': '周末',
   'showAsBusyText': '显示为忙碌',
   'selectAllText': '全选',
-  'selectNoneText': '选择无',
+  'selectNoneText': '全不选',
   'importEventsTooltipText': '导入事件',
   'eventsImportedText': '已导入 {0} 个事件。',
   'viewFullYearTooltipText': '查看全年',
