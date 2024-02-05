@@ -1,9 +1,10 @@
 <footer-gradient></footer-gradient>
-<footer class="py-5 bg-dark-subtle text-body-secondary">
+<footer class="py-5 bg-dark-subtle text-secondary">
     <div class="bg-dots-container">
         <div class="bg-dots"></div>
     </div>
-    <div class="container vstack row-gap-4 py-5">
+    <div class="container vstack row-gap-4 px-4 py-5">
+        {{- partial "footer/list" . }}
         <div class="d-flex align-items-end justify-content-end">
             <span class="currentDateTime size-xs">{{ T "currentDateTime" }}</span>
         </div>
@@ -28,7 +29,7 @@
                 </div>
             </section>
         </div>
-        <div class="vstack row-gap-1 size-xs">
+        <div class="size-xs">
             {{- partial "footer/copyright" . }}
             {{- partial "footer/powered" . }}
         </div>
