@@ -1,5 +1,5 @@
 <section>
-    {{ T "footer_copyright" }} &copy;
+    {{- T "footer_copyright" -}} &copy;
     {{- if (and .Site.Params.since (lt .Site.Params.since now.Year)) -}}
         {{- .Site.Params.since -}} -
     {{- end -}}
