@@ -127,7 +127,7 @@ main:
                 class:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_cookies
-        name: "Cookie Management"
+        name: "Cookie Policy"
         pageRef: /cookies
         parent: menu_more
         weight: 6
