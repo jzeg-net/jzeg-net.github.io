@@ -13,25 +13,25 @@
             {{- partial "footer/commit" . }}
         </div>
         <hr class="my-3">
-        <div class="vstack row-gap-1 size-xs">
-            <section class="vstack align-items-end row-gap-1">
-                <div class="hstack justify-content-end column-gap-3">
-                    <div>{{ T "busuanzi_value_site_pv" }}&nbsp;<span id="busuanzi_value_site_pv"></span></div>
-                    <div>{{ T "busuanzi_value_site_uv" }}&nbsp;<span id="busuanzi_value_site_uv"></span></div>
-                    <div>{{ T "busuanzi_value_page_pv" }}&nbsp;<span id="busuanzi_value_page_pv"></span></div>
+        <div class="d-flex flex-column-reverse row-gap-4 flex-md-row justify-content-md-between size-xs">
+            <div>
+                {{- partial "footer/copyright" . }}
+                {{- partial "footer/powered" . }}
+            </div>
+            <div class="d-flex flex-column row-gap-1 justify-content-end">
+                <div class="d-flex column-gap-1 justify-content-md-end">
+                    <span>{{ T "busuanzi_value_site_pv" }}<span class="ps-2" id="busuanzi_value_site_pv"></span></span>
+                    <span>{{ T "busuanzi_value_site_uv" }}<span class="ps-2" id="busuanzi_value_site_uv"></span></span>
+                    <span>{{ T "busuanzi_value_page_pv" }}<span class="ps-2" id="busuanzi_value_page_pv"></span></span>
                 </div>
-                <div class="hstack justify-content-end column-gap-3">
+                <div class="d-flex column-gap-1 justify-content-md-end">
                     {{- partial "footer/terms_of_service" . }}
                     {{- partial "footer/privacy_policy" . }}
                 </div>
-                <div class="vstack align-items-end row-gap-1">
+                <div class="d-flex flex-column row-gap-1 text-md-end">
                     {{- partial "footer/icp" . }}
                 </div>
-            </section>
-        </div>
-        <div class="size-xs">
-            {{- partial "footer/copyright" . }}
-            {{- partial "footer/powered" . }}
+            </div>
         </div>
     </div>
 </footer>
