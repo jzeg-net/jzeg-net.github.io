@@ -3,10 +3,13 @@
         <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-github" }}</title><use href="#bi-github"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text-github" -}}</span>
     </a>
-    <a class="text-body-secondary" href="https://hachyderm.io/@zcl" target="_blank" title="{{ T "footer_icon_text-mastodon" }}" rel="nofollow, noopener">
+    {{ $mastodon_url := partial "functions/params/social/get_mastodon_info" (dict "type" "url") }}
+    {{ with $mastodon_url}}
+    <a class="text-body-secondary" href="{{ $mastodon_url }}" target="_blank" title="{{ T "footer_icon_text-mastodon" }}" rel="nofollow, noopener">
         <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-mastodon" }}</title><use href="#bi-mastodon"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text-mastodon" -}}</span>
     </a>
+    {{ end }}
     <a class="text-body-secondary" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "footer_icon_text-sitemap" }}">
         <svg class="bi" width="16" height="16"><title>{{ T "footer_icon_text-sitemap" }}</title><use href="#bi-diagram-3-fill"></use></svg>
         <span class="visually-hidden">{{- T "footer_icon_text-sitemap" -}}</span>

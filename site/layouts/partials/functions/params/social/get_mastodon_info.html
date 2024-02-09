@@ -1,0 +1,30 @@
+{{ $type := .type }}
+
+{{ $host := site.Params.social.mastodon.host }}
+{{ $username := site.Params.social.mastodon.username }}
+
+{{ with $host }}
+{{ else }}{{ errorf "Missing Required parameter name [ social.mastodon.host ]: %s" .Position }}
+{{ end }}
+
+{{ with $username }}
+{{ else }}{{ errorf "Missing Required parameter name [ social.mastodon.username ]: %s" .Position }}
+{{ end }}
+
+{{ with $type }}
+{{ else }}{{ errorf "Missing Required parameter name [ type ]: %s" .Position }}
+{{ end }}
+
+{{ $prefix := "https://" }}
+{{ $at := "@" }}
+
+{{ $url := printf "%s%s/%s%s" $prefix $host $at $username }}
+{{ $call := printf "%s/%s%s" $host $at $username }}
+
+{{ if eq $type "url" }}
+    {{ return $url }}
+{{ end }}
+
+{{ if eq $type "at" }}
+    {{ return $url }}
+{{ end }}

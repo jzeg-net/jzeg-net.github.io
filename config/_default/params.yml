@@ -84,6 +84,12 @@ Github:
 Repo:
     git: "https://github.com/jzeg-net/jzeg-net.github.io"
 
+social:
+    mastodon:
+        enable: true
+        host: "hachyderm.io"
+        username: "zcl"
+
 qrcode:
     alipay:
         donate: HTTPS://QR.ALIPAY.COM/FKX15775Y9K2OJJELTYUQ20
