@@ -52,6 +52,8 @@
     "footer_icon_text-sitemap": "Sitemap",
     "footer_icon_text-github": "GitHub",
     "footer_icon_text-mastodon": "Mastodon",
+    "footer_icon_text-share": "Share",
+    "footer_icon_text-qrcode": "QR Code",
     "footer_powered_by": "Build by",
     "footer_licensed_under": "Licensed under ",
     "footer_content_updated_time": "Content Updated Time: ",
