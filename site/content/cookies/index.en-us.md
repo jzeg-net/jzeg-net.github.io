@@ -26,8 +26,8 @@ rss_exclude: false
                 <div class="col-md-4 offset-1">
                     <h4>Manage my Cookies</h4>
                     <div class="d-flex flex-column row-gap-2">
-                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.showPreferences();">Manage my cookies</button>
-                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.reset(true);">Reset All Cookie Settings</button>
+                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.showPreferences();">Manage my cookies <svg class="bi" width="16" height="16"><use href="#bi-cookie"></use></svg></button>
+                        <button class="btn btn-outline-secondary" type="button" id="ResetCookieConsent">Reset All Cookie Settings</button>
                     </div>
                 </div>
             </div>

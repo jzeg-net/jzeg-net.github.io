@@ -235,7 +235,6 @@ __TRANSLATION_OPTIONS = {
   'jumpToDateTitle': '跳转至日期',
   'goText': '去'
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   let localeLang = document.querySelector('html').lang.toLowerCase()
 
@@ -243,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       ...__TRANSLATION_OPTIONS,
       showHolidays: true,
+      useLocalStorageForEvents: true,
       manualEditingEnabled: true,
     },
     {

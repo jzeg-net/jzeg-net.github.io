@@ -26,8 +26,8 @@ rss_exclude: false
                 <div class="col-md-4 offset-1">
                     <h4>管理我的 Cookie</h4>
                     <div class="d-flex flex-column row-gap-2">
-                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.showPreferences();">管理我的 cookie</button>
-                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.reset(true);">重置所有的 cookie 设置</button>
+                        <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.showPreferences();">管理我的 cookie <svg class="bi" width="16" height="16"><use href="#bi-cookie"></use></svg></button>
+                        <button class="btn btn-outline-secondary" type="button" id="ResetCookieConsent">重置所有的 cookie 设置</button>
                     </div>
                 </div>
             </div>
