@@ -19,13 +19,13 @@ rss_exclude: false
     <section></section>
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row row-gap-5">
                 <div class="col-md-7">
                     <p>本 Cookie 政策描述了 jzeg.net（“杰格网”或“我们”）在其网站上使用 Cookie 的情况。它解释了什么是 cookie 以及我们如何使用它们。</p>
                 </div>
-                <div class="col-md-4 offset-1">
-                    <h4>管理我的 Cookie</h4>
-                    <div class="d-flex flex-column row-gap-2">
+                <div class="col-md-4 offset-md-1">
+                    <h3>管理我的 Cookie</h3>
+                    <div class="d-flex flex-column row-gap-4">
                         <button class="btn btn-outline-secondary" type="button" onclick="CookieConsent.showPreferences();">管理我的 cookie <svg class="bi" width="16" height="16"><use href="#bi-cookie"></use></svg></button>
                         <button class="btn btn-outline-secondary" type="button" id="ResetCookieConsent">重置所有的 cookie 设置</button>
                     </div>
