@@ -17,7 +17,7 @@
             {{- range $list }}
                 {{- $text := index (split . " ") 0 }}
                 {{- $href := index (split . " ") 1 }}
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $href }}" title="{{ $text }}">{{ $text }}</a></li>
+                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $href | relLangURL }}" title="{{ $text }}">{{ $text }}</a></li>
             {{- end }}
             </ul>
             </div>
