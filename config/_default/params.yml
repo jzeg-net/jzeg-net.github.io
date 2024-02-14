@@ -117,21 +117,22 @@ topPullDownToRefresh:
 footer_links:
     enable: true
     group:
-        Title_1:
+        # 每组分类个数没有上限，键名不允许以数字开头
+        # 键名是分类名称，每一个数组格式为空格分割，具体格式是[链接文本 链接网址]
+        title_1:
+            - "Demo demo"
+            - "广告合作 ad"
+        links:
             - "Link #"
             - "Link #"
-            - "Link #"
-            - "Link #"
-        Title_2:
-            - "Link #"
-            - "Link #"
-            - "Link #"
-        Title_3:
-            - "Link #"
-            - "Link #"
-            - "Link #"
-            - "Link #"
-        Title_4:
-            - "Link #"
-            - "Link #"
-            - "Link #"
+        政策条款:
+            - "隐私政策 privacy_policy"
+            - "服务条款 terms_of_service"
+            - "Cookie cookies"
+        我们:
+            - "关于 about"
+            - "联系 contact"
+        智慧平台:
+            - "闯关 tools/zhgh/passwork"
+            - "学习 tools/zhgh/study"
+            - "日志 tools/zhgh/log"
