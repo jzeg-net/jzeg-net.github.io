@@ -9,41 +9,19 @@
         </ul>
     </div>
     <div class="row flex-md-grow-1">
-        <div class="col-6 col-md">
-            <h6 class="mb-3">Title</h6>
+        {{- if .Site.Params.footer_links.enable }}
+        {{- range $title, $list := .Site.Params.footer_links.group }}
+            <div class="col-6 col-md">
+            <h6 class="mb-3">{{ $title | strings.FirstUpper }}</h6>
             <ul class="list-unstyled">
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
+            {{- range $list }}
+                {{- $text := index (split . " ") 0 }}
+                {{- $href := index (split . " ") 1 }}
+                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $href }}" title="{{ $text }}">{{ $text }}</a></li>
+            {{- end }}
             </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h6 class="mb-3">Title</h6>
-            <ul class="list-unstyled">
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h6 class="mb-3">Title</h6>
-            <ul class="list-unstyled">
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h6 class="mb-3">Title</h6>
-            <ul class="list-unstyled">
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="#" title="link">Link</a></li>
-            </ul>
-        </div>
+            </div>
+        {{- end }}
+        {{- end }}
     </div>
 </div>

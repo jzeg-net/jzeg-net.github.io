@@ -113,3 +113,25 @@ analytics:
 # 下拉刷新开关
 topPullDownToRefresh:
     enable: false
+
+footer_links:
+    enable: true
+    group:
+        Title_1:
+            - "Link #"
+            - "Link #"
+            - "Link #"
+            - "Link #"
+        Title_2:
+            - "Link #"
+            - "Link #"
+            - "Link #"
+        Title_3:
+            - "Link #"
+            - "Link #"
+            - "Link #"
+            - "Link #"
+        Title_4:
+            - "Link #"
+            - "Link #"
+            - "Link #"
