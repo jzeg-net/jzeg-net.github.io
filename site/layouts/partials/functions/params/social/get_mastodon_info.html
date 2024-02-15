@@ -17,14 +17,16 @@
 
 {{ $prefix := "https://" }}
 {{ $at := "@" }}
-
-{{ $url := printf "%s%s/%s%s" $prefix $host $at $username }}
-{{ $call := printf "%s/%s%s" $host $at $username }}
+{{ $result := "" }}
 
 {{ if eq $type "url" }}
-    {{ return $url }}
+    {{ $url := printf "%s%s/%s%s" $prefix $host $at $username | safeHTML }}
+    {{ $result = $url }}
 {{ end }}
 
-{{ if eq $type "at" }}
-    {{ return $url }}
+{{ if eq $type "account" }}
+    {{ $account := printf "%s%s%s%s" $at $username $at $host | safeHTML }}
+    {{ $result = $account }}
 {{ end }}
+
+{{ return $result }}

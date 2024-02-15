@@ -87,8 +87,8 @@ Repo:
 social:
     mastodon:
         enable: true
-        host: "hachyderm.io"
-        username: "zcl"
+        username: "zhangChengLin"
+        host: "mastodon.social"
 
 qrcode:
     alipay:
