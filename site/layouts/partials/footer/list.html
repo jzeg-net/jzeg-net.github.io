@@ -10,6 +10,7 @@
     </div>
     <div class="row flex-md-grow-1">
         {{- if .Site.Params.footer_links.enable }}
+        {{ $currentPage := .RelPermalink }}
         {{- range $title, $list := .Site.Params.footer_links.group }}
             <div class="col-6 col-md">
             <h6 class="mb-3">{{ $title | strings.FirstUpper }}</h6>
@@ -17,7 +18,12 @@
             {{- range $list }}
                 {{- $text := index (split . " ") 0 }}
                 {{- $href := index (split . " ") 1 }}
-                <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $href | relLangURL }}" title="{{ $text }}">{{ $text }}</a></li>
+                {{- $relLangHref := printf "%s%s" ($href | relLangURL) "/" }}
+                {{ if eq $currentPage $relLangHref }}
+                    <li class="mb-3"><a class="link-success link-offset-2 link-underline-success link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
+                {{ else }}
+                    <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
+                {{ end }}
             {{- end }}
             </ul>
             </div>
