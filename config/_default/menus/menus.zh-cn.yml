@@ -172,7 +172,7 @@ main:
                 size: [ width: 16, height: 16 ]
 demo:
     -   identifier: menu_demo
-        name: "演示"
+        name: "分类展示"
         pageRef: /demo
         weight: 1
         params:
