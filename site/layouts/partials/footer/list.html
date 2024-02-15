@@ -20,9 +20,9 @@
                 {{- $href := index (split . " ") 1 }}
                 {{- $relLangHref := printf "%s%s" ($href | relLangURL) "/" }}
                 {{ if eq $currentPage $relLangHref }}
-                    <li class="mb-3"><a class="link-success link-offset-2 link-underline-success link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
+                    <li class="mb-3"><a class="link-success link-underline-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover fw-bolder" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
                 {{ else }}
-                    <li class="mb-3"><a class="link-secondary link-offset-2 link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
+                    <li class="mb-3"><a class="link-secondary link-underline-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
                 {{ end }}
             {{- end }}
             </ul>
