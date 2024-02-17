@@ -170,10 +170,10 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-demo:
-    -   identifier: menu_demo
+account_form:
+    -   identifier: account_form
         name: "分类展示"
-        pageRef: /demo
+        pageRef: /demo/account_form
         weight: 1
         params:
             class:
@@ -181,105 +181,105 @@ demo:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: demo_login
+    -   identifier: account_form_login
         name: "登录"
-        pageRef: /demo/login
-        parent: menu_demo
+        pageRef: /demo/account_form/login
+        parent: account_form
         weight: 1
-    -   identifier: demo_signup
+    -   identifier: account_form_signup
         name: "注册"
-        pageRef: /demo/signup
-        parent: menu_demo
+        pageRef: /demo/account_form/signup
+        parent: account_form
         weight: 2
-    -   identifier: demo_reset
+    -   identifier: account_form_reset
         name: "重置"
-        pageRef: /demo/reset
-        parent: menu_demo
+        pageRef: /demo/account_form/reset
+        parent: account_form
         weight: 3
-    -   identifier: demo_change
+    -   identifier: account_form_change
         name: "修改"
-        pageRef: /demo/change
-        parent: menu_demo
+        pageRef: /demo/account_form/change
+        parent: account_form
         weight: 4
-    -   identifier: demo_find
+    -   identifier: account_form_find
         name: "找回"
-        pageRef: /demo/find
-        parent: menu_demo
+        pageRef: /demo/account_form/find
+        parent: account_form
         weight: 5
-    -   identifier: demo_logout
+    -   identifier: account_form_logout
         name: "退出"
-        pageRef: /demo/logout
-        parent: menu_demo
+        pageRef: /demo/account_form/logout
+        parent: account_form
         weight: 6
-    -   identifier: demo_login_normal
+    -   identifier: account_form_login_normal
         name: "正常登录"
-        pageRef: /demo/login/normal
-        parent: demo_login
+        pageRef: /demo/account_form/login/normal
+        parent: account_form_login
         weight: 1
-    -   identifier: demo_login_email
+    -   identifier: account_form_login_email
         name: "邮箱登录"
-        pageRef: /demo/login/email
-        parent: demo_login
+        pageRef: /demo/account_form/login/email
+        parent: account_form_login
         weight: 2
-    -   identifier: demo_login_sms
+    -   identifier: account_form_login_sms
         name: "短信登录"
-        pageRef: /demo/login/sms
-        parent: demo_login
+        pageRef: /demo/account_form/login/sms
+        parent: account_form_login
         weight: 3
-    -   identifier: demo_signup_normal
+    -   identifier: account_form_signup_normal
         name: "正常注册"
-        pageRef: /demo/signup/normal
-        parent: demo_signup
+        pageRef: /demo/account_form/signup/normal
+        parent: account_form_signup
         weight: 1
-    -   identifier: demo_signup_email
+    -   identifier: account_form_signup_email
         name: "邮箱注册"
-        pageRef: /demo/signup/email
-        parent: demo_signup
+        pageRef: /demo/account_form/signup/email
+        parent: account_form_signup
         weight: 2
-    -   identifier: demo_signup_sms
+    -   identifier: account_form_signup_sms
         name: "短信注册"
-        pageRef: /demo/signup/sms
-        parent: demo_signup
+        pageRef: /demo/account_form/signup/sms
+        parent: account_form_signup
         weight: 3
-    -   identifier: demo_reset_email
+    -   identifier: account_form_reset_email
         name: "通过邮箱重置"
-        pageRef: /demo/reset/email
-        parent: demo_reset
+        pageRef: /demo/account_form/reset/email
+        parent: account_form_reset
         weight: 1
-    -   identifier: demo_reset_sms
+    -   identifier: account_form_reset_sms
         name: "通过短信重置"
-        pageRef: /demo/reset/sms
-        parent: demo_reset
+        pageRef: /demo/account_form/reset/sms
+        parent: account_form_reset
         weight: 2
-    -   identifier: demo_change_password
+    -   identifier: account_form_change_password
         name: "修改密码"
-        pageRef: /demo/change/password
-        parent: demo_change
+        pageRef: /demo/account_form/change/password
+        parent: account_form_change
         weight: 1
-    -   identifier: demo_change_email
+    -   identifier: account_form_change_email
         name: "修改邮箱"
-        pageRef: /demo/change/email
-        parent: demo_change
+        pageRef: /demo/account_form/change/email
+        parent: account_form_change
         weight: 2
-    -   identifier: demo_change_phone
+    -   identifier: account_form_change_phone
         name: "修改手机号"
-        pageRef: /demo/change/phone
-        parent: demo_change
+        pageRef: /demo/account_form/change/phone
+        parent: account_form_change
         weight: 3
-    -   identifier: demo_find_email
+    -   identifier: account_form_find_email
         name: "通过邮箱找回"
-        pageRef: /demo/find/email
-        parent: demo_find
+        pageRef: /demo/account_form/find/email
+        parent: account_form_find
         weight: 1
-    -   identifier: demo_find_sms
+    -   identifier: account_form_find_sms
         name: "通过短信找回"
-        pageRef: /demo/find/sms
-        parent: demo_find
+        pageRef: /demo/account_form/find/sms
+        parent: account_form_find
         weight: 2
-    -   identifier: demo_logout_normal
+    -   identifier: account_form_logout_normal
         name: "注册退出"
-        pageRef: /demo/logout/normal
-        parent: demo_logout
+        pageRef: /demo/account_form/logout/normal
+        parent: account_form_logout
         weight: 1
 knowledge_labor_union:
     -   identifier: zhgh_page

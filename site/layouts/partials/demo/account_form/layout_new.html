@@ -1,0 +1,42 @@
+{{ partial "demo/account_form/menu" . }}
+<div class="nav nav-pills text-center" id="accountTab">
+    <div class="col-4">
+        <a class="nav-link active" href="#accountPane-login" id="tab-login" data-bs-toggle="tab">登录</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#accountPane-signup" id="tab-signup" data-bs-toggle="tab">注册</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#accountPane-logout" id="tab-logout" data-bs-toggle="tab">退出</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#accountPane-find" id="tab-find" data-bs-toggle="tab">找回密码</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#accountPane-reset" id="tab-reset" data-bs-toggle="tab">重置密码</a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#accountPane-change" id="tab-change" data-bs-toggle="tab">修改信息</a>
+    </div>
+</div>
+<hr class="text-opacity-50">
+<div class="tab-content" id="accountTabContent">
+    <div class="tab-pane fade show active" id="accountPane-login" tabindex="0">
+        {{ partial "demo/account_form/login/index" . }}
+    </div>
+    <div class="tab-pane fade" id="accountPane-signup" tabindex="0">
+        {{ partial "demo/account_form/signup/index" . }}
+    </div>
+    <div class="tab-pane fade" id="accountPane-logout" tabindex="0">
+        {{ partial "demo/account_form/logout/index" . }}
+    </div>
+    <div class="tab-pane fade" id="accountPane-find" tabindex="0">
+        {{ partial "demo/account_form/find/index" . }}
+    </div>
+    <div class="tab-pane fade" id="accountPane-reset" tabindex="0">
+        {{ partial "demo/account_form/reset/index" . }}
+    </div>
+    <div class="tab-pane fade" id="accountPane-change" tabindex="0">
+        {{ partial "demo/account_form/change/index" . }}
+    </div>
+</div>
