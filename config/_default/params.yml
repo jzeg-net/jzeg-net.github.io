@@ -119,9 +119,9 @@ footer_links:
     group:
         # 每组分类个数没有上限，键名不允许以数字开头
         # 键名是分类名称，每一个数组格式为空格分割，具体格式是[链接文本 链接网址]
-        title_1:
+        Demo:
             - "Demo demo"
-            - "广告合作 ad"
+            - "账号表单演示 demo/account_form"
         links:
             - "Link #"
             - "Link #"
@@ -132,6 +132,7 @@ footer_links:
         我们:
             - "关于 about"
             - "联系 contact"
+            - "广告合作 ad"
         智慧平台:
             - "闯关 tools/zhgh/passwork"
             - "学习 tools/zhgh/study"
