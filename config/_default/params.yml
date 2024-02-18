@@ -123,8 +123,8 @@ footer_links:
             - "Demo demo"
             - "账号表单演示 demo/account_form"
         links:
-            - "Link #"
-            - "Link #"
+            - "友情链接 links"
+            - "ChatGPT chatgpt"
         政策条款:
             - "隐私政策 privacy_policy"
             - "服务条款 terms_of_service"

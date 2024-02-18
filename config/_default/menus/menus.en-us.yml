@@ -49,50 +49,6 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_contact
-        name: "Contact"
-        pageRef: /contact
-        parent: menu_more
-        weight: 1
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_about
-        name: "About"
-        pageRef: /about
-        parent: menu_more
-        weight: 2
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_ad
-        name: "AD"
-        pageRef: /ad
-        parent: menu_more
-        weight: 3
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_chatgpt
-        name: "Chat GPT"
-        pageRef: /chatgpt
-        parent: menu_more
-        weight: 4
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
     -   identifier: menu_tools
         name: "Toolbox"
         pageRef: /tools
@@ -118,28 +74,6 @@ main:
     -   identifier: menu_calendar
         name: "Calendar"
         pageRef: /calendar
-        parent: menu_more
-        weight: 6
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_cookies
-        name: "Cookie Policy"
-        pageRef: /cookies
-        parent: menu_more
-        weight: 6
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_links
-        name: "Links"
-        pageRef: /links
         parent: menu_more
         weight: 6
         params:
