@@ -12,7 +12,7 @@
     <span class="d-lg-none ms-2" id="colorSwitcher-text">{{- .Name | safeHTML -}}</span>
 </button>
 {{ end }}
-<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:12rem;--bs-dropdown-padding-x:0;">
+<div class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" style="--bs-dropdown-min-width:14rem;--bs-dropdown-padding-x:0;">
     <ul class="list-group list-group-flush">
         <li class="list-group-item list-group-item-action text-secondary" style="--bs-list-group-item-padding-x:.5rem;">
             <div class="hstack justify-content-between textColorPicker">
@@ -30,6 +30,17 @@
                 <label class="linkColorPickerLabel">{{- T "color_link" -}}</label>
                 <div class="hstack">
                     <input type="color" class="form-control form-control-color linkColorPickerInput" title="{{- T "color_choose" -}}">
+                    <button type="button" class="btn btn-sm remove_color">
+                        <svg class="bi" width="16" height="16"><title>{{- T "clear" -}}</title><use href="#bi-trash3-fill"></use></svg>
+                    </button>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item list-group-item-action text-secondary" style="--bs-list-group-item-padding-x:.5rem;">
+            <div class="hstack justify-content-between visitedColorPicker">
+                <label class="visitedColorPickerLabel">{{- T "color_visited" -}}</label>
+                <div class="hstack">
+                    <input type="color" class="form-control form-control-color visitedColorPickerInput" title="{{- T "color_choose" -}}">
                     <button type="button" class="btn btn-sm remove_color">
                         <svg class="bi" width="16" height="16"><title>{{- T "clear" -}}</title><use href="#bi-trash3-fill"></use></svg>
                     </button>

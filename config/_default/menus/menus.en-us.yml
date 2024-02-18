@@ -170,6 +170,22 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
+demo_list:
+    -   identifier: demo_list
+        name: "Demo List"
+        pageRef: /demo
+        weight: 1
+        params:
+            class:
+            svg:
+                useHref:
+                class:
+                size: [ width: 16, height: 16 ]
+    -   identifier: account_form
+        name: "Account Form"
+        pageRef: /demo/account_form
+        parent: demo_list
+        weight: 1
 account_form:
     -   identifier: account_form
         name: "Classification Display"

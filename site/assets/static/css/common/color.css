@@ -1,0 +1,17 @@
+:root {
+  --bs-link-color: var(--bs-link-color);
+  --bs-link-visited-color: #888888;
+  --bs-link-hover-color: var(--bs-link-hover-color, #666666);
+}
+
+a {
+  color: var(--bs-link-color, rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)));
+}
+
+a:visited {
+  color: var(--bs-link-visited-color, rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1))) !important;
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}

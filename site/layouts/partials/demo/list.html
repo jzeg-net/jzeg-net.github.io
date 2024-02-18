@@ -1,0 +1,8 @@
+{{ range .Site.Menus.demo_list }}
+    {{ if .HasChildren }}
+        {{ range .Children }}
+            <a class="link-info link-opacity-75-hover link-offset-3 link-underline-info link-underline-opacity-0 link-underline-opacity-75-hover" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}" target="_blank">{{ .Name | safeHTML }}</a>
+        {{ end }}
+    {{ else }}
+    {{ end }}
+{{ end }}
