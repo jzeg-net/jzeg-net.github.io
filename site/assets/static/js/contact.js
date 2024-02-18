@@ -34,3 +34,35 @@ if (contact) {
       })
   })
 }
+
+(() => {
+
+  let searchParams = new URL(document.URL).searchParams
+
+  if (!searchParams.size) return
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let paramsArray = []
+
+    for (const [key, value] of searchParams.entries()) {
+      paramsArray[key] = value
+
+      document.querySelectorAll('input').forEach((triggerInput) => {
+        switch (triggerInput.type) {
+          case 'text':
+            if (triggerInput.name === key) triggerInput.value = value
+            break
+          case 'checkbox':
+          case 'radio':
+            if (triggerInput.name === key && triggerInput.value === value) triggerInput.checked = true
+            break
+          case 'password':
+          case 'color':
+          case 'range':
+          default:
+            break
+        }
+      })
+    }
+  })
+})()
