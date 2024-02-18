@@ -1,24 +1,46 @@
 {{ define "content" }}
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol viewBox="0 0 16 16" id="bi-box-arrow-up-right">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+        </symbol>
+        <symbol viewBox="0 0 16 16" id="bi-arrow-counterclockwise">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+        </symbol>
+        <symbol viewBox="0 0 16 16" id="bi-link">
+            <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+            <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
+        </symbol>
+    </svg>
     <main id="content">
-        <div class="col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 position-absolute top-50 start-50 translate-middle">
-            <span class="mb-1 float-end fw-light text-secondary display-6">{{- .Site.Title -}}</span>
-            <div class="card w-100">
+        <div class="pt-5 col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 position-absolute top-0 start-50 translate-middle-x text-center">
+            <h1 class="d-block my-5 fw-light text-secondary display-5">{{- .Site.Title -}}</h1>
+            <div class="card" style="box-shadow: 6px 6px 0px rgba(var(--bs-body-color-rgb),.1);">
                 <div class="card-body">
-                    <h1 class="card-title display-6">{{- T "jump_title" -}}</h1>
-                    <div class="card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
-                    <div class="my-4 p-2 rounded border border-dark-subtle lh-sm" id="link_text"></div>
+                    <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
+                    <div class="my-5">
+                        <input class="form-control text-center text-primary-emphasis" type="url" name="url" id="link_input" disabled readonly>
+                    </div>
+                    <div class="my-3 card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
                     <hr class="my-4">
                     <div class="d-flex justify-content-end gap-4 me-3">
-                        <button class="btn btn-sm btn-outline-secondary" type="button"  onclick="history.go(-1)" id="to_back">
+                        <button class="btn btn-lg btn-outline-secondary" type="button" id="to_back">
                             {{- T "jump_back" -}}
-                            <i class="fa-fw fa fa-rotate-back"></i>
+                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_back" }}</title><use href="#bi-arrow-counterclockwise"></use></svg>
                         </button>
-                        <a class="btn btn-sm btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_open" -}}">
+                        <a class="btn btn-lg btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_open" -}}">
                             {{- T "jump_open" -}}
-                            <i class="fa-fw fa fa-external-link"></i>
+                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_open" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="feedback py-3 text-end">
+                <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=dump_link" | relLangURL }}" target="_blank">链接问题反馈</a>
+            </div>
+            <div class="text-secondary-emphasis small">
+                <p>广告位</p>
             </div>
         </div>
         {{- .Content -}}

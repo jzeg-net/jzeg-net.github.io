@@ -1,12 +1,17 @@
 (() => {
-    let targetLink = new URLSearchParams(window.location.search).get("target")
-    let linkText = document.querySelector("#link_text")
-    let toExternal = document.querySelector("#to_external")
+  let targetLink = new URLSearchParams(window.location.search).get('target')
+  let linkInput = document.querySelector('#link_input')
+  let toBack = document.querySelector('#to_back')
+  let toExternal = document.querySelector('#to_external')
 
-    if (!targetLink) return
+  toBack.addEventListener('click', () => {
+    open(document.referrer, '_parent') // history.go(-1)
+  })
 
-    let result = decodeURIComponent(targetLink)
+  if (!targetLink) return
 
-    linkText.innerText = result
-    toExternal.href = result
+  let result = decodeURIComponent(targetLink)
+
+  linkInput.value = result
+  toExternal.href = result
 })()
