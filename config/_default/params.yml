@@ -114,7 +114,23 @@ analytics:
 topPullDownToRefresh:
     enable: false
 
-footer_links:
+# 友情链接
+friendLinks:
+    enable: false
+    page:
+        enable: true
+    footer:
+        enable: true
+    data:
+        category_1:
+            - "链接名称 #"
+            - "链接名称 #"
+        category_2:
+            - "链接名称 #"
+            - "链接名称 #"
+
+# 页脚链接列表
+footerLinks:
     enable: true
     group:
         # 每组分类个数没有上限，键名不允许以数字开头
