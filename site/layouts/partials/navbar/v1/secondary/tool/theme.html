@@ -7,15 +7,13 @@
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeSwitcher-text">
     {{ range .Children }}
     <li>
-        <button class="dropdown-item d-flex align-items-center" type="button" title="{{ .Name | safeHTML }}" data-bs-theme-value="{{ .Params.theme_value }}">
-            <svg class="bi me-2" width="16" height="16"><title>{{ .Name | safeHTML }}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
-            <span>{{ .Name | safeHTML }}</span>
+        <button class="dropdown-item d-flex align-items-center" type="button" title="{{- .Name | safeHTML -}}" data-bs-theme-value="{{ .Params.theme_value }}">
+            <svg class="bi me-2" width="16" height="16"><title>{{- .Name | safeHTML -}}</title><use href="#{{ .Params.svg.useHref }}"></use></svg>
+            <span>{{- .Name | safeHTML -}}</span>
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
         </button>
     </li>
     {{ end }}
 </ul>
-{{ else }}
-<span>{{- .Name | safeHTML -}}</span>
 {{ end }}
 {{ end }}
