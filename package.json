@@ -18,7 +18,7 @@
         "hugo-server:production:tls": "hugo server -e production --gc --tlsAuto",
         "hugo-server:development:tls": "hugo server -e development --gc --tlsAuto",
         "hugo-server:production": "hugo server -e production --gc",
-        "hugo-server:development": "hugo server -e development --gc",
+        "hugo-server:development": "hugo server -e development --gc --disableFastRender",
         "hugo-server-trust": "hugo server trust",
         "hugo-env": "hugo env",
         "hugo-env:-v": "hugo env -v",
@@ -136,7 +136,7 @@
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.35",
         "postcss-cli": "^11.0.0",
-        "sass": "^1.71.0",
+        "sass": "^1.71.1",
         "stylelint": "^16.2.1",
         "svg-sprite": "^3.0.0-rc1",
         "terser": "^5.27.2"
