@@ -116,18 +116,16 @@ topPullDownToRefresh:
 
 # 友情链接
 friendLinks:
-    enable: false
+    enable: true
     page:
         enable: true
     footer:
         enable: true
     data:
-        category_1:
-            - "链接名称 #"
-            - "链接名称 #"
-        category_2:
-            - "链接名称 #"
-            - "链接名称 #"
+        - "链接名称1 #"
+        - "链接名称2 #"
+        - "链接名称3 #"
+        - "链接名称4 #"
 
 # 页脚链接列表
 footerLinks:

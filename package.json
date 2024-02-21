@@ -18,7 +18,7 @@
         "hugo-server:production:tls": "hugo server -e production --gc --tlsAuto",
         "hugo-server:development:tls": "hugo server -e development --gc --tlsAuto",
         "hugo-server:production": "hugo server -e production --gc",
-        "hugo-server:development": "hugo server -e development --gc --disableFastRender",
+        "hugo-server:development": "hugo server -e development --gc",
         "hugo-server-trust": "hugo server trust",
         "hugo-env": "hugo env",
         "hugo-env:-v": "hugo env -v",

@@ -1,5 +1,12 @@
-<div>
-    <h6>友情链接</h6>
-    <div>
-    </div>
+{{- if and .Site.Params.friendLinks.enable .Site.Params.friendLinks.footer.enable -}}
+<div class="container py-4 d-flex flex-column row-gap-2">
+    <h6>{{- T "friendLinks" -}}</h6>
+    <ul class="list-unstyled d-flex row-gap-3 column-gap-4 flex-wrap justify-content-evenly">
+        {{- range .Site.Params.friendLinks.data -}}
+        {{- $name := index (split . " ") 0 }}
+        {{- $href := index (split . " ") 1 }}
+        <li class="flex-grow-1 px-3 py-1 text-center border border-light border-opacity-10"><a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $href }}" target="_blank">{{ $name }}</a></li>
+        {{- end -}}
+    </ul>
 </div>
+{{- end -}}

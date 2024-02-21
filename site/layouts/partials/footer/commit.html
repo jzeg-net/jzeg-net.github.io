@@ -1,7 +1,7 @@
-<section class="d-flex flex-column gap-3">
-    <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
-        <svg class="bi mx-4" aria-hidden="true"><use href="#bi-github"></use></svg>
-        <svg class="bi" aria-hidden="true"><use href="#bi-chevron-expand"></use></svg>
+<section class="d-flex flex-column row-gap-3">
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+        <svg class="bi fs-4 mx-4" aria-hidden="true"><use href="#bi-github"></use></svg>
+        <svg class="bi fs-4" aria-hidden="true"><use href="#bi-chevron-expand"></use></svg>
         <span class="visually-hidden">info</span>
     </button>
     <div class="collapse" id="tocContents">
@@ -24,23 +24,23 @@
             {{- with .File -}}
             {{- $path := .Path | replaceRE `\\` "/" -}}
             <div class="card-body vstack gap-3">
-                <a class="btn btn-sm btn-outline-secondary size-xs"
+                <a class="btn btn-outline-secondary"
                    href="{{- $git -}}/raw/main/site/content/{{- $path -}}"
                    title="{{ T "footer_raw_file_on_github" }}" target="_blank" rel="nofollow,noopener">
                     <span class="mx-4">{{ T "footer_github_raw" }}</span>
-                    <svg class="bi" aria-hidden="true"><title>{{ T "footer_github_raw" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
+                    <svg class="bi fs-4" aria-hidden="true"><title>{{ T "footer_github_raw" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary size-xs"
+                <a class="btn btn-outline-secondary"
                    href="{{- $git -}}/blob/main/site/content/{{- $path -}}"
                    title="{{ T "footer_view_file_on_github" }}" target="_blank" rel="nofollow,noopener">
                     <span class="mx-4">{{ T "footer_github_view" }}</span>
-                    <svg class="bi" aria-hidden="true"><title>{{ T "footer_github_view" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
+                    <svg class="bi fs-4" aria-hidden="true"><title>{{ T "footer_github_view" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary size-xs"
+                <a class="btn btn-outline-secondary"
                    href="{{- $git -}}/edit/main/site/content/{{- $path -}}"
                    title="{{ T "footer_edit_file_on_github" }}" target="_blank" rel="nofollow,noopener">
                     <span class="mx-4">{{ T "footer_github_edit" }}</span>
-                    <svg class="bi" aria-hidden="true"><title>{{ T "footer_github_edit" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
+                    <svg class="bi fs-4" aria-hidden="true"><title>{{ T "footer_github_edit" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                 </a>
             </div>
             {{- end -}}

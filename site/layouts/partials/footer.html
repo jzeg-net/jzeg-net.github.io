@@ -1,36 +1,53 @@
 <footer-gradient></footer-gradient>
-<footer class="py-5 bg-dark-subtle text-secondary">
+<footer class="d-flex flex-column bg-dark-subtle">
     <div class="bg-dots-container">
         <div class="bg-dots"></div>
     </div>
-    <div class="container vstack row-gap-4 px-4 py-5">
+    <div class="py-4 text-bg-dark bg-opacity-75">
         {{- partial "footer/list" . }}
+    </div>
+    <div class="py-4 text-bg-dark bg-opacity-50">
         {{- partial "footer/friendlinks" . }}
-        <div class="d-flex align-items-end justify-content-end">
-            <span class="currentDateTime size-xs">{{ T "currentDateTime" }}</span>
+    </div>
+    <div class="py-4 text-bg-dark bg-opacity-25">
+        <div class="container d-flex flex-column row-gap-4 px-4 py-5">
+            <div class="d-flex align-items-end justify-content-end">
+                <span class="currentDateTime small">{{ T "currentDateTime" }}</span>
+            </div>
+            <div class="d-flex flex-column align-items-end row-gap-4">
+                {{- partial "footer/icon" . }}
+                {{- partial "footer/commit" . }}
+            </div>
+            <hr class="my-3">
         </div>
-        <div class="vstack align-items-end row-gap-3">
-            {{- partial "footer/icon" . }}
-            {{- partial "footer/commit" . }}
-        </div>
-        <hr class="my-3">
-        <div class="d-flex flex-column-reverse row-gap-4 flex-md-row justify-content-md-between size-xs">
+    </div>
+    <div class="py-4 text-bg-dark bg-opacity-10">
+        <div class="container d-flex flex-column-reverse row-gap-4 flex-md-row justify-content-md-between size-xs">
             <div>
                 {{- partial "footer/copyright" . }}
                 {{- partial "footer/powered" . }}
             </div>
             <div class="d-flex flex-column row-gap-1 justify-content-end">
-                <div class="d-flex column-gap-1 justify-content-md-end">
+                <div class="d-flex column-gap-1 justify-content-md-end link-light link-opacity-25">
                     <span>{{ T "busuanzi_value_site_pv" }}<span class="ps-2" id="busuanzi_value_site_pv"></span></span>
                     <span>{{ T "busuanzi_value_site_uv" }}<span class="ps-2" id="busuanzi_value_site_uv"></span></span>
                     <span>{{ T "busuanzi_value_page_pv" }}<span class="ps-2" id="busuanzi_value_page_pv"></span></span>
                 </div>
                 <div class="d-flex column-gap-1 justify-content-md-end">
-                    {{- partial "footer/terms_of_service" . }}
-                    {{- partial "footer/privacy_policy" . }}
+                    {{ with .GetPage "privacy_policy" }}
+                        <a class="link-light link-opacity-25 link-underline link-underline-opacity-0 link-underline-opacity-25-hover link-offset-3-hover" href="{{ .RelPermalink -}}" target="_blank" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                    {{ end }}
+                    {{ with .GetPage "terms_of_service" }}
+                        <a class="link-light link-opacity-25 link-underline link-underline-opacity-0 link-underline-opacity-25-hover link-offset-3-hover" href="{{ .RelPermalink -}}" target="_blank" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+                    {{ end }}
                 </div>
                 <div class="d-flex flex-column row-gap-1 text-md-end">
-                    {{- partial "footer/icp" . }}
+                    {{- with .Site.Params.icp }}
+                        <a class="link-light link-opacity-25 link-underline-opacity-0" id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow, noopener" title="ICP备案">{{- . -}}</a>
+                    {{- end -}}
+                    {{- with .Site.Params.beian }}
+                        <a class="link-light link-opacity-25 link-underline-opacity-0" id="gongan" href="/" target="_blank" rel="nofollow, noopener" title="公安备案">{{- . -}}</a>
+                    {{- end -}}
                 </div>
             </div>
         </div>

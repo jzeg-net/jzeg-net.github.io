@@ -1,0 +1,7 @@
+details::marker,
+details ::-webkit-details-marker,
+details ::-moz-list-bullet {
+  direction: ltr;
+  color: gray;
+  margin-left: .5ch;
+}
