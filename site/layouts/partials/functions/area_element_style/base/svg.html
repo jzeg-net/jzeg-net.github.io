@@ -1,6 +1,6 @@
 {{ $href := .href }}
 {{ $title_text := .title | default "" }}
-{{ $className := .class | default "bi" }}
+{{ $className := .class | default "bi fs-4" }}
 {{ $width_value := .width | default "16" }}
 {{ $height_value := .height | default "16" }}
 
@@ -10,10 +10,10 @@
 
 {{ $title := "" }}
 {{ with $title_text}}
-    {{ $title = partialCached "functions/area_element_style/base/title" (dict "text" $title_text) }}
+    {{ $title = partial "functions/area_element_style/base/title" (dict "text" $title_text) }}
 {{ end }}
 
-{{ $use := partialCached "functions/area_element_style/base/use" (dict "href" $href) }}
+{{ $use := partial "functions/area_element_style/base/use" (dict "href" $href) }}
 
 
 {{ $svg := printf "<svg%s%s%s>%s%s</svg>" $class $width $height $title $use | safeHTML }}
