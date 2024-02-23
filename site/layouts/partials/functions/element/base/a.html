@@ -1,0 +1,15 @@
+{{ $innerHTML := .innerHTML }}
+{{ $href_value := .href | default "" }}
+{{ $title_text := .title | default "" }}
+{{ $className := .class | default "link-light link-opacity-75 link-underline-opacity-0" }}
+{{ $target_value := .target | default "_blank" }}
+
+
+{{ $class := printf " class=%s" $className | safeHTMLAttr }}
+{{ $title := printf " title=%s" $title_text | safeHTMLAttr }}
+{{ $href := printf " href=%s" $href_value | safeHTMLAttr }}
+{{ $target := printf " target=%s" $target_value | safeHTMLAttr }}
+
+
+{{ $a := printf "<a%s%s%s%s>%s</a>" $class $href $target $title $innerHTML | safeHTML }}
+{{ return $a }}
