@@ -4,16 +4,16 @@
 {{ $width_value := .width | default "16" }}
 {{ $height_value := .height | default "16" }}
 
-{{ $class := printf " class=%s" $className | safeHTMLAttr }}
+{{ $class := printf " class=%q" $className | safeHTMLAttr }}
 {{ $width := printf " width=%s" $width_value }}
 {{ $height := printf " height=%s" $height_value }}
 
 {{ $title := "" }}
 {{ with $title_text}}
-    {{ $title = partialCached "functions/element/base/title" (dict "text" $title_text) }}
+    {{ $title = partialCached "functions/area_element_style/base/title" (dict "text" $title_text) }}
 {{ end }}
 
-{{ $use := partialCached "functions/element/base/use" (dict "href" $href) }}
+{{ $use := partialCached "functions/area_element_style/base/use" (dict "href" $href) }}
 
 
 {{ $svg := printf "<svg%s%s%s>%s%s</svg>" $class $width $height $title $use | safeHTML }}
