@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6, user-scalable=yes, interactive-widget=resizes-visual">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="generator" content="Hugo {{ hugo.Version }}">
+    {{- partial "head/theme-color" . -}}
     {{ block "robots" . }}{{- partial "head/robots" . -}}{{ end }}
     {{ block "description" . }}{{- partial "head/description" . -}}{{ end }}
     {{ block "keyword" . }}{{- partial "head/keyword" . -}}{{ end }}
