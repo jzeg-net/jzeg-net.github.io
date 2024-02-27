@@ -32,6 +32,12 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{- if .Site.Params.umami.enable -}}
+{{- $umami_src := .Site.Params.umami.script_src -}}
+{{- $umami_website_id := .Site.Params.umami.website_id -}}
+<script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}"></script>
+{{- end -}}
+
 {{ if in .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>

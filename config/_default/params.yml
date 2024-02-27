@@ -116,38 +116,25 @@ topPullDownToRefresh:
 
 # 友情链接
 friendLinks:
-    enable: true
     page:
         enable: true
     footer:
         enable: true
-    data:
-        - "链接名称1 #"
-        - "链接名称2 #"
-        - "链接名称3 #"
-        - "链接名称4 #"
+
+# 订阅通讯
+newsletter:
+    footer:
+        enable: true
 
 # 页脚链接列表
 footerLinks:
     enable: true
-    group:
-        # 每组分类个数没有上限，键名不允许以数字开头
-        # 键名是分类名称，每一个数组格式为空格分割，具体格式是[链接文本 链接网址]
-        Demo:
-            - "Demo demo"
-            - "账号表单演示 demo/account_form"
-        links:
-            - "友情链接 links"
-            - "ChatGPT chatgpt"
-        政策条款:
-            - "隐私政策 privacy_policy"
-            - "服务条款 terms_of_service"
-            - "Cookie cookies"
-        我们:
-            - "关于 about"
-            - "联系 contact"
-            - "广告合作 ad"
-        智慧平台:
-            - "闯关 tools/zhgh/passwork"
-            - "学习 tools/zhgh/study"
-            - "日志 tools/zhgh/log"
+
+# https://cloud.umami.is/
+umami:
+    enable: true
+    script_src: "https://analytics.us.umami.is/script.js"
+    website_id: "e0dd55d2-615c-406c-835a-3240c2e23a9c"
+    share:
+        enable: true
+        url: "https://us.umami.is/share/bQs92yK6hmcMtMzg/jzeg-net.github.io"

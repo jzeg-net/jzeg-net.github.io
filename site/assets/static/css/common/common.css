@@ -54,10 +54,20 @@
   --border-color: #fff;
 }
 
+:root {
+  --bs-font-family-lxgw-wenkai: "LXGW WenKai";
+  --bs-font-family-lxgw-wenkai-tc: "LXGW WenKai TC";
+  --bs-font-family-lxgw-wenkai-lite: "LXGW WenKai Lite";
+  --bs-font-family-lxgw-wenkai-screen: "LXGW WenKai Screen";
+  --bs-font-monospace: "";
+}
+
 html,
 body {
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
+  --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai-screen);
+  --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif)  !important;
 }
 
 ::-webkit-scrollbar {
