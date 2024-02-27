@@ -9,26 +9,27 @@
         <div class="rounded" style="background: var(--bs-linear-gradient-end);padding: 1px;">
             <div class="px-3 py-5 d-flex flex-column flex-md-row column-gap-md-3 text-bg-dark bg-opacity-100 rounded">
                 <div class="col-12 col-md">
-                    <h4>订阅我们的新闻</h4>
-                    <p>通过邮箱地址，在我们发布较为重要的信息的时候，及时的收到提示</p>
+                    <h4 class="text-light-emphasis">订阅我们的新闻</h4>
+                    <p class="text-secondary">通过邮箱地址，在我们发布较为重要的信息的时候，及时的收到提示</p>
                 </div>
                 <div class="col-12 col-md">
                     <form method="post" action="/">
-                        <div class="my-4 text-bg-secondary rounded-2 shadow-sm overflow-hidden d-md-flex flex-md-row">
-                            <div class="w-100">
-                                <input class="w-100 h-100 px-3 border-0 bg-transparent text-light" type="email" name="newsletterEmail" id="newsletterEmail" placeholder="Your email address" autocomplete="off" required>
+                        <div class="my-4 text-bg-secondary rounded-2 overflow-hidden d-md-flex flex-md-row">
+                            <div class="p-1 w-100">
+                                <input class="w-100 h-100 px-3 border-0 rounded-2 bg-secondary-subtle" type="email" name="newsletterEmail" id="newsletterEmail" placeholder="Your email address" autocomplete="off" required style="outline-offset: 0px;">
                             </div>
                             <input type="hidden" id="newsletter_classification" name="classification" value="Practitioner" required>
                             <input type="hidden" id="newsletter_token" name="token" required>
-                            <button class="px-3 lh-lg bg-light-subtle border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" type="submit">
-                                <span class="me-2" style="background: var(--bs-linear-gradient-bottom);-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: rgba(0,0,0,0);">订阅</span>
+                            <button class="px-3 py-1 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" type="submit" style="outline-offset: -4px;">
+                                <span class="me-2" style="background: var(--bs-linear-gradient-top);-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: rgba(0,0,0,0);">订阅</span>
                                 <svg class="bi" width="16" height="16"><title>订阅</title><use href="#bi-envelope-at"></use></svg>
                             </button>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                是的，我知道这次操作和账号信息无关。我希望 GitHub 和附属机构使用我的信息进行个性化通信、有针对性的广告和活动效果。有关更多详细信息，请参阅 GitHub 隐私声明。
+                            <label class="form-check-label link-secondary link-opacity-25 link-opacity-100-hover" for="flexCheckDefault">
+                                <p class="mb-2">是的，我知道这次操作和账号信息无关。</p>
+                                <p class="mb-2">我希望使用我的信息进行个性化通信、有针对性的广告和活动效果。有关更多详细信息，请参阅隐私声明。</p>
                             </label>
                         </div>
                     </form>

@@ -20,26 +20,27 @@
             </ul>
         </div>
         <div class="col-lg row row-gap-4 column-gap-md-5">
-            {{- if .Site.Params.footerLinks.enable }}
-                {{ $currentPage := .RelPermalink }}
-                {{- range $title, $list := .Site.Params.footerLinks.group }}
-                    <div class="col-6 col-md">
-                        <h6 class="mb-4 fw-bolder">{{ $title | strings.FirstUpper }}</h6>
-                        <ul class="list-unstyled">
-                            {{- range $list }}
-                                {{- $text := index (split . " ") 0 }}
-                                {{- $href := index (split . " ") 1 }}
-                                {{- $relLangHref := printf "%s%s" ($href | relLangURL) "/" }}
-                                {{ if eq $currentPage $relLangHref }}
-                                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-50 link-opacity-25-hover link-offset-3 link-underline-opacity-10 fw-bolder" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
-                                {{ else }}
-                                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $relLangHref }}" title="{{ $text }}">{{ $text }}</a></li>
-                                {{ end }}
-                            {{- end }}
-                        </ul>
-                    </div>
-                {{- end }}
-            {{- end }}
+        {{- if .Site.Params.footerLinks.enable -}}
+        {{- $currentLANG := .Site.Language.LanguageCode | default .Site.Params.defaultContentLanguage -}}
+        {{- $currentPage := .RelPermalink -}}
+        {{- range .Site.Data.footerLinks -}}
+        {{- $label := index .category.label $currentLANG -}}
+            <div class="col-6 col-md">
+                <h6 class="mb-4 fw-bolder">{{ $label }}</h6>
+                <ul class="list-unstyled">
+                {{- range .category.group -}}
+                {{- $name := index .name $currentLANG -}}
+                {{- $relLangHref := printf "%s%s" (.url | relLangURL) "/" -}}
+                {{- if eq $currentPage $relLangHref -}}
+                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-50 link-opacity-25-hover link-offset-3 link-underline-opacity-10 fw-bolder" href="{{ $relLangHref }}" title="{{ $name }}">{{ $name }}</a></li>
+                {{- else -}}
+                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $relLangHref }}" title="{{ $name }}">{{ $name }}</a></li>
+                {{- end -}}
+                {{- end -}}
+                </ul>
+            </div>
+        {{- end -}}
+        {{- end }}
         </div>
     </div>
 </div>
