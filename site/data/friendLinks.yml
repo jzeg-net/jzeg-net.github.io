@@ -1,0 +1,19 @@
+- name: "链接名称1"
+  url: "#"
+  logo:
+  description:
+
+- name: "链接名称2"
+  url: "#"
+  logo:
+  description:
+
+- name: "链接名称3"
+  url: "#"
+  logo:
+  description:
+
+- name: "链接名称4"
+  url: "#"
+  logo:
+  description:
