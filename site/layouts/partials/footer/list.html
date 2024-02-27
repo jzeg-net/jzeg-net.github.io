@@ -6,7 +6,17 @@
                 <span class="fs-5 text-nowrap">{{ .Site.Title }}</span>
             </a>
             <ul class="list-unstyled">
-                <li class="mb-3 link-light link-opacity-10">发展才是硬道理</li>
+                <li class="mb-3 link-light link-opacity-10 link-opacity-50-hover">发展才是硬道理</li>
+                {{- with .Site.Params.icp }}
+                <li class="mb-3">
+                    <a class="text-nowrap link-light link-opacity-10 link-opacity-50-hover link-offset-2-hover link-underline-opacity-0 link-underline-opacity-10-hover" id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow, noopener" title="ICP备案">{{- . -}}</a>
+                </li>
+                {{- end -}}
+                {{- with .Site.Params.beian }}
+                <li class="mb-3">
+                    <a class="text-nowrap link-light link-opacity-10 link-opacity-50-hover link-offset-2-hover link-underline-opacity-0 link-underline-opacity-10-hover" id="gongan" href="/" target="_blank" rel="nofollow, noopener" title="公安备案">{{- . -}}</a>
+                </li>
+                {{- end -}}
             </ul>
         </div>
         <div class="col-lg row row-gap-4 column-gap-md-5">
