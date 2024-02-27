@@ -8,7 +8,7 @@
     {{ $mastodon_account := partial "functions/params/social/get_mastodon_info" (dict "type" "account") }}
     <a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $mastodon_url }}" target="_blank" title="{{ $mastodon_account }}" rel="me, nofollow, noopener">
         <svg class="bi fs-4" width="16" height="16"><title>{{ $mastodon_account }}</title><use href="#bi-mastodon"></use></svg>
-        <span class="visually-hidden">{{- T "footer_icon_text-mastodon" -}}</span>
+        <span class="visually-hidden">{{- T "mastodon" -}}</span>
     </a>
     {{ end }}
     <a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "sitemap" }}">
