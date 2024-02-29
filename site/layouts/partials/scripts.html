@@ -32,10 +32,12 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{- if eq hugo.Environment "production" -}}
 {{- if .Site.Params.umami.enable -}}
 {{- $umami_src := .Site.Params.umami.script_src -}}
 {{- $umami_website_id := .Site.Params.umami.website_id -}}
 <script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}"></script>
+{{- end -}}
 {{- end -}}
 
 {{ if in .Page.Params.components "datatables" }}
@@ -84,13 +86,6 @@
 {{ end }}
 
 {{ if .IsHome }}{{ end }}
-
-{{/*<script src="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.js"></script>*/}}
-{{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/zh-cn.js"></script>*/}}
-{{/*<script src="{{ $preUrl }}static/vendor/xgplayer/es/lang/en.js"></script>*/}}
-
-{{/*<script src="{{ $preUrl }}static/vendor/danmu.js/browser/index.js"></script>*/}}
-{{/*<script src="{{ $preUrl }}static/vendor/danmu.js/dist/index.js"></script>*/}}
 
 {{ if eq .Site.Params.theme.enable true }}
 {{- $color_modesJs := partial "functions/script/build" (dict "resourcesGet" "static/js/color-modes.js" "targetPath" "static/js/color-modes.js") }}

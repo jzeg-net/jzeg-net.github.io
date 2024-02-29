@@ -1,4 +1,5 @@
 {{- $preUrl := relURL "/" -}}
+{{- $cdnUrl := (partial "functions/cdn/jsdelivr" .) -}}
 
 {{- if eq hugo.Environment "production" -}}
     {{- if eq .Language.LanguageDirection "ltr" -}}
@@ -18,10 +19,11 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/flag-icons/css/flag-icons.min.css">
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vanilla-cookieconsent/dist/cookieconsent.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont/style.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont/style.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont/style.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" />
+{{ if .Site.Params.font_family.enable }}
+    {{ $font_family_name := .Site.Params.font_family.name }}
+    {{ $font_family_css_href := printf "%s%s/style.css" $cdnUrl $font_family_name }}
+    <link rel="stylesheet" href={{ $font_family_css_href }}>
+{{ end }}
 
 {{ if in .Page.Params.components "uppy" }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.css">

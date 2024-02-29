@@ -16,6 +16,34 @@ fontSize:
     default: md
     option: [ "3xs","2xs","xs","sm","md","lg","xl","2xl","3xl","4xl","5xl","6xl","7xl","8xl","9xl" ]
 
+# 全站静态文件 CDN 参数
+cdn:
+    enable: true
+    name: "jsdelivr"
+    way: "npm"
+    options:
+        -   name: "jsdelivr"
+            prefix:
+                - way: "npm"
+                  url: "https://cdn.jsdelivr.net/npm/"
+                - way: "github"
+                  url: "https://cdn.jsdelivr.net/gh/"
+                - way: "wordpress"
+                  url: "https://cdn.jsdelivr.net/wp/"
+                - way: "es"
+                  url: "https://esm.run/"
+
+# default font family
+font_family:
+    enable: true
+    cdn:
+        enable: true
+    name: "lxgw-wenkai-screen-webfont"
+    options:
+        -   name: "lxgw-wenkai-tc-webfont"
+        -   name: "lxgw-wenkai-lite-webfont"
+        -   name: "lxgw-wenkai-screen-webfont"
+
 # default character color
 color:
     text:
