@@ -1,0 +1,22 @@
+{{ $preUrl := relURL "/" }}
+{{ $cdnUrl := "" }}
+
+{{ if .Site.Params.cdn.enable }}
+    {{ $current_cdn_name := .Site.Params.cdn.name }}
+    {{ $current_cdn_way := .Site.Params.cdn.way }}
+
+    {{ $prefixTMP := "" }}
+
+    {{ range .Site.Params.cdn.options }}
+        {{ if eq .name $current_cdn_name }}{{ $prefixTMP = .prefix }}{{ end }}
+    {{ end }}
+
+    {{ range $prefixTMP }}
+        {{ if eq .way $current_cdn_way }}{{ $cdnUrl = .url }}{{ end }}
+    {{ end }}
+
+{{ else }}
+    {{ $cdnUrl = $preUrl }}
+{{ end }}
+
+{{ return $cdnUrl }}
