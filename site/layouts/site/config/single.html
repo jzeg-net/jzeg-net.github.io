@@ -44,33 +44,55 @@
                     </div>
                 </div>
                 <div class="hstack justify-content-center align-items-baseline column-gap-2">
-                    <label for="config_palette" class="d-none d-lg-block form-label col-2 text-end me-4">调色板</label>
+                    <label class="d-none d-lg-block form-label col-2 text-end me-4">调色板</label>
                     <div class="col-6">
-                        <label for="config_palette" class="d-lg-none form-label text-end me-4" id="config_palette_label">调色板</label>
+                        <label class="d-lg-none form-label text-end me-4" id="config_palette_label">调色板</label>
                         <div class="d-flex flex-wrap gap-3">
                             <div>
-                                <input type="radio" class="btn-check" name="palette_options" id="palette_options-secondary" checked autocomplete="off">
+                                <input type="radio" class="btn-check" name="palette_options" value="secondary" id="palette_options-secondary" autocomplete="off" checked>
                                 <label class="btn btn-outline-secondary" for="palette_options-secondary">默认</label>
                             </div>
                             <div>
-                                <input type="radio" class="btn-check" name="palette_options" id="palette_options-danger" autocomplete="off">
+                                <input type="radio" class="btn-check" name="palette_options" value="danger" id="palette_options-danger" autocomplete="off">
                                 <label class="btn btn-outline-danger" for="palette_options-danger">红色</label>
                             </div>
                             <div>
-                                <input type="radio" class="btn-check" name="palette_options" id="palette_options-success" autocomplete="off">
+                                <input type="radio" class="btn-check" name="palette_options" value="success" id="palette_options-success" autocomplete="off">
                                 <label class="btn btn-outline-success" for="palette_options-success">绿色</label>
                             </div>
                             <div>
-                                <input type="radio" class="btn-check" name="palette_options" id="palette_options-primary" autocomplete="off">
+                                <input type="radio" class="btn-check" name="palette_options" value="primary" id="palette_options-primary" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="palette_options-primary">蓝色</label>
                             </div>
                             <div>
-                                <input type="radio" class="btn-check" name="palette_options" id="palette_options-warning" autocomplete="off">
+                                <input type="radio" class="btn-check" name="palette_options" value="warning" id="palette_options-warning" autocomplete="off">
                                 <label class="btn btn-outline-warning" for="palette_options-warning">黄色</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="hstack justify-content-center align-items-baseline column-gap-2">
+                    <label class="d-none d-lg-block form-label col-2 text-end me-4">页面切换提示音</label>
+                    <div class="col-6">
+                        <label class="d-lg-none form-label text-end me-4" id="page_switching_sound_label">页面切换提示音</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div>
+                                <input type="radio" class="btn-check" name="page_switching_sound_options" value="true" id="page_switching_sound-turn_on" autocomplete="off" onclick="localStorage.setItem('admission', 'true')">
+                                <label class="btn btn-outline-success" for="page_switching_sound-turn_on">开启</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="page_switching_sound_options" value="false" id="page_switching_sound-turn_off" autocomplete="off" onclick="localStorage.setItem('admission', 'false')">
+                                <label class="btn btn-outline-success" for="page_switching_sound-turn_off">关闭</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let admissionStatus = localStorage.getItem('admission')
+                    document.querySelectorAll('input[name="page_switching_sound_options"]').forEach((currentInput) => {
+                        if (currentInput.value === admissionStatus) currentInput.checked = true
+                    })
+                </script>
             </div>
         </div>
     </main>

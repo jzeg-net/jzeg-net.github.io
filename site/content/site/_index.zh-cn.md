@@ -1,6 +1,5 @@
 ---
-title: "Configuration Options"
-type: "site/config"
+title: "Site"
 
 date: "2023-06-04T17:00:00+08:00"
 

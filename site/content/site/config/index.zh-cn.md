@@ -1,5 +1,6 @@
 ---
 title: "配置选项"
+type: "site/config"
 
 date: "2023-06-04T17:00:00+08:00"
 
