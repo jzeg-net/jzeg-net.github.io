@@ -60,15 +60,19 @@
   --bs-font-family-lxgw-wenkai-lite: "LXGW WenKai Lite";
   --bs-font-family-lxgw-wenkai-screen: "LXGW WenKai Screen";
   --bs-font-family-lxgw-wenkai-mono: "LXGW WenKai Mono";
+  --bs-font-family-lxgw-wenkai-mono-tc: "LXGW WenKai Mono TC";
+  --bs-font-family-lxgw-wenkai-mono-lite: "LXGW WenKai Mono Lite";
+  --bs-font-family-lxgw-wenkai-mono-screen: "LXGW WenKai Mono Screen";
 }
 
 html,
 body {
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
-  --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai-screen);
+  --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai);
+  --bs-font-family-lxgw-mono: var(--bs-font-family-lxgw-wenkai-mono);
   --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif)  !important;
-  --bs-font-monospace: var(--bs-font-family-lxgw-wenkai-mono) !important;
+  --bs-font-monospace: var(--bs-font-family-lxgw-mono) !important;
 }
 
 ::-webkit-scrollbar {
