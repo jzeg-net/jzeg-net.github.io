@@ -58,7 +58,7 @@
           en-US:
           zh:
           en:
-        url: "privacy_policy"
+        url: "site/privacy_policy"
         logo:
         description:
       - name:
@@ -66,7 +66,7 @@
           en-US:
           zh:
           en:
-        url: "terms_of_service"
+        url: "site/terms_of_service"
         logo:
         description:
       - name:
@@ -75,6 +75,14 @@
           zh:
           en:
         url: "cookies"
+        logo:
+        description:
+      - name:
+          zh-CN: "配置选项"
+          en-US:
+          zh:
+          en:
+        url: "site/config"
         logo:
         description:
 
@@ -90,7 +98,7 @@
           en-US:
           zh:
           en:
-        url: "about"
+        url: "site/about"
         logo:
         description:
       - name:
