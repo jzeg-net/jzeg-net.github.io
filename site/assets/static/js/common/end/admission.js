@@ -6,10 +6,21 @@
   const setStored = value => localStorage.setItem(key, value)
   const removeStored = () => localStorage.removeItem(key)
 
-  const getPreferredStored = () => getStored() ?? 0
-  console.log(getPreferredStored())
+  const getPreferredStored = () => getStored()
+  const isAllowed = () => getPreferredStored() === "true"
 
-  const getAudio = (volume = '.2', crossOrigin = 'use-credentials') => {
+  const audioPlayConfirm = () => {
+    // 只有在未设置的时候继续
+    if (getPreferredStored() !== null) {
+      return
+    }
+
+    let cResult = confirm('是否希望在每次切换到本站页面的时候，播放提示音么？')
+
+    setStored(cResult)
+  }
+
+  const getAudio = (volume = '.4', crossOrigin = 'use-credentials') => {
     let audio = document.createElement('audio')
     let source_wav = document.createElement('source')
     let source_mp3 = document.createElement('source')
@@ -25,49 +36,43 @@
     return audio
   }
 
-  const audioPlay = () => {
-    let audio = getAudio()
-    let startPlayPromise = audio.play()
+  const audioPlay = (audioEl = getAudio()) => {
+    if (!isAllowed()) return
+
+    let playPromise = audioEl.play()
 
     // 在大部分正在主流使用的浏览器都支持play()的返回值的时候，可以取消对其进行判断。
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(() => console.log('播放完毕'))
+    if (playPromise !== undefined) {
+      playPromise
         .catch((err) => {
           switch (err.name) {
             case 'NotSupportedError':
-              console.log('不支持该操作，本实例为格式不支持')
+              console.log('不支持该操作，格式不支持')
               break
             case 'NotAllowedError':
-              console.log('不允许该操作，本实例原因是自动播放策略限制')
+              console.log('不允许该操作，自动播放策略限制，首次访问没有具体操作之前不允许执行自动播放')
+              break
+            default:
+              console.log('其他错误：', err.name)
               break
           }
-
-          if (audioPlayConfirm()) {
-            // audio.play()
-            console.log('用户确认')
-            setStored(1)
-            listenerVisibilitychange()
-          } else {
-            // audio.pause()
-            console.log('用户取消')
-            setStored(0)
-          }
-
         })
     }
   }
 
-  const audioPlayConfirm = () => {
-    return confirm('你是否希望在每次切换到本站点页面的时候，播放提示音么？')
-  }
-
   const listenerVisibilitychange = () => {
+    if (!isAllowed()) {
+      return
+    }
+
     document.addEventListener('visibilitychange', () => {
       let state = document.visibilityState
       if (state === 'visible') audioPlay()
     })
   }
 
-  window.addEventListener('DOMContentLoaded', audioPlay)
+  window.addEventListener('load', () => {
+    audioPlayConfirm()
+    listenerVisibilitychange()
+  })
 })()
