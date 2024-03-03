@@ -61,6 +61,7 @@
 .tags_item > a,
 .tags_link {
   text-decoration-line: none;
+  -webkit-user-drag: none;
   color: var(--tags-link-color);
   transition: color .2s ease;
 }
