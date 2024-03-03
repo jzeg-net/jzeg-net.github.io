@@ -1,0 +1,82 @@
+:root {
+  --tags-title-font-size: 1rem;
+  --tags-item-font-size: .9rem;
+  --tags-title-color: rgba(var(--bs-body-bg-rgb), .4);
+  --tags-color: rgba(var(--bs-body-bg-rgb), .8);
+  --tags-item-color: rgba(var(--bs-body-bg-rgb), .8);
+  --tags-link-color: rgba(var(--bs-body-bg-rgb), .3);
+  --tags-link-color-hover: rgba(var(--bs-body-bg-rgb), .8);
+  --tags-title-border-image: rgba(var(--bs-link-color-rgb), .5);
+  --tags-item-border-image: rgba(var(--bs-link-color-rgb), .5);
+  --tags-clip-path-padding-inline: 1rem;
+  --tags-title-clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
+  --tags-item-clip-path: polygon(10% 0, 100% 0, 90% 50%, 100% 100%, 10% 100%, 0 50%);
+  --tags-item-last-clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
+}
+
+.tags {
+  display: flex;
+  column-gap: .3rem;
+  user-select: none;
+}
+
+.tags_title {
+  display: flex;
+  align-items: center;
+  font-size: var(--tags-title-font-size);
+  color: var(--tags-title-color);
+  padding-inline: calc(var(--tags-clip-path-padding-inline) + .25rem);
+  clip-path: var(--tags-title-clip-path);
+  border-image: conic-gradient(var(--tags-title-border-image) 0, var(--tags-title-border-image) 0) fill 0 / 1 / 100vw;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.tags_group {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: .2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.tags_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--tags-item-font-size);
+  color: var(--tags-item-color);
+  padding-inline: calc(var(--tags-clip-path-padding-inline) + .25rem);
+  clip-path: var(--tags-item-clip-path);
+  border-image: conic-gradient(var(--tags-item-border-image) 0, var(--tags-item-border-image) 0) fill 0 / 1 / 100vw;
+  border-image-repeat: stretch;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.tags_item:last-child {
+  clip-path: var(--tags-item-last-clip-path);
+}
+
+.tags_item > a,
+.tags_link {
+  text-decoration-line: none;
+  color: var(--tags-link-color);
+  transition: color .2s ease;
+}
+
+.tags_item > a:hover,
+.tags_link:hover {
+  color: var(--tags-link-color-hover);
+}
+
+.tags_item > a:after,
+.tags_link:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}

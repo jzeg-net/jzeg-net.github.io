@@ -1,8 +1,13 @@
-<span>{{ T "post_meta_tags" }}</span>
-{{ with .GetTerms "tags" }}
-<span class="hstack column-gap-1" id="tags">
-{{ range . }}
-    <a class="link-underline link-underline-opacity-0" href="{{ .RelPermalink }}" target="_blank">{{ .LinkTitle }}</a>
-{{ end }}
-</span>
-{{ end }}
+<div class="tags" id="tags">
+    <span class="tags_title">{{ T "post_meta_tags" }}</span>
+    <ul class="tags_group">
+        {{ with .GetTerms "tags" }}
+        {{ range . }}
+            <li class="tags_item"><a class="tags_link" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+        {{ else }}
+            <li class="tags_item"><a href="#">{{ T "post_meta_tags" }}</a></li>
+            <li class="tags_item">{{ T "post_meta_tags" }}</li>
+        {{ end }}
+    </ul>
+</div>

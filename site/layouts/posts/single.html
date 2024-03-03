@@ -90,9 +90,9 @@
         </div>
     </div>
     <aside id="meta">
-        <div>
+        <div class="vstack row-gap-2">
             <div class="hstack column-gap-2">{{ partial "posts/meta/topics" . }}</div>
-            <div class="hstack column-gap-2">{{ partial "posts/meta/tags" . }}</div>
+            {{ partial "posts/meta/tags" . }}
             <div class="hstack column-gap-2">{{ partial "posts/meta/categories" . }}</div>
         </div>
         <div class="d-flex flex-row justify-content-between gap-3" id="post-nav">
