@@ -3,29 +3,72 @@
         <div class="container">
             <div class="vstack justify-content-center row-gap-3">
                 <div class="hstack justify-content-center align-items-baseline column-gap-2">
-                    <label for="config_githubToken" class="d-none d-lg-block form-label col-2 text-end me-4">Github Token</label>
+                    <label for="config_fontSize" class="d-none d-lg-block form-label col-2 text-end me-4">字体</label>
                     <div class="col-6">
-                        <label for="config_githubToken" class="d-lg-none form-label text-end me-4" id="config_githubToken_label">Github Token</label>
-                        <input class="form-control" type="text" id="config_githubToken" minlength="32" aria-labelledby="config_githubToken_label">
-                        <div class="form-text">
-                            <p class="card-text">组织中的仓库，需要组织管理员额外开启仓库的访问权限，允许组织成员通过个人访问令牌访问仓库对应的api地址，具体设置请联系GitHub组织的管理员</p>
-                            <p class="card-text">https://github.com/organizations/替换组织名称/settings/personal-access-tokens</p>
-                            <a class="btn btn-sm btn-link" href="https://github.com/settings/tokens/new?description=修改这里设置识别的名称" target="_blank" title="点击这里访问个人访问令牌">
-                                <span>直接访问个人访问令牌页面</span>
-                                <svg class="bi ms-1" width="16" height="16">
-                                    <use href="#bi-box-arrow-up-right"></use>
-                                </svg>
-                            </a>
+                        <label for="config_fontSize" class="d-lg-none form-label text-end me-4" id="config_fontSize_label">字体</label>
+                        <select class="form-select form-select-lg" size="9" id="config_fontSize" aria-labelledby="config_fontSize_label">
+                            <option value="2xs">2xs</option>
+                            <option value="xs">xs</option>
+                            <option value="sm">sm</option>
+                            <option value="md">md</option>
+                            <option value="base" selected>base</option>
+                            <option value="lg">lg</option>
+                            <option value="xl">xl</option>
+                            <option value="2xl">2xl</option>
+                            <option value="3xl">3xl</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="hstack justify-content-center align-items-baseline column-gap-2">
+                    <label class="d-none d-lg-block form-label col-2 text-end me-4">调色板</label>
+                    <div class="col-6">
+                        <label class="d-lg-none form-label text-end me-4" id="config_palette_label">调色板</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div>
+                                <input type="radio" class="btn-check" name="palette_options" value="secondary" id="palette_options-secondary" autocomplete="off" checked>
+                                <label class="btn btn-outline-secondary" for="palette_options-secondary">默认</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="palette_options" value="danger" id="palette_options-danger" autocomplete="off">
+                                <label class="btn btn-outline-danger" for="palette_options-danger">红色</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="palette_options" value="success" id="palette_options-success" autocomplete="off">
+                                <label class="btn btn-outline-success" for="palette_options-success">绿色</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="palette_options" value="primary" id="palette_options-primary" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="palette_options-primary">蓝色</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="palette_options" value="warning" id="palette_options-warning" autocomplete="off">
+                                <label class="btn btn-outline-warning" for="palette_options-warning">黄色</label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="hstack justify-content-center align-items-baseline column-gap-2">
-                    <label for="config_githubRepo" class="d-none d-lg-block form-label col-2 text-end me-4">Github Repo</label>
+                    <label class="d-none d-lg-block form-label col-2 text-end me-4">页面切换提示音</label>
                     <div class="col-6">
-                        <label for="config_githubRepo" class="d-lg-none form-label text-end me-4" id="config_githubRepo_label">Github Repo</label>
-                        <input class="form-control-plaintext" type="text" readonly value="{{ .Site.Params.Repo.git }}" id="config_githubRepo" aria-labelledby="config_githubRepo_label">
+                        <label class="d-lg-none form-label text-end me-4" id="page_switching_sound_label">页面切换提示音</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div>
+                                <input type="radio" class="btn-check" name="page_switching_sound_options" value="true" id="page_switching_sound-turn_on" autocomplete="off" onclick="localStorage.setItem('admission', 'true')">
+                                <label class="btn btn-outline-success" for="page_switching_sound-turn_on">开启</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="page_switching_sound_options" value="false" id="page_switching_sound-turn_off" autocomplete="off" onclick="localStorage.setItem('admission', 'false')">
+                                <label class="btn btn-outline-success" for="page_switching_sound-turn_off">关闭</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <script>
+                    let admissionStatus = localStorage.getItem('admission')
+                    document.querySelectorAll('input[name="page_switching_sound_options"]').forEach((currentInput) => {
+                        if (currentInput.value === admissionStatus) currentInput.checked = true
+                    })
+                </script>
             </div>
         </div>
     </main>

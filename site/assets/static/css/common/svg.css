@@ -1,15 +1,3 @@
-symbol path:nth-of-type(odd) {
-  color: blueviolet;
-}
-
-symbol path:nth-of-type(even) {
-  color: darkviolet;
-}
-
-symbol path:nth-of-type(odd+2) {
-  color: palevioletred;
-}
-
-symbol path:nth-of-type(even+2) {
-  color: violet;
+symbol path:nth-of-type(n) {
+  color: var(--bs-body-color);
 }
