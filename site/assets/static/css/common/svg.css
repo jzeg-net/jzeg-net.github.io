@@ -36,3 +36,11 @@ symbol path:nth-of-type(odd) {
 
 symbol path:nth-of-type(odd):hover {
 }
+
+svg use {
+  color: var(--bs-svg-base-color);
+}
+
+svg use:hover {
+  color: var(--bs-svg-base-color-hover);
+}
