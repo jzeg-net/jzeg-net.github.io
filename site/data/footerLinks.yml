@@ -85,6 +85,22 @@
         url: "site/config"
         logo:
         description:
+      - name:
+          zh-CN: "类别"
+          en-US:
+          zh:
+          en:
+        url: "categories"
+        logo:
+        description:
+      - name:
+          zh-CN: "标签"
+          en-US:
+          zh:
+          en:
+        url: "tags"
+        logo:
+        description:
 
 - category:
     label:

@@ -23,7 +23,7 @@
     {{ end }}
     {{- with .Site.Params.umami.share.enable -}}
     {{- $url := $.Site.Params.umami.share.url -}}
-    <a class="link-secondary" href="{{ $url }}" target="_blank" rel="noindex,nofollow" title="{{- T "umami" -}} 分析">
+    <a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $url }}" target="_blank" rel="noindex,nofollow" title="{{- T "umami" -}} 分析">
         <svg class="bi fs-4" width="16" height="16" fill="currentColor"><title>{{- T "umami" -}} 分析</title><use href="#bi-umami"></use></svg>
         <span class="visually-hidden">{{- T "umami" -}} 分析</span>
     </a>

@@ -1,3 +1,38 @@
-symbol path:nth-of-type(n) {
-  color: var(--bs-body-color);
+:root,
+[data-bs-theme="light"] {
+  --bs-svg-base-color: var(--bs-btn-color);
+  --bs-svg-base-color-hover: var(--bs-btn-hover-color);
+}
+
+[data-bs-theme="dark"] {
+  --bs-svg-base-color: var(--bs-btn-color);
+  --bs-svg-base-color-hover: var(--bs-btn-hover-color);
+}
+
+symbol {
+  color: var(--bs-svg-base-color);
+}
+
+symbol:hover {
+  color: var(--bs-svg-base-color-hover);
+}
+
+symbol path {
+  color: var(--bs-svg-base-color);
+}
+
+symbol path:hover {
+  color: var(--bs-svg-base-color-hover);
+}
+
+symbol path:nth-of-type(even) {
+}
+
+symbol path:nth-of-type(even):hover {
+}
+
+symbol path:nth-of-type(odd) {
+}
+
+symbol path:nth-of-type(odd):hover {
 }
