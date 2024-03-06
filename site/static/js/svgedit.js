@@ -20,6 +20,4 @@ try { // try clause to avoid js to complain if XDOMAIN undefined
     })
     console.info('xdomain config activated')
   }
-} catch (error) {
-  console.log(error)
-}
+} catch (error) {}
