@@ -22,7 +22,6 @@
             </ul>
         </div>
         <div class="col-lg row row-gap-4 column-gap-md-5">
-        {{- if .Site.Params.footerLinks.enable -}}
         {{- $currentPage := .RelPermalink -}}
         {{- $defaultLangCode := "zh-CN" -}}
         {{- $currentLangCode := .Site.Language.LanguageCode -}}
@@ -44,7 +43,6 @@
                 </ul>
             </div>
         {{- end -}}
-        {{- end }}
         </div>
     </div>
 </div>

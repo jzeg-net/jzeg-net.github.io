@@ -13,9 +13,11 @@
             {{- partial "footer/friendlinks" . }}
         </div>
     {{- end -}}
+    {{- if .Site.Params.footerLinks.enable -}}
     <div class="py-4 text-bg-dark bg-opacity-75">
-        {{- partial "footer/list" . }}
+        {{- partial "footer/footerLinks" . }}
     </div>
+    {{- end -}}
     <div class="py-4 text-bg-dark bg-opacity-25">
         <div class="container d-flex flex-column row-gap-4 px-4 py-5">
             <div class="d-flex flex-column align-items-end row-gap-4">
