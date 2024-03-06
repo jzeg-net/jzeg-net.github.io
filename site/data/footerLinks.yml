@@ -174,8 +174,8 @@
       en:
     group:
       - name:
-          zh-CN: "svg 编辑器"
-          en-US: "svg Editor"
+          zh-CN: "SVG 编辑器"
+          en-US: "SVG Editor"
           zh:
           en:
         url: "tools/svg_editor"
