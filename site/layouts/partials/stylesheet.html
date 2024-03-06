@@ -26,6 +26,10 @@
     <link rel="stylesheet" href={{ $font_family_css_href }}>
 {{ end }}
 
+{{ if in .Page.Params.components "svgedit" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/svgedit/dist/editor/svgedit.css">
+{{ end }}
+
 {{ if in .Page.Params.components "uppy" }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.css">
 {{ end }}

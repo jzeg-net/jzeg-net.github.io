@@ -166,3 +166,18 @@
         logo:
         description:
 
+- category:
+    label:
+      zh-CN: "工具箱"
+      en-US: "TOOLS"
+      zh:
+      en:
+    group:
+      - name:
+          zh-CN: "svg 编辑器"
+          en-US: "svg Editor"
+          zh:
+          en:
+        url: "tools/svg_editor"
+        logo:
+        description:

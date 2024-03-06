@@ -49,6 +49,11 @@
     <script type="module" src="{{ $preUrl }}static/js/photoswipe.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "svgedit" }}
+    <script src="{{ $preUrl }}static/vendor/svgedit/dist/editor/iife-Editor.js"></script>
+    <script src="{{ $preUrl }}static/js/svgedit.js"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "uppy" }}
     <script src="{{ $preUrl }}static/vendor/uppy/dist/uppy.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/@uppy/locales/dist/zh_CN.min.js"></script>
