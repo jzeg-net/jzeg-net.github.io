@@ -61,7 +61,7 @@
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer "hide") }}{{ partial "footer" . }}{{ end }}
 
-{{ if eq .Site.Params.float_tools.enable true }}{{ partial "fixed_float/tools" . }}{{ end }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.float_tools "hide") (eq .Site.Params.float_tools.enable true) }}{{ partial "fixed_float/tools" . }}{{ end }}
 
 {{ partial "scripts" . }}
 {{- block "before_the_end_of_the_body" . }}{{ end }}
