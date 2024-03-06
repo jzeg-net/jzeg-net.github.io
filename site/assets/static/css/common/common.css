@@ -76,7 +76,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: var(--scrollbar-width);
+  /*width: var(--scrollbar-width);*/
 }
 
 #mainNavbar {

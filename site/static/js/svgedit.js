@@ -1,7 +1,8 @@
-/* import Editor from './xdomain-Editor.js' */
 /* for available options see the file `docs/tutorials/ConfigOptions.md */
 const svgEditor = new Editor(document.querySelector('#svg_editor'))
 svgEditor.setConfig({
+  imgPath: '/static/vendor/svgedit/dist/editor/images',
+  extPath: '/static/vendor/svgedit/dist/editor/extensions',
   allowInitialUserOverride: true,
   extensions: [],
   noDefaultExtensions: false,

@@ -15,9 +15,13 @@
 }
 
 .tags {
+  overflow: hidden;
   display: flex;
-  column-gap: .3rem;
+  column-gap: .2rem;
+  width: fit-content;
   user-select: none;
+  background-color: var(--bs-dark-bg-subtle);
+  border-radius: var(--bs-border-radius);
 }
 
 .tags_title {
