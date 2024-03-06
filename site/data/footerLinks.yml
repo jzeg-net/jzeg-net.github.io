@@ -2,182 +2,102 @@
     label:
       zh-CN: "Demo"
       en-US:
-      zh:
-      en:
     group:
       - name:
           zh-CN: "Demo"
           en-US:
-          zh:
-          en:
         url: "demo"
-        logo:
-        description:
       - name:
           zh-CN: "账号表单演示"
           en-US:
-          zh:
-          en:
         url: "demo/account_form"
-        logo:
-        description:
 
 - category:
     label:
       zh-CN: "LINKS"
       en-US:
-      zh:
-      en:
     group:
       - name:
           zh-CN: "友情链接"
           en-US:
-          zh:
-          en:
         url: "links"
-        logo:
-        description:
       - name:
           zh-CN: "ChatGPT"
           en-US:
-          zh:
-          en:
         url: "chatgpt"
-        logo:
-        description:
 
 - category:
     label:
       zh-CN: "政策条款"
       en-US:
-      zh:
-      en:
     group:
       - name:
           zh-CN: "隐私政策"
           en-US:
-          zh:
-          en:
         url: "site/privacy_policy"
-        logo:
-        description:
       - name:
           zh-CN: "服务条款"
           en-US:
-          zh:
-          en:
         url: "site/terms_of_service"
-        logo:
-        description:
       - name:
           zh-CN: "Cookie"
           en-US:
-          zh:
-          en:
         url: "cookies"
-        logo:
-        description:
       - name:
           zh-CN: "配置选项"
           en-US:
-          zh:
-          en:
         url: "site/config"
-        logo:
-        description:
       - name:
           zh-CN: "类别"
           en-US:
-          zh:
-          en:
         url: "categories"
-        logo:
-        description:
       - name:
           zh-CN: "标签"
           en-US:
-          zh:
-          en:
         url: "tags"
-        logo:
-        description:
 
 - category:
     label:
       zh-CN: "我们"
       en-US:
-      zh:
-      en:
     group:
       - name:
           zh-CN: "关于"
           en-US:
-          zh:
-          en:
         url: "site/about"
-        logo:
-        description:
       - name:
           zh-CN: "联系"
           en-US:
-          zh:
-          en:
         url: "contact"
-        logo:
-        description:
       - name:
           zh-CN: "广告合作"
           en-US:
-          zh:
-          en:
         url: "ad"
-        logo:
-        description:
 
 - category:
     label:
       zh-CN: "智慧平台"
       en-US:
-      zh:
-      en:
     group:
       - name:
           zh-CN: "闯关"
           en-US:
-          zh:
-          en:
         url: "tools/zhgh/passwork"
-        logo:
-        description:
       - name:
           zh-CN: "学习"
           en-US:
-          zh:
-          en:
         url: "tools/zhgh/study"
-        logo:
-        description:
       - name:
           zh-CN: "日志"
           en-US:
-          zh:
-          en:
         url: "tools/zhgh/log"
-        logo:
-        description:
 
 - category:
     label:
       zh-CN: "工具箱"
       en-US: "TOOLS"
-      zh:
-      en:
     group:
       - name:
           zh-CN: "SVG 编辑器"
           en-US: "SVG Editor"
-          zh:
-          en:
         url: "tools/svg_editor"
-        logo:
-        description:
