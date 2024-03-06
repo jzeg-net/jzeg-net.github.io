@@ -1,16 +1,17 @@
-/* for available options see the file `docs/tutorials/ConfigOptions.md */
 const svgEditor = new Editor(document.querySelector('#svg_editor'))
 svgEditor.setConfig({
+  lang: document.querySelector('html').lang,
   imgPath: '/static/vendor/svgedit/dist/editor/images',
   extPath: '/static/vendor/svgedit/dist/editor/extensions',
   allowInitialUserOverride: true,
   extensions: [],
   noDefaultExtensions: false,
-  userExtensions: [/* { pathName: '/packages/react-test/dist/react-test.js' } */]
+  userExtensions: [
+    /* { pathName: '/packages/react-test/dist/react-test.js' } */
+  ]
 })
 svgEditor.init()
-// Variable XDOMAIN below is created by Rollup for the Xdomain build (see rollup.config.js)
-/* globals XDOMAIN */
+
 try { // try clause to avoid js to complain if XDOMAIN undefined
   if (XDOMAIN) {
     svgEditor.setConfig({
@@ -19,4 +20,6 @@ try { // try clause to avoid js to complain if XDOMAIN undefined
     })
     console.info('xdomain config activated')
   }
-} catch (error) { /* empty fn */ }
+} catch (error) {
+  console.log(error)
+}
