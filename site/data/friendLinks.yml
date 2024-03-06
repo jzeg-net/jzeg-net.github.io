@@ -1,19 +1,17 @@
-- name: "链接名称1"
+- name:
+    zh-CN: "链接名称1"
+    en-US: "LINK-NAME 1"
+  description:
+    zh-CN: "链接1描述"
+    en-US: "link 1 description"
   url: "#"
   logo:
-  description:
 
-- name: "链接名称2"
+- name:
+    zh-CN: "链接名称2"
+    en-US: "LINK-NAME 2"
+  description:
+    zh-CN: "链接2描述"
+    en-US: "link 2 description"
   url: "#"
   logo:
-  description:
-
-- name: "链接名称3"
-  url: "#"
-  logo:
-  description:
-
-- name: "链接名称4"
-  url: "#"
-  logo:
-  description:
