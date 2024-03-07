@@ -34,13 +34,15 @@
                             <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_open" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                         </a>
                     </div>
-                    <details class="my-5 d-flex">
-                        <summary>关闭提醒</summary>
-                        <div class="form-check d-inline-block">
-                            <input class="form-check-input" type="checkbox" name="dismissible" id="jump_link_dismissible">
-                            <label class="form-check-label" for="jump_link_dismissible">不再出现这类提示</label>
-                        </div>
-                    </details>
+                    <div class="my-5 user-select-none d-flex justify-content-end link-secondary link-opacity-50 link-opacity-75-hover">
+                        <details>
+                            <summary class="mb-1 text-end">关闭提醒</summary>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dismissible" id="jump_link_dismissible">
+                                <label class="form-check-label" for="jump_link_dismissible">不再出现这类提示</label>
+                            </div>
+                        </details>
+                    </div>
                 </div>
             </div>
             <div class="feedback py-3 text-end">
