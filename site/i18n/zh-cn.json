@@ -71,6 +71,8 @@
     "jump_hintInfo": "请注意保护您的账号和财产安全",
     "jump_back": "返回上一页",
     "jump_open": "访问外部地址",
+    "copy": "复制",
+    "copied": "已复制",
     "noScript_tip": "您当前的浏览器没有开启 JavaScript 功能",
     "noScript_work": "将会影响您正常访问本网站",
     "noScript_need": "正常访问本站，请开启 JavaScript 功能",

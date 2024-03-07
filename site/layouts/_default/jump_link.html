@@ -8,9 +8,12 @@
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
         </symbol>
-        <symbol viewBox="0 0 16 16" id="bi-link">
-            <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
-            <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
+        <symbol viewBox="0 0 16 16" id="bi-copy">
+            <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+        </symbol>
+        <symbol viewBox="0 0 16 16" id="bi-check-square">
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+            <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
         </symbol>
     </svg>
     <main id="content">
@@ -19,8 +22,13 @@
             <div class="card" style="box-shadow: 6px 6px 0px rgba(var(--bs-body-color-rgb),.1);">
                 <div class="card-body">
                     <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
-                    <div class="my-5">
-                        <input class="form-control text-center text-primary-emphasis" type="url" name="url" id="link_input" disabled readonly>
+                    <div class="my-4 text-bg-secondary rounded-2 overflow-hidden d-flex flex-row">
+                        <div class="p-1 w-100">
+                            <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center" type="url" name="url" id="link_input" disabled readonly>
+                        </div>
+                        <button class="ms-1 px-3 py-1 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" type="button" id="link_copy" style="outline-offset: -2px;">
+                            <svg class="ms-1 fs-5 bi" width="16" height="16"><title>{{ T "copy" }}</title><use href="#bi-copy"></use></svg>
+                        </button>
                     </div>
                     <div class="my-3 card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
                     <hr class="my-4">
