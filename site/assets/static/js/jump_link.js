@@ -7,20 +7,11 @@
   let toExternal = document.querySelector('#to_external')
   let dismissible = document.querySelector('#jump_link_dismissible')
 
+  const toggleSVG = () => linkCopy.querySelectorAll('svg').forEach((svg) => svg.classList.toggle('d-none'))
+
   linkCopy.addEventListener('click', (event) => {
-    let useHref = linkCopy.querySelector('use').href
-
-    const toggleuseHref = () => {
-      if (useHref.baseVal === '#bi-copy') {
-        useHref.baseVal = '#bi-check-square'
-      } else {
-        useHref.baseVal = '#bi-copy'
-      }
-    }
-
-    toggleuseHref()
-    setTimeout(toggleuseHref, 2500)
-
+    toggleSVG()
+    setTimeout(toggleSVG, 2500)
   })
 
   toBack.addEventListener('click', () => {
