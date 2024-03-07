@@ -10,7 +10,7 @@ footer h5,
 footer h6,
 footer li,
 footer svg,
-footer label,
+footer p,
 footer a {
   transition: var(--bs-transition-color);
 }

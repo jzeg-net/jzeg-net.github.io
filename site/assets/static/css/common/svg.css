@@ -10,19 +10,15 @@
 }
 
 symbol {
-  color: var(--bs-svg-base-color);
 }
 
 symbol:hover {
-  color: var(--bs-svg-base-color-hover);
 }
 
 symbol path {
-  color: var(--bs-svg-base-color);
 }
 
 symbol path:hover {
-  color: var(--bs-svg-base-color-hover);
 }
 
 symbol path:nth-of-type(even) {
@@ -38,9 +34,7 @@ symbol path:nth-of-type(odd):hover {
 }
 
 svg use {
-  color: var(--bs-svg-base-color);
 }
 
 svg use:hover {
-  color: var(--bs-svg-base-color-hover);
 }
