@@ -16,14 +16,14 @@
             {{ $title := .title }}
             {{ $href := .url }}
                 <li class="mb-3">
-                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="icp" href="{{ $href }}" target="_blank" rel="nofollow, noopener" title="{{ $title }}">{{- .number -}}</a>
+                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="icp" href="{{ $href }}" target="_blank" rel="noreferrer" title="{{ $title }}">{{- .number -}}</a>
                 </li>
             {{- end -}}
             {{- with .Site.Data.beian.publicSecurity }}
             {{ $title := .title }}
             {{ $href := printf "%s?code=%s" .url .number }}
                 <li class="mb-3">
-                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="gongan" href="{{ $href }}" target="_blank" rel="nofollow, noopener" title="{{ $title }}">{{- .number -}}</a>
+                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="gongan" href="{{ $href }}" target="_blank" rel="noreferrer" title="{{ $title }}">{{- .number -}}</a>
                 </li>
             {{- end -}}
             </ul>
