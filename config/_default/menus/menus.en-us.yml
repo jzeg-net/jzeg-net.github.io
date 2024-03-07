@@ -60,28 +60,6 @@ main:
                 useHref:
                 class:
                 size: [ width: 16, height: 16 ]
-    -   identifier: menu_record
-        name: "Daily Check In"
-        pageRef: /sign_record
-        parent: menu_more
-        weight: 6
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
-    -   identifier: menu_calendar
-        name: "Calendar"
-        pageRef: /calendar
-        parent: menu_more
-        weight: 6
-        params:
-            class:
-            svg:
-                useHref:
-                class:
-                size: [ width: 16, height: 16 ]
     -   identifier: menu_edit
         name: "Edit"
         pageRef: /edit

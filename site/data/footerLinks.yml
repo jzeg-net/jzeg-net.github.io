@@ -4,27 +4,9 @@
       en-US:
     group:
       - name:
-          zh-CN: "Demo"
-          en-US:
-        url: "demo"
-      - name:
           zh-CN: "账号表单演示"
           en-US:
         url: "demo/account_form"
-
-- category:
-    label:
-      zh-CN: "LINKS"
-      en-US:
-    group:
-      - name:
-          zh-CN: "友情链接"
-          en-US:
-        url: "links"
-      - name:
-          zh-CN: "ChatGPT"
-          en-US:
-        url: "chatgpt"
 
 - category:
     label:
@@ -101,3 +83,15 @@
           zh-CN: "SVG 编辑器"
           en-US: "SVG Editor"
         url: "tools/svg_editor"
+      - name:
+          zh-CN: "ChatGPT"
+          en-US:
+        url: "tools/chatgpt"
+      - name:
+          zh-CN: "日历"
+          en-US:
+        url: "calendar"
+      - name:
+          zh-CN: "每日签到"
+          en-US:
+        url: "sign_record"
