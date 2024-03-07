@@ -10,6 +10,15 @@
   const toggleSVG = () => linkCopy.querySelectorAll('svg').forEach((svg) => svg.classList.toggle('d-none'))
 
   linkCopy.addEventListener('click', (event) => {
+    let clipboard = ClipboardJS.copy(linkInput.value)
+    let failed = linkCopy.dataset.copyFailed
+    let successfully = linkCopy.dataset.copiedSuccessfully
+    if (clipboard) {
+      bModal('', createSmallCenterText(successfully, 'success'), '', 'sm', true)
+    } else {
+      bModal('', createSmallCenterText(failed), '', 'sm', true)
+    }
+
     toggleSVG()
     setTimeout(toggleSVG, 2500)
   })

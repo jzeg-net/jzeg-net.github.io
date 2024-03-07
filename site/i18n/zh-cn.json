@@ -73,6 +73,8 @@
     "jump_open": "访问外部地址",
     "copy": "复制",
     "copied": "已复制",
+    "copied_successfully": "复制成功",
+    "copy_failed": "复制失败",
     "noScript_tip": "您当前的浏览器没有开启 JavaScript 功能",
     "noScript_work": "将会影响您正常访问本网站",
     "noScript_need": "正常访问本站，请开启 JavaScript 功能",

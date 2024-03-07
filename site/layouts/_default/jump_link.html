@@ -26,7 +26,7 @@
                         <div class="p-1 w-100">
                             <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center" type="url" name="url" id="link_input" disabled readonly>
                         </div>
-                        <button class="ms-1 px-3 py-1 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" type="button" id="link_copy" style="outline-offset: -2px;">
+                        <button class="ms-1 px-3 py-1 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" data-copied-successfully="{{ T "copied_successfully" }}" data-copy-failed="{{ T "copy_failed" }}" type="button" id="link_copy" style="outline-offset: -2px;">
                             <svg class="ms-1 fs-5 bi" width="16" height="16"><title>{{ T "copy" }}</title><use href="#bi-copy"></use></svg>
                             <svg class="ms-1 fs-5 bi d-none" width="16" height="16"><title>{{ T "copied" }}</title><use href="#bi-check-square"></use></svg>
                         </button>
