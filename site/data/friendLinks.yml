@@ -1,4 +1,4 @@
-- url: "#"
+- url: "#link-1"
   logo:
   name:
     zh-CN: "链接名称1"
@@ -7,7 +7,7 @@
     zh-CN: "链接1描述"
     en-US: "link 1 description"
 
-- url: "#"
+- url: "#link-2"
   logo:
   name:
     zh-CN: "链接名称2"
@@ -16,7 +16,7 @@
     zh-CN: "链接2描述"
     en-US:
 
-- url: "#"
+- url: "#link-3"
   logo:
   name:
     zh-CN:

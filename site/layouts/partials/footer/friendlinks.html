@@ -3,9 +3,12 @@
     <ul class="list-unstyled d-flex row-gap-3 column-gap-4 flex-wrap justify-content-evenly">
         {{- $currentLangCode := .Site.Language.LanguageCode -}}
         {{- range .Site.Data.friendLinks -}}
+            {{ $href := .url }}
             {{ $name := index .name $currentLangCode }}
             {{ $description := index .description $currentLangCode }}
-        <li class="flex-grow-1 px-3 py-1 text-center border border-light border-opacity-10"><a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ .url }}" target="_blank" title="{{ $description }}">{{ $name }}</a></li>
+        <li class="flex-grow-1 px-3 py-1 text-center border border-light border-opacity-10">
+            <a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $href }}" target="_blank" title="{{ $description }}">{{ $name }}</a>
+        </li>
         {{- end -}}
     </ul>
 </div>
