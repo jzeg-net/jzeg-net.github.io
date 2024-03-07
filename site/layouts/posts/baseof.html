@@ -31,11 +31,11 @@
 </head>
 {{ block "body_override" . }}<body class="bg-body">{{ end }}
 
-{{ partial "skippy" . }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.skippy "hide") }}{{ partial "skippy" . }}{{ end }}
 
 {{ partial "svg_sprite_icons/main" . }}
 
-{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar" . }}{{ end }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar "hide") }}{{ partial "navbar/v1/index" . }}{{ end }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.bulletin "hide") }}{{ partial "top-bulletin" . }}{{ end }}
 
