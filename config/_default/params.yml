@@ -155,12 +155,3 @@ newsletter:
 # 页脚链接列表
 footerLinks:
     enable: true
-
-# https://cloud.umami.is/
-umami:
-    enable: true
-    script_src: "https://analytics.us.umami.is/script.js"
-    website_id: "e0dd55d2-615c-406c-835a-3240c2e23a9c"
-    share:
-        enable: true
-        url: "https://us.umami.is/share/bQs92yK6hmcMtMzg/jzeg-net.github.io"
