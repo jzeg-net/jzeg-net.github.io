@@ -1,65 +1,79 @@
-const hrefType = href => {
-  if (!href || !href.length) return null
+(() => {
+  'use strict'
 
-  href = href.toLowerCase()
+  const storageKey = 'jump'
+  const getLocalStored = () => localStorage.setItem(storageKey)
+  const setLocalStored = (value) => localStorage.setItem(storageKey, value)
+  const removeLocalStored = () => localStorage.removeItem(storageKey)
 
-  if (href.startsWith('mailto:')) return 'mailto'
-  if (href.startsWith('tel:')) return 'tel'
-  if (href.startsWith('sms:')) return 'sms'
+  const getPreferredJump = () => getLocalStored()
 
-  if (href.startsWith('https://')) return 'absolute'
-  if (href.startsWith('http://')) return 'absolute'
+  const hrefType = href => {
+    if (!href || !href.length) return null
 
-  if (href.startsWith('file://')) return 'file'
+    href = href.toLowerCase()
 
-  if (href.startsWith('javascript:')) return 'script'
-  if (href.startsWith('vbscript:')) return 'script'
+    if (href.startsWith('mailto:')) return 'mailto'
+    if (href.startsWith('tel:')) return 'tel'
+    if (href.startsWith('sms:')) return 'sms'
 
-  if (href.startsWith('data:')) return 'data'
+    if (href.startsWith('https://')) return 'absolute'
+    if (href.startsWith('http://')) return 'absolute'
 
-  if (href.contains('://')) return 'protocol'
-  if (href.startsWith('//')) return 'protocolRelative'
-  if (href.startsWith('/')) return 'rooted'
-  if (href.startsWith('#')) return 'fragment'
+    if (href.startsWith('file://')) return 'file'
 
-  return 'relative'
-}
+    if (href.startsWith('javascript:')) return 'script'
+    if (href.startsWith('vbscript:')) return 'script'
 
-const checkTargetLink = str => hrefType(str) !== 'absolute'
+    if (href.startsWith('data:')) return 'data'
 
-const allowDomains = domain => {
-  let allowDomain = [
-    'localhost',
-    'www.github.com',
-    'github.com'
-  ]
+    if (href.contains('://')) return 'protocol'
+    if (href.startsWith('//')) return 'protocolRelative'
+    if (href.startsWith('/')) return 'rooted'
+    if (href.startsWith('#')) return 'fragment'
 
-  return allowDomain.includes(domain)
-}
+    return 'relative'
+  }
 
-const selfDomain = domain => {
-  let selfDomain = self.location.host
+  const checkTargetLink = str => hrefType(str) !== 'absolute'
 
-  return domain === selfDomain
-}
+  const allowDomains = domain => {
+    let allowDomain = [
+      'localhost',
+      'www.github.com',
+      'github.com'
+    ]
 
-const addJumpPre = range => {
-  let origin = document.location.origin
-  let lang = document.documentElement.lang.toLowerCase()
-  let gotoLink = `${origin}/${lang}/jump_link/?target=`
+    return allowDomain.includes(domain)
+  }
 
-  range.querySelectorAll('a').forEach(targetLink => {
-    if (!targetLink.hasAttribute('href')) return
+  const selfDomain = domain => {
+    let selfDomain = self.location.host
 
-    if (checkTargetLink(targetLink.href)) return
-    if (allowDomains(targetLink.host)) return
-    if (selfDomain(targetLink.host)) return
+    return domain === selfDomain
+  }
 
-    targetLink.href = gotoLink + encodeURIComponent(targetLink.href)
+  const addJumpPre = range => {
+    let origin = document.location.origin
+    let lang = document.documentElement.lang.toLowerCase()
+    let gotoLink = `${origin}/${lang}/jump_link/?target=`
+
+    range.querySelectorAll('a').forEach(targetLink => {
+      if (!targetLink.hasAttribute('href')) return
+
+      if (checkTargetLink(targetLink.href)) return
+      if (allowDomains(targetLink.host)) return
+      if (selfDomain(targetLink.host)) return
+
+      targetLink.href = gotoLink + encodeURIComponent(targetLink.href)
+    })
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    let content = document.querySelector('#content')
+    if (content) {
+      addJumpPre(content)
+    }
   })
-}
 
-let content = document.querySelector('#content')
-if (content) {
-  addJumpPre(content)
-}
+})()
