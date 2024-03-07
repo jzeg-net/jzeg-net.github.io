@@ -58,24 +58,6 @@
 
 - category:
     label:
-      zh-CN: "智慧平台"
-      en-US:
-    group:
-      - name:
-          zh-CN: "闯关"
-          en-US:
-        url: "tools/zhgh/passwork"
-      - name:
-          zh-CN: "学习"
-          en-US:
-        url: "tools/zhgh/study"
-      - name:
-          zh-CN: "日志"
-          en-US:
-        url: "tools/zhgh/log"
-
-- category:
-    label:
       zh-CN: "工具箱"
       en-US: "TOOLS"
     group:
@@ -83,6 +65,10 @@
           zh-CN: "SVG 编辑器"
           en-US: "SVG Editor"
         url: "tools/svg_editor"
+      - name:
+          zh-CN: "智慧平台"
+          en-US:
+        url: "tools/zhgh"
       - name:
           zh-CN: "ChatGPT"
           en-US:
