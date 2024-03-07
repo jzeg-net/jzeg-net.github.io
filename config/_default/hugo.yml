@@ -6,7 +6,7 @@ publishDir: "public"
 metaDataFormat: "yaml"
 SectionPagesMenu: "sectionMenus"
 
-disableKinds: []
+disableKinds: [ rss ]
 # log level (debug|info|warn|error)
 logLevel: "error"
 

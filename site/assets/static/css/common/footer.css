@@ -1,0 +1,16 @@
+:root {
+  --bs-transition-color: color .29s ease;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer li,
+footer svg,
+footer label,
+footer a {
+  transition: var(--bs-transition-color);
+}
