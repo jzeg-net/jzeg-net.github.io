@@ -76,7 +76,7 @@
       - name:
           zh-CN: "日历"
           en-US:
-        url: "calendar"
+        url: "tools/calendar"
       - name:
           zh-CN: "每日签到"
           en-US:
