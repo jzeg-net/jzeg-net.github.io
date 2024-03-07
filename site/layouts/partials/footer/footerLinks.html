@@ -10,18 +10,24 @@
                 <li class="mb-3 link-light link-opacity-50-hover link-underline-opacity-0">{{ . }}</li>
             {{ end }}
             </ul>
-            <ul class="list-unstyled text-nowrap">
-                {{- with .Site.Params.icp }}
+            {{ if eq .Site.Language.LanguageCode "zh-CN" }}
+            <ul class="list-unstyled text-nowrap" id="beian">
+            {{- with .Site.Data.beian.icp }}
+            {{ $title := .title }}
+            {{ $href := .url }}
                 <li class="mb-3">
-                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow, noopener" title="ICP备案">{{- . -}}</a>
+                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="icp" href="{{ $href }}" target="_blank" rel="nofollow, noopener" title="{{ $title }}">{{- .number -}}</a>
                 </li>
-                {{- end -}}
-                {{- with .Site.Params.beian }}
+            {{- end -}}
+            {{- with .Site.Data.beian.publicSecurity }}
+            {{ $title := .title }}
+            {{ $href := printf "%s?code=%s" .url .number }}
                 <li class="mb-3">
-                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="gongan" href="/" target="_blank" rel="nofollow, noopener" title="公安备案">{{- . -}}</a>
+                    <a class="link-light link-opacity-25-hover link-underline-opacity-0" id="gongan" href="{{ $href }}" target="_blank" rel="nofollow, noopener" title="{{ $title }}">{{- .number -}}</a>
                 </li>
-                {{- end -}}
+            {{- end -}}
             </ul>
+            {{ end }}
         </div>
         <div class="col-lg row row-gap-4 column-gap-md-5">
         {{- $currentPage := .RelPermalink -}}

@@ -93,9 +93,6 @@ search:
 DisableDevtool:
     enable: true
 
-icp: "冀ICP备12018851号-7"
-beian: "9999999999999999"
-
 demo_version: "5.3"
 bootstrap_version: "5.3.3"
 
