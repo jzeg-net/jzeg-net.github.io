@@ -45,20 +45,20 @@
                     </div>
                     <div class="my-5 user-select-none d-flex justify-content-end link-secondary link-opacity-50 link-opacity-75-hover">
                         <details>
-                            <summary class="mb-1 text-end">关闭提醒</summary>
+                            <summary class="mb-1 text-end">{{ T "jump_turn_off" }}</summary>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="dismissible" id="jump_link_dismissible">
-                                <label class="form-check-label" for="jump_link_dismissible">不再出现这类提示</label>
+                                <label class="form-check-label" for="jump_link_dismissible">{{ T "jump_turn_off_msg" }}</label>
                             </div>
                         </details>
                     </div>
                 </div>
             </div>
             <div class="feedback py-3 text-end">
-                <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=%E3%80%90%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%93%BE%E3%80%91" | relLangURL }}" target="_blank">链接问题反馈</a>
+                <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=%E3%80%90%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%93%BE%E3%80%91" | relLangURL }}" target="_blank">{{ T "feedback" }}</a>
             </div>
             <div class="text-secondary-emphasis small">
-                <p>AD</p>
+                <p>{{ T "ad" }}</p>
             </div>
         </div>
         {{- .Content -}}
