@@ -24,21 +24,21 @@
                     <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
                     <div class="my-4 text-bg-secondary rounded-2 overflow-hidden d-flex flex-row">
                         <div class="p-1 w-100">
-                            <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center" type="url" name="url" id="link_input" disabled readonly>
+                            <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center overflow-x-scroll" type="url" name="url" id="link_input" style="text-overflow: ellipsis;" disabled readonly>
                         </div>
-                        <button class="ms-1 px-3 py-1 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" data-copied-successfully="{{ T "copied_successfully" }}" data-copy-failed="{{ T "copy_failed" }}" type="button" id="link_copy" style="outline-offset: -2px;">
+                        <button class="ms-1 px-3 py-3 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" data-copied-successfully="{{ T "copied_successfully" }}" data-copy-failed="{{ T "copy_failed" }}" type="button" id="link_copy" style="outline-offset: -2px;">
                             <svg class="ms-1 fs-5 bi" width="16" height="16"><title>{{ T "copy" }}</title><use href="#bi-copy"></use></svg>
                             <svg class="ms-1 fs-5 bi d-none" width="16" height="16"><title>{{ T "copied" }}</title><use href="#bi-check-square"></use></svg>
                         </button>
                     </div>
                     <div class="my-3 card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
                     <hr class="my-4">
-                    <div class="d-flex justify-content-end gap-4 me-3">
-                        <a class="btn btn-lg btn-bd-primary" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_open" -}}">
-                            {{- T "jump_open" -}}
-                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_open" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
+                    <div class="d-flex flex-column align-items-center row-gap-4">
+                        <a class=" btn btn-lg btn-success" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_to_external" -}}">
+                            {{- T "jump_to_external" -}}
+                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_to_external" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                         </a>
-                        <button class="btn btn-lg btn-outline-secondary" type="button" id="to_back">
+                        <button class=" btn btn-sm btn-outline-secondary" type="button" id="to_back">
                             {{- T "jump_back" -}}
                             <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_back" }}</title><use href="#bi-arrow-counterclockwise"></use></svg>
                         </button>

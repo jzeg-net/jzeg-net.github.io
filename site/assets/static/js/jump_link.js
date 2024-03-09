@@ -22,10 +22,16 @@
     open(document.referrer, '_parent') // history.go(-1)
   }
 
+  const parseTarget = () => {
+    let targetLink = new URLSearchParams(window.location.search).get('target')
+
+    return targetLink ? decodeURIComponent(targetLink) : ''
+  }
+
   dismissible.addEventListener('click', () => setLocalStored(!!dismissible.checked))
 
   linkCopy.addEventListener('click', () => {
-    let clipboard = ClipboardJS.copy(linkInput.value)
+    let clipboard = ClipboardJS.copy(parseTarget())
     let failed = linkCopy.dataset.copyFailed
     let successfully = linkCopy.dataset.copiedSuccessfully
     if (clipboard) {
@@ -41,11 +47,9 @@
   toBack.addEventListener('click', goBack)
 
   window.addEventListener('load', () => {
-    let targetLink = new URLSearchParams(window.location.search).get('target')
-    if (!targetLink) return
-
     setDismissible()
-    let result = decodeURIComponent(targetLink)
+    let result = parseTarget()
+    if (!result) return
 
     linkInput.value = result
     toExternal.href = result
