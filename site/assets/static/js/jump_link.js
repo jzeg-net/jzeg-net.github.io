@@ -18,9 +18,13 @@
 
   const setDismissible = () => dismissible.checked = getPreferredJump()
 
+  const goBack = () => {
+    open(document.referrer, '_parent') // history.go(-1)
+  }
+
   dismissible.addEventListener('click', () => setLocalStored(!!dismissible.checked))
 
-  linkCopy.addEventListener('click', (event) => {
+  linkCopy.addEventListener('click', () => {
     let clipboard = ClipboardJS.copy(linkInput.value)
     let failed = linkCopy.dataset.copyFailed
     let successfully = linkCopy.dataset.copiedSuccessfully
@@ -34,9 +38,7 @@
     setTimeout(toggleSVG, 2500)
   })
 
-  toBack.addEventListener('click', () => {
-    open(document.referrer, '_parent') // history.go(-1)
-  })
+  toBack.addEventListener('click', goBack)
 
   window.addEventListener('load', () => {
     let targetLink = new URLSearchParams(window.location.search).get('target')
