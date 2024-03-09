@@ -17,48 +17,50 @@
         </symbol>
     </svg>
     <main id="content">
-        <div class="pt-5 col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 position-absolute top-0 start-50 translate-middle-x text-center">
-            <h1 class="d-block my-5 fw-light text-secondary display-5">{{- .Site.Title -}}</h1>
-            <div class="card" style="box-shadow: 6px 6px 0px rgba(var(--bs-body-color-rgb),.1);">
-                <div class="card-body">
-                    <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
-                    <div class="my-4 text-bg-secondary rounded-2 overflow-hidden d-flex flex-row">
-                        <div class="p-1 w-100">
-                            <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center overflow-x-scroll" type="url" name="url" id="link_input" style="text-overflow: ellipsis;" disabled readonly>
-                        </div>
-                        <button class="ms-1 px-3 py-3 lh-lg bg-secondary border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" data-copied-successfully="{{ T "copied_successfully" }}" data-copy-failed="{{ T "copy_failed" }}" type="button" id="link_copy" style="outline-offset: -2px;">
-                            <svg class="ms-1 fs-5 bi" width="16" height="16"><title>{{ T "copy" }}</title><use href="#bi-copy"></use></svg>
-                            <svg class="ms-1 fs-5 bi d-none" width="16" height="16"><title>{{ T "copied" }}</title><use href="#bi-check-square"></use></svg>
-                        </button>
-                    </div>
-                    <div class="my-3 card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
-                    <hr class="my-4">
-                    <div class="d-flex flex-column align-items-center row-gap-4">
-                        <a class=" btn btn-lg btn-success" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_to_external" -}}">
-                            {{- T "jump_to_external" -}}
-                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_to_external" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
-                        </a>
-                        <button class=" btn btn-sm btn-outline-secondary" type="button" id="to_back">
-                            {{- T "jump_back" -}}
-                            <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_back" }}</title><use href="#bi-arrow-counterclockwise"></use></svg>
-                        </button>
-                    </div>
-                    <div class="my-5 user-select-none d-flex justify-content-end link-secondary link-opacity-50 link-opacity-75-hover">
-                        <details>
-                            <summary class="mb-1 text-end">{{ T "jump_turn_off" }}</summary>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dismissible" id="jump_link_dismissible">
-                                <label class="form-check-label" for="jump_link_dismissible">{{ T "jump_turn_off_msg" }}</label>
+        <div class="d-flex justify-content-center align-items-center min-vh-100 vh-100 overflow-hidden">
+            <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-6 text-center">
+                <h1 class="d-block my-3 fw-light text-secondary display-5">{{- .Site.Title -}}</h1>
+                <div class="card" style="box-shadow: 6px 6px 0px rgba(var(--bs-body-color-rgb),.1);">
+                    <div class="card-body">
+                        <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
+                        <div class="text-bg-secondary bg-opacity-20 rounded-2 overflow-hidden d-flex flex-row">
+                            <div class="p-1 w-100">
+                                <input class="w-100 h-100 px-2 border-0 rounded-2 bg-secondary-subtle text-center overflow-x-scroll" type="url" name="url" id="link_input" style="text-overflow: ellipsis;" disabled readonly>
                             </div>
-                        </details>
+                            <button class="ms-1 px-3 py-3 lh-lg text-bg-secondary bg-opacity-20 border-0 text-center text-nowrap d-md-flex flex-row justify-content-center align-items-center" data-copied-successfully="{{ T "copied_successfully" }}" data-copy-failed="{{ T "copy_failed" }}" type="button" id="link_copy" style="outline-offset: -2px;">
+                                <svg class="ms-1 fs-5 bi" width="16" height="16"><title>{{ T "copy" }}</title><use href="#bi-copy"></use></svg>
+                                <svg class="ms-1 fs-5 bi d-none" width="16" height="16"><title>{{ T "copied" }}</title><use href="#bi-check-square"></use></svg>
+                            </button>
+                        </div>
+                        <div class="my-4 card-text small" id="hintInfo">{{- T "jump_hintInfo" -}}</div>
+                        <hr>
+                        <div class="my-4 d-flex flex-column align-items-center row-gap-4">
+                            <a class=" btn btn-lg btn-success" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_to_external" -}}">
+                                {{- T "jump_to_external" -}}
+                                <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_to_external" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
+                            </a>
+                            <button class=" btn btn-sm btn-outline-secondary" type="button" id="to_back">
+                                {{- T "jump_back" -}}
+                                <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_back" }}</title><use href="#bi-arrow-counterclockwise"></use></svg>
+                            </button>
+                        </div>
+                        <div class="user-select-none d-flex justify-content-end link-secondary link-opacity-50 link-opacity-75-hover">
+                            <details>
+                                <summary class="mb-1 text-end">{{ T "jump_turn_off" }}</summary>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="dismissible" id="jump_link_dismissible">
+                                    <label class="form-check-label" for="jump_link_dismissible">{{ T "jump_turn_off_msg" }}</label>
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="feedback py-3 text-end">
-                <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=%E3%80%90%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%93%BE%E3%80%91" | relLangURL }}" target="_blank">{{ T "feedback" }}</a>
-            </div>
-            <div class="text-secondary-emphasis small">
-                <p>{{ T "ad" }}</p>
+                <div class="feedback py-3 text-end">
+                    <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=%E3%80%90%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%93%BE%E3%80%91" | relLangURL }}" target="_blank">{{ T "feedback" }}</a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center text-secondary-emphasis small border-top border-bottom border-1 border-opacity-10 border-secondary-subtle" style="height: 15vh;">
+                    <span>{{ T "ad" }}</span>
+                </div>
             </div>
         </div>
         {{- .Content -}}
