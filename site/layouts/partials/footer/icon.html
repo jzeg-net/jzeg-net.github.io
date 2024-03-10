@@ -3,7 +3,7 @@
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "github" }}</title><use href="#bi-github"></use></svg>
         <span class="visually-hidden">{{- T "github" -}}</span>
     </a>
-    {{ if .Site.Params.social.mastodon.enable }}
+    {{ if .Site.Data.social.mastodon.enable }}
     {{ $mastodon_url := partial "functions/params/social/get_mastodon_info" (dict "type" "url") }}
     {{ $mastodon_account := partial "functions/params/social/get_mastodon_info" (dict "type" "account") }}
     <a class="text-reset" href="{{ $mastodon_url }}" target="_blank" title="{{ $mastodon_account }}" rel="me, nofollow, noopener">

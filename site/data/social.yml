@@ -1,0 +1,4 @@
+mastodon:
+  enable: true
+  username: "zhangChengLin"
+  host: "mastodon.social"

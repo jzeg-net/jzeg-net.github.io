@@ -93,13 +93,7 @@ search:
 DisableDevtool:
     enable: true
 
-demo_version: "5.3"
-bootstrap_version: "5.3.3"
-
 since: "2020"
-
-CopyleftText: "Company, Inc. All rights reserved."
-CopyrightText: "Company, Inc. All rights reserved."
 
 Github:
     root: "https://github.com/"
@@ -109,26 +103,6 @@ Github:
 
 Repo:
     git: "https://github.com/jzeg-net/jzeg-net.github.io"
-
-social:
-    mastodon:
-        enable: true
-        username: "zhangChengLin"
-        host: "mastodon.social"
-
-qrcode:
-    alipay:
-        donate: HTTPS://QR.ALIPAY.COM/FKX15775Y9K2OJJELTYUQ20
-        account:
-        group:
-    weixin:
-        donate: wxp://f2f0H7xW3hJst1JoX3lEdTm8ZYjfkZPKQo5XSe57dnbv11g=
-        account:
-        group:
-    qq:
-        donate: https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=CAEQguvBjgUYz9KShwY%3D_xxx_sign&u=1372616066&n=%E8%A7%A3%E6%9E%90%E7%9F%AD%E8%A7%86%E9%A2%91
-        account:
-        group:
 
 analytics:
     enable: false

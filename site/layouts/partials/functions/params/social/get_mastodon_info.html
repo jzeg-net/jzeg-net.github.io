@@ -1,7 +1,7 @@
 {{ $type := .type }}
 
-{{ $host := site.Params.social.mastodon.host }}
-{{ $username := site.Params.social.mastodon.username }}
+{{ $host := site.Data.social.mastodon.host }}
+{{ $username := site.Data.social.mastodon.username }}
 
 {{ with $host }}
 {{ else }}{{ errorf "Missing Required parameter name [ social.mastodon.host ]: %s" .Position }}
