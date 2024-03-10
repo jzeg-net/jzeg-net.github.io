@@ -6,7 +6,7 @@ on:
             - main
     pull_request:
     schedule:
-        -   cron: "10/40 6 * * *"
+        -   cron: "10 6 * * *"
     workflow_dispatch:
 
 env:
