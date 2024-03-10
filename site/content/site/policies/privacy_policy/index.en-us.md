@@ -1,6 +1,6 @@
 ---
-title: 隐私政策
-type: site/policy_service
+title: Privacy Policy
+type: site/policies
 
 date: "2023-03-28T00:00:28+08:00"
 publishDate: "2023-11-20T00:00:28+08:00"
@@ -14,5 +14,3 @@ footer: "hide"
 float_tools: ""
 
 ---
-
-我们深知这项责任事关重大，因此一直致力于保护您的信息，并让您拥有控制权。

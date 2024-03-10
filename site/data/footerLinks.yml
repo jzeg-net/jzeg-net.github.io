@@ -16,11 +16,11 @@
       - name:
           zh-CN: "隐私政策"
           en-US:
-        url: "site/privacy_policy"
+        url: "site/policies/privacy_policy"
       - name:
           zh-CN: "服务条款"
           en-US:
-        url: "site/terms_of_service"
+        url: "site/policies/terms_of_service"
       - name:
           zh-CN: "Cookie"
           en-US:

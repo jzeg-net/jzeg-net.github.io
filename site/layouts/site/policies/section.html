@@ -1,0 +1,32 @@
+{{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
+{{ define "content" }}
+    <main class="container-fluid gx-0" id="content">
+        <ul class="mb-0 list-unstyled d-flex flex-row column-gap-3 border-bottom">
+            <li>
+                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">概述</a>
+            </li>
+            <li>
+                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">2</a>
+            </li>
+            <li class="border-bottom border-1 border-info-subtle" style="margin-bottom: -1px;">
+                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">3</a>
+            </li>
+            <li>
+                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">4</a>
+            </li>
+        </ul>
+        <div class="d-flex flex-lg-row">
+            <div class="col-auto flex-grow-1">
+                <div class="overflow-y-scroll h-100">
+                    <div class="my-4 px-4 pe-5 vh-100">
+                        <h1>{{ .Title }}</h1>
+                        <div class="py-4 text-light-emphasis">
+                            {{- .Content }}
+                            <div class="vh-100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{{ end }}

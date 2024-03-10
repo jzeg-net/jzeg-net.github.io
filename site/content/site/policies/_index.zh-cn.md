@@ -1,6 +1,6 @@
 ---
-title: Terms Of Service
-type: site/policy_service
+title: 概述
+type: site/policies
 
 date: "2023-03-28T00:00:28+08:00"
 publishDate: "2023-11-20T00:00:28+08:00"
