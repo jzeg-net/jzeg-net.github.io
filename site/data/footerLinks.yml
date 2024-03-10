@@ -11,19 +11,19 @@
 - category:
     label:
       zh-CN: "政策条款"
-      en-US:
+      en-US: "Policy Terms"
     group:
       - name:
           zh-CN: "隐私政策"
-          en-US:
-        url: "site/policies/privacy_policy"
+          en-US: "Privacy Policy"
+        url: "site/policies/privacy"
       - name:
           zh-CN: "服务条款"
-          en-US:
-        url: "site/policies/terms_of_service"
+          en-US: "Terms Of Service"
+        url: "site/policies/terms"
       - name:
           zh-CN: "Cookie"
-          en-US:
+          en-US: "Cookie"
         url: "cookies"
       - name:
           zh-CN: "配置选项"
