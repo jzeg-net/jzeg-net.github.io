@@ -1,36 +1,31 @@
 {{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
 {{ define "content" }}
     <main class="container-fluid gx-0" id="content">
-        <ul class="mb-0 list-unstyled d-flex flex-row column-gap-3 border-bottom">
-            <li>
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">概述</a>
-            </li>
-            <li class="border-bottom border-2 border-info-subtle" style="margin-bottom: -1px;">
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">{{ .Title }}</a>
-            </li>
-            <li>
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">3</a>
-            </li>
-        </ul>
+        {{- partial "policies/menu" . -}}
         <div class="d-flex flex-lg-row">
-            <div class="col-md-3 col-lg-2 border-end">
-                <ul class="my-4 list-unstyled d-flex flex-column row-gap-3">
-                    <li class="bg-secondary-subtle">
-                        <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-1</a>
-                    </li>
-                    <li class="bg-secondary-subtle">
-                        <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-2</a>
-                    </li>
-                    <li class="bg-secondary-subtle border-end border-2 border-info-subtle" style="margin-right: -1px;">
-                        <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-3</a>
-                    </li>
-                    <li class="bg-secondary-subtle">
-                        <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-4</a>
-                    </li>
-                    <li class="bg-secondary-subtle">
-                        <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-5</a>
-                    </li>
-                </ul>
+            <div class="col-md-3 col-lg-2">
+                <div class="overflow-y-scroll h-100 border-end">
+                    <div class="vh-100">
+                        <ul class="my-4 list-unstyled d-flex flex-column row-gap-3">
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-1</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-2</a>
+                            </li>
+                            <li class="bg-secondary-subtle border-end border-2 border-info-subtle" style="margin-right: -1px;">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-3</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-4</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-5</a>
+                            </li>
+                        </ul>
+                        <div class="h-25"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-auto flex-grow-1">
                 <div class="overflow-y-scroll h-100">
@@ -48,8 +43,8 @@
                         </div>
                         <div class="py-4 text-light-emphasis">
                             {{- .Content }}
-                            <div class="vh-100"></div>
                         </div>
+                        <div class="h-25"></div>
                     </div>
                 </div>
             </div>

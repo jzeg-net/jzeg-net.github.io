@@ -1,17 +1,7 @@
 {{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
 {{ define "content" }}
     <main class="container-fluid gx-0" id="content">
-        <ul class="mb-0 list-unstyled d-flex flex-row column-gap-3 border-bottom">
-            <li class="border-bottom border-2 border-info-subtle" style="margin-bottom: -1px;">
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">{{ .Title }}</a>
-            </li>
-            <li>
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">2</a>
-            </li>
-            <li>
-                <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">3</a>
-            </li>
-        </ul>
+        {{- partial "policies/menu" . -}}
         <div class="container">
             <div class="my-4 px-4">
                 <h1>{{ .Title }}</h1>

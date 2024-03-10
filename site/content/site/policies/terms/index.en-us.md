@@ -14,3 +14,5 @@ footer: "hide"
 float_tools: ""
 
 ---
+
+**We understand this is a big responsibility and work hard to protect your information and put you in control.**

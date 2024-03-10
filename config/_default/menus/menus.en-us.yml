@@ -275,22 +275,22 @@ policies:
     -   identifier: overview
         name: "Overview"
         parent: policies
-        pageRef: /policies/
+        pageRef: /site/policies/
         weight: 1
     -   identifier: privacy_policy
         name: "Privacy Policy"
         parent: policies
-        pageRef: /policies/privacy/
+        pageRef: /site/policies/privacy/
         weight: 2
     -   identifier: terms_of_service
         name: "Terms Of Service"
         parent: policies
-        pageRef: /policies/terms/
+        pageRef: /site/policies/terms/
         weight: 3
     -   identifier: faq
         name: "FAQ"
         parent: policies
-        pageRef: /policies/faq/
+        pageRef: /site/policies/faq/
         weight: 4
 language:
     -   identifier: language
