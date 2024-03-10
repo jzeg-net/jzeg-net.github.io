@@ -21,8 +21,8 @@
         <span class="visually-hidden">{{- T "rss" -}}</span>
     </a>
     {{ end }}
-    {{- with .Site.Data.umami.share.enable -}}
-    {{- $url := $.Site.Data.umami.share.url -}}
+    {{- if and .Site.Params.analytics.umami.enable .Site.Params.analytics.umami.share.enable -}}
+    {{- $url := .Site.Data.analytics.umami.share.url -}}
     <a class="text-reset" href="{{ $url }}" target="_blank" rel="noindex,nofollow" title="{{- T "umami" -}} 分析">
         <svg class="bi fs-4" width="16" height="16" fill="currentColor"><title>{{- T "umami" -}} 分析</title><use href="#bi-umami"></use></svg>
         <span class="visually-hidden">{{- T "umami" -}} 分析</span>

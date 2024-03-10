@@ -33,9 +33,9 @@
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
 {{- if hugo.IsProduction -}}
-{{- if .Site.Params.umami.enable -}}
-{{- $umami_src := .Site.Params.umami.script_src -}}
-{{- $umami_website_id := .Site.Params.umami.website_id -}}
+{{- if .Site.Params.analytics.umami.enable -}}
+{{- $umami_src := .Site.Data.analytics.umami.script_src -}}
+{{- $umami_website_id := .Site.Data.analytics.umami.website_id -}}
 <script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}"></script>
 {{- end -}}
 {{- end -}}
