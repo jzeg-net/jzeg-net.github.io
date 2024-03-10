@@ -1,15 +1,15 @@
 {{ $currentPage := . }}
-<ul class="mb-0 list-unstyled d-flex flex-row column-gap-3 border-bottom">
+<ul class="mb-0 list-unstyled d-flex flex-row column-gap-3 border-bottom overflow-y-scroll">
 {{- range .Site.Menus.policies -}}
 {{- if .HasChildren -}}
 {{- range .Children -}}
 {{ if $currentPage.IsMenuCurrent .Menu . }}
     <li class="border-bottom border-2 border-info-subtle" style="margin-bottom: -1px;">
-        <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
+        <a class="d-block px-3 py-2 text-nowrap link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
     </li>
 {{ else }}
     <li>
-        <a class="d-block px-3 py-2 link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
+        <a class="d-block px-3 py-2 text-nowrap link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
     </li>
 {{ end }}
 {{- end -}}
