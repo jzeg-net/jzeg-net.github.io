@@ -6,11 +6,11 @@
                 <span class="fs-5 text-nowrap">{{ .Site.Title }}</span>
             </a>
             <ul class="list-unstyled text-nowrap">
-            {{ range .Site.Data.footerLogo.description }}
+            {{ range index .Site.Data.footerLogo.description .Language.LanguageCode }}
                 <li class="mb-3 link-light link-opacity-50-hover link-underline-opacity-0">{{ . }}</li>
             {{ end }}
             </ul>
-            {{ if eq .Site.Language.LanguageCode "zh-CN" }}
+            {{ if eq .Language.LanguageCode "zh-CN" }}
             <ul class="list-unstyled text-nowrap" id="beian">
             {{- with .Site.Data.beian.icp }}
             {{ $title := .title }}
@@ -32,7 +32,7 @@
         <div class="col-lg row row-gap-4 column-gap-md-5">
         {{- $currentPage := .RelPermalink -}}
         {{- $defaultLangCode := "zh-CN" -}}
-        {{- $currentLangCode := .Site.Language.LanguageCode -}}
+        {{- $currentLangCode := .Language.LanguageCode -}}
 
         {{- range .Site.Data.footerLinks -}}
         {{- $label := index .category.label $currentLangCode -}}

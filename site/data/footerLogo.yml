@@ -1,6 +1,11 @@
 logo:
   svg:
 description:
-  - "发展才是硬道理"
-  - "凡是过往，皆为序章"
-  - "保持好奇、无知、热情和敬畏"
+  zh-CN:
+    - "发展才是硬道理"
+    - "凡是过往，皆为序章"
+    - "保持好奇、无知、热情和敬畏"
+  en-US:
+    - "Development is the absolute principle."
+    - "Everything in the past is a prelude."
+    - "Stay curious, ignorant, passionate, and reverent."
