@@ -9,7 +9,7 @@
 
 {{ $style := resources.Get $resourcesGet | postCSS $postcssOptions }}
 
-{{ if eq hugo.Environment "production" }}
+{{ if hugo.IsProduction }}
     {{- $style = $style | resources.Minify -}}
 {{ end }}
 

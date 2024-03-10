@@ -1,6 +1,6 @@
 {{ $preUrl := relURL "/" }}
 
-{{- if eq hugo.Environment "production" -}}
+{{- if hugo.IsProduction -}}
     <script src="{{ $preUrl }}static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 {{- else -}}
     <script src="{{ $preUrl }}static/vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -17,7 +17,7 @@
 {{ end }}
 {{ end }}
 
-{{- if eq hugo.Environment "production" -}}
+{{- if hugo.IsProduction -}}
 <script async src="{{ $preUrl }}static/js/busuanzi.pure.min.js"></script>
 {{ end }}
 
@@ -32,7 +32,7 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{- if eq hugo.Environment "production" -}}
+{{- if hugo.IsProduction -}}
 {{- if .Site.Params.umami.enable -}}
 {{- $umami_src := .Site.Params.umami.script_src -}}
 {{- $umami_website_id := .Site.Params.umami.website_id -}}
@@ -86,7 +86,7 @@
 {{ end }}
 
 
-{{ if and (eq hugo.Environment "production") (.Site.Params.DisableDevtool.enable) }}
+{{ if and hugo.IsProduction (.Site.Params.DisableDevtool.enable) }}
 <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
 

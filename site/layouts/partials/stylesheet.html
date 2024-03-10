@@ -2,7 +2,7 @@
 {{- $staticVendor := "static/vendor/" -}}
 {{- $cdnUrl := (partial "functions/cdn/jsdelivr" .) -}}
 
-{{- if eq hugo.Environment "production" -}}
+{{- if hugo.IsProduction -}}
     {{- if eq .Language.LanguageDirection "ltr" -}}
         <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.min.css">
     {{- else -}}

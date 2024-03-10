@@ -8,7 +8,7 @@
 
 {{ $babelOptions := dict "minified" false "noComments" false "compact" false "sourceMap" "" }}
 
-{{ if eq hugo.Environment "production" }}
+{{ if hugo.IsProduction }}
     {{ $babelOptions = merge $babelOptions (dict "minified" true "noComments" true "compact" true) }}
 {{ end }}
 

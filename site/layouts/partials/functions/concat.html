@@ -5,7 +5,7 @@
 
 {{ $bundle := resources.Match $concatPath | resources.Concat $targetPath }}
 
-{{ if eq hugo.Environment "production" }}
+{{ if hugo.IsProduction }}
     {{ $bundle = $bundle | resources.Minify }}
 {{ end }}
 
