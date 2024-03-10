@@ -4,7 +4,7 @@
 {{- if .HasChildren -}}
 {{- range .Children -}}
 {{ if $currentPage.IsMenuCurrent .Menu . }}
-    <li class="border-bottom border-2 border-info-subtle" style="margin-bottom: -1px;">
+    <li class="border-bottom border-2 border-info" style="margin-bottom: -1px;">
         <a class="d-block px-3 py-2 text-nowrap link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
     </li>
 {{ else }}
