@@ -269,6 +269,29 @@ donate:
             svg:
                 useHref: "bi-wechat"
                 class: "text-success"
+policies:
+    -   identifier: policies
+        name: "政策"
+    -   identifier: overview
+        name: "概述"
+        parent: policies
+        pageRef: /policies/
+        weight: 1
+    -   identifier: privacy_policy
+        name: "隐私政策"
+        parent: policies
+        pageRef: /policies/privacy/
+        weight: 2
+    -   identifier: terms_of_service
+        name: "服务条款"
+        parent: policies
+        pageRef: /policies/terms/
+        weight: 3
+    -   identifier: faq
+        name: "常见问题解答"
+        parent: policies
+        pageRef: /policies/faq/
+        weight: 4
 language:
     -   identifier: language
         name: 语言
