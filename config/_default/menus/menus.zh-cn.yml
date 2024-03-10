@@ -11,7 +11,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_posts
         name: "文章"
-        pageRef: /posts
+        pageRef: /posts/
         weight: 2
         params:
             class:
@@ -21,7 +21,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_gallery
         name: "画廊"
-        pageRef: /gallery
+        pageRef: /gallery/
         weight: 3
         params:
             class:
@@ -31,7 +31,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_video
         name: "视频"
-        pageRef: /video
+        pageRef: /video/
         weight: 3
         params:
             class:
@@ -51,7 +51,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_tools
         name: "工具箱"
-        pageRef: /tools
+        pageRef: /tools/
         parent: menu_more
         weight: 5
         params:
@@ -62,7 +62,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_edit
         name: "编辑"
-        pageRef: /edit
+        pageRef: /edit/
         parent: menu_more
         weight: 8
         params:
@@ -73,7 +73,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_shop
         name: "铺子"
-        pageRef: /shop
+        pageRef: /shop/
         parent: menu_more
         weight: 7
         params:
@@ -85,7 +85,7 @@ main:
 demo_list:
     -   identifier: demo_list
         name: "演示列表"
-        pageRef: /demo
+        pageRef: /demo/
         weight: 1
         params:
             class:
@@ -95,13 +95,13 @@ demo_list:
                 size: [ width: 16, height: 16 ]
     -   identifier: account_form
         name: "账户表格"
-        pageRef: /demo/account_form
+        pageRef: /demo/account_form/
         parent: demo_list
         weight: 1
 account_form:
     -   identifier: account_form
         name: "分类展示"
-        pageRef: /demo/account_form
+        pageRef: /demo/account_form/
         weight: 1
         params:
             class:
