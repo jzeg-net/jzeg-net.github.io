@@ -7,7 +7,7 @@
             {{ $name := index .name $currentLangCode }}
             {{ $description := index .description $currentLangCode }}
         <li class="flex-grow-1 px-3 py-1 text-center border border-light border-opacity-10">
-            <a class="link-light link-opacity-50 link-opacity-25-hover link-underline-opacity-0" href="{{ $href }}" target="_blank" title="{{ $description }}">{{ $name }}</a>
+            <a class="link-light link-opacity-25-hover link-underline-opacity-0" href="{{ $href }}" target="_blank" title="{{ $description }}">{{ $name }}</a>
         </li>
         {{- end -}}
     </ul>

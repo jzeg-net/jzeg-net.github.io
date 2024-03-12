@@ -1,16 +1,28 @@
 :root {
   --bs-transition-color: color .29s ease;
+  --bs-transition-text-decoration-color: text-decoration-color .29s ease;
 }
 
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer h6,
-footer li,
-footer svg,
-footer p,
-footer a {
+.link-primary,
+.link-secondary,
+.link-success,
+.link-info,
+.link-danger,
+.link-light,
+.link-dark,
+.link-warning,
+.link-body-emphasis {
   transition: var(--bs-transition-color);
+}
+
+.link-underline-primary,
+.link-underline-secondary,
+.link-underline-success,
+.link-underline-info,
+.link-underline-warning,
+.link-underline-danger,
+.link-underline-light,
+.link-underline-dark,
+.link-underline {
+  transition: var(--bs-transition-text-decoration-color);
 }
