@@ -6,24 +6,27 @@
                     <label for="config_fontSize" class="d-none d-lg-block form-label col-2 text-end me-4">字体</label>
                     <div class="col-6">
                         <label for="config_fontSize" class="d-lg-none form-label text-end me-4" id="config_fontSize_label">字体</label>
-                        <select class="form-select form-select-lg" size="9" id="config_fontSize" aria-labelledby="config_fontSize_label">
-                            <option value="2xs">2xs</option>
-                            <option value="xs">xs</option>
-                            <option value="sm">sm</option>
-                            <option value="md">md</option>
-                            <option value="base" selected>base</option>
-                            <option value="lg">lg</option>
-                            <option value="xl">xl</option>
-                            <option value="2xl">2xl</option>
-                            <option value="3xl">3xl</option>
-                        </select>
+                        <div class="mb-1">
+                            <select class="form-select form-select-lg" size="5" id="config_fontSize" aria-labelledby="config_fontSize_label">
+                                <option value="2xs">2xs</option>
+                                <option value="xs">xs</option>
+                                <option value="sm">sm</option>
+                                <option value="md">md</option>
+                                <option value="base" selected>base</option>
+                                <option value="lg">lg</option>
+                                <option value="xl">xl</option>
+                                <option value="2xl">2xl</option>
+                                <option value="3xl">3xl</option>
+                            </select>
+                        </div>
+                        <span class="text-secondary small">整站中，字体的大小。</span>
                     </div>
                 </div>
                 <div class="hstack justify-content-center align-items-baseline column-gap-2">
                     <label class="d-none d-lg-block form-label col-2 text-end me-4">调色板</label>
                     <div class="col-6">
                         <label class="d-lg-none form-label text-end me-4" id="config_palette_label">调色板</label>
-                        <div class="d-flex flex-wrap gap-3">
+                        <div class="d-flex flex-wrap gap-3 mb-1">
                             <div>
                                 <input type="radio" class="btn-check" name="palette_options" value="secondary" id="palette_options-secondary" autocomplete="off" checked>
                                 <label class="btn btn-outline-secondary" for="palette_options-secondary">默认</label>
@@ -45,13 +48,14 @@
                                 <label class="btn btn-outline-warning" for="palette_options-warning">黄色</label>
                             </div>
                         </div>
+                        <span class="text-secondary small">未上线。目标是切换整站的配色。</span>
                     </div>
                 </div>
                 <div class="hstack justify-content-center align-items-baseline column-gap-2">
                     <label class="d-none d-lg-block form-label col-2 text-end me-4">页面切换提示音</label>
                     <div class="col-6">
                         <label class="d-lg-none form-label text-end me-4" id="page_switching_sound_label">页面切换提示音</label>
-                        <div class="d-flex flex-wrap gap-3">
+                        <div class="d-flex flex-wrap gap-3 mb-1">
                             <div>
                                 <input type="radio" class="btn-check" name="page_switching_sound_options" value="true" id="page_switching_sound-turn_on" autocomplete="off" onclick="localStorage.setItem('admission', 'true')">
                                 <label class="btn btn-outline-success" for="page_switching_sound-turn_on">开启</label>
@@ -61,12 +65,37 @@
                                 <label class="btn btn-outline-success" for="page_switching_sound-turn_off">关闭</label>
                             </div>
                         </div>
+                        <span class="text-secondary small">当从其他应用窗口或者浏览器标签切换到本站窗口的时候，是否需要播放一个提示的声音。</span>
+                    </div>
+                </div>
+                <div class="hstack justify-content-center align-items-baseline column-gap-2">
+                    <label class="d-none d-lg-block form-label col-2 text-end me-4">外部链接提示</label>
+                    <div class="col-6">
+                        <label class="d-lg-none form-label text-end me-4" id="external_link_jump_prompt_label">外部链接跳转提示</label>
+                        <div class="d-flex flex-wrap gap-3 mb-1">
+                            <div>
+                                <input type="radio" class="btn-check" name="external_link_jump_prompt_options" value="true" id="external_link_jump_prompt-turn_on" autocomplete="off" onclick="localStorage.setItem('noJump', 'true')">
+                                <label class="btn btn-outline-success" for="external_link_jump_prompt-turn_on">开启</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="external_link_jump_prompt_options" value="false" id="external_link_jump_prompt-turn_off" autocomplete="off" onclick="localStorage.setItem('noJump', 'false')">
+                                <label class="btn btn-outline-success" for="external_link_jump_prompt-turn_off">关闭</label>
+                            </div>
+                        </div>
+                        <span class="text-secondary small">整站页面中，外部输入的网址，当被点击之后，是否插入一个中转的页面，用来提醒客户端用户，即将访问其他网站。</span>
                     </div>
                 </div>
                 <script>
                     let admissionStatus = localStorage.getItem('admission')
                     document.querySelectorAll('input[name="page_switching_sound_options"]').forEach((currentInput) => {
                         if (currentInput.value === admissionStatus) currentInput.checked = true
+                    })
+                </script>
+                <script>
+                    let noJumpStatus = localStorage.getItem('noJump')
+                    noJumpStatus = noJumpStatus === null ? 'true' : 'false'
+                    document.querySelectorAll('input[name="external_link_jump_prompt_options"]').forEach((currentInput) => {
+                        if (currentInput.value === noJumpStatus) currentInput.checked = true
                     })
                 </script>
             </div>
