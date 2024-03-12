@@ -1,13 +1,6 @@
 (() => {
   'use strict'
 
-  const storageKey = 'noJump'
-  const getLocalStored = () => localStorage.getItem(storageKey)
-  const setLocalStored = (value) => localStorage.setItem(storageKey, value)
-  const removeLocalStored = () => localStorage.removeItem(storageKey)
-
-  const getPreferredJump = () => getLocalStored() === 'true'
-
   const hrefType = href => {
     if (!href || !href.length) return null
 
@@ -70,7 +63,7 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (getPreferredJump()) return
+    if (localStorage.getItem('noJump') === 'true') return
 
     let content = document.querySelector('#content')
     if (content) {
