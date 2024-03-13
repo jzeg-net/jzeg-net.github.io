@@ -1,6 +1,8 @@
 (() => {
   'use strict'
 
+  const storageKey = 'jump'
+
   const hrefType = href => {
     if (!href || !href.length) return null
 
@@ -63,12 +65,26 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('noJump') === 'true') return
+    if (localStorage.getItem(storageKey) === 'false') return
 
     let content = document.querySelector('#content')
     if (content) {
       addJumpPre(content)
     }
+  })
+
+  window.addEventListener('storage', event => {
+    if (event.key !== storageKey) return
+
+    const key = event.key
+    const oldValue = event.oldValue
+    const newValue = event.newValue
+
+    console.log(`存储键: ${key}`)
+    console.log(`旧值: ${oldValue}`)
+    console.log(`新值: ${newValue}`)
+
+    document.location.reload()
   })
 
 })()

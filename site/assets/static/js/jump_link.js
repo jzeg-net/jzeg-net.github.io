@@ -1,12 +1,12 @@
 (() => {
   'use strict'
 
-  const storageKey = 'noJump'
+  const storageKey = 'jump'
   const getLocalStored = () => localStorage.getItem(storageKey)
   const setLocalStored = (value) => localStorage.setItem(storageKey, value)
   const removeLocalStored = () => localStorage.removeItem(storageKey)
 
-  const getPreferredJump = () => getLocalStored() === 'true'
+  const getPreferredJump = () => getLocalStored() === 'false'
 
   let linkInput = document.querySelector('#link_input')
   let linkCopy = document.querySelector('#link_copy')
@@ -15,8 +15,6 @@
   let dismissible = document.querySelector('#jump_link_dismissible')
 
   const toggleSVG = () => linkCopy.querySelectorAll('svg').forEach((svg) => svg.classList.toggle('d-none'))
-
-  const setDismissible = () => dismissible.checked = getPreferredJump()
 
   const goBack = () => {
     open(document.referrer, '_parent') // history.go(-1)
@@ -28,7 +26,7 @@
     return targetLink ? decodeURIComponent(targetLink) : ''
   }
 
-  dismissible.addEventListener('click', () => setLocalStored(!!dismissible.checked))
+  dismissible.addEventListener('click', () => { setLocalStored(!dismissible.checked) })
 
   linkCopy.addEventListener('click', () => {
     let clipboard = ClipboardJS.copy(parseTarget())
@@ -47,7 +45,8 @@
   toBack.addEventListener('click', goBack)
 
   window.addEventListener('load', () => {
-    setDismissible()
+    dismissible.checked = getPreferredJump()
+
     let result = parseTarget()
     if (!result) return
 
