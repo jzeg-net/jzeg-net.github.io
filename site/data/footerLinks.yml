@@ -22,9 +22,14 @@
           en-US: "Terms Of Service"
         url: "site/policies/terms"
       - name:
-          zh-CN: "Cookie"
-          en-US: "Cookie"
+          zh-CN: "Cookie 政策"
+          en-US: "Cookie Policy"
         url: "site/policies/cookies"
+      - name:
+          zh-CN: "管理 Cookies"
+          en-US: "Manage Cookies"
+        url: "#"
+        onclick: "CookieConsent.showPreferences()"
       - name:
           zh-CN: "配置选项"
           en-US:
