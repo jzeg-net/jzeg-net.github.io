@@ -24,7 +24,7 @@
       - name:
           zh-CN: "Cookie"
           en-US: "Cookie"
-        url: "cookies"
+        url: "site/policies/cookies"
       - name:
           zh-CN: "配置选项"
           en-US:

@@ -288,10 +288,15 @@ policies:
         pageRef: /site/policies/terms/
         weight: 3
     -   identifier: security
+        name: "Cookie政策"
+        parent: policies
+        pageRef: /site/policies/cookies/
+        weight: 4
+    -   identifier: security
         name: "安全"
         parent: policies
         pageRef: /site/policies/security/
-        weight: 4
+        weight: 5
     -   identifier: faq
         name: "常见问题解答"
         parent: policies
