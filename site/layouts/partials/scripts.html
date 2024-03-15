@@ -12,8 +12,8 @@
 
 {{ if eq .IsHome false }}
 {{ if and (ne .Page.Params.navbar "hide") (ne .Page.Params.onlyMain true) }}
-    <script src="{{ $preUrl }}static/vendor/@docsearch/js/dist/umd/index.js"></script>
-    <script src="{{ $preUrl }}static/js/doc-search.js"></script>
+<script src="{{ $preUrl }}static/vendor/@docsearch/js/dist/umd/index.js"></script>
+<script src="{{ $preUrl }}static/js/doc-search.js"></script>
 {{ end }}
 {{ end }}
 
@@ -34,9 +34,15 @@
 
 {{- if hugo.IsProduction -}}
 {{- if .Site.Params.analytics.umami.enable -}}
-{{- $umami_src := .Site.Data.analytics.umami.script_src -}}
-{{- $umami_website_id := .Site.Data.analytics.umami.website_id -}}
-<script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}"></script>
+{{- with .Site.Data.analytics.umami -}}
+{{- $umami_src        := .script_src -}}
+{{- $umami_website_id := .data_website_id -}}
+{{- $umami_host_url   := .data_host_url -}}
+{{- $umami_auto_track := .data_auto_track -}}
+{{- $umami_cache      := .data_cache -}}
+{{- $umami_domains    := .data_domains -}}
+<script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}" data-host-url="{{ $umami_host_url }}" data-auto-track="{{ $umami_auto_track }}" data-cache="{{ $umami_cache }}" data-domains="{{ $umami_domains }}"></script>
+{{- end -}}
 {{- end -}}
 {{- end -}}
 
