@@ -1,6 +1,6 @@
 ---
 title: Security
-type: site/policies
+type: site/policies/common
 
 date: "2023-03-28T00:00:28+08:00"
 publishDate: "2023-11-20T00:00:28+08:00"

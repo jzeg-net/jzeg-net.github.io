@@ -1,0 +1,60 @@
+{{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
+{{ define "content" }}
+    <main class="container-fluid gx-0" id="content">
+        {{- partial "policies/menu" . -}}
+        <div class="d-flex flex-lg-row">
+            <div class="col-md-3 col-lg-2">
+                <div class="overflow-y-scroll h-100 border-end">
+                    <div class="vh-100">
+                        <ul class="my-4 list-unstyled d-flex flex-column row-gap-3">
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-1</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-2</a>
+                            </li>
+                            <li class="bg-secondary-subtle border-end border-2 border-info" style="margin-right: -1px;">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-3</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-4</a>
+                            </li>
+                            <li class="bg-secondary-subtle">
+                                <a class="d-block px-3 py-2 bg-gradient link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="#">l-5</a>
+                            </li>
+                        </ul>
+                        <div class="border-top">
+                            <ul class="my-4 list-unstyled d-flex flex-column row-gap-3">
+                                <li><a class="d-block px-3 py-2 link-secondary link-opacity-50-hover link-underline-opacity-0" href="{{ "updates/" }}">更新记录</a></li>
+                                <li><a class="d-block px-3 py-2 link-secondary link-opacity-50-hover link-underline-opacity-0" href="{{ "archive/" }}">存档记录</a></li>
+                            </ul>
+                        </div>
+                        <div class="h-25"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto flex-grow-1">
+                <div class="overflow-y-scroll h-100">
+                    <div class="my-4 px-4 pe-5 vh-100">
+                        <h1>{{ .Title }}</h1>
+                        <div class="text-secondary-emphasis small">
+                            <div>
+                                <span>发布日期：</span>
+                                <span>{{ .PublishDate }}</span>
+                            </div>
+                            <div>
+                                <span>最后修改：</span>
+                                <span>{{ .Lastmod }}</span>
+                            </div>
+                        </div>
+                        <div class="py-4 text-light-emphasis">
+                            {{- .Content }}
+                            <svg class="wave" preserveAspectRatio="none" aria-hidden="true" focusable="false" viewBox="0 0 1440 96" fill="var(--bs-body-bg)" xmlns="http://www.w3.org/2000/svg"><path d="m0 96 80-5C160 85 320 75 480 64s320-21 480-21c160 0 320 10 400 16l80 5V0H0v96Z"></path></svg>
+                        </div>
+                        <div class="h-25"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{{ end }}
