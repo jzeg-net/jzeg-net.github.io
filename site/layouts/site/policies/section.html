@@ -1,8 +1,38 @@
 {{ define "content" }}
 <main class="container-fluid gx-0 min-vh-100" id="content">
     {{- partial "policies/menu" . -}}
-    <div>
-        {{- .Content }}
+    <div class="container gx-0 py-3">
+        <div class="d-flex flex-wrap row-gap-5 justify-content-between">
+            <div class="col-12 col-md-6 pt-5 pe-5 d-flex flex-column row-gap-2">
+                <h2>隐私权政策</h2>
+                <p class="h-100">说明了我们会收集哪些信息、为什么收集这些信息，以及如何使用、审查并更新这些信息。</p>
+                <p class="align-content-end">
+                    <a class="link-success link-opacity-75-hover link-underline-opacity-0" href="privacy/">阅读我们的《隐私政策》</a>
+                </p>
+            </div>
+            <div class="col-12 col-md-6 pt-5 pe-5 d-flex flex-column row-gap-2">
+                <h2>服务条款</h2>
+                <p class="h-100">其中介绍了您在使用我们的服务时需要同意的规则。</p>
+                <p class="align-content-end">
+                    <a class="link-success link-opacity-75-hover link-underline-opacity-0" href="terms/">阅读我们的《服务条款》</a>
+                </p>
+            </div>
+            <div class="col-12 col-md-6 pt-5 pe-5 d-flex flex-column row-gap-2">
+                <h2>Cookie 政策</h2>
+                <p class="h-100">本页面介绍了本站使用的 Cookie 类型和类似技术，还说明了我们的合作伙伴如何在广告中使用 Cookie。</p>
+                <p class="align-content-end">
+                    <a class="link-success link-opacity-75-hover link-underline-opacity-0" href="cookies/">查看我们的 Cookie 政策页面</a>
+                </p>
+            </div>
+            <div class="col-12 col-md-6 pt-5 pe-5 d-flex flex-column row-gap-2">
+                <h2>安全中心</h2>
+                <p class="h-100">其中介绍了我们的内置安全保障功能、隐私保护控制项。</p>
+                <p class="align-content-end">
+                    <a class="link-success link-opacity-75-hover link-underline-opacity-0" href="security/">查看我们的安全中心</a>
+                </p>
+            </div>
+        </div>
     </div>
+    {{- .Content }}
 </main>
 {{ end }}
