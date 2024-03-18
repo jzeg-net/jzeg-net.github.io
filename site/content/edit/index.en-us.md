@@ -1,5 +1,5 @@
 ---
-title: Edit
+title: "Edit"
 type: edit
 
 onlyMain: false

@@ -1,5 +1,5 @@
 ---
-title: 编辑
+title: "编辑"
 type: edit
 
 onlyMain: false
