@@ -39,6 +39,7 @@
       theme: {
         current: theme
       },
+      actions: [],
     }
   })
 
