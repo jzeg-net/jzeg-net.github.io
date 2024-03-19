@@ -1,6 +1,6 @@
 const svgEditor = new Editor(document.querySelector('#svg_editor'))
 svgEditor.setConfig({
-  lang: document.querySelector('html').lang,
+  lang: document.documentElement.lang,
   imgPath: '/static/vendor/svgedit/dist/editor/images',
   extPath: '/static/vendor/svgedit/dist/editor/extensions',
   allowInitialUserOverride: true,

@@ -1,29 +1,45 @@
-const vditor = new Vditor('vditor', {
-  toolbarConfig: {
-    pin: true
-  },
-  counter: {
-    enable: true
-  },
-  lang: 'zh_CN',
-  theme: 'dark',
-  icon: 'ant',
-  placeholder: '22',
-  height: window.innerHeight / 2,
-  toolbar: [
-    'emoji',
-    'link',
-    'upload',
-    'edit-mode',
-    {
-      name: 'more',
-      toolbar: [
-        'insert-after',
-        'fullscreen',
-        'preview',
-        'info',
-        'help',
-      ],
+(() => {
+  'use strict'
+
+  let lang = document.documentElement.lang.replaceAll('-', '_')
+  let theme = document.documentElement.dataset['bsTheme']
+
+  const vditor = new Vditor('vditor', {
+    mode: 'sv',
+    toolbarConfig: {
+      pin: true
     },
-  ],
-})
+    counter: {
+      enable: true,
+      max: 10000,
+      type: 'markdown'
+    },
+    lang: lang,
+    theme: theme,
+    fullscreen: {
+      index: 1020
+    },
+    outline: {
+      enable: true,
+      position: 'left'
+    },
+    upload: {
+      url: '/'
+    },
+    placeholder: '',
+    width: '100%',
+    height: window.innerHeight,
+    preview: {
+      hljs: {
+        lineNumber: true,
+      },
+      markdown: {
+        toc: true,
+      },
+      theme: {
+        current: theme
+      },
+    }
+  })
+
+})()
