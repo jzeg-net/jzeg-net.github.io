@@ -1,38 +1,38 @@
 <div class="d-flex justify-content-end align-items-center column-gap-3">
-    <a class="link-light link-opacity-75-hover" href="{{- .Site.Params.Repo.git -}}" target="_blank" title="{{ T "github" }}" rel="nofollow noopener">
+    <a class="link-light link-opacity-50-hover" href="{{- .Site.Params.Repo.git -}}" target="_blank" title="{{ T "github" }}" rel="nofollow noopener">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "github" }}</title><use href="#bi-github"></use></svg>
         <span class="visually-hidden">{{- T "github" -}}</span>
     </a>
     {{ if .Site.Data.social.mastodon.enable }}
     {{ $mastodon_url := partial "functions/params/social/get_mastodon_info" (dict "type" "url") }}
     {{ $mastodon_account := partial "functions/params/social/get_mastodon_info" (dict "type" "account") }}
-    <a class="link-light link-opacity-75-hover" href="{{ $mastodon_url }}" target="_blank" title="{{ $mastodon_account }}" rel="me nofollow noopener">
+    <a class="link-light link-opacity-50-hover" href="{{ $mastodon_url }}" target="_blank" title="{{ $mastodon_account }}" rel="me nofollow noopener">
         <svg class="bi fs-4" width="16" height="16"><title>{{ $mastodon_account }}</title><use href="#bi-mastodon"></use></svg>
         <span class="visually-hidden">{{- T "mastodon" -}}</span>
     </a>
     {{ end }}
-    <a class="link-light link-opacity-75-hover" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "sitemap" }}">
+    <a class="link-light link-opacity-50-hover" href="{{ absURL "sitemap.xml" }}" target="_blank" title="{{ T "sitemap" }}">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "sitemap" }}</title><use href="#bi-diagram-3-fill"></use></svg>
         <span class="visually-hidden">{{- T "sitemap" -}}</span>
     </a>
     {{ with .OutputFormats.Get "rss" -}}
-    <a class="link-light link-opacity-75-hover" href="{{ .Permalink }}" target="_blank" title="{{ T "rss" }}">
+    <a class="link-light link-opacity-50-hover" href="{{ .Permalink }}" target="_blank" title="{{ T "rss" }}">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "rss" }}</title><use href="#bi-rss"></use></svg>
         <span class="visually-hidden">{{- T "rss" -}}</span>
     </a>
     {{ end }}
     {{- if and .Site.Params.analytics.umami.enable .Site.Params.analytics.umami.share.enable -}}
     {{- $url := .Site.Data.analytics.umami.share.url -}}
-    <a class="link-light link-opacity-75-hover" href="{{ $url }}" target="_blank" rel="noindex nofollow" title="{{- T "umami" -}} 分析" data-umami-event="analytics share">
+    <a class="link-light link-opacity-50-hover" href="{{ $url }}" target="_blank" rel="noindex nofollow" title="{{- T "umami" -}} 分析" data-umami-event="analytics share">
         <svg class="bi fs-4" width="16" height="16" fill="currentColor"><title>{{- T "umami" -}} 分析</title><use href="#bi-umami"></use></svg>
         <span class="visually-hidden">{{- T "umami" -}} 分析</span>
     </a>
     {{- end -}}
-    <a class="link-light link-opacity-75-hover share copy_link" href="#" target="_blank" title="{{ T "share" }}">
+    <a class="link-light link-opacity-50-hover share copy_link" href="#" target="_blank" title="{{ T "share" }}">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "share" }}</title><use href="#bi-share"></use></svg>
         <span class="visually-hidden">{{- T "share" -}}</span>
     </a>
-    <a class="link-light link-opacity-75-hover share link_qrcode" href="#" target="_blank" title="{{ T "qrcode" }}">
+    <a class="link-light link-opacity-50-hover share link_qrcode" href="#" target="_blank" title="{{ T "qrcode" }}">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "qrcode" }}</title><use href="#bi-qr-code"></use></svg>
         <span class="visually-hidden">{{- T "qrcode" -}}</span>
     </a>
