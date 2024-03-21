@@ -32,7 +32,6 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{- if hugo.IsProduction -}}
 {{- if .Site.Params.analytics.umami.enable -}}
 {{- with .Site.Data.analytics.umami -}}
 {{- $umami_src        := .script_src -}}
@@ -40,9 +39,8 @@
 {{- $umami_host_url   := .data_host_url -}}
 {{- $umami_auto_track := .data_auto_track -}}
 {{- $umami_cache      := .data_cache -}}
-{{- $umami_domains    := .data_domains -}}
+{{- $umami_domains    := delimit .data_domains "," -}}
 <script defer src="{{ $umami_src }}" data-website-id="{{ $umami_website_id }}" data-host-url="{{ $umami_host_url }}" data-auto-track="{{ $umami_auto_track }}" data-cache="{{ $umami_cache }}" data-domains="{{ $umami_domains }}"></script>
-{{- end -}}
 {{- end -}}
 {{- end -}}
 
