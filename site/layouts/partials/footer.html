@@ -4,21 +4,21 @@
         <div class="bg-dots"></div>
     </div>
     {{- if .Site.Params.newsletter.footer.enable -}}
-    <div class="py-4 text-bg-dark bg-opacity-100 link-light link-opacity-10 link-opacity-50-hover">
+    <div class="py-4 text-bg-dark bg-opacity-100">
         {{- partial "footer/newsletter" . }}
     </div>
     {{- end -}}
     {{- if .Site.Params.friendlinks.footer.enable -}}
-        <div class="py-4 text-bg-dark bg-opacity-75 link-light link-opacity-10 link-opacity-50-hover">
+        <div class="py-4 text-bg-dark bg-opacity-75">
             {{- partial "footer/friendlinks" . }}
         </div>
     {{- end -}}
     {{- if .Site.Params.footerLinks.enable -}}
-    <div class="py-4 text-bg-dark bg-opacity-50 link-light link-opacity-10 link-opacity-50-hover">
+    <div class="py-4 text-bg-dark bg-opacity-50">
         {{- partial "footer/footerLinks" . }}
     </div>
     {{- end -}}
-    <div class="py-4 text-bg-dark bg-opacity-25 link-light link-opacity-10 link-opacity-50-hover">
+    <div class="py-4 text-bg-dark bg-opacity-25">
         <div class="container d-flex flex-column row-gap-4 px-4 py-5">
             <div class="d-flex flex-column align-items-end row-gap-4">
                 {{- partial "footer/icon" . }}
@@ -27,8 +27,8 @@
             <hr class="my-3">
         </div>
     </div>
-    <div class="py-5 text-bg-dark bg-opacity-10 link-secondary link-opacity-50 link-opacity-100-hover">
-        <div class="container d-flex flex-column-reverse row-gap-4 flex-md-row justify-content-md-between size-xs">
+    <div class="py-5 text-bg-dark bg-opacity-10 link-secondary">
+        <div class="container d-flex flex-column-reverse row-gap-4 flex-md-row justify-content-md-between small">
             <div>
                 {{- partial "footer/copyright" . }}
                 {{- partial "footer/powered" . }}
@@ -40,7 +40,7 @@
                     <span>{{ T "busuanzi_value_page_pv" }}<span class="ps-2" id="busuanzi_value_page_pv"></span></span>
                 </div>
                 <div class="d-flex align-items-end justify-content-end">
-                    <span class="currentDateTime small">{{ T "currentDateTime" }}</span>
+                    <span class="currentDateTime">{{ T "currentDateTime" }}</span>
                 </div>
             </div>
         </div>
