@@ -4,11 +4,11 @@ type: site/policies/archive
 
 date: "2023-03-28T00:00:28+08:00"
 
-navbar: ""
-bulletin: "hide"
+bulletin:
+    enable: false
 breadcrumb:
-    display: "hide"
-footer: "hide"
-float_tools: ""
+    enable: false
+footer:
+    enable: false
 
 ---
