@@ -269,6 +269,19 @@ donate:
             svg:
                 useHref: "bi-wechat"
                 class: "text-success"
+publish:
+    -   identifier: publish
+        name: "Publish"
+    -   identifier: menu_publish_write
+        name: "Publish An Article"
+        pageRef: /publish/write/
+        parent: publish
+        weight: 1
+    -   identifier: menu_publish_ask
+        name: "Ask A Question"
+        pageRef: /publish/ask/
+        parent: publish
+        weight: 2
 policies:
     -   identifier: policies
         name: "Policies"
