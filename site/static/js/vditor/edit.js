@@ -24,11 +24,14 @@
       position: 'left'
     },
     upload: {
-      url: '/'
+      url: '/',
+      fieldName: 'editor_file[]',
+      accept: '',
+      multiple: true,
     },
     placeholder: '',
     width: '100%',
-    height: window.innerHeight,
+    height: window.innerHeight / 1.35,
     preview: {
       hljs: {
         lineNumber: true,

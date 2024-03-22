@@ -1,6 +1,17 @@
+{{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
 {{ define "content" }}
 <main class="pb-5 container gx-0" id="content">
     {{- .Content -}}
-    <div id="vditor"></div>
+    <div>
+        <form class="d-flex flex-column row-gap-3" accept-charset="UTF-8">
+            <div class="pt-3">
+                <input type="text" class="form-control form-control-lg" name="title" id="title" placeholder="文章标题" autocomplete="off" autofocus required>
+            </div>
+            <div id="vditor"></div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-lg btn-outline-success">发布</button>
+            </div>
+        </form>
+    </div>
 </main>
 {{ end }}

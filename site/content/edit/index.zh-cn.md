@@ -3,6 +3,20 @@ title: "编辑"
 type: edit
 
 onlyMain: false
+skippy:
+    enable: true
+navbar:
+    enable: true
+bulletin:
+    enable: false
+breadcrumb:
+    enable: false
+footer:
+    enable: false
+float_tools:
+    enable: false
+
+
 
 robots: noindex, nofollow
 sitemap_exclude: true
