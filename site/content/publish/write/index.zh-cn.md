@@ -1,6 +1,6 @@
 ---
 title: "编辑"
-type: edit
+type: publish/write
 
 onlyMain: false
 skippy:

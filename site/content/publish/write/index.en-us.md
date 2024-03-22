@@ -1,6 +1,6 @@
 ---
 title: "Edit"
-type: edit
+type: publish/write
 
 onlyMain: false
 skippy:

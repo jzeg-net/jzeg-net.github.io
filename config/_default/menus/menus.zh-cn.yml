@@ -62,7 +62,7 @@ main:
                 size: [ width: 16, height: 16 ]
     -   identifier: menu_edit
         name: "编辑"
-        pageRef: /edit/
+        pageRef: /publish/write/
         parent: menu_more
         weight: 8
         params:
