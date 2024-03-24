@@ -1,7 +1,7 @@
 {{ $currentPage := . }}
 <div class="overflow-hidden" style="height: 41px;">
 <nav class="overflow-x-scroll overflow-y-hidden">
-<ul class="mb-0 list-unstyled border-bottom d-flex flex-row align-items-center column-gap-3">
+<ul class="mb-0 list-unstyled border-bottom border-secondary-subtle d-flex flex-row align-items-center column-gap-3">
 {{- range .Site.Menus.policies -}}
 {{- if .HasChildren -}}
 {{- range .Children -}}
