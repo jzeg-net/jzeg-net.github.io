@@ -41,9 +41,12 @@
 #post-content {
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
-  max-height: 1000vh;
-  transition: max-height .35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  min-height: 150vh;
+  max-height: 2000vh;
+}
+
+#post-content.article_shrink {
+  max-height: 150vh;
 }
 
 #post-content > h1:after,
@@ -92,10 +95,6 @@
   display: flex;
   justify-content: center;
   user-select: none;
-}
-
-.article_shrink {
-  max-height: 60rem !important;
 }
 
 /* 文章篇幅展开 */
