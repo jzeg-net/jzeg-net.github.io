@@ -28,18 +28,23 @@
 
   dismissible.addEventListener('click', () => { setLocalStored(!dismissible.checked) })
 
+  let originalTitle = linkCopy.title
+  let tooltipBtn = bootstrap.Tooltip.getOrCreateInstance(linkCopy)
+
   linkCopy.addEventListener('click', () => {
     let clipboard = ClipboardJS.copy(parseTarget())
     let failed = linkCopy.dataset.copyFailed
     let successfully = linkCopy.dataset.copiedSuccessfully
     if (clipboard) {
-      bModal('', createSmallCenterText(successfully, 'success'), '', 'sm', true)
+      tooltipBtn.setContent({ '.tooltip-inner': successfully })
+      toggleSVG()
+      linkCopy.addEventListener('hidden.bs.tooltip', () => {
+        tooltipBtn.setContent({ '.tooltip-inner': originalTitle })
+        toggleSVG()
+      }, { once: true })
     } else {
-      bModal('', createSmallCenterText(failed), '', 'sm', true)
+      tooltipBtn.setContent({ '.tooltip-inner': failed })
     }
-
-    toggleSVG()
-    setTimeout(toggleSVG, 2500)
   })
 
   toBack.addEventListener('click', goBack)

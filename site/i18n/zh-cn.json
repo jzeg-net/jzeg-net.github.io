@@ -76,6 +76,7 @@
     "jump_turn_off_msg": "以后不再出现这类提醒",
     "feedback": "反馈",
     "copy": "复制",
+    "copy_to_clipboard": "复制到剪切板",
     "copied": "已复制",
     "copied_successfully": "复制成功",
     "copy_failed": "复制失败",

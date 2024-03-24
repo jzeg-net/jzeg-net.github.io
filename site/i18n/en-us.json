@@ -76,6 +76,7 @@
     "jump_turn_off_msg": "Such Reminders Will Not Appear Again In The Future",
     "feedback": "Feedback",
     "copy": "Copy",
+    "copy_to_clipboard": "Copy To Clipboard",
     "copied": "Copied",
     "copied_successfully": "Copied Successfully",
     "copy_failed": "Copy Failed",
