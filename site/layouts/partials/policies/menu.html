@@ -1,13 +1,13 @@
 {{ $currentPage := . }}
-<div class="border-bottom overflow-hidden" style="height: 42px;">
-<nav class="container gx-0 overflow-x-scroll overflow-y-hidden">
-<ul class="mb-0 list-unstyled d-flex flex-row align-items-center column-gap-3">
+<div class="overflow-hidden" style="height: 41px;">
+<nav class="overflow-x-scroll overflow-y-hidden">
+<ul class="mb-0 list-unstyled border-bottom d-flex flex-row align-items-center column-gap-3">
 {{- range .Site.Menus.policies -}}
 {{- if .HasChildren -}}
 {{- range .Children -}}
 {{ if $currentPage.IsMenuCurrent .Menu . }}
-    <li>
-        <a class="border-bottom border-1 border-info d-block px-3 py-2 text-nowrap link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
+    <li class="border-bottom border-1 border-info" style="margin-bottom: -1px;">
+        <a class="d-block px-3 py-2 text-nowrap link-secondary link-opacity-50 link-opacity-75-hover link-underline-opacity-0" href="{{- .PageRef | relLangURL -}}" title="{{ .Name | safeHTML }}">{{ .Name | safeHTML }}</a>
     </li>
 {{ else }}
     <li>
