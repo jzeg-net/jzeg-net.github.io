@@ -16,9 +16,7 @@
 
   const toggleSVG = () => linkCopy.querySelectorAll('svg').forEach((svg) => svg.classList.toggle('d-none'))
 
-  const goBack = () => {
-    open(document.referrer, '_parent') // history.go(-1)
-  }
+  const goBack = () => history.length > 1 ? history.go(-1) : open(document.referrer, '_parent')
 
   const parseTarget = () => {
     let targetLink = new URLSearchParams(window.location.search).get('target')
