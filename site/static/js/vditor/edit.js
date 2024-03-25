@@ -31,7 +31,7 @@
     },
     placeholder: '',
     width: '100%',
-    height: window.innerHeight / 1.35,
+    height: window.innerHeight / 1.45,
     preview: {
       hljs: {
         lineNumber: true,
