@@ -1,0 +1,19 @@
+{{ $slice := .slice }}
+{{/*{{ $divs := newScratch }}*/}}
+{{ $divs := "" }}
+
+{{ range $slice }}
+    {{ $id := printf "tag-check-%s" . }}
+    {{ $input := partial "functions/area_element_style/base/input" (dict "type" "checkbox" "class" "btn-check" "name" "tag_name" "value" . "id" $id) }}
+    {{ $label := partial "functions/area_element_style/base/label" (dict "innerHTML" . "class" "btn" "for" $id) }}
+
+    {{ $div_inner := printf "%s%s" $input $label }}
+
+    {{ $div := partial "functions/area_element_style/base/div" (dict "innerHTML" $div_inner "class" "btn-group btn-group-sm") }}
+
+{{/*    {{ $divs.Add "html" $div | safeHTML }}*/}}
+    {{ $divs = $div }}
+{{ end }}
+
+{{/*{{ return $divs.Get "html" }}*/}}
+{{ return $divs }}

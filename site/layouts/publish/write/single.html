@@ -42,70 +42,39 @@
                                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">home-tab-pane</div>
                                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                             <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_dsaf" value="dsaf" id="tag-check-dsaf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-dsaf">dsaf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_ddf" value="ddf" id="tag-check-ddf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-ddf">ddf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_vcb" value="vcb" id="tag-check-vcb" autocomplete="off">
-                                                    <label class="btn" for="tag-check-vcb">vcb</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_trhtr" value="trhtr" id="tag-check-trhtr" autocomplete="off">
-                                                    <label class="btn" for="tag-check-trhtr">trhtr</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_khjbf" value="khjbf" id="tag-check-khjbf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-khjbf">khjbf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_6we546" value="6we546" id="tag-check-6we546" autocomplete="off">
-                                                    <label class="btn" for="tag-check-6we546">6we546</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_1cx56v1sdf" value="1cx56v1sdf" id="tag-check-1cx56v1sdf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-1cx56v1sdf">1cx56v1sdf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_sd" value="sd" id="tag-check-sd" autocomplete="off">
-                                                    <label class="btn" for="tag-check-sd">sd</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_gdfg" value="gdfg" id="tag-check-gdfg" autocomplete="off">
-                                                    <label class="btn" for="tag-check-gdfg">gdfg</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_sadf" value="sadf" id="tag-check-sadf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-sadf">sadf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_sdf" value="sdf" id="tag-check-sdf" autocomplete="off">
-                                                    <label class="btn" for="tag-check-sdf">sdf</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_g" value="g" id="tag-check-g" autocomplete="off">
-                                                    <label class="btn" for="tag-check-g">g</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_sdfsadfds" value="sdfsadfds" id="tag-check-sdfsadfds" autocomplete="off">
-                                                    <label class="btn" for="tag-check-sdfsadfds">sdfsadfds</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_sdfss" value="sdfss" id="tag-check-sdfss" autocomplete="off">
-                                                    <label class="btn" for="tag-check-sdfss">sdfss</label>
-                                                </div>
-                                                <div class="btn-group btn-group-sm">
-                                                    <input type="checkbox" class="btn-check" name="tag_dsfsdfad" value="dsfsdfad" id="tag-check-dsfsdfad" autocomplete="off">
-                                                    <label class="btn" for="tag-check-dsfsdfad">dsfsdfad</label>
-                                                </div>
+                                                {{ $tab_2 := slice "dsaf" "ddf" "vcb" "trhtr" "khjbf" "6we546" "1cx56v1sdf" "sd" "gdfg" "sadf" "sdf" "g" "sdfsadfds" "sdfss" "dsfsdfad" -}}
+                                                {{ range $tab_2 -}}
+                                                    {{ $id := printf "tag-check-%s" . }}
+                                                    {{ $input := partial "functions/area_element_style/base/input" (dict "type" "checkbox" "class" "btn-check" "name" "tag_name" "value" . "id" $id) }}
+                                                    {{ $label := partial "functions/area_element_style/base/label" (dict "innerHTML" . "class" "btn" "for" $id) }}
+                                                    <div class="btn-group btn-group-sm">
+                                                        {{ $input }}
+                                                        {{ $label }}
+                                                    </div>
+                                                {{- end }}
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane</div>
-                                        <div class="tab-pane fade" id="contact-tab-pane1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane1</div>
+                                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                {{ $tab_3 := slice "dsaaa" "dsbbb" "dsccc" "dsddd" "dseee" "dsfff" -}}
+                                                {{ range $tab_3 -}}
+                                                    {{ $id := printf "tag-check-%s" . }}
+                                                    {{ $input := partial "functions/area_element_style/base/input" (dict "type" "checkbox" "class" "btn-check" "name" "tag_name" "value" . "id" $id) }}
+                                                    {{ $label := partial "functions/area_element_style/base/label" (dict "innerHTML" . "class" "btn" "for" $id) }}
+                                                    <div class="btn-group btn-group-sm">
+                                                        {{ $input }}
+                                                        {{ $label }}
+                                                    </div>
+                                                {{- end }}
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact-tab-pane1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                {{- $tab_4 := slice "sdaaa" "sdbbb" "sdccc" "sdddd" "sdeee" "sdfff" -}}
+                                                {{ $tagGroup_4 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_4) }}
+                                                {{- $tagGroup_4 -}}
+                                            </div>
+                                        </div>
                                         <div class="tab-pane fade" id="contact-tab-pane2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane2</div>
                                         <div class="tab-pane fade" id="contact-tab-pane3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane3</div>
                                     </div>
