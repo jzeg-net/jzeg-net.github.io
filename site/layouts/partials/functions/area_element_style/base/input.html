@@ -1,0 +1,18 @@
+{{ $className        := .class        | default "" }}
+{{ $idAttr           := .id           | default "" }}
+{{ $typeAttr         := .type         | default "text" }}
+{{ $nameAttr         := .name         | default "" }}
+{{ $valueAttr        := .value        | default "" }}
+{{ $autocompleteAttr := .autocomplete | default "off" }}
+
+
+{{ $class        := printf " class=%q"        $className | safeHTMLAttr }}
+{{ $id           := printf " id=%q"           $idAttr    | safeHTMLAttr }}
+{{ $type         := printf " type=%q"         $typeAttr  | safeHTMLAttr }}
+{{ $name         := printf " name=%q"         $typeAttr  | safeHTMLAttr }}
+{{ $value        := printf " value=%q"        $typeAttr  | safeHTMLAttr }}
+{{ $autocomplete := printf " autocomplete=%q" $typeAttr  | safeHTMLAttr }}
+
+
+{{ $input := printf "<input%s%s%s>" $class $type $name $value $id $autocomplete | safeHTML }}
+{{ return $input }}

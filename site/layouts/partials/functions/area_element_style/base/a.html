@@ -1,16 +1,16 @@
-{{ $innerHTML := .innerHTML }}
-{{ $href_value := .href | default "" }}
-{{ $title_text := .title | default "" }}
-{{ $className := .class | default "" }}
-{{ $rel_value := .rel | default "" }}
-{{ $target_value := .target | default "_blank" }}
+{{ $innerHTML  := .innerHTML }}
+{{ $hrefAttr   := .href   | default "" }}
+{{ $titleAttr  := .title  | default "" }}
+{{ $classAttr  := .class  | default "" }}
+{{ $relAttr    := .rel    | default "" }}
+{{ $targetAttr := .target | default "_blank" }}
 
 
-{{ $class := printf " class=%q" $className | safeHTMLAttr }}
-{{ $title := printf " title=%s" $title_text | safeHTMLAttr }}
-{{ $href := printf " href=%s" $href_value | safeHTMLAttr }}
-{{ $rel := printf " rel=%s" $rel_value | safeHTMLAttr }}
-{{ $target := printf " target=%s" $target_value | safeHTMLAttr }}
+{{ $class  := printf " class=%q"  $classAttr  | safeHTMLAttr }}
+{{ $title  := printf " title=%s"  $titleAttr  | safeHTMLAttr }}
+{{ $href   := printf " href=%s"   $hrefAttr   | safeHTMLAttr }}
+{{ $rel    := printf " rel=%s"    $relAttr    | safeHTMLAttr }}
+{{ $target := printf " target=%s" $targetAttr | safeHTMLAttr }}
 
 
 {{ $a := printf "<a%s%s%s%s%s>%s</a>" $class $href $target $rel $title $innerHTML | safeHTML }}

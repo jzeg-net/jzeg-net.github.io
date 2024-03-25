@@ -1,53 +1,53 @@
-{{ $href_value := .href }}
-{{ $id_value := .id }}
-{{ $tabindex_value := .tabindex }}
-{{ $stroke_value := .stroke }}
-{{ $fill_value := .fill }}
-{{ $x_value := .x }}
-{{ $y_value := .y }}
-{{ $width_value := .width }}
-{{ $height_value := .height }}
+{{ $hrefAttr     := .href }}
+{{ $idAttr       := .id }}
+{{ $tabindexAttr := .tabindex }}
+{{ $strokeAttr   := .stroke }}
+{{ $fillAttr     := .fill }}
+{{ $xAttr        := .x }}
+{{ $yAttr        := .y }}
+{{ $widthAttr    := .width }}
+{{ $heightAttr   := .height }}
 
-{{ $id := "" }}
+{{ $id       := "" }}
 {{ $tabindex := "" }}
-{{ $stroke := "" }}
-{{ $fill := "" }}
-{{ $x := "" }}
-{{ $y := "" }}
-{{ $width := "" }}
-{{ $height := "" }}
+{{ $stroke   := "" }}
+{{ $fill     := "" }}
+{{ $x        := "" }}
+{{ $y        := "" }}
+{{ $width    := "" }}
+{{ $height   := "" }}
 
-{{ $href := printf " href=%s" $href_value | safeHTMLAttr }}
-{{ with $id_value }}
-    {{ $id = printf " id=%s" $id_value | safeHTMLAttr }}
+{{ $href := printf " href=%s" $hrefAttr | safeHTMLAttr }}
+{{ with $idAttr }}
+    {{ $id = printf " id=%s" $idAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $tabindex_value }}
-    {{ $tabindex = printf " tabindex=%s" $tabindex_value | safeHTMLAttr }}
+{{ with $tabindexAttr }}
+    {{ $tabindex = printf " tabindex=%s" $tabindexAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $stroke_value }}
-    {{ $stroke = printf " stroke=%s" $stroke_value | safeHTMLAttr }}
+{{ with $strokeAttr }}
+    {{ $stroke = printf " stroke=%s" $strokeAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $fill_value }}
-    {{ $fill = printf " fill=%s" $fill_value | safeHTMLAttr }}
+{{ with $fillAttr }}
+    {{ $fill = printf " fill=%s" $fillAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $x_value }}
-    {{ $x = printf " x=%s" $x_value | safeHTMLAttr }}
+{{ with $xAttr }}
+    {{ $x = printf " x=%s" $xAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $y_value }}
-    {{ $y = printf " y=%s" $y_value | safeHTMLAttr }}
+{{ with $yAttr }}
+    {{ $y = printf " y=%s" $yAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $width_value }}
-    {{ $width = printf " width=%s" $width_value | safeHTMLAttr }}
+{{ with $widthAttr }}
+    {{ $width = printf " width=%s" $widthAttr | safeHTMLAttr }}
 {{ end }}
 
-{{ with $height_value }}
-    {{ $height = printf " height=%s" $height_value | safeHTMLAttr }}
+{{ with $heightAttr }}
+    {{ $height = printf " height=%s" $heightAttr | safeHTMLAttr }}
 {{ end }}
 
 

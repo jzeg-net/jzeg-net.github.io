@@ -1,16 +1,16 @@
-{{ $href := .href }}
-{{ $title_text := .title | default "" }}
-{{ $className := .class | default "bi fs-4" }}
-{{ $width_value := .width | default "16" }}
-{{ $height_value := .height | default "16" }}
+{{ $href       := .href }}
+{{ $titleAttr  := .title  | default "" }}
+{{ $className  := .class  | default "bi fs-4" }}
+{{ $widthAttr  := .width  | default "16" }}
+{{ $heightAttr := .height | default "16" }}
 
-{{ $class := printf " class=%q" $className | safeHTMLAttr }}
-{{ $width := printf " width=%s" $width_value }}
-{{ $height := printf " height=%s" $height_value }}
+{{ $class  := printf " class=%q"  $className  | safeHTMLAttr }}
+{{ $width  := printf " width=%s"  $widthAttr  | safeHTMLAttr }}
+{{ $height := printf " height=%s" $heightAttr | safeHTMLAttr }}
 
 {{ $title := "" }}
-{{ with $title_text}}
-    {{ $title = partial "functions/area_element_style/base/title" (dict "text" $title_text) }}
+{{ with $titleAttr}}
+    {{ $title = partial "functions/area_element_style/base/title" (dict "text" $titleAttr) }}
 {{ end }}
 
 {{ $use := partial "functions/area_element_style/base/use" (dict "href" $href) }}

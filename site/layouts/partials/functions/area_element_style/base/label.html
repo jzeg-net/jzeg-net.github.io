@@ -1,0 +1,13 @@
+{{ $innerHTML := .innerHTML }}
+{{ $classAttr := .class | default "" }}
+{{ $idAttr    := .id    | default "" }}
+{{ $forAttr   := .for   | default "" }}
+
+
+{{ $class := printf " class=%q" $classAttr | safeHTMLAttr }}
+{{ $id    := printf " id=%q"    $idAttr    | safeHTMLAttr }}
+{{ $for   := printf " for=%q"   $forAttr   | safeHTMLAttr }}
+
+
+{{ $label := printf "<label%s%s%s>%s</label>" $class $for $id $innerHTML | safeHTML }}
+{{ return $label }}
