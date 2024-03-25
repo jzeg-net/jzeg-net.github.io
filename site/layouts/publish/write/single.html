@@ -7,9 +7,134 @@
             <div class="pt-3">
                 <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
             </div>
+            <div>
+                <label class="form-label">标签</label>
+                <div class="d-flex column-gap-2">
+                    <div class="d-flex column-gap-2" id="tag-wrap">
+                        <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
+                        <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary" type="button" id="tag-add" data-bs-toggle="dropdown" data-bs-auto-close="outside">+ 添加标签</button>
+                        <div class="dropdown-menu">
+                            <div class="px-3 py-2" style="width: 98vw;max-width: 500px;">
+                                <div class="dropdown-header d-flex justify-content-between">
+                                    <span>您一共可以添加<span id="tags-overage">5</span>个标签</span>
+                                    <span id="tag-create">创建标签</span>
+                                </div>
+                                <div>
+                                    <input class="form-control" type="search" name="TagSearch" id="TagSearch" placeholder="搜索标签" autocomplete="off">
+                                </div>
+                                <div class="mt-2" id="tagSearchResult"></div>
+                                <div class="small">
+                                    <nav class="overflow-hidden" style="height: 37px;">
+                                        <div class="nav flex-nowrap overflow-x-scroll overflow-y-hidden" id="tag-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                            <button class="nav-link" id="nav-contact-tab1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                            <button class="nav-link" id="nav-contact-tab2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                            <button class="nav-link" id="nav-contact-tab3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                        </div>
+                                    </nav>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="tab-content" id="tagTabContent">
+                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">home-tab-pane</div>
+                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_dsaf" value="dsaf" id="tag-check-dsaf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-dsaf">dsaf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_ddf" value="ddf" id="tag-check-ddf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-ddf">ddf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_vcb" value="vcb" id="tag-check-vcb" autocomplete="off">
+                                                    <label class="btn" for="tag-check-vcb">vcb</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_trhtr" value="trhtr" id="tag-check-trhtr" autocomplete="off">
+                                                    <label class="btn" for="tag-check-trhtr">trhtr</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_khjbf" value="khjbf" id="tag-check-khjbf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-khjbf">khjbf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_6we546" value="6we546" id="tag-check-6we546" autocomplete="off">
+                                                    <label class="btn" for="tag-check-6we546">6we546</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_1cx56v1sdf" value="1cx56v1sdf" id="tag-check-1cx56v1sdf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-1cx56v1sdf">1cx56v1sdf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_sd" value="sd" id="tag-check-sd" autocomplete="off">
+                                                    <label class="btn" for="tag-check-sd">sd</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_gdfg" value="gdfg" id="tag-check-gdfg" autocomplete="off">
+                                                    <label class="btn" for="tag-check-gdfg">gdfg</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_sadf" value="sadf" id="tag-check-sadf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-sadf">sadf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_sdf" value="sdf" id="tag-check-sdf" autocomplete="off">
+                                                    <label class="btn" for="tag-check-sdf">sdf</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_g" value="g" id="tag-check-g" autocomplete="off">
+                                                    <label class="btn" for="tag-check-g">g</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_sdfsadfds" value="sdfsadfds" id="tag-check-sdfsadfds" autocomplete="off">
+                                                    <label class="btn" for="tag-check-sdfsadfds">sdfsadfds</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_sdfss" value="sdfss" id="tag-check-sdfss" autocomplete="off">
+                                                    <label class="btn" for="tag-check-sdfss">sdfss</label>
+                                                </div>
+                                                <div class="btn-group btn-group-sm">
+                                                    <input type="checkbox" class="btn-check" name="tag_dsfsdfad" value="dsfsdfad" id="tag-check-dsfsdfad" autocomplete="off">
+                                                    <label class="btn" for="tag-check-dsfsdfad">dsfsdfad</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane</div>
+                                        <div class="tab-pane fade" id="contact-tab-pane1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane1</div>
+                                        <div class="tab-pane fade" id="contact-tab-pane2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane2</div>
+                                        <div class="tab-pane fade" id="contact-tab-pane3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane3</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="vditor"></div>
-            <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-lg btn-outline-success">发布</button>
+            <div class="d-flex column-gap-3 justify-content-end">
+                <div class="btn-group dropup">
+                    <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split link-secondary link-opacity-75-hover link-underline-opacity-0" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <span>草稿</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end text-center">
+                        <span class="dropdown-item-text">草稿是自动保存</span>
+                        <button type="button" class="dropdown-item btn btn-success">舍弃草稿</button>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-lg dropup">
+                    <button type="submit" class="btn btn-outline-success">发布</button>
+                    <button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end text-center">
+                        <button type="button" class="dropdown-item btn btn-success">定时发布</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
