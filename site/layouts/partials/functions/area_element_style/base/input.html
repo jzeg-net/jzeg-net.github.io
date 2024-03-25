@@ -6,13 +6,13 @@
 {{ $autocompleteAttr := .autocomplete | default "off" }}
 
 
-{{ $class        := printf " class=%q"        $className | safeHTMLAttr }}
-{{ $id           := printf " id=%q"           $idAttr    | safeHTMLAttr }}
-{{ $type         := printf " type=%q"         $typeAttr  | safeHTMLAttr }}
-{{ $name         := printf " name=%q"         $typeAttr  | safeHTMLAttr }}
-{{ $value        := printf " value=%q"        $typeAttr  | safeHTMLAttr }}
-{{ $autocomplete := printf " autocomplete=%q" $typeAttr  | safeHTMLAttr }}
+{{ $class        := printf " class=%q"        $className        | safeHTMLAttr }}
+{{ $id           := printf " id=%q"           $idAttr           | safeHTMLAttr }}
+{{ $type         := printf " type=%q"         $typeAttr         | safeHTMLAttr }}
+{{ $name         := printf " name=%q"         $nameAttr         | safeHTMLAttr }}
+{{ $value        := printf " value=%q"        $valueAttr        | safeHTMLAttr }}
+{{ $autocomplete := printf " autocomplete=%q" $autocompleteAttr | safeHTMLAttr }}
 
 
-{{ $input := printf "<input%s%s%s>" $class $type $name $value $id $autocomplete | safeHTML }}
+{{ $input := printf "<input%s%s%s%s%s%s>" $class $type $name $value $id $autocomplete | safeHTML }}
 {{ return $input }}
