@@ -1,6 +1,5 @@
 {{ $slice := .slice }}
-{{/*{{ $divs := newScratch }}*/}}
-{{ $divs := "" }}
+{{ $divs := newScratch }}
 
 {{ range $slice }}
     {{ $id := printf "tag-check-%s" . }}
@@ -11,9 +10,8 @@
 
     {{ $div := partial "functions/area_element_style/base/div" (dict "innerHTML" $div_inner "class" "btn-group btn-group-sm") }}
 
-{{/*    {{ $divs.Add "html" $div | safeHTML }}*/}}
-    {{ $divs = $div }}
+    {{ $divs.Add "html" $div | safeHTML }}
+
 {{ end }}
 
-{{/*{{ return $divs.Get "html" }}*/}}
-{{ return $divs }}
+{{ return $divs.Get "html" | safeHTML }}
