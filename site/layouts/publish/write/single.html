@@ -29,54 +29,58 @@
                                 <div class="small">
                                     <nav class="overflow-hidden" style="height: 37px;">
                                         <div class="nav flex-nowrap overflow-x-scroll overflow-y-hidden" id="tag-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-                                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                                            <button class="nav-link" id="nav-contact-tab1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                                            <button class="nav-link" id="nav-contact-tab2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                                            <button class="nav-link" id="nav-contact-tab3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                            <button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button>
+                                            <button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button>
+                                            <button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CCCCC</button>
+                                            <button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DDDDD</button>
+                                            <button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">EEEEE</button>
+                                            <button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">FFFFF</button>
                                         </div>
                                     </nav>
                                     <div class="dropdown-divider"></div>
                                     <div class="tab-content" id="tagTabContent">
-                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">home-tab-pane</div>
-                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                        <div class="tab-pane fade show active" id="contact-tab-pane-n2" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                             <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{ $tab_2 := slice "dsaf" "ddf" "vcb" "trhtr" "khjbf" "6we546" "1cx56v1sdf" "sd" "gdfg" "sadf" "sdf" "g" "sdfsadfds" "sdfss" "dsfsdfad" -}}
-                                                {{ range $tab_2 -}}
-                                                    {{ $id := printf "tag-check-%s" . }}
-                                                    {{ $input := partial "functions/area_element_style/base/input" (dict "type" "checkbox" "class" "btn-check" "name" "tag_name" "value" . "id" $id) }}
-                                                    {{ $label := partial "functions/area_element_style/base/label" (dict "innerHTML" . "class" "btn" "for" $id) }}
-                                                    <div class="btn-group btn-group-sm">
-                                                        {{ $input }}
-                                                        {{ $label }}
-                                                    </div>
-                                                {{- end }}
+                                                {{ $tab_1 := slice "a" "b" "c" "d" "e" "f" -}}
+                                                {{ $tagGroup_1 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_1) }}
+                                                {{- $tagGroup_1 -}}
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                        <div class="tab-pane fade" id="contact-tab-pane-n1" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                             <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{ $tab_3 := slice "dsaaa" "dsbbb" "dsccc" "dsddd" "dseee" "dsfff" -}}
-                                                {{ range $tab_3 -}}
-                                                    {{ $id := printf "tag-check-%s" . }}
-                                                    {{ $input := partial "functions/area_element_style/base/input" (dict "type" "checkbox" "class" "btn-check" "name" "tag_name" "value" . "id" $id) }}
-                                                    {{ $label := partial "functions/area_element_style/base/label" (dict "innerHTML" . "class" "btn" "for" $id) }}
-                                                    <div class="btn-group btn-group-sm">
-                                                        {{ $input }}
-                                                        {{ $label }}
-                                                    </div>
-                                                {{- end }}
+                                                {{ $tab_2 := slice "aa" "bb" "cc" "dd" "ee" "ff" -}}
+                                                {{ $tagGroup_2 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_2) }}
+                                                {{- $tagGroup_2 -}}
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                        <div class="tab-pane fade" id="contact-tab-pane-0" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                                             <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{- $tab_4 := slice "sdaaa" "sdbbb" "sdccc" "sdddd" "sdeee" "sdfff" -}}
+                                                {{ $tab_3 := slice "aaa" "bbb" "ccc" "ddd" "eee" "fff" -}}
+                                                {{ $tagGroup_3 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_3) }}
+                                                {{- $tagGroup_3 -}}
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact-tab-pane-1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                {{- $tab_4 := slice "aaaa" "bbbb" "cccc" "dddd" "eeee" "ffff" "gggg" "hhhh" "iiii" "jjjj" -}}
                                                 {{ $tagGroup_4 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_4) }}
                                                 {{- $tagGroup_4 -}}
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane2</div>
-                                        <div class="tab-pane fade" id="contact-tab-pane3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">contact-tab-pane3</div>
+                                        <div class="tab-pane fade" id="contact-tab-pane-2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                {{- $tab_5 := slice "aaaaa" "bbbbb" "ccccc" "ddddd" "eeeee" "fffff" -}}
+                                                {{ $tagGroup_5 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_5) }}
+                                                {{- $tagGroup_5 -}}
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact-tab-pane-3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
+                                                {{- $tab_6 := slice "aaaaaa" "bbbbbb" "cccccc" "dddddd" "eeeeee" "ffffff" -}}
+                                                {{ $tagGroup_6 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_6) }}
+                                                {{- $tagGroup_6 -}}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
