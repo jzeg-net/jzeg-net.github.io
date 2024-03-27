@@ -98,6 +98,6 @@
     {{- end -}}
 {{- end -}}
 
-{{ if or (eq .Page.Params.type "publish/write") (and (eq .Type "posts") (eq .Kind "page")) -}}
+{{ if or (eq .Type "publish/write") (and (eq .Type "posts") (eq .Kind "page")) -}}
     <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vditor/dist/index.css">
 {{ end }}

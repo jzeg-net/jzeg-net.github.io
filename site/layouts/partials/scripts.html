@@ -144,7 +144,7 @@
     <script src="{{ $commonJs }}"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "publish/write" -}}
+{{ if eq .Type "publish/write" -}}
     <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/vditor/dist/index.min.js"></script>
     <script src="{{ $preUrl }}static/js/vditor/edit.js"></script>
@@ -155,33 +155,33 @@
     <script src="{{ $preUrl }}static/js/vditor/render.js"></script>
 {{ end -}}
 
-{{ if eq .Page.Params.type "contact" -}}
+{{ if eq .Type "contact" -}}
     {{- $contactJs := partial "functions/script/build" (dict "resourcesGet" "static/js/contact.js" "targetPath" "static/js/contact.js") }}
     <script src="{{ $contactJs }}"></script>
 {{ end -}}
 
-{{ if eq .Page.Params.type "shop" -}}
+{{ if eq .Type "shop" -}}
     {{- $shopJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/index.js" "targetPath" "static/js/shop/index.js") }}
     <script src="{{ $shopJs }}"></script>
 {{ end -}}
 
 
-{{ if eq .Page.Params.type "shop/list" -}}
+{{ if eq .Type "shop/list" -}}
     {{- $shop_listJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/list.js" "targetPath" "static/js/shop/list.js") }}
     <script src="{{ $shop_listJs }}"></script>
 {{ end -}}
 
-{{ if eq .Page.Params.type "shop/add" -}}
+{{ if eq .Type "shop/add" -}}
     {{- $shop_addJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/add.js" "targetPath" "static/js/shop/add.js") }}
     <script src="{{ $shop_addJs }}"></script>
 {{ end -}}
 
-{{ if eq .Page.Params.type "shop/info" -}}
+{{ if eq .Type "shop/info" -}}
     {{- $shop_infoJs := partial "functions/script/build" (dict "resourcesGet" "static/js/shop/info.js" "targetPath" "static/js/shop/info.js") }}
     <script src="{{ $shop_infoJs }}"></script>
 {{ end -}}
 
-{{ if eq .Page.Params.type "tools/tp/rrwtp/ranking_list" -}}
+{{ if eq .Type "tools/tp/rrwtp/ranking_list" -}}
     {{- $ranking_listJs := partial "functions/script/build" (dict "resourcesGet" "static/js/tp/rrwtp/ranking_list.js" "targetPath" "static/js/tp/rrwtp/ranking_list.js") }}
     <script src="{{ $ranking_listJs }}"></script>
 {{ end -}}
@@ -191,32 +191,32 @@
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
 {{- end -}}
 
-{{ if eq .Page.Params.type "zhgh/log" }}
+{{ if eq .Type "zhgh/log" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/log.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "zhgh/data" }}
+{{ if eq .Type "zhgh/data" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/data.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "zhgh/passwork" }}
+{{ if eq .Type "zhgh/passwork" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "zhgh/study" }}
+{{ if eq .Type "zhgh/study" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "zhgh/login" }}
+{{ if eq .Type "zhgh/login" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/login.js"></script>
 {{ end }}
 
-{{ if eq .Page.Params.type "zhgh/member" }}
+{{ if eq .Type "zhgh/member" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/member.js"></script>
 {{ end }}
