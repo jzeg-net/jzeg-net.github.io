@@ -1,64 +1,92 @@
-(() => {
-  'use strict'
+class Write {
+  autoSaveTitleKey = 'autoSaveTitle'
+  autoSaveContentKey = 'autoSaveContent'
+  autoSaveTagsKey = 'autoSaveTags'
+  autoSaveLanguageKey = 'autoSaveLanguage'
+  autoSaveTypeKey = 'autoSaveType'
+  autoSaveCoverKey = 'autoSaveCover'
 
-  const autoSaveTitleKey = 'autoSaveTitle'
-  const autoSaveContentKey = 'autoSaveContent'
-  const autoSaveTagsKey = 'autoSaveTags'
-  const autoSaveLanguageKey = 'autoSaveLanguage'
-  const autoSaveTypeKey = 'autoSaveType'
-  const autoSaveCoverKey = 'autoSaveCover'
-
-  let title = document.querySelector('#title')
-  let clearDraft = document.querySelector('#clearDraft')
-  let submit = document.querySelector('#sureSubmitBtn')
-
-  const autoSaveTitle = () => localStorage.setItem(autoSaveTitleKey, title.value)
-  const autoSaveContent = () => localStorage.setItem(autoSaveContentKey, title.value)
-  const autoSaveTags = () => localStorage.setItem(autoSaveTagsKey, title.value)
-  const autoSaveCover = () => localStorage.setItem(autoSaveCoverKey, title.value)
-
-  const clearStorage = () => {
-    localStorage.removeItem(autoSaveTitleKey)
-    localStorage.removeItem(autoSaveTagsKey)
-    localStorage.removeItem(autoSaveContentKey)
-    localStorage.removeItem(autoSaveCoverKey)
+  constructor (title, submit, clearDraft) {
+    this.init(title, submit, clearDraft)
+    this.listener()
   }
 
-  const write_submit = () => {
-    console.log(title)
-    console.log(event)
+  init = (title, submit, clearDraft) => {
+    this.title = title
+    this.submit = submit
+    this.clearDraft = clearDraft
+    this.type = 'write'
+    this.cover = 'cover_url'
+    this.tags = ['t_aaa', 't_bbb', 't_ccc', 't_ddd']
+    this.language = this._documentLanguage()
   }
 
-  const beforeUnloadHandler = (event) => {
-    event.preventDefault()
-    event.returnValue = true
+  listener = () => {
+    window.addEventListener('DOMContentLoaded', () => {
+      this.title.value = localStorage.getItem(this.autoSaveTitleKey)
+    })
+
+    this.title.addEventListener('change', this.autoSaveTitle)
+
+    this.title.addEventListener('input', (event) => {
+      if (event.target.value !== '') {
+        window.addEventListener('beforeunload', this.beforeUnloadHandler)
+      } else {
+        window.removeEventListener('beforeunload', this.beforeUnloadHandler)
+      }
+    })
+
+    this.clearDraft.addEventListener('click', () => {
+      this.clearStorage()
+      this.clearStorageTip()
+    })
+
+    this.submit.addEventListener('click', event => {
+      event.preventDefault()
+      this.write_submit()
+    })
+
   }
 
-  submit.addEventListener('click', event => {
-    event.preventDefault()
-    write_submit()
-  })
+  autoSaveTitle = () => localStorage.setItem(this.autoSaveTitleKey, this.title.value)
+  autoSaveContent = () => localStorage.setItem(this.autoSaveContentKey, this.title.value)
+  autoSaveTags = () => localStorage.setItem(this.autoSaveTagsKey, this.title.value)
+  autoSaveCover = () => localStorage.setItem(this.autoSaveCoverKey, this.title.value)
 
-  title.addEventListener('change', autoSaveTitle)
+  clearStorage = () => {
+    localStorage.removeItem(this.autoSaveTitleKey)
+    localStorage.removeItem(this.autoSaveTagsKey)
+    localStorage.removeItem(this.autoSaveContentKey)
+    localStorage.removeItem(this.autoSaveCoverKey)
+  }
 
-  title.addEventListener('input', (event) => {
-    if (event.target.value !== '') {
-      window.addEventListener('beforeunload', beforeUnloadHandler)
-    } else {
-      window.removeEventListener('beforeunload', beforeUnloadHandler)
-    }
-  })
-
-  clearDraft.addEventListener('click', () => {
-    clearStorage()
+  clearStorageTip = () => {
     let tip = bootstrap.Tooltip.getOrCreateInstance(clearDraft, { title: 0 })
     tip.setContent({ '.tooltip-inner': '已经清除' })
     tip.show()
     setTimeout(() => tip.dispose(), 2500)
-  })
+  }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    title.value = localStorage.getItem(autoSaveTitleKey)
-  })
+  write_submit = () => {
+    this.content = localStorage.getItem(this.autoSaveContentKey)
+    console.log(this.title.value)
+    console.log(this.content)
+    console.log(this.language)
+    console.log(this.tags)
+    console.log(this.type)
+    console.log(this.cover)
+  }
 
-})()
+  beforeUnloadHandler = (event) => {
+    event.preventDefault()
+    event.returnValue = true
+  }
+
+  _documentLanguage = () => document.documentElement.lang
+}
+
+let title = document.querySelector('#title')
+let clearDraft = document.querySelector('#clearDraft')
+let submit = document.querySelector('#sureSubmitBtn')
+
+let w = new Write(title, submit, clearDraft)
