@@ -10,8 +10,7 @@
 
     {{ $div := partial "functions/area_element_style/base/div" (dict "innerHTML" $div_inner "class" "btn-group btn-group-sm") }}
 
-    {{ $divs.Add "html" $div | safeHTML }}
-
+    {{ $divs.Add "html" $div }}
 {{ end }}
 
-{{ return $divs.Get "html" | safeHTML }}
+{{ return ($divs.Get "html" | safeHTML) }}
