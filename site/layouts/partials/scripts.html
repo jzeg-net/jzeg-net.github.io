@@ -139,6 +139,11 @@
 {{- end -}}
 
 
+{{ if eq .Type "publish/write" -}}
+    {{- $commonJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/write.js" "targetPath" "static/js/publish/write.js") }}
+    <script src="{{ $commonJs }}"></script>
+{{ end }}
+
 {{ if eq .Page.Params.type "publish/write" -}}
     <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/vditor/dist/index.min.js"></script>

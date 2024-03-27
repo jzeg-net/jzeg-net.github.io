@@ -10,25 +10,25 @@
             <div>
                 <label class="form-label">标签</label>
                 <div class="d-flex column-gap-2">
-                    <div class="d-flex column-gap-2" id="tag-wrap">
+                    <div class="d-flex column-gap-2" id="tagWrap">
                         <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
                         <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
                     </div>
                     <div class="dropdown">
-                        <button class="btn btn-sm btn-outline-secondary" type="button" id="tag-add" data-bs-toggle="dropdown" data-bs-auto-close="outside">+ 添加标签</button>
+                        <button class="btn btn-sm btn-outline-secondary" type="button" id="tagAdd" data-bs-toggle="dropdown" data-bs-auto-close="outside">+ 添加标签</button>
                         <div class="dropdown-menu">
                             <div class="px-3 py-2" style="width: 98vw;max-width: 500px;">
                                 <div class="dropdown-header d-flex justify-content-between">
-                                    <span>您一共可以添加<span id="tags-overage">5</span>个标签</span>
-                                    <span id="tag-create">创建标签</span>
+                                    <span>您一共可以添加<span id="tagOverage">5</span>个标签</span>
+                                    <span id="tagCreate">创建标签</span>
                                 </div>
                                 <div>
-                                    <input class="form-control" type="search" name="TagSearch" id="TagSearch" placeholder="搜索标签" autocomplete="off">
+                                    <input class="form-control" type="search" name="TagSearch" id="tagSearch" placeholder="搜索标签" autocomplete="off">
                                 </div>
                                 <div class="mt-2" id="tagSearchResult"></div>
                                 <div class="small">
                                     <nav class="overflow-hidden" style="height: 37px;">
-                                        <div class="nav flex-nowrap overflow-x-scroll overflow-y-hidden" id="tag-tab" role="tablist">
+                                        <div class="nav flex-nowrap overflow-x-scroll overflow-y-hidden" role="tablist">
                                             <button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button>
                                             <button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button>
                                             <button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CCCCC</button>
@@ -38,7 +38,7 @@
                                         </div>
                                     </nav>
                                     <div class="dropdown-divider"></div>
-                                    <div class="tab-content" id="tagTabContent">
+                                    <div class="tab-content">
                                         <div class="tab-pane fade show active" id="contact-tab-pane-n2" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                             <div class="d-flex flex-wrap row-gap-1 column-gap-2">
                                                 {{ $tab_1 := slice "a" "b" "c" "d" "e" "f" -}}
@@ -96,11 +96,11 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end text-center">
                         <span class="dropdown-item-text">草稿是自动保存</span>
-                        <button type="button" class="dropdown-item btn btn-success">舍弃草稿</button>
+                        <button type="button" class="dropdown-item btn btn-success" id="clearDraft">舍弃草稿</button>
                     </div>
                 </div>
                 <div class="btn-group btn-group-lg dropup">
-                    <button type="submit" class="btn btn-outline-success">发布</button>
+                    <button type="submit" class="btn btn-outline-success" id="sureSubmitBtn">发布</button>
                     <button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>

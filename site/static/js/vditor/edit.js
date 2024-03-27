@@ -6,8 +6,12 @@
 
   const vditor = new Vditor('vditor', {
     mode: 'sv',
+    cdn: '/static/vendor/vditor',
     toolbarConfig: {
       pin: true
+    },
+    cache: {
+      id: 'autoSaveContent'
     },
     counter: {
       enable: true,
