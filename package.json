@@ -79,8 +79,8 @@
     "dependencies": {
         "@docsearch/js": "^3.6.0",
         "@glidejs/glide": "^3.6.0",
-        "@uppy/core": "^3.9.3",
-        "@uppy/dashboard": "^3.7.5",
+        "@uppy/core": "^3.10.0",
+        "@uppy/dashboard": "^3.8.0",
         "@uppy/image-editor": "^2.4.4",
         "@uppy/locales": "^3.5.2",
         "@uppy/xhr-upload": "^3.6.4",
@@ -111,7 +111,7 @@
         "svgedit": "^7.3.3",
         "timeago.js": "^4.0.2",
         "tyme4ts": "^1.0.4",
-        "uppy": "^3.23.0",
+        "uppy": "^3.24.0",
         "vanilla-cookieconsent": "^3.0.0",
         "vditor": "^3.10.2",
         "workbox-sw": "^7.0.0",
@@ -142,6 +142,6 @@
         "sass": "^1.72.0",
         "stylelint": "^16.3.1",
         "svg-sprite": "^3.0.0-rc1",
-        "terser": "^5.29.2"
+        "terser": "^5.30.0"
     }
 }
