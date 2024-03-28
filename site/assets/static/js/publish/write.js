@@ -61,8 +61,7 @@ class Write {
   }
 
   clearStorageTip = () => {
-    let tip = bootstrap.Tooltip.getOrCreateInstance(clearDraft, { title: 0 })
-    tip.setContent({ '.tooltip-inner': '已经清除' })
+    let tip = bootstrap.Popover.getOrCreateInstance(clearDraft)
     tip.show()
     setTimeout(() => tip.dispose(), 2500)
   }
