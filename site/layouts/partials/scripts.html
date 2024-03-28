@@ -139,9 +139,12 @@
 {{- end -}}
 
 
+{{- $tagsJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/tags.js" "targetPath" "static/js/publish/tags.js") }}
+{{- $writeJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/write.js" "targetPath" "static/js/publish/write.js") }}
+
 {{ if eq .Type "publish/write" -}}
-    {{- $commonJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/write.js" "targetPath" "static/js/publish/write.js") }}
-    <script src="{{ $commonJs }}"></script>
+    <script src="{{ $writeJs }}"></script>
+    <script src="{{ $tagsJs }}"></script>
 {{ end }}
 
 {{ if eq .Type "publish/write" -}}
