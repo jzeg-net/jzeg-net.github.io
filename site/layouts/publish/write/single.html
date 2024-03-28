@@ -8,85 +8,42 @@
                 <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
             </div>
             <div>
-                <label class="form-label">标签</label>
-                <div class="d-flex column-gap-2">
-                    <div class="d-flex column-gap-2" id="tagWrap">
-                        <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
-                        <button class="btn btn-sm btn-outline-secondary" type="button">标签 X</button>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-sm btn-outline-secondary" type="button" id="tagAdd" data-bs-toggle="dropdown" data-bs-auto-close="outside">+ 添加标签</button>
-                        <div class="dropdown-menu">
-                            <div class="px-3 py-2" style="width: 98vw;max-width: 500px;">
-                                <div class="dropdown-header d-flex justify-content-between">
-                                    <span>您一共可以添加<span id="tagOverage">5</span>个标签</span>
-                                    <span id="tagCreate">创建标签</span>
-                                </div>
-                                <div>
-                                    <input class="form-control" type="search" name="TagSearch" id="tagSearch" placeholder="搜索标签" autocomplete="off">
-                                </div>
-                                <div class="mt-2" id="tagSearchResult"></div>
-                                <div class="small">
-                                    <nav class="overflow-hidden" style="height: 37px;">
-                                        <div class="nav flex-nowrap overflow-x-scroll overflow-y-hidden" role="tablist">
-                                            <button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button>
-                                            <button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button>
-                                            <button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CCCCC</button>
-                                            <button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DDDDD</button>
-                                            <button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">EEEEE</button>
-                                            <button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">FFFFF</button>
-                                        </div>
-                                    </nav>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="contact-tab-pane-n2" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{ $tab_1 := slice "a" "b" "c" "d" "e" "f" -}}
-                                                {{ $tagGroup_1 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_1) }}
-                                                {{- $tagGroup_1 -}}
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane-n1" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{ $tab_2 := slice "aa" "bb" "cc" "dd" "ee" "ff" -}}
-                                                {{ $tagGroup_2 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_2) }}
-                                                {{- $tagGroup_2 -}}
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane-0" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{ $tab_3 := slice "aaa" "bbb" "ccc" "ddd" "eee" "fff" -}}
-                                                {{ $tagGroup_3 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_3) }}
-                                                {{- $tagGroup_3 -}}
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane-1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{- $tab_4 := slice "aaaa" "bbbb" "cccc" "dddd" "eeee" "ffff" "gggg" "hhhh" "iiii" "jjjj" -}}
-                                                {{ $tagGroup_4 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_4) }}
-                                                {{- $tagGroup_4 -}}
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane-2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{- $tab_5 := slice "aaaaa" "bbbbb" "ccccc" "ddddd" "eeeee" "fffff" -}}
-                                                {{ $tagGroup_5 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_5) }}
-                                                {{- $tagGroup_5 -}}
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="contact-tab-pane-3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <div class="d-flex flex-wrap row-gap-1 column-gap-2">
-                                                {{- $tab_6 := slice "aaaaaa" "bbbbbb" "cccccc" "dddddd" "eeeeee" "ffffff" -}}
-                                                {{ $tagGroup_6 := partial "functions/area_element_style/tag-btn-group" (dict "slice" $tab_6) }}
-                                                {{- $tagGroup_6 -}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <details class="position-relative" id="tags">
+                    <summary class="d-flex px-1 py-2 rounded border">
+                        <div class="w-100 d-flex justify-content-between align-items-center">
+                            <span>aaa,bbb,cc,ddddd,ff</span>
+                            <div id="tagsExpand">
+                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-plus-lg"></use></svg></span>
+                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-x-lg"></use></svg></span>
                             </div>
                         </div>
+                    </summary>
+                    <div class="mt-2 rounded border">
+                        <div class="py-2">
+                            <input class="form-control rounded-0 border-0" type="search" name="TagSearch" id="tagSearch" placeholder="搜索标签" autocomplete="off">
+                        </div>
+                        <div class="px-2 py-3 border-top border-bottom" id="tagSelected-content">
+                            <button class="btn btn-outline-secondary" type="button" data-tag-name="tagName" aria-label="删除 tagName">
+                                <span>tag</span>
+                                <svg class="bi"><use href="#bi-x-lg"></use></svg>
+                            </button>
+                        </div>
+                        <div class="py-3 d-flex flex-column row-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 30vh;">
+                            <button class="w-100 btn tags-tag-name" type="button">
+                                <span>tag</span>
+                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">13</span>
+                            </button>
+                            <button class="w-100 btn tags-tag-name" type="button">
+                                <span>tag</span>
+                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">24</span>
+                            </button>
+                            <button class="w-100 btn tags-tag-name" type="button">
+                                <span>tag</span>
+                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">23</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </details>
             </div>
             <div id="vditor"></div>
             <div class="d-flex column-gap-3 justify-content-end">
