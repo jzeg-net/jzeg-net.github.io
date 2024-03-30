@@ -1,20 +1,21 @@
 {{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
 {{ define "content" }}
-<main class="pb-5 container gx-0" id="content">
+<main class="pb-5 container gx-1 gx-sm-0" id="content">
     {{- .Content -}}
     <div>
+        {{ partial "svg_sprite_icons/write" . }}
         <form class="d-flex flex-column row-gap-3" accept-charset="UTF-8">
             <div class="pt-3">
                 <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
             </div>
             <div>
                 <details class="position-relative" id="tags">
-                    <summary class="d-flex px-1 py-2 rounded border">
-                        <div class="w-100 d-flex justify-content-between align-items-center">
+                    <summary class="d-flex px-2 py-2 rounded border">
+                        <div class="w-100 d-flex justify-content-between align-items-center user-select-none">
                             <span>aaa,bbb,cc,ddddd,ff</span>
-                            <div id="tagsExpand">
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-plus-lg"></use></svg></span>
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-x-lg"></use></svg></span>
+                            <div class="marks">
+                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
+                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-up-fill"></use></svg></span>
                             </div>
                         </div>
                     </summary>
@@ -28,19 +29,61 @@
                                 <svg class="bi"><use href="#bi-x-lg"></use></svg>
                             </button>
                         </div>
-                        <div class="py-3 d-flex flex-column row-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 30vh;">
-                            <button class="w-100 btn tags-tag-name" type="button">
-                                <span>tag</span>
-                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">13</span>
-                            </button>
-                            <button class="w-100 btn tags-tag-name" type="button">
-                                <span>tag</span>
-                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">24</span>
-                            </button>
-                            <button class="w-100 btn tags-tag-name" type="button">
-                                <span>tag</span>
-                                <span class="discourse-tag-count badge rounded-pill text-bg-secondary small">23</span>
-                            </button>
+                        <div class="px-2 small">
+                            <nav class="overflow-hidden border-bottom" style="height: 40px;">
+                                <ul class="nav nav-underline flex-nowrap overflow-x-scroll overflow-y-hidden" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CCCCC</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DDDDD</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">EEEEE</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">FFFFF</button></li>
+                                </ul>
+                            </nav>
+                            <div class="tab-content py-2">
+                                <div class="tab-pane fade show active" id="contact-tab-pane-n2" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{- $tab_1 := slice "tag-aa" "tag-bb" "tag-cc" "tag-dd" "tag-ee" "tag-ff" "tag-gg" "tag-hh" "tag-ii" "tag-jj" "tag-kk" -}}
+                                        {{ $tagButton_1 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_1) }}
+                                        {{- $tagButton_1 -}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane-n1" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{ $tab_2 := slice "tag-aaa" "tag-bbb" "tag-ccc" "tag-ddd" "tag-eee" "tag-fff" "tag-ggg" "tag-hhh" "tag-iii" "tag-jjj" "tag-kkk" -}}
+                                        {{ $tagButton_2 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_2) }}
+                                        {{- $tagButton_2 -}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane-0" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{ $tab_3 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
+                                        {{ $tagButton_3 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_3) }}
+                                        {{- $tagButton_3 -}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane-1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{- $tab_4 := slice "tag-aaaaa" "tag-bbbbb" "tag-ccccc" "tag-ddddd" "tag-eeeee" "tag-fffff" "tag-ggggg" "tag-hhhhh" "tag-iiiii" "tag-jjjjj" "tag-kkkkk" -}}
+                                        {{ $tagButton_4 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_4) }}
+                                        {{- $tagButton_4 -}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane-2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{- $tab_5 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
+                                        {{ $tagButton_5 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_5) }}
+                                        {{- $tagButton_5 -}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane-3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                    <div class="d-flex flex-wrap row-gap-1 column-gap-2 overflow-hidden overflow-y-scroll" style="max-height: 9em;">
+                                        {{- $tab_6 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
+                                        {{ $tagButton_6 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_6) }}
+                                        {{- $tagButton_6 -}}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </details>

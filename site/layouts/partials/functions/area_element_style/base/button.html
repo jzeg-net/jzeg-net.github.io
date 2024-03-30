@@ -1,0 +1,18 @@
+{{ $innerHTML  := .innerHTML }}
+
+{{ $idAttr    := .id    | default "" }}
+{{ $titleAttr := .title | default "" }}
+{{ $classAttr := .class | default "" }}
+{{ $typeAttr  := .type  | default "button" }}
+{{ $dataAttr  := .data  | default "button" }}
+
+
+{{ $class := printf " class=%q"           $classAttr | safeHTMLAttr }}
+{{ $title := printf " title=%q"           $titleAttr | safeHTMLAttr }}
+{{ $id    := printf " id=%q"              $idAttr    | safeHTMLAttr }}
+{{ $type  := printf " type=%q"            $typeAttr  | safeHTMLAttr }}
+{{ $data  := printf " data-bs-toggle=%s"  $dataAttr  | safeHTMLAttr }}
+
+
+{{ $button := printf "<button%s%s%s%s%s>%s</button>" $class $id $type $data $title $innerHTML | safeHTML }}
+{{ return $button }}

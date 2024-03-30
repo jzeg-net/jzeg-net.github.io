@@ -1,0 +1,12 @@
+{{ $innerHTML  := .innerHTML }}
+
+{{ $idAttr    := .id    | default "" }}
+{{ $classAttr := .class | default "" }}
+
+
+{{ $class := printf " class=%q" $classAttr | safeHTMLAttr }}
+{{ $id    := printf " id=%q"    $idAttr    | safeHTMLAttr }}
+
+
+{{ $span := printf "<span%s%s>%s</span>" $class $id $innerHTML | safeHTML }}
+{{ return $span }}
