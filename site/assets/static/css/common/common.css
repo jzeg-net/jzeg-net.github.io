@@ -71,12 +71,24 @@ body {
   overscroll-behavior-y: contain;
   --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai);
   --bs-font-family-lxgw-mono: var(--bs-font-family-lxgw-wenkai-mono);
-  --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif)  !important;
+  --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif) !important;
   --bs-font-monospace: var(--bs-font-family-lxgw-mono) !important;
 }
 
 ::-webkit-scrollbar {
   width: var(--scrollbar-width);
+}
+
+.skippy {
+  position: fixed;
+  transition: top .3s linear;
+  top: -4em;
+  z-index: 1021;
+}
+
+.skippy:focus,
+.skippy:focus-within {
+  top: 0;
 }
 
 #mainNavbar {
