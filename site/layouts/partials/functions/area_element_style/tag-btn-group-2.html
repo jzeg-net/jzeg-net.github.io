@@ -9,7 +9,7 @@
 
     {{ $inner := printf "%s%s" $span_name $span_count }}
 
-    {{ $button := partial "functions/area_element_style/base/button" (dict "innerHTML" $inner "class" "btn bg-secondary bg-opacity-10 tags-tag-name" "type" "button") }}
+    {{ $button := partial "functions/area_element_style/base/button" (dict "innerHTML" $inner "class" "btn btn-sm bg-secondary bg-opacity-10 tags-tag-name" "type" "button") }}
 
     {{ $divs.Add "html" $button }}
 {{ end }}
