@@ -1,15 +1,15 @@
-details#tags #tagsExpand span:first-of-type {
+details#tags .marks span:first-of-type {
   display: block;
 }
 
-details#tags #tagsExpand span:last-of-type {
+details#tags .marks span:last-of-type {
   display: none;
 }
 
-details#tags[open] #tagsExpand span:first-of-type {
+details#tags[open] .marks span:first-of-type {
   display: none;
 }
 
-details#tags[open] #tagsExpand span:last-of-type {
+details#tags[open] .marks span:last-of-type {
   display: block;
 }
