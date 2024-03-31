@@ -31,7 +31,7 @@
 </head>
 {{ block "body_override" . }}<body class="bg-body">{{ end }}
 
-{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.skippy "hide") }}{{ partial "skippy" . }}{{ end }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.skippy "hide") }}{{ partial "skippy-top" . }}{{ end }}
 
 {{ partial "svg_sprite_icons/main" . }}
 
@@ -62,6 +62,8 @@
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.footer.enable false) }}{{ partial "footer" . }}{{ end }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.float_tools.enable false) (eq .Site.Params.float_tools.enable true) }}{{ partial "fixed_float/tools" . }}{{ end }}
+
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.skippy "hide") }}{{ partial "skippy-bottom" . }}{{ end }}
 
 {{ partial "scripts" . }}
 {{- block "before_the_end_of_the_body" . }}{{ end }}

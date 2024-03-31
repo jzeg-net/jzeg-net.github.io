@@ -79,18 +79,6 @@ body {
   width: var(--scrollbar-width);
 }
 
-.skippy {
-  position: fixed;
-  transition: top .3s linear;
-  top: -4em;
-  z-index: 1021;
-}
-
-.skippy:focus,
-.skippy:focus-within {
-  top: 0;
-}
-
 #mainNavbar {
   transition: transform 150ms linear;
 }

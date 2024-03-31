@@ -1,0 +1,27 @@
+.skippy::-webkit-scrollbar {
+  width: auto;
+}
+
+.skippy-top {
+  position: fixed;
+  transition: top .3s linear;
+  top: -3.125em;
+  z-index: 1021;
+}
+
+.skippy-top:focus,
+.skippy-top:focus-within {
+  top: 0;
+}
+
+.skippy-bottom {
+  position: fixed;
+  transition: bottom .3s linear;
+  bottom: -3.125em;
+  z-index: 1021;
+}
+
+.skippy-bottom:focus,
+.skippy-bottom:focus-within {
+  bottom: 0;
+}
