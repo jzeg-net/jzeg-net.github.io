@@ -26,10 +26,10 @@
     if (!floatTools) return
 
     if (new_scroll_position < last_scroll_position || isFirstPage) {
-      floatTools.classList.add('hide')
+      floatTools.classList.remove('show')
       getToolsCollapse().classList.remove('show')
     } else if (new_scroll_position > last_scroll_position && !isFirstPage) {
-      floatTools.classList.remove('hide')
+      floatTools.classList.add('show')
     }
   }
 

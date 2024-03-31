@@ -3,7 +3,7 @@ let floatTools = document.querySelector('#float-tools')
 if (floatTools) {
   let collapseToRight = document.querySelector('#collapse-to-right')
   collapseToRight.addEventListener('click', function () {
-    floatTools.classList.add('hide')
+    floatTools.classList.remove('show')
     getToolsCollapse().classList.remove('show')
   })
 
