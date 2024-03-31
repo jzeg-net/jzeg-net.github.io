@@ -3,7 +3,7 @@
 }
 
 .skippy-top {
-  position: fixed;
+  position: absolute;
   transition: top .3s linear;
   top: -3.125em;
   z-index: 1021;
