@@ -63,7 +63,7 @@ class Write {
   clearStorageTip = () => {
     let tip = bootstrap.Popover.getOrCreateInstance(clearDraft)
     tip.show()
-    setTimeout(() => tip.dispose(), 2500)
+    setTimeout(() => tip.dispose(), 6000)
   }
 
   write_submit = () => {

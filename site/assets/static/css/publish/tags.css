@@ -13,3 +13,63 @@ details[open] .detail-mark span:first-of-type {
 details[open] .detail-mark span:last-of-type {
   display: block;
 }
+
+.countdown {
+  color: currentColor;
+}
+
+.countdown-3s-before:before {
+  content: "";
+  animation: countdown_3s 3s linear 1s both;
+}
+
+.countdown-3s-after:after {
+  content: "";
+  animation: countdown_3s 3s linear 1s both;
+}
+
+.countdown-5s-before:before {
+  content: "";
+  animation: countdown_5s 5s linear 1s both;
+}
+
+.countdown-5s-after:after {
+  content: "";
+  animation: countdown_5s 5s linear 1s both;
+}
+
+@keyframes countdown_3s {
+  0% {
+    content: "3";
+  }
+  33% {
+    content: "2";
+  }
+  66% {
+    content: "1";
+  }
+  100% {
+    content: "0";
+  }
+}
+
+@keyframes countdown_5s {
+  0% {
+    content: "5";
+  }
+  20% {
+    content: "4";
+  }
+  40% {
+    content: "3";
+  }
+  60% {
+    content: "2";
+  }
+  80% {
+    content: "1";
+  }
+  100% {
+    content: "0";
+  }
+}
