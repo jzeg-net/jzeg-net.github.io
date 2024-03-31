@@ -13,7 +13,7 @@
                     <summary class="p-2 d-flex">
                         <div class="w-100 d-flex justify-content-between align-items-center user-select-none">
                             <span>aaa,bbb,cc,ddddd,ff</span>
-                            <div class="marks">
+                            <div class="detail-mark text-secondary">
                                 <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
                                 <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-up-fill"></use></svg></span>
                             </div>
@@ -21,16 +21,19 @@
                     </summary>
                     <div>
                         <div class="p-2 border-top">
-                            <input class="form-control rounded-0 border-0" type="search" name="TagSearch" id="tagSearch" placeholder="搜索标签" autocomplete="off">
+                            <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">
+                                <input class="p-2 flex-fill bg-transparent border-0" type="search" name="TagSearch" id="tagSearch" placeholder="{{ T "search" }}" autocomplete="off" style="outline: none;">
+                                <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
+                            </div>
                         </div>
-                        <div class="p-2 border-top border-bottom border-secondary border-opacity-10" id="tagSelected-content">
-                            <button class="btn btn-outline-secondary" type="button" data-tag-name="tagName" aria-label="删除 tagName">
+                        <div class="p-2 border-top border-bottom border-secondary border-opacity-25" id="tagSelected-content">
+                            <button class="btn btn-outline-secondary" type="button" data-tag-name="tagName" aria-label="{{ T "delete" }} tagName">
                                 <span>tag</span>
                                 <svg class="bi"><use href="#bi-x-lg"></use></svg>
                             </button>
                         </div>
                         <div class="p-2 small">
-                            <nav class="overflow-hidden border-bottom border-secondary border-opacity-10" style="height: 40px;">
+                            <nav class="overflow-hidden border-bottom border-secondary border-opacity-25" style="height: 40px;">
                                 <ul class="nav nav-underline flex-nowrap overflow-x-scroll overflow-y-hidden" role="tablist">
                                     <li class="nav-item"><button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button></li>
                                     <li class="nav-item"><button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button></li>
