@@ -47,11 +47,16 @@
                 {{- end -}}
 
                 {{- $name := index .name $currentLangCode -}}
-                {{- $relLangHref := printf "%s%s" (.url | relLangURL) "/" -}}
-                {{- if eq $currentPage $relLangHref -}}
-                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-25-hover link-underline-opacity-10 link-offset-3 fw-bolder" href="{{ $relLangHref }}" {{ $onclick | safeHTMLAttr }} title="{{ $name }}">{{ $name }}</a></li>
+
+                {{ $href := printf "href=%s%s" (.url | relLangURL) "/" }}
+                {{ with .onclick}}
+                    {{ $href = "href=javascript:" }}
+                {{ end }}
+
+                {{- if eq $currentPage $href -}}
+                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-25-hover link-underline-opacity-10 link-offset-3 fw-bolder" {{ $href | safeHTMLAttr }} {{ $onclick | safeHTMLAttr }} title="{{ $name }}">{{ $name }}</a></li>
                 {{- else -}}
-                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-25-hover link-underline-opacity-0" href="{{ $relLangHref }}" {{ $onclick | safeHTMLAttr }} title="{{ $name }}">{{ $name }}</a></li>
+                    <li class="mb-3"><a class="text-nowrap link-light link-opacity-25-hover link-underline-opacity-0" {{ $href | safeHTMLAttr }} {{ $onclick | safeHTMLAttr }} title="{{ $name }}">{{ $name }}</a></li>
                 {{- end -}}
                 {{- end -}}
                 </ul>
