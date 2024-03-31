@@ -16,6 +16,8 @@
 }
 
 #float-tools {transform: translate(100%, var(--jg-ft-t-y))}
+#float-tools:focus,
+#float-tools:focus-within,
 #float-tools.show {transform: translate(-50%, var(--jg-ft-t-y))}
 
 #float-tools .list-group-item span,
