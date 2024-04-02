@@ -113,7 +113,7 @@
         "tyme4ts": "^1.0.5",
         "uppy": "^3.24.0",
         "vanilla-cookieconsent": "^3.0.0",
-        "vditor": "^3.10.2",
+        "vditor": "^3.10.3",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.9.0",
         "wretch": "^2.8.1",
@@ -142,6 +142,6 @@
         "sass": "^1.72.0",
         "stylelint": "^16.3.1",
         "svg-sprite": "^3.0.0-rc1",
-        "terser": "^5.30.0"
+        "terser": "^5.30.1"
     }
 }
