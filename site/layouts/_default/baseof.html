@@ -33,9 +33,9 @@
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.skippy "hide") }}{{ partial "skippy-top" . }}{{ end }}
 
-{{ partial "svg_sprite_icons/main" . }}
+{{ block "svg_sprite" . }}{{ partial "svg_sprite_icons/main" . }}{{ end }}
 
-{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar.enable false) }}{{ partial "navbar/v1/index" . }}{{ end }}
+{{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.navbar.enable false) }}{{ block "header_navbar" . }}{{ partial "navbar/v1/index" . }}{{ end }}{{ end }}
 
 {{ if and (ne .Page.Params.onlyMain true) (ne .Page.Params.bulletin.enable false) }}{{ partial "top-bulletin" . }}{{ end }}
 
