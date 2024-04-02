@@ -1,13 +1,16 @@
-<header class="navbar sticky-top" id="publishNavbar">
+<header class="navbar bg-dark-subtle sticky-top" id="publishNavbar">
     <nav class="container-lg gx-2 d-flex align-items-center justify-content-between">
         <h1><a class="navbar-brand p-0 me-0 me-lg-2" href="{{ relLangURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a></h1>
         <div id="docSearch"></div>
         <div class="dropdown">
-            <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown">发布</button>
-            <div class="dropdown-menu dropdown-menu-end">
-                <div>
-                    <button class="btn btn-primary" type="submit">发布文章</button>
+            <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <span>发布</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end text-center">
+                <div class="dropdown-item">
+                    <button type="button" class="btn btn-success">定时发布</button>
                 </div>
+                <button type="submit" class="dropdown-item btn btn-outline-success" id="sureSubmitBtn">发布</button>
             </div>
         </div>
     </nav>
