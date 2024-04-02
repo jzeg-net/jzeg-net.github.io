@@ -1,5 +1,5 @@
 .fullPage::-webkit-scrollbar {
-    display: none;
+  width: var(--webkit-scrollbar-width);
 }
 
 .fullPage {

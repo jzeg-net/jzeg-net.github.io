@@ -1,5 +1,5 @@
 .skippy::-webkit-scrollbar {
-  width: auto;
+  width: var(--webkit-scrollbar-width);
 }
 
 .skippy-top {

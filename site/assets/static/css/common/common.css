@@ -31,8 +31,6 @@
   --bs-linear-gradient-top-reverse: linear-gradient(to bottom, var(--bs-linear-gradient-color));
   --bs-linear-gradient-bottom-reverse: linear-gradient(to top, var(--bs-linear-gradient-color));
   --bs-linear-gradient-end-reverse: linear-gradient(to left, var(--bs-linear-gradient-color));
-  --scrollbar-width: 0;
-  --scrollbar-height: 0px !important;
   --animation--hue: hue 3s linear infinite alternate;
 }
 
@@ -65,18 +63,22 @@
   --bs-font-family-lxgw-wenkai-mono-screen: "LXGW WenKai Mono Screen";
 }
 
+html {
+  scrollbar-width: var(--scrollbar-width);
+}
+
+html::-webkit-scrollbar {
+  width: var(--webkit-scrollbar-width);
+}
+
 html,
 body {
-  scroll-behavior: smooth;
-  overscroll-behavior-y: contain;
   --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai);
   --bs-font-family-lxgw-mono: var(--bs-font-family-lxgw-wenkai-mono);
   --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif) !important;
   --bs-font-monospace: var(--bs-font-family-lxgw-mono) !important;
-}
-
-::-webkit-scrollbar {
-  width: var(--scrollbar-width);
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 #mainNavbar {

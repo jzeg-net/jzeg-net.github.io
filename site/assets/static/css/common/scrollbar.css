@@ -1,0 +1,12 @@
+:root {
+  --webkit-scrollbar-width: 0;
+  --scrollbar-width: none;
+}
+
+.-webkit-scrollbar-width-unset {--webkit-scrollbar-width: unset;}
+.-webkit-scrollbar-width-initial::-webkit-scrollbar {--webkit-scrollbar-width: initial;}
+.-webkit-scrollbar-width::-webkit-scrollbar {width: var(--webkit-scrollbar-width);}
+
+.scrollbar-width-auto {--scrollbar-width: auto;}
+.scrollbar-width-thin {--scrollbar-width: thin;}
+.scrollbar-width {scrollbar-width: var(--scrollbar-width);}
