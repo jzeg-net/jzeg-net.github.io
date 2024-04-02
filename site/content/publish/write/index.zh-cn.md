@@ -1,6 +1,5 @@
 ---
-title: "编辑"
-type: publish/write
+title: "发布文章"
 
 onlyMain: false
 skippy:

@@ -142,12 +142,12 @@
 {{- $tagsJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/tags.js" "targetPath" "static/js/publish/tags.js") }}
 {{- $writeJs := partial "functions/script/build" (dict "resourcesGet" "static/js/publish/write.js" "targetPath" "static/js/publish/write.js") }}
 
-{{ if eq .Type "publish/write" -}}
+{{ if eq .Type "publish" -}}
     <script src="{{ $writeJs }}"></script>
     <script src="{{ $tagsJs }}"></script>
 {{ end }}
 
-{{ if eq .Type "publish/write" -}}
+{{ if eq .Type "publish" -}}
     <script src="{{ $preUrl }}static/vendor/github-api/dist/GitHub.bundle.min.js"></script>
     <script src="{{ $preUrl }}static/vendor/vditor/dist/index.min.js"></script>
     <script src="{{ $preUrl }}static/js/vditor/edit.js"></script>

@@ -1,3 +1,7 @@
+.skippy {
+  scrollbar-width: var(--scrollbar-width);
+}
+
 .skippy::-webkit-scrollbar {
   width: var(--webkit-scrollbar-width);
 }

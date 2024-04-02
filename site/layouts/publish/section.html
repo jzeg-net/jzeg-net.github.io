@@ -1,0 +1,6 @@
+{{ define "header_navbar" }}{{ partial "navbar/v1/index" . }}{{ end }}
+{{ define "content" }}
+<main class="pb-5 container-xxl" id="content">
+    {{- .Content }}
+</main>
+{{ end }}

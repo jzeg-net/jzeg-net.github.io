@@ -1,9 +1,11 @@
+{{ define "svg_sprite" }}{{ partial "svg_sprite_icons/publish" . }}{{ end }}
+{{ define "header_navbar" }}{{ partial "navbar/publish/index" . }}{{ end }}
 {{ define "body_override" }}<body class="bg-body vh-100 overflow-hidden">{{ end }}
 {{ define "content" }}
 <main class="pb-5 container gx-1 gx-sm-0" id="content">
     {{- .Content -}}
+    {{- .Type -}}
     <div>
-        {{ partial "svg_sprite_icons/write" . }}
         <form class="d-flex flex-column row-gap-3" accept-charset="UTF-8">
             <div class="pt-3">
                 <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
@@ -33,14 +35,14 @@
                             </button>
                         </div>
                         <div class="p-2 small">
-                            <nav class="overflow-hidden border-bottom border-secondary border-opacity-25" style="height: 40px;">
-                                <ul class="nav nav-underline flex-nowrap overflow-x-scroll" role="tablist">
-                                    <li class="nav-item"><button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true">AAAAA</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">BBBBB</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CCCCC</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DDDDD</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">EEEEE</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">FFFFF</button></li>
+                            <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
+                                <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="margin-bottom: -1px;">AAAAA</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style="margin-bottom: -1px;">BBBBB</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">CCCCC</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">DDDDD</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">EEEEE</button></li>
+                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">FFFFF</button></li>
                                 </ul>
                             </nav>
                             <div class="tab-content py-2">
