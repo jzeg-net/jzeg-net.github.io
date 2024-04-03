@@ -89,3 +89,12 @@ let clearDraft = document.querySelector('#clearDraft')
 let submit = document.querySelector('#sureSubmitBtn')
 
 let w = new Write(title, submit, clearDraft)
+
+const popoverTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => bootstrap.Popover.getOrCreateInstance(popoverTriggerEl, {
+  html: true,
+  trigger: 'hover focus',
+}))
+
+const tooltipTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => bootstrap.Tooltip.getOrCreateInstance(tooltipTriggerEl))
