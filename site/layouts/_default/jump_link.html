@@ -4,9 +4,8 @@
             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
         </symbol>
-        <symbol viewBox="0 0 16 16" id="bi-arrow-counterclockwise">
-            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
-            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+        <symbol viewBox="0 0 16 16" id="bi-arrow-left-short">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
         </symbol>
         <symbol viewBox="0 0 16 16" id="bi-copy">
             <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
@@ -20,7 +19,7 @@
         <div class="d-flex justify-content-center align-items-center min-vh-100 vh-100 overflow-hidden">
             <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-6 text-center">
                 <h1 class="d-block my-3 fw-light text-secondary display-5">{{- .Site.Title -}}</h1>
-                <div class="card" style="box-shadow: 6px 6px 0px rgba(var(--bs-body-color-rgb),.1);">
+                <div class="card" style="box-shadow: 6px 6px 0 rgba(var(--bs-body-color-rgb),.1);">
                     <div class="card-body">
                         <h2 class="my-4 card-title fw-bolder">{{- T "jump_title" -}}</h2>
                         <div class="text-bg-secondary bg-opacity-20 rounded-2 overflow-hidden d-flex flex-row">
@@ -36,13 +35,9 @@
                         <hr>
                         <div class="my-4 d-flex flex-column align-items-center row-gap-4">
                             <a class=" btn btn-lg btn-success" href="#" rel="noreferrer" target="_blank" id="to_external" title="{{- T "jump_to_external" -}}">
-                                {{- T "jump_to_external" -}}
+                                <span class="fw-bolder">{{- T "jump_to_external" -}}</span>
                                 <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_to_external" }}</title><use href="#bi-box-arrow-up-right"></use></svg>
                             </a>
-                            <button class=" btn btn-sm btn-outline-secondary" type="button" id="to_back">
-                                {{- T "jump_back" -}}
-                                <svg class="ms-2 bi" width="16" height="16"><title>{{ T "jump_back" }}</title><use href="#bi-arrow-counterclockwise"></use></svg>
-                            </button>
                         </div>
                         <div class="user-select-none d-flex justify-content-end link-secondary link-opacity-50 link-opacity-75-hover">
                             <details>
@@ -55,7 +50,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback py-3 text-end">
+                <div class="feedback my-1 py-3 d-flex justify-content-end align-items-center">
+                    <div class="position-absolute start-0 border border-start-0 bg-success rounded-pill rounded-start">
+                        <button class="px-4 d-flex align-items-center btn btn-link link-light link-opacity-50-hover link-underline-opacity-0" type="button" id="to_back">
+                            <svg class="bi fs-4" width="24" height="24"><title>{{- T "jump_back" -}}</title><use href="#bi-arrow-left-short"></use></svg>
+                            <span class="fw-bolder">{{- T "jump_back" -}}</span>
+                        </button>
+                    </div>
                     <a class="small link-secondary link-opacity-50-hover link-offset-3 link-underline-opacity-0 link-underline-opacity-50-hover" href="{{ "contact?category=feedback&title=%E3%80%90%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%93%BE%E3%80%91" | relLangURL }}" target="_blank">{{ T "feedback" }}</a>
                 </div>
                 <div class="d-flex justify-content-center align-items-center text-secondary-emphasis small border-top border-bottom border-1 border-opacity-10 border-secondary-subtle" style="height: 15vh;">
