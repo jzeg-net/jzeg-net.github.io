@@ -1,12 +1,11 @@
-:root {--jg-float-tools-translate-y: -15%;}
-@media (min-width: 576px) {:root{--jg-ft-t-y: -18%;}}
-@media (min-width: 768px) {:root{--jg-ft-t-y: -21%;}}
-@media (min-width: 992px) {:root{--jg-ft-t-y: -24%;}}
-@media (min-width: 1200px) {:root{--jg-ft-t-y: -27%;}}
-@media (min-width: 1400px) {:root{--jg-ft-t-y: -30%;}}
+:root {
+  --jg-ft-t-y: -15%;
+}
 
 #float-tools {
-  transition: transform 300ms linear;
+  width: fit-content;
+  height: fit-content;
+  transition: transform 400ms linear;
   z-index: 1017;
 }
 
@@ -15,10 +14,15 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-#float-tools {transform: translate(100%, var(--jg-ft-t-y))}
+#float-tools {
+  transform: translateX(100%) translateY(var(--jg-ft-t-y));
+}
+
 #float-tools:focus,
 #float-tools:focus-within,
-#float-tools.show {transform: translate(-50%, var(--jg-ft-t-y))}
+#float-tools.show {
+  transform: translateX(-120%) translateY(var(--jg-ft-t-y));
+}
 
 #float-tools .list-group-item span,
 #float-tools a.list-group-item span {

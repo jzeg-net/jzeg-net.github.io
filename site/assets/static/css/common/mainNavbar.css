@@ -1,0 +1,7 @@
+#mainNavbar {
+  transition: transform 150ms linear;
+}
+
+.tY-n150 {
+  transform: translateY(-150%);
+}

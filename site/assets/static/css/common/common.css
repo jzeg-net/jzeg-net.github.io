@@ -81,10 +81,6 @@ body {
   overscroll-behavior-y: contain;
 }
 
-#mainNavbar {
-  transition: transform 150ms linear;
-}
-
 footer-gradient:before {
   background: var(--bs-linear-gradient-end);
   content: "";
