@@ -112,7 +112,7 @@
         "timeago.js": "^4.0.2",
         "tyme4ts": "^1.0.5",
         "uppy": "^3.24.0",
-        "vanilla-cookieconsent": "^3.0.0",
+        "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.3",
         "workbox-sw": "^7.0.0",
         "world_countries_lists": "^2.9.0",
@@ -134,7 +134,7 @@
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-markdown": "^4.0.1",
         "eslint-plugin-unicorn": "^51.0.1",
-        "find-unused-sass-variables": "^5.0.0",
+        "find-unused-sass-variables": "^6.0.0",
         "hugo-bin": "^0.121.1",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.38",
@@ -142,6 +142,6 @@
         "sass": "^1.72.0",
         "stylelint": "^16.3.1",
         "svg-sprite": "^3.0.0-rc1",
-        "terser": "^5.30.1"
+        "terser": "^5.30.2"
     }
 }
