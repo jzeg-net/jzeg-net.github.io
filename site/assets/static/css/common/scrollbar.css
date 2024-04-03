@@ -10,3 +10,9 @@
 .scrollbar-width-auto {--scrollbar-width: auto;}
 .scrollbar-width-thin {--scrollbar-width: thin;}
 .scrollbar-width {scrollbar-width: var(--scrollbar-width);}
+
+.overflow-scroll,
+.overflow-x-scroll,
+.overflow-y-scroll {
+  scrollbar-width: var(--scrollbar-width);
+}

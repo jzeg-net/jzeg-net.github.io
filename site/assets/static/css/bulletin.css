@@ -34,6 +34,7 @@
     position: relative;
     height: 25vh;
     overflow-y: scroll;
+    scrollbar-width: var(--scrollbar-width);
 }
 
 .bulletin_block:before,
