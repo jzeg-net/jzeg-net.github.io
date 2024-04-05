@@ -32,8 +32,6 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
-{{ partial "script/analytics/umami" . }}
-
 {{ if in .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
