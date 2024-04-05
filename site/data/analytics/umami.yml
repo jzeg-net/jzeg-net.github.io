@@ -6,7 +6,6 @@ data_auto_track: "false"
 data_cache: "true"
 # array
 data_domains:
-  - "jzeg.net"
   - "jzeg-net.github.io"
 share:
   url: "https://us.umami.is/share/SbhQO4FtRQFiO4Ct/jzeg-net.github.io"

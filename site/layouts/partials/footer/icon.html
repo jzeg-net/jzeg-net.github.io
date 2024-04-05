@@ -22,11 +22,12 @@
     </a>
     {{ end }}
     {{- if and .Site.Params.analytics.umami.enable .Site.Params.analytics.umami.share.enable -}}
-    {{- $url := .Site.Data.analytics.umami.share.url -}}
-    <a class="link-light link-opacity-50-hover" href="{{ $url }}" target="_blank" rel="noindex nofollow" title="{{- T "umami" -}} 分析" data-umami-event="analytics share">
+    {{- with .Site.Data.analytics.umami.share.url -}}
+    <a class="link-light link-opacity-50-hover" href="{{ . }}" target="_blank" rel="noindex nofollow" title="{{- T "umami" -}} 分析" data-umami-event="analytics share">
         <svg class="bi fs-4" width="16" height="16" fill="currentColor"><title>{{- T "umami" -}} 分析</title><use href="#bi-umami"></use></svg>
         <span class="visually-hidden">{{- T "umami" -}} 分析</span>
     </a>
+    {{- end -}}
     {{- end -}}
     <a class="link-light link-opacity-50-hover share copy_link" href="#" target="_blank" title="{{ T "share" }}">
         <svg class="bi fs-4" width="16" height="16"><title>{{ T "share" }}</title><use href="#bi-share"></use></svg>
