@@ -30,6 +30,7 @@
       getToolsCollapse().classList.remove('show')
     } else if (new_scroll_position > last_scroll_position && !isFirstPage) {
       floatTools.classList.add('show')
+      floatTools.classList.remove('hide')
     }
   }
 

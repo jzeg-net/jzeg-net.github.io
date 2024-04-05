@@ -15,13 +15,16 @@
 }
 
 #float-tools {
-  transform: translateX(100%) translateY(var(--jg-ft-t-y));
+  transform: translate(100%, var(--jg-ft-t-y));
 }
 
-#float-tools:focus,
 #float-tools:focus-within,
 #float-tools.show {
-  transform: translateX(-120%) translateY(var(--jg-ft-t-y));
+  transform: translate(-120%, var(--jg-ft-t-y));
+}
+
+#float-tools.hide {
+  transform: translate(100%, var(--jg-ft-t-y));
 }
 
 #float-tools .list-group-item span,

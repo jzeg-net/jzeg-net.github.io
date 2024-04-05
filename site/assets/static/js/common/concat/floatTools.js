@@ -4,6 +4,7 @@ if (floatTools) {
   let collapseToRight = document.querySelector('#collapse-to-right')
   collapseToRight.addEventListener('click', function () {
     floatTools.classList.remove('show')
+    floatTools.classList.add('hide')
     getToolsCollapse().classList.remove('show')
   })
 
