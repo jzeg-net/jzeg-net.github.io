@@ -1,0 +1,10 @@
+{{ $src := .Site.Data.analytics.umami.script_src }}
+{{ $websiteId := .Site.Data.analytics.umami.data_website_id }}
+<script>
+    (function () {
+        var el = document.createElement('script')
+        el.setAttribute('src', '{{ $src }}')
+        el.setAttribute('data-website-id', '{{ $websiteId }}')
+        document.body.appendChild(el)
+    })()
+</script>

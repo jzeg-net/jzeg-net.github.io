@@ -1,0 +1,30 @@
+{{- if .Site.Params.analytics.umami.enable -}}
+    {{- $src             := "" -}}
+    {{- $website_id      := "" -}}
+    {{- $data_host_url   := "" -}}
+    {{- $data_auto_track := "" -}}
+    {{- $data_cache      := "" -}}
+    {{- $data_domains    := "" -}}
+
+    {{- with .Site.Data.analytics.umami -}}
+        {{- $src        = .script_src -}}
+        {{- $website_id = .data_website_id -}}
+        {{ with .data_cache }}
+            {{ $data_cache = printf "data-cache=%s" . | safeHTMLAttr }}
+        {{ end }}
+
+        {{ with .data_host_url }}
+            {{ $data_host_url = printf "data-host-url=%s" . | safeHTMLAttr }}
+        {{ end }}
+
+        {{ with .data_auto_track }}
+            {{ $data_auto_track = printf "data-auto-track=%s" . | safeHTMLAttr }}
+        {{ end }}
+
+        {{ with .data_domains }}
+            {{ $data_domains = printf "data-domains=%s" (delimit . ",") | safeHTMLAttr }}
+        {{ end }}
+    {{ end }}
+
+    <script defer src="{{ $src }}" data-website-id="{{ $website_id }}" {{ $data_host_url | safeHTMLAttr }} {{ $data_auto_track | safeHTMLAttr }} {{ $data_cache | safeHTMLAttr }} {{ $data_domains | safeHTMLAttr }}></script>
+{{- end -}}
