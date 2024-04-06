@@ -17,7 +17,6 @@ const chineseArticleTags = {
     ]
   }
 }
-
 const englishArticleTags = {
   'en': {
     category: 'Category 2',
@@ -37,7 +36,6 @@ const englishArticleTags = {
     ]
   }
 }
-
 const articleTags = [chineseArticleTags, englishArticleTags]
 
 class TagManager {
@@ -57,13 +55,11 @@ class TagManager {
 
   }
 
-  _create_tagsSelectedList () {
-    let x = ['tag1', 'tag2', 'tag3', 'tag4', 'tag5', 'tag2', 'tag3', 'tag4', 'tag5']
-
-    this.tagsSelectedList.innerText = x.join(', ')
+  _create_tagsSelectedList (tag = 'tag_1') {
+    this.tagsSelectedList.append(tag)
   }
 
-  _create_tagsSelectedBtnList () {
+  _create_tagsSelectedBtnList (btn = 'btnList_1') {
     const button = document.createElement('button')
     const span = document.createElement('span')
     const svg = document.createElement('svg')
@@ -71,13 +67,13 @@ class TagManager {
 
     button.className = 'btn btn-sm btn-outline-secondary'
     button.type = 'button'
-    button.dataset['tagName'] = 'tagName'
-    button.ariaLabel = '删除 ' + button.dataset['tagName']
+    button.dataset['tagName'] = btn
+    button.ariaLabel = '删除 ' + btn
 
     svg.className = 'bi'
     use.setAttribute('href', '#bi-x-lg')
 
-    span.textContent = 'dsdd'
+    span.textContent = btn
     svg.append(use)
     button.appendChild(span, svg)
 
@@ -131,7 +127,7 @@ class TagManager {
     tag_name.textContent = 'tagName'
 
     count_badge.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
-    count_badge.textContent = 22
+    count_badge.textContent = Math.floor(Math.random() * 100)
 
     button.append(tag_name, count_badge)
     tagCategoryContent.append(button)
@@ -154,13 +150,14 @@ class TagManager {
 
   // 拆分后的 addTag 方法
   addTag (tag, data) {
-    if (this.canAddTag(tag, this.tagButtons.length)) {
-      const button = this.createButton(tag)
-      this.addButtonListener(button, this.onButtonClick)
-      this.tagButtons.push(button)
-    } else {
+    if (!this.canAddTag(tag, this.tagButtons.length)) {
       console.log('最多只能设置 5 个标签或该标签已存在')
+      return
     }
+
+    const button = this.createButton(tag)
+    this.addButtonListener(button, this.onButtonClick)
+    this.tagButtons.push(button)
   }
 
   // 检查是否可以添加标签的辅助方法
