@@ -74,6 +74,7 @@ details[open] .detail-mark span:last-of-type {
   }
 }
 
+.tagsSelectedList,
 .tag-category-tab,
 .tag-category-content {
   scrollbar-width: var(--scrollbar-width);
