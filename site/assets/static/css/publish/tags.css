@@ -75,6 +75,7 @@ details[open] .detail-mark span:last-of-type {
 }
 
 .tagsSelectedList,
+.tagsSelectedBtnList,
 .tag-category-tab,
 .tag-category-content {
   scrollbar-width: var(--scrollbar-width);
