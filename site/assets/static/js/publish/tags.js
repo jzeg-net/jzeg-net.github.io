@@ -59,11 +59,45 @@ class TagManager {
 
   }
 
-  _create_tagsSelectedList (tag = 'tag_1') {
-    this.tagsSelectedList.append(tag)
+  render () {
+
   }
 
-  _create_tagsSelectedBtnList (btn = 'btnList_1') {
+  // 向标签列表末尾添加指定的标签
+  add (tag) {
+    if (this._isCanAdd(tag)) {
+      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
+      return false
+    }
+
+    const result = this._addTags(tag)
+    console.log(this.tagButtons)
+    console.log(this.tags)
+
+    return result
+  }
+
+  // 从标签列表中删除指定的标签
+  remove (tag) {
+    const indexOfTag = this.tags.indexOf(tag)
+    if (indexOfTag === -1) {
+      console.log('删除没有执行，当前不包含要删除的标签')
+      return false
+    }
+
+    return [] !== this._removeTagsFromIndex(indexOfTag)
+  }
+
+  // 清空标签列表中的所有标签
+  clearAll () {
+    this.tags = []
+  }
+
+  _create_tagsSelectedList (tagName = 'tag_1') {
+    this.tagsSelectedList.append(tagName)
+  }
+
+  _create_tagsSelectedBtnList (tagName = 'tagName') {
     const button = document.createElement('button')
     const span = document.createElement('span')
     const svg = document.createElement('svg')
@@ -71,13 +105,13 @@ class TagManager {
 
     button.className = 'btn btn-sm btn-outline-secondary'
     button.type = 'button'
-    button.dataset['tagName'] = btn
-    button.ariaLabel = '删除 ' + btn
+    button.dataset['tagName'] = tagName
+    button.ariaLabel = '删除 ' + tagName
 
     svg.className = 'bi'
     use.setAttribute('href', '#bi-x-lg')
 
-    span.textContent = btn
+    span.textContent = tagName
     svg.append(use)
     button.appendChild(span, svg)
 
@@ -158,36 +192,6 @@ class TagManager {
    */
   requestCategoryTagData (lang) {
     this._getData(lang)
-  }
-
-  // 向标签列表末尾添加指定的标签
-  add (tag) {
-    if (this._isCanAdd(tag)) {
-      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
-      return false
-    }
-
-    const result = this._addTags(tag)
-    console.log(this.tagButtons)
-    console.log(this.tags)
-
-    return result
-  }
-
-  // 从标签列表中删除指定的标签
-  remove (tag) {
-    const indexOfTag = this.tags.indexOf(tag)
-    if (indexOfTag === -1) {
-      console.log('删除没有执行，当前不包含要删除的标签')
-      return false
-    }
-
-    return [] !== this._removeTagsFromIndex(indexOfTag)
-  }
-
-  // 清空标签列表中的所有标签
-  clearAll () {
-    this.tags = []
   }
 
   // 清空标签列表中的所有标签
