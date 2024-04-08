@@ -48,6 +48,9 @@ class TagManager {
     this.tagButtons = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
+
+    // 按类别加载标签元素到DOM
+    this._render_tabNav()
   }
 
   init (container) {
@@ -69,6 +72,7 @@ class TagManager {
     console.log(this.tagButtons)
     console.log(this.tags)
 
+    this._render_selected(tag)
     return result
   }
 
@@ -90,9 +94,9 @@ class TagManager {
   }
 
   // 渲染已选择的标签
-  _render_selected () {
-    this._create_tagsSelectedList()
-    this._create_tagsSelectedBtnList()
+  _render_selected (tagName) {
+    this._create_tagsSelectedList(tagName)
+    this._create_tagsSelectedBtnList(tagName)
   }
 
   // 渲染标签tab导航
