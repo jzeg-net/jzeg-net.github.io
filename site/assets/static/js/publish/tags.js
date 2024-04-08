@@ -42,8 +42,12 @@ class TagManager {
   constructor (container) {
     this.init(container)
 
-    this.articleTags = []
+    // 标签列表
+    this.tags = []
+    // 标签按钮列表
     this.tagButtons = []
+    // 标签列表最大数量阈值
+    this.maxQuantity = 5
   }
 
   init (container) {
@@ -136,64 +140,86 @@ class TagManager {
     this.tagList.append(tabPane)
   }
 
-  getData (language) {
+  _getData (language) {
     if (language === 'all') {
-      this.articleTags = articleTags
+      this.tags = articleTags
     } else if (language === 'cn') {
-      this.articleTags = chineseArticleTags
+      this.tags = chineseArticleTags
     } else if (language === 'en') {
-      this.articleTags = englishArticleTags
+      this.tags = englishArticleTags
     } else {
       throw new Error('Unsupported language')
     }
   }
 
-  // 拆分后的 addTag 方法
-  addTag (tag, data) {
-    if (!this.canAddTag(tag, this.tagButtons.length)) {
-      console.log('最多只能设置 5 个标签或该标签已存在')
-      return
+  /**
+   * 模拟请求外部的标签数据
+   * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
+   */
+  requestCategoryTagData (lang) {
+    this._getData(lang)
+  }
+
+  // 向标签列表末尾添加指定的标签
+  add (tag) {
+    if (this._isCanAdd(tag)) {
+      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
+      return false
     }
 
-    const button = this.createButton(tag)
-    this.addButtonListener(button, this.onButtonClick)
-    this.tagButtons.push(button)
+    const result = this._addTags(tag)
+    console.log(this.tagButtons)
+    console.log(this.tags)
+
+    return result
   }
 
-  // 检查是否可以添加标签的辅助方法
-  canAddTag (tag, buttonCount) {
-    return this.articleTags.indexOf(tag) === -1 && buttonCount < 5
-  }
-
-  // 创建按钮的辅助方法
-  createButton (tag) {
-    const button = document.createElement('button')
-    button.textContent = tag
-    return button
-  }
-
-  // 添加按钮监听事件的辅助方法
-  addButtonListener (button, listener) {
-    button.addEventListener('click', listener)
-  }
-
-  onButtonClick (event) {
-    this.removeTag(event.target.textContent)
-  }
-
-  removeTag (tag) {
-    const index = this.articleTags.indexOf(tag)
-    if (index !== -1) {
-      this.articleTags.splice(index, 1)
-      this.tagButtons.splice(index, 1)
+  // 从标签列表中删除指定的标签
+  remove (tag) {
+    const indexOfTag = this.tags.indexOf(tag)
+    if (indexOfTag === -1) {
+      console.log('删除没有执行，当前不包含要删除的标签')
+      return false
     }
+
+    return [] !== this._removeTagsFromIndex(indexOfTag)
   }
 
-  clearAllTags () {
-    this.articleTags = []
-    this.tagButtons.forEach(button => button.remove())
-    this.tagButtons = []
+  // 清空标签列表中的所有标签
+  clearAll () {
+    this.tags = []
   }
+
+  // 清空标签列表中的所有标签
+  _clearAllTags () {
+    this.tags = []
+  }
+
+  // 向标签列表中添加指定标签
+  _addTags (tag) {
+    return this.tags.push(tag)
+  }
+
+  // 根据指定的索引值，从标签列表中删除标签
+  _removeTagsFromIndex (indexOfTag) {
+    return this.tags.splice(indexOfTag, 1)
+  }
+
+  // 检查是否可以添加标签
+  _isCanAdd (tag) {
+    return this._hasSameAdded(tag) && this._hasLimitExceeded()
+  }
+
+  // 检查是否已经存在相同的tag
+  _hasSameAdded (tag) {
+    return !this.tags.includes(tag)
+  }
+
+  // 检查标签列表是否已经达到最大数量阈值
+  _hasLimitExceeded () {
+    return this.tags.length >= this.maxQuantity
+  }
+
 }
 
 let tagManager = new TagManager('#tags')
@@ -202,3 +228,18 @@ tagManager._create_tagsSelectedList()
 tagManager._create_tagsSelectedBtnList()
 tagManager._create_tagCategoryList()
 tagManager._create_tagList()
+
+let tags = ['tag_1', 'tag_2', 'tag_3', 'tag_4', 'tag_5', 'tag_6', 'tag_7', 'tag_8', 'tag_9', 'tag_10', 'tag_11', 'tag_12', 'tag_13', 'tag_14', 'tag_15']
+
+tagManager.add(tags[0])
+tagManager.add(tags[1])
+tagManager.add(tags[2])
+tagManager.add(tags[3])
+tagManager.clearAll()
+tagManager.add(tags[4])
+console.log(tagManager.remove(tags[4]))
+console.log(tagManager.remove(tags[4]))
+tagManager.add(tags[5])
+tagManager.add(tags[6])
+tagManager.add(tags[7])
+tagManager.clearAll()
