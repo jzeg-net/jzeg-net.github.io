@@ -51,16 +51,11 @@ class TagManager {
   }
 
   init (container) {
-    this.container = document.querySelector(`${container}`)
+    this.container = document.querySelector(container)
     this.tagsSelectedList = this.container.querySelector('#tagsSelectedList')
     this.tagsSelectedBtnList = this.container.querySelector('#tagsSelectedBtnList')
     this.tagCategoryList = this.container.querySelector('#tagCategoryList')
     this.tagList = this.container.querySelector('#tagList')
-
-  }
-
-  render () {
-
   }
 
   // 向标签列表末尾添加指定的标签
@@ -88,15 +83,30 @@ class TagManager {
     return [] !== this._removeTagsFromIndex(indexOfTag)
   }
 
-  // 清空标签列表中的所有标签
+  // 清空已选择标签列表中的所有标签
   clearAll () {
     this.tags = []
+    console.log('已经清除所有已选择的标签')
   }
 
-  _create_tagsSelectedList (tagName = 'tag_1') {
+  // 渲染已选择的标签
+  _render_selected () {
+    this._create_tagsSelectedList()
+    this._create_tagsSelectedBtnList()
+  }
+
+  // 渲染标签tab导航
+  _render_tabNav () {
+    this._create_categoryList('类别')
+    this._create_tagList('类别', '标签1')
+  }
+
+  // 在已选择的标签列表添加标签
+  _create_tagsSelectedList (tagName = 'tagName') {
     this.tagsSelectedList.append(tagName)
   }
 
+  // 在标签按钮列表创建已选择的标签按钮
   _create_tagsSelectedBtnList (tagName = 'tagName') {
     const button = document.createElement('button')
     const span = document.createElement('span')
@@ -118,35 +128,43 @@ class TagManager {
     this.tagsSelectedBtnList.append(button)
   }
 
-  _create_tagCategoryList () {
+  // 在标签类别区域中列出所有的标签类别
+  _create_categoryList (categoryName, isActive = false) {
     const li = document.createElement('li')
     const button = document.createElement('button')
+    const activeClassName = 'active'
 
     li.className = 'nav-item'
     li.role = 'presentation'
 
     button.className = 'nav-link'
+    isActive ? button.classList.add(activeClassName) : ''
     button.type = 'button'
     button.id = 'tab'
     button.role = 'tab'
     button.dataset['bsToggle'] = 'tab'
-    button.dataset['bsTarget'] = '#contact-tab-pane-xxx'
+    button.dataset['bsTarget'] = '#contact-tab-pane-' + categoryName
     button.setAttribute('aria-controls', 'nav-contact')
     button.ariaSelected = false
     button.style.marginBottom = '-1px'
-    button.textContent = 'categoryName'
+    button.textContent = categoryName
 
     li.append(button)
 
     this.tagCategoryList.append(li)
   }
 
-  _create_tagList () {
+  // 在指定的标签类别下创建对应的标签列表
+  _create_tagList (categoryName, tagName, isActive = false, isFade = true) {
     const tabPane = document.createElement('div')
     const tagCategoryContent = document.createElement('div')
+    const activeClassName = 'show active'
+    const fadeClassName = 'fade'
 
-    tabPane.className = 'tab-pane fade'
-    tabPane.id = 'contact-tab-pane-xxx'
+    tabPane.className = 'tab-pane'
+    isFade ? tabPane.classList.add(fadeClassName) : ''
+    isActive ? tabPane.classList.add(activeClassName) : ''
+    tabPane.id = 'contact-tab-pane-' + categoryName
     tabPane.role = 'tabPanel'
     tabPane.setAttribute('aria-labelledby', 'contact-tab')
     tabPane.tabIndex = 0
@@ -162,7 +180,7 @@ class TagManager {
     button.type = 'button'
     button.dataset['bsToggle'] = 'button'
 
-    tag_name.textContent = 'tagName'
+    tag_name.textContent = tagName
 
     count_badge.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
     count_badge.textContent = Math.floor(Math.random() * 100)
@@ -174,16 +192,12 @@ class TagManager {
     this.tagList.append(tabPane)
   }
 
-  _getData (language) {
-    if (language === 'all') {
-      this.tags = articleTags
-    } else if (language === 'cn') {
-      this.tags = chineseArticleTags
-    } else if (language === 'en') {
-      this.tags = englishArticleTags
-    } else {
-      throw new Error('Unsupported language')
-    }
+  _setData (language) {
+    this.tags = chineseArticleTags
+
+    if (language === 'all') this.tags = articleTags
+    if (language === 'cn') this.tags = chineseArticleTags
+    if (language === 'en') this.tags = englishArticleTags
   }
 
   /**
@@ -191,7 +205,7 @@ class TagManager {
    * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
    */
   requestCategoryTagData (lang) {
-    this._getData(lang)
+    this._setData(lang)
   }
 
   // 清空标签列表中的所有标签
@@ -227,11 +241,6 @@ class TagManager {
 }
 
 let tagManager = new TagManager('#tags')
-
-tagManager._create_tagsSelectedList()
-tagManager._create_tagsSelectedBtnList()
-tagManager._create_tagCategoryList()
-tagManager._create_tagList()
 
 let tags = ['tag_1', 'tag_2', 'tag_3', 'tag_4', 'tag_5', 'tag_6', 'tag_7', 'tag_8', 'tag_9', 'tag_10', 'tag_11', 'tag_12', 'tag_13', 'tag_14', 'tag_15']
 
