@@ -407,7 +407,7 @@ class TagManager {
     li.className = 'nav-item'
     li.role = 'presentation'
 
-    button.className = 'nav-link'
+    button.className = 'nav-link text-nowrap'
     isActive ? button.classList.add(activeClassName) : ''
     button.type = 'button'
     button.id = 'tab'
