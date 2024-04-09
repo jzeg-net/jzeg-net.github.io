@@ -1,41 +1,245 @@
-const chineseArticleTags = {
-  'cn': {
-    category: 'Category 1',
+const chineseArticleTags = [
+  {
+    category: '类别_1',
     tags: [
       {
-        tag: '标签 1',
-        count: 5,
-        iconUrl: './icon1.png', // 将图标地址改为相对路径
+        tag: '标签_1',
+        count: 42,
+        icon: true,
         description: '这是标签 1 的中文描述'
       },
       {
-        tag: '标签 2',
-        count: 2,
-        iconUrl: './icon2.png', // 将图标地址改为相对路径
+        tag: '标签_2',
+        count: 76,
+        icon: false,
         description: '这是标签 2 的中文描述'
       }
     ]
-  }
-}
-const englishArticleTags = {
-  'en': {
-    category: 'Category 2',
+  },
+  {
+    category: '类别_2',
     tags: [
       {
-        tag: 'Tag 3 en',
-        count: 10,
-        iconUrl: './icon3.png', // 将图标地址改为相对路径
-        description: 'This is the description of Tag 3 in English'
+        tag: '标签_3',
+        count: 28,
+        icon: true,
+        description: '这是标签 3 的中文描述'
       },
       {
-        tag: 'Tag 4 en',
-        count: 3,
-        iconUrl: './icon4.png', // 将图标地址改为相对路径
-        description: 'This is the description of Tag 4 in English'
+        tag: '标签_4',
+        count: 63,
+        icon: false,
+        description: '这是标签 4 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_3',
+    tags: [
+      {
+        tag: '标签_5',
+        count: 87,
+        icon: true,
+        description: '这是标签 5 的中文描述'
+      },
+      {
+        tag: '标签_6',
+        count: 54,
+        icon: false,
+        description: '这是标签 6 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_4',
+    tags: [
+      {
+        tag: '标签_7',
+        count: 31,
+        icon: true,
+        description: '这是标签 7 的中文描述'
+      },
+      {
+        tag: '标签_8',
+        count: 98,
+        icon: false,
+        description: '这是标签 8 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_5',
+    tags: [
+      {
+        tag: '标签_9',
+        count: 23,
+        icon: true,
+        description: '这是标签 9 的中文描述'
+      },
+      {
+        tag: '标签_10',
+        count: 72,
+        icon: false,
+        description: '这是标签 10 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_6',
+    tags: [
+      {
+        tag: '标签_11',
+        count: 67,
+        icon: true,
+        description: '这是标签 11 的中文描述'
+      },
+      {
+        tag: '标签_12',
+        count: 45,
+        icon: false,
+        description: '这是标签 12 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_7',
+    tags: [
+      {
+        tag: '标签_13',
+        count: 56,
+        icon: true,
+        description: '这是标签 13 的中文描述'
+      },
+      {
+        tag: '标签_14',
+        count: 81,
+        icon: false,
+        description: '这是标签 14 的中文描述'
+      }
+    ]
+  },
+  {
+    category: '类别_8',
+    tags: [
+      {
+        tag: '标签_15',
+        count: 39,
+        icon: true,
+        description: '这是标签 15 的中文描述'
+      },
+      {
+        tag: '标签_16',
+        count: 69,
+        icon: false,
+        description: '这是标签 16 的中文描述'
       }
     ]
   }
-}
+]
+const englishArticleTags = [
+  {
+    category: 'Category_1',
+    tags: [
+      {
+        tag: 'Tag1',
+        count: 48,
+        icon: true,
+        description: 'This is the description of Tag 1 in English'
+      },
+      {
+        tag: 'Tag2',
+        count: 79,
+        icon: false,
+        description: 'This is the description of Tag 2 in English'
+      }
+    ]
+  },
+  {
+    category: 'Category_2',
+    tags: [
+      {
+        tag: 'Tag3',
+        count: 26,
+        icon: true,
+        description: 'This is the description of Tag 3 in English'
+      },
+      {
+        tag: 'Tag4',
+        count: 64,
+        icon: false,
+        description: 'This is the description of Tag 4 in English'
+      }
+    ]
+  },
+  {
+    category: 'Category_3',
+    tags: [
+      {
+        tag: 'Tag5',
+        count: 83,
+        icon: true,
+        description: 'This is the description of Tag 5 in English'
+      },
+      {
+        tag: 'Tag6',
+        count: 57,
+        icon: false,
+        description: 'This is the description of Tag 6 in English'
+      }
+    ]
+  },
+  {
+    category: 'Category_4',
+    tags: [
+      {
+        tag: 'Tag7',
+        count: 35,
+        icon: true,
+        description: 'This is the description of Tag 7 in English'
+      },
+      {
+        tag: 'Tag8',
+        count: 94,
+        icon: false,
+        description: 'This is the description of Tag 8 in English'
+      }
+    ]
+  },
+  {
+    category: 'Category_5',
+    tags: [
+      {
+        tag: 'Tag9',
+        count: 29,
+        icon: true,
+        description: 'This is the description of Tag 9 in English'
+      },
+      {
+        tag: 'Tag10',
+        count: 71,
+        icon: false,
+        description: 'This is the description of Tag 10 in English'
+      }
+    ]
+  },
+  {
+    category: 'Category_6',
+    tags: [
+      {
+        tag: 'Tag11',
+        count: 62,
+        icon: true,
+        description: 'This is the description of Tag 11 in English'
+      },
+      {
+        tag: 'Tag12',
+        count: 38,
+        icon: false,
+        description: 'This is the description of Tag 12 in English'
+      }
+    ]
+  }
+]
 const articleTags = [chineseArticleTags, englishArticleTags]
 
 class TagManager {
@@ -50,7 +254,7 @@ class TagManager {
     this.maxQuantity = 5
 
     // 按类别加载标签元素到DOM
-    this._render_tabNav()
+    // this._render_tabNav()
   }
 
   init (container) {
@@ -84,7 +288,15 @@ class TagManager {
       return false
     }
 
-    return [] !== this._removeTagsFromIndex(indexOfTag)
+    const result = [] !== this._removeTagsFromIndex(indexOfTag)
+
+    if (result) {
+      console.log('已经删除标签：' + tag)
+    } else {
+      console.log('删除标签失败：' + tag)
+    }
+
+    return result
   }
 
   // 清空已选择标签列表中的所有标签
@@ -100,9 +312,31 @@ class TagManager {
   }
 
   // 渲染标签tab导航
-  _render_tabNav () {
-    this._create_categoryList('类别')
-    this._create_tagList('类别', '标签1')
+  _render_tabNav (data = []) {
+    // console.log(data)
+
+    const category = []
+    const categoryTag = []
+    data.forEach((current, index) => {
+      category[index] = current['category']
+      categoryTag[index] = current['tags']
+    })
+    // console.log(category)
+    // console.log(categoryTag)
+
+    category.forEach((current, index) => {
+      this._create_navCategory(current, !index)
+    })
+
+    categoryTag.forEach((tagData, index) => {
+      // console.log(tagData)
+      let categoryName = category[index]
+      let isActive = !index
+      console.log(categoryName)
+      this._create_navTag(categoryName, tagData, isActive)
+      console.log('')
+    })
+
   }
 
   // 在已选择的标签列表添加标签
@@ -133,7 +367,7 @@ class TagManager {
   }
 
   // 在标签类别区域中列出所有的标签类别
-  _create_categoryList (categoryName, isActive = false) {
+  _create_navCategory (categoryName, isActive = false) {
     const li = document.createElement('li')
     const button = document.createElement('button')
     const activeClassName = 'active'
@@ -149,7 +383,7 @@ class TagManager {
     button.dataset['bsToggle'] = 'tab'
     button.dataset['bsTarget'] = '#contact-tab-pane-' + categoryName
     button.setAttribute('aria-controls', 'nav-contact')
-    button.ariaSelected = false
+    button.ariaSelected = isActive
     button.style.marginBottom = '-1px'
     button.textContent = categoryName
 
@@ -159,15 +393,15 @@ class TagManager {
   }
 
   // 在指定的标签类别下创建对应的标签列表
-  _create_tagList (categoryName, tagName, isActive = false, isFade = true) {
+  _create_navTag (categoryName, tagData = [], isActive = false, isFade = true) {
     const tabPane = document.createElement('div')
     const tagCategoryContent = document.createElement('div')
-    const activeClassName = 'show active'
+    const activeClassName = ['show', 'active']
     const fadeClassName = 'fade'
 
     tabPane.className = 'tab-pane'
     isFade ? tabPane.classList.add(fadeClassName) : ''
-    isActive ? tabPane.classList.add(activeClassName) : ''
+    isActive ? tabPane.classList.add(...activeClassName) : ''
     tabPane.id = 'contact-tab-pane-' + categoryName
     tabPane.role = 'tabPanel'
     tabPane.setAttribute('aria-labelledby', 'contact-tab')
@@ -176,21 +410,26 @@ class TagManager {
     tagCategoryContent.className = 'd-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content'
     tagCategoryContent.style.maxHeight = '9em'
 
-    const button = document.createElement('button')
-    const tag_name = document.createElement('span')
-    const count_badge = document.createElement('span')
+    tagData.forEach((tags) => {
+      const tagName = tags['tag']
+      const tagCount = tags['count']
+      const button = document.createElement('button')
+      const tag_name = document.createElement('span')
+      const count = document.createElement('span')
 
-    button.className = 'btn btn-sm bg-secondary bg-opacity-10 tags-tag-name'
-    button.type = 'button'
-    button.dataset['bsToggle'] = 'button'
+      button.className = 'btn btn-sm bg-secondary bg-opacity-10 tags-tag-name'
+      button.type = 'button'
+      button.dataset['bsToggle'] = 'button'
 
-    tag_name.textContent = tagName
+      tag_name.textContent = tagName
 
-    count_badge.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
-    count_badge.textContent = Math.floor(Math.random() * 100)
+      count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
+      count.textContent = tagCount ?? 0
 
-    button.append(tag_name, count_badge)
-    tagCategoryContent.append(button)
+      button.append(tag_name, count)
+      tagCategoryContent.append(button)
+    })
+
     tabPane.append(tagCategoryContent)
 
     this.tagList.append(tabPane)
@@ -246,17 +485,19 @@ class TagManager {
 
 let tagManager = new TagManager('#tags')
 
-let tags = ['tag_1', 'tag_2', 'tag_3', 'tag_4', 'tag_5', 'tag_6', 'tag_7', 'tag_8', 'tag_9', 'tag_10', 'tag_11', 'tag_12', 'tag_13', 'tag_14', 'tag_15']
 
-tagManager.add(tags[0])
-tagManager.add(tags[1])
-tagManager.add(tags[2])
-tagManager.add(tags[3])
-tagManager.clearAll()
-tagManager.add(tags[4])
-console.log(tagManager.remove(tags[4]))
-console.log(tagManager.remove(tags[4]))
-tagManager.add(tags[5])
-tagManager.add(tags[6])
-tagManager.add(tags[7])
-tagManager.clearAll()
+// tagManager.add(tags[0])
+// tagManager.add(tags[1])
+// tagManager.add(tags[2])
+// tagManager.add(tags[3])
+// tagManager.clearAll()
+// tagManager.add(tags[4])
+// console.log(tagManager.remove(tags[4]))
+// console.log(tagManager.remove(tags[4]))
+// tagManager.add(tags[5])
+// tagManager.add(tags[6])
+// tagManager.add(tags[7])
+// tagManager.clearAll()
+
+tagManager._render_tabNav(chineseArticleTags)
+// tagManager._render_tabNav(englishArticleTags)
