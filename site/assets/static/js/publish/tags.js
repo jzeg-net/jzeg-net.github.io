@@ -252,9 +252,6 @@ class TagManager {
     this.tagSelected = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
-
-    // 按类别加载标签元素到DOM
-    // this._render_tabNav()
   }
 
   init (container) {
@@ -263,16 +260,12 @@ class TagManager {
     this.tagsSelectedBtnList = this.container.querySelector('#tagsSelectedBtnList')
     this.tagCategoryList = this.container.querySelector('#tagCategoryList')
     this.tagList = this.container.querySelector('#tagList')
+    this.tagCount = this.container.querySelector('#remainingTagCount')
   }
 
   // 向标签列表末尾添加指定的标签
   add (tag) {
-    if (this._hasLimitExceeded(tag)) {
-      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
-      return false
-    }
-    if (this._hasSameAdded(tag)) {
-      console.log('拒绝添加新标签，标签已存在' + tag)
+    if (!this._isCanAdd(tag)) {
       return false
     }
 
@@ -280,6 +273,7 @@ class TagManager {
     console.log(this.tagSelected)
 
     this._render_selected(tag)
+    this._render_remainingTagCount()
     return result
   }
 
@@ -308,10 +302,20 @@ class TagManager {
     console.log('已经清除所有已选择的标签')
   }
 
+  // 剩余的可以选择的标签数量
+  remainingTagCount () {
+    return this.maxQuantity - this.tagSelected.length
+  }
+
   // 渲染已选择的标签
   _render_selected (tagName) {
     this._create_tagsSelectedList(tagName)
     this._create_tagsSelectedBtnList(tagName)
+  }
+
+  // 显示剩余的可以选择标签的数量
+  _render_remainingTagCount () {
+    this.tagCount.textContent = this.remainingTagCount()
   }
 
   // 渲染标签tab导航
@@ -340,7 +344,7 @@ class TagManager {
   }
 
   // 在标签按钮列表创建已选择的标签按钮
-  _create_tagsSelectedBtnList (tagName = 'tagName') {
+  _create_tagsSelectedBtnList (tagName) {
     const button = document.createElement('button')
     const span = document.createElement('span')
     const svg = document.createElement('svg')
@@ -356,7 +360,7 @@ class TagManager {
 
     span.textContent = tagName
     svg.append(use)
-    button.appendChild(span, svg)
+    button.append(span, svg)
 
     this.tagsSelectedBtnList.append(button)
   }
@@ -409,24 +413,22 @@ class TagManager {
       const tagName = tags['tag']
       const tagCount = tags['count']
       const button = document.createElement('button')
-      const tag_name = document.createElement('span')
       const count = document.createElement('span')
 
       button.className = 'btn btn-sm bg-secondary bg-opacity-10 tags-tag-name'
       button.type = 'button'
       button.dataset['bsToggle'] = 'button'
+      button.dataset['tagName'] = tagName
+      button.innerText = tagName
       button.addEventListener('click', (event) => {
-        console.log(event.target.textContent)
-        this.add(event.target.textContent)
-        console.log(event.target.textContent)
+        if (event.target.tagName !== 'BUTTON') return
+        this.add(event.target.dataset['tagName'])
       })
-
-      tag_name.textContent = tagName
 
       count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
       count.textContent = tagCount ?? 0
 
-      button.append(tag_name, count)
+      button.append(count)
       tagCategoryContent.append(button)
     })
 
@@ -468,7 +470,15 @@ class TagManager {
 
   // 检查是否可以添加标签
   _isCanAdd (tag) {
-    return this._hasSameAdded(tag) && this._hasLimitExceeded()
+    if (this._hasLimitExceeded(tag)) {
+      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
+      return false
+    }
+    if (this._hasSameAdded(tag)) {
+      console.log('拒绝添加新标签，标签已存在 ' + tag)
+      return false
+    }
+    return true
   }
 
   // 检查是否已经存在相同的tag
