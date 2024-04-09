@@ -367,6 +367,11 @@ class TagManager {
     this.tagsSelectedBtnList.append(button)
   }
 
+  // 在标签搜索结果种创建可选的标签按钮列表
+  _create_tagSearchResultList () {
+
+  }
+
   // 在标签类别区域中列出所有的标签类别
   _create_navCategory (categoryName, isActive = false) {
     const li = document.createElement('li')
@@ -427,7 +432,7 @@ class TagManager {
         this.add(event.target.dataset['tagName'])
       })
 
-      count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25 small'
+      count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25'
       count.textContent = tagCount ?? 0
 
       button.append(count)
