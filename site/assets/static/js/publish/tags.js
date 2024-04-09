@@ -256,11 +256,12 @@ class TagManager {
 
   init (container) {
     this.container = document.querySelector(container)
-    this.tagsSelectedList = this.container.querySelector('#tagsSelectedList')
-    this.tagsSelectedBtnList = this.container.querySelector('#tagsSelectedBtnList')
+    this.tagsSelectedList = this.container.querySelector('#tagSelectedList')
+    this.tagsSelectedBtnList = this.container.querySelector('#tagSelectedBtnList')
     this.tagCategoryList = this.container.querySelector('#tagCategoryList')
     this.tagList = this.container.querySelector('#tagList')
     this.tagCount = this.container.querySelector('#remainingTagCount')
+    this.tagSearchResult = this.container.querySelector('#tagSearchResult')
   }
 
   // 向标签列表末尾添加指定的标签
@@ -368,8 +369,33 @@ class TagManager {
   }
 
   // 在标签搜索结果种创建可选的标签按钮列表
-  _create_tagSearchResultList () {
+  _create_tagSearchResultList (tags = ['searchResult-1', 'searchResult-2', 'searchResult-3', 'searchResult-4', 'searchResult-5', 'searchResult-6', 'searchResult-7', 'searchResult-8']) {
+    const tagSearchResultList = document.createElement('div')
 
+    tagSearchResultList.className = 'list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList'
+    tagSearchResultList.style.maxHeight = '12em'
+
+    tags.forEach((tag) => {
+      const button = document.createElement('button')
+      const span = document.createElement('span')
+
+      button.className = 'list-group-item list-group-item-dark list-group-item-action'
+      button.type = 'button'
+      button.dataset['bsToggle'] = 'button'
+      button.ariaPressed = false
+      button.style.setProperty('--bs-list-group-active-bg', '#485860')
+      button.style.setProperty('--bs-list-group-active-border-color', '#485860')
+      button.textContent = tag
+      button.addEventListener('click', () => this.add(tag))
+
+      span.className = 'badge text-bg-secondary bg-opacity-25 rounded-pill'
+      span.textContent = Math.round(Math.random() * 100)
+
+      button.append(span)
+      tagSearchResultList.append(button)
+    })
+
+    this.tagSearchResult.append(tagSearchResultList)
   }
 
   // 在标签类别区域中列出所有的标签类别
@@ -427,10 +453,7 @@ class TagManager {
       button.dataset['bsToggle'] = 'button'
       button.dataset['tagName'] = tagName
       button.innerText = tagName
-      button.addEventListener('click', (event) => {
-        if (event.target.tagName !== 'BUTTON') return
-        this.add(event.target.dataset['tagName'])
-      })
+      button.addEventListener('click', () => this.add(tagName))
 
       count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25'
       count.textContent = tagCount ?? 0
@@ -494,3 +517,4 @@ let tagManager = new TagManager('#a-tags')
 
 tagManager._render_tabNav(chineseArticleTags)
 // tagManager._render_tabNav(englishArticleTags)
+tagManager._create_tagSearchResultList()

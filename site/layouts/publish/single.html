@@ -10,10 +10,10 @@
                 <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
             </div>
             <div>
-                <details class="position-relative rounded border" id="a-tags" open>
+                <details class="position-relative rounded border" id="a-tags">
                     <summary class="p-2 d-flex">
                         <div class="w-100 d-flex justify-content-between align-items-center user-select-none">
-                            <span class="text-nowrap flex-fill overflow-hidden overflow-x-scroll tagsSelectedList" id="tagsSelectedList" style="height: 24px;min-inline-size: 0;"></span>
+                            <span class="text-nowrap flex-fill overflow-hidden overflow-x-scroll tagSelectedList" id="tagSelectedList" style="height: 24px;min-inline-size: 0;"></span>
                             <span class="badge rounded-pill bg-secondary bg-opacity-25 small" id="remainingTagCount"></span>
                             <div class="detail-mark text-secondary">
                                 <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
@@ -28,39 +28,8 @@
                                 <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
                             </div>
                         </div>
-                        <div class="p-2" id="tagSearchResult">
-                            <div class="list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList" style="max-height: 12em">
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_1
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_2
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_3
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_4
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_5
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_6
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-dark list-group-item-action" data-bs-toggle="button" aria-pressed="false" style="--bs-list-group-active-bg: #485860;--bs-list-group-active-border-color: #485860;">
-                                    tagSearchResult_7
-                                    <span class="badge text-bg-secondary bg-opacity-25 rounded-pill">22</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-2 d-flex flex-wrap column-gap-1 row-gap-2 border-top border-bottom border-secondary border-opacity-25 overflow-hidden overflow-y-scroll tagsSelectedBtnList" id="tagsSelectedBtnList" style="max-height: 9em;"></div>
+                        <div class="p-2" id="tagSearchResult"></div>
+                        <div class="p-2 d-flex flex-wrap column-gap-1 row-gap-2 border-top border-bottom border-secondary border-opacity-25 overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 9em;"></div>
                         <div class="p-2 small">
                             <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
                                 <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll tag-category-tab" role="tablist" id="tagCategoryList"></ul>
