@@ -248,8 +248,8 @@ class TagManager {
 
     // 标签列表
     this.tags = []
-    // 标签按钮列表
-    this.tagButtons = []
+    // 已经选中的标签列表
+    this.tagSelected = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
 
@@ -267,14 +267,17 @@ class TagManager {
 
   // 向标签列表末尾添加指定的标签
   add (tag) {
-    if (this._isCanAdd(tag)) {
+    if (this._hasLimitExceeded(tag)) {
       console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
+      return false
+    }
+    if (this._hasSameAdded(tag)) {
+      console.log('拒绝添加新标签，标签已存在' + tag)
       return false
     }
 
     const result = this._addTags(tag)
-    console.log(this.tagButtons)
-    console.log(this.tags)
+    console.log(this.tagSelected)
 
     this._render_selected(tag)
     return result
@@ -282,7 +285,7 @@ class TagManager {
 
   // 从标签列表中删除指定的标签
   remove (tag) {
-    const indexOfTag = this.tags.indexOf(tag)
+    const indexOfTag = this.tagSelected.indexOf(tag)
     if (indexOfTag === -1) {
       console.log('删除没有执行，当前不包含要删除的标签')
       return false
@@ -301,7 +304,7 @@ class TagManager {
 
   // 清空已选择标签列表中的所有标签
   clearAll () {
-    this.tags = []
+    this.tagSelected = []
     console.log('已经清除所有已选择的标签')
   }
 
@@ -313,34 +316,26 @@ class TagManager {
 
   // 渲染标签tab导航
   _render_tabNav (data = []) {
-    // console.log(data)
-
     const category = []
     const categoryTag = []
     data.forEach((current, index) => {
       category[index] = current['category']
       categoryTag[index] = current['tags']
     })
-    // console.log(category)
-    // console.log(categoryTag)
 
-    category.forEach((current, index) => {
-      this._create_navCategory(current, !index)
+    category.forEach((categoryName, index) => {
+      this._create_navCategory(categoryName, !index)
     })
 
     categoryTag.forEach((tagData, index) => {
-      // console.log(tagData)
       let categoryName = category[index]
       let isActive = !index
-      console.log(categoryName)
       this._create_navTag(categoryName, tagData, isActive)
-      console.log('')
     })
-
   }
 
   // 在已选择的标签列表添加标签
-  _create_tagsSelectedList (tagName = 'tagName') {
+  _create_tagsSelectedList (tagName) {
     this.tagsSelectedList.append(tagName)
   }
 
@@ -420,6 +415,11 @@ class TagManager {
       button.className = 'btn btn-sm bg-secondary bg-opacity-10 tags-tag-name'
       button.type = 'button'
       button.dataset['bsToggle'] = 'button'
+      button.addEventListener('click', (event) => {
+        console.log(event.target.textContent)
+        this.add(event.target.textContent)
+        console.log(event.target.textContent)
+      })
 
       tag_name.textContent = tagName
 
@@ -453,17 +453,17 @@ class TagManager {
 
   // 清空标签列表中的所有标签
   _clearAllTags () {
-    this.tags = []
+    this.tagSelected = []
   }
 
-  // 向标签列表中添加指定标签
+  // 向已选择标签的列表中添加指定标签
   _addTags (tag) {
-    return this.tags.push(tag)
+    return this.tagSelected.push(tag)
   }
 
-  // 根据指定的索引值，从标签列表中删除标签
+  // 根据指定的索引值，从已选择标签的列表中删除标签
   _removeTagsFromIndex (indexOfTag) {
-    return this.tags.splice(indexOfTag, 1)
+    return this.tagSelected.splice(indexOfTag, 1)
   }
 
   // 检查是否可以添加标签
@@ -473,31 +473,17 @@ class TagManager {
 
   // 检查是否已经存在相同的tag
   _hasSameAdded (tag) {
-    return !this.tags.includes(tag)
+    return this.tagSelected.includes(tag)
   }
 
   // 检查标签列表是否已经达到最大数量阈值
   _hasLimitExceeded () {
-    return this.tags.length >= this.maxQuantity
+    return this.tagSelected.length >= this.maxQuantity
   }
 
 }
 
-let tagManager = new TagManager('#tags')
-
-
-// tagManager.add(tags[0])
-// tagManager.add(tags[1])
-// tagManager.add(tags[2])
-// tagManager.add(tags[3])
-// tagManager.clearAll()
-// tagManager.add(tags[4])
-// console.log(tagManager.remove(tags[4]))
-// console.log(tagManager.remove(tags[4]))
-// tagManager.add(tags[5])
-// tagManager.add(tags[6])
-// tagManager.add(tags[7])
-// tagManager.clearAll()
+let tagManager = new TagManager('#a-tags')
 
 tagManager._render_tabNav(chineseArticleTags)
 // tagManager._render_tabNav(englishArticleTags)
