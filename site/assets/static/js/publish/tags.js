@@ -269,15 +269,18 @@ class TagManager {
       return false
     }
 
-    const result = this._addTags(tag)
+    const result = this.tagSelected.push(tag)
     console.log(this.tagSelected)
 
-    this._render_selected(tag)
-    this._render_remainingTagCount()
+    this._create_tagsSelectedList()
+    this._create_tagsSelectedBtnList(tag)
+    // 显示剩余的可以选择标签的数量
+    this.tagCount.textContent = this._remainingTagCount()
+
     return result
   }
 
-  // 从标签列表中删除指定的标签
+  // 从已选择的标签列表中删除指定的标签
   remove (tag) {
     const indexOfTag = this.tagSelected.indexOf(tag)
     if (indexOfTag === -1) {
@@ -285,9 +288,15 @@ class TagManager {
       return false
     }
 
-    const result = [] !== this._removeTagsFromIndex(indexOfTag)
+    // 根据指定的索引值，从已选择标签的列表中删除标签
+    const deleteTagSelected = this.tagSelected.splice(indexOfTag, 1)
+    const result = [] !== deleteTagSelected
 
     if (result) {
+      this._create_tagsSelectedList()
+      // this._create_tagsSelectedBtnList(tag)
+      // 显示剩余的可以选择标签的数量
+      this.tagCount.textContent = this._remainingTagCount()
       console.log('已经删除标签：' + tag)
     } else {
       console.log('删除标签失败：' + tag)
@@ -297,25 +306,9 @@ class TagManager {
   }
 
   // 清空已选择标签列表中的所有标签
-  clearAll () {
+  clearAllTagSelected () {
     this.tagSelected = []
     console.log('已经清除所有已选择的标签')
-  }
-
-  // 剩余的可以选择的标签数量
-  remainingTagCount () {
-    return this.maxQuantity - this.tagSelected.length
-  }
-
-  // 渲染已选择的标签
-  _render_selected (tagName) {
-    this._create_tagsSelectedList(tagName)
-    this._create_tagsSelectedBtnList(tagName)
-  }
-
-  // 显示剩余的可以选择标签的数量
-  _render_remainingTagCount () {
-    this.tagCount.textContent = this.remainingTagCount()
   }
 
   // 渲染标签tab导航
@@ -338,9 +331,14 @@ class TagManager {
     })
   }
 
+  // 剩余的可以选择的标签数量
+  _remainingTagCount () {
+    return this.maxQuantity - this.tagSelected.length
+  }
+
   // 在已选择的标签列表添加标签
-  _create_tagsSelectedList (tagName) {
-    this.tagsSelectedList.append(tagName)
+  _create_tagsSelectedList () {
+    this.tagsSelectedList.textContent = this.tagSelected.join(', ')
   }
 
   // 在标签按钮列表创建已选择的标签按钮
@@ -354,6 +352,10 @@ class TagManager {
     button.type = 'button'
     button.dataset['tagName'] = tagName
     button.ariaLabel = '删除 ' + tagName
+    button.addEventListener('click', () => {
+      this.remove(button.dataset['tagName'])
+      button.remove()
+    })
 
     svg.className = 'bi'
     use.setAttribute('href', '#bi-x-lg')
@@ -456,16 +458,6 @@ class TagManager {
   // 清空标签列表中的所有标签
   _clearAllTags () {
     this.tagSelected = []
-  }
-
-  // 向已选择标签的列表中添加指定标签
-  _addTags (tag) {
-    return this.tagSelected.push(tag)
-  }
-
-  // 根据指定的索引值，从已选择标签的列表中删除标签
-  _removeTagsFromIndex (indexOfTag) {
-    return this.tagSelected.splice(indexOfTag, 1)
   }
 
   // 检查是否可以添加标签
