@@ -22,14 +22,14 @@
                         </div>
                     </summary>
                     <div>
+                        <div class="p-2 d-flex flex-wrap column-gap-1 row-gap-2 border-top overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 9em;"></div>
                         <div class="p-2 border-top">
                             <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">
                                 <input class="p-2 flex-fill bg-transparent border-0" type="search" name="TagSearch" id="tagSearch" placeholder="{{ T "search" }}" autocomplete="off" style="min-inline-size: 0;outline: none;">
                                 <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
                             </div>
                         </div>
-                        <div class="p-2" id="tagSearchResult"></div>
-                        <div class="p-2 d-flex flex-wrap column-gap-1 row-gap-2 border-top border-bottom border-secondary border-opacity-25 overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 9em;"></div>
+                        <div class="p-2 border-top border-bottom border-secondary border-opacity-25" id="tagSearchResult"></div>
                         <div class="p-2 small">
                             <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
                                 <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll tag-category-tab" role="tablist" id="tagCategoryList"></ul>
