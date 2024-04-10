@@ -49,6 +49,10 @@
     <script type="module" src="{{ $preUrl }}static/js/photoswipe.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "medium-zoom" }}
+    <script type="module" src="{{ $preUrl }}static/js/medium-zoom.js"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "svgedit" }}
     <script src="{{ $preUrl }}static/vendor/svgedit/dist/editor/iife-Editor.js"></script>
     <script src="{{ $preUrl }}static/js/svgedit.js"></script>
