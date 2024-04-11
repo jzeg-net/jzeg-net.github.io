@@ -13,8 +13,10 @@
                 <details class="position-relative rounded border" id="a-tags">
                     <summary class="p-2 d-flex">
                         <div class="w-100 d-flex justify-content-between align-items-center user-select-none">
-                            <span class="text-nowrap flex-fill overflow-hidden overflow-x-scroll tagSelectedList" id="tagSelectedList" style="height: 24px;min-inline-size: 0;"></span>
-                            <span class="badge rounded-pill bg-secondary bg-opacity-25 small" id="remainingTagCount"></span>
+                            <div class="overflow-hidden overflow-x-scroll summaryPlaceholder" style="height: 24px;">
+                                <span class="text-nowrap tagSelectedList" id="tagSelectedList"></span>
+                                <span class="summaryPlaceholderText">设置标签</span>
+                            </div>
                             <div class="detail-mark text-secondary">
                                 <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
                                 <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-up-fill"></use></svg></span>
@@ -22,6 +24,13 @@
                         </div>
                     </summary>
                     <div>
+                        <div class="p-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center small">
+                                <p class="mb-0">还可以添加<span class="px-2" id="remainingTagCount"></span>个标签</p>
+                                <p class="mb-0">找不到标签？<button type="button" class="btn btn-sm btn-outline-secondary" id="tagCreate">创建标签</button></p>
+                            </div>
+                            <p class="mb-0 d-none" id="tagMessage">单独单</p>
+                        </div>
                         <div class="p-2 d-flex flex-wrap column-gap-1 row-gap-2 border-top overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 9em;"></div>
                         <div class="p-2 border-top">
                             <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">

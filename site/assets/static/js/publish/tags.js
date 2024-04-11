@@ -244,7 +244,7 @@ const articleTags = [chineseArticleTags, englishArticleTags]
 
 class TagManager {
   constructor (container) {
-    this.init(container)
+    this.initContainer(container)
 
     // 标签列表
     this.tags = []
@@ -252,9 +252,12 @@ class TagManager {
     this.tagSelected = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
+
+    this._remainingTagCount()
   }
 
-  init (container) {
+  // 各个容器元素的初始化
+  initContainer (container) {
     this.container = document.querySelector(container)
     this.tagsSelectedList = this.container.querySelector('#tagSelectedList')
     this.tagsSelectedBtnList = this.container.querySelector('#tagSelectedBtnList')
@@ -276,7 +279,7 @@ class TagManager {
     this._create_tagsSelectedList()
     this._create_tagsSelectedBtnList(tag)
     // 显示剩余的可以选择标签的数量
-    this.tagCount.textContent = this._remainingTagCount()
+    this._remainingTagCount()
 
     return result
   }
@@ -297,7 +300,7 @@ class TagManager {
       this._create_tagsSelectedList()
       // this._create_tagsSelectedBtnList(tag)
       // 显示剩余的可以选择标签的数量
-      this.tagCount.textContent = this._remainingTagCount()
+      this._remainingTagCount()
       console.log('已经删除标签：' + tag)
     } else {
       console.log('删除标签失败：' + tag)
@@ -334,7 +337,7 @@ class TagManager {
 
   // 剩余的可以选择的标签数量
   _remainingTagCount () {
-    return this.maxQuantity - this.tagSelected.length
+    this.tagCount.textContent = this.maxQuantity - this.tagSelected.length
   }
 
   // 在已选择的标签列表添加标签

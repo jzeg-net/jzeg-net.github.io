@@ -14,6 +14,10 @@ details[open] .detail-mark span:last-of-type {
   display: block;
 }
 
+.summaryPlaceholder .tagSelectedList:not(:empty) + .summaryPlaceholderText {
+  display: none;
+}
+
 .countdown {
   color: currentColor;
 }
@@ -74,8 +78,8 @@ details[open] .detail-mark span:last-of-type {
   }
 }
 
+.summaryPlaceholder,
 .tagSearchResultList,
-.tagSelectedList,
 .tagSelectedBtnList,
 .tag-category-tab,
 .tag-category-content {
