@@ -265,6 +265,7 @@ class TagManager {
     this.tagList = this.container.querySelector('#tagList')
     this.tagCount = this.container.querySelector('#remainingTagCount')
     this.tagSearchResult = this.container.querySelector('#tagSearchResult')
+    this.tagMessage = this.container.querySelector('#tagMessage')
   }
 
   // 向标签列表末尾添加指定的标签
@@ -280,6 +281,7 @@ class TagManager {
     this._create_tagsSelectedBtnList(tag)
     // 显示剩余的可以选择标签的数量
     this._remainingTagCount()
+    this._tagMessage(tag)
 
     return result
   }
@@ -338,6 +340,36 @@ class TagManager {
   // 剩余的可以选择的标签数量
   _remainingTagCount () {
     this.tagCount.textContent = this.maxQuantity - this.tagSelected.length
+  }
+
+  _tagMessage (msgText, msgType = 'danger') {
+    const msg = document.createElement('span')
+
+    msg.className = 'text-' + msgType
+    msg.innerText = msgText
+    this._toggle_tagMessage(msg)
+
+    this.tagMessage.innerHTML = ''
+    this.tagMessage.append(msg)
+  }
+
+  _toggle_tagMessage (msgEl, timeout = 5e3) {
+    this.tagMessage.classList.add('show')
+
+    const timeoutID_1 = setTimeout(() => {
+      this.tagMessage.classList.remove('show')
+    }, timeout)
+
+    const timeoutID_2 = setTimeout(() => {
+      msgEl.remove()
+    }, timeout + 500)
+
+    msgEl.addEventListener('click', () => {
+      clearTimeout(timeoutID_1)
+      clearTimeout(timeoutID_2)
+      this.tagMessage.classList.remove('show')
+      msgEl.remove()
+    })
   }
 
   // 在已选择的标签列表添加标签
