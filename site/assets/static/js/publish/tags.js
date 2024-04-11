@@ -254,6 +254,7 @@ class TagManager {
     this.maxQuantity = 5
 
     this._remainingTagCount()
+    this.clear()
   }
 
   // 各个容器元素的初始化
@@ -275,13 +276,11 @@ class TagManager {
     }
 
     const result = this.tagSelected.push(tag)
-    console.log(this.tagSelected)
 
     this._create_tagsSelectedList()
     this._create_tagsSelectedBtnList(tag)
     // 显示剩余的可以选择标签的数量
     this._remainingTagCount()
-    this._tagMessage(tag)
 
     return result
   }
@@ -290,7 +289,7 @@ class TagManager {
   remove (tag) {
     const indexOfTag = this.tagSelected.indexOf(tag)
     if (indexOfTag === -1) {
-      console.log('删除没有执行，当前不包含要删除的标签')
+      this.tagMessage_collapse('当前没有要删除的标签' + tag)
       return false
     }
 
@@ -300,21 +299,18 @@ class TagManager {
 
     if (result) {
       this._create_tagsSelectedList()
-      // this._create_tagsSelectedBtnList(tag)
       // 显示剩余的可以选择标签的数量
       this._remainingTagCount()
-      console.log('已经删除标签：' + tag)
+      this.tagMessage_collapse('已删除标签：' + tag, 'success')
     } else {
-      console.log('删除标签失败：' + tag)
+      this.tagMessage_collapse('删除标签失败：' + tag)
     }
 
     return result
   }
 
-  // 清空已选择标签列表中的所有标签
-  clearAllTagSelected () {
-    this.tagSelected = []
-    console.log('已经清除所有已选择的标签')
+  clear () {
+    this._create_clearAllBtn()
   }
 
   // 渲染标签tab导航
@@ -342,34 +338,47 @@ class TagManager {
     this.tagCount.textContent = this.maxQuantity - this.tagSelected.length
   }
 
-  _tagMessage (msgText, msgType = 'danger') {
+  tagMessage_collapse (msgText, msgType = 'danger') {
     const msg = document.createElement('span')
 
     msg.className = 'text-' + msgType
     msg.innerText = msgText
+    this._tagMessage_collapse(msg)
 
-    this._toggle_tagMessage()
     this.tagMessage.innerHTML = ''
     this.tagMessage.append(msg)
   }
 
-  _toggle_tagMessage (timeout = 5e3) {
-    this.tagMessage.classList.add('show')
+  // 清空已选择标签列表中的所有标签，并且重新计数
+  _clearAll () {
+    this.tagSelected = []
+    this.tagsSelectedList.innerHTML = ''
+    this.tagsSelectedBtnList.innerHTML = ''
+    this.tagMessage_collapse('已经清除所有的标签', 'success')
+    this._remainingTagCount()
+    this._create_clearAllBtn()
+  }
 
-    const timeoutID_1 = setTimeout(() => {
-      this.tagMessage.classList.remove('show')
-    }, timeout)
+  // 创建清除所有已经选中标签列表的按钮
+  _create_clearAllBtn () {
+    const button = document.createElement('button')
 
-    const timeoutID_2 = setTimeout(() => {
-      this.tagMessage.innerHTML = ''
-    }, timeout + 500)
+    button.className = 'btn-close border border-dark position-absolute top-0 end-0 tagClearAll'
+    button.type = 'button'
+    // button.id = 'tagClearAll'
+    button.addEventListener('click', () => this._clearAll())
 
-    this.tagMessage.addEventListener('click', () => {
-      clearTimeout(timeoutID_1)
-      clearTimeout(timeoutID_2)
-      this.tagMessage.classList.remove('show')
-      this.tagMessage.innerHTML = ''
-    })
+    this.tagsSelectedBtnList.append(button)
+  }
+
+  _tagMessage_collapse (msgEl) {
+    msgEl.dataset['bsToggle'] = 'collapse'
+    msgEl.dataset['bsTarget'] = '#' + this.tagMessage.id
+    const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage)
+    this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
+    this.tagMessage.addEventListener('shown.bs.collapse', () => setTimeout(() => collapse.hide(), 4000))
+
+    collapse.show()
   }
 
   // 在已选择的标签列表添加标签
@@ -512,25 +521,21 @@ class TagManager {
 
   /**
    * 模拟请求外部的标签数据
+   *
    * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
-   */
+   **/
   requestCategoryTagData (lang) {
     this._setData(lang)
-  }
-
-  // 清空标签列表中的所有标签
-  _clearAllTags () {
-    this.tagSelected = []
   }
 
   // 检查是否可以添加标签
   _isCanAdd (tag) {
     if (this._hasLimitExceeded(tag)) {
-      console.log('拒绝添加新标签，数量已经达到' + this.maxQuantity)
+      this.tagMessage_collapse('已达到' + this.maxQuantity + '个，请先删除部分已有标签')
       return false
     }
     if (this._hasSameAdded(tag)) {
-      console.log('拒绝添加新标签，标签已存在 ' + tag)
+      this.tagMessage_collapse('重复标签 ' + tag)
       return false
     }
     return true
@@ -545,7 +550,6 @@ class TagManager {
   _hasLimitExceeded () {
     return this.tagSelected.length >= this.maxQuantity
   }
-
 }
 
 let tagManager = new TagManager('#a-tags')
