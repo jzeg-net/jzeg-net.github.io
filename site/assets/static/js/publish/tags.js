@@ -365,7 +365,6 @@ class TagManager {
 
     button.className = 'btn-close border border-dark position-absolute top-0 end-0 tagClearAll'
     button.type = 'button'
-    // button.id = 'tagClearAll'
     button.addEventListener('click', () => this._clearAll())
 
     this.tagsSelectedBtnList.append(button)
