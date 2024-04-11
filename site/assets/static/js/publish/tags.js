@@ -347,13 +347,13 @@ class TagManager {
 
     msg.className = 'text-' + msgType
     msg.innerText = msgText
-    this._toggle_tagMessage(msg)
 
+    this._toggle_tagMessage()
     this.tagMessage.innerHTML = ''
     this.tagMessage.append(msg)
   }
 
-  _toggle_tagMessage (msgEl, timeout = 5e3) {
+  _toggle_tagMessage (timeout = 5e3) {
     this.tagMessage.classList.add('show')
 
     const timeoutID_1 = setTimeout(() => {
@@ -361,14 +361,14 @@ class TagManager {
     }, timeout)
 
     const timeoutID_2 = setTimeout(() => {
-      msgEl.remove()
+      this.tagMessage.innerHTML = ''
     }, timeout + 500)
 
-    msgEl.addEventListener('click', () => {
+    this.tagMessage.addEventListener('click', () => {
       clearTimeout(timeoutID_1)
       clearTimeout(timeoutID_2)
       this.tagMessage.classList.remove('show')
-      msgEl.remove()
+      this.tagMessage.innerHTML = ''
     })
   }
 
