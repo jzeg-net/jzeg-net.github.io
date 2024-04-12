@@ -660,17 +660,17 @@ class TagManager {
   }
 
   // 在标签搜索结果种创建可选的标签按钮列表
-  _create_tagSearchResultList (tags) {
+  _create_tagSearchResultList (searchResultData) {
     const tagSearchResultList = document.createElement('div')
 
     tagSearchResultList.className = 'list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList'
     tagSearchResultList.style.maxHeight = '12em'
 
-    tags.forEach((tag) => {
-      const tagName = tag['tag']
-      const tagCount = tag['count']
+    searchResultData.forEach((tags) => {
+      const tagName = tags['tag']
+      const tagCount = tags['count']
       const button = document.createElement('button')
-      const span = document.createElement('span')
+      const count = document.createElement('span')
 
       button.className = 'list-group-item list-group-item-dark list-group-item-action'
       button.type = 'button'
@@ -681,10 +681,10 @@ class TagManager {
       button.textContent = tagName
       button.addEventListener('click', () => this.add(tagName))
 
-      span.className = 'badge text-bg-secondary bg-opacity-25 rounded-pill'
-      span.textContent = tagCount
+      count.className = 'badge text-bg-secondary bg-opacity-25 rounded-pill'
+      count.textContent = tagCount
 
-      button.append(span)
+      button.append(count)
       tagSearchResultList.append(button)
     })
 
@@ -718,7 +718,7 @@ class TagManager {
   }
 
   // 在指定的标签类别下创建对应的标签列表
-  _create_navTag (categoryName, tagData = [], isActive = false, isFade = true) {
+  _create_navTag (categoryName, tagData, isActive = false, isFade = true) {
     const tabPane = document.createElement('div')
     const tagCategoryContent = document.createElement('div')
     const activeClassName = ['show', 'active']
@@ -745,11 +745,11 @@ class TagManager {
       button.type = 'button'
       button.dataset['bsToggle'] = 'button'
       button.dataset['tagName'] = tagName
-      button.innerText = tagName
+      button.textContent = tagName
       button.addEventListener('click', () => this.add(tagName))
 
       count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25'
-      count.textContent = tagCount ?? 0
+      count.textContent = tagCount
 
       button.append(count)
       tagCategoryContent.append(button)
