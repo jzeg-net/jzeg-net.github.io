@@ -573,8 +573,21 @@ class TagManager {
   _setData (language) {
     this.tags = chineseArticleTags
 
-    if (language === 'cn') this.tags = chineseArticleTags
+    if (language === 'zh') this.tags = chineseArticleTags
     if (language === 'en') this.tags = englishArticleTags
+  }
+
+  // 输出当前页面的语言
+  _documentLanguage (toLowerCase = false, onlyLanguage = false, isReplaceAll = false) {
+    let lang = document.documentElement.lang
+
+    toLowerCase ? lang = lang.toLowerCase() : ''
+
+    onlyLanguage ? lang = lang.split('-')[0] : ''
+
+    isReplaceAll ? lang = lang.replaceAll('-', '_') : ''
+
+    return lang
   }
 
   /**
@@ -582,7 +595,9 @@ class TagManager {
    *
    * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
    **/
-  requestCategoryTagData (lang) {
+  requestCategoryTagData () {
+    let lang = this._documentLanguage(1, 1)
+
     this._setData(lang)
   }
 
