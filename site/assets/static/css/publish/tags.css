@@ -85,3 +85,7 @@ details[open] .detail-mark span:last-of-type {
 .tag-category-content {
   scrollbar-width: var(--scrollbar-width);
 }
+
+.tagSearchInput[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}

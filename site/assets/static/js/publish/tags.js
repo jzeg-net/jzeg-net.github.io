@@ -1,246 +1,471 @@
 const chineseArticleTags = [
   {
-    category: '类别_1',
+    category: '科技',
     tags: [
       {
-        tag: '标签_1',
+        tag: '人工智能',
         count: 42,
         icon: true,
-        description: '这是标签 1 的中文描述'
+        description: '这是人工智能的中文描述'
       },
       {
-        tag: '标签_2',
+        tag: '大数据',
         count: 76,
         icon: false,
-        description: '这是标签 2 的中文描述'
+        description: '这是大数据的中文描述'
+      },
+      {
+        tag: '云计算',
+        count: 35,
+        icon: true,
+        description: '这是云计算的中文描述'
+      },
+      {
+        tag: '物联网',
+        count: 68,
+        icon: false,
+        description: '这是物联网的中文描述'
       }
     ]
   },
   {
-    category: '类别_2',
+    category: '娱乐',
     tags: [
       {
-        tag: '标签_3',
+        tag: '电影',
         count: 28,
         icon: true,
-        description: '这是标签 3 的中文描述'
+        description: '这是电影的中文描述'
       },
       {
-        tag: '标签_4',
+        tag: '音乐',
         count: 63,
         icon: false,
-        description: '这是标签 4 的中文描述'
+        description: '这是音乐的中文描述'
+      },
+      {
+        tag: '游戏',
+        count: 45,
+        icon: true,
+        description: '这是游戏的中文描述'
+      },
+      {
+        tag: '综艺',
+        count: 87,
+        icon: false,
+        description: '这是综艺的中文描述'
       }
     ]
   },
   {
-    category: '类别_3',
+    category: '生活',
     tags: [
       {
-        tag: '标签_5',
+        tag: '美食',
         count: 87,
         icon: true,
-        description: '这是标签 5 的中文描述'
+        description: '这是美食的中文描述'
       },
       {
-        tag: '标签_6',
+        tag: '旅行',
         count: 54,
         icon: false,
-        description: '这是标签 6 的中文描述'
+        description: '这是旅行的中文描述'
+      },
+      {
+        tag: '家居',
+        count: 32,
+        icon: true,
+        description: '这是家居的中文描述'
+      },
+      {
+        tag: '宠物',
+        count: 76,
+        icon: false,
+        description: '这是宠物的中文描述'
       }
     ]
   },
   {
-    category: '类别_4',
+    category: '教育',
     tags: [
       {
-        tag: '标签_7',
+        tag: '语文',
         count: 31,
         icon: true,
-        description: '这是标签 7 的中文描述'
+        description: '这是语文的中文描述'
       },
       {
-        tag: '标签_8',
+        tag: '数学',
         count: 98,
         icon: false,
-        description: '这是标签 8 的中文描述'
-      }
-    ]
-  },
-  {
-    category: '类别_5',
-    tags: [
-      {
-        tag: '标签_9',
-        count: 23,
-        icon: true,
-        description: '这是标签 9 的中文描述'
+        description: '这是数学的中文描述'
       },
       {
-        tag: '标签_10',
-        count: 72,
-        icon: false,
-        description: '这是标签 10 的中文描述'
-      }
-    ]
-  },
-  {
-    category: '类别_6',
-    tags: [
-      {
-        tag: '标签_11',
-        count: 67,
-        icon: true,
-        description: '这是标签 11 的中文描述'
-      },
-      {
-        tag: '标签_12',
-        count: 45,
-        icon: false,
-        description: '这是标签 12 的中文描述'
-      }
-    ]
-  },
-  {
-    category: '类别_7',
-    tags: [
-      {
-        tag: '标签_13',
+        tag: '英语',
         count: 56,
         icon: true,
-        description: '这是标签 13 的中文描述'
+        description: '这是英语的中文描述'
       },
       {
-        tag: '标签_14',
-        count: 81,
+        tag: '物理',
+        count: 23,
         icon: false,
-        description: '这是标签 14 的中文描述'
+        description: '这是物理的中文描述'
       }
     ]
   },
   {
-    category: '类别_8',
+    category: '健康',
     tags: [
       {
-        tag: '标签_15',
-        count: 39,
+        tag: '健身',
+        count: 23,
         icon: true,
-        description: '这是标签 15 的中文描述'
+        description: '这是健身的中文描述'
       },
       {
-        tag: '标签_16',
+        tag: '养生',
+        count: 72,
+        icon: false,
+        description: '这是养生的中文描述'
+      },
+      {
+        tag: '心理健康',
+        count: 45,
+        icon: true,
+        description: '这是心理健康的中文描述'
+      },
+      {
+        tag: '疾病预防',
+        count: 67,
+        icon: false,
+        description: '这是疾病预防的中文描述'
+      }
+    ]
+  },
+  {
+    category: '时尚',
+    tags: [
+      {
+        tag: '服装',
+        count: 67,
+        icon: true,
+        description: '这是服装的中文描述'
+      },
+      {
+        tag: '美容',
+        count: 45,
+        icon: false,
+        description: '这是美容的中文描述'
+      },
+      {
+        tag: '饰品',
+        count: 39,
+        icon: true,
+        description: '这是饰品的中文描述'
+      },
+      {
+        tag: '发型',
+        count: 81,
+        icon: false,
+        description: '这是发型的中文描述'
+      }
+    ]
+  },
+  {
+    category: '财经',
+    tags: [
+      {
+        tag: '股票',
+        count: 56,
+        icon: true,
+        description: '这是股票的中文描述'
+      },
+      {
+        tag: '基金',
+        count: 81,
+        icon: false,
+        description: '这是基金的中文描述'
+      },
+      {
+        tag: '债券',
+        count: 63,
+        icon: true,
+        description: '这是债券的中文描述'
+      },
+      {
+        tag: '期货',
+        count: 28,
+        icon: false,
+        description: '这是期货的中文描述'
+      }
+    ]
+  },
+  {
+    category: '体育',
+    tags: [
+      {
+        tag: '足球',
+        count: 39,
+        icon: true,
+        description: '这是足球的中文描述'
+      },
+      {
+        tag: '篮球',
         count: 69,
         icon: false,
-        description: '这是标签 16 的中文描述'
+        description: '这是篮球的中文描述'
+      },
+      {
+        tag: '网球',
+        count: 54,
+        icon: true,
+        description: '这是网球的中文描述'
+      },
+      {
+        tag: '高尔夫',
+        count: 98,
+        icon: false,
+        description: '这是高尔夫的中文描述'
       }
     ]
   }
 ]
 const englishArticleTags = [
   {
-    category: 'Category_1',
+    category: 'Technology',
     tags: [
       {
-        tag: 'Tag1',
-        count: 48,
+        tag: 'Artificial Intelligence',
+        count: 42,
         icon: true,
-        description: 'This is the description of Tag 1 in English'
+        description: 'This is the English description of artificial intelligence'
       },
       {
-        tag: 'Tag2',
-        count: 79,
+        tag: 'Big Data',
+        count: 76,
         icon: false,
-        description: 'This is the description of Tag 2 in English'
-      }
-    ]
-  },
-  {
-    category: 'Category_2',
-    tags: [
-      {
-        tag: 'Tag3',
-        count: 26,
-        icon: true,
-        description: 'This is the description of Tag 3 in English'
+        description: 'This is the English description of big data'
       },
       {
-        tag: 'Tag4',
-        count: 64,
-        icon: false,
-        description: 'This is the description of Tag 4 in English'
-      }
-    ]
-  },
-  {
-    category: 'Category_3',
-    tags: [
-      {
-        tag: 'Tag5',
-        count: 83,
-        icon: true,
-        description: 'This is the description of Tag 5 in English'
-      },
-      {
-        tag: 'Tag6',
-        count: 57,
-        icon: false,
-        description: 'This is the description of Tag 6 in English'
-      }
-    ]
-  },
-  {
-    category: 'Category_4',
-    tags: [
-      {
-        tag: 'Tag7',
+        tag: 'Cloud Computing',
         count: 35,
         icon: true,
-        description: 'This is the description of Tag 7 in English'
+        description: 'This is the English description of cloud computing'
       },
       {
-        tag: 'Tag8',
-        count: 94,
+        tag: 'Internet of Things',
+        count: 68,
         icon: false,
-        description: 'This is the description of Tag 8 in English'
+        description: 'This is the English description of the Internet of Things'
       }
     ]
   },
   {
-    category: 'Category_5',
+    category: 'Entertainment',
     tags: [
       {
-        tag: 'Tag9',
-        count: 29,
+        tag: 'Movies',
+        count: 28,
         icon: true,
-        description: 'This is the description of Tag 9 in English'
+        description: 'This is the English description of movies'
       },
       {
-        tag: 'Tag10',
-        count: 71,
+        tag: 'Music',
+        count: 63,
         icon: false,
-        description: 'This is the description of Tag 10 in English'
+        description: 'This is the English description of music'
+      },
+      {
+        tag: 'Games',
+        count: 45,
+        icon: true,
+        description: 'This is the English description of games'
+      },
+      {
+        tag: 'Variety Shows',
+        count: 87,
+        icon: false,
+        description: 'This is the English description of variety shows'
       }
     ]
   },
   {
-    category: 'Category_6',
+    category: 'Life',
     tags: [
       {
-        tag: 'Tag11',
-        count: 62,
+        tag: 'Food',
+        count: 87,
         icon: true,
-        description: 'This is the description of Tag 11 in English'
+        description: 'This is the English description of food'
       },
       {
-        tag: 'Tag12',
-        count: 38,
+        tag: 'Travel',
+        count: 54,
         icon: false,
-        description: 'This is the description of Tag 12 in English'
+        description: 'This is the English description of travel'
+      },
+      {
+        tag: 'Home Furnishing',
+        count: 32,
+        icon: true,
+        description: 'This is the English description of home furnishing'
+      },
+      {
+        tag: 'Pets',
+        count: 76,
+        icon: false,
+        description: 'This is the English description of pets'
+      }
+    ]
+  },
+  {
+    category: 'Education',
+    tags: [
+      {
+        tag: 'Chinese',
+        count: 31,
+        icon: true,
+        description: 'This is the English description of Chinese'
+      },
+      {
+        tag: 'Mathematics',
+        count: 98,
+        icon: false,
+        description: 'This is the English description of mathematics'
+      },
+      {
+        tag: 'English',
+        count: 56,
+        icon: true,
+        description: 'This is the English description of English'
+      },
+      {
+        tag: 'Physics',
+        count: 23,
+        icon: false,
+        description: 'This is the English description of physics'
+      }
+    ]
+  },
+  {
+    category: 'Health',
+    tags: [
+      {
+        tag: 'Fitness',
+        count: 23,
+        icon: true,
+        description: 'This is the English description of fitness'
+      },
+      {
+        tag: 'Health Preservation',
+        count: 72,
+        icon: false,
+        description: 'This is the English description of health preservation'
+      },
+      {
+        tag: 'Mental Health',
+        count: 45,
+        icon: true,
+        description: 'This is the English description of mental health'
+      },
+      {
+        tag: 'Disease Prevention',
+        count: 67,
+        icon: false,
+        description: 'This is the English description of disease prevention'
+      }
+    ]
+  },
+  {
+    category: 'Fashion',
+    tags: [
+      {
+        tag: 'Clothing',
+        count: 67,
+        icon: true,
+        description: 'This is the English description of clothing'
+      },
+      {
+        tag: 'Beauty',
+        count: 45,
+        icon: false,
+        description: 'This is the English description of beauty'
+      },
+      {
+        tag: 'Accessories',
+        count: 39,
+        icon: true,
+        description: 'This is the English description of accessories'
+      },
+      {
+        tag: 'Hair Style',
+        count: 81,
+        icon: false,
+        description: 'This is the English description of hair style'
+      }
+    ]
+  },
+  {
+    category: 'Finance',
+    tags: [
+      {
+        tag: 'Stocks',
+        count: 56,
+        icon: true,
+        description: 'This is the English description of stocks'
+      },
+      {
+        tag: 'Funds',
+        count: 81,
+        icon: false,
+        description: 'This is the English description of funds'
+      },
+      {
+        tag: 'Bonds',
+        count: 63,
+        icon: true,
+        description: 'This is the English description of bonds'
+      },
+      {
+        tag: 'Futures',
+        count: 28,
+        icon: false,
+        description: 'This is the English description of futures'
+      }
+    ]
+  },
+  {
+    category: 'Sports',
+    tags: [
+      {
+        tag: 'Football',
+        count: 39,
+        icon: true,
+        description: 'This is the English description of football'
+      },
+      {
+        tag: 'Basketball',
+        count: 69,
+        icon: false,
+        description: 'This is the English description of basketball'
+      },
+      {
+        tag: 'Tennis',
+        count: 54,
+        icon: true,
+        description: 'This is the English description of tennis'
+      },
+      {
+        tag: 'Golf',
+        count: 98,
+        icon: false,
+        description: 'This is the English description of golf'
       }
     ]
   }
 ]
-const articleTags = [chineseArticleTags, englishArticleTags]
 
 class TagManager {
   constructor (container) {
@@ -255,6 +480,26 @@ class TagManager {
 
     this._remainingTagCount()
     this.clear()
+    this.tagSearchReset.addEventListener('click', (event) => {
+      console.log(event)
+      event.preventDefault()
+      this.tagSearchInput.value = ''
+
+      const collapse = this.tagSearchResult_collapse()
+      collapse.hide()
+    })
+
+    this.tagSearchSubmit.addEventListener('click', (event) => {
+      event.preventDefault()
+      const searchValue = this.tagSearchInput.value
+      this.tagSearch(searchValue)
+    })
+    // this.tagSearchInput.addEventListener('keyup', (event) => {
+    //   event.preventDefault()
+    //   if (event.keyCode !== 13) return
+    //   const searchValue = event.target.value
+    //   this.tagSearch(searchValue)
+    // })
   }
 
   // 各个容器元素的初始化
@@ -265,6 +510,9 @@ class TagManager {
     this.tagCategoryList = this.container.querySelector('#tagCategoryList')
     this.tagList = this.container.querySelector('#tagList')
     this.tagCount = this.container.querySelector('#remainingTagCount')
+    this.tagSearchInput = this.container.querySelector('#tagSearchInput')
+    this.tagSearchReset = this.container.querySelector('#tagSearchReset')
+    this.tagSearchSubmit = this.container.querySelector('#tagSearchSubmit')
     this.tagSearchResult = this.container.querySelector('#tagSearchResult')
     this.tagMessage = this.container.querySelector('#tagMessage')
   }
@@ -412,13 +660,15 @@ class TagManager {
   }
 
   // 在标签搜索结果种创建可选的标签按钮列表
-  _create_tagSearchResultList (tags = ['searchResult-1', 'searchResult-2', 'searchResult-3', 'searchResult-4', 'searchResult-5', 'searchResult-6', 'searchResult-7', 'searchResult-8']) {
+  _create_tagSearchResultList (tags) {
     const tagSearchResultList = document.createElement('div')
 
     tagSearchResultList.className = 'list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList'
     tagSearchResultList.style.maxHeight = '12em'
 
     tags.forEach((tag) => {
+      const tagName = tag['tag']
+      const tagCount = tag['count']
       const button = document.createElement('button')
       const span = document.createElement('span')
 
@@ -428,11 +678,11 @@ class TagManager {
       button.ariaPressed = false
       button.style.setProperty('--bs-list-group-active-bg', '#485860')
       button.style.setProperty('--bs-list-group-active-border-color', '#485860')
-      button.textContent = tag
-      button.addEventListener('click', () => this.add(tag))
+      button.textContent = tagName
+      button.addEventListener('click', () => this.add(tagName))
 
       span.className = 'badge text-bg-secondary bg-opacity-25 rounded-pill'
-      span.textContent = Math.round(Math.random() * 100)
+      span.textContent = tagCount
 
       button.append(span)
       tagSearchResultList.append(button)
@@ -513,7 +763,6 @@ class TagManager {
   _setData (language) {
     this.tags = chineseArticleTags
 
-    if (language === 'all') this.tags = articleTags
     if (language === 'cn') this.tags = chineseArticleTags
     if (language === 'en') this.tags = englishArticleTags
   }
@@ -549,10 +798,41 @@ class TagManager {
   _hasLimitExceeded () {
     return this.tagSelected.length >= this.maxQuantity
   }
+
+  tagSearch (searchValue) {
+    const collapse = this.tagSearchResult_collapse()
+    collapse.show()
+
+    this.requestCategoryTagData()
+
+    const searchResult = []
+
+    this.tags.forEach(category => {
+      category.tags.forEach(targetTag => {
+        if (targetTag.tag.includes(searchValue)) {
+          searchResult.push(targetTag)
+        }
+      })
+    })
+
+    if (!searchResult) {
+      this.tagMessage_collapse('没有匹配的标签')
+      return
+    }
+
+    this.tagMessage_collapse(`搜索到${searchResult.length}条结果`, 'success')
+    this._create_tagSearchResultList(searchResult)
+  }
+
+  tagSearchResult_collapse () {
+    return bootstrap.Collapse.getOrCreateInstance(this.tagSearchResult, { toggle: false })
+  }
 }
 
-let tagManager = new TagManager('#a-tags')
+window.addEventListener('DOMContentLoaded', () => {
+  let tagManager = new TagManager('#a-tags')
 
-tagManager._render_tabNav(chineseArticleTags)
+  tagManager._render_tabNav(chineseArticleTags)
 // tagManager._render_tabNav(englishArticleTags)
-tagManager._create_tagSearchResultList()
+//   tagManager._create_tagSearchResultList()
+})

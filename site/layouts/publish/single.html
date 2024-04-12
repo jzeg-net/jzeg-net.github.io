@@ -36,12 +36,15 @@
                         </div>
                         <div class="p-2 border-top">
                             <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">
-                                <input class="p-2 flex-fill bg-transparent border-0" type="search" name="TagSearch" id="tagSearch" placeholder="{{ T "search" }}" autocomplete="off" style="min-inline-size: 0;outline: none;">
-                                <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
+                                <input class="p-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" style="min-inline-size: 0;outline: none;">
+                                <button class="btn" type="reset" id="tagSearchReset">
+                                    <span class="px-2"><svg class="bi text-secondary"><use href="#bi-x-lg"></use></svg></span>
+                                </button>
+                                <button class="btn" type="submit" id="tagSearchSubmit">
+                                    <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
+                                </button>
                             </div>
-                        </div>
-                        <div class="p-2 border-top border-bottom">
-                            <div id="tagSearchResult"></div>
+                            <div class="collapse" id="tagSearchResult"></div>
                         </div>
                         <div class="p-2 small">
                             <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
