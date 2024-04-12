@@ -564,6 +564,11 @@ class TagManager {
     this._create_clearAllBtn()
   }
 
+  // 返回已选择的标签
+  getSelectedTags () {
+    return this.tagSelected
+  }
+
   // 根据语言设置所有标签数据
   _setData (language) {
     this.tags = chineseArticleTags
@@ -818,10 +823,8 @@ class TagManager {
       })
     })
 
-    if (searchResult.length === 0) {
-      this.tagMessage_collapse('没有匹配的标签')
-      return
-    }
+    if (searchResult.length < 1) return
+
     this.tagMessage_collapse(`搜索到${searchResult.length}条结果`, 'success')
 
     this._create_tagSearchResultList(searchResult)
