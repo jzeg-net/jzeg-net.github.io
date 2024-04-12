@@ -477,9 +477,12 @@ class TagManager {
     this.tagSelected = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
+    // 请求所有的标签
+    this.requestCategoryTagData()
 
     this._remainingTagCount()
     this.clear()
+    this._render_tabNav(this.tags)
     this.tagSearchReset.addEventListener('click', (event) => {
       console.log(event)
       event.preventDefault()
@@ -559,6 +562,23 @@ class TagManager {
 
   clear () {
     this._create_clearAllBtn()
+  }
+
+  // 根据语言设置所有标签数据
+  _setData (language) {
+    this.tags = chineseArticleTags
+
+    if (language === 'cn') this.tags = chineseArticleTags
+    if (language === 'en') this.tags = englishArticleTags
+  }
+
+  /**
+   * 模拟请求外部的标签数据
+   *
+   * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
+   **/
+  requestCategoryTagData (lang) {
+    this._setData(lang)
   }
 
   // 渲染标签tab导航
@@ -661,6 +681,7 @@ class TagManager {
 
   // 在标签搜索结果种创建可选的标签按钮列表
   _create_tagSearchResultList (searchResultData) {
+    this.tagSearchResult.innerHTML = ''
     const tagSearchResultList = document.createElement('div')
 
     tagSearchResultList.className = 'list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList'
@@ -760,22 +781,6 @@ class TagManager {
     this.tagList.append(tabPane)
   }
 
-  _setData (language) {
-    this.tags = chineseArticleTags
-
-    if (language === 'cn') this.tags = chineseArticleTags
-    if (language === 'en') this.tags = englishArticleTags
-  }
-
-  /**
-   * 模拟请求外部的标签数据
-   *
-   * 最终实际需要使用 fetch 实现外部请求，但是获取到的数据格式不变
-   **/
-  requestCategoryTagData (lang) {
-    this._setData(lang)
-  }
-
   // 检查是否可以添加标签
   _isCanAdd (tag) {
     if (this._hasLimitExceeded(tag)) {
@@ -803,8 +808,6 @@ class TagManager {
     const collapse = this.tagSearchResult_collapse()
     collapse.show()
 
-    this.requestCategoryTagData()
-
     const searchResult = []
 
     this.tags.forEach(category => {
@@ -815,12 +818,12 @@ class TagManager {
       })
     })
 
-    if (!searchResult) {
+    if (searchResult.length === 0) {
       this.tagMessage_collapse('没有匹配的标签')
       return
     }
-
     this.tagMessage_collapse(`搜索到${searchResult.length}条结果`, 'success')
+
     this._create_tagSearchResultList(searchResult)
   }
 
@@ -831,8 +834,4 @@ class TagManager {
 
 window.addEventListener('DOMContentLoaded', () => {
   let tagManager = new TagManager('#a-tags')
-
-  tagManager._render_tabNav(chineseArticleTags)
-// tagManager._render_tabNav(englishArticleTags)
-//   tagManager._create_tagSearchResultList()
 })
