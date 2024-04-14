@@ -18,12 +18,15 @@
                                 <span class="summaryPlaceholderText">设置标签</span>
                             </div>
                             <div class="detail-mark text-secondary">
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-up-fill"></use></svg></span>
+                                <svg class="bi"><use href="#bi-caret-up-fill"></use></svg>
+                                <svg class="bi"><use href="#bi-caret-down-fill"></use></svg>
                             </div>
                         </div>
                     </summary>
                     <div>
+                        <div class="p-2 border-top">
+                            <div class="position-relative d-flex flex-wrap column-gap-1 row-gap-2 overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 8em;"></div>
+                        </div>
                         <div class="p-2 border-top">
                             <div class="d-flex justify-content-between align-items-center small">
                                 <p class="mb-0">还可以添加<span class="px-2" id="remainingTagCount"></span>个标签</p>
@@ -32,21 +35,18 @@
                             <p class="mb-0 small collapse fade" id="tagMessage"></p>
                         </div>
                         <div class="p-2 border-top">
-                            <div class="position-relative d-flex flex-wrap column-gap-1 row-gap-2 overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 8em;"></div>
-                        </div>
-                        <div class="p-2 border-top">
-                            <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">
-                                <input class="p-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" style="min-inline-size: 0;outline: none;">
-                                <button class="btn" type="reset" id="tagSearchReset">
+                            <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis" id="tagSearch">
+                                <input class="p-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" aria-label="{{ T "search" }}" style="min-inline-size: 0;outline: none;">
+                                <button class="btn tagSearchReset" type="reset" id="tagSearchReset">
                                     <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
                                 </button>
-                                <button class="btn" type="submit" id="tagSearchSubmit">
+                                <button class="btn tagSearchSubmit" type="submit" id="tagSearchSubmit">
                                     <svg class="bi text-secondary"><title>{{ T "search" }}</title><use href="#bi-search"></use></svg>
                                 </button>
                             </div>
                             <div class="collapse" id="tagSearchResult"></div>
                         </div>
-                        <div class="p-2 small">
+                        <div class="p-2 border-top">
                             <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
                                 <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll tag-category-tab" role="tablist" id="tagCategoryList"></ul>
                             </nav>

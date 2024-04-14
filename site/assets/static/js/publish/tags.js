@@ -487,6 +487,7 @@ class TagManager {
       console.log(event)
       event.preventDefault()
       this.tagSearchInput.value = ''
+      this.tagSearchInput.focus()
 
       const collapse = this.tagSearchResult_collapse()
       collapse.hide()

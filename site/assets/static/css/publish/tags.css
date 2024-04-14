@@ -1,16 +1,12 @@
-details .detail-mark span:first-of-type {
+details .detail-mark svg {
+  display: none;
+}
+
+details[open] .detail-mark svg:first-child {
   display: block;
 }
 
-details .detail-mark span:last-of-type {
-  display: none;
-}
-
-details[open] .detail-mark span:first-of-type {
-  display: none;
-}
-
-details[open] .detail-mark span:last-of-type {
+details:not([open]) .detail-mark svg:last-child {
   display: block;
 }
 
@@ -86,6 +82,17 @@ details[open] .detail-mark span:last-of-type {
   scrollbar-width: var(--scrollbar-width);
 }
 
+/* 隐藏搜索框默认的清除按钮 & 使用自定义的按钮 */
 .tagSearchInput[type="search"]::-webkit-search-cancel-button {
   display: none;
+}
+
+.tagSearchInput ~ button {
+  transition: opacity 1s, transform .1s;
+}
+
+.tagSearchInput:not(:focus) + .tagSearchReset,
+.tagSearchInput:not(:focus) ~ .tagSearchSubmit {
+  transform: scaleX(0);
+  opacity: 0;
 }
