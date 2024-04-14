@@ -6,13 +6,11 @@
     {{- .Content -}}
     <div>
         <div class="d-flex flex-column row-gap-3">
-            <div class="pt-3">
-                <div class="d-flex flex-row justify-content-between align-items-center border rounded bg-transparent bg-opacity-25 text-light-emphasis" id="tagTitle">
-                    <input type="text" class="p-2 flex-fill bg-transparent border-0 tagTitleInput" id="tagTitleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="outline: none;">
-                    <button class="btn border-0 tagTitleReset" type="reset" id="tagTitleReset">
-                        <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
-                    </button>
-                </div>
+            <div class="d-flex flex-row justify-content-between align-items-center border rounded bg-transparent bg-opacity-25 text-light-emphasis" id="a-title">
+                <input type="text" class="p-2 flex-fill bg-transparent border-0 titleInput" id="titleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="outline: none;">
+                <button class="btn border-0 titleReset" type="reset" id="titleReset">
+                    <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
+                </button>
             </div>
             <div>
                 <details class="position-relative rounded border" id="a-tags">

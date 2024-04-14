@@ -483,7 +483,15 @@ class TagManager {
     this._remainingTagCount()
     this.clear()
     this._render_tabNav(this.tags)
-    this.tagSearchReset.addEventListener('click', (event) => {
+
+    this.titleReset.addEventListener('click', event => {
+      console.log(event)
+      event.preventDefault()
+      this.titleInput.value = ''
+      this.titleInput.focus()
+    })
+
+    this.tagSearchReset.addEventListener('click', event => {
       console.log(event)
       event.preventDefault()
       this.tagSearchInput.value = ''
@@ -493,7 +501,7 @@ class TagManager {
       collapse.hide()
     })
 
-    this.tagSearchInput.addEventListener('keyup', (event) => {
+    this.tagSearchInput.addEventListener('keyup', event => {
       event.preventDefault()
       // if (event.keyCode !== 13) return
       const searchValue = event.target.value
@@ -509,9 +517,10 @@ class TagManager {
     this.tagCategoryList = this.container.querySelector('#tagCategoryList')
     this.tagList = this.container.querySelector('#tagList')
     this.tagCount = this.container.querySelector('#remainingTagCount')
+    this.titleInput = document.querySelector('#titleInput')
+    this.titleReset = document.querySelector('#titleReset')
     this.tagSearchInput = this.container.querySelector('#tagSearchInput')
     this.tagSearchReset = this.container.querySelector('#tagSearchReset')
-    this.tagSearchSubmit = this.container.querySelector('#tagSearchSubmit')
     this.tagSearchResult = this.container.querySelector('#tagSearchResult')
     this.tagMessage = this.container.querySelector('#tagMessage')
   }
