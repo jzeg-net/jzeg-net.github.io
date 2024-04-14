@@ -87,12 +87,23 @@ details:not([open]) .detail-mark svg:last-child {
   display: none;
 }
 
+.tagTitleInput ~ button,
 .tagSearchInput ~ button {
-  transition: opacity 1s, transform .1s;
+  transition: opacity .5s linear, transform .15s linear;
 }
 
-.tagSearchInput:not(:focus) + .tagSearchReset,
-.tagSearchInput:not(:focus) ~ .tagSearchSubmit {
-  transform: scaleX(0);
+.tagTitleInput ~ button:focus,
+.tagSearchInput ~ button:focus {
+}
+
+.tagTitleInput:not(:focus) + .tagTitleReset,
+.tagSearchInput:not(:focus) + .tagSearchReset {
+  transform: scale(0, 0);
   opacity: 0;
+}
+
+.tagTitleInput + .tagTitleReset:focus-within,
+.tagSearchInput + .tagSearchReset:focus-within {
+  transform: none;
+  opacity: 1;
 }

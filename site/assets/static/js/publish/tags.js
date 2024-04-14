@@ -493,17 +493,12 @@ class TagManager {
       collapse.hide()
     })
 
-    this.tagSearchSubmit.addEventListener('click', (event) => {
+    this.tagSearchInput.addEventListener('keyup', (event) => {
       event.preventDefault()
-      const searchValue = this.tagSearchInput.value
+      // if (event.keyCode !== 13) return
+      const searchValue = event.target.value
       this.tagSearch(searchValue)
     })
-    // this.tagSearchInput.addEventListener('keyup', (event) => {
-    //   event.preventDefault()
-    //   if (event.keyCode !== 13) return
-    //   const searchValue = event.target.value
-    //   this.tagSearch(searchValue)
-    // })
   }
 
   // 各个容器元素的初始化
@@ -678,23 +673,27 @@ class TagManager {
   _create_tagsSelectedBtnList (tagName) {
     const button = document.createElement('button')
     const span = document.createElement('span')
-    const svg = document.createElement('svg')
-    const use = document.createElement('use')
+    const ns = 'http://www.w3.org/2000/svg'
+    const svg = document.createElementNS(ns, 'svg')
+    const title = document.createElementNS(ns, 'title')
+    const use = document.createElementNS(ns, 'use')
 
-    button.className = 'btn btn-sm btn-outline-secondary'
+    button.className = 'btn btn-sm btn-outline-secondary d-flex align-items-center'
     button.type = 'button'
     button.dataset['tagName'] = tagName
-    button.ariaLabel = '删除 ' + tagName
+    button.title = '删除标签 ' + tagName
+    button.ariaLabel = '删除标签 ' + tagName
     button.addEventListener('click', () => {
       this.remove(button.dataset['tagName'])
       button.remove()
     })
 
-    svg.className = 'bi'
-    use.setAttribute('href', '#bi-x-lg')
+    svg.classList.add('fs-6', 'ps-1', 'bi')
+    title.textContent = '删除标签 ' + tagName
+    use.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#bi-x-lg')
 
     span.textContent = tagName
-    svg.append(use)
+    svg.append(title, use)
     button.append(span, svg)
 
     this.tagsSelectedBtnList.append(button)

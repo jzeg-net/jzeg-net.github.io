@@ -84,7 +84,7 @@ class Write {
   _documentLanguage = () => document.documentElement.lang
 }
 
-let title = document.querySelector('#title')
+let title = document.querySelector('#tagTitleInput')
 let clearDraft = document.querySelector('#clearDraft')
 let submit = document.querySelector('#sureSubmitBtn')
 

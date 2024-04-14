@@ -5,9 +5,14 @@
 <main class="pb-5 container gx-1 gx-sm-0" id="content">
     {{- .Content -}}
     <div>
-        <form class="d-flex flex-column row-gap-3" accept-charset="UTF-8">
+        <div class="d-flex flex-column row-gap-3">
             <div class="pt-3">
-                <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
+                <div class="d-flex flex-row justify-content-between align-items-center border rounded bg-transparent bg-opacity-25 text-light-emphasis" id="tagTitle">
+                    <input type="text" class="p-2 flex-fill bg-transparent border-0 tagTitleInput" id="tagTitleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="outline: none;">
+                    <button class="btn border-0 tagTitleReset" type="reset" id="tagTitleReset">
+                        <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
+                    </button>
+                </div>
             </div>
             <div>
                 <details class="position-relative rounded border" id="a-tags">
@@ -37,12 +42,10 @@
                         <div class="p-2 border-top">
                             <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis" id="tagSearch">
                                 <input class="p-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" aria-label="{{ T "search" }}" style="min-inline-size: 0;outline: none;">
-                                <button class="btn tagSearchReset" type="reset" id="tagSearchReset">
+                                <button class="btn border-0 tagSearchReset" type="reset" id="tagSearchReset">
                                     <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
                                 </button>
-                                <button class="btn tagSearchSubmit" type="submit" id="tagSearchSubmit">
-                                    <svg class="bi text-secondary"><title>{{ T "search" }}</title><use href="#bi-search"></use></svg>
-                                </button>
+                                <span class="p-2"><svg class="bi text-secondary"><title>{{ T "search" }}</title><use href="#bi-search"></use></svg></span>
                             </div>
                             <div class="collapse" id="tagSearchResult"></div>
                         </div>
@@ -76,7 +79,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </main>
 {{ end }}
