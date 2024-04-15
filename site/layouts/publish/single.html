@@ -7,8 +7,8 @@
     <div>
         <div class="d-flex flex-column row-gap-3">
             <div class="d-flex flex-row justify-content-between align-items-center border rounded bg-transparent bg-opacity-25 text-light-emphasis" id="a-title">
-                <input type="text" class="p-2 flex-fill bg-transparent border-0 titleInput" id="titleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="outline: none;">
-                <button class="btn border-0 titleReset" type="reset" id="titleReset">
+                <input type="text" class="p-2 flex-fill bg-transparent border-0 titleInput" id="titleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="min-inline-size: 0;outline: none;">
+                <button class="px-1 btn border-0 titleReset" type="reset" id="titleReset">
                     <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
                 </button>
             </div>
@@ -40,7 +40,7 @@
                         <div class="p-2 border-top">
                             <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis" id="tagSearch">
                                 <input class="p-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" aria-label="{{ T "search" }}" style="min-inline-size: 0;outline: none;">
-                                <button class="btn border-0 tagSearchReset" type="reset" id="tagSearchReset">
+                                <button class="px-1 btn border-0 tagSearchReset" type="reset" id="tagSearchReset">
                                     <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
                                 </button>
                                 <span class="p-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
