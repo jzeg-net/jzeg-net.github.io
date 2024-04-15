@@ -525,8 +525,8 @@ class TagManager {
 
   // 向标签列表末尾添加指定的标签
   add (tagName) {
-    if (!this._isCanAdd(tagName)) {
-      return false
+    if (this._isAdd(tagName)) {
+      return true
     }
 
     const result = this.tagSelected.push(tagName)
@@ -856,17 +856,17 @@ class TagManager {
     }
   }
 
-  // 检查是否可以添加标签
-  _isCanAdd (tag) {
+  // 检查是否已经添加指定的标签
+  _isAdd (tag) {
     if (this._hasLimitExceeded(tag)) {
       this.tagMessage_collapse('已达到' + this.maxQuantity + '个，请先删除部分已有标签')
-      return false
+      return true
     }
     if (this._hasSameAdded(tag)) {
       this.tagMessage_collapse('重复标签 ' + tag)
-      return false
+      return true
     }
-    return true
+    return false
   }
 
   // 检查是否已经存在相同的tag
