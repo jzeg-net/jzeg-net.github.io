@@ -89,7 +89,7 @@ details:not([open]) .detail-mark svg:last-child {
 
 .titleInput ~ button,
 .tagSearchInput ~ button {
-  transition: opacity .5s linear, transform .15s linear;
+  transition: opacity .3s linear, transform .25s linear;
 }
 
 .titleInput ~ button:focus,
