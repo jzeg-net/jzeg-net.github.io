@@ -512,10 +512,10 @@ class TagManager {
   // 各个容器元素的初始化
   initContainer (container) {
     this.container = document.querySelector(container)
-    this.tagsSelectedList = this.container.querySelector('#tagSelectedList')
-    this.tagsSelectedBtnList = this.container.querySelector('#tagSelectedBtnList')
-    this.tagCategoryList = this.container.querySelector('#tagCategoryList')
-    this.tagList = this.container.querySelector('#tagList')
+    this.tagSelectedList = this.container.querySelector('#tagSelectedList')
+    this.tagSelectedBtnList = this.container.querySelector('#tagSelectedBtnList')
+    this.tagNavCategoryList = this.container.querySelector('#tagNavCategoryList')
+    this.tagNavTabList = this.container.querySelector('#tagNavTabList')
     this.tagCount = this.container.querySelector('#remainingTagCount')
     this.titleInput = document.querySelector('#titleInput')
     this.titleReset = document.querySelector('#titleReset')
@@ -542,7 +542,7 @@ class TagManager {
   }
 
   // 从已选择的标签列表中删除指定的标签
-  remove (tagName) {
+  removeTagSelected (tagName) {
     const indexOfTag = this.tagSelected.indexOf(tagName)
     if (indexOfTag === -1) {
       this.tagMessage_collapse('当前没有要删除的标签 ' + tagName)
@@ -622,7 +622,7 @@ class TagManager {
     categoryTag.forEach((tagData, index) => {
       let categoryName = category[index]
       let isActive = !index
-      this._create_navTag(categoryName, tagData, isActive)
+      this._create_navTab(categoryName, tagData, isActive)
     })
   }
 
@@ -644,12 +644,12 @@ class TagManager {
 
   // 刷新已选择标签列表的内容
   refreshTagSelectedListContent () {
-    this.tagsSelectedList.textContent = this.tagSelected.join(', ')
+    this.tagSelectedList.textContent = this.tagSelected.join(', ')
   }
 
   // 从已选择标签按钮列表删除指定标签的按钮
   removeTagSelectedBtnList (tagName) {
-    let btn = this.tagsSelectedBtnList.querySelector(`button[data-tag-name=${tagName}]`)
+    let btn = this.tagSelectedBtnList.querySelector(`button[data-tag-name=${tagName}]`)
     if (btn) {
       btn.remove()
     }
@@ -658,8 +658,8 @@ class TagManager {
   // 清空已选择标签列表中的所有标签，并且重新计数
   _clearAll () {
     this.tagSelected = []
-    this.tagsSelectedList.innerHTML = ''
-    this.tagsSelectedBtnList.innerHTML = ''
+    this.tagSelectedList.innerHTML = ''
+    this.tagSelectedBtnList.innerHTML = ''
     this.tagMessage_collapse('已经清除所有的标签', 'success')
     this._remainingTagCount()
     this._create_clearAllBtn()
@@ -673,7 +673,7 @@ class TagManager {
     button.type = 'button'
     button.addEventListener('click', () => this._clearAll())
 
-    this.tagsSelectedBtnList.append(button)
+    this.tagSelectedBtnList.append(button)
   }
 
   _tagMessage_collapse (msgEl) {
@@ -701,7 +701,8 @@ class TagManager {
     button.title = '删除标签 ' + tagName
     button.ariaLabel = '删除标签 ' + tagName
     button.addEventListener('click', () => {
-      this.remove(tagName)
+      this.removeTagSelected(tagName)
+      this._inactive_btn(tagName)
       button.remove()
     })
 
@@ -713,7 +714,7 @@ class TagManager {
     svg.append(title, use)
     button.append(span, svg)
 
-    this.tagsSelectedBtnList.append(button)
+    this.tagSelectedBtnList.append(button)
   }
 
   // 在标签搜索结果种创建可选的标签按钮列表
@@ -733,6 +734,7 @@ class TagManager {
       button.className = 'list-group-item list-group-item-dark list-group-item-action'
       button.type = 'button'
       button.dataset['bsToggle'] = 'button'
+      button.dataset['tagName'] = tagName
       button.ariaPressed = false
       button.style.setProperty('--bs-list-group-active-bg', '#485860')
       button.style.setProperty('--bs-list-group-active-border-color', '#485860')
@@ -742,7 +744,8 @@ class TagManager {
         if (button.classList.contains('active')) {
           this.add(tagName)
         } else {
-          this.remove(tagName)
+          this.removeTagSelected(tagName)
+          this.removeTagSelectedBtnList(tagName)
         }
       })
 
@@ -779,11 +782,11 @@ class TagManager {
 
     li.append(button)
 
-    this.tagCategoryList.append(li)
+    this.tagNavCategoryList.append(li)
   }
 
-  // 在指定的标签类别下创建对应的标签列表
-  _create_navTag (categoryName, tagData, isActive = false, isFade = true) {
+  // 在指定的类别下创建对应的标签列表
+  _create_navTab (categoryName, tagData, isActive = false, isFade = true) {
     const tabPane = document.createElement('div')
     const tagCategoryContent = document.createElement('div')
     const activeClassName = ['show', 'active']
@@ -816,7 +819,7 @@ class TagManager {
         if (button.classList.contains('active')) {
           this.add(tagName)
         } else {
-          this.remove(tagName)
+          this.removeTagSelected(tagName)
           this.removeTagSelectedBtnList(tagName)
         }
       })
@@ -830,7 +833,31 @@ class TagManager {
 
     tabPane.append(tagCategoryContent)
 
-    this.tagList.append(tabPane)
+    this.tagNavTabList.append(tabPane)
+  }
+
+  // 将标签按钮的样式状态转变为不活跃
+  _inactive_btn (tagName) {
+    this._inactive_searchResultBtn(tagName)
+    this._inactive_navTabBtn(tagName)
+  }
+
+  // 将搜索结果中的标签按钮的样式状态转变为不活跃
+  _inactive_searchResultBtn (tagName) {
+    let tagBtn = this.tagSearchResult.querySelector(`button[data-tag-name=${tagName}]`)
+    if (tagBtn) {
+      tagBtn.classList.remove('active')
+      tagBtn.setAttribute('aria-pressed', false)
+    }
+  }
+
+  // 将Tab中的标签按钮的样式状态转变为不活跃
+  _inactive_navTabBtn (tagName) {
+    let tagBtn = this.tagNavTabList.querySelector(`button[data-tag-name=${tagName}]`)
+    if (tagBtn) {
+      tagBtn.classList.remove('active')
+      tagBtn.setAttribute('aria-pressed', false)
+    }
   }
 
   // 检查是否可以添加标签
