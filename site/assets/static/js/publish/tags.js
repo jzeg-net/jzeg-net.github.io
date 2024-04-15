@@ -526,15 +526,15 @@ class TagManager {
   }
 
   // 向标签列表末尾添加指定的标签
-  add (tag) {
-    if (!this._isCanAdd(tag)) {
+  add (tagName) {
+    if (!this._isCanAdd(tagName)) {
       return false
     }
 
-    const result = this.tagSelected.push(tag)
+    const result = this.tagSelected.push(tagName)
 
-    this._create_tagsSelectedList()
-    this._create_tagsSelectedBtnList(tag)
+    this.refreshTagSelectedListContent()
+    this._create_tagsSelectedBtnList(tagName)
     // 显示剩余的可以选择标签的数量
     this._remainingTagCount()
 
@@ -542,10 +542,10 @@ class TagManager {
   }
 
   // 从已选择的标签列表中删除指定的标签
-  remove (tag) {
-    const indexOfTag = this.tagSelected.indexOf(tag)
+  remove (tagName) {
+    const indexOfTag = this.tagSelected.indexOf(tagName)
     if (indexOfTag === -1) {
-      this.tagMessage_collapse('当前没有要删除的标签' + tag)
+      this.tagMessage_collapse('当前没有要删除的标签 ' + tagName)
       return false
     }
 
@@ -554,12 +554,12 @@ class TagManager {
     const result = [] !== deleteTagSelected
 
     if (result) {
-      this._create_tagsSelectedList()
+      this.refreshTagSelectedListContent()
       // 显示剩余的可以选择标签的数量
       this._remainingTagCount()
-      this.tagMessage_collapse('已删除标签：' + tag, 'success')
+      this.tagMessage_collapse('已删除标签：' + tagName, 'success')
     } else {
-      this.tagMessage_collapse('删除标签失败：' + tag)
+      this.tagMessage_collapse('删除标签失败：' + tagName)
     }
 
     return result
@@ -642,6 +642,19 @@ class TagManager {
     this.tagMessage.append(msg)
   }
 
+  // 刷新已选择标签列表的内容
+  refreshTagSelectedListContent () {
+    this.tagsSelectedList.textContent = this.tagSelected.join(', ')
+  }
+
+  // 从已选择标签按钮列表删除指定标签的按钮
+  removeTagSelectedBtnList (tagName) {
+    let btn = this.tagsSelectedBtnList.querySelector(`button[data-tag-name=${tagName}]`)
+    if (btn) {
+      btn.remove()
+    }
+  }
+
   // 清空已选择标签列表中的所有标签，并且重新计数
   _clearAll () {
     this.tagSelected = []
@@ -673,11 +686,6 @@ class TagManager {
     collapse.show()
   }
 
-  // 在已选择的标签列表添加标签
-  _create_tagsSelectedList () {
-    this.tagsSelectedList.textContent = this.tagSelected.join(', ')
-  }
-
   // 在标签按钮列表创建已选择的标签按钮
   _create_tagsSelectedBtnList (tagName) {
     const button = document.createElement('button')
@@ -693,7 +701,7 @@ class TagManager {
     button.title = '删除标签 ' + tagName
     button.ariaLabel = '删除标签 ' + tagName
     button.addEventListener('click', () => {
-      this.remove(button.dataset['tagName'])
+      this.remove(tagName)
       button.remove()
     })
 
@@ -729,7 +737,14 @@ class TagManager {
       button.style.setProperty('--bs-list-group-active-bg', '#485860')
       button.style.setProperty('--bs-list-group-active-border-color', '#485860')
       button.textContent = tagName
-      button.addEventListener('click', () => this.add(tagName))
+      button.addEventListener('click', () => {
+        console.log(button.classList.contains('active'))
+        if (button.classList.contains('active')) {
+          this.add(tagName)
+        } else {
+          this.remove(tagName)
+        }
+      })
 
       count.className = 'badge text-bg-secondary bg-opacity-25 rounded-pill'
       count.textContent = tagCount
@@ -796,7 +811,15 @@ class TagManager {
       button.dataset['bsToggle'] = 'button'
       button.dataset['tagName'] = tagName
       button.textContent = tagName
-      button.addEventListener('click', () => this.add(tagName))
+      button.addEventListener('click', () => {
+        console.log(button.classList.contains('active'))
+        if (button.classList.contains('active')) {
+          this.add(tagName)
+        } else {
+          this.remove(tagName)
+          this.removeTagSelectedBtnList(tagName)
+        }
+      })
 
       count.className = 'ms-1 discourse-tag-count badge rounded-pill bg-secondary bg-opacity-25'
       count.textContent = tagCount
