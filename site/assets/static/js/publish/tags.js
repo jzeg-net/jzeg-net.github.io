@@ -485,14 +485,12 @@ class TagManager {
     this._render_tabNav(this.tags)
 
     this.titleReset.addEventListener('click', event => {
-      console.log(event)
       event.preventDefault()
       this.titleInput.value = ''
       this.titleInput.focus()
     })
 
     this.tagSearchReset.addEventListener('click', event => {
-      console.log(event)
       event.preventDefault()
       this.tagSearchInput.value = ''
       this.tagSearchInput.focus()
@@ -538,7 +536,7 @@ class TagManager {
     // 显示剩余的可以选择标签的数量
     this._remainingTagCount()
 
-    return result
+    return result > 0
   }
 
   // 从已选择的标签列表中删除指定的标签
@@ -740,9 +738,8 @@ class TagManager {
       button.style.setProperty('--bs-list-group-active-border-color', '#485860')
       button.textContent = tagName
       button.addEventListener('click', () => {
-        console.log(button.classList.contains('active'))
         if (button.classList.contains('active')) {
-          this.add(tagName)
+          if (this.add(tagName)) this._inactive_searchResultBtn(tagName)
         } else {
           this.removeTagSelected(tagName)
           this.removeTagSelectedBtnList(tagName)
@@ -815,9 +812,8 @@ class TagManager {
       button.dataset['tagName'] = tagName
       button.textContent = tagName
       button.addEventListener('click', () => {
-        console.log(button.classList.contains('active'))
         if (button.classList.contains('active')) {
-          this.add(tagName)
+          if (this.add(tagName)) this._inactive_navTabBtn(tagName)
         } else {
           this.removeTagSelected(tagName)
           this.removeTagSelectedBtnList(tagName)
