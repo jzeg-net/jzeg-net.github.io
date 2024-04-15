@@ -79,7 +79,7 @@
     "dependencies": {
         "@docsearch/js": "^3.6.0",
         "@glidejs/glide": "^3.6.0",
-        "@uppy/core": "^3.10.0",
+        "@uppy/core": "^3.10.1",
         "@uppy/dashboard": "^3.8.0",
         "@uppy/image-editor": "^2.4.4",
         "@uppy/locales": "^3.5.2",
@@ -110,7 +110,7 @@
         "svgedit": "^7.3.3",
         "timeago.js": "^4.0.2",
         "tyme4ts": "^1.0.5",
-        "uppy": "^3.24.1",
+        "uppy": "^3.24.2",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.3",
         "workbox-sw": "^7.0.0",
