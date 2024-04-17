@@ -525,8 +525,14 @@ class TagManager {
 
   // 向标签列表末尾添加指定的标签
   add (tagName) {
-    if (this._isAdd(tagName)) {
-      return true
+    if (this._hasExceededAdded(tagName)) {
+      this.tagMessage_collapse('已达到' + this.maxQuantity + '个，请先删除部分已有标签')
+      return false
+    }
+
+    if (this._hasSameAdded(tagName)) {
+      this.tagMessage_collapse('重复标签 ' + tagName)
+      return false
     }
 
     const result = this.tagSelected.push(tagName)
@@ -729,7 +735,7 @@ class TagManager {
       const button = document.createElement('button')
       const count = document.createElement('span')
 
-      button.className = 'list-group-item list-group-item-dark list-group-item-action'
+      button.className = 'list-group-item list-group-item-action list-group-item-dark'
       button.type = 'button'
       button.dataset['bsToggle'] = 'button'
       button.dataset['tagName'] = tagName
@@ -739,7 +745,7 @@ class TagManager {
       button.textContent = tagName
       button.addEventListener('click', () => {
         if (button.classList.contains('active')) {
-          if (this.add(tagName)) this._inactive_searchResultBtn(tagName)
+          if (!this.add(tagName)) this._inactive_searchResultBtn(tagName)
         } else {
           this.removeTagSelected(tagName)
           this.removeTagSelectedBtnList(tagName)
@@ -813,7 +819,7 @@ class TagManager {
       button.textContent = tagName
       button.addEventListener('click', () => {
         if (button.classList.contains('active')) {
-          if (this.add(tagName)) this._inactive_navTabBtn(tagName)
+          if (!this.add(tagName)) this._inactive_navTabBtn(tagName)
         } else {
           this.removeTagSelected(tagName)
           this.removeTagSelectedBtnList(tagName)
@@ -856,26 +862,13 @@ class TagManager {
     }
   }
 
-  // 检查是否已经添加指定的标签
-  _isAdd (tag) {
-    if (this._hasLimitExceeded(tag)) {
-      this.tagMessage_collapse('已达到' + this.maxQuantity + '个，请先删除部分已有标签')
-      return true
-    }
-    if (this._hasSameAdded(tag)) {
-      this.tagMessage_collapse('重复标签 ' + tag)
-      return true
-    }
-    return false
-  }
-
   // 检查是否已经存在相同的tag
   _hasSameAdded (tag) {
     return this.tagSelected.includes(tag)
   }
 
   // 检查标签列表是否已经达到最大数量阈值
-  _hasLimitExceeded () {
+  _hasExceededAdded () {
     return this.tagSelected.length >= this.maxQuantity
   }
 
