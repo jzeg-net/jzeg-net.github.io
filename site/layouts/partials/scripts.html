@@ -32,6 +32,14 @@
 <script src="{{ $preUrl }}static/vendor/timeago.js/dist/timeago.min.js"></script>
 <script src="{{ $preUrl }}static/vendor/b-components-js/dist/b.bundle.min.js"></script>
 
+{{ if in .Page.Params.components "sortablejs" }}
+    <script type="module" src="{{ $preUrl }}static/vendor/sortablejs/modular/sortable.esm.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "interactjs" }}
+    <script src="{{ $preUrl }}static/vendor/interactjs/dist/interact.min.js"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
@@ -39,6 +47,10 @@
 
 {{ if in .Page.Params.components "photoswipe" }}
     <script type="module" src="{{ $preUrl }}static/js/photoswipe.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "medium-zoom" }}
+    <script type="module" src="{{ $preUrl }}static/js/medium-zoom.js"></script>
 {{ end }}
 
 {{ if in .Page.Params.components "svgedit" }}
