@@ -5,89 +5,53 @@
 <main class="pb-5 container gx-1 gx-sm-0" id="content">
     {{- .Content -}}
     <div>
-        <form class="d-flex flex-column row-gap-3" accept-charset="UTF-8">
-            <div class="pt-3">
-                <input type="text" class="form-control form-control-lg" name="title" id="title" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required>
+        <div class="d-flex flex-column row-gap-3">
+            <div class="d-flex flex-row justify-content-between align-items-center border rounded bg-transparent bg-opacity-25 text-light-emphasis" id="a-title">
+                <input type="text" class="px-1 py-2 flex-fill bg-transparent border-0 titleInput" id="titleInput" minlength="12" maxlength="64" placeholder="文章标题" autocomplete="off" autofocus required style="min-inline-size: 0;outline: none;">
+                <button class="px-1 btn border-0 titleReset" type="reset" id="titleReset">
+                    <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
+                </button>
             </div>
             <div>
-                <details class="position-relative rounded border" id="tags">
-                    <summary class="p-2 d-flex">
+                <details class="position-relative rounded border" id="a-tags">
+                    <summary class="px-1 py-2 d-flex">
                         <div class="w-100 d-flex justify-content-between align-items-center user-select-none">
-                            <span class="text-nowrap flex-fill overflow-hidden overflow-x-scroll tagsSelectedList" id="tagsSelectedList" style="height: 24px;min-inline-size: 0;">aa,bbb,cc,ddddd,ee,fff,ggggg,hh,i,j,kkkk,lll,mmm,nn</span>
+                            <div class="overflow-hidden overflow-x-scroll summaryPlaceholder" style="height: 24px;">
+                                <span class="text-nowrap tagSelectedList" id="tagSelectedList"></span>
+                                <span class="text-secondary summaryPlaceholderText">设置标签</span>
+                            </div>
                             <div class="detail-mark text-secondary">
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-down-fill"></use></svg></span>
-                                <span class="px-2 py-1"><svg class="bi"><use href="#bi-caret-up-fill"></use></svg></span>
+                                <svg class="bi"><use href="#bi-caret-up-fill"></use></svg>
+                                <svg class="bi"><use href="#bi-caret-down-fill"></use></svg>
                             </div>
                         </div>
                     </summary>
                     <div>
                         <div class="p-2 border-top">
-                            <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis">
-                                <input class="p-2 flex-fill bg-transparent border-0" type="search" name="TagSearch" id="tagSearch" placeholder="{{ T "search" }}" autocomplete="off" style="min-inline-size: 0;outline: none;">
-                                <span class="px-2"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
+                            <div class="position-relative d-flex flex-wrap column-gap-1 row-gap-2 overflow-hidden overflow-y-scroll tagSelectedBtnList" id="tagSelectedBtnList" style="max-height: 8em;"></div>
+                        </div>
+                        <div class="p-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center small">
+                                <p class="mb-0">还可以添加<span class="px-2" id="remainingTagCount"></span>个标签</p>
+                                <p class="mb-0 text-nowrap">找不到标签？<button type="button" class="btn btn-sm btn-outline-secondary" id="tagCreate">创建标签</button></p>
                             </div>
+                            <p class="mb-0 small collapse fade" id="tagMessage"></p>
                         </div>
-                        <div class="p-2 border-top border-bottom border-secondary border-opacity-25" id="tagsSelectedBtnList">
-                            <button class="btn btn-sm btn-outline-secondary" type="button" data-tag-name="tagName" aria-label="{{ T "delete" }} tagName">
-                                <span>tag</span>
-                                <svg class="bi"><use href="#bi-x-lg"></use></svg>
-                            </button>
+                        <div class="p-2 border-top">
+                            <div class="d-flex flex-row justify-content-between align-items-center rounded bg-secondary bg-opacity-25 text-light-emphasis" id="tagSearch">
+                                <span class="px-1"><svg class="bi text-secondary"><use href="#bi-search"></use></svg></span>
+                                <input class="py-2 flex-fill bg-transparent border-0 tagSearchInput" type="search" id="tagSearchInput" placeholder="{{ T "search" }}" autocomplete="off" aria-label="{{ T "search" }}" style="min-inline-size: 0;outline: none;">
+                                <button class="px-1 btn border-0 tagSearchReset" type="reset" id="tagSearchReset">
+                                    <svg class="bi text-secondary"><title>{{ T "clear" }}</title><use href="#bi-x-lg"></use></svg>
+                                </button>
+                            </div>
+                            <div class="collapse" id="tagSearchResult"></div>
                         </div>
-                        <div class="p-2 small">
+                        <div class="p-2 border-top">
                             <nav class="overflow-hidden border-bottom border-secondary border-opacity-25">
-                                <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll tag-category-tab" role="tablist" id="tagCategoryList">
-                                    <li class="nav-item"><button class="nav-link active" id="nav-contact-tab-n2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n2" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="margin-bottom: -1px;">AAAAA</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-n1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-n1" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style="margin-bottom: -1px;">BBBBB</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-0" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-0" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">CCCCC</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-1" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">DDDDD</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-2" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">EEEEE</button></li>
-                                    <li class="nav-item"><button class="nav-link" id="nav-contact-tab-3" data-bs-toggle="tab" data-bs-target="#contact-tab-pane-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-bottom: -1px;">FFFFF</button></li>
-                                </ul>
+                                <ul class="nav nav-underline flex-nowrap overflow-y-hidden overflow-x-scroll tag-category-tab" role="tablist" id="tagNavCategoryList"></ul>
                             </nav>
-                            <div class="tab-content py-2" id="tagList">
-                                <div class="tab-pane fade show active" id="contact-tab-pane-n2" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{- $tab_1 := slice "tag-aa" "tag-bb" "tag-cc" "tag-dd" "tag-ee" "tag-ff" "tag-gg" "tag-hh" "tag-ii" "tag-jj" "tag-kk" -}}
-                                        {{ $tagButton_1 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_1) }}
-                                        {{- $tagButton_1 -}}
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="contact-tab-pane-n1" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{ $tab_2 := slice "tag-aaa" "tag-bbb" "tag-ccc" "tag-ddd" "tag-eee" "tag-fff" "tag-ggg" "tag-hhh" "tag-iii" "tag-jjj" "tag-kkk" -}}
-                                        {{ $tagButton_2 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_2) }}
-                                        {{- $tagButton_2 -}}
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="contact-tab-pane-0" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{ $tab_3 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
-                                        {{ $tagButton_3 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_3) }}
-                                        {{- $tagButton_3 -}}
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="contact-tab-pane-1" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{- $tab_4 := slice "tag-aaaaa" "tag-bbbbb" "tag-ccccc" "tag-ddddd" "tag-eeeee" "tag-fffff" "tag-ggggg" "tag-hhhhh" "tag-iiiii" "tag-jjjjj" "tag-kkkkk" -}}
-                                        {{ $tagButton_4 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_4) }}
-                                        {{- $tagButton_4 -}}
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="contact-tab-pane-2" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{- $tab_5 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
-                                        {{ $tagButton_5 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_5) }}
-                                        {{- $tagButton_5 -}}
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="contact-tab-pane-3" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                    <div class="d-flex flex-wrap gap-1 overflow-hidden overflow-y-scroll tag-category-content" style="max-height: 9em;">
-                                        {{- $tab_6 := slice "tag-aaaa" "tag-bbbb" "tag-cccc" "tag-dddd" "tag-eeee" "tag-ffff" "tag-gggg" "tag-hhhh" "tag-iiii" "tag-jjjj" "tag-kkkk" -}}
-                                        {{ $tagButton_6 := partial "functions/area_element_style/tag-btn-group-2" (dict "slice" $tab_6) }}
-                                        {{- $tagButton_6 -}}
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="tab-content py-2" id="tagNavTabList"></div>
                         </div>
                     </div>
                 </details>
@@ -113,7 +77,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </main>
 {{ end }}
