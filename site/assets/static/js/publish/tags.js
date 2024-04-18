@@ -1,6 +1,8 @@
 class TagManager {
   constructor (container) {
     this.lang = this._documentLanguage()
+    this.cdn = '/static/js/publish/'
+
     this.initContainer(container)
 
     this.parseLocale()
@@ -129,10 +131,9 @@ class TagManager {
    * 根据语言请求标签数据
    **/
   async requestCategoryTagData () {
-    let cdn = '/static/js/publish/'
-    let path = `${cdn}tags/${this.lang}.json`
+    let url = `${this.cdn}tags/${this.lang}.json`
 
-    await fetch(path)
+    await fetch(url)
       .then(response => response.json())
       .then(data => this.tags = data)
   }
@@ -431,10 +432,9 @@ class TagManager {
   }
 
   async parseLocale () {
-    let cdn = '/static/js/publish/'
-    let path = `${cdn}locale/${this.lang}.json`
+    let url = `${this.cdn}locale/${this.lang}.json`
 
-    await fetch(path)
+    await fetch(url)
       .then(response => response.json())
       .then(data => this.locale = data)
   }
