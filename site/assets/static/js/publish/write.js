@@ -6,19 +6,19 @@ class Write {
   autoSaveTypeKey = 'autoSaveType'
   autoSaveCoverKey = 'autoSaveCover'
 
-  constructor (title, submit, clearDraft) {
-    this.init(title, submit, clearDraft)
+  constructor (title, tags, submit, clearDraft) {
+    this.init(title, tags, submit, clearDraft)
     this.listener()
   }
 
-  init = (title, submit, clearDraft) => {
+  init = (title, tags, submit, clearDraft) => {
     this.title = title
+    this.tags = tags
     this.submit = submit
     this.clearDraft = clearDraft
-    this.type = 'write'
-    this.cover = 'cover_url'
-    this.tags = ['t_aaa', 't_bbb', 't_ccc', 't_ddd']
-    this.language = this._documentLanguage()
+    this.type = ''
+    this.cover = ''
+    this.language = ''
   }
 
   listener = () => {
@@ -68,12 +68,47 @@ class Write {
 
   write_submit = () => {
     this.content = localStorage.getItem(this.autoSaveContentKey)
-    console.log(this.title.value)
-    console.log(this.content)
-    console.log(this.language)
-    console.log(this.tags)
-    console.log(this.type)
-    console.log(this.cover)
+
+    const xx = {
+      title: this.getTitle(),
+      tags: this.getTags(),
+      content: this.content,
+      lang: this.getLanguage(),
+      type: this.getArticleType(),
+      cover: this.getCover(),
+    }
+    console.log(xx)
+  }
+
+  // 获取标题值
+  getTitle () {
+    return this.title.value
+  }
+
+  // 获取标签数组
+  getTags () {
+    return this.tags.textContent.split(',')
+  }
+
+  // 获取内容语言类型
+  getLanguage () {
+    return this._documentLanguage()
+  }
+
+  // 获取写作类型
+  getArticleType () {
+    let type
+    let types = document.querySelector('#publish-dropdown').querySelectorAll('input[name=articleType]')
+    types.forEach(inputType => {
+      if (inputType.checked) type = inputType.value
+    })
+
+    return type
+  }
+
+  // 获取写作类型
+  getCover () {
+    return 'cover_url'
   }
 
   beforeUnloadHandler = (event) => {
@@ -85,15 +120,17 @@ class Write {
 }
 
 let title = document.querySelector('#titleInput')
+let tags = document.querySelector('#tagSelectedList')
 let clearDraft = document.querySelector('#clearDraft')
 let submit = document.querySelector('#sureSubmitBtn')
 
-let w = new Write(title, submit, clearDraft)
+let w = new Write(title, tags, submit, clearDraft)
 
 const popoverTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => bootstrap.Popover.getOrCreateInstance(popoverTriggerEl, {
   html: true,
-  trigger: 'hover focus',
+  trigger: 'hover',
+  placement: 'bottom',
 }))
 
 const tooltipTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="tooltip"]')
