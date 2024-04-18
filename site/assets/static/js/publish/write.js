@@ -127,10 +127,33 @@ let submit = document.querySelector('#sureSubmitBtn')
 let w = new Write(title, tags, submit, clearDraft)
 
 const popoverTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="popover"]')
+
+const getPopoverTitle = (event) => {
+  let title
+  let titleEl = event.nextElementSibling.querySelector('.popoverTitle')
+  if (titleEl) {
+    title = titleEl.innerHTML
+  }
+
+  return title
+}
+
+const getPopoverContent = (event) => {
+  let content
+  let contentEL = event.nextElementSibling.querySelector('.popoverContent')
+  if (contentEL) {
+    content = contentEL.innerHTML
+  }
+
+  return content
+}
+
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => bootstrap.Popover.getOrCreateInstance(popoverTriggerEl, {
   html: true,
-  trigger: 'hover',
+  trigger: 'hover focus',
   placement: 'bottom',
+  title: getPopoverTitle,
+  content: getPopoverContent,
 }))
 
 const tooltipTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="tooltip"]')
