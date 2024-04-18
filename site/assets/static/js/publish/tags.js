@@ -13,10 +13,10 @@ class TagManager {
     this.maxQuantity = 5
     // 请求所有的标签
     this.requestCategoryTagData()
+      .then(() => this._render_tabNav(this.tags))
 
     this._remainingTagCount()
     this.clear()
-    this._render_tabNav(this.tags)
 
     this.titleReset.addEventListener('click', event => {
       event.preventDefault()
@@ -128,13 +128,13 @@ class TagManager {
   /**
    * 根据语言请求标签数据
    **/
-  requestCategoryTagData () {
+  async requestCategoryTagData () {
     let cdn = '/static/js/publish/'
     let path = `${cdn}tags/${this.lang}.json`
 
-    fetch(path)
+    await fetch(path)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => this.tags = data)
   }
 
   // 渲染标签tab导航
