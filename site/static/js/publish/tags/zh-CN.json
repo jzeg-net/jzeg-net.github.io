@@ -1,0 +1,234 @@
+[
+    {
+        "category": "科技",
+        "tags": [
+            {
+                "tags": "人工智能",
+                "count": 42,
+                "icon": true,
+                "description": "这是人工智能的中文描述"
+            },
+            {
+                "tags": "大数据",
+                "count": 76,
+                "icon": false,
+                "description": "这是大数据的中文描述"
+            },
+            {
+                "tags": "云计算",
+                "count": 35,
+                "icon": true,
+                "description": "这是云计算的中文描述"
+            },
+            {
+                "tags": "物联网",
+                "count": 68,
+                "icon": false,
+                "description": "这是物联网的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "娱乐",
+        "tags": [
+            {
+                "tags": "电影",
+                "count": 28,
+                "icon": true,
+                "description": "这是电影的中文描述"
+            },
+            {
+                "tags": "音乐",
+                "count": 63,
+                "icon": false,
+                "description": "这是音乐的中文描述"
+            },
+            {
+                "tags": "游戏",
+                "count": 45,
+                "icon": true,
+                "description": "这是游戏的中文描述"
+            },
+            {
+                "tags": "综艺",
+                "count": 87,
+                "icon": false,
+                "description": "这是综艺的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "生活",
+        "tags": [
+            {
+                "tags": "美食",
+                "count": 87,
+                "icon": true,
+                "description": "这是美食的中文描述"
+            },
+            {
+                "tags": "旅行",
+                "count": 54,
+                "icon": false,
+                "description": "这是旅行的中文描述"
+            },
+            {
+                "tags": "家居",
+                "count": 32,
+                "icon": true,
+                "description": "这是家居的中文描述"
+            },
+            {
+                "tags": "宠物",
+                "count": 76,
+                "icon": false,
+                "description": "这是宠物的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "教育",
+        "tags": [
+            {
+                "tags": "语文",
+                "count": 31,
+                "icon": true,
+                "description": "这是语文的中文描述"
+            },
+            {
+                "tags": "数学",
+                "count": 98,
+                "icon": false,
+                "description": "这是数学的中文描述"
+            },
+            {
+                "tags": "英语",
+                "count": 56,
+                "icon": true,
+                "description": "这是英语的中文描述"
+            },
+            {
+                "tags": "物理",
+                "count": 23,
+                "icon": false,
+                "description": "这是物理的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "健康",
+        "tags": [
+            {
+                "tags": "健身",
+                "count": 23,
+                "icon": true,
+                "description": "这是健身的中文描述"
+            },
+            {
+                "tags": "养生",
+                "count": 72,
+                "icon": false,
+                "description": "这是养生的中文描述"
+            },
+            {
+                "tags": "心理健康",
+                "count": 45,
+                "icon": true,
+                "description": "这是心理健康的中文描述"
+            },
+            {
+                "tags": "疾病预防",
+                "count": 67,
+                "icon": false,
+                "description": "这是疾病预防的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "时尚",
+        "tags": [
+            {
+                "tags": "服装",
+                "count": 67,
+                "icon": true,
+                "description": "这是服装的中文描述"
+            },
+            {
+                "tags": "美容",
+                "count": 45,
+                "icon": false,
+                "description": "这是美容的中文描述"
+            },
+            {
+                "tags": "饰品",
+                "count": 39,
+                "icon": true,
+                "description": "这是饰品的中文描述"
+            },
+            {
+                "tags": "发型",
+                "count": 81,
+                "icon": false,
+                "description": "这是发型的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "财经",
+        "tags": [
+            {
+                "tags": "股票",
+                "count": 56,
+                "icon": true,
+                "description": "这是股票的中文描述"
+            },
+            {
+                "tags": "基金",
+                "count": 81,
+                "icon": false,
+                "description": "这是基金的中文描述"
+            },
+            {
+                "tags": "债券",
+                "count": 63,
+                "icon": true,
+                "description": "这是债券的中文描述"
+            },
+            {
+                "tags": "期货",
+                "count": 28,
+                "icon": false,
+                "description": "这是期货的中文描述"
+            }
+        ]
+    },
+    {
+        "category": "体育",
+        "tags": [
+            {
+                "tags": "足球",
+                "count": 39,
+                "icon": true,
+                "description": "这是足球的中文描述"
+            },
+            {
+                "tags": "篮球",
+                "count": 69,
+                "icon": false,
+                "description": "这是篮球的中文描述"
+            },
+            {
+                "tags": "网球",
+                "count": 54,
+                "icon": true,
+                "description": "这是网球的中文描述"
+            },
+            {
+                "tags": "高尔夫",
+                "count": 98,
+                "icon": false,
+                "description": "这是高尔夫的中文描述"
+            }
+        ]
+    }
+]
