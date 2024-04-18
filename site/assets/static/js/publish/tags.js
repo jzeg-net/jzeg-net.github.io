@@ -469,7 +469,10 @@ const englishArticleTags = [
 
 class TagManager {
   constructor (container) {
+    this.lang = this._documentLanguage()
     this.initContainer(container)
+
+    this.parseLocale()
 
     // 标签列表
     this.tags = []
@@ -896,8 +899,33 @@ class TagManager {
   tagSearchResult_collapse () {
     return bootstrap.Collapse.getOrCreateInstance(this.tagSearchResult, { toggle: false })
   }
+
+  // 动态设置界面语言
+  async setLocaleLang (languageCode) {
+    this.lang = languageCode
+    await this.parseLocale()
+  }
+
+  async parseLocale () {
+    let cdn = '/static/js/publish/'
+    let path = `${cdn}locale/${this.lang}.json`
+
+    await fetch(path)
+      .then(response => response.json())
+      .then(data => this.locale = data)
+  }
+
+  i18n (textKey) {
+    return this.T(textKey)
+  }
+
+  T (textKey) {
+    return this.locale[textKey]
+  }
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
   let tagManager = new TagManager('#a-tags')
+  // tagManager.setLocaleLang('zh-CN')
 })
