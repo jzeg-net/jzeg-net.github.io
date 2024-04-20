@@ -1,7 +1,7 @@
 class TagManager {
   constructor (container) {
     this.lang = this._documentLanguage()
-    this.cdn = '/static/js/publish/'
+    this.cdn = '/static/json/publish/'
 
     this.initContainer(container)
 
@@ -13,19 +13,26 @@ class TagManager {
     this.tagSelected = []
     // 标签列表最大数量阈值
     this.maxQuantity = 5
-    // 请求所有的标签
-    this.requestCategoryTagData()
-      .then(() => this._render_tabNav(this.tags))
+
+    // 打开时获取标签信息
+    this.container.addEventListener('toggle', event => {
+      if (event.target.open) {
+        // 请求所有的标签
+        this.requestCategoryTagData().then(() => this._render_tabNav(this.tags))
+      }
+    }, { once: true })
 
     this._remainingTagCount()
-    this.clear()
+    this._create_clearAllBtn()
 
+    // 点击标题框删除按钮时，清空标题栏，并获取焦点
     this.titleReset.addEventListener('click', event => {
       event.preventDefault()
       this.titleInput.value = ''
       this.titleInput.focus()
     })
 
+    // 点击标签搜索栏删除按钮时，清空搜索栏，并获取焦点
     this.tagSearchReset.addEventListener('click', event => {
       event.preventDefault()
       this.tagSearchInput.value = ''
@@ -35,9 +42,9 @@ class TagManager {
       collapse.hide()
     })
 
+    // 在标签搜索栏输入内容时，每次输入时，立刻执行搜索
     this.tagSearchInput.addEventListener('keyup', event => {
       event.preventDefault()
-      // if (event.keyCode !== 13) return
       const searchValue = event.target.value
       this.tagSearch(searchValue)
     })
@@ -103,10 +110,6 @@ class TagManager {
     }
 
     return result
-  }
-
-  clear () {
-    this._create_clearAllBtn()
   }
 
   // 返回已选择的标签
@@ -213,7 +216,7 @@ class TagManager {
     msgEl.dataset['bsTarget'] = '#' + this.tagMessage.id
     const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage)
     this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
-    this.tagMessage.addEventListener('shown.bs.collapse', () => setTimeout(() => collapse.hide(), 4000))
+    this.tagMessage.addEventListener('shown.bs.collapse', () => setTimeout(() => collapse.hide(), 8000))
 
     collapse.show()
   }
@@ -252,6 +255,8 @@ class TagManager {
   // 在标签搜索结果种创建可选的标签按钮列表
   _create_tagSearchResultList (searchResultData) {
     this.tagSearchResult.innerHTML = ''
+    if (searchResultData.length < 1) return
+
     const tagSearchResultList = document.createElement('div')
 
     tagSearchResultList.className = 'list-group list-group-flush overflow-hidden overflow-y-scroll tagSearchResultList'
@@ -400,9 +405,9 @@ class TagManager {
     return this.tagSelected.length >= this.maxQuantity
   }
 
+  // 在本地标签数据中搜索
   tagSearch (searchValue) {
-    const collapse = this.tagSearchResult_collapse()
-    collapse.show()
+    if (searchValue < 1) return
 
     const searchResult = []
 
@@ -414,11 +419,13 @@ class TagManager {
       })
     })
 
-    if (searchResult.length < 1) return
+    if (searchResult.length > 0) {
+      const collapse = this.tagSearchResult_collapse()
+      collapse.show()
+      this.tagMessage_collapse(`搜索到${searchResult.length}条结果`, 'success')
 
-    this.tagMessage_collapse(`搜索到${searchResult.length}条结果`, 'success')
-
-    this._create_tagSearchResultList(searchResult)
+      this._create_tagSearchResultList(searchResult)
+    }
   }
 
   tagSearchResult_collapse () {
