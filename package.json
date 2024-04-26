@@ -115,7 +115,7 @@
         "uppy": "^3.24.3",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.4",
-        "workbox-sw": "^7.0.0",
+        "workbox-sw": "^7.1.0",
         "world_countries_lists": "^2.9.0",
         "wretch": "^2.8.1",
         "zxcvbn": "^4.4.2"
@@ -136,12 +136,12 @@
         "eslint-plugin-markdown": "^4.0.1",
         "eslint-plugin-unicorn": "^52.0.0",
         "find-unused-sass-variables": "^6.0.0",
-        "hugo-bin": "^0.122.3",
+        "hugo-bin": "^0.122.4",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.38",
         "postcss-cli": "^11.0.0",
         "sass": "^1.75.0",
-        "stylelint": "^16.3.1",
+        "stylelint": "^16.4.0",
         "svg-sprite": "^3.0.0-rc2",
         "terser": "^5.30.4"
     },
