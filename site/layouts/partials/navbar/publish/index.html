@@ -2,103 +2,108 @@
     <nav class="container-lg gx-2 d-flex align-items-center justify-content-between">
         <h1><a class="navbar-brand p-0 me-0 me-lg-2" href="{{ relLangURL "" }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a></h1>
         <div id="docSearch"></div>
-        <div class="dropdown" id="publish-dropdown">
-            <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                <span>发布</span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end bg-success-subtle" style="--bs-dropdown-min-width: 22rem;">
-                <form>
-                    <div class="dropdown-item-text">
-                        <div class="mb-2 d-flex align-items-center column-gap-2">
-                            <span>文章类型</span>
-                            <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
-                            <div class="d-none">
-                                <div class="popoverContent">
-                                    <p>在网络环境中，明确区分原创、转载和翻译具有重要意义，有助于：</p>
-                                    <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
-                                        <li class="list-group-item">维护知识产权：保护作者劳动成果，鼓励创新。</li>
-                                        <li class="list-group-item">确保信息准确与可信度：读者可依据来源判断评估。</li>
-                                        <li class="list-group-item">建立良好创作与传播生态：促进知识共享与交流。</li>
-                                    </ul>
-                                    <p>总之，正确处理三者关系对创作者、传播者和读者都至关重要。</p>
+        <div class="d-flex column-gap-3">
+            <div class="dropdown" id="publish-dropdown">
+                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <span>发布</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end bg-success-subtle" style="--bs-dropdown-min-width: 22rem;">
+                    <form>
+                        <div class="dropdown-item-text">
+                            <div class="mb-2 d-flex align-items-center column-gap-2">
+                                <span>文章类型</span>
+                                <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
+                                <div class="d-none">
+                                    <div class="popoverContent">
+                                        <p>在网络环境中，明确区分原创、转载和翻译具有重要意义，有助于：</p>
+                                        <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
+                                            <li class="list-group-item">维护知识产权：保护作者劳动成果，鼓励创新。</li>
+                                            <li class="list-group-item">确保信息准确与可信度：读者可依据来源判断评估。</li>
+                                            <li class="list-group-item">建立良好创作与传播生态：促进知识共享与交流。</li>
+                                        </ul>
+                                        <p>总之，正确处理三者关系对创作者、传播者和读者都至关重要。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-nowrap align-items-center justify-content-between">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="articleType" id="articleType_original" value="1" required>
+                                    <label class="form-check-label text-nowrap" for="articleType_original">原创</label>
+                                    <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
+                                    <div class="d-none">
+                                        <div class="popoverContent">
+                                            <p>原创文章指作者凭借自身知识、经验与创造力，独立撰写的内容，具有以下特点：</p>
+                                            <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
+                                                <li class="list-group-item">独特性：与其他作品在观点、表达或风格上有差异。</li>
+                                                <li class="list-group-item">创造性：融入作者新颖思路与独特见解。</li>
+                                                <li class="list-group-item">知识产权归作者：拥有完全权益，包括著作权。</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="articleType" id="articleType_reprint" value="2" required>
+                                    <label class="form-check-label text-nowrap" for="articleType_reprint">转载</label>
+                                    <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
+                                    <div class="d-none">
+                                        <div class="popoverContent">
+                                            <p>转载文章是将已在其他地方发表的文章，经合法途径、获授权后，重新发布于另一平台或渠道，特点包括：</p>
+                                            <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
+                                                <li class="list-group-item">来源他处：非当前发布者最初创作。</li>
+                                                <li class="list-group-item">遵循授权规定：须遵守原作者或版权所有者条件限制。</li>
+                                                <li class="list-group-item">保留原文特征：转载时尽量保持完整性与准确性。</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="articleType" id="articleType_translated" value="3" required>
+                                    <label class="form-check-label text-nowrap" for="articleType_translated">翻译</label>
+                                    <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
+                                    <div class="d-none">
+                                        <div class="popoverContent">
+                                            <p>翻译文章是通过翻译者努力，将一种语言文章转化为另一种语言的文本，特点有：</p>
+                                            <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
+                                                <li class="list-group-item">基于原文转换：准确传达含义与信息。</li>
+                                                <li class="list-group-item">考验语言能力：要求翻译者具备双语功底。</li>
+                                                <li class="list-group-item">文化转换：考虑不同语言文化差异，进行适当调整。</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex flex-nowrap align-items-center justify-content-between">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="articleType" id="articleType_original" value="1" required>
-                                <label class="form-check-label text-nowrap" for="articleType_original">原创</label>
-                                <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
-                                <div class="d-none">
-                                    <div class="popoverContent">
-                                        <p>原创文章指作者凭借自身知识、经验与创造力，独立撰写的内容，具有以下特点：</p>
-                                        <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
-                                            <li class="list-group-item">独特性：与其他作品在观点、表达或风格上有差异。</li>
-                                            <li class="list-group-item">创造性：融入作者新颖思路与独特见解。</li>
-                                            <li class="list-group-item">知识产权归作者：拥有完全权益，包括著作权。</li>
-                                        </ul>
-                                    </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item-text">
+                            <div class="mb-2 d-flex align-items-center column-gap-2">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="isTiming">
+                                    <label class="form-check-label" for="isTiming" data-bs-toggle="collapse" data-bs-target="#isTiming_collapse">定时发布</label>
                                 </div>
+                                <svg class="bi text-secondary" data-bs-toggle="tooltip" data-bs-title="文章将会在指定的时间发表"><use href="#bi-patch-question-fill"></use></svg>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="articleType" id="articleType_reprint" value="2" required>
-                                <label class="form-check-label text-nowrap" for="articleType_reprint">转载</label>
-                                <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
-                                <div class="d-none">
-                                    <div class="popoverContent">
-                                        <p>转载文章是将已在其他地方发表的文章，经合法途径、获授权后，重新发布于另一平台或渠道，特点包括：</p>
-                                        <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
-                                            <li class="list-group-item">来源他处：非当前发布者最初创作。</li>
-                                            <li class="list-group-item">遵循授权规定：须遵守原作者或版权所有者条件限制。</li>
-                                            <li class="list-group-item">保留原文特征：转载时尽量保持完整性与准确性。</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="articleType" id="articleType_translated" value="3" required>
-                                <label class="form-check-label text-nowrap" for="articleType_translated">翻译</label>
-                                <svg class="bi text-secondary" data-bs-toggle="popover"><use href="#bi-patch-exclamation-fill"></use></svg>
-                                <div class="d-none">
-                                    <div class="popoverContent">
-                                        <p>翻译文章是通过翻译者努力，将一种语言文章转化为另一种语言的文本，特点有：</p>
-                                        <ul class="list-group mb-3 rounded-0" style="margin: calc(-1rem - 1px) 0;">
-                                            <li class="list-group-item">基于原文转换：准确传达含义与信息。</li>
-                                            <li class="list-group-item">考验语言能力：要求翻译者具备双语功底。</li>
-                                            <li class="list-group-item">文化转换：考虑不同语言文化差异，进行适当调整。</li>
-                                        </ul>
-                                    </div>
+                            <div class="collapse" id="isTiming_collapse">
+                                <div>
+                                    <input class="form-control" type="datetime-local" name="publishAtSpecifiedTime" id="publishAtSpecifiedTime">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="dropdown-item-text">
-                        <div class="mb-2 d-flex align-items-center column-gap-2">
+                        <div class="dropdown-item-text d-flex align-items-center column-gap-2">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="isTiming">
-                                <label class="form-check-label" for="isTiming" data-bs-toggle="collapse" data-bs-target="#isTiming_collapse">定时发布</label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="license">
+                                <label class="form-check-label" for="license">注明版权</label>
                             </div>
-                            <svg class="bi text-secondary" data-bs-toggle="tooltip" data-bs-title="文章将会在指定的时间发表"><use href="#bi-patch-question-fill"></use></svg>
+                            <svg class="bi text-secondary" data-bs-toggle="tooltip" data-bs-title="文章内容中将提及版权信息"><use href="#bi-patch-question-fill"></use></svg>
                         </div>
-                        <div class="collapse" id="isTiming_collapse">
-                            <div>
-                                <input class="form-control" type="datetime-local" name="publishAtSpecifiedTime" id="publishAtSpecifiedTime">
-                            </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item-text px-3 py-3 d-flex flex-column row-gap-3">
+                            <button type="button" class="btn btn-sm btn-link btn-danger border-danger-subtle text-danger-emphasis text-decoration-none" id="sureClearDraft"
+                                    data-bs-content="<span class='text-danger-emphasis'>已经清除草稿</span><span class='ms-2 badge text-bg-warning countdown countdown-3s-before'>s</span>"
+                                    data-bs-html="true" data-bs-placement="bottom">确认舍弃草稿</button>
+                            <button type="submit" class="btn btn-success" id="sureSubmitBtn">确认发布</button>
                         </div>
-                    </div>
-                    <div class="dropdown-item-text d-flex align-items-center column-gap-2">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="license">
-                            <label class="form-check-label" for="license">注明版权</label>
-                        </div>
-                        <svg class="bi text-secondary" data-bs-toggle="tooltip" data-bs-title="文章内容中将提及版权信息"><use href="#bi-patch-question-fill"></use></svg>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="dropdown-item-text px-3 py-3 d-grid">
-                        <button class="btn btn-success" type="submit" id="sureSubmitBtn">确认发布</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>

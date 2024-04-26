@@ -61,9 +61,9 @@ class Write {
   }
 
   clearStorageTip = () => {
-    let tip = bootstrap.Popover.getOrCreateInstance(clearDraft)
+    let tip = bootstrap.Popover.getOrCreateInstance(this.clearDraft)
     tip.show()
-    setTimeout(() => tip.dispose(), 6000)
+    setTimeout(() => tip.dispose(), 3600)
   }
 
   write_submit = () => {
@@ -121,10 +121,10 @@ class Write {
 
 let title = document.querySelector('#titleInput')
 let tags = document.querySelector('#tagSelectedList')
-let clearDraft = document.querySelector('#clearDraft')
+let sureClearDraft = document.querySelector('#sureClearDraft')
 let submit = document.querySelector('#sureSubmitBtn')
 
-let w = new Write(title, tags, submit, clearDraft)
+let w = new Write(title, tags, submit, sureClearDraft)
 
 const popoverTriggerList = document.querySelector('#publish-dropdown').querySelectorAll('[data-bs-toggle="popover"]')
 
