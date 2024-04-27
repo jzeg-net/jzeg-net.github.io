@@ -75,6 +75,7 @@ details:not([open]) .detail-mark svg:last-child {
 }
 
 .summaryPlaceholder,
+.tagMessage,
 .tagSearchResultList,
 .tagSelectedBtnList,
 .tag-category-tab,
