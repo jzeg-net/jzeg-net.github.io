@@ -169,7 +169,8 @@ class TagManager {
   tagMessage_collapse (msgText, msgType = 'danger') {
     const msg = document.createElement('span')
 
-    msg.className = 'text-' + msgType
+    msg.className = 'text-nowrap'
+    msg.classList.add('text-' + msgType)
     msg.innerText = msgText
 
     this._tagMessage_collapse(msg)
@@ -213,13 +214,13 @@ class TagManager {
     msgEl.dataset['bsToggle'] = 'collapse'
     msgEl.dataset['bsTarget'] = '#' + this.tagMessage.id
     const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage, { toggle: false })
-    collapse.show()
 
     this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
     msgEl.addEventListener('click', () => collapse.hide())
 
     this.tagMessage.innerHTML = ''
     this.tagMessage.append(msgEl)
+    collapse.show()
   }
 
   // 在标签按钮列表创建已选择的标签按钮
