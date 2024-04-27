@@ -171,10 +171,8 @@ class TagManager {
 
     msg.className = 'text-' + msgType
     msg.innerText = msgText
-    this._tagMessage_collapse(msg)
 
-    this.tagMessage.innerHTML = ''
-    this.tagMessage.append(msg)
+    this._tagMessage_collapse(msg)
   }
 
   // 刷新已选择标签列表的内容
@@ -215,10 +213,13 @@ class TagManager {
     msgEl.dataset['bsToggle'] = 'collapse'
     msgEl.dataset['bsTarget'] = '#' + this.tagMessage.id
     const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage, { toggle: false })
-    this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
-    msgEl.addEventListener('click', collapse.hide())
-
     collapse.show()
+
+    this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
+    msgEl.addEventListener('click', () => collapse.hide())
+
+    this.tagMessage.innerHTML = ''
+    this.tagMessage.append(msgEl)
   }
 
   // 在标签按钮列表创建已选择的标签按钮
