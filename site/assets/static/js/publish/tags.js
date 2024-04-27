@@ -214,9 +214,9 @@ class TagManager {
   _tagMessage_collapse (msgEl) {
     msgEl.dataset['bsToggle'] = 'collapse'
     msgEl.dataset['bsTarget'] = '#' + this.tagMessage.id
-    const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage)
+    const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage, { toggle: false })
     this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
-    this.tagMessage.addEventListener('shown.bs.collapse', () => setTimeout(() => collapse.hide(), 8000))
+    msgEl.addEventListener('click', collapse.hide())
 
     collapse.show()
   }
