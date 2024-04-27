@@ -3,25 +3,25 @@
         "category": "Technology",
         "tags": [
             {
-                "tag": "Artificial Intelligence",
+                "name": "Artificial Intelligence",
                 "count": 42,
                 "icon": true,
                 "description": "This is the English description of artificial intelligence"
             },
             {
-                "tag": "Big Data",
+                "name": "Big Data",
                 "count": 76,
                 "icon": false,
                 "description": "This is the English description of big data"
             },
             {
-                "tag": "Cloud Computing",
+                "name": "Cloud Computing",
                 "count": 35,
                 "icon": true,
                 "description": "This is the English description of cloud computing"
             },
             {
-                "tag": "Internet of Things",
+                "name": "Internet of Things",
                 "count": 68,
                 "icon": false,
                 "description": "This is the English description of the Internet of Things"
@@ -32,25 +32,25 @@
         "category": "Entertainment",
         "tags": [
             {
-                "tag": "Movies",
+                "name": "Movies",
                 "count": 28,
                 "icon": true,
                 "description": "This is the English description of movies"
             },
             {
-                "tag": "Music",
+                "name": "Music",
                 "count": 63,
                 "icon": false,
                 "description": "This is the English description of music"
             },
             {
-                "tag": "Games",
+                "name": "Games",
                 "count": 45,
                 "icon": true,
                 "description": "This is the English description of games"
             },
             {
-                "tag": "Variety Shows",
+                "name": "Variety Shows",
                 "count": 87,
                 "icon": false,
                 "description": "This is the English description of variety shows"
@@ -61,25 +61,25 @@
         "category": "Life",
         "tags": [
             {
-                "tag": "Food",
+                "name": "Food",
                 "count": 87,
                 "icon": true,
                 "description": "This is the English description of food"
             },
             {
-                "tag": "Travel",
+                "name": "Travel",
                 "count": 54,
                 "icon": false,
                 "description": "This is the English description of travel"
             },
             {
-                "tag": "Home Furnishing",
+                "name": "Home Furnishing",
                 "count": 32,
                 "icon": true,
                 "description": "This is the English description of home furnishing"
             },
             {
-                "tag": "Pets",
+                "name": "Pets",
                 "count": 76,
                 "icon": false,
                 "description": "This is the English description of pets"
@@ -90,25 +90,25 @@
         "category": "Education",
         "tags": [
             {
-                "tag": "Chinese",
+                "name": "Chinese",
                 "count": 31,
                 "icon": true,
                 "description": "This is the English description of Chinese"
             },
             {
-                "tag": "Mathematics",
+                "name": "Mathematics",
                 "count": 98,
                 "icon": false,
                 "description": "This is the English description of mathematics"
             },
             {
-                "tag": "English",
+                "name": "English",
                 "count": 56,
                 "icon": true,
                 "description": "This is the English description of English"
             },
             {
-                "tag": "Physics",
+                "name": "Physics",
                 "count": 23,
                 "icon": false,
                 "description": "This is the English description of physics"
@@ -119,25 +119,25 @@
         "category": "Health",
         "tags": [
             {
-                "tag": "Fitness",
+                "name": "Fitness",
                 "count": 23,
                 "icon": true,
                 "description": "This is the English description of fitness"
             },
             {
-                "tag": "Health Preservation",
+                "name": "Health Preservation",
                 "count": 72,
                 "icon": false,
                 "description": "This is the English description of health preservation"
             },
             {
-                "tag": "Mental Health",
+                "name": "Mental Health",
                 "count": 45,
                 "icon": true,
                 "description": "This is the English description of mental health"
             },
             {
-                "tag": "Disease Prevention",
+                "name": "Disease Prevention",
                 "count": 67,
                 "icon": false,
                 "description": "This is the English description of disease prevention"
@@ -148,25 +148,25 @@
         "category": "Fashion",
         "tags": [
             {
-                "tag": "Clothing",
+                "name": "Clothing",
                 "count": 67,
                 "icon": true,
                 "description": "This is the English description of clothing"
             },
             {
-                "tag": "Beauty",
+                "name": "Beauty",
                 "count": 45,
                 "icon": false,
                 "description": "This is the English description of beauty"
             },
             {
-                "tag": "Accessories",
+                "name": "Accessories",
                 "count": 39,
                 "icon": true,
                 "description": "This is the English description of accessories"
             },
             {
-                "tag": "Hair Style",
+                "name": "Hair Style",
                 "count": 81,
                 "icon": false,
                 "description": "This is the English description of hair style"
@@ -177,25 +177,25 @@
         "category": "Finance",
         "tags": [
             {
-                "tag": "Stocks",
+                "name": "Stocks",
                 "count": 56,
                 "icon": true,
                 "description": "This is the English description of stocks"
             },
             {
-                "tag": "Funds",
+                "name": "Funds",
                 "count": 81,
                 "icon": false,
                 "description": "This is the English description of funds"
             },
             {
-                "tag": "Bonds",
+                "name": "Bonds",
                 "count": 63,
                 "icon": true,
                 "description": "This is the English description of bonds"
             },
             {
-                "tag": "Futures",
+                "name": "Futures",
                 "count": 28,
                 "icon": false,
                 "description": "This is the English description of futures"
@@ -206,25 +206,25 @@
         "category": "Sports",
         "tags": [
             {
-                "tag": "Football",
+                "name": "Football",
                 "count": 39,
                 "icon": true,
                 "description": "This is the English description of football"
             },
             {
-                "tag": "Basketball",
+                "name": "Basketball",
                 "count": 69,
                 "icon": false,
                 "description": "This is the English description of basketball"
             },
             {
-                "tag": "Tennis",
+                "name": "Tennis",
                 "count": 54,
                 "icon": true,
                 "description": "This is the English description of tennis"
             },
             {
-                "tag": "Golf",
+                "name": "Golf",
                 "count": 98,
                 "icon": false,
                 "description": "This is the English description of golf"

@@ -263,7 +263,7 @@ class TagManager {
     tagSearchResultList.style.maxHeight = '12em'
 
     searchResultData.forEach((tags) => {
-      const tagName = tags['tag']
+      const tagName = tags['name']
       const tagCount = tags['count']
       const button = document.createElement('button')
       const count = document.createElement('span')
@@ -340,7 +340,7 @@ class TagManager {
     tagCategoryContent.style.maxHeight = '9em'
 
     tagData.forEach((tags) => {
-      const tagName = tags['tag']
+      const tagName = tags['name']
       const tagCount = tags['count']
       const button = document.createElement('button')
       const count = document.createElement('span')
@@ -413,7 +413,7 @@ class TagManager {
 
     this.tags.forEach(category => {
       category.tags.forEach(targetTag => {
-        if (targetTag.tag.includes(searchValue)) {
+        if (targetTag.name.includes(searchValue)) {
           searchResult.push(targetTag)
         }
       })
