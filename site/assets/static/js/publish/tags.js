@@ -216,7 +216,7 @@ class TagManager {
     const collapse = bootstrap.Collapse.getOrCreateInstance(this.tagMessage, { toggle: false })
 
     this.tagMessage.addEventListener('hidden.bs.collapse', () => msgEl.remove())
-    msgEl.addEventListener('click', () => collapse.hide())
+    this.tagMessage.addEventListener('click', () => collapse.hide())
 
     this.tagMessage.innerHTML = ''
     this.tagMessage.append(msgEl)
