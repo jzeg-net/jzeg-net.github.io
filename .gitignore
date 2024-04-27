@@ -20,3 +20,5 @@ $RECYCLE.BIN/
 
 # Generate
 /node_modules/
+/docs/
+/public/
