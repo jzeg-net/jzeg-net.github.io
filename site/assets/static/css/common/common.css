@@ -53,14 +53,10 @@
 }
 
 :root {
-  --bs-font-family-lxgw-wenkai: "LXGW WenKai";
-  --bs-font-family-lxgw-wenkai-tc: "LXGW WenKai TC";
-  --bs-font-family-lxgw-wenkai-lite: "LXGW WenKai Lite";
-  --bs-font-family-lxgw-wenkai-screen: "LXGW WenKai Screen";
-  --bs-font-family-lxgw-wenkai-mono: "LXGW WenKai Mono";
-  --bs-font-family-lxgw-wenkai-mono-tc: "LXGW WenKai Mono TC";
-  --bs-font-family-lxgw-wenkai-mono-lite: "LXGW WenKai Mono Lite";
-  --bs-font-family-lxgw-wenkai-mono-screen: "LXGW WenKai Mono Screen";
+  --bs-font-family-lxgw-wenkai: "LXGW Wenkai";
+  --bs-font-family-lxgw-wenkai_light: "LXGW Wenkai Light";
+  --bs-font-family-lxgw-wenkai_mono: "LXGW Wenkai Mono";
+  --bs-font-family-lxgw-wenkai_mono_light: "LXGW Wenkai Mono Light";
 }
 
 html {
@@ -74,7 +70,7 @@ html::-webkit-scrollbar {
 html,
 body {
   --bs-font-family-lxgw: var(--bs-font-family-lxgw-wenkai);
-  --bs-font-family-lxgw-mono: var(--bs-font-family-lxgw-wenkai-mono);
+  --bs-font-family-lxgw-mono: var(--bs-font-family-lxgw-wenkai_mono);
   --bs-body-font-family: var(--bs-font-family-lxgw), var(--bs-font-sans-serif) !important;
   --bs-font-monospace: var(--bs-font-family-lxgw-mono) !important;
   scroll-behavior: smooth;

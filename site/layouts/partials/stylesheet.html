@@ -20,11 +20,11 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/flag-icons/css/flag-icons.min.css">
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/vanilla-cookieconsent/dist/cookieconsent.css">
 
-{{ if .Site.Params.font_family.enable }}
-    {{ $font_family_name := .Site.Params.font_family.name }}
-    {{ $font_family_css_href := printf "%s%s%s/style.css" $preUrl $staticVendor $font_family_name }}
+{{ if .Site.Params.font_family.enable -}}
+    {{- $font_family_name := .Site.Params.font_family.name -}}
+    {{- $font_family_css_href := printf "%s%s@callmebill/lxgw-wenkai-web/lxgwwenkai-regular/result.min.css" $preUrl $staticVendor -}}
     <link rel="stylesheet" href={{ $font_family_css_href }}>
-{{ end }}
+{{ end -}}
 
 {{ if in .Page.Params.components "svgedit" }}
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/svgedit/dist/editor/svgedit.css">

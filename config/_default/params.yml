@@ -38,12 +38,12 @@ font_family:
     enable: true
     cdn:
         enable: true
-    name: "lxgw-wenkai-webfont"
+    name: "lxgw-wenkai-web"
     options:
-        -   name: "lxgw-wenkai-webfont"
-        -   name: "lxgw-wenkai-tc-webfont"
-        -   name: "lxgw-wenkai-lite-webfont"
-        -   name: "lxgw-wenkai-screen-webfont"
+        -   name: "lxgw-wenkai-web"
+        -   name: "lxgw-wenkai-tc-web"
+        -   name: "lxgw-wenkai-screen-web"
+        -   name: "lxgw-wenkai-gb-web"
 
 # default character color
 color:
