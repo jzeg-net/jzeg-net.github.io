@@ -79,11 +79,11 @@
         "@callmebill/lxgw-wenkai-web": "^1.320.0",
         "@docsearch/js": "^3.6.0",
         "@glidejs/glide": "^3.6.0",
-        "@uppy/core": "^3.10.1",
-        "@uppy/dashboard": "^3.8.1",
-        "@uppy/image-editor": "^2.4.4",
+        "@uppy/core": "^3.11.0",
+        "@uppy/dashboard": "^3.8.2",
+        "@uppy/image-editor": "^2.4.5",
         "@uppy/locales": "^3.5.2",
-        "@uppy/xhr-upload": "^3.6.4",
+        "@uppy/xhr-upload": "^3.6.5",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
@@ -112,7 +112,7 @@
         "svgedit": "^7.3.3",
         "timeago.js": "^4.0.2",
         "tyme4ts": "^1.0.5",
-        "uppy": "^3.24.3",
+        "uppy": "^3.25.0",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.4",
         "workbox-sw": "^7.1.0",
@@ -121,9 +121,9 @@
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
-        "@babel/cli": "^7.24.1",
-        "@babel/core": "^7.24.4",
-        "@babel/preset-env": "^7.24.4",
+        "@babel/cli": "^7.24.5",
+        "@babel/core": "^7.24.5",
+        "@babel/preset-env": "^7.24.5",
         "@html-eslint/cli": "^0.24.1",
         "@html-eslint/eslint-plugin": "^0.24.1",
         "@html-eslint/parser": "^0.24.1",
@@ -143,7 +143,7 @@
         "sass": "^1.75.0",
         "stylelint": "^16.4.0",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.30.4"
+        "terser": "^5.31.0"
     },
     "engines": {
         "node": ">=20"
