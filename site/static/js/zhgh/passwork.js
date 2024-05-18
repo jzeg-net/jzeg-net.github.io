@@ -27,7 +27,7 @@ function submitForm (event) {
   }
   let fetchOptions = fetchPostOptions(fetchData)
 
-  fetch(`${zhghApiUrl}/passwork/index.php`, fetchOptions)
+  fetch(`${zhghApiUrl}/passwork/`, fetchOptions)
     .then(response => response.json())
     .then(response => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })

@@ -1,5 +1,5 @@
 // 页面工具
-let zhghApiUrl = 'https://api.zhgh.jzeg.net'
+let zhghApiUrl = 'https://api.jzeg.net/api/zhgh/v1'
 // 页面工具
 let newTabPage = document.querySelector('#newTabPage')
 let refreshPage = document.querySelector('#refreshPage')
@@ -19,7 +19,7 @@ if (throughSelect) {
   throughSelect.addEventListener('click', () => {
     let fetchOptions = fetchPostOptions([])
 
-    fetch(`${zhghApiUrl}/type_of_work/index.php`, fetchOptions)
+    fetch(`${zhghApiUrl}/type_of_work/`, fetchOptions)
       .then(response => response.json())
       .then(response => {
         Object.keys(response).forEach(xx => {
