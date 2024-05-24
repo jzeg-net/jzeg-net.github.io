@@ -7,7 +7,6 @@ function getFormData (formEl) {
     formData[$key] = $value
   })
 
-  console.log(formData)
   return formData
 }
 
