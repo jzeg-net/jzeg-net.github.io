@@ -29,7 +29,6 @@ function submitForm (event) {
     .then(response => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
-      console.log(response)
       response = JSON.parse(JSON.stringify(response))
       if (response['errorMsg']) {
         if (response['errorMsg'] !== '空集合') {
