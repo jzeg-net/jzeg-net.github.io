@@ -19,7 +19,7 @@ function submitForm (event) {
   let fetchData = {
     account: formData['account'],
     password: formData['password'],
-    throughNum: formData['throughNum'],
+    jobName: formData['jobName'],
     level: formData['level'],
     speed: formData['speed'],
     userAgent: navigator.userAgent,
