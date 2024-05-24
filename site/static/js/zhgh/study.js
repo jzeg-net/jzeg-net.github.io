@@ -18,7 +18,7 @@ function submitForm (event) {
   let fetchData = {
     account: formData['account'],
     password: formData['password'],
-    throughNum: formData['throughNum'],
+    jobName: formData['jobName'],
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
@@ -40,7 +40,7 @@ function submitForm (event) {
           response['name'],
           response['total'],
           response['executionTime'],
-          response['time'],
+          response['currentDateTime']['time'],
         ])
       }
       clearFormSpinner(study_login)

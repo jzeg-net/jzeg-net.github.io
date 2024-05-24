@@ -126,7 +126,7 @@ friendLinks:
 # 订阅通讯
 newsletter:
     footer:
-        enable: true
+        enable: false
 
 # 页脚链接列表
 footerLinks:
