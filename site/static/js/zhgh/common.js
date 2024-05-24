@@ -19,7 +19,7 @@ if (throughSelect) {
   throughSelect.addEventListener('click', () => {
     let fetchOptions = fetchPostOptions([])
 
-    fetch(`${zhghApiUrl}/type_of_work/`, fetchOptions)
+    fetch(`${zhghApiUrl}/jobs/`, fetchOptions)
       .then(response => response.json())
       .then(response => {
         Object.keys(response).forEach(xx => {
