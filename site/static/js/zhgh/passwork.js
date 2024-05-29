@@ -37,14 +37,7 @@ function submitForm (event) {
       if (response['errorMsg']) {
         bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else {
-        resultTable.rows.add([
-          response['name'],
-          response['level'],
-          response['right'],
-          response['wrong'],
-          response['time'],
-          response['score']
-        ])
+        datatablesAddRow(response)
       }
       clearFormSpinner(passwork_login)
       clearInterval(submitTimerIntervalID)
@@ -73,19 +66,33 @@ function submitForm (event) {
 }
 
 // 结果表格
-let resultTable = new simpleDatatables.DataTable('#resultTable', {
-  columns: [
-    {}
-  ],
-  classes: simpleDatatables_classes_bootstrap,
-  labels: simpleDatatables_labels_zh_CN,
-  fixedHeight: true,
-  searchable: false,
-  perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
-  data: {
-    'headings': ['分类', '关卡', '正确', '错误', '用时', '得分']
+let datatables
+
+function datatablesAddRow (response) {
+  if (!datatables) {
+    datatables = new simpleDatatables.DataTable('#resultTable', {
+      columns: [
+        {}
+      ],
+      classes: simpleDatatables_classes_bootstrap,
+      labels: simpleDatatables_labels_zh_CN,
+      fixedHeight: true,
+      searchable: false,
+      perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
+      data: {
+        'headings': ['分类', '关卡', '正确', '错误', '用时', '得分']
+      }
+    })
   }
-})
+  datatables.rows.add([
+    response['name'],
+    response['level'],
+    response['right'],
+    response['wrong'],
+    response['time'],
+    response['score']
+  ])
+}
 
 // 关卡滑动条
 let level = document.querySelector('#level')

@@ -35,12 +35,7 @@ function submitForm (event) {
           bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
         }
       } else {
-        resultTable.rows.add([
-          response['name'],
-          response['total'],
-          response['executionTime'],
-          response['currentDateTime']['time'],
-        ])
+        datatablesAddRow(response)
       }
       clearFormSpinner(study_login)
       clearInterval(submitTimerIntervalID)
@@ -66,16 +61,30 @@ function submitForm (event) {
 }
 
 // 结果表格
-let resultTable = new simpleDatatables.DataTable('#resultTable', {
-  columns: [
-    {}
-  ],
-  classes: simpleDatatables_classes_bootstrap,
-  labels: simpleDatatables_labels_zh_CN,
-  fixedHeight: true,
-  searchable: false,
-  perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
-  data: {
-    'headings': ['类别', '获得', '用时', '时间']
+
+let datatables
+
+function datatablesAddRow (response) {
+  if (!datatables) {
+    datatables = new simpleDatatables.DataTable('#resultTable', {
+      columns: [
+        {}
+      ],
+      classes: simpleDatatables_classes_bootstrap,
+      labels: simpleDatatables_labels_zh_CN,
+      fixedHeight: true,
+      searchable: false,
+      perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
+      data: {
+        'headings': ['类别', '获得', '用时', '时间']
+      }
+    })
   }
-})
+
+  datatables.rows.add([
+    response['name'],
+    response['total'],
+    response['executionTime'],
+    response['currentDateTime']['time'],
+  ])
+}
