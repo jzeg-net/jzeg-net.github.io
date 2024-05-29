@@ -98,7 +98,7 @@
         "github-markdown-css": "^5.5.1",
         "html2canvas": "^1.4.1",
         "interactjs": "^1.10.27",
-        "jcalendar.js": "^2.10.15",
+        "jcalendar.js": "^2.10.16",
         "js-cookie": "^3.0.5",
         "localforage": "^1.10.0",
         "lozad": "^1.16.0",
@@ -142,7 +142,7 @@
         "postcss": "^8.4.38",
         "postcss-cli": "^11.0.0",
         "sass": "^1.77.2",
-        "stylelint": "^16.6.0",
+        "stylelint": "^16.6.1",
         "svg-sprite": "^3.0.0-rc2",
         "terser": "^5.31.0"
     },
