@@ -99,7 +99,7 @@
         "github-markdown-css": "^5.5.1",
         "html2canvas": "^1.4.1",
         "interactjs": "^1.10.27",
-        "jcalendar.js": "^2.11.0",
+        "jcalendar.js": "^2.12.0",
         "js-cookie": "^3.0.5",
         "localforage": "^1.10.0",
         "lozad": "^1.16.0",
@@ -113,7 +113,7 @@
         "sortablejs": "^1.15.2",
         "svgedit": "^7.3.3",
         "timeago.js": "^4.0.2",
-        "tyme4ts": "^1.0.5",
+        "tyme4ts": "^1.0.6",
         "uppy": "^4.0.0-beta.10",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.4",
@@ -123,9 +123,9 @@
         "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
-        "@babel/cli": "^8.0.0-alpha.10",
-        "@babel/core": "^8.0.0-alpha.10",
-        "@babel/preset-env": "^8.0.0-alpha.10",
+        "@babel/cli": "^8.0.0-alpha.11",
+        "@babel/core": "^8.0.0-alpha.11",
+        "@babel/preset-env": "^8.0.0-alpha.11",
         "@html-eslint/cli": "^0.24.1",
         "@html-eslint/eslint-plugin": "^0.24.1",
         "@html-eslint/parser": "^0.24.1",
@@ -138,14 +138,14 @@
         "eslint-plugin-markdown": "^5.0.0",
         "eslint-plugin-unicorn": "^53.0.0",
         "find-unused-sass-variables": "^6.0.0",
-        "hugo-bin": "^0.123.3",
+        "hugo-bin": "^0.124.0",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.38",
         "postcss-cli": "^11.0.0",
         "sass": "^1.77.4",
         "stylelint": "^16.6.1",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.31.0"
+        "terser": "^5.31.1"
     },
     "engines": {
         "node": ">=20"
