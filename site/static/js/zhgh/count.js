@@ -20,8 +20,12 @@ function submitForm (event) {
     .then(response => response.json())
     .then(response => {
       datatablesAddRow(response)
+      clearFormSpinner(count)
     })
-
+    .catch(error => {
+      console.error('count_error:', error)
+      clearFormSpinner(count)
+    })
 }
 
 // 结果表格
