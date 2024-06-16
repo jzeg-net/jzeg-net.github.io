@@ -208,6 +208,11 @@
     <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
 {{ end }}
 
+{{ if eq .Type "zhgh/count" }}
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/count.js"></script>
+{{ end }}
+
 {{ if eq .Type "zhgh/study" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
