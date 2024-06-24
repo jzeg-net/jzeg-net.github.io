@@ -86,6 +86,7 @@
         "@uppy/image-editor": "^3.0.0-beta.5",
         "@uppy/locales": "^4.0.0-beta.4",
         "@uppy/xhr-upload": "^4.0.0-beta.6",
+        "axios": "^1.7.2",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
