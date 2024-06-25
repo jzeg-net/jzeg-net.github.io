@@ -1,7 +1,6 @@
 function getFormData (formEl) {
   let form = new FormData(formEl)
   let formData = {}
-  form.append('userAgent', navigator.userAgent)
 
   form.forEach(($value, $key) => {
     formData[$key] = $value
