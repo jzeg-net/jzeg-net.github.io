@@ -114,7 +114,7 @@
         "sortablejs": "^1.15.2",
         "svgedit": "^7.3.3",
         "timeago.js": "^4.0.2",
-        "tyme4ts": "^1.0.7",
+        "tyme4ts": "^1.1.0",
         "uppy": "^4.0.0-beta.14",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.4",
@@ -143,10 +143,10 @@
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.39",
         "postcss-cli": "^11.0.0",
-        "sass": "^1.77.6",
+        "sass": "^1.77.7",
         "stylelint": "^16.6.1",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.31.1"
+        "terser": "^5.31.2"
     },
     "engines": {
         "node": ">=20"
