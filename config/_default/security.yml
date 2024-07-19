@@ -2,4 +2,4 @@ enableInlineShortcodes: false
 funcs:
     getenv: [ '^HUGO_', '^CI$' ]
 exec:
-    allow: [ '^npx$', '^babel$', '^postcss$' ]
+    allow: [ '^npx$', '^babel$', '^postcss$', '^git$' ]
