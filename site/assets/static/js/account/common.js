@@ -1,4 +1,4 @@
-let accountApiUrl = 'https://api.account.jzeg.net'
+let accountApiUrl = 'https://api.jzeg.net'
 
 function isLoggedIn() {
     return Cookies.get('login')
@@ -117,7 +117,7 @@ function updateCaptcha(formEl) {
 function freshCaptcha(captchaEl) {
     let currentSrc = captchaEl.dataset['src']
     let now = Date.now()
-    captchaEl.src = currentSrc + now
+    captchaEl.src = accountApiUrl + currentSrc + now
 }
 
 function resetCaptchaInputValue(captchaEl) {
@@ -288,5 +288,15 @@ function btnDisabledStatus(btnElement) {
     btnElement.toggleAttribute('disabled')
 }
 
+// 懒加载
+const lazyLoadCaptcha = (selector = '', captchaBaseUrl = 'https://api.jzeg.net') => {
+  const observer = lozad(selector, {
+    load: (el) => {
+      let dataSrc = el.getAttribute('data-src')
+      if (dataSrc) el.src = captchaBaseUrl + dataSrc
+    }
+  })
+  observer.observe()
+}
 // 懒加载验证码
-lazyLoad('.lazyCaptcha')
+lazyLoadCaptcha('.lazyCaptcha')
