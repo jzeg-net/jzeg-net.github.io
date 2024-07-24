@@ -292,7 +292,7 @@ function btnDisabledStatus(btnElement) {
 const lazyLoadCaptcha = (selector = '', captchaBaseUrl = 'https://api.jzeg.net') => {
   const observer = lozad(selector, {
     load: (el) => {
-      let dataSrc = el.getAttribute('data-src')
+      let dataSrc = el.dataset['src']
       if (dataSrc) el.src = captchaBaseUrl + dataSrc
     }
   })
