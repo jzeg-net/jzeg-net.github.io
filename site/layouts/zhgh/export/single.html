@@ -1,6 +1,13 @@
 {{ define "content" }}
     {{ partial "svg_sprite_icons/zhgh" }}
+    {{ .Content }}
     <main class="pb-5 container-xxl" id="main">
+        <div class="d-flex flex-column align-items-center">
+            <strong class="small text-secondary-emphasis">
+                <p>功能介绍：将题目数据导出为指定格式。 ( Excel / Word / PDF )</p>
+                <p>功能未开放，需要单独开发，较为耗费资源，如有需要，请联系。</p>
+            </strong>
+        </div>
         <div class="mx-auto py-5 col-12 col-sm-10 col-md-8 col-lg-6 col-xxl-4">
             <form class="py-4" id="passwork_login">
                 <div class="input-group mb-3">
@@ -11,9 +18,27 @@
                         <label for="throughSelect">导出类别</label>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label>格式</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="format" id="format_excel" value="excel">
+                            <label class="form-check-label" for="format_excel">Excel</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="format" id="format_word" value="word">
+                            <label class="form-check-label" for="format_word">Word</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="format" id="format_pdf" value="pdf" disabled>
+                            <label class="form-check-label" for="format_pdf">PDF</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">确定</button>
+                </div>
             </form>
         </div>
-        {{ partial "zhgh/result" }}
-        {{ partial "zhgh/page_tools" }}
     </main>
 {{ end }}
