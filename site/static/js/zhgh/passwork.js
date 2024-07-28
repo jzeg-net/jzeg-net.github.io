@@ -32,18 +32,29 @@ function submitForm (event) {
     .then(response => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
+
       console.log(response)
       response = JSON.parse(JSON.stringify(response))
+
       if (response['errorMsg']) {
         bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
+      } else if (response['msg']) {
+        bModal('', createSmallCenterText(response['msg'], 'danger'), '', 'sm', true)
+      } else if (response['message'] || (response['line'] && response['file'] && response['exception'])) {
+        let msg = '服务器错误，可能是工种原因，请勿重复尝试。'
+        bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
       } else {
         datatablesAddRow(response)
       }
+
       clearFormSpinner(passwork_login)
       clearInterval(submitTimerIntervalID)
 
-      if (response['errorMsg'] === '登录失败') return
-      if (response['errorMsg'] === '每日学习限时1小时，请明天再来，谢谢') return
+      if (response['msg']) return
+      if (response['errorMsg']) return
+      if (response['message']) return
+      // if (response['errorMsg'] === '登录失败') return
+      // if (response['errorMsg'] === '每日学习限时1小时，请明天再来，谢谢') return
 
       if (automaticNextLevel.checked && level.value < 30) {
         level.value++

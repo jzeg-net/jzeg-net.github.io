@@ -29,14 +29,20 @@ function submitForm (event) {
     .then(response => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
+
       response = JSON.parse(JSON.stringify(response))
+
       if (response['errorMsg']) {
-        if (response['errorMsg'] !== '空集合') {
-          bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
-        }
+        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
+      } else if (response['msg']) {
+        bModal('', createSmallCenterText(response['msg'], 'success'), '', 'sm', true)
+      } else if (response['message'] || (response['line'] && response['file'] && response['exception'])) {
+        let msg = '服务器未知错误，请勿重复尝试。'
+        bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
       } else {
         datatablesAddRow(response)
       }
+
       clearFormSpinner(study_login)
       clearInterval(submitTimerIntervalID)
 
