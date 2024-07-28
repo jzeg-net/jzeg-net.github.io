@@ -18,21 +18,19 @@
                         <label for="throughSelect">导出类别</label>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label>格式</label>
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="format" id="format_excel" value="excel">
-                            <label class="form-check-label" for="format_excel">Excel</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="format" id="format_word" value="word">
-                            <label class="form-check-label" for="format_word">Word</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="format" id="format_pdf" value="pdf" disabled>
-                            <label class="form-check-label" for="format_pdf">PDF</label>
-                        </div>
+                <div class="d-flex align-items-center mb-3">
+                    <label>格式：</label>
+                    <div class="form-check form-check-inline">
+                        <input class="btn-check" type="radio" name="format" id="format_excel" value="excel" required>
+                        <label class="btn" for="format_excel">Excel</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="btn-check" type="radio" name="format" id="format_word" value="word">
+                        <label class="btn" for="format_word">Word</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="btn-check" type="radio" name="format" id="format_pdf" value="pdf">
+                        <label class="btn" for="format_pdf">PDF</label>
                     </div>
                 </div>
                 <div>
