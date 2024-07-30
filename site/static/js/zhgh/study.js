@@ -35,7 +35,7 @@ function submitForm (event) {
       if (response['errorMsg']) {
         bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else if (response['msg']) {
-        bModal('', createSmallCenterText(response['msg'], 'success'), '', 'sm', true)
+        bModal('', createSmallCenterText(response['msg'], 'danger'), '', 'sm', true)
       } else if (response['message'] || (response['line'] && response['file'] && response['exception'])) {
         let msg = '服务器未知错误，请勿重复尝试。'
         bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
