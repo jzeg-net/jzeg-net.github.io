@@ -1,7 +1,7 @@
 baseURL: "https://localhost/"
 defaultContentLanguage: "zh-cn"
 
-timeout: 150s
+timeout: 100s
 publishDir: "public"
 metaDataFormat: "yaml"
 SectionPagesMenu: "sectionMenus"
