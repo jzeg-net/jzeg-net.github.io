@@ -117,16 +117,19 @@ if (level && levels_range) {
   level.addEventListener('input', () => {
     levels_range.value = level.value
   })
+
   levels_range.addEventListener('input', () => {
     level.value = levels_range.value
   })
+
   levels_plus.addEventListener('click', () => {
     if (level.value === level_max) return
     level.value++
     levels_range.value = level.value
   })
+
   levels_minus.addEventListener('click', () => {
-    if (level.value === level_min) return
+    if (level_min >= level.value) return
     level.value--
     levels_range.value = level.value
   })
