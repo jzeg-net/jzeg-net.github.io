@@ -50,11 +50,15 @@
                         <label for="throughSelect">闯关工种</label>
                     </div>
                 </div>
-                <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group input-group-lg mb-3 flex-nowrap">
                     <label for="level" class="input-group-text">关数</label>
-                    <button class="btn btn-secondary" type="button" id="levels_minus">-</button>
+                    <span class="input-group-text" id="levels_minus">
+                        <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                    </span>
                     <input type="number" name="level" class="input-group-text" min="1" max="30" step="1" value="0" id="level" required>
-                    <button class="btn btn-secondary" type="button" id="levels_plus">+</button>
+                    <span class="input-group-text" id="levels_plus">
+                        <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                    </span>
                 </div>
                 <div>
                     <span class="input-group-text w-100">
