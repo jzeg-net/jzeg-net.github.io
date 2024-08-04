@@ -108,11 +108,26 @@ function datatablesAddRow (response) {
 // 关卡滑动条
 let level = document.querySelector('#level')
 let levels_range = document.querySelector('#levels_range')
+let levels_plus = document.querySelector('#levels_plus')
+let levels_minus = document.querySelector('#levels_minus')
+let level_min = level.getAttribute('min')
+let level_max = level.getAttribute('max')
+
 if (level && levels_range) {
   level.addEventListener('input', () => {
     levels_range.value = level.value
   })
   levels_range.addEventListener('input', () => {
     level.value = levels_range.value
+  })
+  levels_plus.addEventListener('click', () => {
+    if (level.value === level_max) return
+    level.value++
+    levels_range.value = level.value
+  })
+  levels_minus.addEventListener('click', () => {
+    if (level.value === level_min) return
+    level.value--
+    levels_range.value = level.value
   })
 }
