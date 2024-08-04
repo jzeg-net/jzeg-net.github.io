@@ -52,7 +52,11 @@
                 </div>
                 <div class="input-group mb-3 flex-nowrap">
                     <label for="level" class="input-group-text">关数</label>
+{{/*                    <button class="btn btn-secondary" type="button" id="levels_plus">-</button>*/}}
                     <input type="number" name="level" class="input-group-text" min="1" max="30" step="1" value="0" id="level" required>
+{{/*                    <button class="btn btn-secondary" type="button" id="levels_minus">+</button>*/}}
+                </div>
+                <div>
                     <span class="input-group-text w-100">
                         <input type="range" class="form-range" min="1" max="30" step="1" value="0" id="levels_range" aria-label="滑动选择关数">
                     </span>
@@ -67,6 +71,18 @@
                 <div class="input-group input-group-sm mb-3 flex-nowrap">
                     <span class="input-group-text">速度</span>
                     <span class="input-group-text flex-wrap row-cols-3 row-gap-2">
+                        <input type="radio" class="btn-check" name="speed" value="13s" id="speed_13s">
+                        <label class="btn btn-sm" for="speed_7s">13S</label>
+                        <input type="radio" class="btn-check" name="speed" value="12s" id="speed_12s">
+                        <label class="btn btn-sm" for="speed_6s">12S</label>
+                        <input type="radio" class="btn-check" name="speed" value="11s" id="speed_11s">
+                        <label class="btn btn-sm" for="speed_5s">11S</label>
+                        <input type="radio" class="btn-check" name="speed" value="10s" id="speed_10s">
+                        <label class="btn btn-sm" for="speed_7s">10S</label>
+                        <input type="radio" class="btn-check" name="speed" value="9s" id="speed_9s">
+                        <label class="btn btn-sm" for="speed_6s">9S</label>
+                        <input type="radio" class="btn-check" name="speed" value="8s" id="speed_8s">
+                        <label class="btn btn-sm" for="speed_5s">8S</label>
                         <input type="radio" class="btn-check" name="speed" value="7s" id="speed_7s">
                         <label class="btn btn-sm" for="speed_7s">7S</label>
                         <input type="radio" class="btn-check" name="speed" value="6s" id="speed_6s">
