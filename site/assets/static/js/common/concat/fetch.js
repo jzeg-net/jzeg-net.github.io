@@ -12,6 +12,7 @@ function getFormData (formEl) {
 function fetchPostOptions (fetchData) {
   return {
     method: 'POST',
+    cache: 'no-store',
     body: JSON.stringify(fetchData),
     headers: {
       'Accept': 'application/json',
