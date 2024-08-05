@@ -36,9 +36,8 @@ function submitForm (event) {
         bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
       } else if (response['msg']) {
         bModal('', createSmallCenterText(response['msg'], 'danger'), '', 'sm', true)
-      } else if (response['message'] || (response['line'] && response['file'] && response['exception'])) {
-        let msg = '服务器未知错误，请勿重复尝试。'
-        bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
+      } else if (response['message']) {
+        bModal('', createSmallCenterText(response['message'], 'danger'), '', 'sm', true)
       } else {
         datatablesAddRow(response)
       }
