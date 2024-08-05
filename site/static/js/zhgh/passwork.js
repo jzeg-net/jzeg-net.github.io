@@ -109,8 +109,6 @@ let level = document.querySelector('#level')
 let levels_range = document.querySelector('#levels_range')
 let levels_plus = document.querySelector('#levels_plus')
 let levels_minus = document.querySelector('#levels_minus')
-let level_min = level.getAttribute('min')
-let level_max = level.getAttribute('max')
 
 if (level && levels_range) {
   level.addEventListener('input', () => {
@@ -122,14 +120,30 @@ if (level && levels_range) {
   })
 
   levels_plus.addEventListener('click', () => {
-    if (level.value === level_max) return
-    level.value++
+    if (level.value === level.getAttribute('max')) return
+    ++level.value
     levels_range.value = level.value
   })
 
   levels_minus.addEventListener('click', () => {
-    if (level_min >= level.value) return
-    level.value--
+    if (level.getAttribute('min') >= level.value) return
+    --level.value
     levels_range.value = level.value
+  })
+}
+
+// 循环次数
+let autoSubmitTimes = document.querySelector('#autoSubmitTotalTimes')
+let autoTimes_minus = document.querySelector('#autoTimes_minus')
+let autoTimes_plus = document.querySelector('#autoTimes_plus')
+
+if (autoSubmitTimes) {
+  autoTimes_minus.addEventListener('click', () => {
+    if (autoSubmitTimes.value === '1') return
+    --autoSubmitTimes.value
+  })
+
+  autoTimes_plus.addEventListener('click', () => {
+    ++autoSubmitTimes.value
   })
 }
