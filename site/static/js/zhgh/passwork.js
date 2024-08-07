@@ -90,15 +90,14 @@ function datatablesAddRow (response) {
       searchable: false,
       perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
       data: {
-        'headings': ['分类', '关卡', '正确', '错误', '用时', '得分']
+        'headings': ['分类', '关卡', '正确 / 错误', '用时', '得分']
       }
     })
   }
   datatables.rows.add([
     response['name'],
     response['level'],
-    response['right'],
-    response['wrong'],
+    response['right'] + ' / ' + response['wrong'],
     response['time'],
     response['score']
   ])
