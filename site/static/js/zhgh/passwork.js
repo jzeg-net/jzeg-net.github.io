@@ -25,6 +25,15 @@ function submitForm (event) {
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
   }
+
+  // 检查是否为微信浏览器
+  if (fetchData.userAgent.includes('MicroMessenger')) {
+    bModal('', createSmallCenterText('不允许使用微信内置浏览器，请使用其他浏览器！', 'danger'), '', 'sm', true);
+    clearFormSpinner(passwork_login)
+    clearInterval(submitTimerIntervalID)
+    return;
+  }
+
   let fetchOptions = fetchPostOptions(fetchData)
 
   fetch(`${zhghApiUrl}/passwork/`, fetchOptions)
