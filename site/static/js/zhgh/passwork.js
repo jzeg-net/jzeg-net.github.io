@@ -8,6 +8,11 @@ let autoSubmit = document.querySelector('#autoSubmit')
 let autoSubmitTotalTimes = document.querySelector('#autoSubmitTotalTimes')
 let automaticNextLevel = document.querySelector('#automaticNextLevel')
 
+// 检查是否为微信浏览器
+if (navigator.userAgent.includes('MicroMessenger')) {
+  bModal('', createSmallCenterText('不允许在微信内置浏览器中使用，<br>请在其他浏览器中打开本页面', 'danger'), '', 'sm', true);
+}
+
 function submitForm (event) {
   event.preventDefault()
   requestWakelock().then((result) => { screenStatus.checked = result })
@@ -24,14 +29,6 @@ function submitForm (event) {
     speed: formData['speed'],
     userAgent: navigator.userAgent,
     captcha: formData['captcha'],
-  }
-
-  // 检查是否为微信浏览器
-  if (fetchData.userAgent.includes('MicroMessenger')) {
-    bModal('', createSmallCenterText('不允许使用微信内置浏览器，请使用其他浏览器！', 'danger'), '', 'sm', true);
-    clearFormSpinner(passwork_login)
-    clearInterval(submitTimerIntervalID)
-    return;
   }
 
   let fetchOptions = fetchPostOptions(fetchData)
