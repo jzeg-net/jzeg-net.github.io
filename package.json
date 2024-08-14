@@ -86,7 +86,7 @@
         "@uppy/image-editor": "^3.0.0",
         "@uppy/locales": "^4.0.3",
         "@uppy/xhr-upload": "^4.0.2",
-        "axios": "^1.7.3",
+        "axios": "^1.7.4",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
@@ -139,14 +139,14 @@
         "eslint-plugin-markdown": "^5.1.0",
         "eslint-plugin-unicorn": "^55.0.0",
         "find-unused-sass-variables": "^6.0.0",
-        "hugo-bin": "^0.128.0",
+        "hugo-bin": "^0.129.2",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.41",
         "postcss-cli": "^11.0.0",
         "sass": "^1.77.8",
         "stylelint": "^16.8.1",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.31.5"
+        "terser": "^5.31.6"
     },
     "engines": {
         "node": ">=20"
