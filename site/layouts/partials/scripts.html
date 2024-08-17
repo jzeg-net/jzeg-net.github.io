@@ -41,6 +41,18 @@
     <script src="{{ $preUrl }}static/vendor/interactjs/dist/interact.min.js"></script>
 {{ end }}
 
+{{ if in .Page.Params.components "handsontable" }}
+    <script src="{{ $preUrl }}static/vendor/handsontable/dist/handsontable.full.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/handsontable/dist/languages/zh-CN.min.js"></script>
+    <script src="{{ $preUrl }}static/js/handsontable.js"></script>
+{{ end }}
+
+{{ if in .Page.Params.components "handsontable-simple" }}
+    <script src="{{ $preUrl }}static/vendor/handsontable/dist/handsontable.min.js"></script>
+    <script src="{{ $preUrl }}static/vendor/handsontable/dist/languages/zh-CN.min.js"></script>
+    <script src="{{ $preUrl }}static/js/handsontable.js"></script>
+{{ end }}
+
 {{ if in .Page.Params.components "datatables" }}
     <script src="{{ $preUrl }}static/vendor/simple-datatables/dist/umd/simple-datatables.js"></script>
     <script src="{{ $preUrl }}static/js/sDataTables.js"></script>
@@ -197,6 +209,11 @@
 {{ if eq .Type "zhgh/passwork" }}
     <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
     <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
+{{ end }}
+
+{{ if eq .Type "zhgh/manage/account" }}
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+    <script src="{{ $preUrl }}static/js/zhgh/manage/account.js"></script>
 {{ end }}
 
 {{ if eq .Type "zhgh/count" }}

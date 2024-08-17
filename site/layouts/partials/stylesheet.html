@@ -38,6 +38,14 @@
 <link rel="stylesheet" href="{{ $preUrl }}static/vendor/jcalendar.js/dist/calendar.js.min.css">
 {{ end }}
 
+{{ if in .Page.Params.components "handsontable" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/handsontable/dist/handsontable.full.min.css">
+{{ end }}
+
+{{ if in .Page.Params.components "handsontable-simple" }}
+<link rel="stylesheet" href="{{ $preUrl }}static/vendor/handsontable/dist/handsontable.min.css">
+{{ end }}
+
 {{/*<link rel="stylesheet" href="{{ $preUrl }}static/vendor/xgplayer/dist/index.min.css">*/}}
 
 {{ if in .Page.Params.components "datatables" }}
