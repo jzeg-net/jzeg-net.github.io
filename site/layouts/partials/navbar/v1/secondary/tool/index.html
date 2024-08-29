@@ -22,7 +22,7 @@
     </li>
 {{ end }}
 
-{{ if .Site.IsMultiLingual }}
+{{ if hugo.IsMultilingual }}
     <li class="nav-item col-6 col-lg-auto dropdown">
         {{ partial "navbar/v1/secondary/tool/language" . }}
     </li>

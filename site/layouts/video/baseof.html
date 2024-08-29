@@ -15,7 +15,7 @@
     {{ block "title" . }}<title>{{- partial "head/title" . -}}</title>{{ end }}
     {{ if eq .Kind "404" -}}
         <link rel="canonical" href="{{ .RelPermalink }}">
-        {{ if .Site.IsMultiLingual }}
+        {{ if hugo.IsMultilingual }}
             {{ range .Translations }}
                 <link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .RelPermalink }}">
             {{ end }}

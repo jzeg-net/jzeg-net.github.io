@@ -114,7 +114,7 @@
                         </div>
                     {{ end }}
 
-                    {{ if .Site.IsMultiLingual }}
+                    {{ if hugo.IsMultilingual }}
                         <div>
                             {{ range .Site.Menus.language }}
                                 <a href="#collapse-translation" class="p-3 lh-1 list-group-item list-group-item-action" title="{{ .Params.toggle_text }}" data-bs-toggle="collapse" aria-expanded="false" role="button">
