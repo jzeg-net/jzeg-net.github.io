@@ -146,7 +146,7 @@
         "sass": "^1.78.0",
         "stylelint": "^16.9.0",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.32.0"
+        "terser": "^5.33.0"
     },
     "engines": {
         "node": ">=20"
