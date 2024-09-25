@@ -78,7 +78,7 @@
         "buildTags": "extended"
     },
     "dependencies": {
-        "@callmebill/lxgw-wenkai-web": "^1.330.0",
+        "@callmebill/lxgw-wenkai-web": "^1.330.1",
         "@docsearch/js": "^3.6.1",
         "@glidejs/glide": "^3.6.2",
         "@uppy/core": "^4.2.0",
@@ -97,7 +97,7 @@
         "fabric": "^6.4.2",
         "flag-icons": "^7.2.3",
         "github-markdown-css": "^5.6.1",
-        "handsontable": "^14.5.0",
+        "handsontable": "^14.6.0-next-4d69faf-20240924",
         "html2canvas": "^1.4.1",
         "interactjs": "^1.10.27",
         "jcalendar.js": "^2.12.0",
