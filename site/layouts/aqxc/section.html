@@ -1,0 +1,99 @@
+{{ define "content" }}
+    <main class="pb-5 container-xxl" id="main">
+        {{ .Content }}
+        <div class="mx-auto py-5 col-12 col-sm-10 col-md-6 col-lg-4 col-xxl-4">
+            <form class="d-flex flex-column row-gap-2 mb-4" id="aqxc_form">
+                <div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="account" id="aqxc_account" placeholder="请输入 账号" autocomplete="off" minlength="11" maxlength="11" required>
+                        <label for="aqxc_account">账号</label>
+                    </div>
+                    <label for="aqxc_account" class="form-text">
+                        <span class="user-select-none">当前账号：</span>
+                        <span id="account_display">未设置</span>
+                    </label>
+                </div>
+                <div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="token" id="token" placeholder="请输入 Token" autocomplete="off" required>
+                        <label for="token">Token</label>
+                    </div>
+                    <label for="token" class="form-text">
+                        <span class="user-select-none">当前 Token：</span>
+                        <span class="text-break" id="token_display">未设置</span>
+                    </label>
+                </div>
+                <div>
+                    <div class="d-grid row-gap-1">
+                        <button type="reset" class="ms-auto btn btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
+                        <button type="submit" class="btn btn-success">保 存</button>
+                    </div>
+                    <div class="form-text">
+                        <span>保存成功后，点击下方刷新按钮，获取最新数据。</span>
+                    </div>
+                </div>
+            </form>
+            <div class="mb-3" id="result">
+                <div class="px-2 py-3 d-flex flex-column row-gap-3 border border-secondary-subtle rounded" id="userInfo">
+                    <div class="d-flex flex-row">
+                        <div class="grid row-gap-2 column-gap-0">
+                            <span class="g-col-3 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">昵称：</span>
+                            <span class="g-col-8 text-truncate" id="user_nickname"></span>
+                            <span class="g-col-3 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">姓名：</span>
+                            <span class="g-col-8" id="user_real_name"></span>
+                            <span class="g-col-3 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">手机号：</span>
+                            <span class="g-col-8" id="user_mobile"></span>
+                        </div>
+                        <div class="ms-auto" style="width: 90px;">
+                            <img class="w-100 img-thumbnail rounded-circle bg-secondary-subtle" id="user_avatar"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt="头像">
+                        </div>
+                    </div>
+                    <hr class="my-0 text-opacity-50">
+                    <div class="d-flex">
+                        <div class="grid row-gap-2 column-gap-0">
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">今日安全币：</span>
+                            <span class="g-col-7" id="user_power"></span>
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">当月积分：</span>
+                            <span class="g-col-7" id="user_points"></span>
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">累计积分：</span>
+                            <span class="g-col-7" id="user_total_points"></span>
+                        </div>
+                        <div class="ms-auto">
+                            <button type="button" class="btn btn-sm btn-link link-success refreshInfo" data-refresh="profile">
+                                <svg class="bi fs-4"><title>刷新</title><use href="#bi-arrow-clockwise"></use></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="my-0 text-opacity-50">
+                    <div class="d-flex">
+                        <div class="grid row-gap-2 column-gap-0">
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">学习时长：</span>
+                            <span class="g-col-7" id="user_totalTime"></span>
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">观看数量：</span>
+                            <span class="g-col-7" id="user_studyStats"></span>
+                            <span class="g-col-5 text-nowrap font-monospace user-select-none" style="text-align-last: justify;">观看次数：</span>
+                            <span class="g-col-7" id="user_visitStats"></span>
+                        </div>
+                        <div class="ms-auto">
+                            <button type="button" class="btn btn-sm btn-link link-warning refreshInfo" data-refresh="video">
+                                <svg class="bi fs-4"><title>刷新</title><use href="#bi-arrow-clockwise"></use></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="link-underline-opacity-0">
+                    <a class="link-danger" href="quiz" target="_blank">测验</a>
+                    <a class="link-danger" href="study" target="_blank">学习</a>
+                </div>
+                <div class="link-underline-opacity-0">
+                    <a class="link-danger" href="quiz_records" target="_blank">今日测验记录</a>
+                    <a class="link-danger" href="study_records" target="_blank">今日学习记录</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{{ end }}
