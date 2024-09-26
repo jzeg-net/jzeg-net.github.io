@@ -78,7 +78,7 @@
         "buildTags": "extended"
     },
     "dependencies": {
-        "@callmebill/lxgw-wenkai-web": "^1.330.1",
+        "@callmebill/lxgw-wenkai-web": "^1.330.2",
         "@docsearch/js": "^3.6.1",
         "@glidejs/glide": "^3.6.2",
         "@uppy/core": "^4.2.0",
@@ -96,7 +96,7 @@
         "dragula": "^3.7.3",
         "fabric": "^6.4.2",
         "flag-icons": "^7.2.3",
-        "github-markdown-css": "^5.6.1",
+        "github-markdown-css": "^5.7.0",
         "handsontable": "^14.6.0-next-4d69faf-20240924",
         "html2canvas": "^1.4.1",
         "interactjs": "^1.10.27",
@@ -146,7 +146,7 @@
         "sass": "^1.79.3",
         "stylelint": "^16.9.0",
         "svg-sprite": "^3.0.0-rc2",
-        "terser": "^5.33.0"
+        "terser": "^5.34.0"
     },
     "engines": {
         "node": ">=20"
