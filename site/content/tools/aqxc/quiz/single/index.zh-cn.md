@@ -1,6 +1,6 @@
 ---
-title: "Quiz"
-type: "aqxc/quiz"
+title: "单人模式"
+type: "aqxc/quiz/single"
 
 date: "2023-09-20T19:00:00+08:00"
 

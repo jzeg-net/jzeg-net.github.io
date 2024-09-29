@@ -1,6 +1,6 @@
 ---
-title: "Video Study"
-type: "aqxc/study"
+title: "练习模式"
+type: "aqxc/quiz/exercise"
 
 date: "2023-09-20T19:00:00+08:00"
 

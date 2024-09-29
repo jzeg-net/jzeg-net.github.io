@@ -3,7 +3,7 @@ let end = document.querySelector('#end')
 let getList = document.querySelector('#getList')
 let token = localStorage.getItem('token')
 let accounts = localStorage.getItem('account')
-let videoID = 534
+let videoID = 530
 
 getList.addEventListener('click', () => {
 })

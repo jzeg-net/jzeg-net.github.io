@@ -234,11 +234,23 @@
 {{ end }}
 
 {{ if eq .Type "aqxc/study" }}
-    <script src="{{ $preUrl }}static/js/aqxc/study.js"></script>
+    <script src="{{ $preUrl }}static/js/aqxc/study/study.js"></script>
 {{ end }}
 
-{{ if eq .Type "aqxc/quiz" }}
-    <script src="{{ $preUrl }}static/js/aqxc/quiz.js"></script>
+{{ if eq .Type "aqxc/quiz/exercise" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/exercise.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/quiz/single" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/single.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/quiz/pk" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/pk.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/quiz/multi" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/multi.js"></script>
 {{ end }}
 
 {{ if eq .Type "aqxc/study_records" }}

@@ -1,6 +1,6 @@
 ---
-title: "Video Study"
-type: "aqxc/study"
+title: "双人对战"
+type: "aqxc/quiz/pk"
 
 date: "2023-09-20T19:00:00+08:00"
 

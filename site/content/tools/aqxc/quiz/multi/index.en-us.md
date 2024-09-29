@@ -1,6 +1,6 @@
 ---
-title: "Video Study"
-type: "aqxc/study"
+title: "Multiple people participating"
+type: "aqxc/quiz/multi"
 
 date: "2023-09-20T19:00:00+08:00"
 
