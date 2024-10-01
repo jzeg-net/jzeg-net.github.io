@@ -7,8 +7,8 @@ start.addEventListener('click', () => {
   let url = aqxcApiUrl + 'quiz/pk'
 
   let data = {
-    token: aqxcToken,
-    account: aqxcAccount,
+    token: getStorageAqxcToken(),
+    account: getStorageAqxcAccount(),
     category_id: category_id,
   }
 
@@ -21,9 +21,17 @@ start.addEventListener('click', () => {
     body: JSON.stringify(data)
   })
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+    .then(result => {
+      console.log(result)
+      // 如果包含code字段和message字段，则说明请求失败，弹出错误信息，否则弹出正确信息
+      if (result.hasOwnProperty('code')
+        && result.hasOwnProperty('message')
+      ) {
+        bModal('', createSmallCenterText(result.message, 'danger'), '', 'sm', true)
+        return
+      }
+
+      bModal('', createSmallCenterText('得分：' + result['data']['tester_score'], 'success'), '', 'sm', true)
     })
     .catch(err => {
       console.log(err)

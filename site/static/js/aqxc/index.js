@@ -9,30 +9,19 @@ if (aqxc_form) {
    * 刷新当前的 token 的显示
    */
   const refreshTokenDisplay = () => {
-    token_display.innerText = localStorage.getItem('token')
+    token_display.innerText = getStorageAqxcToken()
   }
   /**
    * 刷新当前的 账号 的显示
    */
   const refreshAccountDisplay = () => {
-    account_display.innerText = localStorage.getItem('account')
+    account_display.innerText = getStorageAqxcAccount()
   }
 
-  /**
-   * 获取本地存储的 token
-   * @return {string}
-   */
-  const getStorageToken = () => localStorage.getItem('token')
-  /**
-   * 获取本地存储的账号
-   * @return {string}
-   */
-  const getStorageAccount = () => localStorage.getItem('account')
-
   // 如果有本地存储的 token，则刷新显示
-  if (getStorageToken()) refreshTokenDisplay()
+  if (getStorageAqxcToken()) refreshTokenDisplay()
   // 如果有本地存储的账号，则刷新显示
-  if (getStorageAccount()) refreshAccountDisplay()
+  if (getStorageAqxcAccount()) refreshAccountDisplay()
 
   aqxc_form.addEventListener('submit', event => {
     event.preventDefault()
@@ -50,11 +39,11 @@ if (aqxc_form) {
     }
 
     if (token.value) {
-      localStorage.setItem('token', token.value)
+      setStorageAqxcToken(token.value)
       refreshTokenDisplay()
     }
     if (account.value) {
-      localStorage.setItem('account', account.value)
+      setStorageAqxcAccount(account.value)
       refreshAccountDisplay()
     }
 
@@ -83,12 +72,12 @@ if (aqxc_form) {
 
   aqxc_form.addEventListener('reset', event => {
     console.log(event)
-    localStorage.removeItem('token')
-    localStorage.removeItem('account')
+    removeStorageAqxcToken()
+    removeStorageAqxcAccount()
     refreshTokenDisplay()
     refreshAccountDisplay()
-    token_display.innerText = localStorage.getItem('token') || '已清空'
-    account_display.innerText = localStorage.getItem('account') || '已清空'
+    token_display.innerText = getStorageAqxcToken() || '已清空'
+    account_display.innerText = getStorageAqxcAccount() || '已清空'
     bModal('', createSmallCenterText('已清空 数据', 'success'), '', 'sm', true)
   })
 
@@ -107,8 +96,8 @@ refreshInfo.forEach((item) => {
     if (refreshType === 'video') urlPath = 'profile/videoStat'
 
     let url = aqxcApiUrl + urlPath
-    let token = localStorage.getItem('token')
-    let account = localStorage.getItem('account')
+    let token = getStorageAqxcToken()
+    let account = getStorageAqxcAccount()
 
     if (!account) {
       bModal('', createSmallCenterText('请先设置 账号', 'danger'), '', 'sm', true)

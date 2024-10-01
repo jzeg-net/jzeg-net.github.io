@@ -1,9 +1,13 @@
 let start = document.querySelector('#start')
 let end = document.querySelector('#end')
 let getList = document.querySelector('#getList')
-let token = localStorage.getItem('token')
-let accounts = localStorage.getItem('account')
 let videoID = 530
+
+let storageVideoRecordKey = 'aqxcVideoRecord'
+const getStorageVideoRecord = () => localStorage.getItem(storageVideoRecordKey)
+const setStorageVideoRecord = (record) => localStorage.setItem(storageVideoRecordKey, record)
+const removeStorageVideoRecord = () => localStorage.removeItem(storageVideoRecordKey)
+
 
 getList.addEventListener('click', () => {
 })
@@ -11,8 +15,8 @@ getList.addEventListener('click', () => {
 start.addEventListener('click', () => {
   let url = aqxcApiUrl + 'video/start'
   let data = {
-    token: token,
-    account: accounts,
+    token: getStorageAqxcToken(),
+    account: getStorageAqxcAccount(),
     id: videoID,
   }
 
@@ -29,7 +33,7 @@ start.addEventListener('click', () => {
       console.log(data)
       let record = data.data.record
       console.log(record)
-      localStorage.setItem('videoRecord', record)
+      setStorageVideoRecord(record)
     })
     .catch(err => {
       console.log(err)
@@ -38,10 +42,10 @@ start.addEventListener('click', () => {
 })
 end.addEventListener('click', () => {
   let url = aqxcApiUrl + 'video/end'
-  let videoRecord = localStorage.getItem('videoRecord')
+  let videoRecord = getStorageVideoRecord()
   let data = {
-    token: token,
-    account: accounts,
+    token: getStorageAqxcToken(),
+    account: getStorageAqxcAccount(),
     id: videoID,
     record: videoRecord,
   }
