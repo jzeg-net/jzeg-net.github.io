@@ -1,16 +1,14 @@
 let start = document.querySelector('#start')
 let end = document.querySelector('#end')
 let getList = document.querySelector('#getList')
-let token = localStorage.getItem('token')
-let accounts = localStorage.getItem('account')
 let category_id = 3
 
 start.addEventListener('click', () => {
   let url = aqxcApiUrl + 'quiz/multi'
 
   let data = {
-    token: token,
-    account: accounts,
+    token: aqxcToken,
+    account: aqxcAccount,
     category_id: category_id,
   }
 
