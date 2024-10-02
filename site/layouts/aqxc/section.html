@@ -1,4 +1,6 @@
 {{ define "content" }}
+    {{ partial "svg_sprite_icons/aqxc" }}
+    {{ partial "svg_sprite_icons/number_square" }}
     <main class="pb-5 container-xxl" id="main">
         {{ .Content }}
         <div class="d-flex flex-column align-items-center">
@@ -10,8 +12,8 @@
                 <li>
                     <ul class="list-unstyled">
                         <li class="text-info">使用时间:</li>
-                        <li><i class="me-2 bi-1-square text-info"></i>5 月 1 日 — 10 月 31 日</li>
-                        <li><i class="me-2 bi-2-square text-info"></i>每天 04:00 - 23:00</li>
+                        <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-1-square"></use></svg>5 月 1 日 — 10 月 31 日</li>
+                        <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-2-square"></use></svg>每天 04:00 - 23:00</li>
                     </ul>
                 </li>
                 <li><span class="user-select-none">微信号：</span><span class="text-warning-emphasis">JZEG-NET</span></li>
@@ -22,7 +24,10 @@
                 <div>
                     <div class="form-floating">
                         <input type="text" class="form-control" name="account" id="aqxc_account" placeholder="请输入 账号" autocomplete="off" minlength="11" maxlength="11" required>
-                        <label for="aqxc_account">账号</label>
+                        <label for="aqxc_account">
+                            <svg class="me-1 text-body-secondary bi"><use href="#bi-phone"></use></svg>
+                            手机号
+                        </label>
                     </div>
                     <label for="aqxc_account" class="form-text">
                         <span class="user-select-none">当前账号：</span>
@@ -31,8 +36,11 @@
                 </div>
                 <div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="token" id="token" placeholder="请输入 Token" autocomplete="off" required>
-                        <label for="token">Token</label>
+                        <input type="text" class="form-control" name="token" id="token" placeholder="" autocomplete="off" required>
+                        <label for="token">
+                            <svg class="me-1 text-body-secondary bi"><use href="#bi-key-fill"></use></svg>
+                            Token
+                        </label>
                     </div>
                     <label for="token" class="form-text">
                         <span class="user-select-none">当前 Token：</span>
