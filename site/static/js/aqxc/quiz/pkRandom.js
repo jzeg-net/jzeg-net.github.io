@@ -4,7 +4,7 @@ let getList = document.querySelector('#getList')
 let category_id = 3
 
 start.addEventListener('click', () => {
-  let url = aqxcApiUrl + 'quiz/pk'
+  let url = aqxcApiUrl + 'quiz/pk/random'
 
   let data = {
     token: getStorageAqxcToken(),

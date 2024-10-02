@@ -245,8 +245,12 @@
     <script src="{{ $preUrl }}static/js/aqxc/quiz/single.js"></script>
 {{ end }}
 
-{{ if eq .Type "aqxc/quiz/pk" }}
-    <script src="{{ $preUrl }}static/js/aqxc/quiz/pk.js"></script>
+{{ if eq .Type "aqxc/quiz/pk/invite" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/pkInvite.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/quiz/pk/random" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/pkRandom.js"></script>
 {{ end }}
 
 {{ if eq .Type "aqxc/quiz/multi" }}
