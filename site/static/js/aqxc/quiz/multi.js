@@ -1,6 +1,7 @@
 let multi_form = document.querySelector('#multi_form')
 let url = aqxcApiUrl + 'quiz/multi'
 
+// 循环次数
 let loopCount = document.querySelector('#loopCount')
 
 // 计时器ID
@@ -40,6 +41,7 @@ const createNewSpinner = () => {
   return spinner
 }
 
+// 在指定元素的指定位置，插入指定的新元素
 const setInsertNewElement = (calledElement, newElement, where = 'afterbegin') => {
   calledElement.insertAdjacentElement(where, newElement)
 }
@@ -50,6 +52,7 @@ const setBtnDisabledStatus = btnElement => {
   btnElement.toggleAttribute('disabled')
 }
 
+// 设置提交按钮的状态效果
 const setSubmitStatus = formEl => {
   let submit = formEl.querySelector('[type=submit]')
 
