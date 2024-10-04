@@ -1,11 +1,78 @@
 {{ define "content" }}
+    {{ partial "svg_sprite_icons/aqxc" }}
     <main class="pb-5 container-xxl" id="main">
         <div class="mx-auto py-5 col-12 col-sm-10 col-md-8 col-lg-6 col-xxl-4">
-            <div>
-                <p>random</p>
-                <button type="button" class="btn btn-primary" id="getList">获取列表</button>
-                <button type="button" class="btn btn-primary" id="start">开始</button>
-                <button type="button" class="btn btn-primary" id="end">结束</button>
+            <form class="d-flex flex-column row-gap-4 mb-3" id="quiz_form">
+                <div class="card">
+                    <div class="card-body d-flex flex-column row-gap-4">
+                        <div>
+                            <div class="form-floating">
+                                <select class="form-select" name="category_id" id="categorySelect" aria-label="选择类别" required>
+                                    <option value="" selected disabled>选择行业</option>
+                                </select>
+                                <label for="categorySelect">答题类别</label>
+                            </div>
+                            <div class="form-text">
+                                <span>根据需要选择答题的行业</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-2 flex-nowrap stepper-input user-select-none">
+                                <label for="speed" class="input-group-text">速度</label>
+                                <div class="input-group-text decrease">
+                                    <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                                </div>
+                                <input type="number" name="speed" class="input-group-text" min="1" max="15" step="1" value="10" id="speed" required>
+                                <div class="input-group-text increase">
+                                    <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                </div>
+                            </div>
+                            <div class="form-text d-flex flex-column">
+                                <span>最小值：1，最大值：15</span>
+                                <span>数值越大，速度提升，数值越小，速度下降。</span>
+                                <span>初始值为10，实际时间大概是10秒</span>
+                                <span>每次调整的实际影响在2秒以内</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-grid row-gap-2">
+                                <button type="reset" class="ms-auto btn btn-sm btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
+                                <button type="submit" class="btn btn-success">开 始</button>
+                            </div>
+                            <div class="form-text">
+                                <span>开始以后，可以再次调整，将会在下一轮答题时生效</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="card mb-3" id="auto">
+                <div class="card-body d-flex flex-column row-gap-2">
+                    <div class="col-12 col-sm collapse show">
+                        <div class="d-flex flex-column row-gap-3">
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="input-group flex-nowrap stepper-input user-select-none">
+                                    <label class="input-group-text" for="loopCount">循环次数</label>
+                                    <div class="input-group-text decrease">
+                                        <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                                    </div>
+                                    <input class="input-group-text" type="number" value="10" id="loopCount" min="1" max="25" step="1" required>
+                                    <div class="input-group-text increase">
+                                        <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                    </div>
+                                </div>
+                                <div class="form-text">
+                                    <span>这里控制次数</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" id="result">
+                <div class="card-body d-flex flex-column row-gap-2">
+                    <p class="text-center">计时：<span id="submit_timer">0</span>秒</p>
+                </div>
             </div>
         </div>
     </main>

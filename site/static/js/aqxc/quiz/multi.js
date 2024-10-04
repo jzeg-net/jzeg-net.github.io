@@ -1,4 +1,4 @@
-let multi_form = document.querySelector('#multi_form')
+let quiz_form = document.querySelector('#quiz_form')
 let url = aqxcApiUrl + 'quiz/multi'
 
 // 循环次数
@@ -90,9 +90,9 @@ const displayQuizResults = data => {
 // 处理表单提交
 const handleFormSubmit = event => {
   event.preventDefault()
-  setSubmitStatus(multi_form)
+  setSubmitStatus(quiz_form)
   setSubmitTimerInterval()
-  let formData = new FormData(multi_form)
+  let formData = new FormData(quiz_form)
   let data = Object.fromEntries(formData.entries())
   data.token = getStorageAqxcToken()
   data.account = getStorageAqxcAccount()
@@ -107,14 +107,14 @@ const handleFormSubmit = event => {
   })
     .then(res => res.json())
     .then(res => {
-      // 如果有 code 和 message，则显示错误信息，并且后面不再执行后续代码
-      if (res.hasOwnProperty('code') && res.hasOwnProperty('message')) {
+      // 如果同时存在消息和错误信息，则显示模态框并返回
+      if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
         return
       }
 
       displayQuizResults(res.data)
-      clearSubmitStatus(multi_form)
+      clearSubmitStatus(quiz_form)
       clearSubmitTimerInterval(submitTimerIntervalID)
 
       // 检查 power 值和 loopCount 的值来决定是否再次提交
@@ -125,8 +125,12 @@ const handleFormSubmit = event => {
         loopCount.value--
       }
     })
+    .catch(() => {
+      clearSubmitStatus(quiz_form)
+      clearSubmitTimerInterval(submitTimerIntervalID)
+    })
     .finally(() => {
     })
 }
 
-if (multi_form) multi_form.addEventListener('submit', handleFormSubmit)
+if (quiz_form) quiz_form.addEventListener('submit', handleFormSubmit)
