@@ -1,6 +1,6 @@
 ---
-title: "答题竞赛"
-type: "aqxc/quiz"
+title: "行业领域"
+type: "aqxc/study/industry"
 
 date: "2023-09-20T19:00:00+08:00"
 

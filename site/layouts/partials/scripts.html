@@ -229,6 +229,14 @@
     <script src="{{ $preUrl }}static/js/aqxc/common.js"></script>
 {{ end }}
 
+{{ if hasPrefix .Type "aqxc/quiz/" }}
+    <script src="{{ $preUrl }}static/js/aqxc/quiz/category.js"></script>
+{{ end }}
+
+{{ if hasPrefix .Type "aqxc/study/" }}
+    <script src="{{ $preUrl }}static/js/aqxc/study/category.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc" }}
     <script src="{{ $preUrl }}static/js/aqxc/index.js"></script>
 {{ end }}

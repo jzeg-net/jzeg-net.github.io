@@ -1,6 +1,6 @@
 ---
-title: "答题竞赛"
-type: "aqxc/quiz"
+title: "Special Type Of Work"
+type: "aqxc/study/special"
 
 date: "2023-09-20T19:00:00+08:00"
 
