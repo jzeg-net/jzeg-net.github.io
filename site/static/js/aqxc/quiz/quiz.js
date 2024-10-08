@@ -116,8 +116,11 @@ const handleFormSubmit = event => {
       clearSubmitStatus(quiz_form)
       clearSubmitTimerInterval(submitTimerIntervalID)
 
-      // 检查 power 值和 loopCount 的值来决定是否再次提交
-      if (res.data.power >= 2 && loopCount.value > 1) {
+      if (res.data['tester_score'] === 0) return
+      if (loopCount.value <= 1) return
+
+      // 检查 power 值和是否有学习得分来决定是否再次提交
+      if (res.data.power >= 2 || res.data['tester_score'] === 1) {
         // 递归调用
         setTimeout(() => handleFormSubmit(event), 1500)
         // 减少循环次数
