@@ -72,18 +72,32 @@ const clearSubmitStatus = formEl => {
   clearSubmitSpinner(submit)
 }
 
-// 显示结果
-const displayQuizResults = data => {
-  const { power, tester_score: score, tester_time: time, right_count: right, wrong_count: wrong } = data
-  const messages = [
-    `得分：${score}`,
-    `安全B：${power}`,
-    `用时：${time}`,
-    `正确：${right}`,
-    `错误：${wrong}`
-  ].join('<br>')
+// 结果表格
+let datatables
+const datatablesAddRow = data => {
+  const { tester_score: score, tester_time: time, right_count: right, wrong_count: wrong } = data
 
-  bModal('', createSmallCenterText(messages, 'success'), '', 'sm', true)
+  if (!datatables) {
+    datatables = new simpleDatatables.DataTable('#simpleDatatables', {
+      columns: [
+        {}
+      ],
+      classes: simpleDatatables_classes_bootstrap,
+      labels: simpleDatatables_labels_zh_CN,
+      fixedHeight: true,
+      searchable: false,
+      perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
+      data: {
+        'headings': ['正确', '错误', '得分', '用时']
+      }
+    })
+  }
+  datatables.rows.add([
+    right,
+    wrong,
+    score,
+    time,
+  ])
 }
 
 // 处理表单提交
@@ -112,12 +126,20 @@ const handleFormSubmit = event => {
         return
       }
 
-      displayQuizResults(res.data)
+      datatablesAddRow(res.data)
       clearSubmitStatus(quiz_form)
       clearSubmitTimerInterval(submitTimerIntervalID)
 
-      if (res.data['tester_score'] === 0) return
-      if (loopCount.value <= 1) return
+      if (res.data['tester_score'] === 0) {
+        let message = '你太棒了，今天的积分全都让你拿走了。'
+        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+        return
+      }
+      if (loopCount.value <= 1) {
+        let message = '你真是太顺利了，循环次数都已经用完了。'
+        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+        return
+      }
 
       // 检查 power 值和是否有学习得分来决定是否再次提交
       if (res.data.power >= 2 || res.data['tester_score'] === 1) {
@@ -125,7 +147,11 @@ const handleFormSubmit = event => {
         setTimeout(() => handleFormSubmit(event), 1500)
         // 减少循环次数
         loopCount.value--
+        return
       }
+
+      let message = '咦~~，怎么回事？好奇怪啊，现在遇到了一个未知的问题，先停一停吧。'
+      bModal('', createSmallCenterText(message, 'warning'), '', 'sm', true)
     })
     .catch(() => {
       clearSubmitStatus(quiz_form)
