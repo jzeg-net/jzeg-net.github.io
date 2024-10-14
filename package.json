@@ -79,7 +79,7 @@
         "downloadRepo": "https://mirror.ghproxy.com/https://github.com/"
     },
     "dependencies": {
-        "@callmebill/lxgw-wenkai-web": "^1.500.0",
+        "@callmebill/lxgw-wenkai-web": "^1.501.0",
         "@docsearch/js": "^3.6.2",
         "@glidejs/glide": "^3.6.2",
         "@uppy/core": "^4.2.1",
@@ -111,11 +111,11 @@
         "qrcode": "1.5.1",
         "randomcolor": "^0.6.2",
         "simple-datatables": "^9.2.1",
-        "simple-icons": "^13.13.0",
+        "simple-icons": "^13.14.0",
         "sortablejs": "^1.15.3",
         "svgedit": "^7.3.4",
         "timeago.js": "^4.0.2",
-        "tyme4ts": "^1.1.4",
+        "tyme4ts": "^1.1.5",
         "uppy": "^4.4.1",
         "vanilla-cookieconsent": "^3.0.1",
         "vditor": "^3.10.6",
