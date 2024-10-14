@@ -120,33 +120,46 @@ const handleFormSubmit = event => {
   })
     .then(res => res.json())
     .then(res => {
+      clearSubmitStatus(quiz_form)
+      clearSubmitTimerInterval(submitTimerIntervalID)
+
       // 如果同时存在消息和错误信息，则显示模态框并返回
       if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
+
         return
       }
 
       datatablesAddRow(res.data)
-      clearSubmitStatus(quiz_form)
-      clearSubmitTimerInterval(submitTimerIntervalID)
 
-      if (res.data['tester_score'] === 0) {
-        let message = '你太棒了，今天的积分全都让你拿走了。'
-        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
-        return
-      }
       if (loopCount.value <= 1) {
         let message = '你真是太顺利了，循环次数都已经用完了。'
         bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+
+        return
+      }
+      if (res.data['tester_score'] === 0) {
+        let message = '你太棒了，今天的积分全都让你拿走了。'
+        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+
+        return
+      }
+      if (res.data.power < 2) {
+        let message = '你的安全B不足，答题需要消耗安全B。'
+        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+
         return
       }
 
-      // 检查 power 值和是否有学习得分来决定是否再次提交
-      if (res.data.power >= 2 || res.data['tester_score'] === 1) {
+      // 检查 power 值来决定是否重复提交
+      if (res.data.power >= 2) {
+        // 随机延时（1秒 - 2.5秒）
+        let randomTimeOut = Math.floor(Math.random() * 1500) + 1000
         // 递归调用
-        setTimeout(() => handleFormSubmit(event), 1500)
+        setTimeout(() => handleFormSubmit(event), randomTimeOut)
         // 减少循环次数
         loopCount.value--
+
         return
       }
 
