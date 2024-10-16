@@ -1,10 +1,10 @@
 let storageAqxcQuizCategoryKey = 'aqxcQuizCategory'
 
-const getStorageAqxcQuizCategory = () => localStorage.getItem(storageAqxcQuizCategoryKey)
+const getStorageAqxcQuizCategory = () => getLocalStorage(storageAqxcQuizCategoryKey)
 
-const setStorageAqxcQuizCategory = (value) => localStorage.setItem(storageAqxcQuizCategoryKey, value)
+const setStorageAqxcQuizCategory = (value) => setLocalStorage(storageAqxcQuizCategoryKey, value)
 
-const removeStorageAqxcQuizCategory = () => localStorage.removeItem(storageAqxcQuizCategoryKey)
+const removeStorageAqxcQuizCategory = () => removeLocalStorage(storageAqxcQuizCategoryKey)
 
 let categorySelect = document.querySelector('#categorySelect')
 
@@ -70,6 +70,12 @@ const getQuizCategory = () => {
       // 如果有 code 和 message，则显示错误信息，并且后面不再执行后续代码
       if (res.hasOwnProperty('code') && res.hasOwnProperty('message')) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
+
+        return
+      }
+      if (!res.hasOwnProperty('data')) {
+        bModal('', createSmallCenterText('没有从服务器获取到数据', 'danger'), '', 'sm', true)
+
         return
       }
 

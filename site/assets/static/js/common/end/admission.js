@@ -2,9 +2,9 @@
   'use strict'
 
   const key = 'admission'
-  const getStored = () => localStorage.getItem(key)
-  const setStored = value => localStorage.setItem(key, value)
-  const removeStored = () => localStorage.removeItem(key)
+  const getStored = () => getLocalStorage(key)
+  const setStored = value => setLocalStorage(key, value)
+  const removeStored = () => removeLocalStorage(key)
 
   const getPreferredStored = () => getStored()
   const isAllowed = () => getPreferredStored() === "true"

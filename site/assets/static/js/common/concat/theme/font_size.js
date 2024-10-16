@@ -1,8 +1,8 @@
 (() => {
   'use strict'
 
-  const getStoredFontSize = () => localStorage.getItem('font_size')
-  const setStoredFontSize = font_size => localStorage.setItem('font_size', font_size)
+  const getStoredFontSize = () => getLocalStorage('font_size')
+  const setStoredFontSize = font_size => setLocalStorage('font_size', font_size)
   const body = document.body
   let fontSizeSliderValues = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl']
   let fontSizeSlider = document.querySelectorAll('.fontSizeSlider')

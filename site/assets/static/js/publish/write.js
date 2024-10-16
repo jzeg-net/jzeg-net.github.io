@@ -23,7 +23,7 @@ class Write {
 
   listener = () => {
     window.addEventListener('DOMContentLoaded', () => {
-      this.title.value = localStorage.getItem(this.autoSaveTitleKey)
+      this.title.value = getLocalStorage(this.autoSaveTitleKey)
     })
 
     this.title.addEventListener('change', this.autoSaveTitle)
@@ -48,16 +48,16 @@ class Write {
 
   }
 
-  autoSaveTitle = () => localStorage.setItem(this.autoSaveTitleKey, this.title.value)
-  autoSaveContent = () => localStorage.setItem(this.autoSaveContentKey, this.title.value)
-  autoSaveTags = () => localStorage.setItem(this.autoSaveTagsKey, this.title.value)
-  autoSaveCover = () => localStorage.setItem(this.autoSaveCoverKey, this.title.value)
+  autoSaveTitle = () => setLocalStorage(this.autoSaveTitleKey, this.title.value)
+  autoSaveContent = () => setLocalStorage(this.autoSaveContentKey, this.title.value)
+  autoSaveTags = () => setLocalStorage(this.autoSaveTagsKey, this.title.value)
+  autoSaveCover = () => setLocalStorage(this.autoSaveCoverKey, this.title.value)
 
   clearStorage = () => {
-    localStorage.removeItem(this.autoSaveTitleKey)
-    localStorage.removeItem(this.autoSaveTagsKey)
-    localStorage.removeItem(this.autoSaveContentKey)
-    localStorage.removeItem(this.autoSaveCoverKey)
+    removeLocalStorage(this.autoSaveTitleKey)
+    removeLocalStorage(this.autoSaveTagsKey)
+    removeLocalStorage(this.autoSaveContentKey)
+    removeLocalStorage(this.autoSaveCoverKey)
   }
 
   clearStorageTip = () => {
@@ -67,7 +67,7 @@ class Write {
   }
 
   write_submit = () => {
-    this.content = localStorage.getItem(this.autoSaveContentKey)
+    this.content = getLocalStorage(this.autoSaveContentKey)
 
     const xx = {
       title: this.getTitle(),

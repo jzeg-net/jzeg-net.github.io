@@ -1,14 +1,6 @@
 let headerNotice = document.querySelector('#headerNotice')
 
 if (headerNotice) {
-  const setLocalStorage = (key, value) => {
-    localStorage.setItem(key, value)
-  }
-
-  const getLocalStorage = (key) => {
-    return localStorage.getItem(key) ? localStorage.getItem(key) : false
-  }
-
   let storageKey = 'headerNotice'
   let storageValue = getLocalStorage(storageKey)
   let oneDay = 60 * 60 * 24 * 1e3

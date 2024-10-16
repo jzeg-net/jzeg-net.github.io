@@ -65,7 +65,7 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem(storageKey) === 'false') return
+    if (getLocalStorage(storageKey) === 'false') return
 
     let content = document.querySelector('#content')
     if (content) {

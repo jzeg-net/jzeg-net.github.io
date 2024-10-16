@@ -2,9 +2,9 @@
   'use strict'
 
   const key = 'color_text'
-  const getStoredColorText = () => localStorage.getItem(key)
-  const setStoredColorText = color_text => localStorage.setItem(key, color_text)
-  const removeStored = () => localStorage.removeItem(key)
+  const getStoredColorText = () => getLocalStorage(key)
+  const setStoredColorText = color_text => setLocalStorage(key, color_text)
+  const removeStored = () => removeLocalStorage(key)
   const body = document.body
   let textColorPicker = document.querySelectorAll('.textColorPicker')
 

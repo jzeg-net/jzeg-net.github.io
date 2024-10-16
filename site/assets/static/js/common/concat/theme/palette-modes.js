@@ -7,8 +7,8 @@
 (() => {
     'use strict'
 
-    const getStoredPalette = () => localStorage.getItem('palette')
-    const setStoredPalette = palette => localStorage.setItem('palette', palette)
+    const getStoredPalette = () => getLocalStorage('palette')
+    const setStoredPalette = palette => setLocalStorage('palette', palette)
 
     const getPreferredPalette = () => {
         const storedPalette = getStoredPalette()

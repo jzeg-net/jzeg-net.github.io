@@ -106,33 +106,6 @@
 <script src="{{ $preUrl }}static/vendor/disable-devtool/disable-devtool.min.js"></script>
 {{ end }}
 
-{{ if .IsHome }}{{ end }}
-
-{{ if eq .Site.Params.theme.enable true }}
-{{- $color_modesJs := partial "functions/script/build" (dict "resourcesGet" "static/js/color-modes.js" "targetPath" "static/js/color-modes.js") }}
-<script src="{{ $color_modesJs }}"></script>
-{{ end }}
-
-{{ if eq .Site.Params.palette.enable true }}
-{{- $palette_modesJs := partial "functions/script/build" (dict "resourcesGet" "static/js/palette-modes.js" "targetPath" "static/js/palette-modes.js") }}
-<script src="{{ $palette_modesJs }}"></script>
-{{ end }}
-
-{{ if eq .Site.Params.fontSize.enable true }}
-{{- $font_sizeJs := partial "functions/script/build" (dict "resourcesGet" "static/js/font_size.js" "targetPath" "static/js/font_size.js") }}
-<script src="{{ $font_sizeJs }}"></script>
-{{ end }}
-
-{{ if eq .Site.Params.color.text.enable true }}
-{{- $color_textJS := partial "functions/script/build" (dict "resourcesGet" "static/js/color_text.js" "targetPath" "static/js/color_text.js") }}
-<script src="{{ $color_textJS }}"></script>
-{{ end }}
-
-{{ if eq .Site.Params.color.link.enable true }}
-{{- $color_linkJs := partial "functions/script/build" (dict "resourcesGet" "static/js/color_link.js" "targetPath" "static/js/color_link.js") }}
-<script src="{{ $color_linkJs }}"></script>
-{{ end }}
-
 {{- $commonJs := partial "functions/concat" (dict "concatPath" "static/js/common/**.js" "targetPath" "static/js/common.bundle.js") }}
 <script src="{{ $commonJs }}"></script>
 
@@ -234,7 +207,7 @@
     <script src="{{ $preUrl }}static/js/aqxc/quiz/quiz.js"></script>
 {{ end }}
 
-{{ if hasPrefix .Type "aqxc/study/" }}
+{{ if hasPrefix .Type "aqxc/study" }}
     <script src="{{ $preUrl }}static/js/aqxc/study/category.js"></script>
 {{ end }}
 

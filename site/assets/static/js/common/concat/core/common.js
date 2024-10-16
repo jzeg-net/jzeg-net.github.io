@@ -8,7 +8,7 @@
 
   // 获取本地存储中的主题值
   const getStorageTheme = () => {
-    let themeValue = localStorage.getItem('theme')
+    let themeValue = getLocalStorage('theme')
 
     // 排除 auto 值
     if (themeValue && 'auto' !== themeValue) {

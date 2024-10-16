@@ -4,12 +4,12 @@ let wakeLock = null
 /**
  * 获取本地存储中休眠锁状态的布尔值
  */
-const getStored_wakeLock = () => JSON.parse(localStorage.getItem('wakeLock'))
+const getStored_wakeLock = () => JSON.parse(getLocalStorage('wakeLock'))
 
 /**
  * 设置本地存储中休眠状态的布尔值
  */
-const setStored_wakeLock = (wakeLockStatus) => localStorage.setItem('wakeLock', JSON.stringify(wakeLockStatus))
+const setStored_wakeLock = (wakeLockStatus) => setLocalStorage('wakeLock', JSON.stringify(wakeLockStatus))
 
 /**
  * 禁止 设备系统休眠
