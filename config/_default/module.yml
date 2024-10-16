@@ -1,7 +1,7 @@
 hugoVersion:
     extended: true
-    min: "0.135.0"
-    max: "0.135.0"
+    min: "0.136.0"
+    max: "0.136.0"
 mounts:
     -   source: site/archetypes
         target: archetypes
