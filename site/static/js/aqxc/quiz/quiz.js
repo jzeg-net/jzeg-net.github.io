@@ -132,27 +132,27 @@ const handleFormSubmit = event => {
 
       datatablesAddRow(res.data)
 
-      if (loopCount.value <= 1) {
-        let message = '你真是太顺利了，循环次数都已经用完了。'
-        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
-
-        return
-      }
       if (res.data['tester_score'] === 0) {
         let message = '你太棒了，今天的积分全都让你拿走了。'
         bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
 
         return
       }
-      if (res.data.power < 2) {
+      if (res.data['power'] < 2) {
         let message = '你的安全B不足，答题需要消耗安全B。'
+        bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
+
+        return
+      }
+      if (loopCount.value <= 1) {
+        let message = '你真是太顺利了，循环次数都已经用完了。'
         bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
 
         return
       }
 
       // 检查 power 值来决定是否重复提交
-      if (res.data.power >= 2) {
+      if (res.data['power'] >= 2) {
         // 随机延时（1秒 - 2.5秒）
         let randomTimeOut = Math.floor(Math.random() * 1500) + 1000
         // 递归调用
