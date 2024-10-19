@@ -2,9 +2,9 @@
   'use strict'
 
   const storageKey = 'jump'
-  const getLocalStored = () => localStorage.getItem(storageKey)
-  const setLocalStored = (value) => localStorage.setItem(storageKey, value)
-  const removeLocalStored = () => localStorage.removeItem(storageKey)
+  const getLocalStored = () => getLocalStorage(storageKey)
+  const setLocalStored = (value) => setLocalStorage(storageKey, value)
+  const removeLocalStored = () => removeLocalStorage(storageKey)
 
   const getPreferredJump = () => getLocalStored() === 'false'
 
