@@ -1,16 +1,68 @@
 {{ define "content" }}
+    {{ partial "svg_sprite_icons/aqxc" }}
     <main class="pb-5 container-xxl" id="main">
         <div class="mx-auto py-5 col-12 col-sm-10 col-md-8 col-lg-6 col-xxl-4">
             <div class="d-flex flex-column row-gap-3 link-underline-opacity-0">
                 <div>
-                    <a class="fs-5 link-danger" href="industry" target="_blank">按行业领域</a>
-                    <p class="text-secondary">按行业领域学习</p>
-                </div>
-                <div>
-                    <a class="fs-5 link-danger" href="special" target="_blank">按特种作业</a>
-                    <p class="text-secondary">按特殊岗位学习</p>
+                    <a class="fs-5 link-danger" href="top" target="_blank">学习排行榜</a>
+                    <p class="text-secondary">学习排行榜</p>
                 </div>
             </div>
+            <form class="d-flex flex-column row-gap-4 mb-3" id="study_form">
+                <div class="card">
+                    <div class="card-body d-flex flex-column row-gap-4">
+                        <div class="card-body d-flex justify-content-around rounded border border-opacity-50">
+                            <div>
+                                <input type="radio" class="btn-check" name="category" value="1" id="category_industry">
+                                <label class="btn btn-outline-success" for="category_industry">按行业领域</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check" name="category" value="2" id="category_special">
+                                <label class="btn btn-outline-success" for="category_special">按特种作业</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating">
+                                <select class="form-select" name="category_id" id="videoSelect" aria-label="选择类别" required>
+                                    <option selected disabled>请选择按行业或者岗位进行学习</option>
+                                </select>
+                                <label class="user-select-none" for="videoSelect">行业 / 工种</label>
+                            </div>
+                            <div class="form-text">
+                                <span>选择要学习的行业或者工种</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="quick_view_mode" role="switch" id="quickViewMode">
+                                <label class="form-check-label" for="quickViewMode">
+                                    <span class="switchEnableText">
+                                        <span>快速浏览</span>
+                                    </span>
+                                    <span class="switchDisableText">
+                                        <span>完整观看</span>
+                                    </span>
+                                </label>
+                                <span class="mx-1 text-secondary">
+                                    <svg class="bi fs-6" data-bs-toggle="tooltip" data-bs-placement="top"
+                                         data-bs-title="完整模式：积累学习时长 浏览模式：视频只看一小段">
+                                        <use href="#bi-question-circle"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-grid row-gap-2">
+                                <button type="reset" class="ms-auto btn btn-sm btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
+                                <button type="submit" class="btn btn-success">开 始</button>
+                            </div>
+                            <div class="form-text">
+                                <span>开始以后，今天将不可以再次调整学习类别，直到学习结束</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
 {{ end }}

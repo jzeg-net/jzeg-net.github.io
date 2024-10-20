@@ -1,24 +1,14 @@
-let start = document.querySelector('#start')
-let end = document.querySelector('#end')
-let getList = document.querySelector('#getList')
-let videoID = 530
+let study_form = document.querySelector('#study_form')
 
-let storageVideoRecordKey = 'aqxcVideoRecord'
-const getStorageVideoRecord = () => localStorage.getItem(storageVideoRecordKey)
-const setStorageVideoRecord = (record) => localStorage.setItem(storageVideoRecordKey, record)
-const removeStorageVideoRecord = () => localStorage.removeItem(storageVideoRecordKey)
+const submitForm = (event) => {
+  event.preventDefault()
+  const url = aqxcApiUrl + 'study/study'
 
-
-getList.addEventListener('click', () => {
-})
-
-start.addEventListener('click', () => {
-  let url = aqxcApiUrl + 'video/start'
-  let data = {
-    token: getStorageAqxcToken(),
-    account: getStorageAqxcAccount(),
-    id: videoID,
-  }
+  const formData = new FormData(study_form)
+  const data = Object.fromEntries(formData.entries())
+  data.quick_view_mode = data.quick_view_mode === 'on'
+  data.token = getStorageAqxcToken()
+  data.account = getStorageAqxcAccount()
 
   fetch(url, {
     method: 'POST',
@@ -28,45 +18,39 @@ start.addEventListener('click', () => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      let record = data.data.record
-      console.log(record)
-      setStorageVideoRecord(record)
+    .then(res => {
+      if (!res.ok) {
+        let statusMsg = '网络错误，请稍后再试'
+        if (res.status === 401) statusMsg = '登录已过期，请重新登录'
+        if (res.status === 500) statusMsg = '服务器错误，请稍后再试'
+
+        bModal('', createSmallCenterText(statusMsg, 'danger'), '', 'sm', true)
+
+        return
+      }
+
+      return res.json()
     })
-    .catch(err => {
-      console.log(err)
+    .then(res => {
+      if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
+        bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
+
+        return
+      }
+      if (!res.hasOwnProperty('data')) {
+        bModal('', createSmallCenterText('没有从服务器获取到数据', 'danger'), '', 'sm', true)
+
+        return
+      }
+
+      let result = res.data
+      console.log(result)
     })
 
-})
-end.addEventListener('click', () => {
-  let url = aqxcApiUrl + 'video/end'
-  let videoRecord = getStorageVideoRecord()
-  let data = {
-    token: getStorageAqxcToken(),
-    account: getStorageAqxcAccount(),
-    id: videoID,
-    record: videoRecord,
-  }
+}
 
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify(data)
-  })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      let message = data['message']
-      let add_time = data['data']['add_time']
-      let msg = message ?? add_time
-      bModal('', createSmallCenterText(msg), '', 'sm', true)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-})
+if (study_form) {
+  study_form.addEventListener('submit', submitForm)
+}
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
