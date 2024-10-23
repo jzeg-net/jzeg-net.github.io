@@ -150,7 +150,7 @@
         "terser": "^5.36.0"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "packageManager": "yarn@2.4.3"
 }
