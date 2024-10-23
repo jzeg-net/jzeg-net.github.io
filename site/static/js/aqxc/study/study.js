@@ -45,6 +45,7 @@ const submitForm = (event) => {
 
       let result = res.data
       console.log(result)
+      bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
     })
 
 }
