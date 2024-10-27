@@ -1,7 +1,7 @@
 let readArticle = document.querySelector('#readArticle')
 let url = aqxcApiUrl + 'read/article'
 
-readArticle.addEventListener('click', () => {
+const request = () => {
   let data = {
     token: getStorageAqxcToken(),
     account: getStorageAqxcAccount(),
@@ -23,8 +23,10 @@ readArticle.addEventListener('click', () => {
         return
       }
 
-      let successfullyRead = res.data.successfullyRead
+      let successfullyRead = res.data['successfullyRead']
       let msg = '有效阅读了' + successfullyRead + '篇文章'
       bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
     })
-})
+}
+
+readArticle.addEventListener('click', request)

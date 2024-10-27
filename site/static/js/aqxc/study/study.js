@@ -2,6 +2,7 @@ let study_form = document.querySelector('#study_form')
 
 const submitForm = (event) => {
   event.preventDefault()
+  setSubmitStatus(study_form)
   const url = aqxcApiUrl + 'study/study'
 
   const formData = new FormData(study_form)
@@ -32,6 +33,7 @@ const submitForm = (event) => {
       return res.json()
     })
     .then(res => {
+      clearSubmitStatus(study_form)
       if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
 
@@ -47,11 +49,12 @@ const submitForm = (event) => {
       console.log(result)
       bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
     })
+    .catch(() => {
+      clearSubmitStatus(study_form)
+    })
 
 }
 
 if (study_form) {
   study_form.addEventListener('submit', submitForm)
 }
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
