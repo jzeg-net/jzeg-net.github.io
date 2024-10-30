@@ -70,8 +70,7 @@ if (aqxc_form) {
     }
   })
 
-  aqxc_form.addEventListener('reset', event => {
-    console.log(event)
+  aqxc_form.addEventListener('reset', () => {
     removeStorageAqxcToken()
     removeStorageAqxcAccount()
     refreshTokenDisplay()
