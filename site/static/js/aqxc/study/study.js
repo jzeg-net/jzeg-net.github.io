@@ -19,19 +19,7 @@ const submitForm = (event) => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => {
-      if (!res.ok) {
-        let statusMsg = '网络错误，请稍后再试'
-        if (res.status === 401) statusMsg = '登录已过期，请重新登录'
-        if (res.status === 500) statusMsg = '服务器错误，请稍后再试'
-
-        bModal('', createSmallCenterText(statusMsg, 'danger'), '', 'sm', true)
-
-        return
-      }
-
-      return res.json()
-    })
+    .then(res => res.json())
     .then(res => {
       clearSubmitStatus(study_form)
       if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
