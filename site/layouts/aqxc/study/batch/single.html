@@ -2,17 +2,7 @@
     {{ partial "svg_sprite_icons/aqxc" }}
     <main class="pb-5 container-xxl" id="main">
         <div class="mx-auto py-5 col-12 col-sm-10 col-md-8 col-lg-6 col-xxl-4">
-            <div class="d-flex flex-column row-gap-3 link-underline-opacity-0">
-                <div>
-                    <a class="fs-5 link-danger" href="top" target="_blank">学习排行榜</a>
-                    <p class="text-secondary">学习排行榜</p>
-                </div>
-                <div>
-                    <a class="fs-5 link-danger" href="batch" target="_blank">批量管理</a>
-                    <p class="text-secondary">批量管理同一分类下视频的收藏状态和点赞状态</p>
-                </div>
-            </div>
-            <form class="d-flex flex-column row-gap-4 mb-3" id="study_form">
+            <form class="d-flex flex-column row-gap-4 mb-3" id="batch_form">
                 <div class="card">
                     <div class="card-body d-flex flex-column row-gap-4">
                         <div class="card-body d-flex justify-content-around rounded border border-opacity-50">
@@ -36,20 +26,41 @@
                                 <span>选择要学习的行业或者工种</span>
                             </div>
                         </div>
-                        <div>
+                        <div class="card-body rounded border border-opacity-50">
+                            <div class="card-title">批量管理点赞状态</div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="quick_view_mode" role="switch" id="quickViewMode">
-                                <label class="form-check-label" for="quickViewMode">
+                                <input class="form-check-input" type="checkbox" name="star" role="switch" id="star">
+                                <label class="form-check-label" for="star">
                                     <span class="switchEnableText">
-                                        <span>快速浏览</span>
+                                        <span>保持点赞</span>
                                     </span>
                                     <span class="switchDisableText">
-                                        <span>完整观看</span>
+                                        <span>取消点赞</span>
                                     </span>
                                 </label>
                                 <span class="mx-1 text-secondary">
                                     <svg class="bi fs-6" data-bs-toggle="tooltip" data-bs-placement="top"
-                                         data-bs-title="完整模式：积累学习时长 浏览模式：视频只看一小段">
+                                         data-bs-title="保持点赞：保持分类下所有视频的点赞状态 / 取消点赞：取消分类下所有视频的点赞状态">
+                                        <use href="#bi-question-circle"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body rounded border border-opacity-50">
+                            <div class="card-title">批量管理收藏状态</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="favourite" role="switch" id="favourite">
+                                <label class="form-check-label" for="favourite">
+                                    <span class="switchEnableText">
+                                        <span>保持收藏</span>
+                                    </span>
+                                    <span class="switchDisableText">
+                                        <span>取消收藏</span>
+                                    </span>
+                                </label>
+                                <span class="mx-1 text-secondary">
+                                    <svg class="bi fs-6" data-bs-toggle="tooltip" data-bs-placement="top"
+                                         data-bs-title="保持收藏：保持分类下所有视频的收藏状态 / 取消收藏：取消分类下所有视频的收藏状态">
                                         <use href="#bi-question-circle"></use>
                                     </svg>
                                 </span>
@@ -60,10 +71,8 @@
                                 <button type="reset" class="ms-auto btn btn-sm btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
                                 <button type="submit" class="btn btn-success">开 始</button>
                             </div>
-                            <div class="form-text d-flex flex-column row-gap-1 text-danger">
-                                <span>建议只在每天上午执行一次，一天最多3次，否则有被限制的风险</span>
-                                <span>本操作没有停止按钮，请勿重复执行。</span>
-                                <span>建议每次执行的间隔时间高于6个小时</span>
+                            <div class="form-text">
+                                <span>每次只能操作一个分类</span>
                             </div>
                         </div>
                     </div>

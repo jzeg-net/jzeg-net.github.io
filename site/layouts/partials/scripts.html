@@ -220,6 +220,10 @@
     <script src="{{ $preUrl }}static/js/aqxc/study/study.js"></script>
 {{ end }}
 
+{{ if eq .Type "aqxc/study/batch" }}
+    <script src="{{ $preUrl }}static/js/aqxc/study/batch.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc/quiz/exercise" }}
     <script src="{{ $preUrl }}static/js/aqxc/quiz/exercise.js"></script>
 {{ end }}
