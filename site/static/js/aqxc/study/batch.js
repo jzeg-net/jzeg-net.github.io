@@ -35,8 +35,14 @@ const submitForm = (event) => {
       }
 
       let result = res.data['result']
+      let { star, favourite } = res.data['counts']
+      console.log(star)
+      console.log(favourite)
       console.log(result)
-      bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
+      let msg_star = `点赞状态改变了 ${star} 次`
+      let msg_favourite = `收藏状态改变了 ${favourite} 次`
+      let msg_count = msg_star + '<br>' + msg_favourite
+      bModal('', createSmallCenterText(msg_count, 'success'), '', 'sm', true)
     })
     .catch(() => {
       clearSubmitStatus(batch_form)
