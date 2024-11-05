@@ -1,6 +1,6 @@
 ---
-title: "测验记录"
-type: "aqxc/quiz_records"
+title: "学习记录"
+type: "aqxc/top/study"
 
 date: "2023-09-20T19:00:00+08:00"
 

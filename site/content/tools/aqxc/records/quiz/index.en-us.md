@@ -1,6 +1,6 @@
 ---
 title: "Quiz Records"
-type: "aqxc/quiz_records"
+type: "aqxc/records/quiz"
 
 date: "2023-09-20T19:00:00+08:00"
 

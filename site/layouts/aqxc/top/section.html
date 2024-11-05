@@ -1,0 +1,11 @@
+{{ define "content" }}
+    {{ partial "svg_sprite_icons/aqxc" }}
+    {{ partial "svg_sprite_icons/number_square" }}
+    <main class="pb-5 container-xxl" id="main">
+        {{ .Content }}
+        <div class="d-flex column-gap-3 align-self-center justify-content-center link-underline-opacity-0">
+            <a class="link-primary" href="quiz" target="_blank">竞赛排行</a>
+            <a class="link-primary" href="study" target="_blank">学习排行</a>
+        </div>
+    </main>
+{{ end }}
