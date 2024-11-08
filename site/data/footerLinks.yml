@@ -75,6 +75,10 @@
           en-US:
         url: "tools/zhgh"
       - name:
+          zh-CN: "安全宣传"
+          en-US:
+        url: "tools/aqxc"
+      - name:
           zh-CN: "ChatGPT"
           en-US:
         url: "tools/chatgpt"

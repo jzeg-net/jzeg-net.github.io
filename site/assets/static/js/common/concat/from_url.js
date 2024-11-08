@@ -92,6 +92,8 @@ const populateFormFromUrl = () => {
     if (inputElement && !inputElement.value.trim()) {
       // 解码并转义
       const sanitizedValue = htmlEscape(decodeURIComponent(value))
+      // 排除空值的情况
+      if (!sanitizedValue) return
 
       // 统一赋值
       inputElement.value = sanitizeInputValue(inputElement.type, sanitizedValue)
