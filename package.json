@@ -81,7 +81,7 @@
     "dependencies": {
         "@callmebill/lxgw-wenkai-web": "^1.501.0",
         "@docsearch/js": "^3.8.0",
-        "@glidejs/glide": "^3.6.2",
+        "@glidejs/glide": "^3.7.0",
         "@uppy/core": "^4.2.3",
         "@uppy/dashboard": "^4.1.2",
         "@uppy/image-editor": "^3.2.0",
