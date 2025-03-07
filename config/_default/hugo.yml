@@ -10,9 +10,6 @@ disableKinds: [ rss ]
 # log level (debug|info|warn|error)
 logLevel: "error"
 
-paginate: 3
-paginatepath: page
-
 # https://gohugo.io/getting-started/configuration/#configure-title-case
 # (ap|chicago|go|firstupper|none)
 # ap 使用美联社样本中发布的大小写规则。
