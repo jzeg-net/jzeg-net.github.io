@@ -5,6 +5,11 @@
             <form class="d-flex flex-column row-gap-4 mb-3" id="batch_form">
                 <div class="card">
                     <div class="card-body d-flex flex-column row-gap-4">
+                        <div class="card-title">批量管理</div>
+                        <div class="form-text">
+                            <span>批量管理同一个分类下的点赞和收藏，请先选择分类，然后选择操作。</span>
+                            <br><span class="text-danger">本操作较为敏感，请谨慎使用，建议一年使用一次。</span>
+                        </div>
                         <div class="card-body d-flex justify-content-around rounded border border-opacity-50">
                             <div>
                                 <input type="radio" class="btn-check" name="category" value="1" id="category_industry">
@@ -22,57 +27,56 @@
                                 </select>
                                 <label class="user-select-none" for="videoSelect">行业 / 工种</label>
                             </div>
-                            <div class="form-text">
-                                <span>选择要学习的行业或者工种</span>
+                        </div>
+                        <div class="card-body rounded border border-opacity-50">
+                            <div class="card-title">批量管理分类下所有视频的点赞</div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="star" id="star_on" value="on">
+                                <label class="form-check-label" for="star_on">
+                                    <span>点赞</span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="star" id="star_off" value="off">
+                                <label class="form-check-label" for="star_off">
+                                    <span>取消点赞</span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="star" id="star_stable" value="stable" checked>
+                                <label class="form-check-label" for="star_stable">
+                                    <span>保持不变</span>
+                                </label>
                             </div>
                         </div>
                         <div class="card-body rounded border border-opacity-50">
-                            <div class="card-title">批量管理点赞状态</div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="star" role="switch" id="star">
-                                <label class="form-check-label" for="star">
-                                    <span class="switchEnableText">
-                                        <span>保持点赞</span>
-                                    </span>
-                                    <span class="switchDisableText">
-                                        <span>取消点赞</span>
-                                    </span>
+                            <div class="card-title">批量管理分类下所有视频的收藏</div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="favourite" id="favourite_on" value="on">
+                                <label class="form-check-label" for="favourite_on">
+                                    <span>收藏</span>
                                 </label>
-                                <span class="mx-1 text-secondary">
-                                    <svg class="bi fs-6" data-bs-toggle="tooltip" data-bs-placement="top"
-                                         data-bs-title="保持点赞：保持分类下所有视频的点赞状态 / 取消点赞：取消分类下所有视频的点赞状态">
-                                        <use href="#bi-question-circle"></use>
-                                    </svg>
-                                </span>
                             </div>
-                        </div>
-                        <div class="card-body rounded border border-opacity-50">
-                            <div class="card-title">批量管理收藏状态</div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="favourite" role="switch" id="favourite">
-                                <label class="form-check-label" for="favourite">
-                                    <span class="switchEnableText">
-                                        <span>保持收藏</span>
-                                    </span>
-                                    <span class="switchDisableText">
-                                        <span>取消收藏</span>
-                                    </span>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="favourite" id="favourite_off" value="off">
+                                <label class="form-check-label" for="favourite_off">
+                                    <span>取消收藏</span>
                                 </label>
-                                <span class="mx-1 text-secondary">
-                                    <svg class="bi fs-6" data-bs-toggle="tooltip" data-bs-placement="top"
-                                         data-bs-title="保持收藏：保持分类下所有视频的收藏状态 / 取消收藏：取消分类下所有视频的收藏状态">
-                                        <use href="#bi-question-circle"></use>
-                                    </svg>
-                                </span>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="favourite" id="favourite_stable" value="stable" checked>
+                                <label class="form-check-label" for="favourite_stable">
+                                    <span>保持不变</span>
+                                </label>
                             </div>
                         </div>
                         <div>
                             <div class="d-grid row-gap-2">
                                 <button type="reset" class="ms-auto btn btn-sm btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
-                                <button type="submit" class="btn btn-success">开 始</button>
+                                <button type="submit" class="btn btn-success">测试中，不要使用</button>
                             </div>
                             <div class="form-text">
-                                <span>每次只能操作一个分类</span>
+                                <span>每次只能操作一个分类，直到操作完成，请耐心等待。</span>
                             </div>
                         </div>
                     </div>
