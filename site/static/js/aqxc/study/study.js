@@ -7,7 +7,6 @@ const submitForm = (event) => {
 
   const formData = new FormData(study_form)
   const data = Object.fromEntries(formData.entries())
-  data.quick_view_mode = data.quick_view_mode === 'on'
   data.token = getStorageAqxcToken()
   data.account = getStorageAqxcAccount()
 
