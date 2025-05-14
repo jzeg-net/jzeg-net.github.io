@@ -7,8 +7,6 @@ const submitForm = (event) => {
 
   const formData = new FormData(batch_form)
   const data = Object.fromEntries(formData.entries())
-  data.star = data.star === 'on'
-  data.favourite = data.favourite === 'on'
   data.token = getStorageAqxcToken()
   data.account = getStorageAqxcAccount()
 
