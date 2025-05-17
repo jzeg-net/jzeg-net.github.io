@@ -3,6 +3,9 @@ let quiz_form = document.querySelector('#quiz_form')
 // 循环次数
 let loopCount = document.querySelector('#loopCount')
 
+let interval = document.querySelector('#interval')
+let random = document.querySelector('#random')
+
 // 结果表格
 let datatables
 const datatablesAddRow = data => {
@@ -84,8 +87,14 @@ const handleFormSubmit = event => {
 
       // 检查 power 值来决定是否重复提交
       if (res.data['power'] >= 2) {
-        // 随机延时（1秒 - 2.5秒）
-        let randomTimeOut = Math.floor(Math.random() * 1500) + 1000
+        console.log(interval.value)
+        let randomTimeOut = (Math.random() + interval.value) * 1000
+
+        if (random.checked) {
+          // 随机延时（1秒 - 10秒）
+          randomTimeOut = Math.floor(Math.random() * 9000) + 1000
+        }
+        console.log(randomTimeOut)
         // 递归调用
         setTimeout(() => handleFormSubmit(event), randomTimeOut)
         // 减少循环次数
