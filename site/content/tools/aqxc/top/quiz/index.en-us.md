@@ -1,5 +1,5 @@
 ---
-title: "Quiz Records"
+title: "Contest Leaderboards"
 type: "aqxc/top/quiz"
 
 date: "2023-09-20T19:00:00+08:00"

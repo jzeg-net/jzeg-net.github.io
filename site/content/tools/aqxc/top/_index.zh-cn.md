@@ -1,5 +1,5 @@
 ---
-title: "记录"
+title: "排行榜"
 type: "aqxc/top"
 
 date: "2023-09-20T19:00:00+08:00"

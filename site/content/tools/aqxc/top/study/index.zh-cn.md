@@ -1,5 +1,5 @@
 ---
-title: "学习记录"
+title: "学习排行榜"
 type: "aqxc/top/study"
 
 date: "2023-09-20T19:00:00+08:00"
