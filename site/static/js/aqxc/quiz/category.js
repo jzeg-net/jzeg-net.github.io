@@ -34,12 +34,6 @@ const populateSelectWithOptions = data => {
   return fragment
 }
 
-const addQueryParams = (url, params) => {
-  const queryString = new URLSearchParams(params)
-
-  return `${url}?${queryString.toString()}`
-}
-
 const getQuizCategory = () => {
   let cachedCategory = JSON.parse(getStorageAqxcQuizCategory())
 

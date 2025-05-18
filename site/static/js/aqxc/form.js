@@ -66,3 +66,10 @@ const clearSubmitStatus = formEl => {
   setBtnDisabledStatus(submit)
   clearSubmitSpinner(submit)
 }
+
+// 链接添加查询参数
+const addQueryParams = (url, params) => {
+  const queryString = new URLSearchParams(params)
+
+  return `${url}?${queryString.toString()}`
+}
