@@ -67,12 +67,13 @@ category_radioBtns.forEach(categoryID_radioBtn => {
       }
     ]))
 
-    let params = new URLSearchParams([
-      ['category_id', category_id_value],
-      ['account', getStorageAqxcAccount()],
-      ['token', getStorageAqxcToken()],
-    ])
-    let url = aqxcApiUrl + 'video/category?' + params.toString()
+    const baseUrl = aqxcApiUrl + 'video/category'
+    const queryParams = {
+      token: getStorageAqxcToken(),
+      account: getStorageAqxcAccount(),
+      category_id: category_id_value,
+    }
+    const url = addQueryParams(baseUrl, queryParams)
 
     fetch(url, {
       method: 'GET',
