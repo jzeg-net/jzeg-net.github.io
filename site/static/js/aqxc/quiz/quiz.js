@@ -91,8 +91,8 @@ const handleFormSubmit = event => {
         let randomTimeOut = (Math.random() + interval.value) * 1000
 
         if (random.checked) {
-          // 随机延时（1秒 - 10秒）
-          randomTimeOut = Math.floor(Math.random() * 9000) + 1000
+          // 随机延时（2秒 - 10秒）
+          randomTimeOut = Math.floor(Math.random() * 9000) + 2000
         }
         console.log(randomTimeOut)
         // 递归调用
