@@ -257,6 +257,18 @@
     <script src="{{ $preUrl }}static/js/aqxc/share/article.js"></script>
 {{ end }}
 
+{{ if eq .Type "aqxc/top/quiz" }}
+    <script src="{{ $preUrl }}static/js/aqxc/top/quiz.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/top/study" }}
+    <script src="{{ $preUrl }}static/js/aqxc/top/study.js"></script>
+{{ end }}
+
+{{ if hasPrefix .Type "aqxc/top/" }}
+    <script src="{{ $preUrl }}static/js/aqxc/top/top.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc/study_records" }}
     <script src="{{ $preUrl }}static/js/aqxc/study_records.js"></script>
 {{ end }}
