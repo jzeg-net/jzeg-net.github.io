@@ -73,3 +73,16 @@ const addQueryParams = (url, params) => {
 
   return `${url}?${queryString.toString()}`
 }
+
+// 将秒数转换为 HH:MM:SS 格式的字符串
+function formatSecondsToHMS (seconds) {
+  // 计算小时数
+  const hours = Math.floor(seconds / 3600)
+  // 计算分钟数
+  const minutes = Math.floor((seconds % 3600) / 60)
+  // 计算秒数
+  const remainingSeconds = seconds % 60
+
+  // 返回格式化的字符串
+  return `${hours} 小时 ${minutes} 分 ${remainingSeconds} 秒`
+}
