@@ -1,6 +1,9 @@
-let ranking = document.querySelector('#ranking')
 let top_form = document.querySelector('#top_form')
 if (top_form) {
+  let top_month = document.querySelector('#top_month')
+  // 将当前月份设置为默认值
+  top_month.value = new Date().toISOString().slice(0, 7)
+
   top_form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -28,7 +31,6 @@ if (top_form) {
 
       return r.json()
     }).then(r => {
-      console.log(r.data)
       datatablesAddRow(r.data)
     })
   })
@@ -37,8 +39,12 @@ if (top_form) {
 // 结果表格
 let datatables
 const datatablesAddRow = data => {
-  let { ranking, nickname, score, avatar } = data['member']
-  avatar = `<img class="img-thumbnail" width="30" src="${avatar}" alt="头像">`
+  const { ranking, score, nickname, member_id } = data['member']
+  const list = data.list.map(item => {
+    const { ranking, nickname, score, member_id } = item
+
+    return [ranking, score, nickname, member_id]
+  })
 
   if (!datatables) {
     datatables = new simpleDatatables.DataTable('#simpleDatatables', {
@@ -50,14 +56,11 @@ const datatablesAddRow = data => {
       perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
       perPage: 0,
       data: {
-        'headings': ['排名', '昵称', '得分', '头像']
+        'headings': ['排名', '得分', '昵称', 'ID']
       }
     })
   }
-  datatables.rows.add([
-    ranking,
-    nickname,
-    score,
-    avatar,
-  ])
+
+  datatables.rows.add([ranking, score, nickname, member_id])
+  datatables.insert({ data: list })
 }
