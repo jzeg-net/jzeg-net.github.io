@@ -269,6 +269,11 @@
     <script src="{{ $preUrl }}static/js/aqxc/top/top.js"></script>
 {{ end }}
 
+{{ if eq .Type "aqxc/questions" }}
+    <script src="{{ $preUrl }}static/js/aqxc/questions/category.js"></script>
+    <script src="{{ $preUrl }}static/js/aqxc/questions/index.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc/study_records" }}
     <script src="{{ $preUrl }}static/js/aqxc/study_records.js"></script>
 {{ end }}
