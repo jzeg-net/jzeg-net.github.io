@@ -13,7 +13,7 @@ const buildQuestionBankLayout = (data) => {
     p.innerHTML = questionIndex + '.  ' + question_title
 
     const div = document.createElement('div')
-    div.className = 'question-options row row-cols-auto ms-3 mb-3'
+    div.className = 'question-options row row-cols-auto ms-3 mb-1'
 
     answer_list.forEach((item, index) => {
       const is_right = item['is_right'] === '1'
