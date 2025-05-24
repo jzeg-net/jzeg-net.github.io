@@ -20,7 +20,6 @@ const submitForm = (event) => {
   })
     .then(res => res.json())
     .then(res => {
-      clearSubmitStatus(batch_form)
       if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
 
@@ -42,7 +41,7 @@ const submitForm = (event) => {
       let msg_count = msg_star + '<br>' + msg_favourite
       bModal('', createSmallCenterText(msg_count, 'success'), '', 'sm', true)
     })
-    .catch(() => {
+    .finally(() => {
       clearSubmitStatus(batch_form)
     })
 

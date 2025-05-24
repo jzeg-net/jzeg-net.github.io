@@ -13,7 +13,7 @@ const buildQuestionBankLayout = (data) => {
     p.innerHTML = questionIndex + '.  ' + question_title
 
     const div = document.createElement('div')
-    div.className = 'question-options row row-cols-auto ms-3 mb-1'
+    div.className = 'question-options row row-cols-auto ms-3 mb-2'
 
     answer_list.forEach((item, index) => {
       const is_right = item['is_right'] === '1'
@@ -38,10 +38,12 @@ const openPreview = (data) => {
 
   newWindow.document.write(`
         <!DOCTYPE html>
-        <html lang="zh">
+        <html lang="zh-CN">
         <head>
+          <meta charset="UTF-8">
           <title>题库</title>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6, user-scalable=yes, interactive-widget=resizes-visual">
           <style>
           /* 通用打印样式 */
           @media print {
