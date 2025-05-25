@@ -8,12 +8,15 @@ const buildQuestionBankLayout = (data) => {
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     const questionIndex = index + 1
 
+    const question_card = document.createElement('article')
+    question_card.className = 'question-card mb-2'
+
     const p = document.createElement('p')
     p.className = 'question-title mb-0'
     p.innerHTML = questionIndex + '.  ' + question_title
 
     const div = document.createElement('div')
-    div.className = 'question-options row row-cols-auto ms-3 mb-2'
+    div.className = 'question-options row row-cols-auto ms-3'
 
     answer_list.forEach((item, index) => {
       const is_right = item['is_right'] === '1'
@@ -26,8 +29,9 @@ const buildQuestionBankLayout = (data) => {
       div.appendChild(a)
     })
 
-    fragment.appendChild(p)
-    fragment.appendChild(div)
+    question_card.appendChild(p)
+    question_card.appendChild(div)
+    fragment.appendChild(question_card)
   })
 
   return fragment
@@ -78,7 +82,7 @@ const openPreview = (data) => {
   newWindow.document.close()
 }
 
-const getQuestions = (event) => {
+const getQuestions = event => {
   event.preventDefault()
   setSubmitStatus(questions_form)
 
