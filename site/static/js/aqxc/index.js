@@ -118,25 +118,18 @@ refreshInfo.forEach((item) => {
       },
       body: JSON.stringify(data)
     })
-      .then(response => {
-        if (!response.ok) {
-          response.json()
-            .then(data => {
-              return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-            })
-          return
+      .then(r => {
+        if (!r.ok) {
+          r.json().then(data => {
+            bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+          })
+          return Promise.reject(new Error(data.message))
         }
-
-        return response.json()
+        return r.json()
       })
-      .then(data => {
-        if (data.code) {
-          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-          return
-        }
-
-        if (refreshType === 'profile') updateProfile(data.data)
-        if (refreshType === 'video') updateVideoStat(data.data)
+      .then(res => {
+        if (refreshType === 'profile') updateProfile(res.data)
+        if (refreshType === 'video') updateVideoStat(res.data)
       })
   })
 })

@@ -15,14 +15,16 @@ const request = () => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
     .then(res => {
-      // 如果同时存在消息和错误信息，则显示模态框并返回
-      if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
-        bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
-        return
+      if (!r.ok) {
+        r.json().then(data => {
+          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(data.message))
       }
-
+      return r.json()
+    })
+    .then(res => {
       let successfullyRead = res.data['successfullyRead']
       let msg = '有效阅读了' + successfullyRead + '篇文章'
       bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)

@@ -52,18 +52,16 @@ const handleFormSubmit = event => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
-    .then(res => {
-      clearSubmitStatus(quiz_form)
-      clearSubmitTimerInterval(submitTimerIntervalID)
-
-      // 如果同时存在消息和错误信息，则显示模态框并返回
-      if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
-        bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
-
-        return
+    .then(r => {
+      if (!r.ok) {
+        r.json().then(data => {
+          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(data.message))
       }
-
+      return r.json()
+    })
+    .then(res => {
       datatablesAddRow(res.data)
 
       if (res.data['tester_score'] === 0) {
@@ -106,11 +104,9 @@ const handleFormSubmit = event => {
       let message = '咦~~，怎么回事？好奇怪啊，现在遇到了一个未知的问题，先停一停吧。'
       bModal('', createSmallCenterText(message, 'warning'), '', 'sm', true)
     })
-    .catch(() => {
+    .finally(() => {
       clearSubmitStatus(quiz_form)
       clearSubmitTimerInterval(submitTimerIntervalID)
-    })
-    .finally(() => {
     })
 }
 

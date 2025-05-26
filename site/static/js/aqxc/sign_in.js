@@ -28,16 +28,14 @@ if (sign_in) {
       },
       body: JSON.stringify(data)
     })
-      .then(res => {
-        if (!res.ok) {
-          res.json()
-            .then(data => {
-              return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-            })
-          return
+      .then(r => {
+        if (!r.ok) {
+          r.json().then(data => {
+            bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+          })
+          return Promise.reject(new Error(data.message))
         }
-
-        return res.json()
+        return r.json()
       })
       .then(res => {
         const { add_power, total_power } = res.data

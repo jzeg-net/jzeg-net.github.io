@@ -22,13 +22,11 @@ if (top_form) {
       body: JSON.stringify(data)
     }).then(r => {
       if (!r.ok) {
-        r.json()
-          .then(data => {
-            return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-          })
-        return
+        r.json().then(data => {
+          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(data.message))
       }
-
       return r.json()
     }).then(r => {
       datatablesAddRow(r.data)

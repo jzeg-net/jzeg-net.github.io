@@ -60,7 +60,15 @@ const getQuestionsCategory = () => {
       'Accept': 'application/json',
     },
   })
-    .then(res => res.json())
+    .then(r => {
+      if (!r.ok) {
+        r.json().then(data => {
+          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(data.message))
+      }
+      return r.json()
+    })
     .then(res => {
       // 如果有 code 和 message，则显示错误信息，并且后面不再执行后续代码
       if (res.hasOwnProperty('code') && res.hasOwnProperty('message')) {

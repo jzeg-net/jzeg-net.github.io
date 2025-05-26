@@ -82,20 +82,16 @@ category_radioBtns.forEach(categoryID_radioBtn => {
         'Accept': 'application/json',
       },
     })
-      .then(res => res.json())
+      .then(r => {
+        if (!r.ok) {
+          r.json().then(data => {
+            bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+          })
+          return Promise.reject(new Error(data.message))
+        }
+        return r.json()
+      })
       .then(res => {
-        if (res.hasOwnProperty('code') && res.hasOwnProperty('message')) {
-          bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
-
-          return
-        }
-        if (!res.hasOwnProperty('data')) {
-          bModal('', createSmallCenterText('没有从服务器获取到数据', 'danger'), '', 'sm', true)
-          videoSelect.innerHTML = initialVideoSelectInnerHTML
-
-          return
-        }
-
         let videoData = res.data
 
         let newCachedCategory = {

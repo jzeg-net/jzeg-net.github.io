@@ -18,9 +18,16 @@ const submitForm = (event) => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
+    .then(r => {
+      if (!r.ok) {
+        r.json().then(data => {
+          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(data.message))
+      }
+      return r.json()
+    })
     .then(res => {
-      clearSubmitStatus(study_form)
       if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
         bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
 
@@ -36,7 +43,7 @@ const submitForm = (event) => {
       console.log(result)
       bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
     })
-    .catch(() => {
+    .finally(() => {
       clearSubmitStatus(study_form)
     })
 
