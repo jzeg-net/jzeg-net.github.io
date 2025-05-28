@@ -15,7 +15,7 @@ const request = () => {
     },
     body: JSON.stringify(data)
   })
-    .then(res => {
+    .then(r => {
       if (!r.ok) {
         r.json().then(data => {
           bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
