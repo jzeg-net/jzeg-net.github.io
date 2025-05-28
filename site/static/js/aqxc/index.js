@@ -71,13 +71,15 @@ if (aqxc_form) {
   })
 
   aqxc_form.addEventListener('reset', () => {
+    if (!confirm('确定要删除当前账号信息吗？')) return
+
     removeStorageAqxcToken()
     removeStorageAqxcAccount()
     refreshTokenDisplay()
     refreshAccountDisplay()
-    token_display.innerText = getStorageAqxcToken() || '已清空'
-    account_display.innerText = getStorageAqxcAccount() || '已清空'
-    bModal('', createSmallCenterText('已清空 数据', 'success'), '', 'sm', true)
+    token_display.innerText = getStorageAqxcToken() || '已删除'
+    account_display.innerText = getStorageAqxcAccount() || '已删除'
+    bModal('', createSmallCenterText('已删除当前账号信息', 'success'), '', 'sm', true)
   })
 
 }
