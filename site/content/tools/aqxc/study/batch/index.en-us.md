@@ -8,4 +8,7 @@ onlyMain: false
 robots: noindex, nofollow
 sitemap_exclude: false
 rss_exclude: true
+
+components:
+    - "datatables"
 ---
