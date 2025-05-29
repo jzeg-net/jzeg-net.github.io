@@ -5,8 +5,47 @@ let datatables
 const datatablesAddRow = data => {
   let insertData = data.map(item => {
     let { video_id, title, star, favourite } = item
-    star = star === null ? '保持不变' : star === true ? '点赞' : '取消点赞'
-    favourite = favourite === null ? '保持不变' : favourite === true ? '收藏' : '取消收藏'
+
+    star = (() => {
+      const { currentState, modified } = star
+      if (modified === false) {
+        if (currentState === 1) {
+          return '保持点赞'
+        } else if (currentState === 0) {
+          return '保持未点赞'
+        }
+      }
+
+      if (modified === true) {
+        if (currentState === true) {
+          return '完成点赞'
+        } else if (currentState === false) {
+          return '完成取消点赞'
+        }
+      }
+
+      return '异常'
+    })()
+
+    favourite = (() => {
+      const { currentState, modified } = favourite
+      if (modified === false) {
+        if (currentState === 1) {
+          return '保持收藏'
+        } else if (currentState === 0) {
+          return '保持未收藏'
+        }
+      }
+      if (modified === true) {
+        if (currentState === true) {
+          return '完成收藏'
+        } else if (currentState === false) {
+          return '完成取消收藏'
+        }
+      }
+
+      return '异常'
+    })()
     console.log(title + ' ' + star + ' ' + favourite)
 
     return [video_id, title, star, favourite]
@@ -58,20 +97,11 @@ const submitForm = (event) => {
       return r.json()
     })
     .then(res => {
-      let result = res['result']
-      let { star, favourite } = res['counts']
-      console.log(result)
-      let msg_star = `点赞状态改变了 ${star} 次`
-      let msg_favourite = `收藏状态改变了 ${favourite} 次`
-      let msg_count = msg_star + '<br>' + msg_favourite
-      bModal('', createSmallCenterText(msg_count, 'success'), '', 'sm', true)
-
-      datatablesAddRow(result)
+      datatablesAddRow(res)
     })
     .finally(() => {
       clearSubmitStatus(batch_form)
     })
-
 }
 
 if (batch_form) {

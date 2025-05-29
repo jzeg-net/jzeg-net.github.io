@@ -73,7 +73,7 @@
                         <div>
                             <div class="d-grid row-gap-2">
                                 <button type="reset" class="ms-auto btn btn-sm btn-link link-danger link-underline-opacity-0 btn-outline-secondary">清空</button>
-                                <button type="submit" class="btn btn-success">测试中，不要使用</button>
+                                <button type="submit" class="btn btn-success">开始</button>
                             </div>
                             <div class="form-text">
                                 <span>每次只能操作一个分类，直到操作完成，请耐心等待。</span>
@@ -83,7 +83,10 @@
                 </div>
             </form>
             <div class="card mb-3" id="result">
-                {{ partial "simple_datatables/result" }}
+                <div class="card-header">结果</div>
+                <div class="card-body">
+                    {{ partial "simple_datatables/result" }}
+                </div>
             </div>
         </div>
     </main>
