@@ -9,28 +9,25 @@ let random = document.querySelector('#random')
 // 结果表格
 let datatables
 const datatablesAddRow = data => {
-  const { tester_score: score, tester_time: time, right_count: right, wrong_count: wrong } = data
+  const { right_count, tester_score, tester_time } = data
 
   if (!datatables) {
     datatables = new simpleDatatables.DataTable('#simpleDatatables', {
-      columns: [
-        {}
-      ],
+      columns: [{}],
       classes: simpleDatatables_classes_bootstrap,
       labels: simpleDatatables_labels_zh_CN,
       fixedHeight: true,
       searchable: false,
       perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
       data: {
-        'headings': ['正确', '错误', '得分', '用时']
+        'headings': ['正确', '得分', '用时']
       }
     })
   }
   datatables.rows.add([
-    right,
-    wrong,
-    score,
-    time,
+    right_count,
+    tester_score,
+    tester_time,
   ])
 }
 
@@ -62,15 +59,15 @@ const handleFormSubmit = event => {
       return r.json()
     })
     .then(res => {
-      datatablesAddRow(res.data)
+      datatablesAddRow(res)
 
-      if (res.data['tester_score'] === 0) {
+      if (res['tester_score'] === 0) {
         let message = '你太棒了，今天的积分全都让你拿走了。'
         bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
 
         return
       }
-      if (res.data['power'] < 2) {
+      if (res['power'] < 2) {
         let message = '你的安全B不足，答题需要消耗安全B。'
         bModal('', createSmallCenterText(message, 'success'), '', 'sm', true)
 
@@ -84,7 +81,7 @@ const handleFormSubmit = event => {
       }
 
       // 检查 power 值来决定是否重复提交
-      if (res.data['power'] >= 2) {
+      if (res['power'] >= 2) {
         console.log(interval.value)
         let randomTimeOut = (Math.random() + interval.value) * 1000
 
