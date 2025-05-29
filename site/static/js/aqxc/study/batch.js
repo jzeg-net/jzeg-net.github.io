@@ -46,7 +46,6 @@ const datatablesAddRow = data => {
 
       return '异常'
     })()
-    console.log(title + ' ' + star + ' ' + favourite)
 
     return [video_id, title, star, favourite]
   })
