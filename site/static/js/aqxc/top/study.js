@@ -5,7 +5,7 @@ let datatables
 const datatablesAddRow = data => {
   let { ranking, time, nickname, member_id } = data['member']
   time = formatSecondsToHMS(time)
-  const list = data.list.map(item => {
+  const list = data['list'].map(item => {
     let { ranking, time, nickname, member_id } = item
     time = formatSecondsToHMS(time)
 

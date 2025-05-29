@@ -4,7 +4,7 @@ let url = aqxcApiUrl + 'tester/top'
 let datatables
 const datatablesAddRow = data => {
   const { ranking, score, nickname, member_id } = data['member']
-  const list = data.list.map(item => {
+  const list = data['list'].map(item => {
     const { ranking, score, nickname, member_id } = item
 
     return [ranking, score, nickname, member_id]
