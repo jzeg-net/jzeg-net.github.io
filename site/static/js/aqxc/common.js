@@ -1,5 +1,6 @@
 // api 根地址
 let aqxcApiUrl = 'https://api.jzeg.net/api/aqxc/v1/'
+let aqxcApiExtendUrl = 'https://api.jzeg.net/api/aqxc/extend/'
 
 let storageTokenKey = 'aqxcToken'
 let storageAccountKey = 'aqxcAccount'

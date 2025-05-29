@@ -93,10 +93,10 @@ refreshInfo.forEach((item) => {
     let refreshType = item.dataset['refresh']
     let urlPath
 
-    if (refreshType === 'profile') urlPath = 'profile/detail'
-    if (refreshType === 'video') urlPath = 'profile/videoStat'
+    if (refreshType === 'profile') urlPath = aqxcApiExtendUrl + 'profile/detail'
+    if (refreshType === 'video') urlPath = aqxcApiUrl + 'profile/videoStat'
 
-    let url = aqxcApiUrl + urlPath
+    let url = urlPath
     let token = getStorageAqxcToken()
     let account = getStorageAqxcAccount()
 
