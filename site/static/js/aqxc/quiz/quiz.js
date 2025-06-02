@@ -82,14 +82,12 @@ const handleFormSubmit = event => {
 
       // 检查 power 值来决定是否重复提交
       if (res['power'] >= 2) {
-        console.log(interval.value)
         let randomTimeOut = (Math.random() + interval.value) * 1000
 
         if (random.checked) {
           // 随机延时（2秒 - 10秒）
           randomTimeOut = Math.floor(Math.random() * 9000) + 2000
         }
-        console.log(randomTimeOut)
         // 递归调用
         setTimeout(() => handleFormSubmit(event), randomTimeOut)
         // 减少循环次数
