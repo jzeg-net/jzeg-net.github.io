@@ -274,6 +274,10 @@
     <script src="{{ $preUrl }}static/js/aqxc/questions/index.js"></script>
 {{ end }}
 
+{{ if eq .Type "aqxc/video_stat" }}
+    <script src="{{ $preUrl }}static/js/aqxc/video_stat/index.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc/study_records" }}
     <script src="{{ $preUrl }}static/js/aqxc/study_records.js"></script>
 {{ end }}
