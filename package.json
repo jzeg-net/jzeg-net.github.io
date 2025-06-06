@@ -120,7 +120,7 @@
         "vanilla-cookieconsent": "^3.1.0",
         "vditor": "^3.11.1",
         "workbox-sw": "^7.3.0",
-        "world_countries_lists": "^2.9.0",
+        "world_countries_lists": "^3.1.0",
         "wretch": "^2.11.0",
         "zxcvbn": "^4.4.2"
     },
@@ -147,7 +147,7 @@
         "sass": "^1.89.1",
         "stylelint": "^16.20.0",
         "svg-sprite": "^3.0.0-rc3",
-        "terser": "^5.40.0"
+        "terser": "^5.41.0"
     },
     "engines": {
         "node": ">=22"
