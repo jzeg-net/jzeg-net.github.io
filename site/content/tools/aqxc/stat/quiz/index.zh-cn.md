@@ -1,6 +1,6 @@
 ---
-title: "Video Stat"
-type: "aqxc/video_stat"
+title: "竞赛明细"
+type: "aqxc/stat/quiz"
 
 date: "2023-09-01T19:00:00+08:00"
 

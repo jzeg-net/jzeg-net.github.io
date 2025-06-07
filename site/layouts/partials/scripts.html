@@ -270,8 +270,12 @@
     <script src="{{ $preUrl }}static/js/aqxc/questions/index.js"></script>
 {{ end }}
 
-{{ if eq .Type "aqxc/video_stat" }}
-    <script src="{{ $preUrl }}static/js/aqxc/video_stat/index.js"></script>
+{{ if eq .Type "aqxc/stat/study" }}
+    <script src="{{ $preUrl }}static/js/aqxc/stat/study.js"></script>
+{{ end }}
+
+{{ if eq .Type "aqxc/stat/quiz" }}
+    <script src="{{ $preUrl }}static/js/aqxc/stat/quiz.js"></script>
 {{ end }}
 
 {{ if eq .Type "aqxc/records/study" }}
