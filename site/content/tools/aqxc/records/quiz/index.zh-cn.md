@@ -1,5 +1,5 @@
 ---
-title: "测验记录"
+title: "竞赛记录"
 type: "aqxc/records/quiz"
 
 date: "2023-09-20T19:00:00+08:00"
