@@ -1,11 +1,55 @@
 let result = document.querySelector('#result')
 if (result) {
   const typeList = [
+    { key: '1', value: '练习赛' },
     { key: '2', value: '个人赛' },
     { key: '5', value: 'PK对战' },
     { key: '6', value: '四人赛' },
     { key: '7', value: '闯关赛' },
   ]
+  const request = (typeKey, tabPanel) => {
+    const url = aqxcApiUrl + 'tester/history'
+    const data = {
+      account: getStorageAqxcAccount(),
+      token: getStorageAqxcToken(),
+      type: typeKey,
+      page: 1,
+      page_size: 20,
+    }
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+
+    })
+      .then(r => {
+        if (!r.ok) {
+          r.json().then(data => {
+            return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
+          })
+          return Promise.reject(new Error(r.statusText))
+        }
+        return r.json()
+      })
+      .then(r => {
+        if (r.data.length === 0) {
+          tabPanel.innerHTML = `<h6 class="card-title text-center">今日暂无记录</h6>`
+          return
+        }
+
+        tabPanel.innerHTML = r.data.map(item => {
+          return `<div class="card-body border-bottom">
+                  <h5 class="card-title">${item['category_name']}</h5>
+                  <p class="card-text">${item['created_at']}</p>
+                </div>`
+        }).join('')
+      })
+      .finally()
+  }
 
   // 页面加载完成后执行
   window.addEventListener('load', () => {
@@ -38,44 +82,6 @@ if (result) {
       tab.dataset['bsTarget'] = '#nav-' + item.key
       tab.ariaSelected = index === 0
       tab.ariaSelected === 'false' && (tab.tabIndex = -1)
-      tab.addEventListener('shown.bs.tab', event => {
-        const url = aqxcApiUrl + 'tester/history'
-        const data = {
-          account: getStorageAqxcAccount(),
-          token: getStorageAqxcToken(),
-          type: item.key,
-          page: 1,
-          page_size: 20,
-        }
-
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(data)
-
-        })
-          .then(r => {
-            if (!r.ok) {
-              r.json().then(data => {
-                return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-              })
-              return Promise.reject(new Error(r.statusText))
-            }
-            return r.json()
-          })
-          .then(r => {
-            console.log(r)
-            tabPanel.innerHTML = r.data.map(item => {
-              return `<div class="card-body border-bottom">
-                  <h5 class="card-title">${item['category_name']}</h5>
-                  <p class="card-text">${item['created_at']}</p>
-                </div>`
-            }).join('')
-          })
-      }, { once: true })
 
       tabList.append(tab)
 
@@ -85,7 +91,15 @@ if (result) {
       tabPanel.id = 'nav-' + item.key
       tabPanel.role = 'tabpanel'
       tabPanel.ariaLabelledby = 'nav-' + item.key + '-tab'
-      tabPanel.textContent = '加载中。。。'
+      tabPanel.innerHTML = `<h6 class="card-title text-center">加载中...</h6>`
+
+      if (index !== 0) {
+        tab.addEventListener('show.bs.tab', () => {
+          request(item.key, tabPanel)
+        }, { once: true })
+      } else {
+        request(item.key, tabPanel)
+      }
 
       tabContent.append(tabPanel)
     })
