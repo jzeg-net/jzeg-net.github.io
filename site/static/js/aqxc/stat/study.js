@@ -59,7 +59,7 @@ const createProgressBar = (valuenow) => {
   progress.setAttribute('aria-valuemin', 0)
   progress.setAttribute('aria-valuemax', 100)
 
-  progress_bar.className = 'progress-bar progress-bar-striped progress-bar-animated'
+  progress_bar.className = 'progress-bar'
   progress_bar.style.width = valuenow + '%'
   progress_bar.textContent = valuenow + '%'
 
@@ -67,7 +67,7 @@ const createProgressBar = (valuenow) => {
     progress_bar.classList.add('text-bg-success')
     progress_bar.textContent = '已完成'
   } else {
-    progress_bar.classList.add('text-bg-warning')
+    progress_bar.classList.add('text-bg-warning', 'progress-bar-striped', 'progress-bar-animated')
   }
 
   progress.appendChild(progress_bar)
