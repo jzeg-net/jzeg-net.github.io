@@ -106,7 +106,7 @@ const progressList = (data) => {
     btn.dataset['bsTarget'] = '#nav-' + category_id
     btn.setAttribute('aria-controls', 'nav-' + category_id)
     btn.ariaSelected = index === 0
-    btn.tabIndex = btn.ariaSelected ? 0 : -1
+    btn.ariaSelected === 'false' && (btn.tabIndex = -1)
     btn.textContent = category_name
 
     tabList.appendChild(btn)
