@@ -1,7 +1,7 @@
 # default theme mode
 theme:
     enable: true
-    default: light
+    default: dark
     option: [ 'light',"dark","auto" ]
 
 # default palette color
