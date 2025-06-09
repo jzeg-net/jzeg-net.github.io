@@ -144,6 +144,7 @@ function updateProfile (data) {
     { element: document.querySelector('#user_avatar'), key: 'avatar' },
     { element: document.querySelector('#user_power'), key: 'power' },
     { element: document.querySelector('#user_points'), key: 'points' },
+    { element: document.querySelector('#user_validity'), key: 'last_login' },
     { element: document.querySelector('#user_total_points'), key: 'total_points' }
   ]
 
@@ -151,6 +152,22 @@ function updateProfile (data) {
     if (key === 'avatar') {
       element.src = data[key]
       return
+    }
+    if (key === 'last_login') {
+      try {
+        const date = new Date(data[key]);
+        if (isNaN(date.getTime())) throw new Error('Invalid date');
+
+        date.setDate(date.getDate() + 15);
+        element.textContent = date.toLocaleString('zh-CN', {
+          timeZone: 'Asia/Shanghai',
+          hour12: false
+        });
+      } catch (error) {
+        console.error('Date formatting failed:', error);
+        element.textContent = '无效日期';
+      }
+      return;
     }
     element.textContent = data[key]
   })
