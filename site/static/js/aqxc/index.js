@@ -125,7 +125,7 @@ refreshInfo.forEach((item) => {
           r.json().then(data => {
             bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
           })
-          return Promise.reject(new Error(data.message))
+          return Promise.reject(new Error(r.statusText))
         }
         return r.json()
       })

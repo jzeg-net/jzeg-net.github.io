@@ -23,7 +23,7 @@ const submitForm = (event) => {
         r.json().then(data => {
           bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
         })
-        return Promise.reject(new Error(data.message))
+        return Promise.reject(new Error(r.statusText))
       }
       return r.json()
     })
@@ -40,7 +40,6 @@ const submitForm = (event) => {
       }
 
       let result = res.data['result']
-      console.log(result)
       bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
     })
     .finally(() => {
@@ -49,6 +48,13 @@ const submitForm = (event) => {
 
 }
 
-if (study_form) {
-  study_form.addEventListener('submit', submitForm)
-}
+study_form?.addEventListener('submit', submitForm)
+
+const viewMode = document.querySelector('#viewMode')
+viewMode?.querySelectorAll('label').forEach(label => {
+  const tabTrigger = new bootstrap.Tab(label)
+  label.addEventListener('click', (event) => {
+    event.preventDefault()
+    tabTrigger.show()
+  })
+})
