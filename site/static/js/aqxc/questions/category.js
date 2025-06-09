@@ -20,13 +20,14 @@ const populateSelectWithOptions = data => {
   let fragment = document.createDocumentFragment()
 
   Object.keys(data).forEach(key => {
-    let category_name = data[key]['exam_list'][0]['exam_title']
-    let category_id = data[key]['exam_list'][0]['exam_id']
+    const category_name = data[key]['exam_list'][0]['exam_title']
+    const category_id = data[key]['exam_list'][0]['exam_id']
     let question_count = data[key]['exam_list'][0]['question_count']
+    question_count = `『 ${question_count} 』`
 
     let optionData = {
       value: category_id,
-      text: category_name + `『 ${question_count} 』`,
+      text: category_name + question_count,
     }
     let option = createOption(optionData)
     fragment.appendChild(option)
