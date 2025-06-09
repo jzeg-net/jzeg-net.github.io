@@ -22,10 +22,12 @@ const populateSelectWithOptions = data => {
   Object.keys(data).forEach(key => {
     let category_name = data[key]['category_name']
     let category_id = data[key]['category_id']
+    let question_count = data[key]['exam_list'][0]['question_count']
+    question_count = `『 ${question_count} 』`
 
     let optionData = {
       value: category_id,
-      text: category_name,
+      text: category_name + question_count,
     }
     let option = createOption(optionData)
     fragment.appendChild(option)
