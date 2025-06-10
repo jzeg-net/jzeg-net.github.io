@@ -9,6 +9,7 @@ const submitForm = (event) => {
   const data = Object.fromEntries(formData.entries())
   data.token = getStorageAqxcToken()
   data.account = getStorageAqxcAccount()
+  data.all = data.all === 'on'
 
   fetch(url, {
     method: 'POST',
@@ -51,10 +52,10 @@ const submitForm = (event) => {
 study_form?.addEventListener('submit', submitForm)
 
 const viewMode = document.querySelector('#viewMode')
-viewMode?.querySelectorAll('label').forEach(label => {
-  const tabTrigger = new bootstrap.Tab(label)
-  label.addEventListener('click', (event) => {
-    event.preventDefault()
+viewMode?.querySelectorAll('label').forEach(itemTab => {
+  const tabTrigger = new bootstrap.Tab(itemTab)
+  itemTab.addEventListener('click', (event) => {
+    // event.preventDefault()
     tabTrigger.show()
   })
 })
