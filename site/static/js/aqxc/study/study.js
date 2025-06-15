@@ -29,19 +29,9 @@ const submitForm = (event) => {
       return r.json()
     })
     .then(res => {
-      if (res.hasOwnProperty('message') && (res.hasOwnProperty('code') || res.hasOwnProperty('errors'))) {
-        bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
-
-        return
-      }
-      if (!res.hasOwnProperty('data')) {
-        bModal('', createSmallCenterText('没有从服务器获取到数据', 'danger'), '', 'sm', true)
-
-        return
-      }
-
-      let result = res.data['result']
-      bModal('', createSmallCenterText(result, 'success'), '', 'sm', true)
+      const { count, totalTime } = res
+      let msg = `播放次数 ${count}，积累时长 ${totalTime}`
+      bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
     })
     .finally(() => {
       clearSubmitStatus(study_form)
