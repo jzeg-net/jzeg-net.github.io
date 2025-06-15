@@ -1,14 +1,14 @@
 let result = document.querySelector('#result')
 if (result) {
   const typeList = [
-    { key: '1', value: '练习赛' },
     { key: '2', value: '个人赛' },
     { key: '5', value: 'PK对战' },
     { key: '6', value: '四人赛' },
     { key: '7', value: '闯关赛' },
+    { key: '1', value: '练习赛' },
   ]
   const request = (typeKey, tabPanel) => {
-    const url = aqxcApiUrl + 'tester/history'
+    const url = aqxcApiExtendUrl + 'record/quiz'
     const data = {
       account: getStorageAqxcAccount(),
       token: getStorageAqxcToken(),
