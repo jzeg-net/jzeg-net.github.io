@@ -40,41 +40,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-content card-body rounded border border-opacity-50">
+                        <div class="card-body rounded border border-opacity-50">
                             <div class="text-center text-success">一般情况下，无需修改</div>
-                            <div class="tab-pane fade" id="quick-content" role="tabpanel" aria-labelledby="quick-tab" tabindex="-1">
-                                <div>
-                                    <label class="mb-2" for="browsingDuration">浏览时长</label>
-                                    <div class="input-group stepper-input user-select-none">
-                                        <div class="input-group-text decrease">
-                                            <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="quick-content" role="tabpanel" aria-labelledby="quick-tab" tabindex="-1">
+                                    <div>
+                                        <label class="mb-2" for="browsingDuration">浏览时长</label>
+                                        <div class="input-group stepper-input user-select-none">
+                                            <div class="input-group-text decrease">
+                                                <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                                            </div>
+                                            <input class="input-group-text" type="number" name="duration" id="browsingDuration" min="2" max="10" step="1" value="2">
+                                            <div class="input-group-text increase">
+                                                <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                            </div>
                                         </div>
-                                        <input class="input-group-text" type="number" name="duration" id="browsingDuration" min="2" max="10" step="1" value="2">
-                                        <div class="input-group-text increase">
-                                            <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                        <div class="vstack form-text">
+                                            <span>默认为2秒，可设置范围是 2~10</span>
+                                            <span>例如：2秒，则视频只观看2秒后，就开始观看下一个视频</span>
                                         </div>
-                                    </div>
-                                    <div class="vstack form-text">
-                                        <span>默认为2秒，可设置范围是 2~10</span>
-                                        <span>例如：2秒，则视频只观看2秒后，就开始观看下一个视频</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="full-content" role="tabpanel" aria-labelledby="full-tab" tabindex="-1">
-                                <div>
-                                    <label class="mb-2" for="loopCount">循环次数</label>
-                                    <div class="input-group stepper-input user-select-none">
-                                        <div class="input-group-text decrease">
-                                            <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                                <div class="tab-pane fade" id="full-content" role="tabpanel" aria-labelledby="full-tab" tabindex="-1">
+                                    <div>
+                                        <label class="mb-2" for="loopCount">循环次数</label>
+                                        <div class="input-group stepper-input user-select-none">
+                                            <div class="input-group-text decrease">
+                                                <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
+                                            </div>
+                                            <input class="input-group-text" type="number" name="loop_count" id="loopCount" min="1" max="3" step="1" value="3">
+                                            <div class="input-group-text increase">
+                                                <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                            </div>
                                         </div>
-                                        <input class="input-group-text" type="number" name="loop_count" id="loopCount" min="1" max="3" step="1" value="3">
-                                        <div class="input-group-text increase">
-                                            <svg class="bi bi-plus fs-2"><use href="#bi-plus"></use></svg>
+                                        <div class="vstack form-text">
+                                            <span>默认为3次，可设置范围是 1~3</span>
+                                            <span>例如：2次，则视频观看2次后，再开始观看下一个视频</span>
                                         </div>
-                                    </div>
-                                    <div class="vstack form-text">
-                                        <span>默认为3次，可设置范围是 1~3</span>
-                                        <span>例如：2次，则视频观看2次后，再开始观看下一个视频</span>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +84,7 @@
                         <div class="card-body rounded border border-opacity-50">
                             <div>
                                 <label class="mb-2" for="browsingNumber">观看数量</label>
-                                <div class="input-group stepper-input user-select-none">
+                                <div class="input-group flex-nowrap stepper-input user-select-none">
                                     <div class="input-group-text decrease">
                                         <svg class="bi bi-dash fs-2"><use href="#bi-dash"></use></svg>
                                     </div>
