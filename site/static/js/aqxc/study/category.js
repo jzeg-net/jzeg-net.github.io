@@ -17,14 +17,6 @@ const cacheExpirationTime = 3600 * 1e3
 // 用于存储初始内容
 let initialVideoSelectInnerHTML = videoSelect.innerHTML
 
-const createOption = data => {
-  let opt = document.createElement('option')
-  opt.value = data.value
-  opt.textContent = data.text
-
-  return opt
-}
-
 const populateSelectWithOptions = data => {
   let fragment = document.createDocumentFragment()
 

@@ -86,3 +86,12 @@ function formatSecondsToHMS (seconds) {
   // 返回格式化的字符串
   return `${hours} 小时 ${minutes} 分 ${remainingSeconds} 秒`
 }
+
+// 创建 option 元素
+const createOption = data => {
+  let opt = document.createElement('option')
+  opt.value = data.value
+  opt.textContent = data.text
+
+  return opt
+}
