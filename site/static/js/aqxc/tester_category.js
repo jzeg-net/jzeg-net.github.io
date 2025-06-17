@@ -1,4 +1,4 @@
-let storageAqxcTesterCategoryKey = 'aqxcTesterCategory'
+const storageAqxcTesterCategoryKey = 'aqxcTesterCategory'
 
 const getStorageAqxcTesterCategory = () => getLocalStorage(storageAqxcTesterCategoryKey)
 
@@ -6,21 +6,21 @@ const setStorageAqxcTesterCategory = (value) => setLocalStorage(storageAqxcTeste
 
 const removeStorageAqxcTesterCategory = () => removeLocalStorage(storageAqxcTesterCategoryKey)
 
-let categorySelect = document.querySelector('#categorySelect')
+const categorySelect = document.querySelector('#categorySelect')
 
 const populateSelectWithOptions = data => {
-  let fragment = document.createDocumentFragment()
+  const fragment = document.createDocumentFragment()
 
   Object.keys(data).forEach(key => {
     const name = data[key]['exam_list'][0]['exam_title']
     const id = data[key]['exam_list'][0]['exam_id']
     const count = data[key]['exam_list'][0]['question_count']
 
-    let optionData = {
+    const optionData = {
       value: id,
       text: name + `『 ${count} 』`,
     }
-    let option = createOption(optionData)
+    const option = createOption(optionData)
     fragment.appendChild(option)
   })
 
@@ -28,7 +28,7 @@ const populateSelectWithOptions = data => {
 }
 
 const getTesterCategory = () => {
-  let cachedCategory = JSON.parse(getStorageAqxcTesterCategory())
+  const cachedCategory = JSON.parse(getStorageAqxcTesterCategory())
 
   // 判断缓存是否可用
   if (cachedCategory && (Date.now() < cachedCategory.expires)) {
@@ -38,7 +38,7 @@ const getTesterCategory = () => {
   }
 
   // 从API获取数据
-  let baseUrl = aqxcApiUrl + 'tester/category'
+  const baseUrl = aqxcApiUrl + 'tester/category'
   const queryParams = {
     token: getStorageAqxcToken(),
     account: getStorageAqxcAccount(),
@@ -74,18 +74,14 @@ const getTesterCategory = () => {
         return
       }
 
-      let categoryData = res.data
+      const categoryData = res.data
 
-      let newCachedCategory = {
-        expires: Date.now() + (3600 * 1e3), // 缓存1小时
-        data: categoryData,
-      }
-      setStorageAqxcTesterCategory(JSON.stringify(newCachedCategory))
+      setStorageAqxcTesterCategory(buildStorageString(categoryData))
 
       categorySelect.append(populateSelectWithOptions(categoryData))
     })
 }
 
-categorySelect.addEventListener('click', () => {
+categorySelect?.addEventListener('click', () => {
   getTesterCategory()
 }, { once: true })

@@ -1,5 +1,5 @@
-let storageKey_aqxcStudyIndustryCategory = 'aqxcStudyIndustryCategory'
-let storageKey_aqxcStudySpecialCategory = 'aqxcStudySpecialCategory'
+const storageKey_aqxcStudyIndustryCategory = 'aqxcStudyIndustryCategory'
+const storageKey_aqxcStudySpecialCategory = 'aqxcStudySpecialCategory'
 
 const getStorageAqxcStudyIndustryCategory = () => getLocalStorage(storageKey_aqxcStudyIndustryCategory)
 const getStorageAqxcStudySpecialCategory = () => getLocalStorage(storageKey_aqxcStudySpecialCategory)
@@ -8,28 +8,25 @@ const setStorageAqxcStudySpecialCategory = value => setLocalStorage(storageKey_a
 const removeStorageAqxcStudyIndustryCategory = () => removeLocalStorage(storageKey_aqxcStudyIndustryCategory)
 const removeStorageAqxcStudySpecialCategory = () => removeLocalStorage(storageKey_aqxcStudySpecialCategory)
 
-let category_radioBtns = document.querySelectorAll('input[type=radio][name=category]')
-let videoSelect = document.querySelector('#videoSelect')
-
-// 缓存有效期
-const cacheExpirationTime = 3600 * 1e3
+const category_radioBtns = document.querySelectorAll('input[type=radio][name=category]')
+const videoSelect = document.querySelector('#videoSelect')
 
 // 用于存储初始内容
-let initialVideoSelectInnerHTML = videoSelect.innerHTML
+const initialVideoSelectInnerHTML = videoSelect.innerHTML
 
 const populateSelectWithOptions = data => {
-  let fragment = document.createDocumentFragment()
+  const fragment = document.createDocumentFragment()
 
   Object.keys(data).forEach(key => {
     const category_name = data[key]['category_name']
     const category_id = data[key]['category_id']
     const video_count = data[key]['video_count'] ? `『 ${data[key]['video_count']} 』` : ''
 
-    let optionData = {
+    const optionData = {
       value: category_id,
       text: category_name + video_count,
     }
-    let option = createOption(optionData)
+    const option = createOption(optionData)
     fragment.appendChild(option)
   })
 
@@ -38,15 +35,15 @@ const populateSelectWithOptions = data => {
 
 category_radioBtns.forEach(categoryID_radioBtn => {
   categoryID_radioBtn.addEventListener('change', function () {
-    let category_id_value = document.querySelector('input[type=radio][name=category]:checked').value
+    const category_id_value = document.querySelector('input[type=radio][name=category]:checked').value
 
-    let cachedCategory = category_id_value === '1'
+    const cachedCategory = category_id_value === '1'
       ? JSON.parse(getStorageAqxcStudyIndustryCategory())
       : JSON.parse(getStorageAqxcStudySpecialCategory())
 
     if (cachedCategory && Date.now() < cachedCategory.expires) {
       // 如果有缓存，并且缓存未过期，则直接使用缓存数据
-      let cachedCategoryData = cachedCategory.data
+      const cachedCategoryData = cachedCategory.data
       videoSelect.innerHTML = ''
       videoSelect.appendChild(populateSelectWithOptions(cachedCategoryData))
 
@@ -85,15 +82,11 @@ category_radioBtns.forEach(categoryID_radioBtn => {
         return r.json()
       })
       .then(res => {
-        let videoData = res.data
+        const videoData = res.data
 
-        let newCachedCategory = {
-          expires: Date.now() + cacheExpirationTime,
-          data: videoData,
-        }
         category_id_value === '1'
-          ? setStorageAqxcStudyIndustryCategory(JSON.stringify(newCachedCategory))
-          : setStorageAqxcStudySpecialCategory(JSON.stringify(newCachedCategory))
+          ? setStorageAqxcStudyIndustryCategory(buildStorageString(videoData))
+          : setStorageAqxcStudySpecialCategory(buildStorageString(videoData))
 
         // 清空 videoSelect
         videoSelect.innerHTML = ''
