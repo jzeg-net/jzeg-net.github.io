@@ -52,7 +52,7 @@ function submitForm (event) {
         datatablesAddRow(response)
       }
 
-      clearFormSpinner(passwork_login)
+      clearSubmitStatus(passwork_login)
       clearInterval(submitTimerIntervalID)
 
       if (response['msg']) return
@@ -72,7 +72,7 @@ function submitForm (event) {
     })
     .catch(error => {
       console.error('passwork_error:', error)
-      clearFormSpinner(passwork_login)
+      clearSubmitStatus(passwork_login)
       clearInterval(submitTimerIntervalID)
       if (autoSubmit.checked && autoSubmitTotalTimes.value > 1) {
         --autoSubmitTotalTimes.value

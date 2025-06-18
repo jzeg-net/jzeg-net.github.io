@@ -2,7 +2,7 @@ let study_form = document.querySelector('#study_form')
 
 const submitForm = (event) => {
   event.preventDefault()
-  setSubmitStatus(study_form)
+  submitStatus(study_form)
   const url = aqxcApiUrl + 'study/study'
 
   const formData = new FormData(study_form)

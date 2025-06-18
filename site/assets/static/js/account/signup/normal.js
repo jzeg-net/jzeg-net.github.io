@@ -15,16 +15,16 @@ if (signup_normal) {
           // .errorType('json')
           .catcher(404, () => {
             bModal('', createSmallCenterText('服务器404错误', 'danger'), '', 'sm', true)
-            clearFormSpinner(signup_normal)
+            clearSubmitStatus(signup_normal)
           })
           .catcher(502, () => {
             bModal('', createSmallCenterText('服务器502错误', 'danger'), '', 'sm', true)
-            clearFormSpinner(signup_normal)
+            clearSubmitStatus(signup_normal)
           })
           .catcherFallback((error,originalRequest) => {
             bModal('', createSmallCenterText('服务器未知错误', 'danger'), '', 'sm', true)
             console.log(error)
-            clearFormSpinner(signup_normal)
+            clearSubmitStatus(signup_normal)
           })
           .post(formData, `${accountApiUrl}/signup.php`)
           .json((response) => {
@@ -36,11 +36,11 @@ if (signup_normal) {
                 // location.replace('/account/login.php')
               })
             }
-            clearFormSpinner(signup_normal)
+            clearSubmitStatus(signup_normal)
           })
           .catch((error) => {
             console.log('signup_error', error)
-            clearFormSpinner(signup_normal)
+            clearSubmitStatus(signup_normal)
           })
     })
 }

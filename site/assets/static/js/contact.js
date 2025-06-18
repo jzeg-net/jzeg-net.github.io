@@ -11,26 +11,26 @@ if (contact) {
       // .errorType('json')
       .catcher(404, () => {
         bModal('', createSmallCenterText('服务器404错误', 'danger'), '', 'sm', true)
-        clearFormSpinner(contact)
+        clearSubmitStatus(contact)
       })
       .catcher(502, () => {
         bModal('', createSmallCenterText('服务器502错误', 'danger'), '', 'sm', true)
-        clearFormSpinner(contact)
+        clearSubmitStatus(contact)
       })
       .catcherFallback(() => {
         bModal('', createSmallCenterText('服务器未知错误', 'danger'), '', 'sm', true)
-        clearFormSpinner(contact)
+        clearSubmitStatus(contact)
       })
       .post(formData, `${xxxApiURL}/contact/index.php`)
       .json((response) => {
         response.result === 1
           ? bModal('', createSmallCenterText('提交成功', 'success'), '', 'sm', true)
           : bModal('', createSmallCenterText('提交失败', 'success'), '', 'sm', true)
-        clearFormSpinner(contact)
+        clearSubmitStatus(contact)
       })
       .catch((error) => {
         console.log('contact_error', error)
-        clearFormSpinner(contact)
+        clearSubmitStatus(contact)
       })
   })
 }

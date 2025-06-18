@@ -42,7 +42,7 @@ function submitForm (event) {
         datatablesAddRow(response)
       }
 
-      clearFormSpinner(study_login)
+      clearSubmitStatus(study_login)
       clearInterval(submitTimerIntervalID)
 
       if (response['errorMsg'] === '登录失败') return
@@ -55,7 +55,7 @@ function submitForm (event) {
     .catch(error => {
       console.error('passwork_error:', error)
       // alert('遇到错误，请尝试手动重试一次，如果依旧报本条错误，务必停止操作，并且反馈。')
-      clearFormSpinner(study_login)
+      clearSubmitStatus(study_login)
       clearInterval(submitTimerIntervalID)
       // autoSubmitTotalTimes.value = 1
       if (autoSubmit.checked && autoSubmitTotalTimes.value > 1) {

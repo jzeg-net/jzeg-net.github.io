@@ -165,8 +165,8 @@ const xxx = (data) => {
 
 const request = (event) => {
   const target = event.target
-  setInsertNewElement(target, createNewSpinner())
-  setBtnDisabledStatus(target)
+  insertNewElement(target, newSpinner())
+  btnDisabledStatus(target)
 
   const data = {
     account: getStorageAqxcAccount(),
@@ -195,8 +195,8 @@ const request = (event) => {
       xxx(r.data)
     })
     .finally(() => {
-      clearSubmitSpinner(target)
-      setBtnDisabledStatus(target)
+      clearSpinner(target)
+      btnDisabledStatus(target)
     })
 }
 

@@ -16,7 +16,7 @@ function submitForm (event) {
 
   axios.post(`${zhghApiUrl}/count/`, fetchData, { timeout: 4500 })
     .then(response => datatablesAddRow(response.data))
-    .finally(() => clearFormSpinner(count))
+    .finally(() => clearSubmitStatus(count))
     .catch(error => {
       if (error.code === 'ECONNABORTED') {
         let msg = '请求超时, 请检查网络后重试。'

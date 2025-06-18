@@ -84,7 +84,7 @@ const openPreview = (data) => {
 
 const getQuestions = event => {
   event.preventDefault()
-  setSubmitStatus(questions_form)
+  submitStatus(questions_form)
 
   let formData = new FormData(questions_form)
   let data = Object.fromEntries(formData.entries())

@@ -3,8 +3,8 @@ let url = aqxcApiUrl + 'read/article'
 
 const request = (event) => {
   const target = event.target
-  setInsertNewElement(target, createNewSpinner())
-  setBtnDisabledStatus(target)
+  insertNewElement(target, newSpinner())
+  btnDisabledStatus(target)
   let data = {
     token: getStorageAqxcToken(),
     account: getStorageAqxcAccount(),
@@ -33,8 +33,8 @@ const request = (event) => {
       bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
     })
     .finally(() => {
-      clearSubmitSpinner(target)
-      setBtnDisabledStatus(target)
+      clearSpinner(target)
+      btnDisabledStatus(target)
     })
 }
 

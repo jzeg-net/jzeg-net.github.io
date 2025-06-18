@@ -11,26 +11,26 @@ if (shop_add) {
       // .errorType('json')
       .catcher(404, () => {
         modalFailMsg('服务器404错误')
-        clearFormSpinner(shop_add)
+        clearSubmitStatus(shop_add)
       })
       .catcher(502, () => {
         modalFailMsg('服务器502错误')
-        clearFormSpinner(shop_add)
+        clearSubmitStatus(shop_add)
       })
       .catcherFallback(() => {
         modalFailMsg('服务器未知错误')
-        clearFormSpinner(shop_add)
+        clearSubmitStatus(shop_add)
       })
       .post(formData, `${xxxApiURL}/shop/add.php`)
       .json((response) => {
         response.result === 1
           ? modalSuccessMsg('提交成功')
           : modalFailMsg('提交失败')
-        clearFormSpinner(shop_add)
+        clearSubmitStatus(shop_add)
       })
       .catch((error) => {
         console.log('shop_add_error', error)
-        clearFormSpinner(shop_add)
+        clearSubmitStatus(shop_add)
       })
   })
 }

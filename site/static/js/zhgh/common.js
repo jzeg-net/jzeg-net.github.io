@@ -33,15 +33,3 @@ if (throughSelect) {
       .catch(error => console.error('type_of_work_error', error))
   }, { once: true })
 }
-
-// 提交按钮计时
-let submitTimerIntervalID
-
-const submitTimerInterval = formEL => {
-  let submit_timer = formEL.querySelector('#submit_timer')
-  submit_timer.textContent = '0'
-
-  submitTimerIntervalID = setInterval(() => {
-    submit_timer.textContent++
-  }, 1000)
-}

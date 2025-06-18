@@ -1,3 +1,24 @@
+// 计时器ID
+let submitTimerIntervalID
+
+// 设置计时器开启
+const submitTimerInterval = formEL => {
+  let submit_timer = formEL.querySelector('#submit_timer')
+  submit_timer.textContent = '0'
+
+  submitTimerIntervalID = setInterval(() => {
+    submit_timer.textContent++
+  }, 1000)
+}
+
+// 重置计时器归零，并且清除计时器
+const clearSubmitTimerInterval = (intervalID) => {
+  let submit_timer = document.querySelector('#submit_timer')
+  submit_timer.textContent = '0'
+
+  clearInterval(intervalID)
+}
+
 const changePasswordInputType = PasswordInput => {
   let svgUse = PasswordInput.querySelector('svg').querySelector('use')
   let input = PasswordInput.parentElement.querySelector('input')
@@ -54,6 +75,7 @@ const newSpinner = () => {
   return spinner
 }
 
+// 在指定元素的指定位置，插入指定的新元素
 const insertNewElement = (calledElement, newElement, where = 'afterbegin') => {
   calledElement.insertAdjacentElement(where, newElement)
 }
@@ -67,7 +89,7 @@ const clearSpinner = submit => {
   submit.querySelector('.spinner-border').remove()
 }
 
-const clearFormSpinner = formEl => {
+const clearSubmitStatus = formEl => {
   let submit = formEl.querySelector('[type=submit]')
 
   btnDisabledStatus(submit)
@@ -88,4 +110,24 @@ const createOption = data => {
   opt.textContent = data.text
 
   return opt
+}
+
+// 链接添加查询参数
+const addQueryParams = (url, params) => {
+  const queryString = new URLSearchParams(params)
+
+  return `${url}?${queryString.toString()}`
+}
+
+// 将秒数转换为 HH:MM:SS 格式的字符串
+const formatSecondsToHMS = seconds => {
+  // 计算小时数
+  const hours = Math.floor(seconds / 3600)
+  // 计算分钟数
+  const minutes = Math.floor((seconds % 3600) / 60)
+  // 计算秒数
+  const remainingSeconds = seconds % 60
+
+  // 返回格式化的字符串
+  return `${hours} 小时 ${minutes} 分 ${remainingSeconds} 秒`
 }

@@ -34,8 +34,8 @@ const datatablesAddRow = data => {
 // 处理表单提交
 const handleFormSubmit = event => {
   event.preventDefault()
-  setSubmitStatus(quiz_form)
-  setSubmitTimerInterval()
+  submitStatus(quiz_form)
+  submitTimerInterval(quiz_form)
   let formData = new FormData(quiz_form)
   let data = Object.fromEntries(formData.entries())
   data.token = getStorageAqxcToken()
