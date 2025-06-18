@@ -65,13 +65,7 @@ category_radioBtns.forEach(categoryID_radioBtn => {
     }
     const url = addQueryParams(baseUrl, queryParams)
 
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    })
+    fetch(url, fetchGetOptions())
       .then(r => {
         if (!r.ok) {
           r.json().then(data => {
