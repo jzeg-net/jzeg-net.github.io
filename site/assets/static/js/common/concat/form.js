@@ -80,3 +80,12 @@ const submitStatus = formEl => {
   insertNewElement(submit, newSpinner())
   btnDisabledStatus(submit)
 }
+
+// 创建 option 元素
+const createOption = data => {
+  let opt = document.createElement('option')
+  opt.value = data.value
+  opt.textContent = data.text
+
+  return opt
+}

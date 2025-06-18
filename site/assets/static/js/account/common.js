@@ -67,15 +67,6 @@ const create_idd_code_list = (formEl, iddCodeIndex) => {
   return listGroup
 }
 
-const btnDisabledStatus = btnElement => {
-  btnElement.classList.toggle('disabled')
-  btnElement.toggleAttribute('disabled')
-}
-
-const insertNewElement = (calledElement, newElement, where = 'afterbegin') => {
-  calledElement.insertAdjacentElement(where, newElement)
-}
-
 const newCountdown = (number = 60) => {
   let countdown = document.createElement('span')
   countdown.className = 'countdown'
@@ -170,21 +161,6 @@ const submitBtnTimer = submitBtn => {
     btnDisabledStatus(submitBtn)
     spinner.remove()
   }, timeout)
-}
-
-const newSpinner = () => {
-  let spinner = document.createElement('span')
-  let spinnerVisuallyHidden = document.createElement('span')
-
-  spinner.className = 'me-2 spinner-border spinner-border-sm'
-  spinner.setAttribute('role', 'status')
-
-  spinnerVisuallyHidden.className = 'visually-hidden'
-  spinnerVisuallyHidden.innerText = '加载中'
-
-  spinner.appendChild(spinnerVisuallyHidden)
-
-  return spinner
 }
 
 const btnStatus = button => {

@@ -75,7 +75,7 @@ const addQueryParams = (url, params) => {
 }
 
 // 将秒数转换为 HH:MM:SS 格式的字符串
-function formatSecondsToHMS (seconds) {
+const formatSecondsToHMS = seconds => {
   // 计算小时数
   const hours = Math.floor(seconds / 3600)
   // 计算分钟数
@@ -85,13 +85,4 @@ function formatSecondsToHMS (seconds) {
 
   // 返回格式化的字符串
   return `${hours} 小时 ${minutes} 分 ${remainingSeconds} 秒`
-}
-
-// 创建 option 元素
-const createOption = data => {
-  let opt = document.createElement('option')
-  opt.value = data.value
-  opt.textContent = data.text
-
-  return opt
 }
