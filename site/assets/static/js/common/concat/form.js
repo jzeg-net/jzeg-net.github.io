@@ -3,7 +3,7 @@ let submitTimerIntervalID
 
 // 设置计时器开启
 const submitTimerInterval = formEL => {
-  let submit_timer = formEL.querySelector('#submit_timer')
+  let submit_timer = document.querySelector('#submit_timer')
   submit_timer.textContent = '0'
 
   submitTimerIntervalID = setInterval(() => {
