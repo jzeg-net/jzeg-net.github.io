@@ -10,10 +10,13 @@ const categorySelect = document.querySelector('#categorySelect')
 
 const populateSelectWithOptions = data => {
   const fragment = document.createDocumentFragment()
+  const selectorType = categorySelect?.dataset.type
 
   Object.keys(data).forEach(key => {
+    const id = selectorType === 'exam'
+      ? data[key]['exam_list'][0]['exam_id']
+      : data[key]['exam_list'][0]['category_id']
     const name = data[key]['exam_list'][0]['exam_title']
-    const id = data[key]['exam_list'][0]['category_id']
     const count = data[key]['exam_list'][0]['question_count']
 
     const optionData = {
