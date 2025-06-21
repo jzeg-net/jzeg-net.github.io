@@ -13,7 +13,7 @@ const populateSelectWithOptions = data => {
 
   Object.keys(data).forEach(key => {
     const name = data[key]['exam_list'][0]['exam_title']
-    const id = data[key]['exam_list'][0]['exam_id']
+    const id = data[key]['exam_list'][0]['category_id']
     const count = data[key]['exam_list'][0]['question_count']
 
     const optionData = {
