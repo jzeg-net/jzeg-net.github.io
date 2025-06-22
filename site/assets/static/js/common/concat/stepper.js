@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const min = parseInt(input.getAttribute('min'))
     const max = parseInt(input.getAttribute('max'))
 
+    const event = new Event('input', {
+      bubbles: true,
+      cancelable: true
+    })
+
     // 监听输入框值的变化
     input.addEventListener('input', () => {
       // 获取当前输入的值
@@ -30,22 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 监听减少按钮的点击事件
     decreaseBtn.addEventListener('click', () => {
-      // 获取当前值
       const currentValue = parseInt(input.value)
-      // 计算减少后的值
-      const newValue = currentValue - step
-      // 如果减少后的值不小于最小值，则更新输入框的值
-      if (newValue >= min) input.value = newValue
+      const newMin = currentValue - step
+
+      // 如果减少后的值小于最小值，则不更新输入框的值
+      if (newMin < min) return
+
+      input.value = newMin
+      input.dispatchEvent(event)
     })
 
     // 监听增加按钮的点击事件
     increaseBtn.addEventListener('click', () => {
-      // 获取当前值
       const currentValue = parseInt(input.value)
-      // 计算增加后的值
-      const newValue = currentValue + step
-      // 如果增加后的值不大于最大值，则更新输入框的值
-      if (newValue <= max) input.value = newValue
+      const newMax = currentValue + step
+
+      // 如果增加后的值大于最大值，则不更新输入框的值
+      if (newMax > max) return
+
+      input.value = newMax
+      input.dispatchEvent(event)
     })
   })
 })
