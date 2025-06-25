@@ -15,7 +15,8 @@ if (aqxc_form) {
    * 刷新当前的 账号 的显示
    */
   const refreshAccountDisplay = () => {
-    account_display.innerText = getStorageAqxcAccount()
+    const phone = getStorageAqxcAccount()
+    account_display.innerText = hidePhoneNumber(phone)
   }
 
   // 如果有本地存储的 token，则刷新显示
@@ -155,19 +156,23 @@ function updateProfile (data) {
     }
     if (key === 'last_login') {
       try {
-        const date = new Date(data[key]);
-        if (isNaN(date.getTime())) throw new Error('Invalid date');
+        const date = new Date(data[key])
+        if (isNaN(date.getTime())) throw new Error('Invalid date')
 
-        date.setDate(date.getDate() + 15);
+        date.setDate(date.getDate() + 15)
         element.textContent = date.toLocaleString('zh-CN', {
           timeZone: 'Asia/Shanghai',
           hour12: false
-        });
+        })
       } catch (error) {
-        console.error('Date formatting failed:', error);
-        element.textContent = '无效日期';
+        console.error('Date formatting failed:', error)
+        element.textContent = '无效日期'
       }
-      return;
+      return
+    }
+    if (key === 'mobile') {
+      element.textContent = hidePhoneNumber(data[key])
+      return
     }
     element.textContent = data[key]
   })
