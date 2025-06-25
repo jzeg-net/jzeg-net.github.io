@@ -14,3 +14,9 @@
   animation-name: rotate360;
   animation-iteration-count: infinite;
 }
+
+#result thead {
+  position: sticky;
+  top: 0;
+  background: var(--bs-body-bg);
+}
