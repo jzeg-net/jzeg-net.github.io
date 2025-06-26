@@ -1,16 +1,16 @@
 // 当文档完全加载后执行
 document.addEventListener('DOMContentLoaded', () => {
   // 获取所有步进器输入元素
-  let steppers = document.querySelectorAll('.stepper-input')
+  const steppers = document.querySelectorAll('.stepper-input')
 
   // 遍历每个步进器
   steppers.forEach(stepInput => {
     // 获取输入框元素
-    let input = stepInput.querySelector('input')
+    const input = stepInput.querySelector('input')
     // 获取减少按钮元素
-    let decreaseBtn = stepInput.querySelector('.decrease')
+    const decreaseBtn = stepInput.querySelector('.decrease')
     // 获取增加按钮元素
-    let increaseBtn = stepInput.querySelector('.increase')
+    const increaseBtn = stepInput.querySelector('.increase')
 
     // 解析并存储输入框元素的默认值、步长、最小值和最大值，用以遵守 HTML5 的规范
     const defaultValue = parseInt(input.getAttribute('value'))
