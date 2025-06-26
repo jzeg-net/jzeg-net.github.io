@@ -178,26 +178,6 @@
     <script src="{{ $preUrl }}static/js/full_page.js"></script>
 {{- end -}}
 
-{{ if hasPrefix .Type "zhgh" }}
-    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
-{{ end }}
-
-{{ if eq .Type "zhgh/passwork" }}
-    <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
-{{ end }}
-
-{{ if eq .Type "zhgh/manage/account" }}
-    <script src="{{ $preUrl }}static/js/zhgh/manage/account.js"></script>
-{{ end }}
-
-{{ if eq .Type "zhgh/count" }}
-    <script src="{{ $preUrl }}static/js/zhgh/count.js"></script>
-{{ end }}
-
-{{ if eq .Type "zhgh/study" }}
-    <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
-{{ end }}
-
 {{ if hasPrefix .Type "aqxc" }}
     <script src="{{ $preUrl }}static/js/aqxc/common.js"></script>
 {{ end }}
