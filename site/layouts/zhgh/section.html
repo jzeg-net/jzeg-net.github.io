@@ -1,0 +1,75 @@
+{{ define "content" }}
+    {{ partial "svg_sprite_icons/zhgh" }}
+    {{ partial "svg_sprite_icons/number_square" }}
+    <main class="pb-5 container-xxl" id="main">
+        {{ .Content }}
+        <div class="mx-auto py-5 col-12 col-md-10 col-lg-8 col-xxl-6">
+            <div class="d-flex flex-column align-items-center">
+                <ol class="small fw-bold text-secondary-emphasis">
+                    <li>工具仅限测试使用，请勿传播</li>
+                    <li>使用需要单独授权，联系方式参见最后提示</li>
+                    <li>请理解，没有完美的辅助工具，请合理使用</li>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li class="text-info">使用时间:</li>
+                            <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-1-square"></use></svg>5 月 1 日 — 9 月 1 日</li>
+                            <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-2-square"></use></svg>每天 5 点至 23 点</li>
+                            <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-3-square"></use></svg>每天答题时长为 1 小时（3600 秒）</li>
+                            <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-4-square"></use></svg>达到每日答题时长上限会提示，不会强行答题</li>
+                            <li><svg class="bi me-2 text-info" width="16" height="16"><use href="#bi-5-square"></use></svg>请合理配速</li>
+                        </ul>
+                    </li>
+                    <li>速度并非越快越好，请合理选择速度</li>
+                    <li>所有列表的工种都可使用，闯关类别可自定义，请合理选择类别</li>
+                    <li class="text-primary">重要：第一次答题，因为是闯关模式，请务必按照关卡顺序答题</li>
+                    <li>密码框已经默认输入密码前缀，无需重复输入前缀</li>
+                    <li>自动闯关默认为关闭，开启后可以实现在答题完毕时，自动选择下一关卡</li>
+                    <li>循环模式默认为开启，功能是可以自动重复开始答题，不需要反复手动点击答题按钮，默认为15次，可自定义，请根据时间选择合理较小次数</li>
+                    <li>关闭循环模式后，可在完成一轮答题后，不再自动进行下一轮，需要手动点击开始答题</li>
+                    <li>点击开始答题后，刷新页面不会停止答题，但是会丢失当前的设置</li>
+                    <li>循环答题开始后，手机端尽量保持本页面可见，理论支持分屏使用</li>
+                    <li><span class="user-select-none">微信号：</span><span class="text-warning-emphasis">JZEG-NET</span></li>
+                </ol>
+            </div>
+            <form class="d-flex flex-column row-gap-2 mb-4" id="zhgh_login">
+                <div class="form-floating">
+                    <input type="text" class="form-control user-select-none" name="account" id="zhgh_account" placeholder="手机号" autocomplete="off" minlength="11" maxlength="11" required>
+                    <label for="zhgh_account">
+                        <svg class="me-1 text-body-secondary bi"><use href="#bi-phone"></use></svg>
+                        手机号
+                    </label>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="password" id="password" placeholder=" " minlength="6" maxlength="20" value="Jzgf@" autocomplete="current-password" required>
+                        <label for="password">
+                            <svg class="me-1 text-body-secondary bi"><use href="#bi-key-fill"></use></svg>
+                            密码
+                        </label>
+                    </div>
+                    <a class="input-group-text text-reset text-decoration-none toggleDisplay" href="javascript:" title="点击后显示密码">
+                        <svg class="text-body-secondary bi"><use href="#bi-eye-slash-fill"></use></svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="d-grid row-gap-1">
+                        <div class="hstack justify-content-around">
+                            <label for="zhgh_account" class="form-text">
+                                <span class="user-select-none">账号：</span>
+                                <span id="account_display">未设置</span>
+                            </label>
+                            <button type="reset" class="ms-auto btn btn-link link-danger link-underline-opacity-0 btn-outline-secondary">删除当前</button>
+                        </div>
+                        <button type="submit" class="btn btn-success">更新账号</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="vstack row-gap-3 fs-5">
+            <div class="hstack column-gap-4 justify-content-around">
+                <a class="link-underline link-underline-opacity-0" href="passwork" target="_blank">闯关</a>
+                <a class="link-underline link-underline-opacity-0" href="study" target="_blank">学习</a>
+            </div>
+        </div>
+    </main>
+{{ end }}

@@ -182,6 +182,22 @@
     <script src="{{ $preUrl }}static/js/aqxc/common.js"></script>
 {{ end }}
 
+{{ if hasPrefix .Type "zhgh" }}
+    <script src="{{ $preUrl }}static/js/zhgh/common.js"></script>
+{{ end }}
+
+{{ if eq .Type "zhgh" }}
+    <script src="{{ $preUrl }}static/js/zhgh/index.js"></script>
+{{ end }}
+
+{{ if eq .Type "zhgh/passwork" }}
+    <script src="{{ $preUrl }}static/js/zhgh/passwork.js"></script>
+{{ end }}
+
+{{ if eq .Type "zhgh/study" }}
+    <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
+{{ end }}
+
 {{ if hasPrefix .Type "aqxc/quiz/" }}
     <script src="{{ $preUrl }}static/js/aqxc/tester_category.js"></script>
     <script src="{{ $preUrl }}static/js/aqxc/quiz/quiz.js"></script>

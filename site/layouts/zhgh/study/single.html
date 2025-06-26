@@ -1,0 +1,35 @@
+{{ define "content" }}
+    {{ partial "svg_sprite_icons/zhgh" }}
+    <main class="pb-5 container-xxl" id="main">
+        <div class="mx-auto py-5 col-12 col-md-10 col-lg-8 col-xxl-6">
+            <form class="py-4" id="study_form">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <select class="form-select" name="jobName" id="throughSelect" aria-label="Floating label select example" required>
+                            <option value="" selected disabled>选择工种题型</option>
+                            <option value="random">随机所有</option>
+                        </select>
+                        <label for="throughSelect">类别</label>
+                    </div>
+                </div>
+                <div class="d-grid col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit">开始</button>
+                </div>
+                <div class="card" id="auto">
+                    <div class="card-body">
+                        <div class="col-12 col-sm collapse show" id="autoSubmitConfig">
+                            <div class="d-flex flex-column row-gap-2">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="autoSubmitTotalTimes">总次数</label>
+                                    <input class="form-control" type="number" value="1" id="autoSubmitTotalTimes" min="1" max="999" step="1" maxlength="5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {{ partial "zhgh/result" }}
+        {{ partial "zhgh/page_tools" }}
+    </main>
+{{ end }}
