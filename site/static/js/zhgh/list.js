@@ -1,35 +1,60 @@
-const questions_form = document.querySelector('#questions_form')
+// 表单
+const list_form = document.querySelector('#list_form')
 
 const buildQuestionBankLayout = (data) => {
   const fragment = document.createDocumentFragment()
 
   data.forEach((item, index) => {
-    const { question_type, question_title, answer_list } = item
+    let { question, type, answer, o_a, o_b, o_c, o_d, o_e, o_f, o_g, o_h } = item
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     const questionIndex = index + 1
+    const answer_list = [
+      { option: o_a },
+      { option: o_b },
+      { option: o_c },
+      { option: o_d },
+      { option: o_e },
+      { option: o_f },
+      { option: o_g },
+      { option: o_h }
+    ]
+
+    answer = type !== 3
+      ? answer
+      : answer === 'A'
+        ? '正确'
+        : '错误'
 
     const question_card = document.createElement('article')
     question_card.className = 'question-card mb-2'
 
     const p = document.createElement('p')
     p.className = 'question-title mb-0'
-    p.innerHTML = questionIndex + '.  ' + question_title
+    p.innerHTML = questionIndex + '.  ' + question
+
+    const answer_p = document.createElement('p')
+    answer_p.className = 'answer mb-0'
+    answer_p.innerHTML = '答案：' + answer
 
     const div = document.createElement('div')
     div.className = 'question-options row row-cols-auto ms-3'
 
     answer_list.forEach((item, index) => {
-      const is_right = item['is_right'] === '1'
+      if (item['option'] === null) return
+      if (type === 3) return
+
       const a = document.createElement('a')
+      const is_right = answer.includes(letters[index])
       is_right
         ? a.className = 'answer-option fw-bolder link-success link-offset-3'
         : a.className = 'answer-option text-reset text-decoration-none'
-      a.innerHTML = letters[index] + '. ' + item['answer_content']
+      a.innerHTML = letters[index] + '. ' + item['option']
 
       div.appendChild(a)
     })
 
     question_card.appendChild(p)
+    question_card.appendChild(answer_p)
     question_card.appendChild(div)
     fragment.appendChild(question_card)
   })
@@ -40,6 +65,7 @@ const buildQuestionBankLayout = (data) => {
 const openPreview = (data) => {
   const newWindow = window.open('', '_blank')
 
+  newWindow.document.open()
   newWindow.document.write(`
         <!DOCTYPE html>
         <html lang="zh-CN">
@@ -75,43 +101,42 @@ const openPreview = (data) => {
         </body>
         </html>
       `)
-
   const contentNode = newWindow.document.getElementById('content')
   const questionsDOM = buildQuestionBankLayout(data)
   contentNode.appendChild(questionsDOM)
   newWindow.document.close()
 }
 
-const getQuestions = event => {
+const submitForm = event => {
   event.preventDefault()
-  submitStatus(questions_form)
+  submitStatus(list_form)
+  submitTimerInterval(list_form)
 
-  let formData = new FormData(questions_form)
-  let data = Object.fromEntries(formData.entries())
-  data.account = getStorageAqxcAccount()
-  data.token = getStorageAqxcToken()
+  const formData = new FormData(list_form)
+  const fetchData = Object.fromEntries(formData.entries())
+  fetchData.account = getStorageZhghAccount()
+  fetchData.password = getStorageZhghPassword()
+  fetchData.userAgent = navigator.userAgent
 
-  let url = aqxcApiUrl + 'questions/questions'
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }).then(r => {
-    if (!r.ok) {
-      r.json().then(data => {
-        bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-      })
-      return Promise.reject(new Error(r.statusText))
-    }
-    return r.json()
-  }).then(r => {
-    openPreview(r)
-  }).finally(() => {
-    clearSubmitStatus(questions_form)
-  })
+  fetch(`${zhghApiUrl}/answer/index`, fetchPostOptions(fetchData))
+    .then(r => {
+      if (!r.ok) {
+        r.json().then(error => {
+          bModal('', createSmallCenterText(error.message, 'danger'), '', 'sm', true)
+        })
+        return Promise.reject(new Error(r.statusText))
+      }
+      return r.json()
+    })
+    .then(res => {
+      console.log(res)
+      openPreview(res)
+    })
+    .finally(() => {
+      clearSubmitStatus(list_form)
+      clearInterval(submitTimerIntervalID)
+    })
+    .catch(error => console.error('list_error:', error))
 }
 
-questions_form?.addEventListener('submit', getQuestions)
+list_form?.addEventListener('submit', submitForm)

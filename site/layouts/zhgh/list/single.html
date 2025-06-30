@@ -1,0 +1,21 @@
+{{ define "content" }}
+    {{ partial "svg_sprite_icons/zhgh" }}
+    <main class="pb-5 container-xxl" id="main">
+        <div class="mx-auto py-5 col-12 col-md-10 col-lg-8 col-xxl-6">
+            <form class="py-4" id="list_form">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <select class="form-select" name="jobName" id="throughSelect" aria-label="Floating label select example" required>
+                            <option value="" selected disabled>选择工种题型</option>
+                        </select>
+                        <label for="throughSelect">类别</label>
+                    </div>
+                </div>
+                <div class="d-grid col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit">查看</button>
+                </div>
+            </form>
+        </div>
+        {{ partial "zhgh/result" }}
+    </main>
+{{ end }}

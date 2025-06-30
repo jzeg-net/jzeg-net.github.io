@@ -198,6 +198,10 @@
     <script src="{{ $preUrl }}static/js/zhgh/study.js"></script>
 {{ end }}
 
+{{ if eq .Type "zhgh/list" }}
+    <script src="{{ $preUrl }}static/js/zhgh/list.js"></script>
+{{ end }}
+
 {{ if hasPrefix .Type "aqxc/quiz/" }}
     <script src="{{ $preUrl }}static/js/aqxc/tester_category.js"></script>
     <script src="{{ $preUrl }}static/js/aqxc/quiz/quiz.js"></script>
