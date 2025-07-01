@@ -129,5 +129,5 @@ const formatSecondsToHMS = seconds => {
   const remainingSeconds = seconds % 60
 
   // 返回格式化的字符串
-  return `${hours} 小时 ${minutes} 分 ${remainingSeconds} 秒`
+  return `${hours}小时 ${minutes}分 ${remainingSeconds}秒`
 }

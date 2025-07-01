@@ -3,13 +3,13 @@ let url = aqxcApiUrl + 'video/top'
 // 结果表格
 let datatables
 const datatablesAddRow = data => {
-  let { ranking, time, nickname, member_id } = data['member']
+  let { ranking, time, nickname, mobile, member_id } = data['member']
   time = formatSecondsToHMS(time)
   const list = data['list'].map(item => {
-    let { ranking, time, nickname, member_id } = item
+    let { ranking, time, nickname, mobile, member_id } = item
     time = formatSecondsToHMS(time)
 
-    return [ranking, time, nickname, member_id]
+    return [ranking, time, nickname, mobile, member_id]
   })
 
   if (!datatables) {
@@ -22,11 +22,11 @@ const datatablesAddRow = data => {
       perPageSelect: [5, 10, 15, 20, 25, ['全部', 0]],
       perPage: 0,
       data: {
-        'headings': ['排名', '时长', '昵称', 'ID']
+        'headings': ['排名', '时长', '昵称', '手机', 'ID']
       }
     })
   }
 
-  datatables.rows.add([ranking, time, nickname, member_id])
+  datatables.rows.add([ranking, time, nickname, mobile, member_id])
   datatables.insert({ data: list })
 }
