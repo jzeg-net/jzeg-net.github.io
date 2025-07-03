@@ -38,11 +38,14 @@ const getMemberInformation = () => {
         phone,
         points,
         exp_points,
+        exp_points_2,
         ranking,
         true_name,
         xueli,
         zhiwei,
         zzmm,
+        native,
+        study_time,
       } = r
 
       member_information.innerHTML = `
@@ -53,12 +56,15 @@ const getMemberInformation = () => {
               <div>单位：${group}</div>
               <div>等级编号：${level}</div>
               <div>等级：${level_name}</div>
+              <div>等级积分：${exp_points_2}</div>
+              <div>学习时长：${study_time}</div>
               <div>积分：${points}</div>
               <div>经验积分：${exp_points}</div>
               <div>排行：${ranking}</div>
               <div>生日：${birthday}</div>
               <div>加入时间：${add_time}</div>
               <div>民族：${min_zu}</div>
+              <div>籍贯：${native}</div>
               <div>手机：${mobile}</div>
               <div>电话：${phone}</div>
               <div>学历：${xueli}</div>
