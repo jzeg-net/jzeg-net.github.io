@@ -67,31 +67,31 @@ const getMemberInformation = () => {
       member_information.innerHTML = `
           <div class="card">
             <div class="card-body">
-              <div>姓名：${true_name}</div>
-              <div>账号：${id}</div>
-              <div>单位：${group}</div>
-              <div>学历：${xueli}</div>
-              <div>职位：${zhiwei}</div>
-              <div>政治面貌：${zzmm}</div>
-              <div>民族：${min_zu}</div>
-              <div>籍贯：${native}</div>
-              <div>手机：${mobile}</div>
-              <div>电话：${phone}</div>
+              <div><span>姓名：</span><span>${true_name}</span></div>
+              <div><span>账号：</span><span>${id}</span></div>
+              <div><span>单位：</span><span>${group}</span></div>
+              <div><span>学历：</span><span>${xueli}</span></div>
+              <div><span>职位：</span><span>${zhiwei}</span></div>
+              <div><span>政治面貌：</span><span>${zzmm}</span></div>
+              <div><span>民族：</span><span>${min_zu}</span></div>
+              <div><span>籍贯：</span><span>${native}</span></div>
+              <div><span>手机：</span><span>${mobile}</span></div>
+              <div><span>电话：</span><span>${phone}</span></div>
               <hr>
-              <div>等级编号：${level}</div>
-              <div>等级：${level_name} （${exp_points_2}）</div>
-              <div>学习时长：${study_time}</div>
-              <div>积分：${points}</div>
-              <div>经验积分：${exp_points}</div>
-              <div>排行：${ranking}</div>
-              <div>生日：${formattedTime(birthday)}</div>
-              <div>加入时间：${formattedTime(add_time)}</div>
+              <div><span>等级编号：</span><span>${level}</span></div>
+              <div><span>等级：</span><span>${level_name}（ ${exp_points_2} ）</span></div>
+              <div><span>排行：</span><span class="text-danger-emphasis">${ranking}</span></div>
+              <div><span>今日闯关时长：</span><span class="text-danger-emphasis">${study_time}</span></div>
+              <div><span>积分：</span><span>${points}</span></div>
+              <div><span>经验积分：</span><span>${exp_points}</span></div>
+              <div><span>生日：</span><span>${formattedTime(birthday)}</span></div>
+              <div><span>加入时间：</span><span>${formattedTime(add_time)}</span></div>
               <hr>
-              <div>登录次数：${login_num}</div>
-              <div>登录IP：${login_ip}</div>
-              <div>登录时间：${formattedTime(login_time)}</div>
-              <div>上次IP：${old_login_ip}</div>
-              <div>上次时间：${formattedTime(old_login_time)}</div>
+              <div><span>登录次数：</span><span>${login_num}</span></div>
+              <div><span>登录IP：</span><span>${login_ip}</span></div>
+              <div><span>登录时间：</span><span>${formattedTime(login_time)}</span></div>
+              <div><span>上次IP：</span><span>${old_login_ip}</span></div>
+              <div><span>上次时间：</span><span>${formattedTime(old_login_time)}</span></div>
             </div>
           </div>
         `
