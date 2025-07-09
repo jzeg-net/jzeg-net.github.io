@@ -126,7 +126,7 @@ const sendBtnFetch = sendBtn => {
 
   let fetchOptions = getFetchOptions(fetchData)
 
-  fetch(accountApiUrl + '/captcha_send.php', fetchOptions)
+  fetch(accountApiUrl + '/captcha/send', fetchOptions)
     .then(response => response.json())
     .then(response => {
       if (response['code']) {
