@@ -91,7 +91,7 @@ const getQuestions = event => {
   data.account = getStorageAqxcAccount()
   data.token = getStorageAqxcToken()
 
-  let url = aqxcApiUrl + 'questions/questions'
+  let url = aqxcApiExtendUrl + 'questions/questions'
   fetch(url, {
     method: 'POST',
     headers: {
