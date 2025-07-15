@@ -14,7 +14,7 @@ if (sign_in) {
   }
 
   sign_in.addEventListener('click', () => {
-    const url = aqxcApiUrl + 'profile/signIn'
+    const url = aqxcApiExtendUrl + 'profile/signIn'
     const token = getStorageAqxcToken()
     const account = getStorageAqxcAccount()
 
