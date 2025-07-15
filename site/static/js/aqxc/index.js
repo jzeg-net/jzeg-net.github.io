@@ -91,15 +91,16 @@ let refreshInfo = document.querySelectorAll('.refreshInfo')
 refreshInfo.forEach((item) => {
   item.addEventListener('click', event => {
     event.preventDefault()
-    let refreshType = item.dataset['refresh']
     let urlPath
+    const refreshType = item.dataset['refresh']
 
     if (refreshType === 'profile') urlPath = aqxcApiExtendUrl + 'profile/detail'
-    if (refreshType === 'video') urlPath = aqxcApiUrl + 'profile/videoStat'
+    if (refreshType === 'video') urlPath = aqxcApiExtendUrl + 'profile/videoStat'
 
-    let url = urlPath
-    let token = getStorageAqxcToken()
-    let account = getStorageAqxcAccount()
+    const url = urlPath
+    const token = getStorageAqxcToken()
+    const account = getStorageAqxcAccount()
+    const is_all = 0
 
     if (!account) {
       bModal('', createSmallCenterText('请先设置 账号', 'danger'), '', 'sm', true)
@@ -111,7 +112,7 @@ refreshInfo.forEach((item) => {
       return
     }
 
-    let data = { refreshType, account, token }
+    let data = { refreshType, account, token, is_all }
 
     fetch(url, {
       method: 'POST',

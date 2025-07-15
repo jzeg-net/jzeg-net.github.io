@@ -171,6 +171,7 @@ const request = (event) => {
   const data = {
     account: getStorageAqxcAccount(),
     token: getStorageAqxcToken(),
+    is_all: 1,
   }
   const url = aqxcApiExtendUrl + 'profile/videoStat'
 
