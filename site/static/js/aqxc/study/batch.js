@@ -71,7 +71,7 @@ const datatablesAddRow = data => {
 const submitForm = (event) => {
   event.preventDefault()
   submitStatus(batch_form)
-  const url = aqxcApiUrl + 'study/batch'
+  const url = aqxcApiExtendUrl + 'study/batch'
 
   const formData = new FormData(batch_form)
   const data = Object.fromEntries(formData.entries())

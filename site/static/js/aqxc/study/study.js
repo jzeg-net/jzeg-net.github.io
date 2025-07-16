@@ -3,7 +3,7 @@ let study_form = document.querySelector('#study_form')
 const submitForm = (event) => {
   event.preventDefault()
   submitStatus(study_form)
-  const url = aqxcApiUrl + 'study/study'
+  const url = aqxcApiExtendUrl + 'study/study'
 
   const formData = new FormData(study_form)
   const data = Object.fromEntries(formData.entries())
