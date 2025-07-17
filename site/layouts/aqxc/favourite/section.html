@@ -7,22 +7,32 @@
                         <span class="card-title">将相应的内容取消收藏（包含点赞）</span>
                     </div>
                     <div class="card-body d-flex flex-column row-gap-4">
-                        <div class="border rounded p-3 d-flex flex-row row-gap-2 column-gap-3">
+                        <div class="border rounded p-3 d-flex row-gap-2 column-gap-3">
                             <div>
                                 <input class="btn-check" type="radio" name="type" value="profile" id="type_profile">
-                                <label class="btn" for="type_profile">服务发展</label>
+                                <label class="btn btn-outline-info" for="type_profile">服务发展</label>
                             </div>
                             <div>
                                 <input class="btn-check" type="radio" name="type" value="video" id="type_video">
-                                <label class="btn" for="type_video">我的短视频</label>
+                                <label class="btn btn-outline-info" for="type_video">我的短视频</label>
                             </div>
                             <div>
                                 <input class="btn-check" type="radio" name="type" value="news" id="type_news">
-                                <label class="btn" for="type_news">信息联动</label>
+                                <label class="btn btn-outline-info" for="type_news">信息联动</label>
                             </div>
                         </div>
-                        <div class="d-grid">
-                            <button class="btn btn-primary" type="submit">取消收藏</button>
+                        <div class="border rounded p-3 d-flex column-gap-3">
+                            <div>
+                                <input class="btn-check" type="radio" name="scope" value="half" id="scope_half" checked>
+                                <label class="btn btn-outline-warning" for="scope_half">半数</label>
+                            </div>
+                            <div>
+                                <input class="btn-check" type="radio" name="scope" value="full" id="scope_full">
+                                <label class="btn btn-outline-warning" for="scope_full">全部</label>
+                            </div>
+                        </div>
+                        <div class="d-grid col-5 mx-auto">
+                            <button class="btn btn-success" type="submit">取消收藏</button>
                         </div>
                     </div>
                 </div>
