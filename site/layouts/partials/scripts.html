@@ -264,6 +264,10 @@
     <script src="{{ $preUrl }}static/js/aqxc/questions/index.js"></script>
 {{ end }}
 
+{{ if eq .Type "aqxc/favourite" }}
+    <script src="{{ $preUrl }}static/js/aqxc/favourite/index.js"></script>
+{{ end }}
+
 {{ if eq .Type "aqxc/stat/study" }}
     <script src="{{ $preUrl }}static/js/aqxc/stat/study.js"></script>
 {{ end }}
