@@ -5,14 +5,14 @@ const newsHandler = (response) => {}
 const profileHandler = (response) => {}
 
 const videoHandler = (response) => {
-  const count = response['totalCount']
+  const { count, list } = response
   if (!count) {
     bModal('', createSmallCenterText('没有收藏视频，无需取消', 'danger'), '', 'sm', true)
+
     return
   }
 
-  const list = response['list']
-  const msg = `成功取消收藏 ${count} 个视频`
+  const msg = `成功取消 ${count} 个视频的收藏`
   bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
 }
 
