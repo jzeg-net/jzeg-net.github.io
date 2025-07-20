@@ -7,7 +7,7 @@
                         <span class="card-title">将相应的内容取消收藏（包含点赞）</span>
                     </div>
                     <div class="card-body d-flex flex-column row-gap-4">
-                        <div class="border rounded p-3 d-flex row-gap-2 column-gap-3">
+                        <div class="border rounded p-3 d-flex gap-3 flex-wrap">
                             <div>
                                 <input class="btn-check" type="radio" name="type" value="profile" id="type_profile" required>
                                 <label class="btn btn-outline-info" for="type_profile">服务发展</label>
@@ -16,15 +16,19 @@
                                 <input class="btn-check" type="radio" name="type" value="video" id="type_video">
                                 <label class="btn btn-outline-info" for="type_video">我的短视频</label>
                             </div>
-                            <div>
-                                <input class="btn-check" type="radio" name="type" value="news" id="type_news">
-                                <label class="btn btn-outline-info" for="type_news">信息联动</label>
-                            </div>
                         </div>
-                        <div class="border rounded p-3 d-flex column-gap-3">
+                        <div class="border rounded p-3 d-flex gap-3 flex-wrap">
                             <div>
-                                <input class="btn-check" type="radio" name="scope" value="half" id="scope_half" required>
+                                <input class="btn-check" type="radio" name="scope" value="quarter" id="scope_quarter" required>
+                                <label class="btn btn-outline-warning" for="scope_quarter">四分之一</label>
+                            </div>
+                            <div>
+                                <input class="btn-check" type="radio" name="scope" value="half" id="scope_half">
                                 <label class="btn btn-outline-warning" for="scope_half">半数</label>
+                            </div>
+                            <div>
+                                <input class="btn-check" type="radio" name="scope" value="three_quarter" id="scope_three_quarter">
+                                <label class="btn btn-outline-warning" for="scope_three_quarter">四分之三</label>
                             </div>
                             <div>
                                 <input class="btn-check" type="radio" name="scope" value="full" id="scope_full">
