@@ -1,24 +1,9 @@
 const favourite_form = document.querySelector('#favourite_form')
 
-const newsHandler = (response) => {}
-
-const profileHandler = (response) => {}
-
-const videoHandler = (response) => {
-  const { count, list } = response
-  if (!count) {
-    bModal('', createSmallCenterText('没有收藏视频，无需取消', 'danger'), '', 'sm', true)
-
-    return
-  }
-
-  const msg = `成功取消 ${count} 个视频的收藏`
-  bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
-}
-
 const request = (data) => {
   const type = data.type
   const url = aqxcApiExtendUrl + 'favourite/favourite'
+  const name = favourite_form.querySelector(`input[value="${type}"]`).nextElementSibling.textContent
 
   fetch(url, fetchPostOptions(data))
     .then(res => {
@@ -31,22 +16,15 @@ const request = (data) => {
       return res.json()
     })
     .then(res => {
-      console.log(res)
+      if (!res.count) {
+        const msg = `${name} 没有收藏内容，无需取消`
 
-      switch (type) {
-        case 'video':
-          videoHandler(res)
-          break
-        case 'news':
-          newsHandler(res)
-          break
-        case 'profile':
-          profileHandler(res)
-          break
-        default :
-          bModal('', createSmallCenterText('操作失败', 'danger'), '', 'sm', true)
+        bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
+        return
       }
 
+      const msg = `成功取消 ${res.count} 个 ${name} 收藏的内容`
+      bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
     })
     .finally(() => {
       clearSubmitStatus(favourite_form)
