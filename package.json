@@ -80,6 +80,7 @@
     },
     "dependencies": {
         "@callmebill/lxgw-wenkai-web": "^1.520.0",
+        "@docsearch/css": "^4.0.0-beta.5",
         "@docsearch/js": "^4.0.0-beta.5",
         "@glidejs/glide": "^3.7.1",
         "@uppy/core": "^4.4.7",
