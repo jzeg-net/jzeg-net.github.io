@@ -11,3 +11,7 @@ const setStorageAqxcToken = (token) => setLocalStorage(storageTokenKey, token)
 const setStorageAqxcAccount = (account) => setLocalStorage(storageAccountKey, account)
 const removeStorageAqxcToken = () => removeLocalStorage(storageTokenKey)
 const removeStorageAqxcAccount = () => removeLocalStorage(storageAccountKey)
+
+const aqxcAxios = axiosInstance.create({
+  baseURL: aqxcApiExtendUrl,
+})
