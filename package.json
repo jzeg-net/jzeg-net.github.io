@@ -88,6 +88,7 @@
         "@uppy/image-editor": "^3.4.2",
         "@uppy/locales": "^4.8.4",
         "@uppy/xhr-upload": "^4.4.2",
+        "@zumer/snapdom": "^1.9.7",
         "axios": "^1.11.0",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.7",
