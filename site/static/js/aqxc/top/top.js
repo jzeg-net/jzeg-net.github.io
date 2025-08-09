@@ -13,23 +13,10 @@ if (top_form) {
     data.account = getStorageAqxcAccount()
     data.token = getStorageAqxcToken()
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then(r => {
-      if (!r.ok) {
-        r.json().then(data => {
-          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    }).then(r => {
-      datatablesAddRow(r.data)
-    })
+    aqxcAxios.post(url, data)
+      .then(r => datatablesAddRow(r))
+      .catch(e => {
+        bModal('', createSmallCenterText(e.message, 'danger'), '', 'sm', true)
+      })
   })
 }
