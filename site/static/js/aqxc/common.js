@@ -52,22 +52,6 @@ const responseOnFulfilled = response => {
 
 // 响应错误拦截器
 const responseOnRejected = error => {
-  // 统一处理各种错误响应
-  if (error.response) {
-    // 服务器返回了错误状态码 (HTTP 4xx, 5xx)
-    // 直接返回错误响应的数据部分，便于在业务代码中处理
-    return Promise.reject(error.response.data.message || error.response)
-  } else if (error.request) {
-    // 请求已发出但没有收到响应 (网络错误)
-    return Promise.reject({
-      message: '网络连接失败，请检查网络设置'
-    })
-  } else {
-    // 其他错误 (请求配置错误等)
-    return Promise.reject({
-      message: error.message || '请求配置错误'
-    })
-  }
 }
 
 // 添加响应拦截器
