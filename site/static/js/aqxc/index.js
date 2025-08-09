@@ -85,60 +85,7 @@ if (aqxc_form) {
 
 }
 
-// 刷新信息
-let refreshInfo = document.querySelectorAll('.refreshInfo')
-
-refreshInfo.forEach((item) => {
-  item.addEventListener('click', event => {
-    event.preventDefault()
-    let urlPath
-    const refreshType = item.dataset['refresh']
-
-    if (refreshType === 'profile') urlPath = aqxcApiExtendUrl + 'profile/detail'
-    if (refreshType === 'video') urlPath = aqxcApiExtendUrl + 'profile/videoStat'
-
-    const url = urlPath
-    const token = getStorageAqxcToken()
-    const account = getStorageAqxcAccount()
-    const is_all = 0
-
-    if (!account) {
-      bModal('', createSmallCenterText('请先设置 账号', 'danger'), '', 'sm', true)
-      return
-    }
-
-    if (!token) {
-      bModal('', createSmallCenterText('请先设置 Token', 'danger'), '', 'sm', true)
-      return
-    }
-
-    let data = { refreshType, account, token, is_all }
-
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(r => {
-        if (!r.ok) {
-          r.json().then(data => {
-            bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-          })
-          return Promise.reject(new Error(r.statusText))
-        }
-        return r.json()
-      })
-      .then(res => {
-        if (refreshType === 'profile') updateProfile(res.data)
-        if (refreshType === 'video') updateVideoStat(res.data)
-      })
-  })
-})
-
-function updateProfile (data) {
+const updateProfile = data => {
   const elements = [
     { element: document.querySelector('#user_nickname'), key: 'nickname' },
     { element: document.querySelector('#user_real_name'), key: 'real_name' },
@@ -179,7 +126,7 @@ function updateProfile (data) {
   })
 }
 
-function updateVideoStat (data) {
+const updateVideoStat = data => {
   const elements = [
     { element: document.querySelector('#user_totalTime'), key: 'totalTime' },
     { element: document.querySelector('#user_studyStats'), key: 'studyStats' },
@@ -194,3 +141,43 @@ function updateVideoStat (data) {
     element.textContent = data[key]
   })
 }
+
+// 刷新信息
+let refreshInfo = document.querySelectorAll('.refreshInfo')
+
+refreshInfo.forEach((item) => {
+  item.addEventListener('click', event => {
+    event.preventDefault()
+    let path
+    const refreshType = item.dataset['refresh']
+
+    if (refreshType === 'profile') path = 'profile/detail'
+    if (refreshType === 'video') path = 'profile/videoStat'
+
+    const token = getStorageAqxcToken()
+    const account = getStorageAqxcAccount()
+    const is_all = 0
+
+    if (!account) {
+      bModal('', createSmallCenterText('请先设置 账号', 'danger'), '', 'sm', true)
+      return
+    }
+
+    if (!token) {
+      bModal('', createSmallCenterText('请先设置 Token', 'danger'), '', 'sm', true)
+      return
+    }
+
+    let data = { refreshType, is_all }
+
+    aqxcAxios.post(path, data)
+      .then(res => {
+        if (refreshType === 'profile') updateProfile(res)
+        if (refreshType === 'video') updateVideoStat(res)
+      })
+      .catch(err => {
+        let msg = err.response.data.message || err.message
+        bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
+      })
+  })
+})

@@ -10,14 +10,12 @@ if (storageDate && storageDate === today) {
 }
 
 const request = () => {
-  const apiPath = 'profile/signIn'
-  const token = getStorageAqxcToken()
-  const account = getStorageAqxcAccount()
-  const data = { token, account }
+  const path = 'profile/signIn'
+  const data = {}
 
-  aqxcAxios.post(apiPath, data)
+  aqxcAxios.post(path, data)
     .then(res => {
-      const { add_power, total_power } = res.data.data
+      const { add_power, total_power } = res
       const message = `获得 ${add_power} 个安全B，当前安全B为 ${total_power}`
 
       setLocalStorage(storageKey, today)
@@ -32,7 +30,7 @@ const request = () => {
       bModal('', createSmallCenterText('签到成功，' + message, 'success'), '', 'sm', true)
     })
     .catch(err => {
-      const msg = err?.response?.data?.message || err.message || '签到失败'
+      const msg = err?.message || '签到失败'
       bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
     })
 }

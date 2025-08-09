@@ -168,32 +168,18 @@ const request = (event) => {
   insertNewElement(target, newSpinner())
   btnDisabledStatus(target)
 
+  const path = 'profile/videoStat'
   const data = {
-    account: getStorageAqxcAccount(),
-    token: getStorageAqxcToken(),
     is_all: 1,
   }
-  const url = aqxcApiExtendUrl + 'profile/videoStat'
 
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
+  aqxcAxios.post(path, data)
     .then(r => {
-      if (!r.ok) {
-        r.json().then(data => {
-          return bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
+      xxx(r)
     })
-    .then(r => {
-      xxx(r.data)
+    .catch(e => {
+      const msg = e?.message || e.message
+      bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
     })
     .finally(() => {
       clearSpinner(target)
