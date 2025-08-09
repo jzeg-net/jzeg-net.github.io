@@ -176,7 +176,7 @@ refreshInfo.forEach((item) => {
         if (refreshType === 'video') updateVideoStat(res)
       })
       .catch(err => {
-        let msg = err.response.data.message || err.message
+        let msg = err?.response?.data?.message || err?.message
         bModal('', createSmallCenterText(msg, 'danger'), '', 'sm', true)
       })
   })
