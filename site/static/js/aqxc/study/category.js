@@ -57,15 +57,14 @@ category_radioBtns.forEach(categoryID_radioBtn => {
       }
     ]))
 
-    const baseUrl = aqxcApiUrl + 'video/category'
-    const queryParams = {
+    const url = aqxcApiExtendUrl + 'category/video'
+    const data = {
       token: getStorageAqxcToken(),
       account: getStorageAqxcAccount(),
       category_id: category_id_value,
     }
-    const url = addQueryParams(baseUrl, queryParams)
 
-    fetch(url, fetchGetOptions())
+    fetch(url, fetchPostOptions(data))
       .then(r => {
         if (!r.ok) {
           r.json().then(data => {

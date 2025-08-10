@@ -41,14 +41,13 @@ const getTesterCategory = () => {
   }
 
   // 从API获取数据
-  const baseUrl = aqxcApiUrl + 'tester/category'
-  const queryParams = {
+  const url = aqxcApiExtendUrl + 'category/tester'
+  const data = {
     token: getStorageAqxcToken(),
     account: getStorageAqxcAccount(),
   }
-  const url = addQueryParams(baseUrl, queryParams)
 
-  fetch(url, fetchGetOptions())
+  fetch(url, fetchPostOptions(data))
     .then(r => {
       if (!r.ok) {
         r.json().then(data => {
