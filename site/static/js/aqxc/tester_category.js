@@ -41,43 +41,17 @@ const getTesterCategory = () => {
   }
 
   // 从API获取数据
-  const url = aqxcApiExtendUrl + 'category/tester'
-  const data = {
-    token: getStorageAqxcToken(),
-    account: getStorageAqxcAccount(),
-  }
+  const url = 'category/tester'
 
-  fetch(url, fetchPostOptions(data))
-    .then(r => {
-      if (!r.ok) {
-        r.json().then(data => {
-          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    })
+  aqxcAxios.post(url)
     .then(res => {
-      // 如果有 code 和 message，则显示错误信息，并且后面不再执行后续代码
-      if (res.hasOwnProperty('code') && res.hasOwnProperty('message')) {
-        bModal('', createSmallCenterText(res.message, 'danger'), '', 'sm', true)
+      setStorageAqxcTesterCategory(buildStorageString(res))
 
-        return
-      }
-      if (!res.hasOwnProperty('data')) {
-        bModal('', createSmallCenterText('没有从服务器获取到数据', 'danger'), '', 'sm', true)
-
-        return
-      }
-
-      const categoryData = res.data
-
-      setStorageAqxcTesterCategory(buildStorageString(categoryData))
-
-      categorySelect.append(populateSelectWithOptions(categoryData))
+      categorySelect.append(populateSelectWithOptions(res))
+    })
+    .catch(err => {
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
     })
 }
 
-categorySelect?.addEventListener('click', () => {
-  getTesterCategory()
-}, { once: true })
+categorySelect?.addEventListener('click', getTesterCategory, { once: true })

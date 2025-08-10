@@ -34,7 +34,7 @@ const populateSelectWithOptions = data => {
 }
 
 category_radioBtns.forEach(categoryID_radioBtn => {
-  categoryID_radioBtn.addEventListener('change', function () {
+  categoryID_radioBtn.addEventListener('change', () => {
     const category_id_value = document.querySelector('input[type=radio][name=category]:checked').value
 
     const cachedCategory = category_id_value === '1'
@@ -57,38 +57,26 @@ category_radioBtns.forEach(categoryID_radioBtn => {
       }
     ]))
 
-    const url = aqxcApiExtendUrl + 'category/video'
+    const url = 'category/video'
     const data = {
-      token: getStorageAqxcToken(),
-      account: getStorageAqxcAccount(),
       category_id: category_id_value,
     }
 
-    fetch(url, fetchPostOptions(data))
-      .then(r => {
-        if (!r.ok) {
-          r.json().then(data => {
-            bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-          })
-          return Promise.reject(new Error(r.statusText))
-        }
-        return r.json()
-      })
+    aqxcAxios.post(url, data)
       .then(res => {
-        const videoData = res.data
-
         category_id_value === '1'
-          ? setStorageAqxcStudyIndustryCategory(buildStorageString(videoData))
-          : setStorageAqxcStudySpecialCategory(buildStorageString(videoData))
+          ? setStorageAqxcStudyIndustryCategory(buildStorageString(res))
+          : setStorageAqxcStudySpecialCategory(buildStorageString(res))
 
         // 清空 videoSelect
         videoSelect.innerHTML = ''
 
         // 添加新数据
-        videoSelect.appendChild(populateSelectWithOptions(videoData))
+        videoSelect.appendChild(populateSelectWithOptions(res))
+      })
+      .catch(err => {
+        videoSelect.innerHTML = initialVideoSelectInnerHTML
+        bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
       })
   })
 })
-
-const getStudyCategory = () => {
-}
