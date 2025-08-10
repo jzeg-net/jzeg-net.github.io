@@ -57,12 +57,12 @@ category_radioBtns.forEach(categoryID_radioBtn => {
       }
     ]))
 
-    const url = 'category/video'
+    const path = 'category/video'
     const data = {
       category_id: category_id_value,
     }
 
-    aqxcAxios.post(url, data)
+    aqxcAxios.post(path, data)
       .then(res => {
         category_id_value === '1'
           ? setStorageAqxcStudyIndustryCategory(buildStorageString(res))

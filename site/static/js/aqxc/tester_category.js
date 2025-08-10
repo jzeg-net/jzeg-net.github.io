@@ -40,10 +40,9 @@ const getTesterCategory = () => {
     return
   }
 
-  // 从API获取数据
-  const url = 'category/tester'
+  const path = 'category/tester'
 
-  aqxcAxios.post(url)
+  aqxcAxios.post(path)
     .then(res => {
       setStorageAqxcTesterCategory(buildStorageString(res))
 
