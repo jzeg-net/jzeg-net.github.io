@@ -39,31 +39,29 @@ const submitForm = event => {
   submitStatus(study_form)
   submitTimerInterval(study_form)
 
+  const path = 'study/index'
   const formData = new FormData(study_form)
-  const fetchData = Object.fromEntries(formData.entries())
-  fetchData.account = getStorageZhghAccount()
-  fetchData.password = getStorageZhghPassword()
-  fetchData.userAgent = navigator.userAgent
+  const data = Object.fromEntries(formData.entries())
+  data.userAgent = navigator.userAgent
 
-  fetch(`${zhghApiUrl}/study/index`, fetchPostOptions(fetchData))
-    .then(response => response.json())
-    .then(response => {
+  zhghAxios.post(path, data)
+    .then(res => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
 
-      response = JSON.parse(JSON.stringify(response))
+      res = JSON.parse(JSON.stringify(res))
 
-      if (response['errorMsg']) {
-        bModal('', createSmallCenterText(response['errorMsg'], 'danger'), '', 'sm', true)
-      } else if (response['msg']) {
-        bModal('', createSmallCenterText(response['msg'], 'danger'), '', 'sm', true)
-      } else if (response['message']) {
-        bModal('', createSmallCenterText(response['message'], 'danger'), '', 'sm', true)
+      if (res['errorMsg']) {
+        bModal('', createSmallCenterText(res['errorMsg'], 'danger'), '', 'sm', true)
+      } else if (res['msg']) {
+        bModal('', createSmallCenterText(res['msg'], 'danger'), '', 'sm', true)
+      } else if (res['message']) {
+        bModal('', createSmallCenterText(res['message'], 'danger'), '', 'sm', true)
       } else {
-        datatablesAddRow(response)
+        datatablesAddRow(res)
       }
 
-      if (response['errorMsg'] === '登录失败') return
+      if (res['errorMsg'] === '登录失败') return
 
       if (autoSubmitTotalTimes.value > 1) {
         --autoSubmitTotalTimes.value
@@ -74,8 +72,8 @@ const submitForm = event => {
       clearSubmitStatus(study_form)
       clearInterval(submitTimerIntervalID)
     })
-    .catch(error => {
-      console.error('passwork_error:', error)
+    .catch(err => {
+      console.error('study_error:', err)
       // alert('遇到错误，请尝试手动重试一次，如果依旧报本条错误，务必停止操作，并且反馈。')
       // autoSubmitTotalTimes.value = 1
       if (autoSubmitTotalTimes.value > 1) {

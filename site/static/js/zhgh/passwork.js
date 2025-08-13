@@ -39,22 +39,12 @@ const submitForm = event => {
   submitStatus(passwork_form)
   submitTimerInterval(passwork_form)
 
+  const path = 'passwork/index'
   const formData = new FormData(passwork_form)
-  const fetchData = Object.fromEntries(formData.entries())
-  fetchData.account = getStorageZhghAccount()
-  fetchData.password = getStorageZhghPassword()
-  fetchData.userAgent = navigator.userAgent
+  const data = Object.fromEntries(formData.entries())
+  data.userAgent = navigator.userAgent
 
-  fetch(`${zhghApiUrl}/passwork/index`, fetchPostOptions(fetchData))
-    .then(r => {
-      if (!r.ok) {
-        r.json().then(error => {
-          bModal('', createSmallCenterText(error.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    })
+  zhghAxios.post(path, data)
     .then(res => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
@@ -87,7 +77,10 @@ const submitForm = event => {
       clearSubmitStatus(passwork_form)
       clearInterval(submitTimerIntervalID)
     })
-    .catch(error => console.error('passwork_error:', error))
+    .catch(err => {
+      console.error('passwork_error:', err)
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
+    })
 }
 
 passwork_form?.addEventListener('submit', submitForm)

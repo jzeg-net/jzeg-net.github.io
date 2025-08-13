@@ -16,7 +16,7 @@ const tips = {
 
 const getMemberInformation = () => {
   member_tips.innerHTML = tips['loggingIn']
-  const path = '/member/information'
+  const path = 'member/information'
   const data = {
     'userAgent': navigator.userAgent
   }
@@ -82,6 +82,7 @@ const getMemberInformation = () => {
     })
     .catch(err => {
       member_tips.innerHTML = tips['loggingFailed']
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
     })
 }
 

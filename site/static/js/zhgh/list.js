@@ -112,22 +112,14 @@ const submitForm = event => {
   submitStatus(list_form)
   submitTimerInterval(list_form)
 
+  const path = 'answer/index'
   const formData = new FormData(list_form)
   const fetchData = Object.fromEntries(formData.entries())
   fetchData.account = getStorageZhghAccount()
   fetchData.password = getStorageZhghPassword()
   fetchData.userAgent = navigator.userAgent
 
-  fetch(`${zhghApiUrl}/answer/index`, fetchPostOptions(fetchData))
-    .then(r => {
-      if (!r.ok) {
-        r.json().then(error => {
-          bModal('', createSmallCenterText(error.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    })
+  zhghAxios.post(path, fetchData)
     .then(res => {
       console.log(res)
       openPreview(res)
@@ -136,7 +128,9 @@ const submitForm = event => {
       clearSubmitStatus(list_form)
       clearInterval(submitTimerIntervalID)
     })
-    .catch(error => console.error('list_error:', error))
+    .catch(err => {
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
+    })
 }
 
 list_form?.addEventListener('submit', submitForm)
