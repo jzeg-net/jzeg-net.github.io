@@ -15,25 +15,13 @@ const tips = {
 }
 
 const getMemberInformation = () => {
-  const url = `${zhghApiUrl}/member/information`
   member_tips.innerHTML = tips['loggingIn']
-
-  const fetchData = {
-    'account': getStorageZhghAccount(),
-    'password': getStorageZhghPassword(),
+  const path = '/member/information'
+  const data = {
     'userAgent': navigator.userAgent
   }
 
-  fetch(url, fetchPostOptions(fetchData))
-    .then(r => {
-      if (!r.ok) {
-        r.json().then(error => {
-          bModal('', createSmallCenterText(error.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    })
+  zhghAxios.post(path, data)
     .then(r => {
       const {
         level,
@@ -92,9 +80,8 @@ const getMemberInformation = () => {
       `
 
     })
-    .finally(() => {
-    })
-    .catch(() => {
+    .catch(err => {
+      member_tips.innerHTML = tips['loggingFailed']
     })
 }
 

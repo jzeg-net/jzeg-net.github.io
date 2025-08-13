@@ -50,7 +50,7 @@ throughSelect?.addEventListener('click', () => {
 const zhghAxios = axiosInstance.create({
   baseURL: zhghApiUrl,
   adapter: 'fetch',
-  // timeout: 10000,
+  timeout: 10000,
 })
 
 // 请求成功拦截器
@@ -60,10 +60,11 @@ const requestOnFulfilled = config => {
     const password = getStorageZhghPassword()
     const account = getStorageZhghAccount()
 
-    if (!config.data.password && password) {
+    // 只有当config.data中没有对应的认证信息且本地存储中有相应信息时才添加
+    if (typeof config.data.password === 'undefined' && password) {
       config.data.password = password
     }
-    if (!config.data.account && account) {
+    if (typeof config.data.account === 'undefined' && account) {
       config.data.account = account
     }
 
