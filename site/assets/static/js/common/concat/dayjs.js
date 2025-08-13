@@ -1,6 +1,4 @@
-const formattedTime = (time) => {
-  return dayjs.unix(time).format('YYYY-MM-DD HH:mm:ss')
-}
+const formattedTime = (time) => dayjs.unix(time).format('YYYY-MM-DD HH:mm:ss')
 
 const dayjs_timestamp = () => dayjs().unix()
 const dayjs_year = () => dayjs().format('YYYY')
