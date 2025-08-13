@@ -46,3 +46,40 @@ throughSelect?.addEventListener('click', () => {
     })
     .catch(error => console.error('type_of_work_error', error))
 }, { once: true })
+
+const zhghAxios = axiosInstance.create({
+  baseURL: zhghApiUrl,
+  adapter: 'fetch',
+  // timeout: 10000,
+})
+
+// 请求成功拦截器
+const requestOnFulfilled = config => {
+  if (config.method === 'post') {
+    config.data = config.data || {}
+    const password = getStorageZhghPassword()
+    const account = getStorageZhghAccount()
+
+    if (!config.data.password && password) {
+      config.data.password = password
+    }
+    if (!config.data.account && account) {
+      config.data.account = account
+    }
+
+    return config
+  }
+
+  return config
+}
+
+zhghAxios.interceptors.request.use(
+  requestOnFulfilled,
+  error => Promise.reject(error)
+)
+
+zhghAxios.interceptors.response.use(
+  responseOnFulfilled,
+  responseOnRejected
+)
+

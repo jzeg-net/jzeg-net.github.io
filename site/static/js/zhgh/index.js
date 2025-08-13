@@ -1,20 +1,22 @@
 const zhgh_login = document.querySelector('#zhgh_login')
+const member_tips = document.querySelector('#member_tips')
+const zhgh_auto_login = document.querySelector('#zhgh_auto_login')
 const member_information = document.querySelector('#member_information')
 
-member_information.innerHTML = `
-  <div class="card">
-    <div class="card-body text-center">登录后可查看更多信息</div>
-  </div>
-  `
+const storageKeyZhghAutoLogin = 'zhgh_auto_login'
+const setStorageZhghAutoLogin = (boolean) => setLocalStorage(storageKeyZhghAutoLogin, boolean)
+const getStorageZhghAutoLogin = () => getLocalStorage(storageKeyZhghAutoLogin)
+
+const tips = {
+  'notLoggedIn': `<div class="card-body text-center">登录后可查看更多信息</div>`,
+  'loggingIn': `<div class="card-body text-center">信息加载中，请稍后。</div>`,
+  'loggingFailed': `<div class="card-body text-center">信息加载失败。</div>`,
+  'loggedIn': ``,
+}
 
 const getMemberInformation = () => {
   const url = `${zhghApiUrl}/member/information`
-
-  member_information.innerHTML = `
-  <div class="card">
-    <div class="card-body text-center">信息加载中，请稍后。</div>
-  </div>
-  `
+  member_tips.innerHTML = tips['loggingIn']
 
   const fetchData = {
     'account': getStorageZhghAccount(),
@@ -60,56 +62,47 @@ const getMemberInformation = () => {
         study_time,
       } = r
 
+      member_tips.innerHTML = tips['loggedIn']
       member_information.innerHTML = `
-          <div class="card">
-            <div class="card-body">
-              <div><span>姓名：</span><span>${true_name}</span></div>
-              <div><span>账号：</span><span>${id}</span></div>
-              <div><span>单位：</span><span>${group}</span></div>
-              <div><span>学历：</span><span>${xueli}</span></div>
-              <div><span>职位：</span><span>${zhiwei}</span></div>
-              <div><span>政治面貌：</span><span>${zzmm}</span></div>
-              <div><span>民族：</span><span>${min_zu}</span></div>
-              <div><span>籍贯：</span><span>${native}</span></div>
-              <div><span>手机：</span><span>${mobile}</span></div>
-              <div><span>电话：</span><span>${phone}</span></div>
-              <hr>
-              <div><span>等级编号：</span><span>${level}</span></div>
-              <div><span>等级：</span><span>${level_name}（ ${exp_points_2} ）</span></div>
-              <div><span>排行：</span><span class="text-danger-emphasis">${ranking}</span></div>
-              <div><span>今日闯关时长：</span><span class="text-danger-emphasis">${study_time}</span></div>
-              <div><span>积分：</span><span>${points}</span></div>
-              <div><span>经验积分：</span><span>${exp_points}</span></div>
-              <div><span>生日：</span><span>${formattedTime(birthday)}</span></div>
-              <div><span>加入时间：</span><span>${formattedTime(add_time)}</span></div>
-              <hr>
-              <div><span>登录次数：</span><span>${login_num}</span></div>
-              <div><span>登录IP：</span><span>${login_ip}</span></div>
-              <div><span>登录时间：</span><span>${formattedTime(login_time)}</span></div>
-              <div><span>上次IP：</span><span>${old_login_ip}</span></div>
-              <div><span>上次时间：</span><span>${formattedTime(old_login_time)}</span></div>
-            </div>
-          </div>
-        `
+        <div><span>姓名：</span><span>${true_name}</span></div>
+        <div><span>账号：</span><span>${id}</span></div>
+        <div><span>单位：</span><span>${group}</span></div>
+        <div><span>学历：</span><span>${xueli}</span></div>
+        <div><span>职位：</span><span>${zhiwei}</span></div>
+        <div><span>政治面貌：</span><span>${zzmm}</span></div>
+        <div><span>民族：</span><span>${min_zu}</span></div>
+        <div><span>籍贯：</span><span>${native}</span></div>
+        <div><span>手机：</span><span>${mobile}</span></div>
+        <div><span>电话：</span><span>${phone}</span></div>
+        <hr>
+        <div><span>等级编号：</span><span>${level}</span></div>
+        <div><span>等级：</span><span>${level_name}（ ${exp_points_2} ）</span></div>
+        <div><span>排行：</span><span class="text-danger-emphasis">${ranking}</span></div>
+        <div><span>今日闯关时长：</span><span class="text-danger-emphasis">${study_time}</span></div>
+        <div><span>积分：</span><span>${points}</span></div>
+        <div><span>经验积分：</span><span>${exp_points}</span></div>
+        <div><span>生日：</span><span>${formattedTime(birthday)}</span></div>
+        <div><span>加入时间：</span><span>${formattedTime(add_time)}</span></div>
+        <hr>
+        <div><span>登录次数：</span><span>${login_num}</span></div>
+        <div><span>登录IP：</span><span>${login_ip}</span></div>
+        <div><span>登录时间：</span><span>${formattedTime(login_time)}</span></div>
+        <div><span>上次IP：</span><span>${old_login_ip}</span></div>
+        <div><span>上次时间：</span><span>${formattedTime(old_login_time)}</span></div>
+      `
+
     })
     .finally(() => {
     })
     .catch(() => {
-      member_information.innerHTML = `
-      <div class="card">
-        <div class="card-body text-center">信息加载失败。</div>
-      </div>`
     })
-
 }
-
-if (getStorageZhghAccount() && getStorageZhghPassword()) getMemberInformation()
 
 if (zhgh_login) {
   listenerPasswordInputType(zhgh_login)
-  const zhgh_account = document.querySelector('#zhgh_account')
-  const password = document.querySelector('#password')
-  const account_display = document.querySelector('#account_display')
+  const zhgh_account = zhgh_login.querySelector('#zhgh_account')
+  const password = zhgh_login.querySelector('#password')
+  const account_display = zhgh_login.querySelector('#account_display')
 
   const refreshAccountDisplay = () => {
     const phoneNumber = getStorageZhghAccount()
@@ -119,7 +112,7 @@ if (zhgh_login) {
   if (getStorageZhghAccount()) refreshAccountDisplay()
 
   zhgh_login.addEventListener('submit', event => {
-    event.preventDefault()
+    event?.preventDefault()
 
     if (!zhgh_account.value) {
       bModal('', createSmallCenterText('请输入账号', 'danger'), '', 'sm', true)
@@ -148,4 +141,29 @@ if (zhgh_login) {
 
     bModal('', createSmallCenterText('已删除当前账号信息', 'success'), '', 'sm', true)
   })
+}
+
+zhgh_auto_login?.addEventListener('change', (event) => {
+  event?.preventDefault()
+  const targetStatus = event.target.checked
+
+  setStorageZhghAutoLogin(targetStatus)
+  zhgh_auto_login.checked = targetStatus
+
+  if (targetStatus) getMemberInformation()
+})
+
+zhgh_auto_login.checked = getStorageZhghAutoLogin() === 'true'
+member_tips.innerHTML = tips['notLoggedIn']
+
+// 监听页面加载完成后，判断是否需要发出请求
+const executeAutoLogin = () => {
+  if (zhgh_auto_login.checked) getMemberInformation()
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', executeAutoLogin)
+} else {
+  // DOM 已经加载完成，直接执行
+  executeAutoLogin()
 }
