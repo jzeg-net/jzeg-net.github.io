@@ -44,23 +44,12 @@ const submitForm = event => {
   const data = Object.fromEntries(formData.entries())
   data.userAgent = navigator.userAgent
 
-  zhghAxios.post(path, data)
+  zhghAxios.post(path, data, {
+    timeout: 0,
+  })
     .then(res => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
-
-      res = JSON.parse(JSON.stringify(res))
-
-      if (res['errorMsg']) {
-        bModal('', createSmallCenterText(res['errorMsg'], 'danger'), '', 'sm', true)
-        return
-      } else if (res['msg']) {
-        bModal('', createSmallCenterText(res['msg'], 'danger'), '', 'sm', true)
-        return
-      } else if (res['message']) {
-        bModal('', createSmallCenterText(res['message'], 'danger'), '', 'sm', true)
-        return
-      }
 
       datatablesAddRow(res)
 
@@ -78,7 +67,6 @@ const submitForm = event => {
       clearInterval(submitTimerIntervalID)
     })
     .catch(err => {
-      console.error('passwork_error:', err)
       bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
     })
 }

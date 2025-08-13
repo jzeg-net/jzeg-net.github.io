@@ -49,19 +49,7 @@ const submitForm = event => {
       releaseWakelock().then((result) => { screenStatus.checked = !result })
       document.removeEventListener('visibilitychange', handleVisibilityChangeWakelock)
 
-      res = JSON.parse(JSON.stringify(res))
-
-      if (res['errorMsg']) {
-        bModal('', createSmallCenterText(res['errorMsg'], 'danger'), '', 'sm', true)
-      } else if (res['msg']) {
-        bModal('', createSmallCenterText(res['msg'], 'danger'), '', 'sm', true)
-      } else if (res['message']) {
-        bModal('', createSmallCenterText(res['message'], 'danger'), '', 'sm', true)
-      } else {
-        datatablesAddRow(res)
-      }
-
-      if (res['errorMsg'] === '登录失败') return
+      datatablesAddRow(res)
 
       if (autoSubmitTotalTimes.value > 1) {
         --autoSubmitTotalTimes.value
@@ -73,8 +61,8 @@ const submitForm = event => {
       clearInterval(submitTimerIntervalID)
     })
     .catch(err => {
-      console.error('study_error:', err)
-      // alert('遇到错误，请尝试手动重试一次，如果依旧报本条错误，务必停止操作，并且反馈。')
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
+
       // autoSubmitTotalTimes.value = 1
       if (autoSubmitTotalTimes.value > 1) {
         --autoSubmitTotalTimes.value
