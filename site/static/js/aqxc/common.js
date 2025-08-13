@@ -14,7 +14,6 @@ const removeStorageAqxcAccount = () => removeLocalStorage(storageAccountKey)
 
 const aqxcAxios = axiosInstance.create({
   baseURL: aqxcApiExtendUrl,
-  adapter: 'fetch',
 })
 
 // 请求成功拦截器

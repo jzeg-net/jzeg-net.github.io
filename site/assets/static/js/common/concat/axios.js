@@ -16,6 +16,7 @@ const axiosInstance = axios.create({
   signal,
   timeout,
   timeoutErrorMessage: '请求超时',
+  adapter: 'fetch',
   // headers: {
   //   'Content-Type': 'application/json',
   //   'Accept': 'application/json',

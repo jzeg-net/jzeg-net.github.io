@@ -12,7 +12,6 @@ const removeStorageZhghPassword = () => removeLocalStorage(storagePasswordKey)
 
 const zhghAxios = axiosInstance.create({
   baseURL: zhghApiUrl,
-  adapter: 'fetch',
   timeout: 10000,
 })
 
