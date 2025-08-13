@@ -7,10 +7,6 @@ member_information.innerHTML = `
   </div>
   `
 
-const formattedTime = (time) => {
-  return dayjs.unix(time).format('YYYY-MM-DD HH:mm:ss')
-}
-
 const getMemberInformation = () => {
   const url = `${zhghApiUrl}/member/information`
 
