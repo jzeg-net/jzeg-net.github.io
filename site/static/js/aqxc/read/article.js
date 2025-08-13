@@ -1,40 +1,26 @@
-let readArticle = document.querySelector('#readArticle')
-let url = aqxcApiUrl + 'read/article'
+const readArticle = document.querySelector('#readArticle')
+const path = aqxcApiUrl + 'read/article'
 
 const request = (event) => {
   const target = event.target
   insertNewElement(target, newSpinner())
   btnDisabledStatus(target)
-  let data = {
-    token: getStorageAqxcToken(),
-    account: getStorageAqxcAccount(),
-  }
+  const data = {}
 
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify(data)
+  aqxcAxios.post(path, data, {
+    timeout: 1000 * 60 * 5
   })
-    .then(r => {
-      if (!r.ok) {
-        r.json().then(data => {
-          bModal('', createSmallCenterText(data.message, 'danger'), '', 'sm', true)
-        })
-        return Promise.reject(new Error(r.statusText))
-      }
-      return r.json()
-    })
     .then(res => {
       const { read, share } = res
-      let msg = '有效阅读' + read + '篇，分享' + share + '篇文章'
+      const msg = '有效阅读' + read + '篇，分享' + share + '篇文章'
       bModal('', createSmallCenterText(msg, 'success'), '', 'sm', true)
     })
     .finally(() => {
       clearSpinner(target)
       btnDisabledStatus(target)
+    })
+    .catch(err => {
+      bModal('', createSmallCenterText(err.message, 'danger'), '', 'sm', true)
     })
 }
 
