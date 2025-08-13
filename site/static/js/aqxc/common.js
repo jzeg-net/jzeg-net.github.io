@@ -24,10 +24,11 @@ const requestOnFulfilled = config => {
     const token = getStorageAqxcToken()
     const account = getStorageAqxcAccount()
 
-    if (!config.data.token && token) {
+    // 只有当config.data中没有对应的认证信息且本地存储中有相应信息时才添加
+    if (typeof config.data.token === 'undefined' && token) {
       config.data.token = token
     }
-    if (!config.data.account && account) {
+    if (typeof config.data.account === 'undefined' && account) {
       config.data.account = account
     }
 
