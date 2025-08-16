@@ -18,3 +18,13 @@ if (top_form) {
       })
   })
 }
+
+const snapdomDown = async (event) => {
+  const datasetFilename = event.currentTarget.dataset['snapdomFilename']
+  const prefix = current_title + '_'
+  const filename = datasetFilename || prompt('请输入要保存的文件名') || prefix + dayjs_datetime() || 'snapdom'
+
+  const snapshot = document.querySelector('.snapshot')
+  const result = await snapdom(snapshot)
+  await result.download({ format: 'png', filename: filename })
+}
