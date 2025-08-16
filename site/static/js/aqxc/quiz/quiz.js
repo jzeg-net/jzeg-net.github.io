@@ -39,7 +39,7 @@ const handleFormSubmit = event => {
   let formData = new FormData(quiz_form)
   let data = Object.fromEntries(formData.entries())
 
-  aqxcAxios.post(url, data)
+  aqxcAxios.post(url, data, {timeout:0})
     .then(res => {
       datatablesAddRow(res)
 
