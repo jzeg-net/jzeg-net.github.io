@@ -1,7 +1,7 @@
 # baseURL: ""
-languageName: "English (United States)"
-languageDirection: "ltr"
-languageCode: "en-US"
+locale: "en-US"
+label: "English (United States)"
+direction: "ltr"
 timeZone: "America/New_York"
 title: "JieGe"
 weight: 21

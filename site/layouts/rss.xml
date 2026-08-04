@@ -32,7 +32,7 @@
         on {{ .Site.Title }}
     </description>
     <generator>Hugo -- gohugo.io</generator>
-      {{ with .Site.LanguageCode }}
+      {{ with .Site.Language.Locale }}
     <language>{{ . }}</language>
       {{end}}
       {{ with .Site.Author.email }}

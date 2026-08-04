@@ -6,17 +6,17 @@
 {{ end }}
 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageSwitcher-text">
     <li>
-        <a class="dropdown-item d-flex align-items-center" href="javascript:" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+        <a class="dropdown-item d-flex align-items-center" href="javascript:" title="{{- .Language.Label -}}" data-language-value="{{ .Site.Language.Locale | lower }}">
             <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.CountryCode }}"></i>
-            <span>{{- .Language.LanguageName -}}</span>
+            <span>{{- .Language.Label -}}</span>
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
         </a>
     </li>
     {{- range .Translations -}}
     <li>
-        <a class="dropdown-item d-flex align-items-center" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" title="{{- .Language.LanguageName -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+        <a class="dropdown-item d-flex align-items-center" hreflang="{{ .Site.Language.Locale }}" href="{{- .RelPermalink  -}}" title="{{- .Language.Label -}}" data-language-value="{{ .Site.Language.Locale | lower }}">
             <i class="bi me-2 opacity-75 fi fi-{{ .Site.Params.CountryCode }}"></i>
-            <span>{{- .Language.LanguageName -}}</span>
+            <span>{{- .Language.Label -}}</span>
             <svg class="bi ms-auto d-none" width="16" height="16"><use href="#bi-check2"></use></svg>
         </a>
     </li>

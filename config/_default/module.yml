@@ -1,26 +1,24 @@
 hugoVersion:
     extended: true
-    min: "0.151.0"
-    max: "0.151.0"
+    min: "0.164.0"
+    max: "0.164.0"
 mounts:
     -   source: site/archetypes
         target: archetypes
 
     -   source: site/static
         target: static/static
-        excludeFiles: "{CNAME}"
+        files: "{CNAME}"
     -   source: site/static/CNAME
         target: static/CNAME
     -   source: node_modules
         target: static/static/vendor
-        includeFiles: "{bootstrap,bootstrap-icons,js-cookie,vanilla-cookieconsent,workbox-sw,axios,wretch,localforage,dayjs,timeago.js,jcalendar.js,lunar-*,lozad,@docsearch,b-components-js,@zumer,photoswipe,medium-zoom,qrcode,@callmebill,dragula,@uppy,uppy,disable-devtool,vditor,github-markdown-css,simple-datatables,handsontable,svgedit,interactjs,sortablejs,@glidejs,clipboard,flag-icons,randomColor}/**"
+        files: "{bootstrap,bootstrap-icons,js-cookie,vanilla-cookieconsent,workbox-sw,axios,wretch,localforage,dayjs,timeago.js,jcalendar.js,lunar-*,lozad,@docsearch,b-components-js,@zumer,photoswipe,medium-zoom,qrcode,@callmebill,dragula,@uppy,uppy,disable-devtool,vditor,github-markdown-css,simple-datatables,handsontable,svgedit,interactjs,sortablejs,@glidejs,clipboard,flag-icons,randomColor}/**"
 
     -   source: site/content
         target: content
-        lang: zh-cn
     -   source: site/content
         target: content
-        lang: en-us
 
     -   source: site/assets
         target: assets

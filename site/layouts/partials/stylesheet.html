@@ -3,13 +3,13 @@
 {{- $cdnUrl := (partial "functions/cdn/jsdelivr" .) -}}
 
 {{- if hugo.IsProduction -}}
-    {{- if eq .Language.LanguageDirection "ltr" -}}
+    {{- if eq .Language.Direction "ltr" -}}
         <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.min.css">
     {{- else -}}
         <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.rtl.min.css">
     {{- end -}}
 {{- else -}}
-    {{- if eq .Language.LanguageDirection "ltr" -}}
+    {{- if eq .Language.Direction "ltr" -}}
         <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.css">
     {{- else -}}
         <link rel="stylesheet" href="{{ $preUrl }}static/vendor/bootstrap/dist/css/bootstrap.rtl.css">

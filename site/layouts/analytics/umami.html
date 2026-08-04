@@ -1,5 +1,5 @@
-{{ $src := .Site.Data.analytics.umami.script_src }}
-{{ $websiteId := .Site.Data.analytics.umami.data_website_id }}
+{{ $src := hugo.Data.analytics.umami.script_src }}
+{{ $websiteId := hugo.Data.analytics.umami.data_website_id }}
 <script>
     (function () {
         var el = document.createElement('script')

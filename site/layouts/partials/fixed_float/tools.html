@@ -123,11 +123,11 @@
                             {{ end }}
                             <div class="position-absolute bottom-100 collapse" id="collapse-translation">
                                 <ul class="list-group">
-                                    <a class="p-3 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                    <a class="p-3 lh-1 list-group-item list-group-item-action" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.Language.Locale | lower }}">
                                         <i class="bi fi fi-{{ .Site.Params.CountryCode }}"></i>
                                     </a>
                                     {{- range .Translations -}}
-                                        <a class="p-3 lh-1 list-group-item list-group-item-action" hreflang="{{ .Site.LanguageCode }}" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.LanguageCode | lower }}">
+                                        <a class="p-3 lh-1 list-group-item list-group-item-action" hreflang="{{ .Site.Language.Locale }}" href="{{- .RelPermalink  -}}" data-language-value="{{ .Site.Language.Locale | lower }}">
                                             <i class="bi fi fi-{{ .Site.Params.CountryCode }}"></i>
                                         </a>
                                     {{- end -}}

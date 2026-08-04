@@ -1,4 +1,4 @@
-{{ $tag_id := $.Site.Data.analytics.googleTagManager.id }}
+{{ $tag_id := hugo.Data.analytics.googleTagManager.id }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag_id }}"></script>
 <script>

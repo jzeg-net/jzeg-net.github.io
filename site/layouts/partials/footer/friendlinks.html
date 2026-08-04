@@ -1,8 +1,8 @@
 <div class="container py-4 d-flex flex-column row-gap-2">
     <h6>{{- T "friendLinks" -}}</h6>
     <ul class="list-unstyled d-flex row-gap-3 column-gap-4 flex-wrap justify-content-evenly">
-        {{- $currentLangCode := .Language.LanguageCode -}}
-        {{- range .Site.Data.friendLinks -}}
+        {{- $currentLangCode := .Language.Locale -}}
+        {{- range hugo.Data.friendLinks -}}
             {{ $href := .url }}
             {{ $name := index .name $currentLangCode }}
             {{ $description := index .description $currentLangCode }}

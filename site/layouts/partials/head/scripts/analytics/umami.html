@@ -6,7 +6,7 @@
     {{- $data_cache      := "" -}}
     {{- $data_domains    := "" -}}
 
-    {{- with .Site.Data.analytics.umami -}}
+    {{- with hugo.Data.analytics.umami -}}
         {{- $src        = .script_src -}}
         {{- $website_id = .data_website_id -}}
         {{ with .data_cache }}
