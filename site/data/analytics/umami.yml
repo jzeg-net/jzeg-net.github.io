@@ -1,5 +1,5 @@
 # https://cloud.umami.is/
-script_src: "https://analytics.us.umami.is/script.js"
+script_src: "https://cloud.umami.is/script.js"
 data_website_id: "9887cdd3-748c-4572-af2a-38c1a0383d0d"
 data_host_url: ""
 data_auto_track: "false"
@@ -8,4 +8,4 @@ data_cache: "true"
 data_domains:
   - "jzeg-net.github.io"
 share:
-  url: "https://us.umami.is/share/SbhQO4FtRQFiO4Ct/jzeg-net.github.io"
+  url: "https://cloud.umami.is/analytics/us/share/SbhQO4FtRQFiO4Ct"
