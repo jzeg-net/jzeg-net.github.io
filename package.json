@@ -80,15 +80,15 @@
     },
     "dependencies": {
         "@callmebill/lxgw-wenkai-web": "^1.522.0",
-        "@docsearch/css": "^5.0.0-beta.1",
-        "@docsearch/js": "^5.0.0-beta.1",
+        "@docsearch/css": "^5.0.0",
+        "@docsearch/js": "^5.0.0",
         "@glidejs/glide": "^3.7.1",
         "@uppy/core": "^5.2.0",
         "@uppy/dashboard": "^5.1.1",
         "@uppy/image-editor": "^4.2.0",
         "@uppy/locales": "^5.1.1",
         "@uppy/xhr-upload": "^5.2.0",
-        "@zumer/snapdom": "^2.23.1",
+        "@zumer/snapdom": "^2.23.2",
         "axios": "^1.19.0",
         "b-components-js": "^0.0.2",
         "bootstrap": "^5.3.8",
@@ -140,12 +140,12 @@
         "find-unused-sass-variables": "^6.2.1",
         "hugo-bin": "^0.161.0",
         "npm-run-all": "^4.1.5",
-        "postcss": "^8.5.25",
+        "postcss": "^8.5.26",
         "postcss-cli": "^11.0.1",
         "sass": "^1.102.0",
         "stylelint": "^17.14.1",
         "svg-sprite": "^3.0.0-rc3",
-        "terser": "^5.49.0"
+        "terser": "^5.49.2"
     },
     "engines": {
         "node": ">=24"
